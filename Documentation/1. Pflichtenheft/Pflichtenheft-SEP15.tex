@@ -120,74 +120,138 @@
              Es wird keine Orgware benötigt.
  
 \chapter{Produktfunktionen}
-	
-	
+Die Produktfunktionen sind nach Benutzergruppen geordnet. Wunschkriterien sind mit nachgestelltem 'W' gekennzeichnet.
 
-	\section{Anonymer Benutzer}
-		\subsection{Grundfunktionen}
-			\begin{itemize}
-				\item {Aufruf der Startseite:}
-               \blindtext
-			    \item {Registrierung im System durch Ausfüllen eines Registrierungsformulars:}
-                \blindtext
-			    
-			\end{itemize}
-		\subsection{Bezahlfunktionen}
-			
-			\begin{itemize}
-			    \item {text} \blindtext
-			    
-			\end{itemize}
-	
-	\section{Registrierter Benutzer}
-	
-	
-		\subsection{Grundfunktionen}
-			
-		\subsection{Kursfunktionen}
-			
-			\begin{itemize}
-			    \item {text} 
-                \blindtext
-			    \item {text} 
-               \blindtext
-			\end{itemize}
-		\subsection{Benachrichtigungen}
-			
-			
-	
-	\section{Kursadministratoren}
-		
-        
-		\subsection{Konfiguration von Kursen}
-			\subsubsection{Grundlegende Konfiguration}
-				
-			\subsubsection{Kursverwaltung}
-				
-			\subsubsection{Graphische Anpassung, Anzeigeoptionen}
-				
-		\subsection{Benutzergruppen und Adressbuch}
-			
-			
-		\subsection{Monitoring}
-		
-			
+\newcounter{Lc}
+\newcounter{Mc}
+\newcounter{Hc} 
+\newcommand{\Func}[1]{\stepcounter{Lc}\textcolor{Blue}{\textbf{/F\arabic{Hc}\arabic{Mc}-\arabic{Lc}0/} #1} \\}
+\newcommand{\FuncW}[1]{\stepcounter{Lc}\textcolor{Green}{\textbf{/F\arabic{Hc}\arabic{Mc}-\arabic{Lc}0W/} #1} \\}
+\newcommand{\FuncBlue}[1]{\textcolor{Blue}{\textbf{#1}}}
+\newcommand{\FuncGreen}[1]{\textcolor{Green}{\textbf{#1}}}
+\newcommand{\stepMc}{\stepcounter{Mc}\setcounter{Lc}{0}}
+\newcommand{\stepHc}{\stepcounter{Hc}\setcounter{Mc}{0}\setcounter{Lc}{0}}
+\section{Anonymer Benutzer}
+\subsection{Grundfunktionen}
+\begin{itemize}
+	\item \Func{Aufruf der Startseite.}
+	Die Startseite kann mit jedem unterstützen Browser(vgl. Produktumgebung) via URL aufgerufen werden.
+	\item \Func{Registrierung im System durch Ausfüllen eines Formulars.}
+	Der Nutzer kann sich durch ausfüllen eines Registrierungsformulars im System registrieren. Nach Abschicken des Formulars gibt es zwei Möglichkeiten um den Account zu aktivieren. Entweder erhält der Nutzer eine E-Mail an die von ihm angegebene Adresse, welche einen Aktivierungslink enthält oder der Account wird vom Betreiber bzw. einem Trainer freigeschaltet. Welche der beiden Möglichkeiten zum Einsatz kommt, ist vom Administrator in seinen Einstellungen für das System auszuwählen.
+	\item \Func{Sicheres Einloggen ins System.}
+	Durch Eingabe des Benutzernamen,des Passworts und Klicken der 'Anmelden' - Schaltflächen kann sich der Benutzer ins System einloggen. Die Anmeldedaten werden dabei mittels SSL übertragen.
+	\item \Func{Anzeigen des Kursangebots.}
+	Durch Klicken der Schaltfläche 'Kursangebot' wird dem Nutzer das Kursangebot angezeigt. Als Default wird dabei das Angebot des aktuellen Tages angezeigt. Weitere Anzeigezeiträume sind möglich. (vgl. (\FuncBlue{/F00-50/})) Angezeigt werden alle stattfindenden Einheiten der Kurse in dem gewählten Zeitraum.
+	\item \Func{Einschränken des angezeigten Kursangebots.}
+	Der Nutzer hat die Möglichkeit das angezeigte Kursangebot auf verschiedene Zeiträume einzuschränken. Als Default - Zeitraum ist der aktuelle Tag vorgesehen. Weitere Anzeigezeiträume sind 'Wochenangebot', 'alle Kurse'. Die Auswahl des Anzeigezeitraums ist über eine Drop-Down-Liste möglich. Bestätigt wird die Auswahl durch Klicken der 'Anzeigen' - Schaltfläche.
+	\item \Func{Sortieren des angezeigten Kursangebots.}
+	Die angezeigten Kurse können entweder nach 'Kursame' alphabetisch oder nach 'Uhrzeit' chronologisch sortiert werden.
+	\item \Func{Suche nach Kursen.}
+	Das Kursangebot kann durch Eingabe des Kursnamens nach einem bestimmten Kurs durchsucht werden.
+	\item \Func{Anzeige des Impressums.}
+	Das Impressum kann von jeder Seite des Systems aus angezeigt werden.
+	\item \Func{Anzeige der Hilfeseite.}
+	Von jeder Seite des Systems kann die Hilfeseite zur entsprechenden Seite des Systems oder die komplette Hilfeseite aufgerufen werden.
+	\item \Func{Anzeige der Allgemeinen Geschäftsbedingungen.}
+	Die allgemeinen Geschäftsbedingungen können von jeder Seite des Systems aus angezeigt werden.
+	\item \FuncW{Wechsel der Anzeigesprache.}
+	Von jeder Seite des Systems aus kann durch eine Klicken einer entsprechenden Schaltfläche die Anzeigesprache gewechselt werden. Als Default ist 'Deutsch' ausgewählt. Als weitere Sprache ist 'Englisch' vorgesehen. 
+	\item \FuncW{'Passwort vergessen' - Schaltfläche.}
+	Klickt der Benutzer die 'Passwort vergessen' - Schaltfläche, so wir er aufgefordert seine im System hinterlegte E-Mailadresse einzugeben. An diese wird dann ein automatisch generiertes Passwort geschickt.
+\end{itemize}
 
-		
+\section{Registrierter Benutzer}
+Der registrierte Benutzer verfügt über sämtliche Funktionen wie der anonyme Benutzer. Zusätzlich kann er auf folgende Funktionen zurückgreifen.
+\stepHc
+\subsection{Grundfunktionen}
+\begin{itemize}
+	\item \Func{Anzeigen der angemeldeten Kurse.}
+	Die Kurse zu denen der registrierte Benutzer angemeldet ist werden gesammelt angezeigt.
+	\item \Func{Detailanzeige der angemeldeten Kurse.}
+	Durch Klicken auf einen angemeldeten Kurs werden die Details dieses Kurses angezeigt. Hier hat der registrierte Benutzer die Möglichkeit sich zu Kurseinheiten an-/abzumelden und sich aus dem Kurs auszutragen.
+	\item \Func{Anzeigen der Profil - Seite.}
+	Der registrierte Benutzer besitzt eine Profilseite auf welcher seine Daten gesammelt angezeigt werden. 
+	\item \Func{Ändern der eigenen Benutzerdaten.}
+	Der registrierte Benutzer kann durch Klicken der Schaltfläche 'Benutzerdaten bearbeiten' seine eingegebenen Daten bearbeiten. Sollte die E-Mail-Adresse geändert werden, wird an die neue E-Mail-Adresse wie beim Registrierungsprozess eine Bestätigungsmail mit einem neuen Authentifizierungslink geschickt, um die neue E-Mail-Adresse auf Korrektheit zu überprüfen.
+	\item \Func{Hochladen eines Profilbilds.}
+	Der registrierte Benutzer kann ein Profilbild hochladen. Als Default ist ein Dummy - Bild gesetzt.
+	\item \Func{Anzeigen des aktuellen Kontostands.}
+	Der registrierte Benutzer kann den aktuellen Kontostand seines Guthabenkontos einsehen. 
+	\item \Func{Aus dem System abmelden mittels 'Abmelden' - Schaltfläche.}
+	Der registrierte Benutzer kann sich  von jeder Seite des Systems aus durch Klicken der Schaltfläche 'Abmelden' aus dem System abmelden und wird auf die Anmeldeseite weitergeleitet.
+	\item \FuncW{Anzeige der nächsten Termine.}
+	Die nächsten zehn Termine (Name, Datum/Zeit, Ort) des registrierte Benutzers werden gesammelt in Form einer Auflistung angezeigt.
+\end{itemize}		
+\subsection{Terminplaner}
+\begin{itemize}
+	\item \Func{Terminplaner.}
+	Der registrierte Benutzer hat einen persönlichen Terminplaner. Dieser wird in der Wochenansicht dargestellt. Der Terminplaner unterstützt nur die Anzeige von einstündigen Slots. Ist ein Termin kürzer, wird dennoch der Slot für die ganze Stunde belegt. Ist der Termin länger als eine Stunde werden dementsprechend mehrere einstündige Slots belegt.
+	Außerdem ist darauf zu achten, dass die Slots jeweils zur vollen Stunde beginnen und zur nächsten vollen Stunde enden. (Analog dem Prinzip eines Stundenplans)
+	\item \Func{Anzeigen des Terminplaners.}
+	Der persönliche Terminplaner des registrierten Benutzers kann angezeigt werden. 
+	\item \Func{Eintragen von eigenen Terminen in den Terminplaner.} 
+	Der registrierte Benutzer kann eigene Termine in seinen Terminplaner eintragen. Es können nur Termine eingetragen werden, wenn zur entsprechenden Zeit noch kein anderer Termin im Terminplaner vorhanden ist. 
+	\item \Func{Automatische Eintragung von angemeldeten Kurseinheiten.}
+	Die angemeldeten Kurseinheiten des registrierten Benutzers werden automatisch in dessen Terminplaner eingetragen.
+	\item \Func{Automatische Entfernung von abgemeldeten Kurseinheiten.}	
+	Meldet sich der registrierte Benutzer aus einer Kurseinheit ab oder fällt eine Kurseinheit aus, so wird diese aus dem Terminplaner gelöscht.
+\end{itemize}   
+\subsection{Kursfunktionen}
+\stepMc
+\begin{itemize}
+	\item \Func{Detailansicht der Kurse.}
+	Der registrierte Nutzer kann sich eine Detailansicht der angebotenen Kurse anzeigen lassen. Er erreicht diese indem er in der Kurssuche auf den gefundenen Kurs doppelklickt. In der Detailansicht kann sich der Nutzer, wenn er zum Kurs bereits angemeldet ist(\FuncBlue{/F11-20/}) zu Kurseinheiten anmelden(\FuncBlue{/F11-40/}) oder von Kurseinheiten abmelden(\FuncBlue{/F11-50/}).
+	\item \Func{Zu Kurs anmelden.} 
+	Der registrierte Nutzer kann sich zu beliebig vielen Kursen anmelden. 
+	Dafür klickt er in der Detailansicht des gewünschten Kurses auf die Schaltfläche 'Anmelden'. Die Detailansicht des Kurses erreicht er indem er in der Kurssuche auf den gewünschten Kurs doppelklickt(\FuncBlue{/F11-10/}).
+	\item \Func{Von Kurs abmelden.} 
+	Der registrierte Nutzer kann sich von Kursen abmelden zu denen er angemeldet ist. Dafür klickt er in der Detailansicht des gewünschten Kurses auf die Schaltfläche 'Abmelden'. Die Detailansicht des Kurses erreicht er indem er in der Kurssuche auf den gewünschten Kurs doppelklickt(\FuncBlue{/F11-10/}). Meldet sich der registrierte Benutzer von einem Kurs ab, meldet er sich damit auch automatisch von allen Kurseinheiten ab(\FuncBlue{/F11-50/}).
+	\item \Func{Zu Kurseinheiten anmelden.}
+	Der registrierte Benutzer kann sich zu beliebig vielen Kurseinheiten anmelden. Um sich zu Kurseinheiten anmelden zu können, muss der Nutzer bei diesem Kurs angemeldet sein(\FuncBlue{/F11-20/}).
+	Um sich zu Kurseinheiten eines Kurses anmelden zu können, muss der Nutzer in die Detailansicht des Kurses wechseln. Dort findet er die zu diesem Kurs verfügbaren Einheiten und deren Status. Ist eine Kurseinheit noch nicht voll und ist der Nutzer noch nicht zu dieser Einheit angemeldet, kann er sich anmelden. Der Nutzer hat außerdem die Möglichkeit durch Klicken der Schaltfläche 'Alle Einheiten auswählen' und anschließender Betätigung der Schaltfläche 'Anmelden' sich zu allen Einheiten des Kurs auf einmal anzumelden. Vor Betätigen der Schaltfläche 'Anmelden' hat der Nutzer aber auch noch die Möglichkeit einzelne Einheiten von der Anmeldung auszuschließen. Voraussetzung um sich zu kostenpflichtigen Kurseinheiten anmelden zu können ist ein ausreichendes Guthaben auf dem Konto bzw. keine unzulässige Überziehung des Guthabenkontos(\FuncBlue{/F13-30/}).
+	\item \Func{Von Kurseinheiten abmelden.}
+	Der registrierte Benutzer kann sich von Kurseinheiten abmelden, zu denen er angemeldet ist. Um sich von Kurseinheiten eines Kurses abmelden zu können, muss der Nutzer in die Detailansicht des Kurses wechseln. Dort findet er die zu diesem Kurs verfügbaren Einheiten.
+	Er kann nun die Einheiten auswählen von denen er sich abmelden will und durch Betätigen der Schaltfläche 'Abmelden' meldet er sich von den Einheiten ab. Der für bezahlte kostenpflichtige Einheiten wird auf das Konto des registrierten Benutzers zurück gebucht(\FuncBlue{/F13-40/}).
+	\item \Func{Kursangebot anzeigen - erweitert.}
+	Der registrierte Benutzer hat die Möglichkeit sich das Kursangebot anzeigen zu lassen. Dafür wählt er die entsprechende Registerkarte aus.Als Default wird dabei das Angebot des aktuellen Tages angezeigt. Als weitere Anzeigezeiträume stehen 'Wochenangebot' und 'Gesamtes Angebot' zur Verfügung. Die Anzeigezeiträume werden über eine Drop - Down - Liste ausgewählt und durch Klicken der Schaltfläche 'Anzeigen' wird die Auswahl angezeigt(vgl. \FuncBlue{/F00-40/}).
+	\item \Func{Nach Kursen suchen - erweitert.}
+	Der registrierte Nutzer hat die Möglichkeit das gesamte Kursangebot zu durchsuchen. Über eine Drop-Down-Liste kann der Nutzer einen Suchparameter auswählen. Nach Eingabe eines Suchbegriffs und Klicken der Schaltfläche 'Suchen' wird das Kursangebot nach dem Suchbegriff bzgl. des Suchparameters durchsucht und das Ergebnis angezeigt. 
+	Als Suchparameter sind vorgesehen 'Kursname', 'Ort', 'Trainer', 'Datum', 'Zeit', 'Kostenpflichtig', 'Kostenlos'.
+	\item \Func{Kurse sortieren - erweitert.}
 	
-	\section{Systemadministratoren}
-		
-		
-		\subsection{Benutzerkonten}
-			
-		\subsection{Verwaltung der Kursen}
-			
-			
-		\subsection{Systemanpassung}
-			
-			
-			
-	\section{Webservice}
+\end{itemize}
+\subsection{Benachrichtigungen}
+\stepMc
+\begin{itemize} 
+	\item \Func{Für Kursbenachrichtigungen eintragen}
+	\item \FuncW{Benachrichtigung von Freunden beim Anlegen eines eigenen Termins}
+\end{itemize}
+\subsection{Bezahlfunktionen}
+\stepMc
+\begin{itemize}
+	\item \Func{Guthabenkonto aufladen - online}
+	\item \Func{Guthabenkonto aufladen - offline}
+	\item \Func{Kurseinheiten bezahlen}
+	\item \Func{Rückbuchung des Kurspreises bei Abmeldung oder Kursausfall}
+\end{itemize}	
+
+\section{Trainer}
+Jedem Trainer stehen auch alle Funktionen eines registrierten Benutzers zur Verfügung. Darüber hinaus kann ein Trainer auf folgenden Funktionen zurückgreifen.
+\stepHc
+\subsection{Kurse}
+
+
+
+\section{Systemadministratoren}
+Jedem Systemadministrator stehen auch alle Funktionen eines Trainers zur Verfügung. Darüber hinaus kann ein Systemadministrator auf folgende Funktionen zurückgreifen.
+\stepHc
+\subsection{Verwaltung von Kursen}
+
+\subsection{Verwaltung der Kursen}
+\stepMc
+
+\subsection{Systemanpassung}
+\stepMc
 		
 		
 
