@@ -24,14 +24,17 @@
 \contentsline {subsection}{\numberline {4.2.1}Grundfunktionen}{8}{subsection.4.2.1}
 \contentsline {subsection}{\numberline {4.2.2}Terminplaner}{9}{subsection.4.2.2}
 \contentsline {subsection}{\numberline {4.2.3}Kursfunktionen}{10}{subsection.4.2.3}
-\contentsline {subsection}{\numberline {4.2.4}Benachrichtigungen}{11}{subsection.4.2.4}
-\contentsline {subsection}{\numberline {4.2.5}Bezahlfunktionen}{11}{subsection.4.2.5}
+\contentsline {subsection}{\numberline {4.2.4}Bezahlfunktionen}{11}{subsection.4.2.4}
 \contentsline {section}{\numberline {4.3}Trainer}{12}{section.4.3}
 \contentsline {subsection}{\numberline {4.3.1}Kurse}{12}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.2}Benachrichtigungen}{12}{subsection.4.3.2}
+\contentsline {subsection}{\numberline {4.3.3}Verwaltung}{12}{subsection.4.3.3}
 \contentsline {section}{\numberline {4.4}Systemadministratoren}{12}{section.4.4}
-\contentsline {subsection}{\numberline {4.4.1}Verwaltung von Kursen}{12}{subsection.4.4.1}
-\contentsline {subsection}{\numberline {4.4.2}Verwaltung der Kursen}{12}{subsection.4.4.2}
-\contentsline {subsection}{\numberline {4.4.3}Systemanpassung}{12}{subsection.4.4.3}
+\contentsline {subsection}{\numberline {4.4.1}Kurse}{12}{subsection.4.4.1}
+\contentsline {subsection}{\numberline {4.4.2}Benutzer}{12}{subsection.4.4.2}
+\contentsline {subsection}{\numberline {4.4.3}Benachrichtigungen}{12}{subsection.4.4.3}
+\contentsline {subsection}{\numberline {4.4.4}Verwaltung}{12}{subsection.4.4.4}
+\contentsline {subsection}{\numberline {4.4.5}Systemanpassung}{12}{subsection.4.4.5}
 \contentsline {chapter}{\numberline {5}Produktdaten}{13}{chapter.5}
 \contentsline {section}{\numberline {5.1}System}{13}{section.5.1}
 \contentsline {subsection}{\numberline {5.1.1}SMTP-Server}{13}{subsection.5.1.1}

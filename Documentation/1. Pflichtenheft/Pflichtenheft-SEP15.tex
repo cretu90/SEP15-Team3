@@ -157,7 +157,7 @@ Die Produktfunktionen sind nach Benutzergruppen geordnet. Wunschkriterien sind m
 	\item \FuncW{Wechsel der Anzeigesprache.}
 	Von jeder Seite des Systems aus kann durch eine Klicken einer entsprechenden Schaltfläche die Anzeigesprache gewechselt werden. Als Default ist 'Deutsch' ausgewählt. Als weitere Sprache ist 'Englisch' vorgesehen. 
 	\item \FuncW{'Passwort vergessen' - Schaltfläche.}
-	Klickt der Benutzer die 'Passwort vergessen' - Schaltfläche, so wir er aufgefordert seine im System hinterlegte E-Mailadresse einzugeben. An diese wird dann ein automatisch generiertes Passwort geschickt.
+	Klickt der Benutzer die 'Passwort vergessen' - Schaltfläche, so wird er aufgefordert seine im System hinterlegte E-Mailadresse einzugeben. An diese wird dann ein automatisch generiertes Passwort geschickt.
 \end{itemize}
 
 \section{Registrierter Benutzer}
@@ -206,10 +206,10 @@ Der registrierte Benutzer verfügt über sämtliche Funktionen wie der anonyme B
 	Dafür klickt er in der Detailansicht des gewünschten Kurses auf die Schaltfläche 'Anmelden'. Die Detailansicht des Kurses erreicht er indem er in der Kurssuche auf den gewünschten Kurs doppelklickt(\FuncBlue{/F11-10/}).
 	\item \Func{Von Kurs abmelden.} 
 	Der registrierte Nutzer kann sich von Kursen abmelden zu denen er angemeldet ist. Dafür klickt er in der Detailansicht des gewünschten Kurses auf die Schaltfläche 'Abmelden'. Die Detailansicht des Kurses erreicht er indem er in der Kurssuche auf den gewünschten Kurs doppelklickt(\FuncBlue{/F11-10/}). Meldet sich der registrierte Benutzer von einem Kurs ab, meldet er sich damit auch automatisch von allen Kurseinheiten ab(\FuncBlue{/F11-50/}).
-	\item \Func{Zu Kurseinheiten anmelden.}
+	\item \Func{Zu Kurseinheit anmelden.}
 	Der registrierte Benutzer kann sich zu beliebig vielen Kurseinheiten anmelden. Um sich zu Kurseinheiten anmelden zu können, muss der Nutzer bei diesem Kurs angemeldet sein(\FuncBlue{/F11-20/}).
-	Um sich zu Kurseinheiten eines Kurses anmelden zu können, muss der Nutzer in die Detailansicht des Kurses wechseln. Dort findet er die zu diesem Kurs verfügbaren Einheiten und deren Status. Ist eine Kurseinheit noch nicht voll und ist der Nutzer noch nicht zu dieser Einheit angemeldet, kann er sich anmelden. Der Nutzer hat außerdem die Möglichkeit durch Klicken der Schaltfläche 'Alle Einheiten auswählen' und anschließender Betätigung der Schaltfläche 'Anmelden' sich zu allen Einheiten des Kurs auf einmal anzumelden. Vor Betätigen der Schaltfläche 'Anmelden' hat der Nutzer aber auch noch die Möglichkeit einzelne Einheiten von der Anmeldung auszuschließen. Voraussetzung um sich zu kostenpflichtigen Kurseinheiten anmelden zu können ist ein ausreichendes Guthaben auf dem Konto bzw. keine unzulässige Überziehung des Guthabenkontos(\FuncBlue{/F13-30/}).
-	\item \Func{Von Kurseinheiten abmelden.}
+	Um sich zu Kurseinheiten eines Kurses anmelden zu können, muss der Nutzer in die Detailansicht des Kurses wechseln. Dort findet er die zu diesem Kurs verfügbaren Einheiten und deren Status. Ist eine Kurseinheit noch nicht voll und ist der Nutzer noch nicht zu dieser Einheit angemeldet, kann er sich anmelden. Der Nutzer hat außerdem die Möglichkeit durch Klicken der Schaltfläche 'Alle Einheiten auswählen' und anschließender Betätigung der Schaltfläche 'Anmelden' sich zu allen Einheiten des Kurs auf einmal anzumelden. Vor Betätigen der Schaltfläche 'Anmelden' hat der Nutzer aber auch noch die Möglichkeit einzelne Einheiten von der Anmeldung auszuschließen. Voraussetzung um sich zu kostenpflichtigen Kurseinheiten anmelden zu können ist ein ausreichendes Guthaben auf dem Konto bzw. keine unzulässige Überziehung des Guthabenkontos(\FuncBlue{/F12-30/}).
+	\item \Func{Von Kurseinheit abmelden.}
 	Der registrierte Benutzer kann sich von Kurseinheiten abmelden, zu denen er angemeldet ist. Um sich von Kurseinheiten eines Kurses abmelden zu können, muss der Nutzer in die Detailansicht des Kurses wechseln. Dort findet er die zu diesem Kurs verfügbaren Einheiten.
 	Er kann nun die Einheiten auswählen von denen er sich abmelden will und durch Betätigen der Schaltfläche 'Abmelden' meldet er sich von den Einheiten ab. Der für bezahlte kostenpflichtige Einheiten wird auf das Konto des registrierten Benutzers zurück gebucht(\FuncBlue{/F13-40/}).
 	\item \Func{Kursangebot anzeigen - erweitert.}
@@ -218,36 +218,50 @@ Der registrierte Benutzer verfügt über sämtliche Funktionen wie der anonyme B
 	Der registrierte Nutzer hat die Möglichkeit das gesamte Kursangebot zu durchsuchen. Über eine Drop-Down-Liste kann der Nutzer einen Suchparameter auswählen. Nach Eingabe eines Suchbegriffs und Klicken der Schaltfläche 'Suchen' wird das Kursangebot nach dem Suchbegriff bzgl. des Suchparameters durchsucht und das Ergebnis angezeigt. 
 	Als Suchparameter sind vorgesehen 'Kursname', 'Ort', 'Trainer', 'Datum', 'Zeit', 'Kostenpflichtig', 'Kostenlos'.
 	\item \Func{Kurse sortieren - erweitert.}
-	
-\end{itemize}
-\subsection{Benachrichtigungen}
-\stepMc
-\begin{itemize} 
+	Der registrierte Nutzer hat die Möglichkeit das angezeigte Kursangebot zu sortieren. Als Sortiermöglichkeiten sind vorgesehen alphabetisch nach 'Kursname', 'Ort' oder 'Trainer' und chronologisch nach 'Datum' oder 'Uhrzeit'.
 	\item \Func{Für Kursbenachrichtigungen eintragen}
-	\item \FuncW{Benachrichtigung von Freunden beim Anlegen eines eigenen Termins}
+	Der registrierte Nutzer hat die Möglichkeit sich bei der Anmeldung zu einem Kurs durch Auswahl einer Checkbox  für Benachrichtigungen zu diesem Kurs zu registrieren oder nicht.
 \end{itemize}
+ 
 \subsection{Bezahlfunktionen}
 \stepMc
 \begin{itemize}
 	\item \Func{Guthabenkonto aufladen - online}
+	Der registrierte Nutzer besitzt ein Guthabenkonto. Dieses kann er online mittels Kreditkarte aufladen. Die Kreditkarten Abwicklung erfolgt dabei
+	über die Infosun-Bank. Die Übertragung der Kreditkartendaten erfolgt mittels SSL. Der aufgeladene Betrag ist sofort auf dem Guthabenkonto verfügbar und kann auch sofort verwendet werden.
 	\item \Func{Guthabenkonto aufladen - offline}
+	Der registrierte Nutzer kann sein Guthabenkonto auch offline aufladen. Die ist mittels Überweisung oder Barzahlung an den Betreiber oder einen Trainer möglich. 
+	Der Nutzer überweist den Betrag dafür auf das Konto des Betreibers oder bezahlt bar. Der bezahlte Betrag ist erst auf dem Guthabenkonto des registrierten Benutzers vorhanden, wenn er vom Betreiber oder einem der Trainer gutgeschrieben wurde.
 	\item \Func{Kurseinheiten bezahlen}
+	Die Bezahlung von Kurseinheiten wird automatisch bei der Anmeldung zur Kurseinheit erledigt(\FuncBlue{/F11-40/}). Der registrierte Nutzer kann sich also auch nur zu der Kurseinheit anmelden, wenn sein Guthaben auf dem Konto für den Preis der Einheit ausreicht bzw. sein Kontostand nicht den vom Betreiber festgelegten Überziehungskredit überschreitet.
 	\item \Func{Rückbuchung des Kurspreises bei Abmeldung oder Kursausfall}
+	Meldet sich der registrierte Nutzer von einer Kurseinheit ab oder fällt die Kurseinheit aufgrund zu geringer Teilnehmerzahl oder wegen eines anderen Grunds aus, so wird der Kaufpreis der Einheit automatisch auf das Konto des registrierten Nutzers zurück gebucht.
 \end{itemize}	
 
 \section{Trainer}
 Jedem Trainer stehen auch alle Funktionen eines registrierten Benutzers zur Verfügung. Darüber hinaus kann ein Trainer auf folgenden Funktionen zurückgreifen.
 \stepHc
 \subsection{Kurse}
+\stepMc
+\subsection{Benachrichtigungen}
+\stepMc
+\subsection{Verwaltung}
+\stepMc
 
 
 
 \section{Systemadministratoren}
 Jedem Systemadministrator stehen auch alle Funktionen eines Trainers zur Verfügung. Darüber hinaus kann ein Systemadministrator auf folgende Funktionen zurückgreifen.
 \stepHc
-\subsection{Verwaltung von Kursen}
+\subsection{Kurse}
 
-\subsection{Verwaltung der Kursen}
+\subsection{Benutzer}
+\stepMc
+
+\subsection{Benachrichtigungen}
+\stepMc
+
+\subsection{Verwaltung}
 \stepMc
 
 \subsection{Systemanpassung}
