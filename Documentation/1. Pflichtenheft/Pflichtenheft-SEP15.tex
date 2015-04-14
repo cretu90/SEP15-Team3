@@ -10,6 +10,11 @@
 \usepackage{color}
 \usepackage[dvipsnames]{xcolor}
 
+\newcounter{Lc}
+\newcounter{Hc}
+\newcommand{\stepHc}{\stepcounter{Hc}\setcounter{Lc}{0}}
+\newcommand{\resetAllCounter}{\setcounter{Lc}{0}\setcounter{Hc}{1}}
+
 %Glossar
 \usepackage[nonumberlist, toc, section=chapter, numberedsection=nolabel]{glossaries}
 \makeglossaries
@@ -118,19 +123,15 @@
         \end{itemize}
      \section{Orgware}
              Es wird keine Orgware benötigt.
- 
+
+\resetAllCounter
+\newcommand{\Func}[1]{\stepcounter{Lc}\textcolor{Blue}{\textbf{/F\arabic{Hc}0-\arabic{Lc}0/} #1} \\}
+\newcommand{\FuncW}[1]{\stepcounter{Lc}\textcolor{Green}{\textbf{/F\arabic{Hc}0-\arabic{Lc}0W/} #1} \\}
+\newcommand{\FuncBlue}[1]{\textcolor{Blue}{\textbf{#1}}}
+\newcommand{\FuncGreen}[1]{\textcolor{Green}{\textbf{#1}}}
 \chapter{Produktfunktionen}
 Die Produktfunktionen sind nach Benutzergruppen geordnet. Wunschkriterien sind mit nachgestelltem 'W' gekennzeichnet.
 
-\newcounter{Lc}
-\newcounter{Mc}
-\newcounter{Hc} 
-\newcommand{\Func}[1]{\stepcounter{Lc}\textcolor{Blue}{\textbf{/F\arabic{Hc}\arabic{Mc}-\arabic{Lc}0/} #1} \\}
-\newcommand{\FuncW}[1]{\stepcounter{Lc}\textcolor{Green}{\textbf{/F\arabic{Hc}\arabic{Mc}-\arabic{Lc}0W/} #1} \\}
-\newcommand{\FuncBlue}[1]{\textcolor{Blue}{\textbf{#1}}}
-\newcommand{\FuncGreen}[1]{\textcolor{Green}{\textbf{#1}}}
-\newcommand{\stepMc}{\stepcounter{Mc}\setcounter{Lc}{0}}
-\newcommand{\stepHc}{\stepcounter{Hc}\setcounter{Mc}{0}\setcounter{Lc}{0}}
 \section{Anonymer Benutzer}
 \subsection{Grundfunktionen}
 \begin{itemize}
@@ -197,7 +198,7 @@ Der registrierte Benutzer verfügt über sämtliche Funktionen wie der anonyme B
 	Meldet sich der registrierte Benutzer aus einer Kurseinheit ab oder fällt eine Kurseinheit aus, so wird diese aus dem Terminplaner gelöscht.
 \end{itemize}   
 \subsection{Kursfunktionen}
-\stepMc
+
 \begin{itemize}
 	\item \Func{Detailansicht der Kurse.}
 	Der registrierte Nutzer kann sich eine Detailansicht der angebotenen Kurse anzeigen lassen. Er erreicht diese indem er in der Kurssuche auf den gefundenen Kurs doppelklickt. In der Detailansicht kann sich der Nutzer, wenn er zum Kurs bereits angemeldet ist(\FuncBlue{/F11-20/}) zu Kurseinheiten anmelden(\FuncBlue{/F11-40/}) oder von Kurseinheiten abmelden(\FuncBlue{/F11-50/}).
@@ -221,10 +222,11 @@ Der registrierte Benutzer verfügt über sämtliche Funktionen wie der anonyme B
 	Der registrierte Nutzer hat die Möglichkeit das angezeigte Kursangebot zu sortieren. Als Sortiermöglichkeiten sind vorgesehen alphabetisch nach 'Kursname', 'Ort' oder 'Trainer' und chronologisch nach 'Datum' oder 'Uhrzeit'.
 	\item \Func{Für Kursbenachrichtigungen eintragen}
 	Der registrierte Nutzer hat die Möglichkeit sich bei der Anmeldung zu einem Kurs durch Auswahl einer Checkbox  für Benachrichtigungen zu diesem Kurs zu registrieren oder nicht.
+	
 \end{itemize}
+
  
 \subsection{Bezahlfunktionen}
-\stepMc
 \begin{itemize}
 	\item \Func{Guthabenkonto aufladen - online}
 	Der registrierte Nutzer besitzt ein Guthabenkonto. Dieses kann er online mittels Kreditkarte aufladen. Die Kreditkarten Abwicklung erfolgt dabei
@@ -242,11 +244,10 @@ Der registrierte Benutzer verfügt über sämtliche Funktionen wie der anonyme B
 Jedem Trainer stehen auch alle Funktionen eines registrierten Benutzers zur Verfügung. Darüber hinaus kann ein Trainer auf folgenden Funktionen zurückgreifen.
 \stepHc
 \subsection{Kurse}
-\stepMc
+
 \subsection{Benachrichtigungen}
-\stepMc
+
 \subsection{Verwaltung}
-\stepMc
 
 
 
@@ -256,16 +257,12 @@ Jedem Systemadministrator stehen auch alle Funktionen eines Trainers zur Verfüg
 \subsection{Kurse}
 
 \subsection{Benutzer}
-\stepMc
 
 \subsection{Benachrichtigungen}
-\stepMc
 
 \subsection{Verwaltung}
-\stepMc
 
 \subsection{Systemanpassung}
-\stepMc
 		
 		
 
@@ -386,24 +383,44 @@ Jedem Systemadministrator stehen auch alle Funktionen eines Trainers zur Verfüg
     
 Darüber hinaus sollten noch folgende Qualitätsmerkmale genannt werden, die in der Norm nicht berücksichtigt werden:
  
+\resetAllCounter
+\newcommand{\Test}[1]{\stepcounter{Lc}\textcolor{Brown}{\textbf{/T\arabic{Hc}0-\arabic{Lc}0/} #1} \\}
+\newcommand{\RefFuncBlue}[1]{\textcolor{Blue}{\textbf{#1}}}
+\newcommand{\RefFuncGreen}[1]{\textcolor{Green}{\textbf{#1}}}
 \chapter{Globale Testszenarien und Testfälle}
  
 
 	\section{Testfälle für den Systemadministrator ohne bestehenden Datensatz}
 		\subsection{Setup}
-				
+			\begin{itemize}
+				\item \Test{Website einrichten} 
+				Der Administrator ... (vgl. \RefFuncBlue{/F10-20/})		
+				\item \Test{Titel der Seite wählen} 
+				Der Administrator ... (vgl. \RefFuncBlue{/F10-40/})		
+			\end{itemize}			
 		\subsection{Erstellung und Verwaltung}
-			
-			
+			\begin{itemize}
+				\item \Test{Benutzer erstellen} 
+				Der Administrator ... (vgl. \RefFuncBlue{/F20-20/})		
+				\item \Test{Impressum eingeben} 
+				Der Administrator ... (vgl. \RefFuncGreen{/F20-40/})		
+			\end{itemize}						
 		\subsection{Systemdarstellung}
 			
 			
 			
-		\section{Testfälle für den Kursadministrator}
+	\section{Testfälle für den Kursadministrator}
+		\stepHc
+		\begin{itemize}
+			\item \Test{Kurs einrichten} 
+			Der Kursleiter ... (vgl. \RefFuncBlue{/F30-20/})		
+			\item \Test{Titel der Seite wählen} 
+			Der Kursleiter ... (vgl. \RefFuncBlue{/F30-40/})		
+		\end{itemize}	
 		
 			
 	\section{Testfälle für anonymer Benutzer}
-	
+		
 		
 	\section{Testfälle für den registrierten Benutzer}
 		
