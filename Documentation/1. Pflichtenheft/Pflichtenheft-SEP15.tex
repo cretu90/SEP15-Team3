@@ -396,14 +396,14 @@ Darüber hinaus sollten noch folgende Qualitätsmerkmale genannt werden, die in 
 				\item \Test{Website einrichten} 
 				Der Administrator ... (vgl. \RefFuncBlue{/F10-20/})		
 				\item \Test{Titel der Seite wählen} 
-				Der Administrator ... (vgl. \RefFuncBlue{/F10-40/})		
+				Der Administrator ... 		
 			\end{itemize}			
 		\subsection{Erstellung und Verwaltung}
 			\begin{itemize}
 				\item \Test{Benutzer erstellen} 
-				Der Administrator ... (vgl. \RefFuncBlue{/F20-20/})		
+				Der Administrator ... 		
 				\item \Test{Impressum eingeben} 
-				Der Administrator ... (vgl. \RefFuncGreen{/F20-40/})		
+				Der Administrator ... 		
 			\end{itemize}						
 		\subsection{Systemdarstellung}
 			
@@ -413,17 +413,55 @@ Darüber hinaus sollten noch folgende Qualitätsmerkmale genannt werden, die in 
 		\stepHc
 		\begin{itemize}
 			\item \Test{Kurs einrichten} 
-			Der Kursleiter ... (vgl. \RefFuncBlue{/F30-20/})		
+			Der Kursleiter ... 		
 			\item \Test{Titel der Seite wählen} 
-			Der Kursleiter ... (vgl. \RefFuncBlue{/F30-40/})		
+			Der Kursleiter ... 		
 		\end{itemize}	
 		
 			
 	\section{Testfälle für anonymer Benutzer}
-		
+			\stepHc
+			\begin{itemize}
+				\item \Test{Kursangebot ansehen} 
+				Der anonyme Benutzer klickt auf der Startseite auf den Button 'Kursangebot'	und gelangt auf die Seite mit den Kursangeboten. Angezeigt wird zunächst das aktuelle Tagesangebot.	
+				\item \Test{Registrierung} 
+				Über die Schaltfläche 'Login' gelangt der anonyme Benutzer auf die Loginseite und von hier aus über den Button 'registrieren' auf die nächste Seite mit dem Registrierungsformular. 		
+				\begin{itemize}
+					\item Der Benutzer gibt bei der Registrierung ein zu kurzes Passwort ein und erhält nach Drücken des 'registrieren'-Buttons eine Fehlermeldung.	
+					\item Der Benutzer gibt zwei verschiedene Passwörter ein und erhält nach Drücken des 'registrieren'-Buttons eine Fehlermeldung.
+					\item Der Benutzer hat seine Mailadresse nicht angegeben und erhält nach Drücken des 'registrieren'-Buttons eine Fehlermeldung.	
+					\item Der Benutzer meldet sich mit folgenden Daten an: 
+						\begin{itemize}
+							\item Benutzername: 'Kathi5'
+							\item Passwort: 'bSdFg7HjK'
+							\item Passwort: 'bSdFg7HjK'
+							\item E-Mailadresse: 'katharina\_hoelzl@web.de'
+							\item Anrede: 'Frau'
+							\item Name: 'Hölzl'
+							\item Vorname: 'Katharina'
+							\item Geburtsdatum: '29.05.1993'
+							\item Adresse: 'Am Kastenfeld 39'
+							\item Postleitzahl: '94081'
+							\item Ort: 'Fürstenzell'
+						\end{itemize}
+					Nach Drücken des 'registrieren'-Buttons erhält der Benutzer eine Verifizierungsmail an die angegebene Mailadresse. Diese enthält den Aktivierungslink. Durch diesen wird das Konto aktiviert und der Benutzer auf die Loginseite weitergeleitet.
+				\end{itemize}
+			\end{itemize}	
 		
 	\section{Testfälle für den registrierten Benutzer}
-		
+		\stepHc
+		\begin{itemize}
+			\item \Test{Einloggen ins System} 
+			Der Benutzer 'Kathi5' klickt auf der Startseite	auf den 'Login'-Button und wird auf die Loginseite weitergeleitet.
+			\begin{itemize}
+				\item Der Benutzer gibt seinen Benutzernamen 'Kathi5' und das falsches Passwort 'wertz6uio' ein. Nach Drücken des 'Login'-Buttons erhält er die Fehlermeldung 'Ihr Benutzername oder Ihr Passwort ist falsch'.
+				\item Der Benutzer gibt den falschen Benutzernamen 'Kathi1' und das richtige Passwort 'bSdFg7HjK' ein. Nach Drücken des 'Login'-Buttons erhält er die Fehlermeldung 'Ihr Benutzername oder Ihr Passwort ist falsch'.
+				\item Der Benutzer gibt seinen Benutzernamen 'Kathi5' und kein Passwort ein. Nach Drücken des 'Login'-Buttons erhält er die Fehlermeldung 'Ihr Benutzername oder Ihr Passwort ist falsch'.
+				\item Der Benutzer gibt seinen Benutzernamen 'Kathi5' und das richtige Passwort 'bSdFg7HjK' ein. Nach Drücken des 'Login'-Buttons wird der Benutzer auf die Seite mit seinen Kursen weitergeleitet.
+			\end{itemize}
+			\item \Test{Titel der Seite wählen} 
+			Der Kursleiter ... 		
+		\end{itemize}
 
 \section{Testfälle mit Datensatz}
 
