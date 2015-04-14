@@ -225,7 +225,7 @@ Der registrierte Benutzer verfügt über sämtliche Funktionen wie der anonyme B
 	
 \end{itemize}
 
- 
+
 \subsection{Bezahlfunktionen}
 \begin{itemize}
 	\item \Func{Guthabenkonto aufladen - online}
@@ -233,7 +233,7 @@ Der registrierte Benutzer verfügt über sämtliche Funktionen wie der anonyme B
 	über die Infosun-Bank. Die Übertragung der Kreditkartendaten erfolgt mittels SSL. Der aufgeladene Betrag ist sofort auf dem Guthabenkonto verfügbar und kann auch sofort verwendet werden.
 	\item \Func{Guthabenkonto aufladen - offline}
 	Der registrierte Nutzer kann sein Guthabenkonto auch offline aufladen. Die ist mittels Überweisung oder Barzahlung an den Betreiber oder einen Trainer möglich. 
-	Der Nutzer überweist den Betrag dafür auf das Konto des Betreibers oder bezahlt bar. Der bezahlte Betrag ist erst auf dem Guthabenkonto des registrierten Benutzers vorhanden, wenn er vom Betreiber oder einem der Trainer gutgeschrieben wurde.
+	Der Nutzer überweist dafür den Betrag unter Angabe seine BenutzerID und seines Namens  auf das Konto des Betreibers oder bezahlt bar. Der bezahlte Betrag ist erst auf dem Guthabenkonto des registrierten Benutzers vorhanden, wenn er vom Betreiber oder einem der Trainer gutgeschrieben wurde.
 	\item \Func{Kurseinheiten bezahlen}
 	Die Bezahlung von Kurseinheiten wird automatisch bei der Anmeldung zur Kurseinheit erledigt(\FuncBlue{/F11-40/}). Der registrierte Nutzer kann sich also auch nur zu der Kurseinheit anmelden, wenn sein Guthaben auf dem Konto für den Preis der Einheit ausreicht bzw. sein Kontostand nicht den vom Betreiber festgelegten Überziehungskredit überschreitet.
 	\item \Func{Rückbuchung des Kurspreises bei Abmeldung oder Kursausfall}
@@ -244,25 +244,74 @@ Der registrierte Benutzer verfügt über sämtliche Funktionen wie der anonyme B
 Jedem Trainer stehen auch alle Funktionen eines registrierten Benutzers zur Verfügung. Darüber hinaus kann ein Trainer auf folgenden Funktionen zurückgreifen.
 \stepHc
 \subsection{Kurse}
+\begin{itemize}
+	\item \Func{Eigenen Kurs editieren.}
+	\item \Func{Eigenen Kurs löschen.}
+	\item \Func{Kurseinheit anlegen.}
+	\item \Func{Kurseinheit editieren.}
+	\item \Func{Kurseinheit löschen.}
+	\item \Func{Teilnehmer zu Kurs hinzufügen.}
+	\item \Func{Teilnahmen des Kurses editieren.}
+	\item \Func{Trainer zu Kurs hinzufügen.}
+	\item \Func{Trainer aus Kurs entfernen.}
+	\item \FuncW{InvitedGuests zu Kurs hinzufügen.}
+\end{itemize}
 
 \subsection{Benachrichtigungen}
+\begin{itemize}
+	\item \Func{Benachrichtigung an Benutzergruppe senden.}
+	\item \Func{Benachrichtigung bei Kursänderung senden.}
+	
+\end{itemize}
 
 \subsection{Verwaltung}
-
+\begin{itemize}
+	\item \Func{Account bestätigen}
+\end{itemize}
 
 
 \section{Systemadministratoren}
 Jedem Systemadministrator stehen auch alle Funktionen eines Trainers zur Verfügung. Darüber hinaus kann ein Systemadministrator auf folgende Funktionen zurückgreifen.
 \stepHc
 \subsection{Kurse}
+\begin{itemize}
+	\item \Func{Kurs anlegen.}
+	\item \Func{Kurse verwalten.}
+	\item \Func{Kurs löschen.}
+\end{itemize}
 
 \subsection{Benutzer}
-
-\subsection{Benachrichtigungen}
+\begin{itemize}
+	\item \Func{Neuen Benutzer anlegen.}
+	\item \Func{Benutzer bearbeiten.}
+	\item \Func{Benutzer löschen.}
+	\item \Func{Benutzerrolle aufwerten.}
+	\item \Func{Benutzerrolle abwerten.}
+	\item \Func{Benutzer suchen.}
+\end{itemize}
 
 \subsection{Verwaltung}
-
+\begin{itemize}
+	\item \Func{Statistiken anzeigen}
+	\item \Func{Guthabenkonto aufladen}
+	\item \Func{Überziehungskredit festlegen.}
+	Der Systemadministrator kann festlegen, ob und gegebenenfalls um welchen Betrag ein registrierter Benutzer sein Guthabenkonto überziehen darf. Der Überziehungskredit nur global für alle Nutzer festgelegt werden. Dafür trägt der Systemadministrator auf der Administratorseite den Betrag, der maximal überzogen werden darf in das dafür vorgesehene Eingabefeld ein und bestätigt die Eingabe durch Betätigen der 'Speichern'-Schaltfläche.
+	Falls kein Überziehungskredit gewährt werden soll, wird als Betrag einfach 0,00 eingegeben. Dieser Wert ist auch per Default gesetzt.
+\end{itemize}
 \subsection{Systemanpassung}
+\begin{itemize}
+	\item \Func{Logo hochladen.}
+	Das Logo kann vom Systemadministrator editiert werden. Durch Klicken der 'Durchsuchen' - Schaltfläche gibt der Administrator den Pfad einer .jpg - Datei an, welche durch Betätigen der 'Speichern' - Schaltfläche hochgeladen wird. Bei Neustart der Anwendung wird die neue .jpg - Datei automatisch geladen und somit das neue Logo verwendet.
+	\item \Func{Registrierungsbestätigung festlegen.}
+	Die Art der Bestätigung einer Registrierung eines neuen Benutzers kann vom Systemadministrator festgelegt werden.
+	Vorgesehen sind die E-Mail-Verifikation oder die manuelle Bestätigung durch den Administrator. Um die Verifikationsart festzulegen, wählt der Administrator die gewünschte Möglichkeit aus der entsprechenden Drop-Down - Liste und bestätigt die Auswahl durch Betätigen der 'Speichern'- Schaltfläche.
+	\item \Func{Oberfläche editieren.}
+	Die Oberfläche kann vom Systemadministrator editiert werden. Durch Klicken der 'Durchsuchen' - Schaltfläche gibt der Administrator den Pfad einer .CSS - Datei an, welche durch Betätigen der 'Speichern' - Schaltfläche hochgeladen wird. Bei Neustart der Anwendung wird die neue .CSS - Datei automatisch geladen und somit das bearbeitete Oberfläche verwendet.
+	\item \Func{Impressum editieren.}
+	Das Impressum kann vom Systemadministrator editiert werden. Durch Klicken der 'Durchsuchen' - Schaltfläche gibt der Administrator den Pfad einer .txt - Datei an, welche durch Betätigen der 'Speichern' - Schaltfläche hochgeladen wird. Bei Neustart der Anwendung wird die neue .txt - Datei automatisch geladen und somit das bearbeitete Impressum verwendet.
+	\item \Func{Allgemeine Geschäftsbedingungen editieren.}
+	Die allgemeinen Geschäftsbedingungen können vom Systemadministrator editiert werden. Durch Klicken der 'Durchsuchen' - Schaltfläche gibt der Administrator den Pfad einer .txt - Datei an, welche durch Betätigen der 'Speichern' - Schaltfläche hochgeladen wird. Bei Neustart der Anwendung wird die neue .txt - Datei automatisch geladen und somit die bearbeiteten allgemeinen Geschäftsbedingungen verwendet.
+\end{itemize}
 		
 		
 
