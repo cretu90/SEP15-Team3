@@ -1,0 +1,69 @@
+\BOOKMARK [0][-]{chapter.1}{1 Zielbestimmung}{}% 1
+\BOOKMARK [1][-]{section.1.1}{1.1 Musskriterien}{chapter.1}% 2
+\BOOKMARK [1][-]{section.1.2}{1.2 Wunschkriterien}{chapter.1}% 3
+\BOOKMARK [1][-]{section.1.3}{1.3 Abgrenzungskriterien}{chapter.1}% 4
+\BOOKMARK [0][-]{chapter.2}{2 Produkteinsatz}{}% 5
+\BOOKMARK [1][-]{section.2.1}{2.1 Anwendungsbereiche}{chapter.2}% 6
+\BOOKMARK [1][-]{section.2.2}{2.2 Zielgruppen}{chapter.2}% 7
+\BOOKMARK [1][-]{section.2.3}{2.3 Betriebsbedingungen}{chapter.2}% 8
+\BOOKMARK [0][-]{chapter.3}{3 Produktumgebung}{}% 9
+\BOOKMARK [1][-]{section.3.1}{3.1 Software}{chapter.3}% 10
+\BOOKMARK [1][-]{section.3.2}{3.2 Hardware}{chapter.3}% 11
+\BOOKMARK [1][-]{section.3.3}{3.3 Orgware}{chapter.3}% 12
+\BOOKMARK [0][-]{chapter.4}{4 Produktfunktionen}{}% 13
+\BOOKMARK [1][-]{section.4.1}{4.1 Anonymer Benutzer}{chapter.4}% 14
+\BOOKMARK [2][-]{subsection.4.1.1}{4.1.1 Grundfunktionen}{section.4.1}% 15
+\BOOKMARK [2][-]{subsection.4.1.2}{4.1.2 Bezahlfunktionen}{section.4.1}% 16
+\BOOKMARK [1][-]{section.4.2}{4.2 Registrierter Benutzer}{chapter.4}% 17
+\BOOKMARK [2][-]{subsection.4.2.1}{4.2.1 Grundfunktionen}{section.4.2}% 18
+\BOOKMARK [2][-]{subsection.4.2.2}{4.2.2 Kursfunktionen}{section.4.2}% 19
+\BOOKMARK [2][-]{subsection.4.2.3}{4.2.3 Benachrichtigungen}{section.4.2}% 20
+\BOOKMARK [1][-]{section.4.3}{4.3 Kursadministratoren}{chapter.4}% 21
+\BOOKMARK [2][-]{subsection.4.3.1}{4.3.1 Konfiguration von Kursen}{section.4.3}% 22
+\BOOKMARK [2][-]{subsection.4.3.2}{4.3.2 Benutzergruppen und Adressbuch}{section.4.3}% 23
+\BOOKMARK [2][-]{subsection.4.3.3}{4.3.3 Monitoring}{section.4.3}% 24
+\BOOKMARK [1][-]{section.4.4}{4.4 Systemadministratoren}{chapter.4}% 25
+\BOOKMARK [2][-]{subsection.4.4.1}{4.4.1 Benutzerkonten}{section.4.4}% 26
+\BOOKMARK [2][-]{subsection.4.4.2}{4.4.2 Verwaltung der Kursen}{section.4.4}% 27
+\BOOKMARK [2][-]{subsection.4.4.3}{4.4.3 Systemanpassung}{section.4.4}% 28
+\BOOKMARK [1][-]{section.4.5}{4.5 Webservice}{chapter.4}% 29
+\BOOKMARK [0][-]{chapter.5}{5 Produktdaten}{}% 30
+\BOOKMARK [1][-]{section.5.1}{5.1 System}{chapter.5}% 31
+\BOOKMARK [2][-]{subsection.5.1.1}{5.1.1 SMTP-Server}{section.5.1}% 32
+\BOOKMARK [1][-]{section.5.2}{5.2 Kurs}{chapter.5}% 33
+\BOOKMARK [1][-]{section.5.3}{5.3 Registrierte Benutzer}{chapter.5}% 34
+\BOOKMARK [0][-]{chapter.6}{6 Produktleistungen}{}% 35
+\BOOKMARK [1][-]{section.6.1}{6.1 Produktleistungen auf Serverseite}{chapter.6}% 36
+\BOOKMARK [1][-]{section.6.2}{6.2 Produktleistungen auf Clientseite}{chapter.6}% 37
+\BOOKMARK [0][-]{chapter.7}{7 Benutzungsoberfl\344che}{}% 38
+\BOOKMARK [1][-]{subsection.7.0.1}{7.0.1 Anonymer Benutzer}{chapter.7}% 39
+\BOOKMARK [2][-]{subsection.7.0.2}{7.0.2 Registrierter Benutzer}{subsection.7.0.1}% 40
+\BOOKMARK [2][-]{subsection.7.0.3}{7.0.3 Kursadministrator}{subsection.7.0.1}% 41
+\BOOKMARK [2][-]{subsection.7.0.4}{7.0.4 Systemadministrator}{subsection.7.0.1}% 42
+\BOOKMARK [1][-]{section.7.1}{7.1 Verwaltungsoberfl\344che des Kursadministrators}{chapter.7}% 43
+\BOOKMARK [1][-]{section.7.2}{7.2 Kurseigenschaften}{chapter.7}% 44
+\BOOKMARK [1][-]{section.7.3}{7.3 Navigationsdiagramme}{chapter.7}% 45
+\BOOKMARK [2][-]{subsection.7.3.1}{7.3.1 Anonymer Benutzer}{section.7.3}% 46
+\BOOKMARK [2][-]{subsection.7.3.2}{7.3.2 Registrierter Benutzer}{section.7.3}% 47
+\BOOKMARK [2][-]{subsection.7.3.3}{7.3.3 Kursadministrator}{section.7.3}% 48
+\BOOKMARK [2][-]{subsection.7.3.4}{7.3.4 Systemadministrator}{section.7.3}% 49
+\BOOKMARK [0][-]{chapter.8}{8 Qualit\344tsbestimmungen}{}% 50
+\BOOKMARK [0][-]{chapter.9}{9 Globale Testszenarien und Testf\344lle}{}% 51
+\BOOKMARK [1][-]{section.9.1}{9.1 Testf\344lle f\374r den Systemadministrator ohne bestehenden Datensatz}{chapter.9}% 52
+\BOOKMARK [2][-]{subsection.9.1.1}{9.1.1 Setup}{section.9.1}% 53
+\BOOKMARK [2][-]{subsection.9.1.2}{9.1.2 Erstellung und Verwaltung}{section.9.1}% 54
+\BOOKMARK [2][-]{subsection.9.1.3}{9.1.3 Systemdarstellung}{section.9.1}% 55
+\BOOKMARK [1][-]{section.9.2}{9.2 Testf\344lle f\374r den Kursadministrator}{chapter.9}% 56
+\BOOKMARK [1][-]{section.9.3}{9.3 Testf\344lle f\374r anonymer Benutzer}{chapter.9}% 57
+\BOOKMARK [1][-]{section.9.4}{9.4 Testf\344lle f\374r den registrierten Benutzer}{chapter.9}% 58
+\BOOKMARK [1][-]{section.9.5}{9.5 Testf\344lle mit Datensatz}{chapter.9}% 59
+\BOOKMARK [0][-]{chapter.10}{10 Entwicklungsumgebung}{}% 60
+\BOOKMARK [1][-]{section.10.1}{10.1 Software}{chapter.10}% 61
+\BOOKMARK [2][-]{subsection.10.1.1}{10.1.1 Betriebssysteme}{section.10.1}% 62
+\BOOKMARK [2][-]{subsection.10.1.2}{10.1.2 Dokumentation}{section.10.1}% 63
+\BOOKMARK [2][-]{subsection.10.1.3}{10.1.3 Datenbank}{section.10.1}% 64
+\BOOKMARK [2][-]{subsection.10.1.4}{10.1.4 Webserver}{section.10.1}% 65
+\BOOKMARK [2][-]{subsection.10.1.5}{10.1.5 Entwicklung}{section.10.1}% 66
+\BOOKMARK [2][-]{subsection.10.1.6}{10.1.6 sonstige Software}{section.10.1}% 67
+\BOOKMARK [1][-]{section.10.2}{10.2 Orgware}{chapter.10}% 68
+\BOOKMARK [1][-]{section.10.3}{10.3 Hardware}{chapter.10}% 69
