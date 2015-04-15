@@ -473,10 +473,20 @@ Darüber hinaus sollten noch folgende Qualitätsmerkmale genannt werden, die in 
 	\section{Testfälle für den Systemadministrator ohne bestehenden Datensatz}
 		\subsection{Setup}
 			\begin{itemize}
-				\item \Test{Website einrichten} 
-				Der Administrator ... (vgl. \RefFuncBlue{/F10-20/})		
-				\item \Test{Titel der Seite wählen} 
-				Der Administrator ... 		
+				\item \Test{Installation} 
+				Der Systemadministrator startet das Installationsprogramm. (vgl. \RefFuncBlue{/F10-20/})
+						
+				\item Nach dem Start loggt sich der Administrator mit dem vorgefertigten Benutzername 'admin1' und dem Passwort 'ersterAdmin1' ein und wird auf die Adminseite weitergeleitet
+				 
+				 \item \Test{Logo hochladen} 
+				 Auf der Adminseite ändert der Systemadministrator das Logo, indem er im Bereich 'Logo ändern' auf 'Durchsuchen' klickt. Nach Auswahl der Bilddatei 'logo2.jpg' drückt der Admin die Schaltfläche 'Speichern', wodurch das Bild hochgeladen wird.
+				 
+				 \item \Test{Impressum bearbeiten}
+				 Der Systemadministrator klickt auf der Adminseite auf 'Erweiterte Einstellungen und wird auf diese weitergeleitet. Dort ändert der Systemadministrator das Impressum, indem er im Bereich 'Impressum ändern' auf 'Durchsuchen klickt. Nach Auswahl der Textdatei 'ImpressumTobi.txt' drückt der Administrator die Schaltfläche 'Speichern', wodurch die Textdatei hochgeladen wird.
+				 
+				 \item \Test{Geschäftsbedingungen editieren}
+				 Auf der Seite 'Erweiterte Einstellungen' ändert der Admin die Geschäftsbedingungen, indem er im Bereich 'Geschäftsbedingungen ändern' auf 'Durchsuchen klickt. Nach Auswahl der Textdatei 'ImpressumTobi.txt' drückt der Administrator die Schaltfläche 'Speichern', wodurch die Textdatei hochgeladen wird.
+				 
 			\end{itemize}			
 		\subsection{Erstellung und Verwaltung}
 			\begin{itemize}
@@ -524,7 +534,7 @@ Darüber hinaus sollten noch folgende Qualitätsmerkmale genannt werden, die in 
 							\item Postleitzahl: '94081'
 							\item Ort: 'Fürstenzell'
 						\end{itemize}
-					Der Benutzer wählt außerdem die Option 'E-Mail-Verifizierung' aus der Liste der Verifizierungsarten aus. Nach Drücken des 'registrieren'-Buttons erhält der Benutzer eine Verifizierungsmail an die angegebene Mailadresse. Diese enthält den Aktivierungslink. Durch diesen wird das Konto aktiviert und der Benutzer auf die Loginseite weitergeleitet.
+					Der Benutzer wählt außerdem die Option 'E-Mail-Verifizierung' aus der Liste der Verifizierungsarten aus. Nach Drücken des 'registrieren'-Buttons wird eine E-Mail an alle Trainer mit dem Aktivierungslink geschickt.
 				\end{itemize}
 			\end{itemize}	
 		
