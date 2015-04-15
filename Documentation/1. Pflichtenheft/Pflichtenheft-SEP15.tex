@@ -174,6 +174,7 @@ Der registrierte Benutzer verfügt über sämtliche Funktionen wie der anonyme B
 	Der registrierte Benutzer besitzt eine Profilseite auf welcher seine Daten gesammelt angezeigt werden. 
 	\item \Func{Ändern der eigenen Benutzerdaten.}
 	Der registrierte Benutzer kann durch Klicken der Schaltfläche 'Benutzerdaten bearbeiten' seine eingegebenen Daten bearbeiten. Sollte die E-Mail-Adresse geändert werden, wird an die neue E-Mail-Adresse wie beim Registrierungsprozess eine Bestätigungsmail mit einem neuen Authentifizierungslink geschickt, um die neue E-Mail-Adresse auf Korrektheit zu überprüfen.
+	Der registrierte Nutzer kann alle seine Benutzerdaten ändern mit Ausnahme seines Kontostands und der von System generierten BenutzerId.
 	\item \Func{Hochladen eines Profilbilds.}
 	Der registrierte Benutzer kann ein Profilbild hochladen. Als Default ist ein Dummy - Bild gesetzt.
 	\item \Func{Anzeigen des aktuellen Kontostands.}
@@ -248,10 +249,10 @@ Jedem Trainer stehen auch alle Funktionen eines registrierten Benutzers zur Verf
 	\item \Func{Eigene Kurse anzeigen.}
 	Auf der Trainerseite werden die Kurse, welche der Trainer trainiert gesammelt angezeigt.
 	\item \Func{Eigenen Kurs editieren.}
-	Der Trainer hat die Möglichkeit, die Kurse die er  trainiert zu editieren. Dafür klickt er in seinen Trainingskursen den gewünschten Kurs an und wird auf die 'Kurs bearbeiten' - Seite weitergeleitet. 
-	Dort kann er die Kursdaten bearbeiten. Durch Betätigen der 'Speichern' - Schaltfläche werden die Kursdaten gespeichert.
+	Der Trainer hat die Möglichkeit, die Kurse, die er  trainiert zu editieren. Dafür klickt er in seinen Trainingskursen den gewünschten Kurs an und wird auf die 'Kurs bearbeiten' - Seite weitergeleitet. 
+	Dort kann er die Kursdaten bearbeiten. Er kann alle Kursdaten verändern mit Ausnahme der vom System generierten KursId. Durch Betätigen der 'Speichern' - Schaltfläche werden die Kursdaten gespeichert.
 	\item \Func{Eigenen Kurs löschen.}
-	Der Trainer hat die Möglichkeit, die Kurse die er  trainiert zu löschen. Dafür klickt er in seinen Trainingskursen den gewünschten Kurs an und wird dann auf die 'Kurs bearbeiten' - Seite weitergeleitet. 
+	Der Trainer hat die Möglichkeit, die Kurse, die er  trainiert zu löschen. Dafür klickt er in seinen Trainingskursen den gewünschten Kurs an und wird dann auf die 'Kurs bearbeiten' - Seite weitergeleitet. 
 	Dort kann er den Kurs durch Betätigen der 'Kurs löschen' - Schaltfläche löschen.
 	\item \Func{Kurseinheit anlegen.}
 	Der Trainer hat die Möglichkeit Kurseinheiten für einen Kurs anzulegen, welchen er trainiert. Dafür wechselt er in die 'Kurs bearbeiten' - Oberfläche, trägt die Daten der Kurseinheit ein und legt die Kurseinheit durch Betätigen der Schaltfläche 'Kurs anlegen' an. Die Kurseinheiten können nur in dem Zeitraum zwischen Startzeitpunkt und Endzeitpunkt des zugehörigen Kurses stattfinden.
@@ -297,7 +298,7 @@ Jedem Systemadministrator stehen auch alle Funktionen eines Trainers zur Verfüg
 	\item \Func{Kurse verwalten.}
 	Der Systemadministrator besitzt eine Übersicht über alle Kurse. Diese erreicht er über die Schaltfläche 'Kurse verwalten' der Administratorseite. Auf dieser Seite wird als Default das gesamte Kursangebot angezeigt. Der Administrator hat aber die Möglichkeit die Anzeige nach Parametern einzuschränken. Dafür wählt er aus einer Drop - Down - Liste einen Parameter und gibt in ein Eingabefeld seinen Suchbegriff ein. Durch Betätigen der Schaltfläche 'Anzeigen' werden die gesuchten Kurse angezeigt. Durch Klicken auf ein einen Kurs wird der Administrator auf die 'Kurs bearbeiten' - Seite weitergeleitet.
 	\item \Func{Kurs bearbeiten.}
-	Der Systemadministrator hat die Möglichkeit einen beliebigen Kurs zu bearbeiten. Dafür sucht er den Kurs über die 'Kurse verwalten' - Seite und wechselt durch Doppelklicken auf den gesuchten Kurs in die 'Kurs bearbeiten' - Oberfläche. Der Administrator kann nun die Kursdaten editieren, Kurseinheiten anlegen, löschen oder editieren, Trainer zum Kurs hinzufügen oder entfernen und die Teilnahmen des Kurses editieren.
+	Der Systemadministrator hat die Möglichkeit einen beliebigen Kurs zu bearbeiten. Dafür sucht er den Kurs über die 'Kurse verwalten' - Seite und wechselt durch Doppelklicken auf den gesuchten Kurs in die 'Kurs bearbeiten' - Oberfläche. Der Administrator kann nun die Kursdaten editieren mit Ausnahme der vom System generierten KursId. Des Weiteren kann er Kurseinheiten anlegen, löschen oder editieren, Trainer zum Kurs hinzufügen oder entfernen und die Teilnahmen des Kurses editieren.
 	\item \Func{Kurs löschen.}
 	Der Systemadministrator hat die Möglichkeit einen beliebigen Kurs zu löschen. Dafür sucht er den zu löschenden Kurs über 'Kurse verwalten' - Seite und wechselt durch Doppelklicken auf den gesuchten Kurs in die 'Kurs bearbeiten' - Oberfläche. Durch Betätigen der 'Kurs löschen' - Schaltfläche wird der Kurs gelöscht.
 \end{itemize}
@@ -310,7 +311,7 @@ Jedem Systemadministrator stehen auch alle Funktionen eines Trainers zur Verfüg
 	\item \Func{Benutzer verwalten.}
 	Der Systemadministrator besitzt eine Übersicht über alle Benutzer. Diese erreicht er über die Schaltfläche 'Benutzer verwalten' der Administratorseite. Auf dieser Seite werden als Default alle Benutzer angezeigt. Der Administrator hat aber die Möglichkeit die Anzeige nach Parametern einzuschränken. Dafür wählt er aus einer Drop - Down - Liste einen Parameter aus und gibt in ein Eingabefeld seinen Suchbegriff ein. Durch Betätigen der Schaltfläche 'Anzeigen' werden die gesuchten Benutzer angezeigt. Durch Klicken auf ein einen Benutzer wird der Administrator auf die 'Benutzer bearbeiten' - Seite weitergeleitet.
 	\item \Func{Benutzer bearbeiten.}
-	Der Systemadministrator hat die Möglichkeit einen beliebigen registrierten Nutzer zu bearbeiten. Dafür sucht er den Benutzer über die 'Benutzer verwalten' - Seite und wechselt durch Doppelklicken auf den gesuchten Benutzer in die 'Benutzer bearbeiten' - Oberfläche. Der Administrator kann nun die Benutzerdaten editieren oder die Benutzerrolle verändern. Durch Betätigen der 'Speichern' - Schaltfläche werden die Daten gespeichert.
+	Der Systemadministrator hat die Möglichkeit einen beliebigen registrierten Nutzer zu bearbeiten. Dafür sucht er den Benutzer über die 'Benutzer verwalten' - Seite und wechselt durch Doppelklicken auf den gesuchten Benutzer in die 'Benutzer bearbeiten' - Oberfläche. Der Administrator kann nun die Benutzerdaten editieren oder die Benutzerrolle verändern. Der Administrator kann alle Benutzerdaten verändern mit Ausnahme der vom System generierten BenutzerId. Durch Betätigen der 'Speichern' - Schaltfläche werden die Daten gespeichert.
 	\item \Func{Benutzer löschen.}
 	Der Systemadministrator hat die Möglichkeit einen beliebigen Benutzer zu löschen. Dafür sucht er den zu löschenden Benutzer über die 'Benutzer verwalten' - Seite und wechselt durch Doppelklicken auf den gesuchten Benutzer in die 'Benutzer bearbeiten' - Oberfläche. Durch Betätigen der 'Benutzer löschen' - Schaltfläche wird der Benutzer gelöscht. Nur der Administrator hat die Möglichkeit Benutzer zu löschen. Andernfalls könnte ein \glqq Nicht - Administrator\grqq \ einen Benutzer und damit auch sein Guthaben bzw. seine eventuellen Schulden löschen.
 	\item \Func{Benutzerrolle aufwerten.}
