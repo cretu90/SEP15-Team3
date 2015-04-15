@@ -251,7 +251,7 @@ Jedem Trainer stehen auch alle Funktionen eines registrierten Benutzers zur Verf
 	\item \Func{Kurseinheit editieren.}
 	\item \Func{Kurseinheit löschen.}
 	\item \Func{Teilnehmer zu Kurs hinzufügen.}
-	\item \Func{Teilnahmen des Kurses editieren.}
+	\item \Func{Teilnahmer aus Kurs entfernen.}
 	\item \Func{Trainer zu Kurs hinzufügen.}
 	\item \Func{Trainer aus Kurs entfernen.}
 	\item \FuncW{InvitedGuests zu Kurs hinzufügen.}
@@ -260,8 +260,7 @@ Jedem Trainer stehen auch alle Funktionen eines registrierten Benutzers zur Verf
 \subsection{Benachrichtigungen}
 \begin{itemize}
 	\item \Func{Benachrichtigung an Benutzergruppe senden.}
-	\item \Func{Benachrichtigung bei Kursänderung senden.}
-	
+	\item \Func{Benachrichtigung bei Kursänderung senden.}	
 \end{itemize}
 
 \subsection{Verwaltung}
@@ -293,7 +292,9 @@ Jedem Systemadministrator stehen auch alle Funktionen eines Trainers zur Verfüg
 \subsection{Verwaltung}
 \begin{itemize}
 	\item \Func{Statistiken anzeigen}
+	Der Systemadministrator hat die Möglichkeit sich Statistiken bezüglich der Einnahmen anzusehen. Er kann dafür aus verschiedenen Parametern wählen, welche Statistik angezeigt werden soll. Die Auswahl der Parameter erfolgt über eine Drop-Down - Liste. Vorgesehene Parameter sind für die Statistik sind Einnahmen pro 'Tag', pro 'Woche', pro 'Trainer', pro 'Kurs'. Bei Wahl eines der Parameter 'Tag', 'Woche' oder 'Trainer' ist ein graphische Darstellung in Form eines Säulendiagramms vorgesehen. Bei Parameter 'Tag' werden die Einnahmen der letzten sieben Tage angezeigt, bei Parameter 'Woche' die Einnahmen der letzten vier Wochen. Bei Wahl des Parameters 'Kurs' ist aufgrund der Menge von Kursen eine tabellarische Anzeige vorgesehen. Durch Betätigen der Schaltfläche 'Anzeigen' wird die gewählte Statistik angezeigt.
 	\item \Func{Guthabenkonto aufladen}
+	Der Systemadministrator hat die Möglichkeit das Guthabenkonto von  registrierten Nutzern manuell aufzuladen. Damit kann er \glqq Offline - Aufladungen\grqq (vgl. \FuncBlue{/F20-240/}) des Guthabenkontos eines registrierten Nutzers auf dessen Konto Konto im System weitergeben. Die Kontoaufladung erreicht der Administrator über die entsprechende Schaltfläche auf der Administratorseite. Durch Betätigen der Schaltfläche 'Konto aufladen' wird er auf die Aufladeseite weitergeleitet. Dort kann der gibt der Administrator die Benutzerdaten(u.a. die BenutzerID) und den aufzuladenden Betrag ein. Durch Betätigen der Schaltfläche 'Speichern' wird das Konto des Nutzers aufgeladen.
 	\item \Func{Überziehungskredit festlegen.}
 	Der Systemadministrator kann festlegen, ob und gegebenenfalls um welchen Betrag ein registrierter Benutzer sein Guthabenkonto überziehen darf. Der Überziehungskredit nur global für alle Nutzer festgelegt werden. Dafür trägt der Systemadministrator auf der Administratorseite den Betrag, der maximal überzogen werden darf in das dafür vorgesehene Eingabefeld ein und bestätigt die Eingabe durch Betätigen der 'Speichern'-Schaltfläche.
 	Falls kein Überziehungskredit gewährt werden soll, wird als Betrag einfach 0,00 eingegeben. Dieser Wert ist auch per Default gesetzt.
