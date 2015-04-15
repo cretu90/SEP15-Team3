@@ -527,7 +527,7 @@ Darüber hinaus sollten noch folgende Qualitätsmerkmale genannt werden, die in 
 							\item Postleitzahl: '94081'
 							\item Ort: 'Fürstenzell'
 						\end{itemize}
-					Nach Drücken des 'registrieren'-Buttons erhält der Benutzer eine Verifizierungsmail an die angegebene Mailadresse. Diese enthält den Aktivierungslink. Durch diesen wird das Konto aktiviert und der Benutzer auf die Loginseite weitergeleitet.
+					Der Benutzer wählt außerdem die Option 'E-Mail-Verifizierung' aus der Liste der Verifizierungsarten aus. Nach Drücken des 'registrieren'-Buttons erhält der Benutzer eine Verifizierungsmail an die angegebene Mailadresse. Diese enthält den Aktivierungslink. Durch diesen wird das Konto aktiviert und der Benutzer auf die Loginseite weitergeleitet.
 				\end{itemize}
 			\end{itemize}	
 		
@@ -557,9 +557,11 @@ Darüber hinaus sollten noch folgende Qualitätsmerkmale genannt werden, die in 
 			
 			\begin{itemize}
 				\item \Test{Kurs anmelden} 
-				Der Benutzer 'Kathi5' klickt im Register 'Meine Kurse' auf die Schaltfläche 'Weitere Kurse' und bekommt die einzelnen Kurse auf der Kursangebotsseite angezeigt. Im Kursangebot sucht 'Kathi5' nach dem Kurs 'Yoga'. Durch Doppelklicken auf den gefundenen Kurs erhält der Benutzer die Detailansicht des Kurses 'Yoga'. 'Kathi5' meldet sich durch klicken auf den Button 'Anmelden' in der Detailansicht für den Kurs 'Yoga' an.	
+				Der Benutzer 'Kathi5' klickt im Register 'Meine Kurse' auf die Schaltfläche 'Weitere Kurse' und bekommt die einzelnen Kurse auf der Kursangebotsseite angezeigt. Im Kursangebot sucht 'Kathi5' nach dem Kurs 'Yoga'. Durch Doppelklicken auf den gefundenen Kurs erhält der Benutzer die Detailansicht des Kurses 'Yoga', welcher regelmäßig am Dienstag von 16 Uhr bis 17:30 Uhr angeboten wird und kostenlos ist. 'Kathi5' meldet sich durch klicken auf den Button 'Anmelden' in der Detailansicht für den Kurs 'Yoga' an.	
+				
 				\item \Test{Kurseinheiten anmelden} 
 				Der Nutzer 'Kathi5'	klickt im Register 'Meine Kurse' auf den Kurs 'Yoga' und erhält dessen Detailansicht. Durch Klicken des Buttons 'Alle Einheiten auswählen' und anschließend der Schaltfläche 'Anmelden' trägt sich der Benutzer nun in alle verfügbaren Kurseinheiten ein.
+				
 				\item \Test{Kurs bezahlen}
 				Der Benutzer 'Kathi5' meldet sich außerdem auf der Kursangebotsseite für den Kurs 'Standardtanz' an. Durch Doppelklick auf den Kurs erhält der Nutzer die Detailansicht und wählt die folgenden Einheiten aus:
 					\begin{itemize}
@@ -567,7 +569,26 @@ Darüber hinaus sollten noch folgende Qualitätsmerkmale genannt werden, die in 
 						\item Montag 11.05.2015 18-20 Uhr
 						\item Montag 25.05.2015 18-20 Uhr		
 					\end{itemize}	
-				Durch drücken der Schaltfläche 'Anmelden' trägt sich 'Kathi5' in die ausgewählten Kurseinheiten ein. Da eine Kurseinheit 15 Euro kostet werden automatisch durch das Anmelden 45 Euro von seinem Guthabenkonto abgebucht.
+				Durch Drücken der Schaltfläche 'Anmelden' trägt sich 'Kathi5' in die ausgewählten Kurseinheiten ein. Da eine Kurseinheit 15 Euro kostet werden automatisch durch das Anmelden 45 Euro von seinem Guthabenkonto abgebucht.
+				
+				\item \Test{eigenen Termin in den persönlichen Terminplaner eintragen}
+				Über das Register 'Terminplaner' lässt sich 'Kathi5' ihren persönlichen Terminplaner anzeigen. Es existieren im Planer bereits der Yogakurs am Dienstag von 16 Uhr bis 17:30 Uhr und der Kurs 'Standardtanz' am Montag von 18 bis 20 Uhr. Der Benutzer trägt unter dem Terminplaner in der Zeile 'neuer Kurs' folgende Daten ein:
+					\begin{itemize}
+						\item Name: Fußball
+						\item Datum: 14.05.2015
+						\item Zeit von 17:00 bis 20:00 Uhr
+						\item Ort: Trainingsfeld		
+					\end{itemize}
+				Durch Klicken auf die Schaltfläche 'Eintragen' wird dieser Termin in den persönlichen Terminplaner eingetragen.
+				
+				\item \Test{Kurseinheit abmelden und Rückbuchung des Kurspreises}
+				Der Benutzer 'Kathi5' klickt in der Detailansicht des Kurses 'Standardtanz' auf die Kurseinheit 'Montag 25.05.2015 18-20 Uhr' und Drückt den Button 'Abmelden'. Dadurch wurde 'Kathi5' aus dieser Kurseinheit ausgetragen und der Betrag von 15 Euro wird automatisch auf das Guthabenkonto rückgebucht. 
+				
+				\item \Test{aktuelles Guthaben ansehen}
+				Der Nutzer 'Kathi5' klickt auf die Registerkarte 'Mein Profil'. Hier wird der aktuelle Kontostand von 20 Euro angezeigt.
+				
+				\item \Test{Kursdetails empfangen}
+				'Kathi5' klickt in der Detailansicht des Kurses 'Yoga' auf die das Auswahlfeld 'Kursdetails empfangen' und erhält so bei Veränderungen eine Infomail.
 			\end{itemize}
 \section{Testfälle mit Datensatz}
 
