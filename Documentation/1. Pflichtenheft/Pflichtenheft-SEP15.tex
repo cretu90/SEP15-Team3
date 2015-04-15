@@ -435,33 +435,40 @@ Jedem Systemadministrator stehen auch alle Funktionen eines Trainers zur Verfüg
             
          
 \chapter{Qualitätsbestimmungen}
+Im Folgenden wird aufgeführt auf welche Qualitätsmerkmale der Webanwendung Wert gelegt wird. Diese orientieren sich an der Norm \textit{ISO/IEC~9126}, welche ein Modell zur Sicherstellung von Softwarequalität darstellt. In wie weit die verschiedenen Qualitätsmerkmale Einfluss auf die Webanwendung nehmen sollen, wird in der unten gezeigten Tabelle \ref{qTabelle} definiert.\\
 
 \begin{table}[h]
  
     \begin{center}
     \begin{tabular}{|l|c|}
     \hline 
-    \rule[-1ex]{0pt}{2.5ex} \textbf{Qualitätskriterium} & \textbf{Bedeutung} \\ 
+    \rule[-1ex]{0pt}{2.5ex} \textbf{Qualitätskriterium} & \textbf{Stellenwert} \\ 
     \hline 
-    \rule[-1ex]{0pt}{2.5ex} Funktionalität &  \\ 
+    \rule[-1ex]{0pt}{2.5ex} Funktionalität & sehr wichtig \\ 
     \hline 
-    \rule[-1ex]{0pt}{2.5ex} Zuverlässigkeit &  \\ 
+    \rule[-1ex]{0pt}{2.5ex} Zuverlässigkeit & sehr wichtig \\ 
     \hline 
-    \rule[-1ex]{0pt}{2.5ex} Benutzbarkeit &  \\ 
+    \rule[-1ex]{0pt}{2.5ex} Benutzbarkeit & sehr wichtig \\ 
     \hline 
-    \rule[-1ex]{0pt}{2.5ex} Effizienz &  \\ 
+    \rule[-1ex]{0pt}{2.5ex} Effizienz & wichtig \\ 
     \hline 
-    \rule[-1ex]{0pt}{2.5ex} Änderbarkeit &  \\ 
+    \rule[-1ex]{0pt}{2.5ex} Änderbarkeit & weniger wichtig \\ 
     \hline 
-    \rule[-1ex]{0pt}{2.5ex} Übertragbarkeit &  \\ 
+    \rule[-1ex]{0pt}{2.5ex} Übertragbarkeit & weniger wichtig \\ 
     \hline   
     \end{tabular}  
     \end{center}
-    \caption{+: weniger wichtig, ++: wichtig, +++: sehr wichtig} 
+    \caption{Qualitätsmerkmale und ihre zugewiesene Priorität} 
     \label{qTabelle}   
 \end{table}
     
-Darüber hinaus sollten noch folgende Qualitätsmerkmale genannt werden, die in der Norm nicht berücksichtigt werden:
+Darüber hinaus sollten noch folgende Qualitätsmerkmale genannt werden, welchen ein besonders hoher oder ein, zur Abgrenzung, geringer Stellenwert zugesprochen wird:
+ \begin{itemize}
+ 	\item Die Verwendung des Systems soll für den Benutzer einfach und intuitiv möglich sein, weshalb die Benutzbarkeit als sehr wichtig einzustufen ist.
+ 	\item Die Benutzung soll komplett im Browser möglich sein, wobei jedoch die Kompatibilität mit älteren Browsern als definiert nicht berücksichtigt wird.
+ 	\item Personenbezogene Daten und im Speziellen die Bankverbindung sind vor unberechtigtem Zugriff von außen zu schützen.
+ 	\item Geldtransaktionen sind ebenfalls besonders zu schützen, vor allem die Konsistenz aller Bezahlaktionen.
+ \end{itemize}
  
 \resetAllCounter
 \newcommand{\Test}[1]{\stepcounter{Lc}\textcolor{Brown}{\textbf{/T\arabic{Hc}0-\arabic{Lc}0/} #1} \\}
