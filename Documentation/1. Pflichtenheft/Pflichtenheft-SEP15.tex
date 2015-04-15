@@ -138,7 +138,7 @@ Die Produktfunktionen sind nach Benutzergruppen geordnet. Wunschkriterien sind m
 	\item \Func{Aufruf der Startseite.}
 	Die Startseite kann mit jedem unterstützen Browser(vgl. Produktumgebung) via URL aufgerufen werden.
 	\item \Func{Registrierung im System durch Ausfüllen eines Formulars.}
-	Der Nutzer kann sich durch ausfüllen eines Registrierungsformulars im System registrieren. Nach Abschicken des Formulars gibt es zwei Möglichkeiten um den Account zu aktivieren. Entweder erhält der Nutzer eine E-Mail an die von ihm angegebene Adresse, welche einen Aktivierungslink enthält oder der Account wird vom Betreiber bzw. einem Trainer freigeschaltet. Welche der beiden Möglichkeiten zum Einsatz kommt, ist vom Administrator in seinen Einstellungen für das System auszuwählen.
+	Der Nutzer kann sich durch ausfüllen eines Registrierungsformulars im System registrieren. Die Anwendung generiert für den neu registrierte Nutzer automatisch eine im System eindeutige Identifikationsnummer. Nach Abschicken des Formulars gibt es zwei Möglichkeiten um den Account zu aktivieren. Entweder erhält der Nutzer eine E-Mail an die von ihm angegebene Adresse, welche einen Aktivierungslink enthält oder der Account wird vom Betreiber bzw. einem Trainer freigeschaltet. Welche der beiden Möglichkeiten zum Einsatz kommt, ist vom Administrator in seinen Einstellungen für das System auszuwählen.
 	\item \Func{Sicheres Einloggen ins System.}
 	Durch Eingabe des Benutzernamen,des Passworts und Klicken der 'Anmelden' - Schaltflächen kann sich der Benutzer ins System einloggen. Die Anmeldedaten werden dabei mittels SSL übertragen.
 	\item \Func{Anzeigen des Kursangebots.}
@@ -174,7 +174,7 @@ Der registrierte Benutzer verfügt über sämtliche Funktionen wie der anonyme B
 	Der registrierte Benutzer besitzt eine Profilseite auf welcher seine Daten gesammelt angezeigt werden. 
 	\item \Func{Ändern der eigenen Benutzerdaten.}
 	Der registrierte Benutzer kann durch Klicken der Schaltfläche 'Benutzerdaten bearbeiten' seine eingegebenen Daten bearbeiten. Sollte die E-Mail-Adresse geändert werden, wird an die neue E-Mail-Adresse wie beim Registrierungsprozess eine Bestätigungsmail mit einem neuen Authentifizierungslink geschickt, um die neue E-Mail-Adresse auf Korrektheit zu überprüfen.
-	Der registrierte Nutzer kann alle seine Benutzerdaten ändern mit Ausnahme seines Kontostands und der vom System generierten BenutzerId.
+	Der registrierte Nutzer kann alle seine Benutzerdaten ändern mit Ausnahme seines Kontostands und der vom System generierten Identifikationsnummer.
 	\item \Func{Hochladen eines Profilbilds.}
 	Der registrierte Benutzer kann ein Profilbild hochladen. Als Default ist ein Dummy - Bild gesetzt.
 	\item \Func{Anzeigen des aktuellen Kontostands.}
@@ -311,7 +311,7 @@ Jedem Systemadministrator stehen auch alle Funktionen eines Trainers zur Verfüg
 	\item \Func{Benutzer verwalten.}
 	Der Systemadministrator besitzt eine Übersicht über alle Benutzer. Diese erreicht er über die Schaltfläche 'Benutzer verwalten' der Administratorseite. Auf dieser Seite werden als Default alle Benutzer angezeigt. Der Administrator hat aber die Möglichkeit die Anzeige nach Parametern einzuschränken. Dafür wählt er aus einer Drop - Down - Liste einen Parameter aus und gibt in ein Eingabefeld seinen Suchbegriff ein. Durch Betätigen der Schaltfläche 'Anzeigen' werden die gesuchten Benutzer angezeigt. Durch Klicken auf ein einen Benutzer wird der Administrator auf die 'Benutzer bearbeiten' - Seite weitergeleitet.
 	\item \Func{Benutzer bearbeiten.}
-	Der Systemadministrator hat die Möglichkeit einen beliebigen registrierten Nutzer zu bearbeiten. Dafür sucht er den Benutzer über die 'Benutzer verwalten' - Seite und wechselt durch Doppelklicken auf den gesuchten Benutzer in die 'Benutzer bearbeiten' - Oberfläche. Der Administrator kann nun die Benutzerdaten editieren oder die Benutzerrolle verändern. Der Administrator kann alle Benutzerdaten verändern mit Ausnahme der vom System generierten BenutzerId. Durch Betätigen der 'Speichern' - Schaltfläche werden die Daten gespeichert.
+	Der Systemadministrator hat die Möglichkeit einen beliebigen registrierten Nutzer zu bearbeiten. Dafür sucht er den Benutzer über die 'Benutzer verwalten' - Seite und wechselt durch Doppelklicken auf den gesuchten Benutzer in die 'Benutzer bearbeiten' - Oberfläche. Der Administrator kann nun die Benutzerdaten editieren oder die Benutzerrolle verändern. Der Administrator kann alle Benutzerdaten verändern mit Ausnahme der vom System generierten Identifikationsnummer. Durch Betätigen der 'Speichern' - Schaltfläche werden die Daten gespeichert.
 	\item \Func{Benutzer löschen.}
 	Der Systemadministrator hat die Möglichkeit einen beliebigen Benutzer zu löschen. Dafür sucht er den zu löschenden Benutzer über die 'Benutzer verwalten' - Seite und wechselt durch Doppelklicken auf den gesuchten Benutzer in die 'Benutzer bearbeiten' - Oberfläche. Durch Betätigen der 'Benutzer löschen' - Schaltfläche wird der Benutzer gelöscht. Nur der Administrator hat die Möglichkeit Benutzer zu löschen. Andernfalls könnte ein \glqq Nicht - Administrator\grqq \ einen Benutzer und damit auch sein Guthaben bzw. seine eventuellen Schulden löschen.
 	\item \Func{Benutzerrolle aufwerten.}
