@@ -217,7 +217,7 @@ Der registrierte Benutzer verfügt über sämtliche Funktionen wie der anonyme B
 	Der registrierte Benutzer hat die Möglichkeit sich das Kursangebot anzeigen zu lassen. Dafür wählt er die entsprechende Registerkarte aus.Als Default wird dabei das Angebot des aktuellen Tages angezeigt. Als weitere Anzeigezeiträume stehen 'Wochenangebot' und 'Gesamtes Angebot' zur Verfügung. Die Anzeigezeiträume werden über eine Drop - Down - Liste ausgewählt und durch Klicken der Schaltfläche 'Anzeigen' wird die Auswahl angezeigt(vgl. \FuncBlue{/F00-40/}).
 	\item \Func{Nach Kursen suchen - erweitert.}
 	Der registrierte Nutzer hat die Möglichkeit das gesamte Kursangebot zu durchsuchen. Über eine Drop-Down-Liste kann der Nutzer einen Suchparameter auswählen. Nach Eingabe eines Suchbegriffs und Klicken der Schaltfläche 'Suchen' wird das Kursangebot nach dem Suchbegriff bzgl. des Suchparameters durchsucht und das Ergebnis angezeigt. 
-	Als Suchparameter sind vorgesehen 'Kursname', 'Ort', 'Trainer', 'Datum', 'Zeit', 'Kostenpflichtig', 'Kostenlos'.
+	Als Suchparameter sind vorgesehen 'KursId', 'Kursname', 'Ort', 'Trainer', 'Datum', 'Zeit', 'Kostenpflichtig', 'Kostenlos'.
 	\item \Func{Kurse sortieren - erweitert.}
 	Der registrierte Nutzer hat die Möglichkeit das angezeigte Kursangebot zu sortieren. Als Sortiermöglichkeiten sind vorgesehen alphabetisch nach 'Kursname', 'Ort' oder 'Trainer' und chronologisch nach 'Datum' oder 'Uhrzeit'.
 	\item \Func{Für Kursbenachrichtigungen eintragen}
@@ -245,6 +245,7 @@ Jedem Trainer stehen auch alle Funktionen eines registrierten Benutzers zur Verf
 \stepHc
 \subsection{Kurse}
 \begin{itemize}
+	\item \Func{Eigene Kurse anzeigen.}
 	\item \Func{Eigenen Kurs editieren.}
 	\item \Func{Eigenen Kurs löschen.}
 	\item \Func{Kurseinheit anlegen.}
@@ -266,6 +267,7 @@ Jedem Trainer stehen auch alle Funktionen eines registrierten Benutzers zur Verf
 \subsection{Verwaltung}
 \begin{itemize}
 	\item \Func{Account bestätigen}
+	Der Trainer hat die Möglichkeit Accounts zu bestätigen, falls dies durch den Administrator in den Registrierungsbestätigung(\FuncBlue{/F40-140/}) so festgelegt wurde. Registriert sich ein Benutzer neu und ist die Bestätigung von Accounts auf manuell durch den Trainer eingestellt, so erhalten bei erfolgreicher Registrierung des Nutzers alle Trainer eine E-Mail mit dem Aktivierungslink für den Account. Sobald dieser Link von einem Trainer erstmalig geklickt wird, ist der Account freigeschaltet. Erst jetzt kann sich der registrierte Nutzer im System anmelden. Mehrmaliges Betätigen des Links hat keine Auswirkung.
 \end{itemize}
 
 
@@ -275,7 +277,9 @@ Jedem Systemadministrator stehen auch alle Funktionen eines Trainers zur Verfüg
 \subsection{Kurse}
 \begin{itemize}
 	\item \Func{Kurs anlegen.}
+	Der Systemadministrator kann einen neuen Kurs anlegen. Dafür betätigt der Administrator die entsprechende Schaltfläche auf der Administratorseite und wir auf die 'Kurs anlegen' - Seite weitergeleitet. Die Anwendung generiert automatisch eine für den Kurs im System eindeutige Identifikationsnummer. Der Administrator hat die Möglichkeit noch weitere Daten, wie eine Beschreibung zum Kurs einzugeben. Notwendige Eingaben sind der Startzeitpunkt, der Endzeitpunkt und mindestens ein Trainer für den Kurs. Innerhalb des Zeitraum von Startzeitpunkt bis Endzeitpunkt können Kurseinheiten stattfinden(\FuncBlue{/F30-40/}).
 	\item \Func{Kurse verwalten.}
+	\item \Func{Kurs bearbeiten.}
 	\item \Func{Kurs löschen.}
 \end{itemize}
 
