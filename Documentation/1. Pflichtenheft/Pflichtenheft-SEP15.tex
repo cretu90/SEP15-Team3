@@ -528,7 +528,7 @@ Darüber hinaus sollten noch folgende Qualitätsmerkmale genannt werden, die in 
 					\item Name: 'Standardtanz'
 					\item Beschreibung: '???'
 					\item Startzeitpunkt: '04.05.2015'
-					\item Endzeitpunkt: '29.06.2015'
+					\item Endzeitpunkt: '30.06.2015'
 					\item Termine: 'wöchentlich 18:00 bis 20:00 Uhr'
 					\item Ort: 'Turnhalle'
 					\item Preis: '15 Euro'
@@ -547,11 +547,31 @@ Darüber hinaus sollten noch folgende Qualitätsmerkmale genannt werden, die in 
 	\section{Testfälle für den Kursadministrator}
 		\stepHc
 		\begin{itemize}
-			\item \Test{Kurs einrichten} 
-			Der Kursleiter ... 		
-			\item \Test{Titel der Seite wählen} 
-			Der Kursleiter ... 		
-		\end{itemize}	
+			\item \Test{eigenen Kurs editieren} 
+			Der Kursadministrator 'Basti3' klickt in seinen Trainingskursen den Kurs 'Yoga' an und wird auf die 'Kurs-bearbeiten'-Seite weitergeleitet. Dort ändert der Trainer den Startzeitpunkt des Kurses auf den '04.05.2015' und bestätigt seine Änderung durch Drücken des Button 'Speichern'.
+				
+			\item \Test{Kurseinheiten festlegen} 
+			Der Kursadministrator 'Basti3' klickt in seinen Trainingskursen den Kurs 'Standardtanz' an und wird auf die 'Kurs-bearbeiten'-Seite weitergeleitet. Dort legt er folgende Kurseinheiten an:
+				\begin{itemize}
+					\item 04.05.2015
+					\item 11.05.2015
+					\item 18.05.2015
+					\item 25.05.2015
+					\item 01.06.2015
+					\item 01.06.2015
+					\item 08.06.2015
+					\item 15.06.2015
+					\item 22.06.2015
+					\item 29.06.2015
+				\end{itemize}	
+			Anschließend bestätigt der Kursadministrator die Kurseinheiten durch Drücken des Buttons 'Kurs anlegen'.
+			
+			\item \Test{Kurseinheiten editieren}
+			Der Trainer 'Basti3' klickt in der Detailansicht des Kurses 'Standardtanz' den Button 'Bearbeiten' an und wird auf die Seite 'Kurseinheit bearbeiten' weitergeleitet. 'Basti3' ändert die letzte Kurseinheit vom '29.06.2015' auf den '30.06.2015' und bestätigt durch Klicken auf den Button 'Speichern'.
+			
+			\item \Test{Kurseinheit löschen}
+			Der Trainer wählt auf der 'Kurs bearbeiten'-Seite die Checkbox '30.06.2015' aus. Durch Drücken des Buttons 'Löschen' entfernt der Kursadministrator diese Kurseinheit. '??? Hacken entfernen  bedeutet löschen???'			
+		\end{itemize}
 		
 			
 	\section{Testfälle für anonymer Benutzer}
