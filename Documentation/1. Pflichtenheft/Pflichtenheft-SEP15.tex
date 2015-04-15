@@ -490,6 +490,9 @@ Darüber hinaus sollten noch folgende Qualitätsmerkmale genannt werden, die in 
 				\item \Test{Überziehungskredit festlegen} 
 				Auf der Adminseite legt der Systemadministrator den Überziehungskredit auf 10 Euro fest und bestätigt durch Drücken der Schaltfläche 'Speichern'.
 				
+				\item \Test{Registrierungsbestätigung festlegen}
+				'???'
+				
 				\item \Test{neuen Benutzer anlegen} 
 				Auf der Adminseite klickt der Administrator auf die Schaltfläche 'Benutzer anlegen' und wird auf die Seite 'neuen Benutzer anlegen' weitergeleitet. Hier gibt der Admin folgende Daten ein:
 					\begin{itemize}
@@ -505,6 +508,22 @@ Darüber hinaus sollten noch folgende Qualitätsmerkmale genannt werden, die in 
 						\item Ort: '???'
 					\end{itemize}
 				Als Rolle wird 'Trainer' festgelegt. Durch Klicken des Buttons 'Speichern' bestätigt der Admin die Daten und der neue Benutzer ist angelegt.	
+				
+				\item \Test{neuen Benutzer anlegen} 
+				Auf der Adminseite klickt der Administrator auf die Schaltfläche 'Benutzer anlegen' und wird auf die Seite 'neuen Benutzer anlegen' weitergeleitet. Hier gibt der Admin folgende Daten ein:
+					\begin{itemize}
+						\item Benutzername: 'Ricky1' 
+						\item Passwort: "vBnMk89po'
+						\item Passwort: "vBnMk89po'
+						\item E-Mail: 'ricky.strohmeier@gmx.de'
+						\item Name: 'Strohmeier'
+						\item Vorname: 'Ricky'
+						\item Geburtstag: '16.10.1991'
+						\item Straße: '???'
+						\item Postleitzahl: '???'
+						\item Ort: '???'
+					\end{itemize}
+				Als Rolle wird 'Benutzer' festgelegt. Durch Klicken des Buttons 'Speichern' bestätigt der Admin die Daten und der neue Benutzer ist angelegt.	
 				
 				\item \Test{neuen Kurs anlegen}
 				Der Administrator klickt auf die Schaltfläche 'Kurs anlegen' und wird auf die Seite 'Kurs anlegen' weitergeleitet. Dort trägt er folgende Daten ein:
@@ -676,7 +695,36 @@ Darüber hinaus sollten noch folgende Qualitätsmerkmale genannt werden, die in 
 					
 			\end{itemize}
 \section{Testfälle mit Datensatz}
-
+			\stepHc
+			\begin{itemize}
+				\item \Test{Benutzerrolle aufwerten} 
+				Der Systemadministrator klickt auf der Adminseite auf die Schaltfläche 'Benutzer verwalten' und wird auf die Seite 'Benutzer bearbeiten' weitergeleitet. Hier wählt er im Status des Benutzers 'Kathi5' die neue Rolle 'Trainer' aus. Durch Drücken des Buttons 'Speichern' bestätigt der Administrator diese Änderung.
+				
+				\item \Test{Statistiken anzeigen}
+				'???'
+				
+				\item \Test{Benutzer suchen}
+				'??? in der Kurse verwalten suchen???'
+				
+				\item \Test{Guthabenkonto aufladen durch Systemadministrator}
+				Der Systemadministrator klickt auf der Adminseite auf die Schaltfläche 'Konto aufladen' und wird auf die Seite 'Konto aufladen' weitergeleitet. Dort gibt er folgende Daten ein:
+					\begin{itemize}
+						\item BenutzerId: '???'
+						\item Name: Strohmeier
+						\item Vorname: Ricky
+						\item Benutzername: Ricky1
+						\item Betrag: 40 Euro
+					\end{itemize}
+				Durch Drücken des Buttons 'Speichern' bestätigt der Systemadministrator die Kontoaufladung.
+				
+				\item \Test{Kurs löschen durch Systemadministrator}
+				Der Systemadministrator wählt auf der Seite 'Kurse verwalten' den zu löschenden Kurs 'Yoga' durch Doppelklick aus und gelangt dadurch auf die Seite 'Kurse bearbeiten'. Durch Drücken des Buttons 'Kurs löschen' entfernt der Admin den Kurs 'Yoga'.
+				
+				
+				\item \Test{Benutzer löschen durch Systemadministrator}
+				Der Systemadministrator wählt auf der Seite 'Benutzer verwalten' den zu löschenden Benutzer 'Ricky1' durch Doppelklick aus und gelangt dadurch auf die Seite 'Benutzer bearbeiten'. Durch Drücken des Buttons 'Benutzer löschen' entfernt der Admin den Benutzer 'Ricky1'.
+				
+			\end{itemize}
 
 
 
