@@ -406,6 +406,7 @@ Jedem Systemadministrator stehen auch alle Funktionen eines Trainers zur Verfüg
 	     	\item Impressum (String)
 	     	\item Logo (String)
 	     	\item AGB (String)
+	     	\item Hilfe (String)
 	     \end{itemize}
 	    
 	    
@@ -430,6 +431,8 @@ Jedem Systemadministrator stehen auch alle Funktionen eines Trainers zur Verfüg
 	   	\item Beschreibung (String)
 	   	\item Trainer (BenutzerID)
 	   	\item nächster Termin (Date)
+	   	\item Startdatum (Date)
+	   	\item Enddatum (Date)
 	   	\item Ort (String)
 	   	\item Preis (float)
 	   	\item Maximale Teilnehmerzahl (Integer)
@@ -445,11 +448,12 @@ Jedem Systemadministrator stehen auch alle Funktionen eines Trainers zur Verfüg
 	 	\item Titel (String)
 	 	\item Beschreibung (String)
 	 	\item Trainer (BenutzerID)
-	 	\item Termin (Date)
+	 	\item Beginn (Date)
+	 	\item Ende (Date)
 	 	\item Ort (String)
 	 	\item Preis (float)
 	 	\item Maximale Teilnehmerzahl (Integer)
-	 	\item Bild (String)
+	 	\item Minimale Teilnehmerzahl (Integer)
 	 	\item Teilnehmer (BenutzerIDs)
 	 \end{itemize}   
     
@@ -469,19 +473,23 @@ Jedem Systemadministrator stehen auch alle Funktionen eines Trainers zur Verfüg
 		  	\item Guthaben (float)
 		  	\item Bild (String)
 		  	\item eingeschriebene Kurse (KursIDs)
-		  	\item Terminplaner (TerminplanerID)
+		  	\item eingeschriebene Kurseinheiten (KurseinheitenIDs)
+		  	\item eigene Termine (TermineIDs)
 		  \end{itemize}
 
 \stepHc		    
-	  \section{Terminplaner}
+	  \section{eigene Termine}
 	    \Func {} 
 	    \begin{itemize}
 	    	\item ID (Integer)
-	    	\item eingeschriebene Kurse (KursIDs)
+	    	\item Name (String)
+	    	\item Beginn (Date)
+	    	\item Ende (Date)
+	    	\item Beschreibung (String)
 	    \end{itemize}
 	   
 \stepHc	 
-	  \section{Benutzergruppe}
+	  \section{Benutzerrolle}
 	    \Func {} 
 	    \begin{itemize}
 	    	\item ID (Integer)
