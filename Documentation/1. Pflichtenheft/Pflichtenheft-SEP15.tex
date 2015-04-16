@@ -91,6 +91,23 @@
             61085 & Sebastian Schwarz & Validierung & sebastian@nrschwarz.de \\ \hline  
             58379 & Patrick Cretu  &  Präsentation & cretu@fim.uni-passau.de \\ \hline
         \end{tabular}
+        
+        \ \\
+        \ \\
+        \hspace{3 cm}\\
+          \textbf{Arbeitspakete Pflichtenheft} \\
+          \ \\
+        
+        \begin{tabular}{ | l | l |}
+        	\hline
+        	\textbf{Autor} & \textbf{Verantwortungsbereich} \\ \hline
+        	 Katharina Hölzl & Globale Testfälle und Testszenarien, Glossar  \\ \hline
+        	 Ricky Strohmeier& Zielbestimmung, Qualitätsbestimmung  \\ \hline
+        	 Martin Bachhuber & Produkteinsatz, Produktumgebung, Entwicklungsumgebung  \\ \hline
+	         Tobias Fuchs & Produktfunktionen \\ \hline
+        	 Sebastian Schwarz & Produktdaten, Produktleistungen \\ \hline  
+	         Patrick Cretu  &  Benutzeroberfläche, Ergänzung, Benutzerhilfe  \\ \hline
+        \end{tabular}
     \end{center}
 \end{titlepage}
  
@@ -105,43 +122,44 @@
     \section{Musskriterien}      
     	\subsubsection{Allgemeiner Funktionsumfang:}
       		\begin{itemize}
-      		\item Durchsuchen aller angebotenen Kurse
+	      		\item Durchsuchen aller angebotenen Kurse
       		\end{itemize}
      	\subsubsection{Funktionsumfang für anonymen Benutzer:}
        		\begin{itemize}
-       		\item Registrieren
+	       		\item Registrieren
        		\end{itemize}
      	\subsubsection{Funktionsumfang für alle registrierten Benutzer:}
 			\begin{itemize}
-			\item Kann sich zu Kursen eintragen und an ihnen teilnehmen
-			\item Kann eigene Profildaten editieren
-			\item Kann Belegte Kurse anzeigen
+				\item Kann sich zu Kursen eintragen und an ihnen teilnehmen
+				\item Kann eigene Profildaten editieren
+				\item Kann Belegte Kurse anzeigen
 			\end{itemize}
 		\subsubsection{Funktionsumfang für Kursadministrator:}
 			\begin{itemize}
-			\item Erweitert Funktionsumfang vom \glqq registrierten Benutzer\grqq
-			\item Kurseinheiten anlegen
-			\item Entscheiden ob Kurseinheit statt findet
-			\item Kursgebühren einziehen
+				\item Erweitert Funktionsumfang vom \glqq registrierten Benutzer\grqq
+				\item Kurseinheiten anlegen
+				\item Entscheiden ob Kurseinheit statt findet
+				\item Kursgebühren einziehen
 			\end{itemize}
 		\subsubsection{Funktionsumfang für Systemadministrator:}
 			\begin{itemize}
-			\item Erweitert Funktionsumfang vom \glqq registrierten Benutzer\grqq{} und \glqq Kursadministrator\grqq
-			\item erstellt Kurse und kann diesen Kursleiter zuordnen
-			\item Benutzerverwaltung einschließlich der Änderung einer Benutzerrolle von Nutzer zu Kursleiter/\gls{Admin} oder \gls{Trainer} zu Nutzer/Administrator
+				\item Erweitert Funktionsumfang vom \glqq registrierten Benutzer\grqq{} und \glqq Kursadministrator\grqq
+				\item erstellt Kurse und kann diesen Kursleiter zuordnen
+				\item Benutzerverwaltung einschließlich der Änderung einer Benutzerrolle von Nutzer zu Kursleiter/\gls{Admin} oder \gls{Trainer} zu Nutzer/Administrator
 			\end{itemize}
 			
     \section{Wunschkriterien}
 			\begin{itemize}
-			\item Englisch als Sprachvariante
-			\item Terminanzeige für anstehende Termine
-       		\item Anonymer Benutzer kann mittels Einladung von Kursleitern an Kursen teilnehmen und ist dann ein \glqq Invited Guest\grqq{}
+				\item Englisch als Sprachvariante
+				\item Terminanzeige für anstehende Termine
+	       		\item Anonymer Benutzer kann mittels Einladung von Kursleitern an Kursen teilnehmen und ist dann ein \glqq Invited Guest\grqq{}
 			\end{itemize}
-		\section{Abgrenzungskriterien}
+			
+	\section{Abgrenzungskriterien}
      		\begin{itemize}
-     		\item Keine Raumplanung/-verwaltung für die Kurse
-     		\item Keine Einsicht in fremde Nutzerprofile, nur Admin kann Nutzerdaten einsehen
-     		\item Kein systeminternes Kommunikationssystem zwischen den Benutzern
+	     		\item Keine Raumplanung/-verwaltung für die Kurse
+	     		\item Keine Einsicht in fremde Nutzerprofile, nur Admin kann Nutzerdaten einsehen
+	     		\item Kein systeminternes Kommunikationssystem zwischen den Benutzern
      		\end{itemize}
         
   
@@ -154,7 +172,7 @@
 		 	\item Betreiber: Die Webanwendung soll von Betreibern unterschiedlichsten Fachbereichs verwendet werden können, beispielsweise Betreiber von Sportvereinen oder Lehrinstituten, welche ihre angebotenen Veranstaltungen und Kurse per Internet organisieren möchten.
 		 	\item Benutzer: Es wird zwischen vier verschiedenen Benutzern unterschieden:
 		 	\begin{itemize}
-		 		\item Anonymer Benutzer: Anonyme Benutzer benötigen rudimentäre Kenntnisse im Umgang mit dem Computer, um nach Veranstaltungen suchen und informieren zu können.
+		 		\item Anonymer Benutzer: Anonyme Benutzer benötigen rudimentäre Kenntnisse im Umgang mit dem Computer, um nach 	Veranstaltungen suchen und informieren zu können.
 		 		\item Registrierter Benutzer: Registrierte Benutzer benötigen ebenso wie anonym Benutzer keine besonderen Vorkenntnisse. Sie benötigen lediglich eine E-Mail-Adresse, um sich im System registrieren zu können und somit ihr Benutzerkonto erstellen. Sie können nach Veranstaltungen suchen und sich für solche an- oder abmelden.
 		 		\item Kursleiter: Ein Kursleiter benötigt gleichfalls wenig besondere IT-Kenntnisse. Er sollte allerdings über alle nötigen Informationen seiner Veranstaltung in Kenntnis sein, um jene anlegen und verwalten zu können.
 		 		\item Administrator: Ein Administrator ist für die Verwaltung und \gls{Konfiguration} des gesamten Systems zuständig. Aufgrund dessen werden grundlegende IT-Kenntnisse vorausgesetzt.
@@ -164,8 +182,8 @@
     
 	\section{Betriebsbedingungen}
 	       \begin{itemize}
-	       	\item Betriebszeit/Betriebsdauer: Ununterbrochener Betrieb mit Ausnahme einer Wartungszeit von 2 Stunden in der Woche bzw. 8 Stunden im Monat, welche aber nicht zur Hauptnutzungszeit des Systems abgehalten wird, sofern dies möglich ist.
-	       	\item  Im laufenden Betrieb ist keine Aufsicht vonnöten.
+		       	\item Betriebszeit/Betriebsdauer: Ununterbrochener Betrieb mit Ausnahme einer Wartungszeit von 2 Stunden in der Woche bzw. 8 Stunden im Monat, welche aber nicht zur Hauptnutzungszeit des Systems abgehalten wird, sofern dies möglich ist.
+		       	\item  Im laufenden Betrieb ist keine Aufsicht vonnöten.
 	       \end{itemize}
 	
 			
@@ -198,11 +216,12 @@
 	            \end{itemize}
           	\item Server:
 	           \begin{itemize}
-	           	\item Rechner mit Internetzugang
-	           	\item Rechner mit mindestens 5 GB Festplattenspeicher für Datenbank und Software
-	           	\item Intel(R) Core(TM) i5-2400 CPU, 8GB RAM 
+		           	\item Rechner mit Internetzugang
+		           	\item Rechner mit mindestens 5 GB Festplattenspeicher für Datenbank und Software
+		           	\item Intel(R) Core(TM) i5-2400 CPU, 8GB RAM 
 	           \end{itemize}
         \end{itemize}
+        
      \section{Orgware}
              Es wird keine \gls{Orgware} benötigt.
 
@@ -454,43 +473,43 @@ Die Produktfunktionen sind nach Benutzergruppen geordnet. Wunschkriterien sind m
 \stepHc		    	
 	\section{Kurs}
 	   \Func {} 
-	   \begin{itemize}
-	   	\item ID (Integer)
-	   	\item Titel (String)
-	   	\item Beschreibung (String)
-	   	\item Trainer (BenutzerID)
-	   	\item nächster Termin (Date)
-	   	\item Startdatum (Date)
-	   	\item Enddatum (Date)
-	   	\item Ort (String)
-	   	\item Maximale Teilnehmerzahl (Integer)
-	   	\item Bildverweis (String)
-	   	\item Kurseinheiten (KursIDs)
-	   	\item Teilnehmer (BenutzerIDs)
-	   \end{itemize}
+		 \begin{itemize}
+		   	\item ID (Integer)
+		   	\item Titel (String)
+		   	\item Beschreibung (String)
+		   	\item Trainer (BenutzerID)
+		   	\item nächster Termin (Date)
+		   	\item Startdatum (Date)
+		   	\item Enddatum (Date)
+		   	\item Ort (String)
+		   	\item Maximale Teilnehmerzahl (Integer)
+		   	\item Bildverweis (String)
+		   	\item Kurseinheiten (KursIDs)
+		   	\item Teilnehmer (BenutzerIDs)
+	    \end{itemize}
 \stepHc		    
 	\section{Kurseinheit}
 	 \Func {} 
-	 \begin{itemize}
-	 	\item ID (Integer)
-	 	\item Titel (String)
-	 	\item Beschreibung (String)
-	 	\item Trainer (BenutzerID)
-	 	\item Beginn (Date)
-	 	\item Ende (Date)
-	 	\item Ort (String)
-	 	\item Preis (\gls{float})
-	 	\item Maximale Teilnehmerzahl (Integer)
-	 	\item Minimale Teilnehmerzahl (Integer)
-	 	\item Teilnehmer (BenutzerIDs)
-	 \end{itemize}   
+		 \begin{itemize}
+		 	\item ID (Integer)
+		 	\item Titel (String)
+		 	\item Beschreibung (String)
+		 	\item Trainer (BenutzerID)
+		 	\item Beginn (Date)
+		 	\item Ende (Date)
+		 	\item Ort (String)
+		 	\item Preis (\gls{float})
+		 	\item Maximale Teilnehmerzahl (Integer)
+		 	\item Minimale Teilnehmerzahl (Integer)
+		 	\item Teilnehmer (BenutzerIDs)
+		 \end{itemize}   
     
     
 \stepHc	   		
     \section{Registrierte Benutzer}
 		  \Func {} 
-		  \begin{itemize}
-		  	\item ID (Integer)
+		 \begin{itemize}
+			\item ID (Integer)
 		  	\item Benutzername (String)
 		  	\item Passwort (String)
 		  	\item Vorname (String)
@@ -609,39 +628,39 @@ Die Produktfunktionen sind nach Benutzergruppen geordnet. Wunschkriterien sind m
             
          
 \chapter{Qualitätsbestimmungen}
-Im Folgenden wird aufgeführt auf welche Qualitätsmerkmale der Webanwendung Wert gelegt wird. Diese orientieren sich an der Norm \textit{ISO/IEC~9126}, welche ein Modell zur Sicherstellung von Softwarequalität darstellt. In wie weit die verschiedenen Qualitätsmerkmale Einfluss auf die Webanwendung nehmen sollen, wird in der unten gezeigten Tabelle \ref{qTabelle} definiert.\\
+	Im Folgenden wird aufgeführt auf welche Qualitätsmerkmale der Webanwendung Wert gelegt wird. Diese orientieren sich an der Norm \textit{ISO/IEC~9126}, welche ein Modell zur Sicherstellung von Softwarequalität darstellt. In wie weit die verschiedenen Qualitätsmerkmale Einfluss auf die Webanwendung nehmen sollen, wird in der unten gezeigten Tabelle \ref{qTabelle} definiert.\\
 
-\begin{table}[h]
+	\begin{table}[h]
  
-    \begin{center}
-    \begin{tabular}{|l|c|}
-    \hline 
-    \rule[-1ex]{0pt}{2.5ex} \textbf{Qualitätskriterium} & \textbf{Stellenwert} \\ 
-    \hline 
-    \rule[-1ex]{0pt}{2.5ex} Funktionalität & sehr wichtig \\ 
-    \hline 
-    \rule[-1ex]{0pt}{2.5ex} Zuverlässigkeit & sehr wichtig \\ 
-    \hline 
-    \rule[-1ex]{0pt}{2.5ex} Benutzbarkeit & sehr wichtig \\ 
-    \hline 
-    \rule[-1ex]{0pt}{2.5ex} Effizienz & wichtig \\ 
-    \hline 
-    \rule[-1ex]{0pt}{2.5ex} Änderbarkeit & weniger wichtig \\ 
-    \hline 
-    \rule[-1ex]{0pt}{2.5ex} Übertragbarkeit & weniger wichtig \\ 
-    \hline   
-    \end{tabular}  
-    \end{center}
-    \caption{Qualitätsmerkmale und ihre zugewiesene Priorität} 
-    \label{qTabelle}   
-\end{table}
+	    \begin{center}
+		    \begin{tabular}{|l|c|}
+			    \hline 
+			    \rule[-1ex]{0pt}{2.5ex} \textbf{Qualitätskriterium} & \textbf{Stellenwert} \\ 
+			    \hline 
+			    \rule[-1ex]{0pt}{2.5ex} Funktionalität & sehr wichtig \\ 
+			    \hline 
+			    \rule[-1ex]{0pt}{2.5ex} Zuverlässigkeit & sehr wichtig \\ 
+			    \hline 
+			    \rule[-1ex]{0pt}{2.5ex} Benutzbarkeit & sehr wichtig \\ 
+			    \hline 
+			    \rule[-1ex]{0pt}{2.5ex} Effizienz & wichtig \\ 
+			    \hline 
+			    \rule[-1ex]{0pt}{2.5ex} Änderbarkeit & weniger wichtig \\ 
+			    \hline 
+			    \rule[-1ex]{0pt}{2.5ex} Übertragbarkeit & weniger wichtig \\ 
+			    \hline   
+		    \end{tabular}  
+	    \end{center}
+	    \caption{Qualitätsmerkmale und ihre zugewiesene Priorität} 
+	    \label{qTabelle}   
+	\end{table}
     
-Darüber hinaus sollten noch folgende Qualitätsmerkmale genannt werden, welchen ein besonders hoher oder ein, zur Abgrenzung, geringer Stellenwert zugesprochen wird:
- \begin{itemize}
- 	\item Die Verwendung des Systems soll für den Benutzer einfach und intuitiv möglich sein, weshalb die Benutzbarkeit als sehr wichtig einzustufen ist.
- 	\item Die Benutzung soll komplett im Browser möglich sein, wobei jedoch die Kompatibilität mit älteren Browsern als definiert nicht berücksichtigt wird.
- 	\item Personenbezogene Daten und im Speziellen die Bankverbindung sind vor unberechtigtem Zugriff von außen zu schützen.
- 	\item Geldtransaktionen sind ebenfalls besonders zu schützen, vor allem die \gls{Konsistenz} aller Bezahlaktionen.
+	Darüber hinaus sollten noch folgende Qualitätsmerkmale genannt werden, welchen ein besonders hoher oder ein, zur Abgrenzung, geringer Stellenwert zugesprochen wird:
+		\begin{itemize}
+		 	\item Die Verwendung des Systems soll für den Benutzer einfach und intuitiv möglich sein, weshalb die Benutzbarkeit als sehr wichtig einzustufen ist.
+		 	\item Die Benutzung soll komplett im Browser möglich sein, wobei jedoch die Kompatibilität mit älteren Browsern als definiert nicht berücksichtigt wird.
+		 	\item Personenbezogene Daten und im Speziellen die Bankverbindung sind vor unberechtigtem Zugriff von außen zu schützen.
+		 	\item Geldtransaktionen sind ebenfalls besonders zu schützen, vor allem die \gls{Konsistenz} aller Bezahlaktionen.
  \end{itemize}
  
 \resetAllCounter
@@ -660,19 +679,19 @@ Darüber hinaus sollten noch folgende Qualitätsmerkmale genannt werden, welchen
 				\item Nach dem Start loggt sich der Administrator mit dem vorgefertigten Benutzername 'admin1' und dem Passwort    'ersterAdmin1' ein und wird auf die Seite 'Admin-Verwaltung' weitergeleitet 
 				 
 				\item \Test{Impressum bearbeiten}
-				 Der Systemadministrator klickt auf der Seite 'Admin-Verwaltung' auf 'Seite bearbeiten' und wird auf diese weitergeleitet. Dort wählt er in dem Drop-Down Menü das 'Impressum' aus und fügt seinen Impressumstext in das darunterliegende Eingabefeld ein. Anschließend bestätigt der Admin die Eingabe durch Drücken des Button 'Speichern'. (vgl. \RefFuncBlue{/F40-180/})
+				 Der Systemadministrator klickt auf der Seite 'Admin-Verwaltung' auf 'Seite bearbeiten' und wird auf diese weitergeleitet. Dort wählt er in dem Drop-Down Menü das 'Impressum' aus und fügt seinen Impressumstext in das darunterliegende Eingabefeld ein. Anschließend bestätigt der Admin die Eingabe durch Drücken des Button 'Speichern'. (vgl. \RefFuncBlue{/F40-170/})
 				 
 				\item \Test{Geschäftsbedingungen editieren}
-				 Der Systemadministrator klickt auf der Seite 'Admin-Verwaltung' auf 'Seite bearbeiten' und wird auf diese weitergeleitet. Dort wählt er in dem Drop-Down Menü die 'AGB' aus und fügt seine Allgemeinen Geschäftsbedingunen in das darunterliegende Eingabefeld ein. Anschließend bestätigt der Admin die Eingabe durch Drücken des Button 'Speichern'. (vgl. \RefFuncBlue{/F40-190/})
+				 Der Systemadministrator klickt auf der Seite 'Admin-Verwaltung' auf 'Seite bearbeiten' und wird auf diese weitergeleitet. Dort wählt er in dem Drop-Down Menü die 'AGB' aus und fügt seine Allgemeinen Geschäftsbedingunen in das darunterliegende Eingabefeld ein. Anschließend bestätigt der Admin die Eingabe durch Drücken des Button 'Speichern'. (vgl. \RefFuncBlue{/F40-180/})
 			\end{itemize}		
 				
 		\subsection{Erstellung und Verwaltung}
 			\begin{itemize}
 				\item \Test{Überziehungskredit festlegen} 
-				 Auf der Seite 'Admin-Verwaltung' legt der Systemadministrator den Überziehungskredit auf 10 Euro fest und bestätigt diesen durch Drücken der Schaltfläche 'Speichern'. (vgl. \RefFuncBlue{/F40-140/})
+				 Auf der Seite 'Admin-Verwaltung' legt der Systemadministrator den Überziehungskredit auf 10 Euro fest und bestätigt diesen durch Drücken der Schaltfläche 'Speichern'. (vgl. \RefFuncBlue{/F40-130/})
 				
 				\item \Test{Registrierungsbestätigung festlegen}
-				 Der Administrator befindet sich auf der Seit 'Admin-Verwaltung'. Im Bereich 'Registrierungsbestätigung' wählt der Admin im Drop-Down Menü den 'Administrator' aus und bestätigt seine Auswahl durch Drücken des Button 'Speichern'. (vgl. \RefFuncBlue{/F40-160/})
+				 Der Administrator befindet sich auf der Seit 'Admin-Verwaltung'. Im Bereich 'Registrierungsbestätigung' wählt der Admin im Drop-Down Menü den 'Administrator' aus und bestätigt seine Auswahl durch Drücken des Button 'Speichern'. (vgl. \RefFuncBlue{/F40-150/})
 				
 				\item \Test{neuen Benutzer anlegen} 
 				 Auf der Seite 'Admin-Verwaltung' klickt der Administrator auf die Schaltfläche 'Benutzer anlegen' und wird auf die Seite 'neuen Benutzer anlegen' weitergeleitet. Hier gibt der Admin folgende Daten ein:
@@ -744,14 +763,14 @@ Darüber hinaus sollten noch folgende Qualitätsmerkmale genannt werden, welchen
 		\subsection{Systemdarstellung}
 			\begin{itemize}
 				 \item \Test{Logo hochladen} 
-				 Auf der Seite 'Admin-Verwaltung' ändert der Systemadministrator das Logo, indem er im Bereich 'Logo ändern' auf 'Durchsuchen' klickt. Nach Auswahl der Bilddatei 'logo2.jpg' drückt der Admin die Schaltfläche 'Speichern', wodurch das Bild hochgeladen wird.
+				 Auf der Seite 'Admin-Verwaltung' ändert der Systemadministrator das Logo, indem er im Bereich 'Logo ändern' auf 'Durchsuchen' klickt. Nach Auswahl der Bilddatei 'logo2.jpg' drückt der Admin die Schaltfläche 'Speichern', wodurch das Bild hochgeladen wird. (vgl. \RefFuncBlue{/F40-140/})
 			\end{itemize}
 			
 	\section{Testfälle für den Kursleiter}
 		\stepHc
 		\begin{itemize}
 			\item \Test{eigenen Kurs editieren} 
-			 Der Kursleiter 'Basti3' klickt in seinen Trainingskursen den Kurs 'Yoga' an und wird auf die 'Kurs-Detail'-Seite weitergeleitet. Dort ändert der Kursleiter den Startzeitpunkt des Kurses auf den '04.05.2015' und bestätigt seine Änderung durch Drücken des Button 'Speichern'. (vgl. \RefFuncBlue{/F30-10/})
+			 Der Kursleiter 'Basti3' klickt in seinen Trainingskursen den Kurs 'Yoga' an und wird auf die 'Kurs-Detail'-Seite weitergeleitet. Dort ändert der Kursleiter den Startzeitpunkt des Kurses auf den '04.05.2015' und bestätigt seine Änderung durch Drücken des Button 'Speichern'. (vgl. \RefFuncBlue{/F30-20/})
 				
 			\item \Test{Kurseinheiten anlegen} 
 			 Der Kursleiter 'Basti3' klickt in seinen Trainingskursen den Kurs 'Standardtanz' an und wird auf die 'Kurs-Detail'-Seite weitergeleitet. Nach Drücken des Links 'Kurseinheiten anlegen' wird er auf die Seite 'Einheiten bearbeiten' weitergeleitet. Dort legt er folgende Kurseinheiten an:
@@ -781,7 +800,7 @@ Darüber hinaus sollten noch folgende Qualitätsmerkmale genannt werden, welchen
 			\stepHc
 			\begin{itemize}
 				\item \Test{Kursangebot ansehen} 
-				 Der anonyme Benutzer klickt auf der Startseite auf den Button 'Kursangebot'	und gelangt auf die Seite mit den Kursangeboten. Angezeigt wird zunächst das aktuelle Tagesangebot. In dem Suchfeld gibt er den Kursnamen 'Yoga' ein. Es wird nun nur noch der Yogakurs angezeigt. Nach Doppelklicken auf den Kursnamen kann sich der Benutzer nun die Kursdetails ansehen. (vgl. \RefFuncBlue{/F10-40/})
+				 Der anonyme Benutzer klickt auf der Startseite auf den Button 'Kursangebot'	und gelangt auf die Seite mit den Kursangeboten. Angezeigt wird zunächst das aktuelle Tagesangebot. In dem Suchfeld gibt er den Kursnamen 'Yoga' ein. Es wird nun nur noch der Yogakurs angezeigt. Nach Doppelklicken auf den Kursnamen kann sich der Benutzer nun die Kursdetails ansehen. (vgl. \RefFuncBlue{/F10-30/})
 				
 				\item \Test{Registrierung} 
 				 Über die Schaltfläche 'Login' gelangt der anonyme Benutzer auf die Loginseite und von hier aus über den Button 'registrieren' auf die nächste Seite mit dem Registrierungsformular. 		
@@ -813,16 +832,16 @@ Darüber hinaus sollten noch folgende Qualitätsmerkmale genannt werden, welchen
 		\stepHc
 		\begin{itemize}
 			\item \Test{Account bestätigen durch den Systemadministrator}
-			Der Systemadministrator erhält einen Aktivierungslink per Mail um den Benutzer 'Kathi5' zu verifizieren. Er klickt diesen Link an. Dadurch wird der Account von 'Kathi5' aktiviert.
+			Der Systemadministrator erhält einen Aktivierungslink per Mail um den Benutzer 'Kathi5' zu verifizieren. Er klickt diesen Link an. Dadurch wird der Account von 'Kathi5' aktiviert. (vgl. \RefFuncBlue{/F30-120/})
 			
 			\item \Test{Einloggen ins System} 
-			Der Benutzer 'Kathi5' klickt auf der Startseite	auf den 'Login'-Button und es öffnet sich ein Drop-Down Menü, in welchem er Benutzername und Passwort eingeben kann.
+			Der Benutzer 'Kathi5' klickt auf der Startseite	auf den 'Login'-Button und es öffnet sich ein Drop-Down Menü, in welchem er Benutzername und Passwort eingeben kann. (vgl. \RefFuncBlue{/F20-10/})
 			\begin{itemize}
 				\item Der Benutzer gibt seinen Benutzernamen 'Kathi5' und das falsches Passwort 'wertz6uio' ein. Nach Drücken des 'Login'-Buttons erhält er die Fehlermeldung 'Ihr Benutzername oder Ihr Passwort ist falsch'.
 				\item Der Benutzer gibt den falschen Benutzernamen 'Kathi1' und das richtige Passwort 'bSdFg7HjK' ein. Nach Drücken des 'Login'-Buttons erhält er die Fehlermeldung 'Ihr Benutzername oder Ihr Passwort ist falsch'.
 				\item Der Benutzer gibt seinen Benutzernamen 'Kathi5' und kein Passwort ein. Nach Drücken des 'Login'-Buttons erhält er die Fehlermeldung 'Ihr Benutzername oder Ihr Passwort ist falsch'.
 				\item Der Benutzer gibt seinen Benutzernamen 'Kathi5' und das richtige Passwort 'bSdFg7HjK' ein. Nach Drücken des 'Login'-Buttons wird der Benutzer auf die Seite mit seinen Kursen weitergeleitet.
-			\end{itemize}
+			\end{itemize} 
 			
 			\item \Test{Konto aufladen} 
 			Der Benutzer 'Kathi5' klickt in seinem Profil auf die Schaltfläche 'Konto aufladen' und wird auf die Seite 'Kontoaufladung' weitergeleitet. Hier gibt Kathi5 folgende Daten ein:
@@ -834,15 +853,15 @@ Darüber hinaus sollten noch folgende Qualitätsmerkmale genannt werden, welchen
 				 	\item Kreditkartennummer: ???
 				 	\item Betrag: 50 
 				 \end{itemize}	
-			Anschließend klickt der Nutzer auf den Button 'Aufladen' und erhält eine Erfolgsmeldung.
+			Anschließend klickt der Nutzer auf den Button 'Aufladen' und erhält eine Erfolgsmeldung.  (vgl. \RefFuncBlue{/F20-240/})
 			\end{itemize}
 			
 			\begin{itemize}
 				\item \Test{Kurs anmelden} 
-				Der Benutzer 'Kathi5' klickt im Register 'Meine Kurse' auf die Schaltfläche 'Weitere Kurse' und bekommt die einzelnen Kurse auf der Kursangebotsseite angezeigt. Im Kursangebot sucht 'Kathi5' nach dem Kurs 'Yoga'. Durch Doppelklicken auf den gefundenen Kurs erhält der Benutzer die Detailansicht des Kurses 'Yoga', welcher regelmäßig am Dienstag von 16 Uhr bis 17:30 Uhr angeboten wird und kostenlos ist. 'Kathi5' trägt sich durch die Auswahl der Checkbox 'Kursnews' ein und erhält so bei Kursveränderungen eine Informationsmail. Anschließend meldet der Benutzer sich durch Klicken auf den Button 'Anmelden' in der Detailansicht für den Kurs 'Yoga' an.	
+				Der Benutzer 'Kathi5' klickt im Register 'Meine Kurse' auf die Schaltfläche 'Weitere Kurse' und bekommt die einzelnen Kurse auf der Kursangebotsseite angezeigt. Im Kursangebot sucht 'Kathi5' nach dem Kurs 'Yoga'. Durch Doppelklicken auf den gefundenen Kurs erhält der Benutzer die Detailansicht des Kurses 'Yoga', welcher regelmäßig am Dienstag von 16 Uhr bis 17:30 Uhr angeboten wird und kostenlos ist. 'Kathi5' trägt sich durch die Auswahl der Checkbox 'Kursnews' ein und erhält so bei Kursveränderungen eine Informationsmail. Anschließend meldet der Benutzer sich durch Klicken auf den Button 'Anmelden' in der Detailansicht für den Kurs 'Yoga' an. (vgl. \RefFuncBlue{/F20-170/})
 				
 				\item \Test{Kurseinheiten anmelden} 
-				Der Nutzer 'Kathi5'	klickt im Register 'Meine Kurse' auf den Kurs 'Yoga' und erhält dessen Detailansicht. Durch Klicken des Buttons 'Alle Einheiten auswählen' und anschließend der Schaltfläche 'Anmelden' trägt sich der Benutzer nun in alle verfügbaren Kurseinheiten ein.
+				Der Nutzer 'Kathi5'	klickt im Register 'Meine Kurse' auf den Kurs 'Yoga' und erhält dessen Detailansicht. Durch Klicken des Buttons 'Alle Einheiten auswählen' und anschließend der Schaltfläche 'Anmelden' trägt sich der Benutzer nun in alle verfügbaren Kurseinheiten ein. (vgl. \RefFuncBlue{/F20-190/})
 				
 				\item \Test{Kurs bezahlen}
 				Der Benutzer 'Kathi5' meldet sich außerdem auf der Kursangebotsseite für den Kurs 'Standardtanz' an. Durch Doppelklick auf den Kurs erhält der Nutzer die Detailansicht und wählt die folgenden Einheiten aus:
@@ -861,50 +880,56 @@ Darüber hinaus sollten noch folgende Qualitätsmerkmale genannt werden, welchen
 						\item Zeit von 17:00 bis 20:00 Uhr
 						\item Ort: Trainingsfeld		
 					\end{itemize}
-				Durch Klicken auf die Schaltfläche 'Eintragen' wird dieser Termin in den persönlichen Terminplaner eingetragen.
+				Durch Klicken auf die Schaltfläche 'Eintragen' wird dieser Termin in den persönlichen Terminplaner eingetragen. (vgl. \RefFuncBlue{/F20-130/})
 				
 				\item \Test{Kurseinheit abmelden und Rückbuchung des Kurspreises}
-				Der Benutzer 'Kathi5' klickt in der Detailansicht des Kurses 'Standardtanz' auf die Kurseinheit 'Montag 25.05.2015 18-20 Uhr' und Drückt den Button 'Abmelden'. Dadurch wurde 'Kathi5' aus dieser Kurseinheit ausgetragen und der Betrag von 15 Euro wird automatisch auf das Guthabenkonto rückgebucht. 
+				Der Benutzer 'Kathi5' klickt in der Detailansicht des Kurses 'Standardtanz' auf die Kurseinheit 'Montag 25.05.2015 18-20 Uhr' und Drückt den Button 'Abmelden'. Dadurch wurde 'Kathi5' aus dieser Kurseinheit ausgetragen und der Betrag von 15 Euro wird automatisch auf das Guthabenkonto rückgebucht. (vgl. \RefFuncBlue{/F20-200/}) und (vgl. \RefFuncBlue{/F20-270/})
 				
 				\item \Test{aktuelles Guthaben ansehen}
-				Der Nutzer 'Kathi5' klickt auf die Registerkarte 'Mein Profil'. Hier wird der aktuelle Kontostand von 20 Euro angezeigt.
+				Der Nutzer 'Kathi5' klickt auf die Registerkarte 'Mein Profil'. Hier wird der aktuelle Kontostand von 20 Euro angezeigt. (vgl. \RefFuncBlue{/F20-70/})
 				
 				\item \Test{Hilfeseite anzeigen}
-				Der Benutzer 'Kathi5' befindet sich momentan auf der Kursdetailseite des Kurses 'Yoga' und lässt sich durch Drücken des Buttons 'Hilfe' die Hilfeseite anzeigen. Dort sucht er die Information zum Thema 'Profilbild hochladen'.
+				Der Benutzer 'Kathi5' befindet sich momentan auf der Kursdetailseite des Kurses 'Yoga' und lässt sich durch Drücken des Buttons 'Hilfe' die Hilfeseite anzeigen. Dort sucht er die Information zum Thema 'Profilbild hochladen'. (vgl. \RefFuncBlue{/F10-70/})
 					
 				\item \Test{Hochladen eines Profilbildes}
-				Der Nutzer 'Kathi5' klickt auf die Registerkarte 'Mein Profil'. Nach Drücken der Schaltfläche 'Bild Hochladen' wird das Bild 'KathiProfil.jpg' ausgewählt und hochgeladen. Es erscheint nun anstelle des Dummy-Bildes.
+				Der Nutzer 'Kathi5' klickt auf die Registerkarte 'Mein Profil'. 
+					\begin{itemize}
+						\item Nach Drücken der Schaltfläche 'Bild Hochladen' wird das Video 'Test.mp3' ausgewählt. Es erscheint eine Fehlermeldung, da eine Videodatei hochgeladen wurde.
+						\item Nach Drücken der Schaltfläche 'Bild Hochladen' wird das Bild 'KathiProfil.jpg' ausgewählt und hochgeladen. Es erscheint nun anstelle des Dummy-Bildes.		
+					\end{itemize}
+				
+				Nach Drücken der Schaltfläche 'Bild Hochladen' wird das Bild 'KathiProfil.jpg' ausgewählt und hochgeladen. Es erscheint nun anstelle des Dummy-Bildes. (vgl. \RefFuncBlue{/F20-60/})
 				
 				\item \Test{E-Mailadresse ändern}
-				'Kathi5' klickt auf die Registerkarte 'Mein Profil'. Nach Drücken der Schaltfläche 'Benutzerdaten ändern' ändert sie die E-Mailadresse auf 'hoelzlka@fim.uni-passau.de'. Anschließend klickt sie auf den Button 'Speichern' und erhält an die angegebene Mailadresse einen Verifizierungslink. Nach Bestätigung durch diesen Link wird der Benutzer auf die Seite 'Mein Profil' weitergeleitet, in dem die E-Mailadresse auf die Aktuelle geändert ist.
+				'Kathi5' klickt auf die Registerkarte 'Mein Profil'. Nach Drücken der Schaltfläche 'Benutzerdaten ändern' ändert sie die E-Mailadresse auf 'hoelzlka@fim.uni-passau.de'. Anschließend klickt sie auf den Button 'Speichern' und erhält an die angegebene Mailadresse einen Verifizierungslink. Nach Bestätigung durch diesen Link wird der Benutzer auf die Seite 'Mein Profil' weitergeleitet, in dem die E-Mailadresse auf die Aktuelle geändert ist. (vgl. \RefFuncBlue{/F20-50/})
 				
 				\item \Test{aus dem System abmelden}
-				Der Benutzer 'Kathi5' befindet sicht momentan auf der Seite 'Mein Profil'. Durch Drücken der Schaltfläche 'Abmelden' wird 'Kathi5' aus dem System abgemeldet und zur Startseite weitergeleitet.	
+				Der Benutzer 'Kathi5' befindet sicht momentan auf der Seite 'Mein Profil'. Durch Drücken der Schaltfläche 'Abmelden' wird 'Kathi5' aus dem System abgemeldet und zur Startseite weitergeleitet. (vgl. \RefFuncBlue{/F20-80/})
 					
 			\end{itemize}
 \section{Testfälle mit Datensatz}
 			\stepHc
 			\begin{itemize}
 				\item \Test{Benachrichtigung durch Kursleiter}
-				'??? muss noch abgeklärt werden ???'
+				'??? muss noch abgeklärt werden ???' (vgl. \RefFuncBlue{/F30-110/})
 				
 				\item \Test{Invited Guest durch Kursleiter zu Kurs hinzufügen}
-				Der Kursleiter 'Basti3' fügt auf der Seite 'Einheiten bearbeiten' die Daten des neuen Teilnehmers hinzu.
+				Der Kursleiter 'Basti3' fügt auf der Seite 'Einheiten bearbeiten' die Daten des neuen Teilnehmers hinzu. (vgl. \RefFuncGreen{/F30-90W/})
 						
 				\item \Test{Benutzerrolle aufwerten durch Systemadministrator} 
-				Der Systemadministrator klickt auf der Seite 'Admin-Verwaltung' auf die Schaltfläche 'Benutzer verwalten' und wird auf die Seite 'Benutzer bearbeiten' weitergeleitet. Hier wählt er im Status des Benutzers 'Kathi5' die neue Rolle 'Kursleiter' aus. Durch Drücken des Buttons 'Speichern' bestätigt der Administrator diese Änderung.
+				Der Systemadministrator klickt auf der Seite 'Admin-Verwaltung' auf die Schaltfläche 'Benutzer verwalten' und wird auf die Seite 'Benutzer bearbeiten' weitergeleitet. Hier wählt er im Status des Benutzers 'Kathi5' die neue Rolle 'Kursleiter' aus. Durch Drücken des Buttons 'Speichern' bestätigt der Administrator diese Änderung. (vgl. \RefFuncBlue{/F40-90/})
 				
 				\item \Test{Teilnehmer aus Kurs entfernen durch Kursleiter}
-				Auf der Oberfläche 'Kursangebot' wählt der Kursleiter 'Basti3' durch Doppelklick den Kurs 'Yoga' aus und wird auf die Seite 'Kurs bearbeiten' weitergeleitet. Dort wählt er den Teilnehmer 'Kathi5' aus und entfernt diesen aus dem Kurs durch Klicken der Schaltfläche 'löschen'.
+				Auf der Oberfläche 'Kursangebot' wählt der Kursleiter 'Basti3' durch Doppelklick den Kurs 'Yoga' aus und wird auf die Seite 'Kurs bearbeiten' weitergeleitet. Dort wählt er den Teilnehmer 'Kathi5' aus und entfernt diesen aus dem Kurs durch Klicken der Schaltfläche 'löschen'. (vgl. \RefFuncBlue{/F30-80/})
 				
 				\item \Test{Kursleiter zu Kurs hinzufügen durch Systemadministrator}
 				Auf der Oberfläche 'Kursangebot' wählt der Systemadministrator durch Doppelklick den Kurs 'Yoga' aus und wird auf die Seite 'Kurs bearbeiten' weitergeleitet, auf der er die Daten des Kursleiters 'Kathi5' eingibt und die Änderung durch Drücken des Buttons 'Hinzufügen' abspeichert. 
 				
 				\item \Test{Statistiken anzeigen}
-				Auf der Seite 'Admin-Verwaltung' klickt der Administrator in der Navigationsleiste auf den Link 'Statistik und wird auf diese weitergeleitet. Nach Auswahl des Parameter 'Tag' wird ein Säulendiagramm mit den Einnahmen der entsprechenden Woche angezeigt. 
+				Auf der Seite 'Admin-Verwaltung' klickt der Administrator in der Navigationsleiste auf den Link 'Statistik und wird auf diese weitergeleitet. Nach Auswahl des Parameter 'Tag' wird ein Säulendiagramm mit den Einnahmen der entsprechenden Woche angezeigt. (vgl. \RefFuncBlue{/F40-110/})
 				
 				\item \Test{Benutzer suchen}
-				Über die Seite 'Admin-Verwaltung' gelangt der Administrator auf die Seite 'Kursangebot' und gibt dort den entsprechenden Suchbegriff ein. Nachdem der Admin auf den Button 'Suchen' geklickt hat, wird ihm der gesuchte Benutzer angezeigt.
+				Über die Seite 'Admin-Verwaltung' gelangt der Administrator auf die Seite 'Kursangebot' und gibt dort den entsprechenden Suchbegriff ein. Nachdem der Admin auf den Button 'Suchen' geklickt hat, wird ihm der gesuchte Benutzer angezeigt. (vgl. \RefFuncBlue{/F40-100/})
 				
 				\item \Test{Guthabenkonto aufladen durch Systemadministrator}
 				Der Systemadministrator trägt auf der Seite 'Admin-Verwaltung' im Bereich 'Konto aufladen' folgende Daten ein:
@@ -913,17 +938,17 @@ Darüber hinaus sollten noch folgende Qualitätsmerkmale genannt werden, welchen
 						\item Benutzername: Ricky1
 						\item Betrag: 40 Euro
 					\end{itemize}
-				Durch Drücken des Buttons 'Aufladen' bestätigt der Systemadministrator die Kontoaufladung.
+				Durch Drücken des Buttons 'Aufladen' bestätigt der Systemadministrator die Kontoaufladung. (vgl. \RefFuncBlue{/F20-150/})
 				
 				\item \Test{Kurs löschen durch Systemadministrator}
 				Der Systemadministrator wählt auf der Seite 'Kursangebot' den zu löschenden Kurs 'Yoga' durch Doppelklick aus und gelangt dadurch auf die Seite 'Kurse bearbeiten'. Durch Drücken des Buttons 'Kurs löschen' entfernt der Admin den Kurs 'Yoga'.
 				
 				
 				\item \Test{Benutzer löschen durch Systemadministrator}
-				Der Systemadministrator wählt auf der Seite 'Benutzer verwalten' den zu löschenden Benutzer 'Ricky1' durch Doppelklick aus und gelangt dadurch auf die Seite 'Benutzer bearbeiten'. Durch Drücken des Buttons 'Benutzer löschen' entfernt der Admin den Benutzer 'Ricky1'.
+				Der Systemadministrator wählt auf der Seite 'Benutzer verwalten' den zu löschenden Benutzer 'Ricky1' durch Doppelklick aus und gelangt dadurch auf die Seite 'Benutzer bearbeiten'. Durch Drücken des Buttons 'Benutzer löschen' entfernt der Admin den Benutzer 'Ricky1'. (vgl. \RefFuncBlue{/F40-80/})
 				
 				\item \Test{Kurs löschen durch Kursleiter}
-				Der Kursleiter 'Basti3' auf der Oberfläche mit seinen Trainingskursen den Kurs 'Standardtanz' an und wird auf die Seite 'Kurs bearbeiten' weitergeleitet. Durch Klicken des Buttons 'Kurs löschen' wird der Kurs 'Standardtanz' entfernt. 
+				Der Kursleiter 'Basti3' auf der Oberfläche mit seinen Trainingskursen den Kurs 'Standardtanz' an und wird auf die Seite 'Kurs bearbeiten' weitergeleitet. Durch Klicken des Buttons 'Kurs löschen' wird der Kurs 'Standardtanz' entfernt. (vgl. \RefFuncBlue{/F40-40/})
 				
 			\end{itemize}
 
@@ -936,6 +961,7 @@ Darüber hinaus sollten noch folgende Qualitätsmerkmale genannt werden, welchen
         \subsection{Betriebssysteme}
             \begin{itemize}
             	\item Windows 8.1
+            	\item Windows 7
             	\item Linux Mint 17.1 Rebecca
             \end{itemize}	
             
