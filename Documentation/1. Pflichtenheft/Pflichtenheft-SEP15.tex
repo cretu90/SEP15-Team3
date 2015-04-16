@@ -391,42 +391,132 @@ Jedem Systemadministrator stehen auch alle Funktionen eines Trainers zur Verfüg
 	Die allgemeinen Geschäftsbedingungen können vom Systemadministrator editiert werden. Durch Klicken der 'Durchsuchen' - Schaltfläche gibt der Administrator den Pfad einer .txt - Datei an, welche durch Betätigen der 'Speichern' - Schaltfläche hochgeladen wird. Bei Neustart der Anwendung wird die neue .txt - Datei automatisch geladen und somit die bearbeiteten allgemeinen Geschäftsbedingungen verwendet.
 \end{itemize}
 		
-		
+\resetAllCounter
+\renewcommand{\Func}[1]{\stepcounter{Lc}\textcolor{Blue}{\textbf{/D\arabic{Hc}0-\arabic{Lc}0/} #1} \\}	
 
 \chapter{Produktdaten}
  \label{Produktdaten}
         
 	
     \section{System}
-	    
+	     \Func {} 
+	     \begin{itemize}
+	     	\item Titel (String)
+	     	\item CSS-Datei (String)
+	     	\item Impressum (String)
+	     	\item Logo (String)
+	     	\item AGB (String)
+	     \end{itemize}
 	    
 	    
 	    \subsection{SMTP-Server}
+		    \Func {}
+		    \begin{itemize}
+		    	\item Benutzername (String)
+		    	\item Passwort (String)
+		    	\item Authentifizierung (Boolean)
+		    	\item TLS (Boolean)
+		    	\item Host (String)
+		    	\item Port (Integer)
+		    \end{itemize}
 	    
 	    
-	    
-	    	
+\stepHc		    	
 	\section{Kurs}
-	   
-	    
-	    
+	   \Func {} 
+	   \begin{itemize}
+	   	\item ID (Integer)
+	   	\item Titel (String)
+	   	\item Beschreibung (String)
+	   	\item Trainer (BenutzerID)
+	   	\item nächster Termin (Date)
+	   	\item Ort (String)
+	   	\item Preis (float)
+	   	\item Maximale Teilnehmerzahl (Integer)
+	   	\item Bild (String)
+	   	\item Kurseinheiten (KursIDs)
+	   	\item Teilnehmer (BenutzerIDs)
+	   \end{itemize}
+\stepHc		    
+	\section{Kurseinheit}
+	 \Func {} 
+	 \begin{itemize}
+	 	\item ID (Integer)
+	 	\item Titel (String)
+	 	\item Beschreibung (String)
+	 	\item Trainer (BenutzerID)
+	 	\item Termin (Date)
+	 	\item Ort (String)
+	 	\item Preis (float)
+	 	\item Maximale Teilnehmerzahl (Integer)
+	 	\item Bild (String)
+	 	\item Teilnehmer (BenutzerIDs)
+	 \end{itemize}   
     
     
-    		
+\stepHc	   		
     \section{Registrierte Benutzer}
-	  
-	    
+		  \Func {} 
+		  \begin{itemize}
+		  	\item ID (Integer)
+		  	\item Benutzername (String)
+		  	\item Passwort (String)
+		  	\item Vorname (String)
+		  	\item Nachname (String)
+		  	\item Geburtsdatum (Date)
+		  	\item E-mailadresse (String)
+		  	\item Addresse (String)
+		  	\item Guthaben (float)
+		  	\item Bild (String)
+		  	\item eingeschriebene Kurse (KursIDs)
+		  	\item Terminplaner (TerminplanerID)
+		  \end{itemize}
+
+\stepHc		    
+	  \section{Terminplaner}
+	    \Func {} 
+	    \begin{itemize}
+	    	\item ID (Integer)
+	    	\item eingeschriebene Kurse (KursIDs)
+	    \end{itemize}
+	   
+\stepHc	 
+	  \section{Benutzergruppe}
+	    \Func {} 
+	    \begin{itemize}
+	    	\item ID (Integer)
+	    	\item Gruppenname (String)
+	    	\item Benutzer-ID (BenutzerIDs)
+	    \end{itemize}
 	    
 	   
-	    
+\resetAllCounter
+\renewcommand{\Func}[1]{\stepcounter{Lc}\textcolor{Blue}{\textbf{/L\arabic{Hc}0-\arabic{Lc}0/} #1} \\}	    
     
 \chapter{Produktleistungen}
 	
 
 	\section{Produktleistungen auf Serverseite}
+		\begin{itemize}
+			\item \Func{} Zur Speicherung der persistenten Daten wird eine PostgreSQL Datenbank verwendet
+			\item \Func{} E-Mailbenachrichtigung, falls von Benutzer erwünscht, bei wichtigen Ereignissen (z.B Registrierung, Buchung einer Kurseinheit bzw Kurses, Terminänderung)
+			\item \Func{} Das System braucht keine festen Wartungszeiten
+		\end{itemize}
 		
+\stepHc		
 	\section{Produktleistungen auf Clientseite}
-	
+			\begin{itemize}
+				\item \Func{} Bei Fehleingabe werden bereits eingetragene Daten wieder angezeigt
+				\item \Func{} Fehlermeldungen werden im Browser ausgegeben
+				\item \Func{} Passwörter werden gehasht.
+				\item \Func{} Übertragung und Einsicht aller persönlichen Informationen erfolgen über eine SSL Verbindung
+				\item \Func{} Die Administratoren sind in der Lage registrierte Benutzer zu bearbeiten und ihnen neue Funktionen zuweisen (Trainer oder Administratoren)
+				\item \Func{} Die Administratoren haben über eine selbst geschriebene CSS Datei Einfluss auf die Optische Darstellung der Software 
+				\item \Func{} Unautorisierte Benutzeraktion (z.B anonymer User will sich für Kurs eintragen) wird nicht angezeigt, stattdessen wird auf die Registrierung bzw. Login verwiesen
+				\item \Func{} An einem Client-Browser können nicht mehrere autorisierte verschiedene Sessions zeitgleich geführt werden
+				\item \Func{} Verfügbarkeit der Räumlichkeit wird nicht unterstützt.
+				\item \Func{} Die Sprache des Systems kann auf Englisch oder Deutsch gesetzt werden. Benutzereingaben werden nicht berücksichtigt und werden unverändert angezeigt.
+			\end{itemize}
 		
 		
  
