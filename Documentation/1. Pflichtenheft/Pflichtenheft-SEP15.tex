@@ -412,7 +412,7 @@ Jedem Systemadministrator stehen auch alle Funktionen eines Trainers zur Verfüg
 	     	\item Titel (String)
 	     	\item CSS-Datei (String)
 	     	\item Impressum (String)
-	     	\item Logo (String)
+	     	\item Logopfad (String)
 	     	\item AGB (String)
 	     	\item Hilfe (String)
 	     \end{itemize}
@@ -443,7 +443,7 @@ Jedem Systemadministrator stehen auch alle Funktionen eines Trainers zur Verfüg
 	   	\item Enddatum (Date)
 	   	\item Ort (String)
 	   	\item Maximale Teilnehmerzahl (Integer)
-	   	\item Bild (String)
+	   	\item Bildverweis (String)
 	   	\item Kurseinheiten (KursIDs)
 	   	\item Teilnehmer (BenutzerIDs)
 	   \end{itemize}
@@ -478,7 +478,7 @@ Jedem Systemadministrator stehen auch alle Funktionen eines Trainers zur Verfüg
 		  	\item E-mailadresse (String)
 		  	\item Addresse (String)
 		  	\item Guthaben (float)
-		  	\item Bild (String)
+		  	\item Bildverweis (String)
 		  	\item eingeschriebene Kurse (KursIDs)
 		  	\item eingeschriebene Kurseinheiten (KurseinheitenIDs)
 		  	\item eigene Termine (TermineIDs)
@@ -515,7 +515,7 @@ Jedem Systemadministrator stehen auch alle Funktionen eines Trainers zur Verfüg
 		\begin{itemize}
 			\item \Func{} Zur Speicherung der persistenten Daten wird eine PostgreSQL Datenbank verwendet
 			\item \Func{} E-Mailbenachrichtigung, falls von Benutzer erwünscht, bei wichtigen Ereignissen (z.B Registrierung, Buchung einer Kurseinheit bzw Kurses, Terminänderung)
-			\item \Func{} Das System braucht keine festen Wartungszeiten
+			\item \Func{} Das System hat Wartungszeit von 1,6 Stunden in der Woche bzw. 7,2 Stunden im Monat.
 		\end{itemize}
 		
 \stepHc		
@@ -764,7 +764,7 @@ Darüber hinaus sollten noch folgende Qualitätsmerkmale genannt werden, welchen
 					\item Der Benutzer gibt bei der Registrierung ein zu kurzes Passwort ein und erhält nach Drücken des 'registrieren'-Buttons eine Fehlermeldung.	
 					\item Der Benutzer gibt zwei verschiedene Passwörter ein und erhält nach Drücken des 'registrieren'-Buttons eine Fehlermeldung.
 					\item Der Benutzer hat seine Mailadresse nicht angegeben und erhält nach Drücken des 'registrieren'-Buttons eine Fehlermeldung.	
-					\item Der Benutzer meldet sich mit folgenden Daten an: 
+					\item Der Benutzer registriert sich mit folgenden Daten: 
 						\begin{itemize}
 							\item Benutzername: 'Kathi5'
 							\item Passwort: 'bSdFg7HjK'
@@ -839,7 +839,7 @@ Darüber hinaus sollten noch folgende Qualitätsmerkmale genannt werden, welchen
 				Der Nutzer 'Kathi5' klickt auf die Registerkarte 'Mein Profil'. Hier wird der aktuelle Kontostand von 20 Euro angezeigt.
 				
 				\item \Test{Kursdetails empfangen}
-				'Kathi5' klickt in der Detailansicht des Kurses 'Yoga' auf die das Auswahlfeld 'Kursdetails empfangen' und erhält so bei Veränderungen eine Infomail.  ??? Speichern-Button???
+				'Kathi5' klickt in der Detailansicht des Kurses 'Yoga' auf das Auswahlfeld 'Kursdetails empfangen' und erhält so bei Veränderungen eine Infomail.  ??? Speichern-Button???
 				
 				\item \Test{Hilfeseite anzeigen}
 				Der Benutzer 'Kathi5' befindet sich momentan auf der Kursdetailseite des Kurses 'Yoga' und lässt sich durch Drücken des Buttons 'Hilfe' die Hilfeseite anzeigen. Dort sucht er die Information zum Thema 'Profilbild hochladen'.
@@ -900,7 +900,7 @@ Darüber hinaus sollten noch folgende Qualitätsmerkmale genannt werden, welchen
 				\item \Test{Benutzer löschen durch Systemadministrator}
 				Der Systemadministrator wählt auf der Seite 'Benutzer verwalten' den zu löschenden Benutzer 'Ricky1' durch Doppelklick aus und gelangt dadurch auf die Seite 'Benutzer bearbeiten'. Durch Drücken des Buttons 'Benutzer löschen' entfernt der Admin den Benutzer 'Ricky1'.
 				
-				\item \Test{Benutzer löschen durch Trainer}
+				\item \Test{Kurs löschen durch Trainer}
 				Der Trainer 'Basti3' auf der Oberfläche mit seinen Trainingskursen den Kurs 'Standardtanz' an und wird auf die Seite 'Kurs bearbeiten' weitergeleitet. Durch Klicken des Buttons 'Kurs löschen' wird der Kurs 'Standardtanz' entfernt.
 				
 			\end{itemize}
