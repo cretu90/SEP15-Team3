@@ -17,10 +17,16 @@
 
 %Glossar
 \usepackage[nonumberlist, toc, section=chapter, numberedsection=nolabel]{glossaries}
-\makeglossaries
+\makenoidxglossaries
 
 %Glossareinträge
-
+\newglossaryentry{Admin}{name=Administrator, description={Ein Administrator oder kurz Admin ist ein Systemverwalter, welcher besondere (weiterführende) Zugriffsrechte hat. Er betreut und verwaltet das System.}}
+\newglossaryentry{Trainer}{name=Kursleiter, description={Ein Kursleiter ist ein Trainer, welcher einen oder mehrere Kurse leitet.}}
+\newglossaryentry{Einheiten}{name=Kurseinheiten, description={Jeder Kurs wird in verschiedene Kurseinheiten unterteilt. Dabei entspricht eine Einheit einem stattfindenden Kurstermin.}}
+\newglossaryentry{Konfiguration}{name=Konfiguration, description={Eine Konfiguration (meist durch den Systemadministrator) beinhaltet die Installation und die Auswahl von Voreinstellungen sowie beispielsweise das Bearbeiten des Impressums.}}
+\newglossaryentry{Client}{name=Client, description={Ein Client ist ein Programm, welches auf einem Endgerät ausgeführt wird und Dienstleistungen von einem Server in Anspruch nimmt}}
+\newglossaryentry{Server}{name=Server, description={Ein Server ist ein Dienstleister, der in einem Netzwerk Daten oder Ressourcen zur Verfügung stellt.}}
+\newglossaryentry{Tomcat}{name=Apache Tomcat, description={Open Source Applikationsserver zum Ausführen von Web-Anwendungen, welche über Java geschrieben wurden.}}
 
 
 \begin{document}
@@ -101,7 +107,7 @@
 			\begin{itemize}
 			\item Erweitert Funktionsumfang vom \glqq registrierten Benutzer\grqq{} und \glqq Kursadministrator\grqq
 			\item erstellt Kurse und kann diesen Kursleiter zuordnen
-			\item Benutzerverwaltung einschließlich der Änderung einer Benutzerrolle von Nutzer zu Kursleiter/Administrator oder Kursleiter zu Nutzer/Administrator
+			\item Benutzerverwaltung einschließlich der Änderung einer Benutzerrolle von Nutzer zu Kursleiter/\gls{Admin} oder Kursleiter zu Nutzer/Administrator
 			\end{itemize}
 			
     \section{Wunschkriterien}
@@ -902,7 +908,7 @@ Darüber hinaus sollten noch folgende Qualitätsmerkmale genannt werden, welchen
 				Der Systemadministrator wählt auf der Seite 'Benutzer verwalten' den zu löschenden Benutzer 'Ricky1' durch Doppelklick aus und gelangt dadurch auf die Seite 'Benutzer bearbeiten'. Durch Drücken des Buttons 'Benutzer löschen' entfernt der Admin den Benutzer 'Ricky1'.
 				
 				\item \Test{Kurs löschen durch Kursleiter}
-				Der Kursleiter 'Basti3' auf der Oberfläche mit seinen Trainingskursen den Kurs 'Standardtanz' an und wird auf die Seite 'Kurs bearbeiten' weitergeleitet. Durch Klicken des Buttons 'Kurs löschen' wird der Kurs 'Standardtanz' entfernt.
+				Der Kursleiter 'Basti3' auf der Oberfläche mit seinen Trainingskursen den Kurs 'Standardtanz' an und wird auf die Seite 'Kurs bearbeiten' weitergeleitet. Durch Klicken des Buttons 'Kurs löschen' wird der Kurs 'Standardtanz' entfernt. 
 				
 			\end{itemize}
 
@@ -964,5 +970,5 @@ Darüber hinaus sollten noch folgende Qualitätsmerkmale genannt werden, welchen
         	\item Lenovo Ideapad Intel Core i5-3317U CPU @ 1.70GHz x 2
         \end{itemize}
         
-\printglossaries
+\printnoidxglossaries
 \end{document}
