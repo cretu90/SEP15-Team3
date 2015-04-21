@@ -237,16 +237,17 @@ Die Produktfunktionen sind nach Benutzergruppen geordnet. Wunschkriterien sind m
 		\subsection{Grundfunktionen}
 			\begin{itemize}
 				\item \Func{Aufruf der Startseite.}
-					Die Startseite kann mit jedem unterstützten \gls{Browser} (vgl. Produktumgebung) via \gls{URL} aufgerufen werden.
+					Die Startseite kann mit jedem unterstützten \gls{Browser} (vgl. Produktumgebung -> 3.1 Software -> Client) via \gls{URL} aufgerufen werden.
 				\item \Func{Registrierung im System durch Ausfüllen eines Formulars.}
-					Der Nutzer kann sich durch Ausfüllen eines Registrierungsformulars im System registrieren. Die Anwendung generiert für den neu registrierte Nutzer automatisch eine im System eindeutige \gls{Id}. Nach Abschicken des Formulars gibt es zwei Möglichkeiten um den Account zu aktivieren. Entweder erhält der Nutzer eine E-Mail an die von ihm angegebene Adresse, welche einen Aktivierungslink enthält oder der Account wird vom Betreiber bzw. einem Kursleiter freigeschaltet. Welche der beiden Möglichkeiten zum Einsatz kommt, ist vom Administrator in seinen Einstellungen für das System auszuwählen.
+					Der Nutzer kann sich durch Ausfüllen eines Registrierungsformulars im System registrieren. Die Anwendung generiert für den neu registrierten Nutzer automatisch eine im System eindeutige Identifikationsnummer. Nach Abschicken des Formulars wird an die angegebene E-Mailadresse eine Bestätigungsmail  mit einem Verifizierungslink geschickt, welcher dazu dient, die E-Mailadresse des neuen Benutzers zu bestätigen. Der Nutzer wird dann auf die 'Anmelden' - Seite des Systems weitergeleitet. Ob sich der Benutzer nun schon in das System einloggen kann, hängt von der Art der Accountaktivierung ab. Diese wird durch den Administrator festgelegt(\FuncBlue{/F40-160/}). Der Account ist entweder durch die E-Mailverifikation automatisch aktiviert worden oder muss manuell durch einen Kursleiter oder einen Administrator aktiviert werden(\FuncBlue{/F30-120/}).
 				\item \Func{Anzeigen des Kursangebots.}
-					Durch Klicken der Schaltfläche 'Kursangebot' wird dem Nutzer das Kursangebot angezeigt. Als \gls{Default} wird dabei das Angebot des aktuellen Tages angezeigt. Der Nutzer hat auch die Möglichkeit das gesamte Kursangebot als Anzeigezeitraum auszuwählen. Die Auswahl des Anzeigezeitraums ist über eine Drop-Down-Liste möglich. Bestätigt wird die Auswahl durch Klicken der 'Anzeigen' - Schaltfläche. 
-					Weitere Anzeigezeiträume sind als Wunschkriterium zu realisieren.(vgl. \FuncGreen{/F10-110/})
+					Durch Klicken der Schaltfläche 'Kursangebot' wird dem Nutzer das gesamte Kursangebot angezeigt. Die Anzeige ist automatisch aufsteigend nach dem 'Beginn' der nächsten Kurseinheit des Kurses sortiert. 
 				\item \Func{Sortieren des angezeigten Kursangebots.}
-					Die angezeigten Kurse können entweder nach 'Kursname' alphabetisch oder nach 'Uhrzeit' chronologisch sortiert werden.
+					Die angezeigten Kurse können entweder nach 'Titel' des Kurses alphabetisch oder nach dem 'Beginn' der nächsten Kurseinheit des Kurses chronologisch sortiert werden.
 				\item \Func{Suche nach Kursen.}
-					Das Kursangebot kann durch Eingabe des Kursnamens  und Betätigen der 'Suchen' - Schaltfläche nach einem bestimmten Kurs durchsucht werden.
+					Das Kursangebot kann durch Eingabe des Kurstitels und Betätigen der 'Suchen' - Schaltfläche nach einem bestimmten Kurs durchsucht werden.
+				\item \Func{Anzeigen der Kursdetails}
+				    Durch Klicken auf einen Kurs des Kursangebots wird der anonyme Nutzer zur 'Kursdetails' - Seite des Kurses weitergeleitet. Auf der Seite werden die Identifikationsnummer des Kurses, der 'Titel', die 'Beschreibung', die 'Trainer' und die 'Kurseinheiten' des Kurses angezeigt(\FuncBlue{/D20-10/}). Eine Anmeldung zum Kurs oder zu einer Kurseinheit und die Anzeige der Kursteilnehmer ist für den anonymen Nutzer nicht möglich.
 				\item \Func{Anzeige des Impressums.}
 					Das Impressum kann von jeder Seite des Systems aus angezeigt werden.
 				\item \Func{Anzeige der Hilfeseite.}
@@ -256,7 +257,7 @@ Die Produktfunktionen sind nach Benutzergruppen geordnet. Wunschkriterien sind m
 				\item \FuncW{Wechsel der Anzeigesprache.}
 					Von jeder Seite des Systems aus kann durch Klicken einer entsprechenden Schaltfläche die Anzeigesprache gewechselt werden. Als Default ist 'Deutsch' ausgewählt. Als weitere Sprache ist 'Englisch' vorgesehen.
 				\item \FuncW{Einschränken des angezeigten Kursangebots.}
-					Der Nutzer hat die Möglichkeit das angezeigte Kursangebot auf verschiedene Zeiträume einzuschränken. Als Default - Zeitraum ist der aktuelle Tag vorgesehen(vgl. \FuncBlue{/F10-30/}). Weitere Anzeigezeiträume sind 'Wochenangebot' und 'Monatsangebot'. Die Auswahl des Anzeigezeitraums ist über eine Drop-Down-Liste möglich. Bestätigt wird die Auswahl durch Klicken der 'Anzeigen' - Schaltfläche. 
+					Der Nutzer hat die Möglichkeit das angezeigte Kursangebot auf verschiedene Zeiträume einzuschränken. Vorgesehene Anzeigezeiträume sind 'Tagesangebot' und 'Wochenangebot'. Die Auswahl des Anzeigezeitraums ist über eine Drop-Down-Liste möglich. Bestätigt wird die Auswahl durch Klicken der 'Anzeigen' - Schaltfläche. 
 			\end{itemize}
 
 	\section{Registrierter Benutzer}
@@ -265,79 +266,78 @@ Die Produktfunktionen sind nach Benutzergruppen geordnet. Wunschkriterien sind m
 		\subsection{Grundfunktionen}
 			\begin{itemize}
 				\item \Func{Sicheres Einloggen ins System.}
-					Durch Eingabe des Benutzernamen, des Passworts und Klicken der 'Anmelden' - Schaltfläche kann sich der Benutzer ins System einloggen. Die Anmeldedaten werden dabei mittels \gls{SSL} übertragen.
+					Durch Eingabe des Benutzernamen, des Passworts und Klicken der 'Anmelden' - Schaltfläche kann sich der Benutzer ins System einloggen. Die Anmeldedaten werden dabei mittels \gls{SSL} übertragen. Nach erfolgreichem Anmelden wird der Nutzer auf die 'Meine Kurse' - Seite weitergeleitet.
 				\item \Func{Anzeigen der angemeldeten Kurse.}
-					Die Kurse zu denen der registrierte Benutzer angemeldet ist werden gesammelt angezeigt.
+					Die Kurse zu denen der registrierte Benutzer angemeldet ist werden gesammelt auf der 'Meine Kurse' - Seite angezeigt.
 				\item \Func{Detailanzeige der angemeldeten Kurse.}
-					Durch Klicken auf einen der angemeldeten Kurs werden die Details dieses Kurses angezeigt. Hier hat der registrierte Benutzer die Möglichkeit sich zu Kurseinheiten an-/abzumelden und sich aus dem Kurs auszutragen.
+					Durch Klicken auf einen angemeldeten Kurs werden die Details dieses Kurses angezeigt. Der registrierte Nutzer bekommt die Daten aus \FuncBlue{/F10-60/} angezeigt. Zusätzlich kann der registrierte Nutzer in seinem angemeldeten Kurs die Teilnehmerliste einsehen und bekommt Details der Kurseinheiten, wie etwa 'Ort' und 'Preis'(vgl. \FuncBlue{/D30-10/}), angezeigt. Außerdem hat der registrierte Benutzer die Möglichkeit sich zu Kurseinheiten an-/abzumelden und sich aus dem Kurs auszutragen.
+				\item \Func{Anzeige der Teilnehmer eines angemeldeten Kurses}
+				    Durch Betätigen der 'Zu den Teilnehmern' - Schaltfläche auf der 'Kursdetails' - Seite eines angemeldeten Kurses kann der registrierte Nutzer die Teilnehmerliste des Kurses einsehen. 
 				\item \Func{Anzeigen der Profilseite.}
 					Der registrierte Benutzer besitzt eine Profilseite auf welcher seine Daten gesammelt angezeigt werden. 
 				\item \Func{Ändern der eigenen Benutzerdaten.}
-					Der registrierte Benutzer kann durch Klicken der Schaltfläche 'Benutzerdaten bearbeiten' seine eingegebenen Daten bearbeiten. Sollte die E-Mail-Adresse geändert werden, wird an die neue E-Mail-Adresse wie beim Registrierungsprozess eine Bestätigungsmail mit einem neuen Authentifizierungslink geschickt, um die neue E-Mail-Adresse auf Korrektheit zu überprüfen.
-					Der registrierte Nutzer kann alle seine Benutzerdaten ändern mit Ausnahme seines Kontostands und der vom System generierten Identifikationsnummer.
+					Der registrierte Benutzer kann durch Klicken der Schaltfläche 'Bearbeiten' seine eingegebenen Daten bearbeiten. Sollte die E-Mailadresse geändert werden, wird an die neue E-Mailadresse wie beim Registrierungsprozess eine Bestätigungsmail mit einem neuen Verifizierungslink geschickt, um die neue E-Mail-Adresse auf Korrektheit zu überprüfen. Der registrierte Nutzer kann alle seine Benutzerdaten ändern mit Ausnahme seines Kontostands, seiner Benutzerrolle und der vom System generierten Identifikationsnummer. Durch Betätigen der 'Speichern' - Schaltfläche werden die Daten gespeichert.
 				\item \Func{Hochladen eines Profilbilds.}
-					Der registrierte Benutzer kann ein Profilbild hochladen. Das Bild muss bestimmte Anforderungen bezüglich Format, Auflösung und Größe erfüllen. Als Default ist ein \gls{Dummy} - Bild gesetzt.
+					Der registrierte Benutzer kann ein Profilbild hochladen. Das Bild muss das .jpg - Format haben. Anforderungen bezüglich Auflösung und Größe des Bildes werden während der Produktentwicklung festgelegt. Als Default ist ein \gls{Dummy} - Bild gesetzt.
 				\item \Func{Anzeigen des aktuellen Kontostands.}
-					Der registrierte Benutzer kann den aktuellen Kontostand seines Guthabenkontos einsehen. 
+					Der registrierte Benutzer kann den aktuellen Kontostand seines Guthabenkontos auf seiner Profilseite einsehen. 
 				\item \Func{Aus dem System abmelden mittels 'Abmelden' - Schaltfläche.}
 					Der registrierte Benutzer kann sich  von jeder Seite des Systems aus durch Klicken der Schaltfläche 'Abmelden' aus dem System abmelden und wird auf die Anmeldeseite weitergeleitet.
-				\item \FuncW{Anzeige der nächsten Termine.}
-					Die nächsten zehn Termine (Name, Datum/Zeit, Ort) des registrierten Benutzers werden gesammelt in Form einer Auflistung angezeigt.
-				\item \FuncW{'Passwort vergessen' - Schaltfläche.}
+				\item \Func{'Passwort vergessen' - Schaltfläche.}
 					Klickt der Benutzer die 'Passwort vergessen' - Schaltfläche, so wird er aufgefordert seine im System hinterlegte E-Mailadresse einzugeben. An diese wird dann ein automatisch generiertes Passwort geschickt.
 			\end{itemize}	
-				
-		\subsection{Terminplaner}
-			\begin{itemize}
-				\item \Func{Terminplaner.}
-					Der registrierte Benutzer hat einen persönlichen Terminplaner. Dieser wird in der Wochenansicht dargestellt. Der Terminplaner unterstützt nur die Anzeige von einstündigen Slots. Ist ein Termin kürzer, wird dennoch der Slot für die ganze Stunde belegt. Ist der Termin länger als eine Stunde werden dementsprechend mehrere einstündige Slots belegt.
-					Außerdem ist darauf zu achten, dass die Slots jeweils zur vollen Stunde beginnen und zur nächsten vollen Stunde enden. (Analog dem Prinzip eines Stundenplans)
-				\item \Func{Anzeigen des Terminplaners.}
-					Der persönliche Terminplaner des registrierten Benutzers kann angezeigt werden. 
-				\item \Func{Eintragen von eigenen Terminen in den Terminplaner.} 
-					Der registrierte Benutzer kann eigene Termine in seinen Terminplaner eintragen. Es können nur Termine eingetragen werden, wenn zur entsprechenden Zeit noch kein anderer Termin im Terminplaner vorhanden ist. Der Nutzer hat die Möglichkeit E-Mailadressen anzugeben, an welche automatisch eine Mitteilung über seinen neuen Termin geschickt werden.
-				\item \Func{Automatische Eintragung von angemeldeten Kurseinheiten.}
-					Die angemeldeten Kurseinheiten des registrierten Benutzers werden automatisch in dessen Terminplaner eingetragen.
-				\item \Func{Automatische Entfernung von abgemeldeten Kurseinheiten.}	
-					Meldet sich der registrierte Benutzer aus einer Kurseinheit ab oder fällt eine Kurseinheit aus, so wird diese aus dem Terminplaner gelöscht.
-			\end{itemize}   
 
 		\subsection{Kursfunktionen}
 			\begin{itemize}
 				\item \Func{Detailansicht der Kurse.}
-					Der registrierte Nutzer kann sich eine Detailansicht der angebotenen Kurse anzeigen lassen. In der Detailansicht kann sich der Nutzer, wenn er zum Kurs bereits angemeldet ist, zu Kurseinheiten anmelden oder von Kurseinheiten abmelden.
+					Der registrierte Nutzer kann sich eine Detailansicht der angebotenen Kurse anzeigen lassen. Angezeigt werden die Daten aus \FuncBlue{/F10-60/}. Außerdem kann sich der Nutzer in der Detailansicht zum Kurs anmelden. Eine Einsicht in die Teilnehmerliste des Kurses ist erst nach Anmeldung zum Kurs möglich.
 				\item \Func{Zu Kurs anmelden.} 
 					Der registrierte Nutzer kann sich zu beliebig vielen Kursen anmelden. 
-					Dafür klickt er in der Detailansicht des gewünschten Kurses auf die Schaltfläche 'Anmelden'.	\item \Func{Von Kurs abmelden.} 
+					Dafür klickt er in der Detailansicht des gewünschten Kurses auf die Schaltfläche 'Anmelden'.
+					Bei der Anmeldung hat der registrierte Nutzer die Möglichkeit sich für Benachrichtigungen zu diesem Kurs zu registrieren(vgl. \FuncBlue{/F20-170/}).
+				\item \Func{Von Kurs abmelden.} 
 					Der registrierte Nutzer kann sich von Kursen abmelden zu denen er angemeldet ist. Dafür klickt er in der Detailansicht des gewünschten Kurses auf die Schaltfläche 'Abmelden'. Meldet sich der registrierte Benutzer von einem Kurs ab, meldet er sich damit auch automatisch von allen Kurseinheiten ab.
 				\item \Func{Zu Kurseinheit anmelden.}
 					Der registrierte Benutzer kann sich zu beliebig vielen Kurseinheiten anmelden. Um sich zu Kurseinheiten anmelden zu können, muss der Nutzer bei diesem Kurs angemeldet sein.
-					Um sich zu Kurseinheiten eines Kurses anmelden zu können, muss der Nutzer in die Detailansicht des Kurses wechseln. Dort findet er die zu diesem Kurs verfügbaren Einheiten und deren Status. Ist eine Kurseinheit noch nicht voll und ist der Nutzer noch nicht zu dieser Einheit angemeldet, kann er sich anmelden. Der Nutzer hat außerdem die Möglichkeit durch Klicken der Schaltfläche 'Alle Einheiten auswählen' und anschließender Betätigung der Schaltfläche 'Anmelden' sich zu allen Einheiten des Kurs auf einmal anzumelden. Vor Betätigen der Schaltfläche 'Anmelden' hat der Nutzer aber auch noch die Möglichkeit einzelne Einheiten von der Anmeldung auszuschließen. Voraussetzung um sich zu kostenpflichtigen Kurseinheiten anmelden zu können ist ein ausreichendes Guthaben auf dem Konto bzw. keine unzulässige Überziehung des Guthabenkontos.
+					Um sich zu Kurseinheiten eines Kurses anmelden zu können, muss der Nutzer in die Detailansicht des Kurses wechseln. Dort findet er die zu diesem Kurs verfügbaren Einheiten und deren Status. Ist eine Kurseinheit noch nicht voll und ist der Nutzer noch nicht zu dieser Einheit angemeldet, kann er sich anmelden. Der Nutzer hat außerdem die Möglichkeit durch Klicken der Schaltfläche 'Alle auswählen' und anschließender Betätigung der Schaltfläche 'Speichern' sich zu allen Einheiten des Kurs auf einmal anzumelden. Vor Betätigen der Schaltfläche 'Speichern' hat der Nutzer aber auch noch die Möglichkeit einzelne Einheiten von der Anmeldung auszuschließen. Voraussetzung um sich zu kostenpflichtigen Kurseinheiten anmelden zu können ist ein ausreichendes Guthaben auf dem Konto bzw. keine unzulässige Überziehung des Guthabenkontos.
 				\item \Func{Von Kurseinheit abmelden.}
 					Der registrierte Benutzer kann sich von Kurseinheiten abmelden, zu denen er angemeldet ist. Um sich von Kurseinheiten eines Kurses abmelden zu können, muss der Nutzer in die Detailansicht des Kurses wechseln. Dort findet er die zu diesem Kurs verfügbaren Einheiten.
-					Er kann nun die Einheiten auswählen von denen er sich abmelden will und durch Betätigen der Schaltfläche 'Abmelden' meldet er sich von den Einheiten ab. Der für kostenpflichtige Einheiten bezahlte Betrag wird automatisch auf das Konto des registrierten Benutzers zurückgebucht.
+					Er kann nun die Einheiten auswählen von denen er sich abmelden will und durch Betätigen der Schaltfläche 'Speichern' meldet er sich von den gewählten Einheiten ab. Der für kostenpflichtige Einheiten bezahlte Betrag wird automatisch auf das Konto des registrierten Benutzers zurückgebucht.
+					Eine Abmeldung von einer Kurseinheit ist nur bis drei Stunden vor deren Beginn möglich. Sollte nämlich aufgrund der Abmeldung des registrierten Nutzers die minimale Teilnehmerzahl der Kurseinheit unterschritten werden, kann der Kursleiter entscheiden, ob die Kurseinheit stattfindet oder nicht. Durch die Begrenzung der Abmeldefrist hat der Kursleiter somit noch eine gewisse Reaktionszeit und kann gegebenenfalls die anderen Teilnehmer über den Ausfall der Kurseinheit informieren. 
 				\item \Func{Nach Kursen suchen - erweitert.}
 					Der registrierte Nutzer hat die Möglichkeit das gesamte Kursangebot zu durchsuchen. Über eine Drop-Down-Liste kann der Nutzer einen Suchparameter auswählen. Nach Eingabe eines Suchbegriffs und Klicken der Schaltfläche 'Suchen' wird das Kursangebot nach dem Suchbegriff bzgl. des Suchparameters durchsucht und das Ergebnis angezeigt. 
-					Als Suchparameter sind vorgesehen 'KursId', 'Kursname', 'Ort', 'Kursleiter', 'Datum', 'Zeit', 'Kostenpflichtig', 'Kostenlos'.
-				\item \Func{Kurse sortieren - erweitert.}
-					Der registrierte Nutzer hat die Möglichkeit das angezeigte Kursangebot zu sortieren. Als Sortiermöglichkeiten sind vorgesehen alphabetisch nach 'Kursname', 'Ort' oder 'Kursleiter' und chronologisch nach 'Datum' oder 'Uhrzeit'.
+					Als Suchparameter sind vorgesehen 'ID', 'Titel', 'Kursleiter', 'Beginn', 'Kostenpflichtig', 'Kostenlos'.
 				\item \Func{Für Kursbenachrichtigungen eintragen}
-					Der registrierte Nutzer hat die Möglichkeit sich bei der Anmeldung zu einem Kurs durch Auswahl einer Checkbox in der Detailansicht des Kurses für Benachrichtigungen zu diesem Kurs zu registrieren oder nicht.
+					Der registrierte Nutzer hat die Möglichkeit sich bei der Anmeldung zu einem Kurs durch Auswahl einer Checkbox in der Detailansicht des Kurses für Benachrichtigungen zu diesem Kurs zu registrieren oder nicht. Per Default ist die Checkbox nicht ausgewählt.
 			\end{itemize}
 
 		\subsection{Bezahlfunktionen}
 			\begin{itemize}
 				\item \Func{Guthabenkonto aufladen - online}
-					Der registrierte Nutzer besitzt ein Guthabenkonto. Dieses kann er online mittels Kreditkarte aufladen. Die Kreditkartenabwicklung erfolgt dabei
-					über die Infosun-Bank. Die Übertragung der Kreditkartendaten erfolgt mittels SSL. Der aufgeladene Betrag ist sofort auf dem Guthabenkonto verfügbar und kann auch sofort verwendet werden.
+					Der registrierte Nutzer besitzt ein Guthabenkonto. Dieses kann er online mittels Kreditkarte aufladen. Dafür betätigt Benutzer die Schaltfläche 'Konto aufladen' auf seiner Profilseite. Er wird auf die 'Konto aufladen' - Seite weitergeleitet. Dort kann er seine Kreditkartendaten und den aufzuladenden Betrag eingeben. Die Kreditkartenabwicklung erfolgt dabei über die Infosun-Bank. Die Übertragung der Kreditkartendaten erfolgt mittels SSL. Der aufgeladene Betrag ist sofort auf dem Guthabenkonto verfügbar und kann auch sofort verwendet werden. Aus Sicherheitsgründen werden keine Kreditkartendaten im System gespeichert.
 				\item \Func{Guthabenkonto aufladen - offline}
 					Der registrierte Nutzer kann sein Guthabenkonto auch offline aufladen. Dies ist mittels Überweisung oder Barzahlung an den Betreiber oder einen Kursleiter möglich. 
-					Der Nutzer überweist dafür den Betrag unter Angabe seine BenutzerID und seines Namens  auf das Konto des Betreibers oder bezahlt bar. Der bezahlte Betrag ist erst auf dem Guthabenkonto des registrierten Benutzers vorhanden, wenn er vom Betreiber oder einem der Kursleiter gutgeschrieben wurde.
+					Der Nutzer überweist dafür den Betrag unter Angabe seiner Identifikationsnummer und seines Namens  auf das Konto des Betreibers oder bezahlt bar. Der bezahlte Betrag ist erst auf dem Guthabenkonto des registrierten Benutzers vorhanden, wenn er vom Betreiber oder einem der Kursleiter gutgeschrieben wurde.
 				\item \Func{Kurseinheiten bezahlen}
 					Die Bezahlung von Kurseinheiten wird automatisch bei der Anmeldung zur Kurseinheit erledigt. Der registrierte Nutzer kann sich also auch nur zu der Kurseinheit anmelden, wenn sein Guthaben auf dem Konto für den Preis der Einheit ausreicht bzw. sein Kontostand nicht den vom Betreiber festgelegten Überziehungskredit überschreitet.
 				\item \Func{Rückbuchung des Kurspreises bei Abmeldung oder Kursausfall}
 					Meldet sich der registrierte Nutzer von einer Kurseinheit ab oder fällt die Kurseinheit aufgrund zu geringer Teilnehmerzahl oder wegen eines anderen Grunds aus, so wird der Kaufpreis der Einheit automatisch auf das Konto des registrierten Nutzers zurückgebucht.
 			\end{itemize}	
+			
+		\subsection{Terminplaner}
+			\begin{itemize}
+				\item \FuncW{Terminplaner.}
+					Der registrierte Benutzer hat einen persönlichen Terminplaner. Dieser wird in der Wochenansicht dargestellt. Der Terminplaner unterstützt nur die Anzeige von einstündigen Slots. Ist ein Termin kürzer, wird dennoch der Slot für die ganze Stunde belegt. Ist der Termin länger als eine Stunde werden dementsprechend mehrere einstündige Slots belegt.
+					Außerdem ist darauf zu achten, dass die Slots jeweils zur vollen Stunde beginnen und zur nächsten vollen Stunde enden. (Analog dem Prinzip eines Stundenplans)
+				\item \FuncW{Anzeigen des Terminplaners.}
+					Der persönliche Terminplaner des registrierten Benutzers kann angezeigt werden. 
+				\item \FuncW{Automatische Eintragung von angemeldeten Kurseinheiten.}
+					Die angemeldeten Kurseinheiten des registrierten Benutzers werden automatisch in dessen Terminplaner eingetragen.
+				\item \FuncW{Automatische Entfernung von abgemeldeten Kurseinheiten.}	
+					Meldet sich der registrierte Benutzer aus einer Kurseinheit ab oder fällt eine Kurseinheit aus, so wird diese aus dem Terminplaner gelöscht.
+				\end{itemize}   
+
+
 
 	\section{Kursleiter}
 	Jedem Kursleiter stehen auch alle Funktionen eines registrierten Benutzers zur Verfügung. Darüber hinaus kann ein Kursleiter auf folgenden Funktionen zurückgreifen.
@@ -347,21 +347,21 @@ Die Produktfunktionen sind nach Benutzergruppen geordnet. Wunschkriterien sind m
 				\item \Func{Eigene Kurse anzeigen.}
 					Auf der Kursleiterseite werden die Kurse, welche der Kursleiter trainiert, gesammelt angezeigt.
 				\item \Func{Eigenen Kurs editieren.}
-					Der Kursleiter hat die Möglichkeit, die Kurse, die er  trainiert zu editieren. Dafür klickt er in seinen Trainingskursen den gewünschten Kurs an und wird auf die 'Kursdetails' - Seite weitergeleitet. Durch Betätigen der 'Bearbeiten' - Schaltfläche kann er die Kursdaten bearbeiten. Er kann alle Kursdaten verändern mit Ausnahme der vom System generierten KursId. Durch Betätigen der 'Speichern' - Schaltfläche werden die Kursdaten gespeichert.
+					Der Kursleiter hat die Möglichkeit, die Kurse, die er  trainiert zu editieren. Dafür klickt er in seinen Trainingskursen den gewünschten Kurs an und wird auf die 'Kursdetails' - Seite weitergeleitet. Durch Betätigen der 'Bearbeiten' - Schaltfläche kann er die Kursdaten bearbeiten. Er kann alle angezeigten Kursdaten verändern mit Ausnahme der vom System generierten Identifikationsnummer. Durch Betätigen der 'Speichern' - Schaltfläche werden die Kursdaten gespeichert.
 				\item \Func{Eigenen Kurs löschen.}
 					Der Kursleiter hat die Möglichkeit, die Kurse, die er  trainiert zu löschen. Dafür klickt er in seinen Trainingskursen den gewünschten Kurs an und wird dann auf die 'Kursdetails' - Seite weitergeleitet. Dort kann er den Kurs durch Betätigen der 'Kurs löschen' - Schaltfläche löschen.
 				\item \Func{Kurseinheit anlegen.}
-					Der Kursleiter hat die Möglichkeit Kurseinheiten für einen Kurs anzulegen, welchen er trainiert. Dafür wechselt er in die 'Kursdetails' - Oberfläche. Dort betätigt er die Schaltfläche 'Kurseinheit anlegen'. Er wird auf eine Seite weitergeleitet, auf welcher er die Daten der Kurseinheit eintragen kann. Durch Betätigen der 'Speichern' - Schaltfläche wird die Kurseinheit angelegt. Die Kurseinheiten können nur in dem Zeitraum zwischen Startzeitpunkt und Endzeitpunkt des zugehörigen Kurses stattfinden.
+					Der Kursleiter hat die Möglichkeit Kurseinheiten für einen Kurs anzulegen, welchen er trainiert. Dafür wechselt er in die 'Kursdetails' - Oberfläche. Dort betätigt er die Schaltfläche 'Kurseinheit anlegen'. Er wird auf eine Seite weitergeleitet, auf welcher er die Daten der Kurseinheit eintragen kann. Das System generiert für die Kurseinheit eine im System eindeutige Identifikationsnummer. Durch Betätigen der 'Speichern' - Schaltfläche wird die Kurseinheit angelegt. Die Kurseinheiten können nur in dem Zeitraum zwischen Startzeitpunkt und Endzeitpunkt des zugehörigen Kurses stattfinden.
 				\item \Func{Kurseinheit editieren.}
-					Der Kursleiter hat die Möglichkeit Kurseinheiten der eigenen Kurse zu editieren. Dafür klickt er in der Detailansicht des Kurses die 'Bearbeiten' - Schaltfläche der Kurseinheit an und wird auf die 'Kurseinheit bearbeiten' - Oberfläche weitergeleitet. Hier kann der Kursleiter die Daten der Kurseinheit bearbeiten. Außerdem kann der Kursleiter hier manuell durch Eingabe der Daten einen Teilnehmer zur Kurseinheit hinzufügen.
+					Der Kursleiter hat die Möglichkeit Kurseinheiten der eigenen Kurse zu editieren. Dafür klickt er in der Detailansicht des Kurses die 'Bearbeiten' - Schaltfläche der Kurseinheit an und wird auf die 'Kurseinheit bearbeiten' - Oberfläche weitergeleitet. Hier kann der Kursleiter die Daten der Kurseinheit mit Ausnahme der vom System generierten Identifikationsnummer bearbeiten. Außerdem kann der Kursleiter hier manuell durch Eingabe der Daten einen Teilnehmer zur Kurseinheit hinzufügen.
+				\item \Func{Teilnehmer zu Kurseinheit hinzufügen.}
+					Der Kursleiter hat die Möglichkeit durch Eingabe der Daten eines Benutzers diesen als Teilnehmer zu einer einzelnen Kurseinheit einer seiner Kurse einzutragen. Dafür muss der Kursleiter auf die 'Kurseinheit bearbeiten' - Seite der entsprechenden Kurseinheit wechseln.
+				\item \Func{Teilnehmer aus Kurseinheit entfernen.}
+				    Der Kursleiter hat die Möglichkeit Teilnehmer aus einer Kurseinheit einer seiner Kurse zu entfernen. Dafür muss der Kursleiter auf die 'Kurseinheit bearbeiten' - Seite der entsprechenden Kurseinheit wechseln. Dort wählt er den zu löschenden Teilnehmer aus der Teilnehmerliste der Kurseinheit aus und betätigt die 'Löschen' - Schaltfläche. Es besteht auch die Möglichkeit mehrere Teilnehmer gleichzeitig zu löschen.
 				\item \Func{Kurseinheit löschen.}
-					Der Kursleiter kann Kurseinheiten löschen. Dafür wechselt er durch Betätigen der 'Bearbeiten' - Schaltfläche der zu löschenden Kurseinheit auf die 'Kurseinheit bearbeiten' - Oberfläche. Durch Betätigen der 'Löschen' - Schaltfläche kann er die Kurseinheit löschen.
-				\item \Func{Teilnehmer zu Kurs hinzufügen.}
-					Der Kursleiter hat die Möglichkeit durch Eingabe der Daten eines Benutzers diesen als Teilnehmer zu einer einzelnen Kurseinheit einzutragen. Dafür muss der Kursleiter auf die 'Kurseinheit bearbeiten' - Seite der entsprechenden Kurseinheit wechseln.
+					Der Kursleiter kann Kurseinheiten eigener Kurse löschen. Dafür wechselt er durch Betätigen der 'Bearbeiten' - Schaltfläche der zu löschenden Kurseinheit auf die 'Kurseinheit bearbeiten' - Oberfläche. Durch Betätigen der 'Löschen' - Schaltfläche kann er die Kurseinheit löschen.
 				\item \Func{Teilnehmer aus Kurs entfernen.}
-					Der Kursleiter kann einzelne Teilnehmer aus einem seiner eigenen Kurse entfernen. Dafür muss er in der 'Kursdetails' - Oberfläche die zu entfernenden Teilnehmer auswählen und kann diese durch Betätigen der 'Löschen' - Schaltfläche aus der Kurseinheit entfernen. Es ist damit auch möglich mehrere Teilnehmer gleichzeitig zu entfernen.
-				\item \FuncW{Invited Guests zu Kurs hinzufügen.}
-					Der Kursleiter hat die Möglichkeit nicht im System registrierte Benutzer zu einzelnen seiner Kurseinheiten einzutragen. Dabei spielt es keine Rolle, ob die Kurseinheit kostenpflichtig ist oder nicht. Um Teilnehmer einzutragen wechselt der Kursleiter auf die 'Kurseinheit bearbeiten' - Oberfläche und trägt dort den Namen und Vornamen des Invited Guest ein. Als Identifikationsnummer des Teilnehmers ist bei Invited Guests '00000' vorgesehen.
+					Der Kursleiter kann einzelne Teilnehmer aus einem seiner eigenen Kurse entfernen. Dafür wechselt er über 'Kursdetails' - Oberfläche auf die Teilnehmerliste des Kurses. Dort wählt er den zu entfernenden Teilnehmer aus und entfernt diesen durch Betätigen der 'Löschen' - Schaltfläche aus dem Kurs. Es besteht auch die Möglichkeit mehrere Teilnehmer gleichzeitig zu entfernen.
 			\end{itemize}
 
 		\subsection{Benachrichtigungen}
@@ -374,10 +374,10 @@ Die Produktfunktionen sind nach Benutzergruppen geordnet. Wunschkriterien sind m
 
 		\subsection{Verwaltung}
 			\begin{itemize}
-				\item \Func{Account bestätigen}
-					Der Kursleiter hat die Möglichkeit Accounts zu bestätigen, falls dies durch den Administrator in den Einstellungen für die Registrierungsbestätigung so festgelegt wurde. Registriert sich ein Benutzer neu und ist die Bestätigung von Accounts auf manuell durch den Kursleiter eingestellt, so erhalten bei erfolgreicher Registrierung des Nutzers alle Kursleiter eine E-Mail mit dem Aktivierungslink für den Account. Sobald dieser Link von einem Kursleiter erstmalig geklickt wird, ist der Account freigeschaltet. Erst jetzt kann sich der registrierte Nutzer im System anmelden. Mehrmaliges Betätigen des Links hat keine Auswirkung.
+				\item \Func{Account aktivieren}
+					Der Kursleiter hat die Möglichkeit Accounts zu aktivieren, falls dies durch den Administrator in den Einstellungen für die Accountaktivierung so festgelegt wurde. Ist dies der Fall so wird der Kursleiter durch Betätigen der 'Benutzer aktivieren' - Schaltfläche auf die 'Benutzer aktivieren' - Seite weitergeleitet. Dort findet er eine Auflistung aller Benutzer, die ihre E-Mailadresse bereits verifiziert haben, aber deren Account noch nicht aktiviert wurde. Der Kursleiter kann nun den Benutzer auswählen, dessen Account er aktivieren will. Durch Betätigen der 'Benutzer aktivieren' - Schaltfläche wird der Account des Benutzers aktiviert und dieser kann sich nun im System einloggen. 
+					Es besteht auch die Möglichkeit mehrere Accounts gleichzeitig zu aktivieren. Nach Aktivierung der Benutzeraccounts erhalten die entsprechenden Nutzer eine automatische E-Mail, dass sie sich ab sofort im System anmelden können.
 			\end{itemize}
-
 
 	\section{Systemadministratoren}
 	Jedem Systemadministrator stehen auch alle Funktionen eines Kursleiters zur Verfügung. Darüber hinaus kann ein Systemadministrator auf folgende Funktionen zurückgreifen.
@@ -387,9 +387,9 @@ Die Produktfunktionen sind nach Benutzergruppen geordnet. Wunschkriterien sind m
 				\item \Func{Kurs anlegen.}
 					Der Systemadministrator kann einen neuen Kurs anlegen. Dafür betätigt der Administrator die entsprechende Schaltfläche auf der Administratorseite und wird auf die 'Kurs anlegen' - Seite weitergeleitet. Die Anwendung generiert automatisch eine für den Kurs im System eindeutige Identifikationsnummer. Der Administrator hat die Möglichkeit die Daten des Kurses, wie etwa eine Beschreibung oder den Veranstaltungsort einzugeben. Notwendige Eingaben sind der Startzeitpunkt, der Endzeitpunkt und mindestens ein Kursleiter für den Kurs. Innerhalb des Zeitraums von Startzeitpunkt bis Endzeitpunkt können Kurseinheiten stattfinden.
 				\item \Func{Kurse verwalten.}
-					Der Systemadministrator kann sich alle Kurse anzeigen lassen. Dafür betätigt er die Schaltfläche 'Kurse verwalten' und wird auf die 'Suchen' - Oberfläche weitergeleitet. Dort kann er sich das gesamte Kursangebot anzeigen lassen oder nach bestimmten Kursen bezüglich verschiedener Suchparameter suchen. Durch Betätigen der Schaltfläche 'Anzeigen' werden die gesuchten Kurse angezeigt. Durch Klicken auf einen Kurs wird der Administrator auf die 'Kursdetails' - Seite weitergeleitet.
+					Der Systemadministrator kann sich alle Kurse anzeigen lassen. Dafür betätigt er die Schaltfläche 'Kurse verwalten' und wird auf die 'Kursangebot durchsuchen' - Oberfläche weitergeleitet. Dort kann er sich das gesamte Kursangebot anzeigen lassen oder nach bestimmten Kursen bezüglich verschiedener Suchparameter suchen. Durch Betätigen der Schaltfläche 'Anzeigen' werden die gesuchten Kurse angezeigt. Durch Klicken auf einen Kurs wird der Administrator auf die 'Kursdetails' - Seite weitergeleitet.
 				\item \Func{Kurs bearbeiten.}
-					Der Systemadministrator hat die Möglichkeit einen beliebigen Kurs zu bearbeiten. Dafür wechselt er in die Detailansicht des zu editierenden Kurses. Durch Betätigen der 'Bearbeiten' - Schaltfläche  kann der Administrator nun die Kursdaten editieren. Einzige Ausnahme ist die vom System generierte Identifikationsnummer des Kurses. Des Weiteren kann er Kurseinheiten anlegen, löschen oder editieren, Kursleiter zum Kurs hinzufügen oder entfernen und die Teilnehmer des Kurses editieren.
+					Der Systemadministrator hat die Möglichkeit einen beliebigen Kurs zu bearbeiten. Dafür wechselt er in die Detailansicht des zu editierenden Kurses. Durch Betätigen der 'Bearbeiten' - Schaltfläche  kann der Administrator nun die angezeigten Kursdaten editieren(vgl. \FuncBlue{/D20-10/}). Einzige Ausnahme ist die vom System generierte Identifikationsnummer des Kurses. Des Weiteren kann er Kurseinheiten anlegen, löschen oder editieren, Kursleiter zum Kurs hinzufügen oder entfernen und die Teilnehmer des Kurses editieren.
 				\item \Func{Kurs löschen.}
 					Der Systemadministrator hat die Möglichkeit einen beliebigen Kurs zu löschen. Dafür wechselt er auf die 'Kursdetails' - Seite des zu löschenden Kurses. Durch Betätigen der 'Kurs löschen' - Schaltfläche wird der Kurs und damit auch alle zugehörigen Kurseinheiten gelöscht.
 			\end{itemize}
@@ -397,18 +397,20 @@ Die Produktfunktionen sind nach Benutzergruppen geordnet. Wunschkriterien sind m
 	\subsection{Benutzer}
 			\begin{itemize}
 				\item \Func{Neuen Benutzer anlegen.}
-					Der Systemadministrator hat die Möglichkeit einen neuen Benutzer anzulegen. Dafür betätigt er die Schaltfläche 'Benutzer anlegen' auf der Administratorseite und wird auf eine Seite 'Neuen Benutzer anlegen' weitergeleitet. 
-					Die Anwendung generiert automatisch eine im System eindeutige Identifikationsnummer für den Benutzer. Der Systemadministrator kann die Benutzerdaten eingeben, ein Initialpasswort setzen und die Rolle des Benutzers festlegen. Die Benutzerrolle wird mittels einer Drop-Down - Liste aus den Möglichkeiten 'Kursleiter', 'Administrator','Benutzer' ausgewählt. Durch Betätigen der Schaltfläche 'Speichern' wird der neue Nutzer angelegt.
+					Der Systemadministrator hat die Möglichkeit einen neuen Benutzer anzulegen. Dafür betätigt er die Schaltfläche 'Benutzer anlegen' auf der Administratorseite und wird auf eine Seite 'Benutzer anlegen' weitergeleitet. 
+					Die Anwendung generiert automatisch eine im System eindeutige Identifikationsnummer für den Benutzer. Der Systemadministrator kann die Benutzerdaten eingeben, ein Initialpasswort setzen und die Rolle des Benutzers festlegen. Die Benutzerrolle wird mittels einer Drop-Down - Liste aus den Möglichkeiten 'Kursleiter', 'Administrator','Benutzer' ausgewählt. Durch Betätigen der Schaltfläche 'Speichern' wird der neue Nutzer angelegt. Der vom Administrator erstellte Benutzer kann sich sofort ins System einloggen und muss nicht mehr aktiviert werden.
 				\item \Func{Benutzer verwalten.}
-					Der Systemadministrator besitzt eine Übersicht über alle Benutzer. Diese erreicht er über die Schaltfläche 'Benutzer suchen' der Administratorseite. Auf der 'Suchen' - Seite hat der Administrator die Möglichkeit sich alle Benutzer anzeigen zu lassen oder nach Benutzern zu suchen.  Dafür wählt er aus einer Drop - Down - Liste einen Parameter aus und gibt in ein Eingabefeld seinen Suchbegriff ein. Durch Betätigen der Schaltfläche 'Anzeigen' werden die gesuchten Benutzer angezeigt. Durch Klicken auf einen Benutzer wird der Administrator auf die 'Benutzerprofil' - Seite des Benutzers weitergeleitet.
+					Der Systemadministrator besitzt eine Übersicht über alle Benutzer. Diese erreicht er über die Schaltfläche 'Benutzer suchen' der Administratorseite. Auf der 'Benutzer durchsuchen' - Seite hat der Administrator die Möglichkeit sich alle Benutzer anzeigen zu lassen oder nach Benutzern zu suchen.  Dafür wählt er aus einer Drop - Down - Liste einen Parameter aus und gibt in ein Eingabefeld seinen Suchbegriff ein. Durch Betätigen der Schaltfläche 'Anzeigen' werden die gesuchten Benutzer angezeigt. Durch Klicken auf einen Benutzer wird der Administrator auf die 'Profil' - Seite des Benutzers weitergeleitet.
 				\item \Func{Benutzer bearbeiten.}
-					Der Systemadministrator hat die Möglichkeit einen beliebigen registrierten Nutzer zu bearbeiten. Dafür wechselt er auf die 'Benutzerprofil' - Seite des zu bearbeitenden Nutzers. Durch Betätigen der 'Bearbeiten' - Schaltfläche kann er Administrator nun die Benutzerdaten editieren oder die Benutzerrolle verändern. Der Administrator kann alle Benutzerdaten verändern mit Ausnahme der vom System generierten Identifikationsnummer des Benutzers. Durch Betätigen der 'Speichern' - Schaltfläche werden die Daten gespeichert.
+					Der Systemadministrator hat die Möglichkeit einen beliebigen registrierten Nutzer zu bearbeiten. Dafür wechselt er auf die 'Profil' - Seite des zu bearbeitenden Nutzers. Durch Betätigen der 'Bearbeiten' - Schaltfläche kann er Administrator nun die Benutzerdaten editieren oder die Benutzerrolle verändern. Der Administrator kann alle Benutzerdaten verändern mit Ausnahme der vom System generierten Identifikationsnummer des Benutzers. Durch Betätigen der 'Speichern' - Schaltfläche werden die Daten gespeichert.
 				\item \Func{Benutzer löschen.}
-					Der Systemadministrator hat die Möglichkeit einen beliebigen Benutzer zu löschen. Dafür wechselt er auf die 'Benutzerprofil' - Seite des zu löschenden Benutzers. Durch Betätigen der 'Benutzer löschen' - Schaltfläche wird der Benutzer gelöscht. Nur der Administrator hat die Möglichkeit Benutzer zu löschen. Andernfalls könnte ein \glqq Nicht - Administrator\grqq \ einen Benutzer und damit auch sein Guthaben bzw. seine eventuellen Schulden löschen.
+					Der Systemadministrator hat die Möglichkeit einen beliebigen Benutzer zu löschen. Dafür wechselt er auf die 'Profil' - Seite des zu löschenden Benutzers. Durch Betätigen der 'Benutzer löschen' - Schaltfläche wird der Benutzer gelöscht. Nur der Administrator hat die Möglichkeit Benutzer zu löschen. Andernfalls könnte ein \glqq Nicht - Administrator\grqq \ einen Benutzer und damit auch sein Guthaben bzw. seine eventuellen Schulden löschen.
 				\item \Func{Benutzerrolle verändern.}
 					Der Systemadministrator hat die Möglichkeit die Rolle jedes Nutzers zu verändern. Als Benutzerrollen sind 'Benutzer', 'Kursleiter' und 'Administrator' vorgesehen. Die Benutzerrolle kann auf der 'Benutzer bearbeiten' - Seite verändert werden.
 				\item \Func{Benutzer suchen.}
-					Der Systemadministrator hat die Möglichkeit nach Benutzern zu suchen. Dafür wählt er auf er 'Administrator' - Oberfläche die entsprechende Schaltfläche aus. Er wird auf die 'Suchen' - Seite weitergeleitet, wo er die entsprechenden Suchparameter auswählen und seinen Suchbegriff eingeben kann. Durch Betätigen der Schaltfläche 'Anzeigen' wird das Suchergebnis angezeigt. Da nur der Administrator nach Benutzern suchen kann sind werden die auswählbaren Suchparameter an die Benutzerrolle der suchenden Person angepasst.
+					Der Systemadministrator hat die Möglichkeit nach Benutzern zu suchen. Dafür wählt er auf er 'Administrator' - Oberfläche die entsprechende Schaltfläche aus. Er wird auf die 'Benutzer durchsuchen' - Seite weitergeleitet, wo er die entsprechenden Suchparameter auswählen und seinen Suchbegriff eingeben kann. Durch Betätigen der Schaltfläche 'Anzeigen' wird das Suchergebnis angezeigt.
+				\item \Func{Account aktivieren.}
+				    Der Administrator kann genauso wie der Kursleiter Accounts aktivieren(vgl.\FuncBlue{/F30-120/}), falls dies vom Administrator so eingestellt wurde. Der Administrator wählt dafür die 'Benutzer verwalten' - Schaltfläche auf der Administratorseite aus und wird auf die 'Benutzer durchsuchen' - Seite weitergeleitet. Dort wählt er aus der Drop-Down-Liste die Option 'Nicht aktiviert' aus. Die nicht aktivierten Benutzer werden nun angezeigt. Außerdem werden nun auf der Seite zusätzlich die entsprechenden Schaltflächen angezeigt um die Benutzeraccounts zu aktivieren.
 			\end{itemize}
 
 		\subsection{Verwaltung}
@@ -416,7 +418,7 @@ Die Produktfunktionen sind nach Benutzergruppen geordnet. Wunschkriterien sind m
 				\item \Func{Statistiken anzeigen}
 					Der Systemadministrator hat die Möglichkeit sich Statistiken bezüglich der Einnahmen anzusehen. Er kann dafür aus 	verschiedenen Parametern wählen, welche Statistik angezeigt werden soll. Die Auswahl der Parameter erfolgt über eine Drop-Down - Liste. Vorgesehene Parameter für die Statistik sind Einnahmen pro 'Tag', pro 'Woche', pro Kursleiter', pro 'Kurs'. Bei Wahl eines der Parameter 'Tag', 'Woche' oder 'Kursleiter' ist ein graphische Darstellung in Form eines Säulendiagramms vorgesehen. Bei Parameter 'Tag' werden die Einnahmen der letzten sieben Tage angezeigt, bei Parameter 'Woche' die Einnahmen der letzten vier Wochen. Bei Wahl des Parameters 'Kurs' ist aufgrund der Menge von Kursen eine tabellarische Anzeige vorgesehen. Durch Betätigen der Schaltfläche 'Anzeigen' wird die gewählte Statistik angezeigt.
 				\item \Func{Guthabenkonto aufladen}
-					Der Systemadministrator hat die Möglichkeit das Guthabenkonto von  registrierten Nutzern manuell aufzuladen. Damit kann er \glqq Offline - Aufladungen\grqq  des Guthabenkontos eines registrierten Nutzers auf dessen Konto im System weitergeben. Für die Kontoaufladung gibt der Administrator auf der Administratorseite die Identifikationsnummer des Benutzers, dessen Namen und der aufzuladenden Betrag ein. Durch Betätigen der Schaltfläche 'Konto aufladen' wird das Konto des Benutzers mit der eingegebenen Identifikationsnummer um den eingegebenen Betrag aufgeladen. Ab diesem Zeitpunkt kann der registrierte Benutzer das Guthaben verwenden. Das Aufladen des Guthabenkontos ist nur dann möglich, wenn der eingegebene Name auch zu Identifikationsnummer passt. So wird sichergestellt, dass durch Tippfehler bei der Identifikationsnummer der falsche Nutzer das Guthaben erhält.
+					Der Systemadministrator hat die Möglichkeit das Guthabenkonto von  registrierten Nutzern manuell aufzuladen. Damit kann er \glqq Offline - Aufladungen\grqq  des Guthabenkontos eines registrierten Nutzers auf dessen Konto im System weitergeben. Für die Kontoaufladung gibt der Administrator auf der Administratorseite die Identifikationsnummer des Benutzers, dessen Namen und den aufzuladenden Betrag ein. Durch Betätigen der Schaltfläche 'Konto aufladen' wird das Konto des Benutzers mit der eingegebenen Identifikationsnummer um den eingegebenen Betrag aufgeladen. Ab diesem Zeitpunkt kann der registrierte Benutzer das Guthaben verwenden. Das Aufladen des Guthabenkontos ist nur dann möglich, wenn der eingegebene Name auch zur Identifikationsnummer passt. So wird sichergestellt, dass durch Tippfehler bei der Identifikationsnummer nicht der falsche Nutzer das Guthaben erhält.
 				\item \Func{Überziehungskredit festlegen.}
 					Der Systemadministrator kann festlegen, ob und gegebenenfalls um welchen Betrag ein registrierter Benutzer sein Guthabenkonto überziehen darf. Der Überziehungskredit kann nur global für alle Nutzer festgelegt werden. Dafür trägt der Systemadministrator auf der Administratorseite den Betrag, der maximal überzogen werden darf in das dafür vorgesehene Eingabefeld ein und bestätigt die Eingabe durch Betätigen der 'Speichern'-Schaltfläche.
 					Falls kein Überziehungskredit gewährt werden soll, wird als Betrag einfach 0,00 eingegeben. Dieser Wert ist auch per Default gesetzt.
@@ -425,18 +427,15 @@ Die Produktfunktionen sind nach Benutzergruppen geordnet. Wunschkriterien sind m
 		\subsection{Systemanpassung}
 			\begin{itemize}
 				\item \Func{Logo hochladen.}
-					Das Logo kann vom Systemadministrator editiert werden. Durch Klicken der 'Durchsuchen' - Schaltfläche gibt der Administrator den Pfad einer \gls{JPG} - Datei an, welche durch Betätigen der 'Speichern' - Schaltfläche hochgeladen wird. Die hochgeladene .jpg - Datei muss bestimmte Anforderungen bezüglich Größe und Format erfüllen.
-				\item \Func{Registrierungsbestätigung festlegen.}
-					Die Art der Bestätigung einer Registrierung eines neuen Benutzers kann vom Systemadministrator festgelegt werden.
-					Vorgesehen sind die E-Mail-Verifikation oder die manuelle Bestätigung durch den Administrator und/oder einen Kursleiter. Um die Verifikationsart festzulegen, wählt der Administrator die gewünschte Möglichkeit aus der entsprechenden Drop-Down - Liste und bestätigt die Auswahl durch Betätigen der 'Speichern'- Schaltfläche. Als Auswahlmöglichkeiten in der Drop-Down - Liste sind vorgesehen 'E-Mail - Verifikation', ' Bestätigung durch Kursleiter', ' Bestätigung durch Administrator', 'Bestätigung durch Administrator oder Kursleiter' und ' E-Mailverifikation und Bestätigung durch Kursleiter oder Administrator'.
+					Das Logo kann vom Systemadministrator editiert werden. Durch Klicken der 'Durchsuchen' - Schaltfläche auf der Administratorseite gibt der Administrator den Pfad einer .jpg - Datei an, welche durch Betätigen der 'Speichern' - Schaltfläche hochgeladen wird. Anforderungen an die .jpg - Datei bezüglich Größe und Auflösung werden während der Produktentwicklung festgelegt.
+				\item \Func{Art der Accountaktivierung festlegen.}
+					Die Art der Aktivierung eines Accounts eines neuen Benutzers kann vom Systemadministrator festgelegt werden. Minimale Voraussetzung für die Aktivierung eines neuen Benutzeraccounts ist die Verifizierung der E-Mailadresse durch den Benutzer. Dafür betätigt der neue Benutzer den Verifizierungslink in der an die eingegebene E-Mailadresse gesandte Bestätigungsmail(vgl. \FuncBlue{/F10-20/}). Des Weiteren kann der Administrator festlegen, dass neue Benutzeraccounts zusätzlich manuell durch einen Kursleiter und/oder einen Administrator aktiviert werden müssen. Dafür wählt der Administrator auf der Administratorseite die entsprechende Option aus der Drop-Down-Liste und betätigt die 'Speichern' - Schaltfläche. Vorgesehene Auswahloptionen sind 'Nur E-Mailverifikation', 'E-Mailverifikation und Aktivierung durch Administrator', 'E-Mailverifikation und Aktivierung durch Kursleiter', 'E-Mailverifikation und Aktivierung durch Administrator oder Kursleiter'.
 				\item \Func{Oberfläche editieren.}
-					Die Oberfläche kann vom Systemadministrator editiert werden. Durch Klicken der 'Durchsuchen' - Schaltfläche gibt der Administrator den Pfad einer \gls{CSS} - Datei an, welche durch Betätigen der 'Speichern' - Schaltfläche hochgeladen wird. Bei Neustart der Anwendung wird die neue .CSS - Datei automatisch geladen und somit die bearbeitete Oberfläche verwendet.
+					Die Oberfläche kann vom Systemadministrator editiert werden. Durch Klicken der 'Durchsuchen' - Schaltfläche gibt der Administrator den Pfad einer \gls{CSS} - Datei an, welche durch Betätigen der 'Speichern' - Schaltfläche hochgeladen wird. Die ausgewählte Datei muss den Dateinamen 'customStyle.css' haben. In dieser Datei kann zu bestimmten Tags ein neuer Stil definiert werden. 
+					Die genauen Tags werden während der Produktentwicklung festgelegt. Der Administrator kann also die Oberfläche bezüglich bestimmter Punkte anpassen.  
+					Falls keine 'customStyle.css' - Datei hochgeladen wird oder einige Tags in dieser Datei nicht definiert werden, wird ein im System definierter Default - Stil verwendet.
 				\item \Func{Impressum editieren.}
-					Das Impressum kann vom Systemadministrator editiert werden. Durch Klicken der 'Seite bearbeiten' - Schaltfläche wird der Administrator auf die 'Seite bearbeiten' - Oberfläche weitergeleitet. Dort wählt er aus einer Drop-Down - Liste den Eintrag 'Impressum'. Durch Betätigen der 'Anzeigen' - Schaltfläche wird das Impressum in einem Eingabefeld angezeigt. Der Administrator kann nun das Impressum editieren. Durch Betätigen der 'Speichern' - Schaltfläche werden die Änderungen gespeichert.  
-				\item \Func{Allgemeine Geschäftsbedingungen editieren.}
-				    Die Allgemeinen Geschäftsbedingungen können vom Systemadministrator editiert werden. Durch Klicken der 'Seite bearbeiten' - Schaltfläche wird der Administrator auf die 'Seite bearbeiten' - Oberfläche weitergeleitet. Dort wählt er aus einer Drop-Down - Liste den Eintrag 'Allgemeine Geschäftsbedingungen'. Durch Betätigen der 'Anzeigen' - Schaltfläche werden die Allgemeinen Geschäftsbedingungen in einem Eingabefeld angezeigt. Der Administrator kann nun die AGBs editieren. Durch Betätigen der 'Speichern' - Schaltfläche werden die Änderungen gespeichert.  
-			   	\item \Func{Hilfetext editieren.}
-				    Der Hilfetext kann vom Systemadministrator editiert werden. Durch Klicken der 'Seite bearbeiten' - Schaltfläche wird der Administrator auf die 'Seite bearbeiten' - Oberfläche weitergeleitet. Dort wählt er aus einer Drop-Down - Liste den Eintrag 'Hilfetext'. Durch Betätigen der 'Anzeigen' - Schaltfläche wird der Hilfetext in einem Eingabefeld angezeigt. Der Administrator kann nun den Hilfetext editieren. Durch Betätigen der 'Speichern' - Schaltfläche werden die Änderungen gespeichert. 
+					Das Impressum kann vom Systemadministrator editiert werden. Durch Klicken der 'Impressum bearbeiten' - Schaltfläche wird der Administrator auf die 'Impressum bearbeiten' - Oberfläche weitergeleitet. Dort wird das Impressum in einem Eingabefeld angezeigt. Der Administrator kann nun das Impressum editieren. Durch Betätigen der 'Speichern' - Schaltfläche werden die Änderungen gespeichert.  				
 			\end{itemize}
 		
 \resetAllCounter
