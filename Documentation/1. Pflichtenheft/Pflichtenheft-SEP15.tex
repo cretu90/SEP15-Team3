@@ -134,37 +134,27 @@
        		\end{itemize}
      	\subsubsection{Funktionsumfang für alle registrierten Benutzer:}
 			\begin{itemize}
-				\item Login \hyperlink{login}{F20-10} und Logout \hyperlink{logut}{F20-80}
-				\item Kann sich zu Kursen anmelden \hyperlink{kursAnmelden}{F20-170} und abmelden \hyperlink{kursAbmelden}{F20-180}
-				\item Kann sich in Kurseinheiten eintragen \hyperlink{kurseinheitAnmelden}{F20-190} und austragen \hyperlink{kurseinheitAbmelden}{F20-200}
-				\item Kann eigene Profildaten editieren \hyperlink{profilEdit}{F20-50}
-				\item Kann Belegte Kurse anzeigen \hyperlink{kurseAnzeigen}{F20-20}
-				\item Einsehen des eigenen Kontostands \hyperlink{kontoAnzeigen}{F20-70} und Geld aufladen \hyperlink{kontoAufladenOn}{F20-240} und \hyperlink{kontoAufladenOff}{F20-250}
-				\item Kann Passwort zurücksetzen
+				\item Kann sich zu Kursen eintragen und an ihnen teilnehmen
+				\item Kann eigene Profildaten editieren
+				\item Kann Belegte Kurse anzeigen
 				\item Funktionsumfang eines Benutzers erweitert sich aufsteigend je nach zugeteilter Rolle
 			\end{itemize}
 		\subsubsection{Funktionsumfang für Kursleiter:}
 			\begin{itemize}
-				\item Eigene Kurse bearbeiten \hyperlink{kursEdit}{F30-20}
-				\item Kurseinheiten anlegen \hyperlink{kurseinheitAnlegen}{F30-40}, editieren \hyperlink{kurseinheitEdit}{F30-50} und löschen \hyperlink{kurseinheitLoeschen}{F30-60}
-				\item Teilnehmer zu Kurs hinzufügen \hyperlink{kursUserAdd}{F30-70} und daraus löschen \hyperlink{kursUserDel}{F30-80}
-				\item Nutzer eines Kurses oder einzelner Kurseinheiten benachrichtigen \hyperlink{kursUserMsg}{F30-100}
-				\item Accounts bestätigen \hyperlink{addUserKL}{F30-120}
+				\item Kurseinheiten anlegen
+				\item Entscheiden ob Kurseinheit statt findet
+				\item Kursgebühren einziehen
 			\end{itemize}
 		\subsubsection{Funktionsumfang für Systemadministrator:}
 			\begin{itemize}
-				\item verwaltet \hyperlink{kursVerwalt}{F40-20}, erstellt \hyperlink{kursErstellen}{F40-10}, bearbeitet \hyperlink{kursBearbeiten}{F40-30} und löscht \hyperlink{kursLoeschen}{F40-40} Kurse und kann zu den Kursen Kursleiter zuordnen \hyperlink{kursKLAdd}{} und wieder entfernen \hyperlink{kursKLDel}{}
-				\item Benutzerverwaltung \hyperlink{nutzerVerwalt}{F40-60} einschließlich der Änderung einer Benutzerrolle von Nutzer zu Kursleiter/\gls{Admin} oder \gls{Trainer} zu Nutzer/Administrator \hyperlink{nutzerRolle}{F40-90}
-				\item Benutzer suchen \hyperlink{nutzerSuchen}{F40-100}, anlegen \hyperlink{nutzerAnlegen}{F40-50} und löschen \hyperlink{nutzerLoeschen}{F40-80}
-				\item Statistiken anzeigen \hyperlink{statistik}{F40-110}
-				\item Nutzerguthaben aufladen \hyperlink{guthabenAuf}{F40-120}
-				\item System anpassen, beispielsweise eigenes Logo hochladen \hyperlink{logo}{F40-140}, Impressum bearbeiten \hyperlink{impressumBea}{F40-170} oder Registrierungsmodalitäten festlegen \hyperlink{regMod}{F40-150}
+				\item erstellt Kurse und kann diesen Kursleiter zuordnen
+				\item Benutzerverwaltung einschließlich der Änderung einer Benutzerrolle von Nutzer zu Kursleiter/\gls{Admin} oder \gls{Trainer} zu Nutzer/Administrator
 			\end{itemize}
 			
     \section{Wunschkriterien}
 			\begin{itemize}
 				\item Englisch als Sprachvariante \hyperlink{spracheAendern}{F10-90}
-				\item Terminplaner \hyperlink{terminplaner}{F20-110}
+				\item Terminanzeige für anstehende Termine
 	     		\item Einschränken des angezeigten Kursangebots \hyperlink{kursEinschraenken}{F10-100}
 			\end{itemize}
 			
@@ -278,22 +268,22 @@ Die Produktfunktionen sind nach Benutzergruppen geordnet. Wunschkriterien sind m
 		\stepHc
 		\subsection{Grundfunktionen}
 			\begin{itemize}
-				\item \Func{Sicheres Einloggen ins System.} \hypertarget{login}
+				\item \Func{Sicheres Einloggen ins System.}
 					Durch Eingabe des Benutzernamen, des Passworts und Klicken der 'Anmelden' - Schaltfläche kann sich der Benutzer ins System einloggen. Die Anmeldedaten werden dabei mittels \gls{SSL} übertragen.
-				\item \Func{Anzeigen der angemeldeten Kurse.} \hypertarget{kurseAnzeigen}
+				\item \Func{Anzeigen der angemeldeten Kurse.}
 					Die Kurse zu denen der registrierte Benutzer angemeldet ist werden gesammelt angezeigt.
 				\item \Func{Detailanzeige der angemeldeten Kurse.}
 					Durch Klicken auf einen der angemeldeten Kurs werden die Details dieses Kurses angezeigt. Hier hat der registrierte Benutzer die Möglichkeit sich zu Kurseinheiten an-/abzumelden und sich aus dem Kurs auszutragen.
 				\item \Func{Anzeigen der Profilseite.}
 					Der registrierte Benutzer besitzt eine Profilseite auf welcher seine Daten gesammelt angezeigt werden. 
-				\item \Func{Ändern der eigenen Benutzerdaten.} \hypertarget{profilEdit}
+				\item \Func{Ändern der eigenen Benutzerdaten.}
 					Der registrierte Benutzer kann durch Klicken der Schaltfläche 'Benutzerdaten bearbeiten' seine eingegebenen Daten bearbeiten. Sollte die E-Mail-Adresse geändert werden, wird an die neue E-Mail-Adresse wie beim Registrierungsprozess eine Bestätigungsmail mit einem neuen Authentifizierungslink geschickt, um die neue E-Mail-Adresse auf Korrektheit zu überprüfen.
 					Der registrierte Nutzer kann alle seine Benutzerdaten ändern mit Ausnahme seines Kontostands und der vom System generierten Identifikationsnummer.
 				\item \Func{Hochladen eines Profilbilds.}
 					Der registrierte Benutzer kann ein Profilbild hochladen. Das Bild muss bestimmte Anforderungen bezüglich Format, Auflösung und Größe erfüllen. Als Default ist ein \gls{Dummy} - Bild gesetzt.
-				\item \Func{Anzeigen des aktuellen Kontostands.} \hypertarget{kontoAnzeigen}
+				\item \Func{Anzeigen des aktuellen Kontostands.}
 					Der registrierte Benutzer kann den aktuellen Kontostand seines Guthabenkontos einsehen. 
-				\item \Func{Aus dem System abmelden mittels 'Abmelden' - Schaltfläche.} \hypertarget{logout}
+				\item \Func{Aus dem System abmelden mittels 'Abmelden' - Schaltfläche.}
 					Der registrierte Benutzer kann sich  von jeder Seite des Systems aus durch Klicken der Schaltfläche 'Abmelden' aus dem System abmelden und wird auf die Anmeldeseite weitergeleitet.
 				\item \FuncW{Anzeige der nächsten Termine.}
 					Die nächsten zehn Termine (Name, Datum/Zeit, Ort) des registrierten Benutzers werden gesammelt in Form einer Auflistung angezeigt.
@@ -303,7 +293,7 @@ Die Produktfunktionen sind nach Benutzergruppen geordnet. Wunschkriterien sind m
 				
 		\subsection{Terminplaner}
 			\begin{itemize}
-				\item \Func{Terminplaner.} \hypertarget{terminplaner}
+				\item \Func{Terminplaner.}
 					Der registrierte Benutzer hat einen persönlichen Terminplaner. Dieser wird in der Wochenansicht dargestellt. Der Terminplaner unterstützt nur die Anzeige von einstündigen Slots. Ist ein Termin kürzer, wird dennoch der Slot für die ganze Stunde belegt. Ist der Termin länger als eine Stunde werden dementsprechend mehrere einstündige Slots belegt.
 					Außerdem ist darauf zu achten, dass die Slots jeweils zur vollen Stunde beginnen und zur nächsten vollen Stunde enden. (Analog dem Prinzip eines Stundenplans)
 				\item \Func{Anzeigen des Terminplaners.}
@@ -320,14 +310,14 @@ Die Produktfunktionen sind nach Benutzergruppen geordnet. Wunschkriterien sind m
 			\begin{itemize}
 				\item \Func{Detailansicht der Kurse.}
 					Der registrierte Nutzer kann sich eine Detailansicht der angebotenen Kurse anzeigen lassen. In der Detailansicht kann sich der Nutzer, wenn er zum Kurs bereits angemeldet ist, zu Kurseinheiten anmelden oder von Kurseinheiten abmelden.
-				\item \Func{Zu Kurs anmelden.} \hypertarget{kursAnmelden}
+				\item \Func{Zu Kurs anmelden.} 
 					Der registrierte Nutzer kann sich zu beliebig vielen Kursen anmelden. 
 					Dafür klickt er in der Detailansicht des gewünschten Kurses auf die Schaltfläche 'Anmelden'.	\item \Func{Von Kurs abmelden.} 
 					Der registrierte Nutzer kann sich von Kursen abmelden zu denen er angemeldet ist. Dafür klickt er in der Detailansicht des gewünschten Kurses auf die Schaltfläche 'Abmelden'. Meldet sich der registrierte Benutzer von einem Kurs ab, meldet er sich damit auch automatisch von allen Kurseinheiten ab.
-				\item \Func{Zu Kurseinheit anmelden.} \hypertarget{kurseinheitAnmelden}
+				\item \Func{Zu Kurseinheit anmelden.}
 					Der registrierte Benutzer kann sich zu beliebig vielen Kurseinheiten anmelden. Um sich zu Kurseinheiten anmelden zu können, muss der Nutzer bei diesem Kurs angemeldet sein.
 					Um sich zu Kurseinheiten eines Kurses anmelden zu können, muss der Nutzer in die Detailansicht des Kurses wechseln. Dort findet er die zu diesem Kurs verfügbaren Einheiten und deren Status. Ist eine Kurseinheit noch nicht voll und ist der Nutzer noch nicht zu dieser Einheit angemeldet, kann er sich anmelden. Der Nutzer hat außerdem die Möglichkeit durch Klicken der Schaltfläche 'Alle Einheiten auswählen' und anschließender Betätigung der Schaltfläche 'Anmelden' sich zu allen Einheiten des Kurs auf einmal anzumelden. Vor Betätigen der Schaltfläche 'Anmelden' hat der Nutzer aber auch noch die Möglichkeit einzelne Einheiten von der Anmeldung auszuschließen. Voraussetzung um sich zu kostenpflichtigen Kurseinheiten anmelden zu können ist ein ausreichendes Guthaben auf dem Konto bzw. keine unzulässige Überziehung des Guthabenkontos.
-				\item \Func{Von Kurseinheit abmelden.} \hypertarget{kurseinheitAbmelden}
+				\item \Func{Von Kurseinheit abmelden.}
 					Der registrierte Benutzer kann sich von Kurseinheiten abmelden, zu denen er angemeldet ist. Um sich von Kurseinheiten eines Kurses abmelden zu können, muss der Nutzer in die Detailansicht des Kurses wechseln. Dort findet er die zu diesem Kurs verfügbaren Einheiten.
 					Er kann nun die Einheiten auswählen von denen er sich abmelden will und durch Betätigen der Schaltfläche 'Abmelden' meldet er sich von den Einheiten ab. Der für kostenpflichtige Einheiten bezahlte Betrag wird automatisch auf das Konto des registrierten Benutzers zurückgebucht.
 				\item \Func{Nach Kursen suchen - erweitert.}
@@ -341,10 +331,10 @@ Die Produktfunktionen sind nach Benutzergruppen geordnet. Wunschkriterien sind m
 
 		\subsection{Bezahlfunktionen}
 			\begin{itemize}
-				\item \Func{Guthabenkonto aufladen - online} \hypertarget{kontoAufladenOn}
+				\item \Func{Guthabenkonto aufladen - online}
 					Der registrierte Nutzer besitzt ein Guthabenkonto. Dieses kann er online mittels Kreditkarte aufladen. Die Kreditkartenabwicklung erfolgt dabei
 					über die Infosun-Bank. Die Übertragung der Kreditkartendaten erfolgt mittels SSL. Der aufgeladene Betrag ist sofort auf dem Guthabenkonto verfügbar und kann auch sofort verwendet werden.
-				\item \Func{Guthabenkonto aufladen - offline} \hypertarget{kontoAufladenOff}
+				\item \Func{Guthabenkonto aufladen - offline}
 					Der registrierte Nutzer kann sein Guthabenkonto auch offline aufladen. Dies ist mittels Überweisung oder Barzahlung an den Betreiber oder einen Kursleiter möglich. 
 					Der Nutzer überweist dafür den Betrag unter Angabe seine BenutzerID und seines Namens  auf das Konto des Betreibers oder bezahlt bar. Der bezahlte Betrag ist erst auf dem Guthabenkonto des registrierten Benutzers vorhanden, wenn er vom Betreiber oder einem der Kursleiter gutgeschrieben wurde.
 				\item \Func{Kurseinheiten bezahlen}
@@ -360,19 +350,19 @@ Die Produktfunktionen sind nach Benutzergruppen geordnet. Wunschkriterien sind m
 			\begin{itemize}
 				\item \Func{Eigene Kurse anzeigen.}
 					Auf der Kursleiterseite werden die Kurse, welche der Kursleiter trainiert, gesammelt angezeigt.
-				\item \Func{Eigenen Kurs editieren.} \hypertarget{kursEdit}
+				\item \Func{Eigenen Kurs editieren.}
 					Der Kursleiter hat die Möglichkeit, die Kurse, die er  trainiert zu editieren. Dafür klickt er in seinen Trainingskursen den gewünschten Kurs an und wird auf die 'Kursdetails' - Seite weitergeleitet. Durch Betätigen der 'Bearbeiten' - Schaltfläche kann er die Kursdaten bearbeiten. Er kann alle Kursdaten verändern mit Ausnahme der vom System generierten KursId. Durch Betätigen der 'Speichern' - Schaltfläche werden die Kursdaten gespeichert.
 				\item \Func{Eigenen Kurs löschen.}
 					Der Kursleiter hat die Möglichkeit, die Kurse, die er  trainiert zu löschen. Dafür klickt er in seinen Trainingskursen den gewünschten Kurs an und wird dann auf die 'Kursdetails' - Seite weitergeleitet. Dort kann er den Kurs durch Betätigen der 'Kurs löschen' - Schaltfläche löschen.
-				\item \Func{Kurseinheit anlegen.} \hypertarget{kurseinheitAnlegen}
+				\item \Func{Kurseinheit anlegen.}
 					Der Kursleiter hat die Möglichkeit Kurseinheiten für einen Kurs anzulegen, welchen er trainiert. Dafür wechselt er in die 'Kursdetails' - Oberfläche. Dort betätigt er die Schaltfläche 'Kurseinheit anlegen'. Er wird auf eine Seite weitergeleitet, auf welcher er die Daten der Kurseinheit eintragen kann. Durch Betätigen der 'Speichern' - Schaltfläche wird die Kurseinheit angelegt. Die Kurseinheiten können nur in dem Zeitraum zwischen Startzeitpunkt und Endzeitpunkt des zugehörigen Kurses stattfinden.
-				\item \Func{Kurseinheit editieren.} \hypertarget{kurseinheitEdit}
+				\item \Func{Kurseinheit editieren.}
 					Der Kursleiter hat die Möglichkeit Kurseinheiten der eigenen Kurse zu editieren. Dafür klickt er in der Detailansicht des Kurses die 'Bearbeiten' - Schaltfläche der Kurseinheit an und wird auf die 'Kurseinheit bearbeiten' - Oberfläche weitergeleitet. Hier kann der Kursleiter die Daten der Kurseinheit bearbeiten. Außerdem kann der Kursleiter hier manuell durch Eingabe der Daten einen Teilnehmer zur Kurseinheit hinzufügen.
-				\item \Func{Kurseinheit löschen.} \hypertarget{kurseinheitLoeschen}
+				\item \Func{Kurseinheit löschen.}
 					Der Kursleiter kann Kurseinheiten löschen. Dafür wechselt er durch Betätigen der 'Bearbeiten' - Schaltfläche der zu löschenden Kurseinheit auf die 'Kurseinheit bearbeiten' - Oberfläche. Durch Betätigen der 'Löschen' - Schaltfläche kann er die Kurseinheit löschen.
-				\item \Func{Teilnehmer zu Kurs hinzufügen.} \hypertarget{kursUserAdd}
+				\item \Func{Teilnehmer zu Kurs hinzufügen.}
 					Der Kursleiter hat die Möglichkeit durch Eingabe der Daten eines Benutzers diesen als Teilnehmer zu einer einzelnen Kurseinheit einzutragen. Dafür muss der Kursleiter auf die 'Kurseinheit bearbeiten' - Seite der entsprechenden Kurseinheit wechseln.
-				\item \Func{Teilnehmer aus Kurs entfernen.} \hypertarget{kursUserDel}
+				\item \Func{Teilnehmer aus Kurs entfernen.}
 					Der Kursleiter kann einzelne Teilnehmer aus einem seiner eigenen Kurse entfernen. Dafür muss er in der 'Kursdetails' - Oberfläche die zu entfernenden Teilnehmer auswählen und kann diese durch Betätigen der 'Löschen' - Schaltfläche aus der Kurseinheit entfernen. Es ist damit auch möglich mehrere Teilnehmer gleichzeitig zu entfernen.
 				\item \FuncW{Invited Guests zu Kurs hinzufügen.}
 					Der Kursleiter hat die Möglichkeit nicht im System registrierte Benutzer zu einzelnen seiner Kurseinheiten einzutragen. Dabei spielt es keine Rolle, ob die Kurseinheit kostenpflichtig ist oder nicht. Um Teilnehmer einzutragen wechselt der Kursleiter auf die 'Kurseinheit bearbeiten' - Oberfläche und trägt dort den Namen und Vornamen des Invited Guest ein. Als Identifikationsnummer des Teilnehmers ist bei Invited Guests '00000' vorgesehen.
@@ -380,7 +370,7 @@ Die Produktfunktionen sind nach Benutzergruppen geordnet. Wunschkriterien sind m
 
 		\subsection{Benachrichtigungen}
 			\begin{itemize}
-				\item \Func{Benachrichtigung an Benutzergruppe senden.} \hypertarget{kursUserMsg}
+				\item \Func{Benachrichtigung an Benutzergruppe senden.}
 					Der Kursleiter kann Benachrichtigungen an alle Teilnehmer seines Kurses oder nur an die Teilnehmer einer Kurseinheit seines Kurses senden.
 				\item \Func{Benachrichtigung bei Kursänderung senden.}	
 					Nimmt der Kursleiter Änderungen an einem seiner Kurse oder seiner Kurseinheiten vor, so kann er entscheiden, ob er alle Kursteilnehmer, nur die Teilnehmer der betreffenden Kurseinheit oder keinen Teilnehmer benachrichtigt.
@@ -388,7 +378,7 @@ Die Produktfunktionen sind nach Benutzergruppen geordnet. Wunschkriterien sind m
 
 		\subsection{Verwaltung}
 			\begin{itemize}
-				\item \Func{Account bestätigen} \hypertarget{addUserKL}
+				\item \Func{Account bestätigen}
 					Der Kursleiter hat die Möglichkeit Accounts zu bestätigen, falls dies durch den Administrator in den Einstellungen für die Registrierungsbestätigung so festgelegt wurde. Registriert sich ein Benutzer neu und ist die Bestätigung von Accounts auf manuell durch den Kursleiter eingestellt, so erhalten bei erfolgreicher Registrierung des Nutzers alle Kursleiter eine E-Mail mit dem Aktivierungslink für den Account. Sobald dieser Link von einem Kursleiter erstmalig geklickt wird, ist der Account freigeschaltet. Erst jetzt kann sich der registrierte Nutzer im System anmelden. Mehrmaliges Betätigen des Links hat keine Auswirkung.
 			\end{itemize}
 
@@ -398,38 +388,38 @@ Die Produktfunktionen sind nach Benutzergruppen geordnet. Wunschkriterien sind m
 	\stepHc
 		\subsection{Kurse}
 			\begin{itemize}
-				\item \Func{Kurs anlegen.} \hypertarget{kursErstellen}
+				\item \Func{Kurs anlegen.}
 					Der Systemadministrator kann einen neuen Kurs anlegen. Dafür betätigt der Administrator die entsprechende Schaltfläche auf der Administratorseite und wird auf die 'Kurs anlegen' - Seite weitergeleitet. Die Anwendung generiert automatisch eine für den Kurs im System eindeutige Identifikationsnummer. Der Administrator hat die Möglichkeit die Daten des Kurses, wie etwa eine Beschreibung oder den Veranstaltungsort einzugeben. Notwendige Eingaben sind der Startzeitpunkt, der Endzeitpunkt und mindestens ein Kursleiter für den Kurs. Innerhalb des Zeitraums von Startzeitpunkt bis Endzeitpunkt können Kurseinheiten stattfinden.
-				\item \Func{Kurse verwalten.} \hypertarget{kursVerwalt}
+				\item \Func{Kurse verwalten.}
 					Der Systemadministrator kann sich alle Kurse anzeigen lassen. Dafür betätigt er die Schaltfläche 'Kurse verwalten' und wird auf die 'Suchen' - Oberfläche weitergeleitet. Dort kann er sich das gesamte Kursangebot anzeigen lassen oder nach bestimmten Kursen bezüglich verschiedener Suchparameter suchen. Durch Betätigen der Schaltfläche 'Anzeigen' werden die gesuchten Kurse angezeigt. Durch Klicken auf einen Kurs wird der Administrator auf die 'Kursdetails' - Seite weitergeleitet.
-				\item \Func{Kurs bearbeiten.} \hypertarget{kursBearbeiten}
+				\item \Func{Kurs bearbeiten.}
 					Der Systemadministrator hat die Möglichkeit einen beliebigen Kurs zu bearbeiten. Dafür wechselt er in die Detailansicht des zu editierenden Kurses. Durch Betätigen der 'Bearbeiten' - Schaltfläche  kann der Administrator nun die Kursdaten editieren. Einzige Ausnahme ist die vom System generierte Identifikationsnummer des Kurses. Des Weiteren kann er Kurseinheiten anlegen, löschen oder editieren, Kursleiter zum Kurs hinzufügen oder entfernen und die Teilnehmer des Kurses editieren.
-				\item \Func{Kurs löschen.} \hypertarget{kursLoeschen}
+				\item \Func{Kurs löschen.}
 					Der Systemadministrator hat die Möglichkeit einen beliebigen Kurs zu löschen. Dafür wechselt er auf die 'Kursdetails' - Seite des zu löschenden Kurses. Durch Betätigen der 'Kurs löschen' - Schaltfläche wird der Kurs und damit auch alle zugehörigen Kurseinheiten gelöscht.
 			\end{itemize}
 
 	\subsection{Benutzer}
 			\begin{itemize}
-				\item \Func{Neuen Benutzer anlegen.} \hypertarget{nutzerAnlegen}
+				\item \Func{Neuen Benutzer anlegen.}
 					Der Systemadministrator hat die Möglichkeit einen neuen Benutzer anzulegen. Dafür betätigt er die Schaltfläche 'Benutzer anlegen' auf der Administratorseite und wird auf eine Seite 'Neuen Benutzer anlegen' weitergeleitet. 
 					Die Anwendung generiert automatisch eine im System eindeutige Identifikationsnummer für den Benutzer. Der Systemadministrator kann die Benutzerdaten eingeben, ein Initialpasswort setzen und die Rolle des Benutzers festlegen. Die Benutzerrolle wird mittels einer Drop-Down - Liste aus den Möglichkeiten 'Kursleiter', 'Administrator','Benutzer' ausgewählt. Durch Betätigen der Schaltfläche 'Speichern' wird der neue Nutzer angelegt.
-				\item \Func{Benutzer verwalten.} \hypertarget{nutzerVerwalt}
+				\item \Func{Benutzer verwalten.}
 					Der Systemadministrator besitzt eine Übersicht über alle Benutzer. Diese erreicht er über die Schaltfläche 'Benutzer suchen' der Administratorseite. Auf der 'Suchen' - Seite hat der Administrator die Möglichkeit sich alle Benutzer anzeigen zu lassen oder nach Benutzern zu suchen.  Dafür wählt er aus einer Drop - Down - Liste einen Parameter aus und gibt in ein Eingabefeld seinen Suchbegriff ein. Durch Betätigen der Schaltfläche 'Anzeigen' werden die gesuchten Benutzer angezeigt. Durch Klicken auf einen Benutzer wird der Administrator auf die 'Benutzerprofil' - Seite des Benutzers weitergeleitet.
-				\item \Func{Benutzer bearbeiten.} \hypertarget{nutzerBearbeiten}
+				\item \Func{Benutzer bearbeiten.}
 					Der Systemadministrator hat die Möglichkeit einen beliebigen registrierten Nutzer zu bearbeiten. Dafür wechselt er auf die 'Benutzerprofil' - Seite des zu bearbeitenden Nutzers. Durch Betätigen der 'Bearbeiten' - Schaltfläche kann er Administrator nun die Benutzerdaten editieren oder die Benutzerrolle verändern. Der Administrator kann alle Benutzerdaten verändern mit Ausnahme der vom System generierten Identifikationsnummer des Benutzers. Durch Betätigen der 'Speichern' - Schaltfläche werden die Daten gespeichert.
-				\item \Func{Benutzer löschen.} \hypertarget{nutzerLoeschen}
+				\item \Func{Benutzer löschen.}
 					Der Systemadministrator hat die Möglichkeit einen beliebigen Benutzer zu löschen. Dafür wechselt er auf die 'Benutzerprofil' - Seite des zu löschenden Benutzers. Durch Betätigen der 'Benutzer löschen' - Schaltfläche wird der Benutzer gelöscht. Nur der Administrator hat die Möglichkeit Benutzer zu löschen. Andernfalls könnte ein \glqq Nicht - Administrator\grqq \ einen Benutzer und damit auch sein Guthaben bzw. seine eventuellen Schulden löschen.
-				\item \Func{Benutzerrolle verändern.} \hypertarget{nutzerRolle}
+				\item \Func{Benutzerrolle verändern.}
 					Der Systemadministrator hat die Möglichkeit die Rolle jedes Nutzers zu verändern. Als Benutzerrollen sind 'Benutzer', 'Kursleiter' und 'Administrator' vorgesehen. Die Benutzerrolle kann auf der 'Benutzer bearbeiten' - Seite verändert werden.
-				\item \Func{Benutzer suchen.} \hypertarget{nutzerSuchen}
+				\item \Func{Benutzer suchen.}
 					Der Systemadministrator hat die Möglichkeit nach Benutzern zu suchen. Dafür wählt er auf er 'Administrator' - Oberfläche die entsprechende Schaltfläche aus. Er wird auf die 'Suchen' - Seite weitergeleitet, wo er die entsprechenden Suchparameter auswählen und seinen Suchbegriff eingeben kann. Durch Betätigen der Schaltfläche 'Anzeigen' wird das Suchergebnis angezeigt. Da nur der Administrator nach Benutzern suchen kann sind werden die auswählbaren Suchparameter an die Benutzerrolle der suchenden Person angepasst.
 			\end{itemize}
 
 		\subsection{Verwaltung}
 			\begin{itemize}
-				\item \Func{Statistiken anzeigen} \hypertarget{statistik}
+				\item \Func{Statistiken anzeigen}
 					Der Systemadministrator hat die Möglichkeit sich Statistiken bezüglich der Einnahmen anzusehen. Er kann dafür aus 	verschiedenen Parametern wählen, welche Statistik angezeigt werden soll. Die Auswahl der Parameter erfolgt über eine Drop-Down - Liste. Vorgesehene Parameter für die Statistik sind Einnahmen pro 'Tag', pro 'Woche', pro Kursleiter', pro 'Kurs'. Bei Wahl eines der Parameter 'Tag', 'Woche' oder 'Kursleiter' ist ein graphische Darstellung in Form eines Säulendiagramms vorgesehen. Bei Parameter 'Tag' werden die Einnahmen der letzten sieben Tage angezeigt, bei Parameter 'Woche' die Einnahmen der letzten vier Wochen. Bei Wahl des Parameters 'Kurs' ist aufgrund der Menge von Kursen eine tabellarische Anzeige vorgesehen. Durch Betätigen der Schaltfläche 'Anzeigen' wird die gewählte Statistik angezeigt.
-				\item \Func{Guthabenkonto aufladen} \hypertarget{guthabenAuf}
+				\item \Func{Guthabenkonto aufladen}
 					Der Systemadministrator hat die Möglichkeit das Guthabenkonto von  registrierten Nutzern manuell aufzuladen. Damit kann er \glqq Offline - Aufladungen\grqq  des Guthabenkontos eines registrierten Nutzers auf dessen Konto im System weitergeben. Für die Kontoaufladung gibt der Administrator auf der Administratorseite die Identifikationsnummer des Benutzers, dessen Namen und der aufzuladenden Betrag ein. Durch Betätigen der Schaltfläche 'Konto aufladen' wird das Konto des Benutzers mit der eingegebenen Identifikationsnummer um den eingegebenen Betrag aufgeladen. Ab diesem Zeitpunkt kann der registrierte Benutzer das Guthaben verwenden. Das Aufladen des Guthabenkontos ist nur dann möglich, wenn der eingegebene Name auch zu Identifikationsnummer passt. So wird sichergestellt, dass durch Tippfehler bei der Identifikationsnummer der falsche Nutzer das Guthaben erhält.
 				\item \Func{Überziehungskredit festlegen.}
 					Der Systemadministrator kann festlegen, ob und gegebenenfalls um welchen Betrag ein registrierter Benutzer sein Guthabenkonto überziehen darf. Der Überziehungskredit kann nur global für alle Nutzer festgelegt werden. Dafür trägt der Systemadministrator auf der Administratorseite den Betrag, der maximal überzogen werden darf in das dafür vorgesehene Eingabefeld ein und bestätigt die Eingabe durch Betätigen der 'Speichern'-Schaltfläche.
@@ -438,14 +428,14 @@ Die Produktfunktionen sind nach Benutzergruppen geordnet. Wunschkriterien sind m
 			
 		\subsection{Systemanpassung}
 			\begin{itemize}
-				\item \Func{Logo hochladen.} \hypertarget{logo}
+				\item \Func{Logo hochladen.}
 					Das Logo kann vom Systemadministrator editiert werden. Durch Klicken der 'Durchsuchen' - Schaltfläche gibt der Administrator den Pfad einer \gls{JPG} - Datei an, welche durch Betätigen der 'Speichern' - Schaltfläche hochgeladen wird. Die hochgeladene .jpg - Datei muss bestimmte Anforderungen bezüglich Größe und Format erfüllen.
-				\item \Func{Registrierungsbestätigung festlegen.} \hypertarget{regMod}
+				\item \Func{Registrierungsbestätigung festlegen.}
 					Die Art der Bestätigung einer Registrierung eines neuen Benutzers kann vom Systemadministrator festgelegt werden.
 					Vorgesehen sind die E-Mail-Verifikation oder die manuelle Bestätigung durch den Administrator und/oder einen Kursleiter. Um die Verifikationsart festzulegen, wählt der Administrator die gewünschte Möglichkeit aus der entsprechenden Drop-Down - Liste und bestätigt die Auswahl durch Betätigen der 'Speichern'- Schaltfläche. Als Auswahlmöglichkeiten in der Drop-Down - Liste sind vorgesehen 'E-Mail - Verifikation', ' Bestätigung durch Kursleiter', ' Bestätigung durch Administrator', 'Bestätigung durch Administrator oder Kursleiter' und ' E-Mailverifikation und Bestätigung durch Kursleiter oder Administrator'.
 				\item \Func{Oberfläche editieren.}
 					Die Oberfläche kann vom Systemadministrator editiert werden. Durch Klicken der 'Durchsuchen' - Schaltfläche gibt der Administrator den Pfad einer \gls{CSS} - Datei an, welche durch Betätigen der 'Speichern' - Schaltfläche hochgeladen wird. Bei Neustart der Anwendung wird die neue .CSS - Datei automatisch geladen und somit die bearbeitete Oberfläche verwendet.
-				\item \Func{Impressum editieren.} \hypertarget{impressumBea}
+				\item \Func{Impressum editieren.}
 					Das Impressum kann vom Systemadministrator editiert werden. Durch Klicken der 'Seite bearbeiten' - Schaltfläche wird der Administrator auf die 'Seite bearbeiten' - Oberfläche weitergeleitet. Dort wählt er aus einer Drop-Down - Liste den Eintrag 'Impressum'. Durch Betätigen der 'Anzeigen' - Schaltfläche wird das Impressum in einem Eingabefeld angezeigt. Der Administrator kann nun das Impressum editieren. Durch Betätigen der 'Speichern' - Schaltfläche werden die Änderungen gespeichert.  
 				\item \Func{Allgemeine Geschäftsbedingungen editieren.}
 				    Die Allgemeinen Geschäftsbedingungen können vom Systemadministrator editiert werden. Durch Klicken der 'Seite bearbeiten' - Schaltfläche wird der Administrator auf die 'Seite bearbeiten' - Oberfläche weitergeleitet. Dort wählt er aus einer Drop-Down - Liste den Eintrag 'Allgemeine Geschäftsbedingungen'. Durch Betätigen der 'Anzeigen' - Schaltfläche werden die Allgemeinen Geschäftsbedingungen in einem Eingabefeld angezeigt. Der Administrator kann nun die AGBs editieren. Durch Betätigen der 'Speichern' - Schaltfläche werden die Änderungen gespeichert.  
