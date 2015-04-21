@@ -674,25 +674,27 @@ Die Produktfunktionen sind nach Benutzergruppen geordnet. Wunschkriterien sind m
 				\item \Test{Installation} 
 			     Der Systemadministrator startet das Installationsprogramm. 
 						
-				\item Nach dem Start loggt sich der Administrator mit dem vorgefertigten Benutzername 'admin1' und dem Passwort    'ersterAdmin1' ein und wird auf die Seite 'Admin-Verwaltung' weitergeleitet 
+				\item Nach dem Start loggt sich der Administrator auf der Startseite über die Schaltfläche 'Anmelden' in dem sich öffnenden Drop-Down Menü mit dem vorgefertigten Benutzername 'admin1' und dem Passwort 'ersterAdmin1' ein und wird nach dem Drücken des sich im Drop-Down Menü befindenden Buttons 'Anmelden' auf die Seite 'Adminverwaltung' weitergeleitet 
 				 
 				\item \Test{Impressum bearbeiten}
-				 Der Systemadministrator klickt auf der Seite 'Admin-Verwaltung' auf 'Seite bearbeiten' und wird auf diese weitergeleitet. Dort wählt er in dem Drop-Down Menü das 'Impressum' aus und fügt seinen Impressumstext in das darunterliegende Eingabefeld ein. Anschließend bestätigt der Admin die Eingabe durch Drücken des Button 'Speichern'. (vgl. \RefFuncBlue{/F40-170/})
+				 Der Systemadministrator befindet sich auf der Seite 'Adminverwaltung' und klickt dort auf die Schaltfläche 'Impressum bearbeiten' und wird auf diese weitergeleitet. Auf der Seite 'Impressum' fügt er seinen Impressumstext in das Eingabefeld ein. Anschließend bestätigt der Admin die Eingabe durch Drücken des Button 'Speichern'. Mit dem Bestätigen der Änderungen am Impressum wird der Administrator wieder auch die Seite 'Adminverwaltung' geleitet. (vgl. \RefFuncBlue{/F40-180/})
 				 
 				\item \Test{Geschäftsbedingungen editieren}
-				 Der Systemadministrator klickt auf der Seite 'Admin-Verwaltung' auf 'Seite bearbeiten' und wird auf diese weitergeleitet. Dort wählt er in dem Drop-Down Menü die 'AGB' aus und fügt seine Allgemeinen Geschäftsbedingunen in das darunterliegende Eingabefeld ein. Anschließend bestätigt der Admin die Eingabe durch Drücken des Button 'Speichern'. (vgl. \RefFuncBlue{/F40-180/})
+				 Der Systemadministrator klickt auf der Seite 'Admin-Verwaltung' auf 'Seite bearbeiten' und wird auf diese weitergeleitet. Dort wählt er in dem Drop-Down Menü die 'AGB' aus und fügt seine Allgemeinen Geschäftsbedingunen in das darunterliegende Eingabefeld ein. Anschließend bestätigt der Admin die Eingabe durch Drücken des Button 'Speichern'. (vgl. \RefFuncBlue{/F40-180/})   ?????????
+				 
+				
 			\end{itemize}		
 				
 		\subsection{Erstellung und Verwaltung}
 			\begin{itemize}
 				\item \Test{Überziehungskredit festlegen} 
-				 Auf der Seite 'Admin-Verwaltung' legt der Systemadministrator den Überziehungskredit auf 10 Euro fest und bestätigt diesen durch Drücken der Schaltfläche 'Speichern'. (vgl. \RefFuncBlue{/F40-130/})
+				 Auf der Seite 'Adminverwaltung' legt der Systemadministrator den Überziehungskredit auf 10 Euro fest, indem er im Textfeld den bereits genannten Betrag '10,00' eingibt und diesen durch Drücken der Schaltfläche 'Speichern' bestätigt. Vor dieser Änderung wurde im Textfeld der Default-Wert von '0,00' angezeigt, nun zeigt dieses Feld den Wert '10,00' an. (vgl. \RefFuncBlue{/F40-140/})
 				
-				\item \Test{Registrierungsbestätigung festlegen}
-				 Der Administrator befindet sich auf der Seit 'Admin-Verwaltung'. Im Bereich 'Registrierungsbestätigung' wählt der Admin im Drop-Down Menü den 'Administrator' aus und bestätigt seine Auswahl durch Drücken des Button 'Speichern'. (vgl. \RefFuncBlue{/F40-150/})
+				\item \Test{Art der Accountaktivierung festlegen}
+				 Der Administrator befindet sich auf der Seite 'Adminverwaltung'. Im Bereich 'Accountaktivierung' wird im Eingabefeld die voreingestellte minimale Voraussetzung 'nur E-Mailverifikation' angezeigt. Dort wählt der Admin nach dem Klicken auf dieses Eingabefeld im sich öffnenden Drop-Down Menü die Aktivierungsart 'E-Mailverifikation und Aktivierung durch Administrator' aus und bestätigt seine Auswahl durch Drücken des Button 'Speichern'. Im Eingabefeld wird nun die ausgewählte Art 'E-Mailverifikation und Aktivierung durch Administrator' angezeigt. (vgl. \RefFuncBlue{/F40-160/})
 				
 				\item \Test{neuen Benutzer anlegen} 
-				 Auf der Seite 'Admin-Verwaltung' klickt der Administrator auf die Schaltfläche 'Benutzer anlegen' und wird auf die Seite 'neuen Benutzer anlegen' weitergeleitet. Hier gibt der Admin folgende Daten ein:
+				 Auf der Seite 'Adminverwaltung' klickt der Administrator auf die Schaltfläche 'Benutzer anlegen' und wird auf die Seite 'Benutzer anlegen' weitergeleitet. Hier gibt der Admin folgende Daten ein:
 					\begin{itemize}
 						\item Benutzername: 'Basti3' 
 						\item Passwort: "poIuZt7R'
@@ -706,7 +708,7 @@ Die Produktfunktionen sind nach Benutzergruppen geordnet. Wunschkriterien sind m
 						\item Postleitzahl: '99999'
 						\item Ort: 'Musterstadt'
 					\end{itemize}
-				 Als Rolle wird 'Kursleiter' festgelegt. Durch Klicken des Buttons 'Speichern' bestätigt der Admin die Daten und der neue Benutzer ist angelegt.	(vgl. \RefFuncBlue{/F40-50/})
+				 Als Rolle wird 'Kursleiter' festgelegt. Die BenutzerID wird automatisch generiert. Über den Button 'Durchsuchen' unter dem Dummy-Bild wählt der Admin ein Bild des Dateiformates .jpg aus seinem Verzeichnis aus. Dieses erscheint nun anstelle des Dummy-Bildes. Durch Klicken des Buttons 'Benutzer anlegen' bestätigt der Admin die Daten und der neue Benutzer ist angelegt.	(vgl. \RefFuncBlue{/F40-50/})
 				
 				\item \Test{neuen Benutzer anlegen} 
 				 Auf der Seite 'Admin-Verwaltung' klickt der Administrator auf die Schaltfläche 'Benutzer anlegen' und wird auf die Seite 'neuen Benutzer anlegen' weitergeleitet. Hier gibt der Admin folgende Daten ein:
@@ -762,6 +764,15 @@ Die Produktfunktionen sind nach Benutzergruppen geordnet. Wunschkriterien sind m
 			\begin{itemize}
 				 \item \Test{Logo hochladen} 
 				 Auf der Seite 'Admin-Verwaltung' ändert der Systemadministrator das Logo, indem er im Bereich 'Logo ändern' auf 'Durchsuchen' klickt. Nach Auswahl der Bilddatei 'logo2.jpg' drückt der Admin die Schaltfläche 'Speichern', wodurch das Bild hochgeladen wird. (vgl. \RefFuncBlue{/F40-140/})
+				 
+				 \item \Test{Oberfläche editieren}
+				 Der Systemadministrator befindet sich auf der Seite 'Adminverwaltung' und klickt im Bereich 'Oberfläche anpassen' auf den Button 'Durchsuchen'. 
+					\begin{itemize}
+						 \item In dem sich öffnenden Fenster wählt der Admin die Datei mit dem Namen 'aenderung.css' aus und bestätigt durch Drücken der Schaltfläche 'Speichern'. Da dieser Dateiname nicht genehmigt ist wird bei erneutem Laden der Seite 'Adminverwaltung' der im System vordefinierte Default-Stil als Oberfläche angezeigt.
+						 \item Der Admin wählt erneut die Schaltfläche 'Durchsuchen' im Bereich 'Oberfläche anpassen' aus. In dem sich öffnenden Fenster wählt der Administrator nun die Datei mit dem Namen 'customStyle.css' aus. Nach dem Drücken des Buttons 'Speichern' wird diese Datei hochgeladen. Durch Drücken der Taste 'F5' wird die aktuelle Seite 'Adminverwaltung' neu geladen und die Änderungen durch die gewählte .css-Datei wird sichtbar. 
+					\end{itemize}
+				 (vgl. \RefFuncBlue{/F40-170/})
+				 
 			\end{itemize}
 			
 	\section{Testfälle für den Kursleiter}
