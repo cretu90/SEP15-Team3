@@ -118,41 +118,44 @@
 \tableofcontents
  
 \chapter{Zielbestimmung}
-	   Bei der Webanwendung UCourse handelt es sich um eine Online-Plattform, welche ein allgemeines Planungssystem für Kurse darstellt. Es ermöglicht Kursleitern und Kursteilnehmern die einfache Absprache von Terminen, was bisher zumeist eine große Herausforderung darstellt.
+	   Bei der Webanwendung OfCourse handelt es sich um eine Online-Plattform, welche ein allgemeines Planungssystem für Kurse darstellt. Es ermöglicht Kursleitern und Kursteilnehmern die einfache Absprache von Terminen, was bisher zumeist eine große Herausforderung darstellt.
     \section{Musskriterien}      
     	\subsubsection{Allgemeiner Funktionsumfang:}
       		\begin{itemize}
-	      		\item Durchsuchen aller angebotenen Kurse
+	      		\item Hilfeseite aufrufen \hyperlink{hilfeSeite}{F10-70}
+	      		\item Impressum anzeigen \hyperlink{impressum}{F10-60}
+	      		\item Allgemeine Geschäftsbedingungen anzeigen \hyperlink{agb}{F10-80}
       		\end{itemize}
      	\subsubsection{Funktionsumfang für anonymen Benutzer:}
        		\begin{itemize}
-	       		\item Registrieren
+	      		\item Durchsuchen aller angebotenen Kurse \hyperlink{kursSuche}{F10-50}
+	      		\item Kursanzeige sortieren \hyperlink{kursAnzSort}{F10-40}
+	       		\item Registrieren \hyperlink{Registrieren}{F10-20}
        		\end{itemize}
      	\subsubsection{Funktionsumfang für alle registrierten Benutzer:}
 			\begin{itemize}
 				\item Kann sich zu Kursen eintragen und an ihnen teilnehmen
 				\item Kann eigene Profildaten editieren
 				\item Kann Belegte Kurse anzeigen
+				\item Funktionsumfang eines Benutzers erweitert sich aufsteigend je nach zugeteilter Rolle
 			\end{itemize}
-		\subsubsection{Funktionsumfang für Kursadministrator:}
+		\subsubsection{Funktionsumfang für Kursleiter:}
 			\begin{itemize}
-				\item Erweitert Funktionsumfang vom \glqq registrierten Benutzer\grqq
 				\item Kurseinheiten anlegen
 				\item Entscheiden ob Kurseinheit statt findet
 				\item Kursgebühren einziehen
 			\end{itemize}
 		\subsubsection{Funktionsumfang für Systemadministrator:}
 			\begin{itemize}
-				\item Erweitert Funktionsumfang vom \glqq registrierten Benutzer\grqq{} und \glqq Kursadministrator\grqq
 				\item erstellt Kurse und kann diesen Kursleiter zuordnen
 				\item Benutzerverwaltung einschließlich der Änderung einer Benutzerrolle von Nutzer zu Kursleiter/\gls{Admin} oder \gls{Trainer} zu Nutzer/Administrator
 			\end{itemize}
 			
     \section{Wunschkriterien}
 			\begin{itemize}
-				\item Englisch als Sprachvariante
+				\item Englisch als Sprachvariante \hyperlink{spracheAendern}{F10-90}
 				\item Terminanzeige für anstehende Termine
-	       		\item Anonymer Benutzer kann mittels Einladung von Kursleitern an Kursen teilnehmen und ist dann ein \glqq Invited Guest\grqq{}
+	     		\item Einschränken des angezeigten Kursangebots \hyperlink{kursEinschraenken}{F10-100}
 			\end{itemize}
 			
 	\section{Abgrenzungskriterien}
@@ -160,6 +163,7 @@
 	     		\item Keine Raumplanung/-verwaltung für die Kurse
 	     		\item Keine Einsicht in fremde Nutzerprofile, nur Admin kann Nutzerdaten einsehen
 	     		\item Kein systeminternes Kommunikationssystem zwischen den Benutzern
+	     		\item Keine Funktionen zur erleichterten Bedienung für Nutzer mit Behinderung
      		\end{itemize}
         
   
@@ -238,24 +242,24 @@ Die Produktfunktionen sind nach Benutzergruppen geordnet. Wunschkriterien sind m
 			\begin{itemize}
 				\item \Func{Aufruf der Startseite.}
 					Die Startseite kann mit jedem unterstützten \gls{Browser} (vgl. Produktumgebung) via \gls{URL} aufgerufen werden.
-				\item \Func{Registrierung im System durch Ausfüllen eines Formulars.}
+				\item \Func{Registrierung im System durch Ausfüllen eines Formulars.} \hypertarget{Registrieren}
 					Der Nutzer kann sich durch Ausfüllen eines Registrierungsformulars im System registrieren. Die Anwendung generiert für den neu registrierte Nutzer automatisch eine im System eindeutige \gls{Id}. Nach Abschicken des Formulars gibt es zwei Möglichkeiten um den Account zu aktivieren. Entweder erhält der Nutzer eine E-Mail an die von ihm angegebene Adresse, welche einen Aktivierungslink enthält oder der Account wird vom Betreiber bzw. einem Kursleiter freigeschaltet. Welche der beiden Möglichkeiten zum Einsatz kommt, ist vom Administrator in seinen Einstellungen für das System auszuwählen.
-				\item \Func{Anzeigen des Kursangebots.}
+				\item \Func{Anzeigen des Kursangebots.} \hypertarget{kursAngAnz}
 					Durch Klicken der Schaltfläche 'Kursangebot' wird dem Nutzer das Kursangebot angezeigt. Als \gls{Default} wird dabei das Angebot des aktuellen Tages angezeigt. Der Nutzer hat auch die Möglichkeit das gesamte Kursangebot als Anzeigezeitraum auszuwählen. Die Auswahl des Anzeigezeitraums ist über eine Drop-Down-Liste möglich. Bestätigt wird die Auswahl durch Klicken der 'Anzeigen' - Schaltfläche. 
 					Weitere Anzeigezeiträume sind als Wunschkriterium zu realisieren.(vgl. \FuncGreen{/F10-110/})
-				\item \Func{Sortieren des angezeigten Kursangebots.}
+				\item \Func{Sortieren des angezeigten Kursangebots.} \hypertarget{kursAnzSort}
 					Die angezeigten Kurse können entweder nach 'Kursname' alphabetisch oder nach 'Uhrzeit' chronologisch sortiert werden.
-				\item \Func{Suche nach Kursen.}
+				\item \Func{Suche nach Kursen.} \hypertarget{kursSuche}
 					Das Kursangebot kann durch Eingabe des Kursnamens  und Betätigen der 'Suchen' - Schaltfläche nach einem bestimmten Kurs durchsucht werden.
-				\item \Func{Anzeige des Impressums.}
+				\item \Func{Anzeige des Impressums.} \hypertarget{impressum}
 					Das Impressum kann von jeder Seite des Systems aus angezeigt werden.
-				\item \Func{Anzeige der Hilfeseite.}
+				\item \Func{Anzeige der Hilfeseite.} \hypertarget{hilfeSeite}
 					Von jeder Seite des Systems kann die Hilfeseite zur entsprechenden Seite des Systems oder die komplette Hilfeseite aufgerufen werden.
-				\item \Func{Anzeige der Allgemeinen Geschäftsbedingungen.}
+				\item \Func{Anzeige der Allgemeinen Geschäftsbedingungen.} \hypertarget{agb}
 					Die Allgemeinen Geschäftsbedingungen können von jeder Seite des Systems aus angezeigt werden.
-				\item \FuncW{Wechsel der Anzeigesprache.}
+				\item \FuncW{Wechsel der Anzeigesprache.} \hypertarget{spracheAendern}
 					Von jeder Seite des Systems aus kann durch Klicken einer entsprechenden Schaltfläche die Anzeigesprache gewechselt werden. Als Default ist 'Deutsch' ausgewählt. Als weitere Sprache ist 'Englisch' vorgesehen.
-				\item \FuncW{Einschränken des angezeigten Kursangebots.}
+				\item \FuncW{Einschränken des angezeigten Kursangebots.} \hypertarget{kursEinschraenken}
 					Der Nutzer hat die Möglichkeit das angezeigte Kursangebot auf verschiedene Zeiträume einzuschränken. Als Default - Zeitraum ist der aktuelle Tag vorgesehen(vgl. \FuncBlue{/F10-30/}). Weitere Anzeigezeiträume sind 'Wochenangebot' und 'Monatsangebot'. Die Auswahl des Anzeigezeitraums ist über eine Drop-Down-Liste möglich. Bestätigt wird die Auswahl durch Klicken der 'Anzeigen' - Schaltfläche. 
 			\end{itemize}
 
