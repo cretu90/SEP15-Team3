@@ -793,7 +793,7 @@ Der Stellenwert der Qualitätskriterien begründet sich wie folgt:
 							\item Postleitzahl: '99999'
 							\item Ort: 'Musterstadt'
 						\end{itemize}
-					 Als Rolle wird 'Benutzer' festgelegt und im Bereich Profilbild bleibt das Dummy-Bild bestehen. Da der 40.10.1991 nicht existiert wird nach dem Drücken der Schaltfläche 'Benutzer anlegen' eine Fehlermeldung ausgegeben, welche den Benutzer auf das falsche Datum hinweist und das entsprechende Eingabefeld geleert. Aufgrund des zu kurzen Passwortes und der Verwendung des unerlaubten Zeichens '§' wird der Benutzer des Weiteren mit einer Fehlermeldung darauf hingewiesen, dass sein Passwort nicht akzeptiert wird. Die beiden Passworteingabefelder werden ebenfalls geleert.
+					 Als Rolle wird 'Benutzer' festgelegt und im Bereich Profilbild bleibt das Dummy-Bild bestehen. Da der 40.10.1991 nicht existiert wird nach dem Drücken der Schaltfläche 'Benutzer anlegen' eine Fehlermeldung ausgegeben, welche den Benutzer auf das falsche Datum hinweist und das entsprechende Eingabefeld wird geleert. Aufgrund des zu kurzen Passwortes und der Verwendung des unerlaubten Zeichens '§' wird der Benutzer des Weiteren mit einer Fehlermeldung darauf hingewiesen, dass sein Passwort nicht akzeptiert wird. Die beiden Passworteingabefelder werden ebenfalls geleert.
 					 
 					 \item Der Benutzer trägt nun im Eingabefeld des Geburtsdatums den 04.10.1991 ein. Außerdem gibt er ein anderes Passwort im ersten Passwortfeld ein: 'vBnMk89po'. Im zweiten Passwortfeld trägt er 'vBnMk89pO' ein. Nach dem Drücken der Schaltfläche 'Benutzer anlegen' wird der Benutzer mit einer Fehlermeldung darauf hingewiesen, dass seine Passwörter nicht übereinstimmen. Die beiden Passwortfelder werden wieder geleert.
 					 
@@ -904,15 +904,25 @@ Der Stellenwert der Qualitätskriterien begründet sich wie folgt:
 				 
 			
 			\item \Test{Kurseinheit löschen}
-			Der Kursleiter 'Basti3' befindet sich auf der Seite 'Kursdetails' des Kurses 'Standardtanz'. Auf dieser befinden sich bereits die durch den Systemadministrator angegebenen Daten (vgl. \RefFuncBrown{/T10-80/}), sowie die angelegten Kurseinheiten aus dem Testfall \RefFuncBrown{/T20-40/}. Der Kursleiter wählt auf dieser Seite die Kurseinheit am '25.05.2015' durch Drücken des Button 'Bearbeiten' aus und wird auf die Seite 'Kurseinheit bearbeiten' weitergeleitet, auf welcher die Daten aus Testfall \RefFuncBrown{/T20-30/} eingetragen sind. Über die Schaltfläche 'Löschen' wird diese Kurseinheit entfernt und der Kursleiter wird auf die Seite 'Kursdetails' des Kurses 'Standardtanz' weitergeleitet. Auf dieser Seite ist nun im Bereich 'Kurseinheiten' die gelöschte Kurseinheit vom '25.05.2015' nicht mehr aufgeführt.(vgl. \RefFuncBlue{/F30-60/})			
+			Der Kursleiter 'Basti3' befindet sich auf der Seite 'Kursdetails' des Kurses 'Standardtanz'. Auf dieser befinden sich bereits die durch den Systemadministrator angegebenen Daten (vgl. \RefFuncBrown{/T10-80/}), sowie die angelegten Kurseinheiten aus dem Testfall \RefFuncBrown{/T20-40/}. Der Kursleiter wählt auf dieser Seite die Kurseinheit am '25.05.2015' durch Drücken des Button 'Bearbeiten' aus und wird auf die Seite 'Kurseinheit bearbeiten' weitergeleitet, auf welcher die Daten aus Testfall \RefFuncBrown{/T20-30/} eingetragen sind. Über die Schaltfläche 'Löschen' wird diese Kurseinheit entfernt und der Kursleiter wird auf die Seite 'Kursdetails' des Kurses 'Standardtanz' weitergeleitet. Auf dieser Seite ist nun im Bereich 'Kurseinheiten' die gelöschte Kurseinheit vom '25.05.2015' nicht mehr aufgeführt.(vgl. \RefFuncBlue{/F30-80/})			
 		\end{itemize}
 			
 	\section{Testfälle für anonymer Benutzer}
 			\stepHc
 			\begin{itemize}
 				\item \Test{Kursangebot ansehen} 
-				 Der anonyme Benutzer klickt auf der Startseite auf den Button 'Kursangebot'	und gelangt auf die Seite mit den Kursangeboten. Angezeigt wird zunächst das aktuelle Tagesangebot. In dem Suchfeld gibt er den Kursnamen 'Yoga' ein. Es wird nun nur noch der Yogakurs angezeigt. Nach Doppelklicken auf den Kursnamen kann sich der Benutzer nun die Kursdetails ansehen. (vgl. \RefFuncBlue{/F10-30/})
+				 Der anonyme Benutzer klickt auf der Startseite auf den Button 'Unser Kursangebot' und gelangt auf die Seite 'Kursangebot durchsuchen'. Angezeigt wird das gesamte Kursangebot aufsteigend nach dem Beginn der nächsten Kurseinheit der Kurse, welche in den Testfällen \RefFuncBrown{/T10-70/}, \RefFuncBrown{/T10-80/} und in den Testfälle von \RefFuncBrown{/T20-10/} bis \RefFuncBrown{/T20-50/} angelegt wurden. (vgl. \RefFuncBlue{/F10-30/}) 
+				 
+				 \item \Test{Kurs suchen und Detailansicht ansehen} 
+				 Der anonyme Benutzer befindet sich auf der Seite 'Kursangebot durchsuchen'. Angezeigt werden die Daten wie im Testfall \RefFuncBrown{/T30-10/}. 
+					 \begin{itemize}
+					 \item Der Benutzer wählt auf dieser Seite im Bereich 'Kursangebot durchsuchen' aus der Drop-Down Liste 'Kursname' aus und trägt im der darunterliegenden Eingabefeld den Namen 'Fußball' ein. Nach dem Drücken des Button 'Suchen' wird der Benutzer mit einer Fehlermeldung darauf hingewiesen, dass kein Kurs mit dem eingegebenen Namen existiert. Das entsprechende Eingabefeld wird geleert und der Benutzer bleibt auf Seite 'Kursangebot durchsuchen.
+					 \item  Der Benutzer wählt auf dieser Seite im Bereich 'Kursangebot durchsuchen' aus der Drop-Down Liste 'Kursname' aus und trägt im der darunterliegenden Eingabefeld den Namen 'Standardtanz' ein. Nach dem Klicken auf die Schaltfläche 'Suchen' wird in der Anzeige des Kursangebotes nur noch der Kurs 'Standardtanz' angezeigt.
+					\end{itemize}
+				(vgl. \RefFuncBlue{/F10-50/})	
+				Anschließend klickt der Nutzer auf den angezeigten Kurs 'Standardtanz' und wird auf dessen Seite 'Kursdetails' weitergeleitet. Hier werden dem Benutzer die Identifikationsnummer, der Titel, die Beschreibung, der Trainer und die Kurseinheiten angezeigt, die in den Testfällen \RefFuncBrown{/T10-80/} und \RefFuncBrown{/T20-20/} bis \RefFuncBrown{/T20-50/} angelegt wurden. (vgl. \RefFuncBlue{/F10-60/}) 
 				
+					
 				\item \Test{Registrierung} 
 				 Über die Schaltfläche 'Login' gelangt der anonyme Benutzer auf die Loginseite und von hier aus über den Button 'registrieren' auf die nächste Seite mit dem Registrierungsformular. 		
 					\begin{itemize}
