@@ -159,9 +159,9 @@
 				\item verwaltet \hyperlink{kursVerwalt}{F40-20}, erstellt \hyperlink{kursErstellen}{F40-10}, bearbeitet \hyperlink{kursBearbeiten}{F40-30} und löscht \hyperlink{kursLoeschen}{F40-40} Kurse und kann zu den Kursen Kursleiter zuordnen \hyperlink{kursKLAdd}{} und wieder entfernen \hyperlink{kursKLDel}{}
 				\item Benutzerverwaltung \hyperlink{nutzerVerwalt}{F40-60} einschließlich der Änderung einer Benutzerrolle von Nutzer zu Kursleiter/\gls{Admin} oder \gls{Trainer} zu Nutzer/Administrator \hyperlink{nutzerRolle}{F40-90}
 				\item Benutzer suchen \hyperlink{nutzerSuchen}{F40-100}, anlegen \hyperlink{nutzerAnlegen}{F40-50} und löschen \hyperlink{nutzerLoeschen}{F40-80}
-				\item Statistiken anzeigen \hyperlink{statistik}{F40-110}
-				\item Nutzerguthaben aufladen \hyperlink{guthabenAuf}{F40-120}
-				\item System anpassen, beispielsweise eigenes Logo hochladen \hyperlink{logo}{F40-140}, Impressum bearbeiten \hyperlink{impressumBea}{F40-170} oder Registrierungsmodalitäten festlegen \hyperlink{regMod}{F40-150}
+				\item Statistiken anzeigen \hyperlink{statistik}{F40-120}
+				\item Nutzerguthaben aufladen \hyperlink{guthabenAuf}{F40-130}
+				\item System anpassen, beispielsweise eigenes Logo hochladen \hyperlink{logo}{F40-150}, Impressum bearbeiten \hyperlink{impressumBea}{F40-180} oder Registrierungsmodalitäten festlegen \hyperlink{regMod}{F40-160}
 			\end{itemize}
 			
     \section{Wunschkriterien}
@@ -315,9 +315,7 @@ Die Produktfunktionen sind nach Benutzergruppen geordnet. Wunschkriterien sind m
 				\item \Func{Von Kurs abmelden.}  \hypertarget{kursAbmelden}
 					Der registrierte Nutzer kann sich von Kursen abmelden zu denen er angemeldet ist. Dafür klickt er in der Detailansicht des gewünschten Kurses auf die Schaltfläche 'Abmelden'. Meldet sich der registrierte Benutzer von einem Kurs ab, meldet er sich damit auch automatisch von allen Kurseinheiten ab.
 				\item \Func{Zu Kurseinheit anmelden.} \hypertarget{kurseinheitAnmelden}
-					Der registrierte Benutzer kann sich zu beliebig vielen Kurseinheiten anmelden. Um
-					sich zu Kurseinheiten anmelden zu können, muss der Nutzer bei diesem Kurs angemeldet
-					sein. Für die Anmeldung zur Kurseinheit muss der Nutzer in die Detailansicht des Kurses wechseln. Dort findet er die zu diesem Kurs verfügbaren Einheiten und deren Status. Ist eine Kurseinheit noch nicht voll und ist der Nutzer noch nicht zu dieser Einheit angemeldet, kann er sich anmelden. Der Nutzer hat außerdem die Möglichkeit durch Klicken der Schaltfläche 'Alle auswählen' und anschließender Betätigung der Schaltfläche 'Speichern' sich zu allen Einheiten des Kurs auf einmal anzumelden. Vor Betätigen der Schaltfläche 'Speichern' hat der Nutzer aber auch noch die Möglichkeit einzelne Einheiten von der Anmeldung auszuschließen. Voraussetzung um sich zu kostenpflichtigen Kurseinheiten anmelden zu können ist ein ausreichendes Guthaben auf dem Konto bzw. keine unzulässige Überziehung des Guthabenkontos.
+					Um sich zu Kurseinheiten eines Kurses anmelden zu können, muss der Nutzer in die Detailansicht des Kurses wechseln. Dort findet er die zu diesem Kurs verfügbaren Einheiten und deren Status. Ist eine Kurseinheit noch nicht voll und ist der Nutzer noch nicht zu dieser Einheit angemeldet, kann er sich anmelden. Der Nutzer hat außerdem die Möglichkeit durch Klicken der Schaltfläche 'Alle auswählen' und anschließender Betätigung der Schaltfläche 'Speichern' sich zu allen Einheiten des Kurs auf einmal anzumelden. Vor Betätigen der Schaltfläche 'Speichern' hat der Nutzer aber auch noch die Möglichkeit einzelne Einheiten von der Anmeldung auszuschließen. Voraussetzung um sich zu kostenpflichtigen Kurseinheiten anmelden zu können ist ein ausreichendes Guthaben auf dem Konto bzw. keine unzulässige Überziehung des Guthabenkontos.
 				\item \Func{Von Kurseinheit abmelden.} \hypertarget{kurseinheitAbmelden}
 					Der registrierte Benutzer kann sich von Kurseinheiten abmelden, zu denen er angemeldet ist. Um sich von Kurseinheiten eines Kurses abmelden zu können, muss der Nutzer in die Detailansicht des Kurses wechseln. Dort findet er die zu diesem Kurs verfügbaren Einheiten.
 					Er kann nun die Einheiten auswählen von denen er sich abmelden will und durch Betätigen der Schaltfläche 'Speichern' meldet er sich von den gewählten Einheiten ab. Der für kostenpflichtige Einheiten bezahlte Betrag wird automatisch auf das Konto des registrierten Benutzers zurückgebucht.
@@ -459,7 +457,7 @@ Die Produktfunktionen sind nach Benutzergruppen geordnet. Wunschkriterien sind m
 
 \chapter{Produktdaten}
  \label{Produktdaten}
-Im folgenden wird beschrieben, welche Daten persistent gespeichert werden. Jeder Punkt stellt im Prinzip einen Datensatz dar.         
+        
 	
     \section{System}
 	     \Func {} 
@@ -487,109 +485,76 @@ Im folgenden wird beschrieben, welche Daten persistent gespeichert werden. Jeder
 	    
 \stepHc		    	
 	\section{Kurs}
-	   \Func {} Alle Informationen über einen angebotenen Kurs. 
+	   \Func {} 
 		 \begin{itemize}
-		   	\item ID (Integer) (eindeutig)
-		   	\item Daten
-		   	\begin{itemize}
-		   		\item Information zum Kurs
-		   		\begin{itemize}
-			   		\item Titel (String)
-			   		\item Beschreibung (String)
-			   		\item nächster Termin (Date)
-			   		\item Startdatum (Date)
-			   		\item Enddatum (Date)
-			   		\item Maximale Teilnehmerzahl (Integer)
-			   		\item Bildverweis (String)
-			   		\item Kurseinheiten (Liste von Kurseinheiten)
-			   		\item Teilnehmer (Liste von Registrierten Benutzer)
-			   	\end{itemize}
-			   	\item Kontaktinformation
-			   		\begin{itemize}
-			   			\item Trainer (BenutzerID)
-			   		\end{itemize}	
-		   	\end{itemize}
-		   	
-		   	
-		   	
+		   	\item ID (Integer)
+		   	\item Titel (String)
+		   	\item Beschreibung (String)
+		   	\item Trainer (BenutzerID)
+		   	\item nächster Termin (Date)
+		   	\item Startdatum (Date)
+		   	\item Enddatum (Date)
+		   	\item Ort (String)
+		   	\item Maximale Teilnehmerzahl (Integer)
+		   	\item Bildverweis (String)
+		   	\item Kurseinheiten (KursIDs)
+		   	\item Teilnehmer (BenutzerIDs)
 	    \end{itemize}
 \stepHc		    
 	\section{Kurseinheit}
-	 \Func {} Alle Informationen über eine angebotene Kurseinheit
+	 \Func {} 
 		 \begin{itemize}
-		 	\item ID (Integer) (eindeutig)
-		 	\item Daten
-		 	\begin{itemize}
-		 		\item Information zur Kurseinheit
-		 		\begin{itemize}
-		 			\item Titel (String)
-		 			\item Beschreibung (String)
-		 			\item Beginn (Date)
-		 			\item Ende (Date)
-		 			\item Ort (String)
-		 			\item Preis (\gls{float})
-		 			\item Maximale Teilnehmerzahl (Integer)
-		 			\item Minimale Teilnehmerzahl (Integer)
-		 			\item Teilnehmer (Liste von Registrierten Benutzer) 
-		 		\end{itemize}
-		 		\item Kontaktinformation
-		 		\begin{itemize}
-		 			\item Trainer (BenutzerID)
-		 		\end{itemize}
-		 	\end{itemize}
-		 	
-		 	
-		 	
+		 	\item ID (Integer)
+		 	\item Titel (String)
+		 	\item Beschreibung (String)
+		 	\item Trainer (BenutzerID)
+		 	\item Beginn (Date)
+		 	\item Ende (Date)
+		 	\item Ort (String)
+		 	\item Preis (\gls{float})
+		 	\item Maximale Teilnehmerzahl (Integer)
+		 	\item Minimale Teilnehmerzahl (Integer)
+		 	\item Teilnehmer (BenutzerIDs)
 		 \end{itemize}   
     
     
 \stepHc	   		
     \section{Registrierte Benutzer}
-		  \Func {} Alle Informationen über einen registrierten Benutzer
+		  \Func {} 
 		 \begin{itemize}
-			\item ID (Integer) (eindeutig)
-			\item Kennung
-			\begin{itemize}
-				\item Benutzername (String) (eindeutig)
-				\item Passwort (String) (verschlüsselt)
-			\end{itemize}
-			\item Persönliche Daten
-			\begin{itemize}
-			\item Information zur eigenen Person	
-			\begin{itemize}
-				\item Vorname (String)
-				\item Nachname (String)
-				\item Geschlecht (Männlich/Weiblich)
-				\item Geburtsdatum (Date)
-				\item Bildverweis (String)
-				\item Guthaben (float)
-			\end{itemize}
-			\item Kontaktinformationen
-			\begin{itemize}
-				\item E-mailadresse (String) (eindeutig, gültig)
-				\item Ort (String)
-				\item Straße (String)
-				\item Postleitzahl (Integer)
-			\end{itemize}
-			\item Sonstige Daten
-			\begin{itemize}
-				\item eingeschriebene Kurse (Liste von Kursen)
-				\item eingeschriebene Kurseinheiten (Liste von Kurseinheiten)
-				\item Registrierung über Email abgeschlossen (Boolean)
-				\item Registrierung über Admin abgeschlossen (Boolean)
-			\end{itemize}	
-			\end{itemize}
-			
+			\item ID (Integer)
+		  	\item Benutzername (String)
+		  	\item Passwort (String)
+		  	\item Vorname (String)
+		  	\item Nachname (String)
+		  	\item Geburtsdatum (Date)
+		  	\item E-mailadresse (String)
+		  	\item Addresse (String)
+		  	\item Guthaben (float)
+		  	\item Bildverweis (String)
+		  	\item eingeschriebene Kurse (KursIDs)
+		  	\item eingeschriebene Kurseinheiten (KurseinheitenIDs)
+		  	\item eigene Termine (TermineIDs)
 		  \end{itemize}
 
+\stepHc		    
+	  \section{eigene Termine}
+	    \Func {} 
+	    \begin{itemize}
+	    	\item ID (Integer)
+	    	\item Name (String)
+	    	\item Beginn (Date)
+	    	\item Ende (Date)
+	    	\item Beschreibung (String)
+	    \end{itemize}
 	   
 \stepHc	 
 	  \section{Benutzerrolle}
-	    \Func {} Speichert registrierte Benutzer gemäß ihrer Rolle im System. (3 verfügbare Benutzerrollen: Administrator, Trainer und Benutzer) 
+	    \Func {} 
 	    \begin{itemize}
-	    	\item ID (Integer) (eindeutig)
+	    	\item ID (Integer)
 	    	\item Gruppenname (String)
-	    	\item Benutzer-ID (Liste registrierter Benutzer)
+	    	\item Benutzer-ID (BenutzerIDs)
 	    \end{itemize}
 	    
 	   
@@ -617,18 +582,8 @@ Im folgenden wird beschrieben, welche Daten persistent gespeichert werden. Jeder
 				\item \Func{} Die Administratoren haben über eine selbst geschriebene CSS Datei Einfluss auf die Optische Darstellung der Software 
 				\item \Func{} Unautorisierte Benutzeraktion (z.B anonymer User will sich für Kurs eintragen) wird nicht angezeigt, stattdessen wird auf die Registrierung bzw. Login verwiesen
 				\item \Func{} An einem Client-Browser können nicht mehrere autorisierte verschiedene Sessions zeitgleich geführt werden
-				\item \Func{} Parallele Nutzung wird unterstützt und nach dem First Come First Serve Prinzip gehandhabt.
-				\item \Func{} Löschen von Datensätzen wird kaskadenartig auf der Datenbank ausgeführt um Fehler bei Verlinkungen von Datensätzen zu vermeiden
-				\item \Func{} Um Skalierbarkeit zu gewährleisten wird Pagination bei der anzeige von Kursen und Kurseinheiten verwendet 
-				\item \Func{} Das System stellt Validatoren zur Verfügung die Benutzereingaben auf Format Fehler überprüfen und eine Fehlermeldung bei verstoß ausgeben. (z.B. Eingabe Feld erwartet ein Datum bekommt aber ein String)
-				\item \Func{} Das System stellt einen Passwort Validator zur Verfügung, der das gewählte Passwort des Benutzers auf Sicherheitsstandarts überprüft. (mindestens 8 Zeichen, mindestens ein Sonderzeichen, mindestens eine Ziffer, Groß und Kleinbuchstaben )
-				\item \Func{} Das System stellt einen Email Validator zur Verfügung, der die vom Benutzer angegebene E-mailadresse auf Gültigkeit überprüft.
-				\item \Func{} Das System stellt einen Geburtstags Validator zur Verfügung, der das vom Benutzer angegebene Geburtsdatum kontrolliert ob es nicht in der Zukunft liegt. 
-				\item \Func{} Das System stellt einen Überweisungs Validator zur Verfügung, der bei einer offline Überweisung des Trainers/Admins die angegebene BenutzerID auf Existenz überprüft  
 				\item \Func{} Verfügbarkeit der Räumlichkeit wird nicht unterstützt.
 				\item \Func{} Die Sprache des Systems kann auf Englisch oder Deutsch gesetzt werden. Benutzereingaben werden nicht berücksichtigt und werden unverändert angezeigt.
-				\item Der HTML 5 Code wird durch den Validator http://validator.w3.org überprüft
-				\item Es werden keine Frames verwendet
 			\end{itemize}
 		
 		
@@ -860,8 +815,8 @@ Im folgenden wird beschrieben, welche Daten persistent gespeichert werden. Jeder
 				 	\item Der Kursleiter ändert den Startzeitpunkt des Kurses nun auf den '04.05.2015' und bestätigt seine Änderung durch Drücken des Button 'Speichern'. Das neue Datum wird nun im entsprechenden Feld angezeigt und der Button 'Speichern' ändert sich wieder zum Button 'Bearbeiten'. Der Kursleiter bleibt weiterhin auf der Seite 'Kursdetails'. (vgl. \RefFuncBlue{/F30-20/})
 				\end{itemize}
 				
-			\item \Test{Kurseinheit anlegen} 
-			 Der Kursleiter 'Basti3' befindet sich auf der Seite 'Meine Kurse' und klickt in seinen Trainingskursen den Kurs 'Standardtanz' an. Dadurch wird er auf die 'Kursdetails'-Seite weitergeleitet auf der bereits die durch den Systemadministrator angegebenen Daten eingetragen sind. (vgl. \RefFuncBrown{/T10-80/}) Nach Drücken des Button 'Kurseinheit anlegen' wird er auf die Seite 'Kurseinheit bearbeiten' weitergeleitet. Nach Drücken des Button 'Bearbeiten', welcher sich dadurch zum Button 'Speichern' ändert, können die einzelnen Eingabefelder bearbeitet werden und der Kursleiter legt folgende Kurseinheit an:
+			\item \Test{Kurseinheiten anlegen} 
+			 Der Kursleiter 'Basti3' befindet sich auf der Seite 'Meine Kurse' und klickt in seinen Trainingskursen den Kurs 'Standardtanz' an. Dadurch wird er auf die 'Kursdetails'-Seite weitergeleitet auf dem bereits die durch den Systemadministrator angegebenen Daten eingetragen sind. (vgl. \RefFuncBrown{/T10-80/}) Nach Drücken des Button 'Kurseinheit anlegen' wird er auf die Seite 'Kurseinheit bearbeiten' weitergeleitet. Nach Drücken des Button 'Bearbeiten', welcher sich dadurch zum Button 'Speichern' ändert, können die einzelnen Eingabefelder bearbeitet werden und der Kursleiter legt folgende Kurseinheit an:
 				\begin{itemize}
 					\item Termin: '04.05.2015'
 					\item Ort: 'Turnhalle'
@@ -874,27 +829,11 @@ Im folgenden wird beschrieben, welche Daten persistent gespeichert werden. Jeder
 				\end{itemize}	
 			 Anschließend bestätigt der Kursleiter die Kurseinheit durch Drücken des Buttons 'Speichern', welcher sich dadurch wieder zum Button 'Bearbeiten ändert. Der Kursleiter wird auf die Seite 'Kursdetails' weitergeleitet, auf der im Bereich 'Kurseinheiten' nun die eben angelegte Kurseinheit angezeigt wird. (vgl. \RefFuncBlue{/F30-40/})
 			 
-			\item \Test{Kurseinheit anlegen} 
-			 Analog zum vorangehenden Testfall \RefFuncBrown{/T20-20/} werden zum selben Kurs 'Standardtanz' noch drei weitere Kurseinheiten zu den nachfolgenden Terminen angelegt:
-				 \begin{itemize}
-				 	\item 11.05.2015
-				 	\item 18.05.2015
-				 	\item 25.05.2015
-				 \end{itemize}		
-		 	 Alle anderen Daten werden analog zum Testfall \RefFuncBrown{/T20-20/} eingetragen.
+			 TO DO: NOCH MEHR EINHEITEN ANLEGEN!!!!
+			 
 			
 			\item \Test{Kurseinheiten editieren}
-			 Der Kursleiter 'Basti3' befindet sich auf der Seite 'Meine Kurse' und klickt in seinen Trainingskursen den Kurs 'Standardtanz' an, wodurch er auf die 'Kursdetails'-Seite weitergeleitet wird, auf der bereits die durch den Systemadministrator angegebenen Daten (vgl. \RefFuncBrown{/T10-80/}) eingetragen sind. Des Weiteren werden die in den Testfällen \RefFuncBrown{/T20-20/} und \RefFuncBrown{/T20-30/} angelegten Kurseinheiten angezeigt. Der Kursleiter klickt auf den Button 'Bearbeiten', der sich neben der Kurseinheit mit dem Termin '04.05.2015' befindet. Dadurch wird er auf die Seite Seite 'Kurseinheit bearbeiten' weitergeleitet, auf der bereits die im Testfall \RefFuncBrown{/T20-20/} angelegten Daten eingetragen sind. Nach Drücken des Button 'Bearbeiten', welcher sich dadurch zum Button 'Speichern' ändert, können die einzelnen Eingabefelder bearbeitet werden. 
-				 \begin{itemize}
-				 	\item Der Kursleiter ändert den Termin auf den '01.06.2015' und drückt den Button 'Speichern'. Durch eine Fehlermeldung wird der Kursleiter darauf hingewiesen, dass sich der geänderte Termin außerhalb des Kurszeitraumes (vgl. \RefFuncBrown{/T10-80/}) befindet. Das Eingabefeld des Termins wird geleert. Der Button 'Speichern' ändert sich nicht.
-				 	
-				 	\item Nun ändert der Kursleiter den Termin auf den '05.13.2015' und drückt den Button 'Speichern'. Durch eine Fehlermeldung wird der Kursleiter darauf hingewiesen, dass der geänderte Termin kein gültiges Datum ist. Das Eingabefeld des Termins wird geleert. Der Button 'Speichern' ändert sich nicht.
-				 	
-				 	\item Der Kursleiter ändert den Termin auf den '05.05.2015' und drückt den Button 'Speichern'. Da dieses Datum akzeptiert wird, wird 'Basti3' auf die Seite 'Kursdetails' des Kurses 'Standardtanz' weitergeleitet, auf der nun im Bereich 'Kurseinheiten' die entsprechende Einheit mit dem geänderten Termin angezeigt wird.
-				 \end{itemize}
-			 (vgl. \RefFuncBlue{/F30-50/})
-			 
-		TO DO: HIER GEHTS WEITER !!!!	 
+			 Der Kursleiter 'Basti3' klickt in der Detailansicht des Kurses 'Standardtanz' den Button 'Bearbeiten' an und wird auf die Seite 'Kurseinheit bearbeiten' weitergeleitet. 'Basti3' ändert die letzte Kurseinheit vom '29.06.2015' auf den '30.06.2015' und bestätigt durch Klicken auf den Button 'Speichern'. (vgl. \RefFuncBlue{/F30-50/})
 			
 			\item \Test{Kurseinheit löschen}
 			 Der Kursleiter wählt auf der 'Kurseinheit bearbeiten'-Seite die Checkbox '30.06.2015' aus. Durch Drücken des Buttons 'Löschen' entfernt der Kursleiter diese Kurseinheit. (vgl. \RefFuncBlue{/F30-60/})			
@@ -1123,7 +1062,11 @@ Im folgenden wird beschrieben, welche Daten persistent gespeichert werden. Jeder
 PC
 \end{tiny}
 
-      
+	\begin{itemize}
+	\item Der HTML 5 Code wird durch den Validator
+	http://validator.w3.org überprüft
+	\item Es werden keine Frames verwendet
+	\end{itemize}        
         
         
         
