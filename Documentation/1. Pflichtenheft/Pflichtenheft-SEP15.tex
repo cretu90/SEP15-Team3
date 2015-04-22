@@ -182,24 +182,24 @@
   
 \chapter{Produkteinsatz}
     \section{Anwendungsbereiche}
-		 Der \gls{Einheiten}-Manager dient der Organisation und Planung von Veranstaltungen. Benutzer können sich im System über verschiedene Veranstaltungen informieren.   
+		 Der \gls{Einheiten}-Manager dient der Organisation und Planung von Veranstaltungen. Bis zu 100 Benutzer können sich im System über verschiedene Veranstaltungen informieren.   
      
 	\section{Zielgruppen}
 		 \begin{enumerate}
 		 	\item Betreiber: Die Webanwendung soll von Betreibern unterschiedlichsten Fachbereichs verwendet werden können, beispielsweise Betreiber von Sportvereinen oder Lehrinstituten, welche ihre angebotenen Veranstaltungen und Kurse per Internet organisieren möchten.
 		 	\item Benutzer: Es wird zwischen vier verschiedenen Benutzern unterschieden:
 		 	\begin{itemize}
-		 		\item Anonymer Benutzer: Anonyme Benutzer benötigen rudimentäre Kenntnisse im Umgang mit dem Computer, um nach 	Veranstaltungen suchen und informieren zu können.
-		 		\item Registrierter Benutzer: Registrierte Benutzer benötigen ebenso wie anonym Benutzer keine besonderen Vorkenntnisse. Sie benötigen lediglich eine E-Mail-Adresse, um sich im System registrieren zu können und somit ihr Benutzerkonto erstellen. Sie können nach Veranstaltungen suchen und sich für solche an- oder abmelden.
+		 		\item Anonymer Benutzer: Anonyme Benutzer benötigen rudimentäre Kenntnisse im Umgang mit dem Computer. Sie sollen einen \gls{Browser} steuern können, die Webseite des \gls{Einheiten}-Manager öffnen, um dort nach Veranstaltungen suchen und informieren zu können.
+		 		\item Registrierter Benutzer: Registrierte Benutzer benötigen ebenso wie anonyme Benutzer keine besonderen Vorkenntnisse. Sie sollen einen \gls{Browser} ihrer Wahl nutzen können und benötigen lediglich eine E-Mail-Adresse, um sich im System registrieren zu können und somit ein Benutzerkonto erstellen. Sie können nach Veranstaltungen suchen und sich für solche an- oder abmelden.
 		 		\item Kursleiter: Ein Kursleiter benötigt gleichfalls wenig besondere IT-Kenntnisse. Er sollte allerdings über alle nötigen Informationen seiner Veranstaltung in Kenntnis sein, um jene anlegen und verwalten zu können.
-		 		\item Administrator: Ein Administrator ist für die Verwaltung und \gls{Konfiguration} des gesamten Systems zuständig. Aufgrund dessen werden grundlegende IT-Kenntnisse vorausgesetzt.
+		 		\item \gls{Admin}: Ein \gls{Admin} ist für die Verwaltung und \gls{Konfiguration} des gesamten Systems zuständig. Aufgrund dessen werden grundlegende IT-Kenntnisse vorausgesetzt.
 		 	\end{itemize}	
 		 \end{enumerate}  
         
     
 	\section{Betriebsbedingungen}
 	       \begin{itemize}
-		       	\item Betriebszeit/Betriebsdauer: Ununterbrochener Betrieb mit Ausnahme einer Wartungszeit von 2 Stunden in der Woche bzw. 8 Stunden im Monat, welche aber nicht zur Hauptnutzungszeit des Systems abgehalten wird, sofern dies möglich ist.
+		       	\item Betriebszeit/Betriebsdauer: Ununterbrochener Betrieb mit Ausnahme einer wöchentlichen Wartungszeit von 2 Stunden bzw. 8 Stunden im Monat, welche aber nicht zur Hauptnutzungszeit des Systems abgehalten wird, sofern dies möglich ist.
 		       	\item  Im laufenden Betrieb ist keine Aufsicht vonnöten.
 	       \end{itemize}
 	
@@ -234,13 +234,17 @@
           	\item Server:
 	           \begin{itemize}
 		           	\item Rechner mit Internetzugang
-		           	\item Rechner mit mindestens 5 GB Festplattenspeicher für Datenbank und Software
-		           	\item Intel(R) Core(TM) i5-2400 CPU, 8GB RAM 
+		           	\item Applikation/Datenbank-Server: Intel(R) Core(TM) i5-2400 CPU, 8GB
+RAM, mindestens 5 GB freier Speicher
 	           \end{itemize}
         \end{itemize}
         
      \section{Orgware}
-             Es wird keine \gls{Orgware} benötigt.
+             \begin{itemize}
+               \item Internetverbindung
+               \item \gls{Admin}, der die Anwendung einrichtet, die Datenbank wartet
+und sichert.
+             \end{itemize}
 
 \resetAllCounter
 \newcommand{\Func}[1]{\stepcounter{Lc}\textcolor{Blue}{\textbf{/F\arabic{Hc}0-\arabic{Lc}0/} #1} \\}
@@ -1158,7 +1162,7 @@ Der Stellenwert der Qualitätskriterien begründet sich wie folgt:
             \begin{itemize}
             	\item Windows 8.1
             	\item Windows 7
-            	\item Linux Mint 17.1 Rebecca
+            	\item Linux Mint 17.1
             \end{itemize}	
             
         \subsection{Dokumentation}
@@ -1202,7 +1206,7 @@ Der Stellenwert der Qualitätskriterien begründet sich wie folgt:
         	\item Dropbox
         \end{itemize}
         
-    \section{Hardware}
+    \section{Hardware privat}
         \begin{itemize}
         	\item Intel Core i5-3317U CPU @ 1.70GHz x 2
         \end{itemize}
