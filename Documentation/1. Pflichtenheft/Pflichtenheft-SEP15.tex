@@ -457,135 +457,179 @@ Die Produktfunktionen sind nach Benutzergruppen geordnet. Wunschkriterien sind m
 \renewcommand{\Func}[1]{\stepcounter{Lc}\textcolor{Blue}{\textbf{/D\arabic{Hc}0-\arabic{Lc}0/} #1} \\}	
 
 \chapter{Produktdaten}
- \label{Produktdaten}
-        
-	
-    \section{System}
-	     \Func {} 
-	     \begin{itemize}
-	     	\item Titel (\gls{String})
-	     	\item CSS-Datei (String)
-	     	\item Impressum (String)
-	     	\item Logopfad (String)
-	     	\item AGB (String)
-	     	\item Hilfe (String)
-	     \end{itemize}
-	    
-	    
-	    \subsection{SMTP-Server}
-		    \Func {}
-		    \begin{itemize}
-		    	\item Benutzername (String)
-		    	\item Passwort (String)
-		    	\item Authentifizierung (\gls{Boolean})
-		    	\item TLS (Boolean)
-		    	\item Host (String)
-		    	\item Port (\gls{Integer})
-		    \end{itemize}
-	    
-	    
-\stepHc		    	
-	\section{Kurs}
-	   \Func {} 
-		 \begin{itemize}
-		   	\item ID (Integer)
-		   	\item Titel (String)
-		   	\item Beschreibung (String)
-		   	\item Trainer (BenutzerID)
-		   	\item nächster Termin (Date)
-		   	\item Startdatum (Date)
-		   	\item Enddatum (Date)
-		   	\item Ort (String)
-		   	\item Maximale Teilnehmerzahl (Integer)
-		   	\item Bildverweis (String)
-		   	\item Kurseinheiten (KursIDs)
-		   	\item Teilnehmer (BenutzerIDs)
-	    \end{itemize}
-\stepHc		    
-	\section{Kurseinheit}
-	 \Func {} 
-		 \begin{itemize}
-		 	\item ID (Integer)
-		 	\item Titel (String)
-		 	\item Beschreibung (String)
-		 	\item Trainer (BenutzerID)
-		 	\item Beginn (Date)
-		 	\item Ende (Date)
-		 	\item Ort (String)
-		 	\item Preis (\gls{float})
-		 	\item Maximale Teilnehmerzahl (Integer)
-		 	\item Minimale Teilnehmerzahl (Integer)
-		 	\item Teilnehmer (BenutzerIDs)
-		 \end{itemize}   
-    
-    
-\stepHc	   		
-    \section{Registrierte Benutzer}
-		  \Func {} 
-		 \begin{itemize}
-			\item ID (Integer)
-		  	\item Benutzername (String)
-		  	\item Passwort (String)
-		  	\item Vorname (String)
-		  	\item Nachname (String)
-		  	\item Geburtsdatum (Date)
-		  	\item E-mailadresse (String)
-		  	\item Addresse (String)
-		  	\item Guthaben (float)
-		  	\item Bildverweis (String)
-		  	\item eingeschriebene Kurse (KursIDs)
-		  	\item eingeschriebene Kurseinheiten (KurseinheitenIDs)
-		  	\item eigene Termine (TermineIDs)
-		  \end{itemize}
+\label{Produktdaten}
+Im folgenden wird beschrieben, welche Daten persistent gespeichert werden. Jeder Punkt stellt im Prinzip einen Datensatz dar.         
 
+\section{System}
+\Func {} 
+\begin{itemize}
+	\item Titel (\gls{String})
+	\item CSS-Datei (String)
+	\item Impressum (String)
+	\item Logopfad (String)
+	\item AGB (String)
+	\item Hilfe (String)
+\end{itemize}
+
+
+\subsection{SMTP-Server}
+\Func {}
+\begin{itemize}
+	\item Benutzername (String)
+	\item Passwort (String)
+	\item Authentifizierung (\gls{Boolean})
+	\item TLS (Boolean)
+	\item Host (String)
+	\item Port (\gls{Integer})
+\end{itemize}
+
+
+\stepHc		    	
+\section{Kurs}
+\Func {} Alle Informationen über einen angebotenen Kurs. 
+\begin{itemize}
+	\item ID (Integer) (eindeutig)
+	\item Daten
+	\begin{itemize}
+		\item Information zum Kurs
+		\begin{itemize}
+			\item Titel (String)
+			\item Beschreibung (String)
+			\item nächster Termin (Date)
+			\item Startdatum (Date)
+			\item Enddatum (Date)
+			\item Maximale Teilnehmerzahl (Integer)
+			\item Bildverweis (String)
+			\item Kurseinheiten (Liste von Kurseinheiten)
+			\item Teilnehmer (Liste von Registrierten Benutzer)
+		\end{itemize}
+		\item Kontaktinformation
+		\begin{itemize}
+			\item Trainer (BenutzerID)
+		\end{itemize}	
+	\end{itemize}
+	
+	
+	
+\end{itemize}
 \stepHc		    
-	  \section{eigene Termine}
-	    \Func {} 
-	    \begin{itemize}
-	    	\item ID (Integer)
-	    	\item Name (String)
-	    	\item Beginn (Date)
-	    	\item Ende (Date)
-	    	\item Beschreibung (String)
-	    \end{itemize}
-	   
+\section{Kurseinheit}
+\Func {} Alle Informationen über eine angebotene Kurseinheit
+\begin{itemize}
+	\item ID (Integer) (eindeutig)
+	\item Daten
+	\begin{itemize}
+		\item Information zur Kurseinheit
+		\begin{itemize}
+			\item Titel (String)
+			\item Beschreibung (String)
+			\item Beginn (Date)
+			\item Ende (Date)
+			\item Ort (String)
+			\item Preis (\gls{float})
+			\item Maximale Teilnehmerzahl (Integer)
+			\item Minimale Teilnehmerzahl (Integer)
+			\item Teilnehmer (Liste von Registrierten Benutzer) 
+		\end{itemize}
+		\item Kontaktinformation
+		\begin{itemize}
+			\item Trainer (BenutzerID)
+		\end{itemize}
+	\end{itemize}
+	
+	
+	
+\end{itemize}   
+
+
+\stepHc	   		
+\section{Registrierte Benutzer}
+\Func {} Alle Informationen über einen registrierten Benutzer
+\begin{itemize}
+	\item ID (Integer) (eindeutig)
+	\item Kennung
+	\begin{itemize}
+		\item Benutzername (String) (eindeutig)
+		\item Passwort (String) (verschlüsselt)
+	\end{itemize}
+	\item Persönliche Daten
+	\begin{itemize}
+		\item Information zur eigenen Person	
+		\begin{itemize}
+			\item Vorname (String)
+			\item Nachname (String)
+			\item Geschlecht (Männlich/Weiblich)
+			\item Geburtsdatum (Date)
+			\item Bildverweis (String)
+			\item Guthaben (float)
+		\end{itemize}
+		\item Kontaktinformationen
+		\begin{itemize}
+			\item E-mailadresse (String) (eindeutig, gültig)
+			\item Ort (String)
+			\item Straße (String)
+			\item Postleitzahl (Integer)
+		\end{itemize}
+		\item Sonstige Daten
+		\begin{itemize}
+			\item eingeschriebene Kurse (Liste von Kursen)
+			\item eingeschriebene Kurseinheiten (Liste von Kurseinheiten)
+			\item Registrierung über Email abgeschlossen (Boolean)
+			\item Registrierung über Admin abgeschlossen (Boolean)
+		\end{itemize}	
+	\end{itemize}
+	
+\end{itemize}
+
+
 \stepHc	 
-	  \section{Benutzerrolle}
-	    \Func {} 
-	    \begin{itemize}
-	    	\item ID (Integer)
-	    	\item Gruppenname (String)
-	    	\item Benutzer-ID (BenutzerIDs)
-	    \end{itemize}
-	    
-	   
+\section{Benutzerrolle}
+\Func {} Speichert registrierte Benutzer gemäß ihrer Rolle im System. (3 verfügbare Benutzerrollen: Administrator, Trainer und Benutzer) 
+\begin{itemize}
+	\item ID (Integer) (eindeutig)
+	\item Gruppenname (String)
+	\item Benutzer-ID (Liste registrierter Benutzer)
+\end{itemize}
+
+
 \resetAllCounter
 \renewcommand{\Func}[1]{\stepcounter{Lc}\textcolor{Blue}{\textbf{/L\arabic{Hc}0-\arabic{Lc}0/} #1} \\}	    
-    
-\chapter{Produktleistungen}
-	
 
-	\section{Produktleistungen auf Serverseite}
-		\begin{itemize}
-			\item \Func{} Zur Speicherung der \gls{persistent} Daten wird eine PostgreSQL Datenbank verwendet
-			\item \Func{} E-Mailbenachrichtigung, falls von Benutzer erwünscht, bei wichtigen Ereignissen (z.B Registrierung, Buchung einer Kurseinheit bzw Kurses, Terminänderung)
-			\item \Func{} Das System hat Wartungszeit von 1,6 Stunden in der Woche bzw. 7,2 Stunden im Monat.
-		\end{itemize}
-		
+\chapter{Produktleistungen}
+
+
+\section{Produktleistungen auf Serverseite}
+\begin{itemize}
+	\item \Func{} Zur Speicherung der \gls{persistent} Daten wird eine PostgreSQL Datenbank verwendet
+	\item \Func{} E-Mailbenachrichtigung, falls von Benutzer erwünscht, bei wichtigen Ereignissen (z.B Registrierung, Buchung einer Kurseinheit bzw Kurses, Terminänderung)
+	\item \Func{} Das System hat Wartungszeit von 1,6 Stunden in der Woche bzw. 7,2 Stunden im Monat.
+\end{itemize}
+
 \stepHc		
-	\section{Produktleistungen auf Clientseite}
-			\begin{itemize}
-				\item \Func{} Bei Fehleingabe werden bereits eingetragene Daten wieder angezeigt
-				\item \Func{} Fehlermeldungen werden im Browser ausgegeben
-				\item \Func{} Passwörter werden \gls{hashen}.
-				\item \Func{} Übertragung und Einsicht aller persönlichen Informationen erfolgen über eine SSL Verbindung
-				\item \Func{} Die Administratoren sind in der Lage registrierte Benutzer zu bearbeiten und ihnen neue Funktionen zuweisen (Trainer oder Administratoren)
-				\item \Func{} Die Administratoren haben über eine selbst geschriebene CSS Datei Einfluss auf die Optische Darstellung der Software 
-				\item \Func{} Unautorisierte Benutzeraktion (z.B anonymer User will sich für Kurs eintragen) wird nicht angezeigt, stattdessen wird auf die Registrierung bzw. Login verwiesen
-				\item \Func{} An einem Client-Browser können nicht mehrere autorisierte verschiedene Sessions zeitgleich geführt werden
-				\item \Func{} Verfügbarkeit der Räumlichkeit wird nicht unterstützt.
-				\item \Func{} Die Sprache des Systems kann auf Englisch oder Deutsch gesetzt werden. Benutzereingaben werden nicht berücksichtigt und werden unverändert angezeigt.
-			\end{itemize}
+\section{Produktleistungen auf Clientseite}
+\begin{itemize}
+	\item \Func{} Bei Fehleingabe werden bereits eingetragene Daten wieder angezeigt
+	\item \Func{} Fehlermeldungen werden im Browser ausgegeben
+	\item \Func{} Passwörter werden \gls{hashen}.
+	\item \Func{} Übertragung und Einsicht aller persönlichen Informationen erfolgen über eine SSL Verbindung
+	\item \Func{} Die Administratoren sind in der Lage registrierte Benutzer zu bearbeiten und ihnen neue Funktionen zuweisen (Trainer oder Administratoren)
+	\item \Func{} Die Administratoren haben über eine selbst geschriebene CSS Datei Einfluss auf die Optische Darstellung der Software 
+	\item \Func{} Unautorisierte Benutzeraktion (z.B anonymer User will sich für Kurs eintragen) wird nicht angezeigt, stattdessen wird auf die Registrierung bzw. Login verwiesen
+	\item \Func{} An einem Client-Browser können nicht mehrere autorisierte verschiedene Sessions zeitgleich geführt werden
+	\item \Func{} Parallele Nutzung wird unterstützt und nach dem First Come First Serve Prinzip gehandhabt.
+	\item \Func{} Löschen von Datensätzen wird kaskadenartig auf der Datenbank ausgeführt um Fehler bei Verlinkungen von Datensätzen zu vermeiden
+	\item \Func{} Um Skalierbarkeit zu gewährleisten wird Pagination bei der anzeige von Kursen und Kurseinheiten verwendet 
+	\item \Func{} Das System stellt Validatoren zur Verfügung die Benutzereingaben auf Format Fehler überprüfen und eine Fehlermeldung bei verstoß ausgeben. (z.B. Eingabe Feld erwartet ein Datum bekommt aber ein String)
+	\item \Func{} Das System stellt einen Passwort Validator zur Verfügung, der das gewählte Passwort des Benutzers auf Sicherheitsstandarts überprüft. (mindestens 8 Zeichen, mindestens ein Sonderzeichen, mindestens eine Ziffer, Groß und Kleinbuchstaben )
+	\item \Func{} Das System stellt einen Email Validator zur Verfügung, der die vom Benutzer angegebene E-mailadresse auf Gültigkeit überprüft.
+	\item \Func{} Das System stellt einen Geburtstags Validator zur Verfügung, der das vom Benutzer angegebene Geburtsdatum kontrolliert ob es nicht in der Zukunft liegt. 
+	\item \Func{} Das System stellt einen Überweisungs Validator zur Verfügung, der bei einer offline Überweisung des Trainers/Admins die angegebene BenutzerID auf Existenz überprüft  
+	\item \Func{} Verfügbarkeit der Räumlichkeit wird nicht unterstützt.
+	\item \Func{} Die Sprache des Systems kann auf Englisch oder Deutsch gesetzt werden. Benutzereingaben werden nicht berücksichtigt und werden unverändert angezeigt.
+	\item Der HTML 5 Code wird durch den Validator http://validator.w3.org überprüft
+	\item Es werden keine Frames verwendet
+\end{itemize}
+
 		
 		
  
