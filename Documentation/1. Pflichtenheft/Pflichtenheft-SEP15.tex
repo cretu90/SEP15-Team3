@@ -1086,42 +1086,38 @@ Der Stellenwert der Qualitätskriterien begründet sich wie folgt:
 				\item \Test{Benachrichtigung durch Kursleiter}
 				'??? muss noch abgeklärt werden ???' (vgl. \RefFuncBlue{/F30-110/})
 				
-				\item \Test{Invited Guest durch Kursleiter zu Kurs hinzufügen}
-				Der Kursleiter 'Basti3' fügt auf der Seite 'Einheiten bearbeiten' die Daten des neuen Teilnehmers hinzu. (vgl. \RefFuncGreen{/F30-90W/})
+				\item \Test{Guthabenkonto aufladen durch Systemadministrator}
+				Der Systemadministrator trägt auf der Seite 'Adminverwaltung' im Bereich 'Konto aufladen' folgende Daten ein:
+				\begin{itemize}
+					\item BenutzerId: 'autogen'
+					\item Name: Strohmeier
+					\item Betrag: 40,00
+				\end{itemize}
+				Durch Drücken des Buttons 'Aufladen' bestätigt der Systemadministrator die Kontoaufladung und bleibt auf der Seite 'Adminverwaltung' (vgl. \RefFuncBlue{/F40-130/})
+				
+				\item \Test{Benutzer zu Kurseinheit hinzufügen durch Kursleiter}
+				Der Kursleiter 'Basti3' befindet sich auf der Seite 'Kurseinheiten bearbeiten' der Kurseinheit '11.05.2015' des Kurses 'Standardtanz' und trägt im Bereich 'Teilnehmer hinzufügen' den Namen 'Strohmeier', den Vornamen 'Ricky' und die BenutzerId ein. Durch Drücken des Button 'Hinzufügen' wird der Benutzer 'Ricky1' zu dieser Kurseinheit eingetragen und der Kursleiter auf die Seite 'Meine Kurse' weitergeleitet. (vgl. \RefFuncBlue{/F30-60/})
 						
 				\item \Test{Benutzerrolle aufwerten durch Systemadministrator} 
-				Der Systemadministrator klickt auf der Seite 'Admin-Verwaltung' auf die Schaltfläche 'Benutzer verwalten' und wird auf die Seite 'Benutzer bearbeiten' weitergeleitet. Hier wählt er im Status des Benutzers 'Kathi5' die neue Rolle 'Kursleiter' aus. Durch Drücken des Buttons 'Speichern' bestätigt der Administrator diese Änderung. (vgl. \RefFuncBlue{/F40-90/})
+				Der Systemadministrator klickt auf der Seite 'Adminverwaltung' auf die Schaltfläche 'Benutzer verwalten' und wird auf die Seite 'Benutzer durchsuchen'. Durch Anklicken des Benutzers 'Kathi5' wird der Admin auf die Seite 'Benutzer bearbeiten' weitergeleitet. Hier klickt er auf den Button 'Bearbeiten', welcher sich zu 'Speichern' ändert und wählt im Status des Benutzers 'Kathi5' die neue Rolle 'Kursleiter' aus. Durch Drücken des Buttons 'Speichern' bestätigt der Administrator diese Änderung und wird auf die Seite 'Adminverwaltung' weitergeleitet.(vgl. \RefFuncBlue{/F40-90/})
 				
 				\item \Test{Teilnehmer aus Kurs entfernen durch Kursleiter}
-				Auf der Oberfläche 'Kursangebot' wählt der Kursleiter 'Basti3' durch Doppelklick den Kurs 'Yoga' aus und wird auf die Seite 'Kurs bearbeiten' weitergeleitet. Dort wählt er den Teilnehmer 'Kathi5' aus und entfernt diesen aus dem Kurs durch Klicken der Schaltfläche 'löschen'. (vgl. \RefFuncBlue{/F30-80/})
+				Der Kursleiter 'Basti3' befindet sich auf der Seite 'Detailansicht des Kurses 'Yoga'. Hier drückt er den Button 'Zu den Teilnehmern' und wird auf die Teilnehmerseite weitergeleitet. Es ist bis jetz nur der Teilnehmer 'Kathi5' eingetragen. Auf dieser Seite wählt der Kursleiter den Teilnehmer 'Kathi5' aus und entfernt diesen aus dem Kurs durch Setzten des Häckchens und durch Drücken der Schaltfläche 'Löschen'. (vgl. \RefFuncBlue{/F30-90/})
 				
 				\item \Test{Kursleiter zu Kurs hinzufügen durch Systemadministrator}
-				Auf der Oberfläche 'Kursangebot' wählt der Systemadministrator durch Doppelklick den Kurs 'Yoga' aus und wird auf die Seite 'Kurs bearbeiten' weitergeleitet, auf der er die Daten des Kursleiters 'Kathi5' eingibt und die Änderung durch Drücken des Buttons 'Hinzufügen' abspeichert. 
+				Auf der Oberfläche 'Adminverwaltung' drückt der Administrator auf den Button 'Kurse verwalten' und wird auf die seite 'Kursangebot durchsuchen' weitergeleitet. Dort wählt er den Kurs 'Yoga' aus und wird auf die Seite 'Kursdetails' weitergeleitet, auf der er Name und E-Mailadresse des neuen Kursleiters 'Kathi5' eingibt und die Änderung durch Drücken des Buttons 'Hinzufügen' abspeichert. Der Administrator wird auf die Seite 'Adminverwaltung' weitergeleitet. (vgl. \RefFuncBlue{/F40-30/})
 				
 				\item \Test{Statistiken anzeigen}
-				Auf der Seite 'Admin-Verwaltung' klickt der Administrator in der Navigationsleiste auf den Link 'Statistik und wird auf diese weitergeleitet. Nach Auswahl des Parameter 'Tag' wird ein Säulendiagramm mit den Einnahmen der entsprechenden Woche angezeigt. (vgl. \RefFuncBlue{/F40-110/})
-				
-				\item \Test{Benutzer suchen}
-				Über die Seite 'Admin-Verwaltung' gelangt der Administrator auf die Seite 'Kursangebot' und gibt dort den entsprechenden Suchbegriff ein. Nachdem der Admin auf den Button 'Suchen' geklickt hat, wird ihm der gesuchte Benutzer angezeigt. (vgl. \RefFuncBlue{/F40-100/})
-				
-				\item \Test{Guthabenkonto aufladen durch Systemadministrator}
-				Der Systemadministrator trägt auf der Seite 'Admin-Verwaltung' im Bereich 'Konto aufladen' folgende Daten ein:
-					\begin{itemize}
-						\item BenutzerId: 'autogen'
-						\item Benutzername: Ricky1
-						\item Betrag: 40 Euro
-					\end{itemize}
-				Durch Drücken des Buttons 'Aufladen' bestätigt der Systemadministrator die Kontoaufladung. (vgl. \RefFuncBlue{/F20-150/})
+				Auf der Seite 'Adminverwaltung' klickt der Administrator auf die Schaltfläche 'Statistiken anzeigen' und wird auf diese weitergeleitet. Nach Auswahl des Parameters 'Tag' wird ein Säulendiagramm mit den Einnahmen der entsprechenden Woche angezeigt. (vgl. \RefFuncBlue{/F40-120/})
 				
 				\item \Test{Kurs löschen durch Systemadministrator}
-				Der Systemadministrator wählt auf der Seite 'Kursangebot' den zu löschenden Kurs 'Yoga' durch Doppelklick aus und gelangt dadurch auf die Seite 'Kurse bearbeiten'. Durch Drücken des Buttons 'Kurs löschen' entfernt der Admin den Kurs 'Yoga'.
-				
+				Der Systemadministrator befindet sich auf der Seite 'Detailansicht' des Kurses 'Yoga'. Durch Drücken des Buttons 'Kurs löschen' entfernt der Admin den Kurs 'Yoga' und wird auf die Seite 'Adminverwaltung' weitergeleitet. (vgl. \RefFuncBlue{/F40-40/})
 				
 				\item \Test{Benutzer löschen durch Systemadministrator}
-				Der Systemadministrator wählt auf der Seite 'Benutzer verwalten' den zu löschenden Benutzer 'Ricky1' durch Doppelklick aus und gelangt dadurch auf die Seite 'Benutzer bearbeiten'. Durch Drücken des Buttons 'Benutzer löschen' entfernt der Admin den Benutzer 'Ricky1'. (vgl. \RefFuncBlue{/F40-80/})
+				Der Systemadministrator drückt auf der Seite 'Adminverwaltung' den Button 'Benutzer verwalten' und wird auf die Seite 'Benutzer durchsuchen' weitergeleitet. Es werden die Benutzer 'Kathi5', 'Basti3', Ricky1' und 'PatrickC' angezeigt. Der Admin wählt in der Drop-Down Liste den Parameter 'Benutzername' aus und trägt 'Ricky1' in das darunterliegende Eingabefeld ein. Nun wird nur noch der Benutzer 'Ricky1' angezeigt. Diesen wählt der Administrator aus und wird auf dessen Profilseite weitergeleitet. Durch Drücken des Buttons 'Benutzer löschen' wird 'Ricky1' aus dem System entfernt. Der Administrator wird auf die Seite 'Adminverwaltung' zurückgeleitet. (vgl. \RefFuncBlue{/F40-80/})
 				
 				\item \Test{Kurs löschen durch Kursleiter}
-				Der Kursleiter 'Basti3' auf der Oberfläche mit seinen Trainingskursen den Kurs 'Standardtanz' an und wird auf die Seite 'Kurs bearbeiten' weitergeleitet. Durch Klicken des Buttons 'Kurs löschen' wird der Kurs 'Standardtanz' entfernt. (vgl. \RefFuncBlue{/F40-40/})
+				Der Kursleiter 'Basti3' befindet sich auf der Seite 'Detailansicht' des Kurses 'Standardtanz'. Durch Drücken des Buttons 'Kurs löschen' entfernt der Kursleiter den Kurs 'Standardtanz' und wird auf die Seite 'Meine Kurse' weitergeleitet. Diese enthält nun keine Einträge mehr. (vgl. \RefFuncBlue{/F30-30/})
 				
 			\end{itemize}
 
