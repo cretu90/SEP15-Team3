@@ -924,18 +924,13 @@ Der Stellenwert der Qualitätskriterien begründet sich wie folgt:
 				
 					
 				\item \Test{Registrierung} 
-				 Über die Schaltfläche 'Login' gelangt der anonyme Benutzer auf die Loginseite und von hier aus über den Button 'registrieren' auf die nächste Seite mit dem Registrierungsformular. 		
+				 Der anonyme Benutzer befindet sich auf der Startseite. Über die Schaltfläche 'Registrieren' gelangt er auf die Seite 'Registrierung', welche das leere Registrierungsformular enthält. 		
 					\begin{itemize}
-						\item Der Benutzer gibt bei der Registrierung den Benutzernamen 'Ricky1' ein. Da dieser bereits existiert erhält er nach Drücken des 'registrieren'-Buttons eine Fehlermeldung.	
-						\item Der Benutzer gibt bei der Registrierung ein zu kurzes Passwort ein und erhält nach Drücken des 	'registrieren'-Buttons eine Fehlermeldung.	
-						\item Der Benutzer gibt zwei verschiedene Passwörter ein und erhält nach Drücken des 'registrieren'-Buttons eine Fehlermeldung.
-						\item Der Benutzer hat seine Mailadresse nicht angegeben und erhält nach Drücken des 'registrieren'-Buttons eine Fehlermeldung.	
 						\item Der Benutzer registriert sich mit folgenden Daten: 
 							\begin{itemize}
-								\item Benutzername: 'Kathi5'
-								\item Passwort: 'bSdFg7HjK'
-								\item Passwort: 'bSdFg7HjK'
-								\item E-Mailadresse: 'katharina\_hoelzl@web.de'
+								\item Benutzername: 'Ricky1'
+								\item Passwort: 'bSdF'
+								\item Passwort: 'bSdF'
 								\item Anrede: 'Frau'
 								\item Name: 'Hölzl'
 								\item Vorname: 'Katharina'
@@ -944,14 +939,27 @@ Der Stellenwert der Qualitätskriterien begründet sich wie folgt:
 								\item Postleitzahl: '94081'
 								\item Ort: 'Fürstenzell'
 							\end{itemize}
-						Der Benutzer wählt außerdem die Option 'E-Mail-Verifizierung' aus der Liste der Verifizierungsarten aus. Nach Drücken des 'registrieren'-Buttons wird eine E-Mail mit dem Aktivierungslink an den Administrator geschickt.
-					\end{itemize}
-				(vgl. \RefFuncBlue{/F10-20/})
-			\end{itemize}	
+						Der Benutzer drückt den Button 'Registrieren'. Daraufhin wird er durch verschiedene Fehlermeldungen darauf hingewiesen, dass der Benutzername 'Ricky1' bereits existiert, dass das Passwort zu kurz ist, dass keine E-Mailadresse angegeben wurde und dass die AGBs nicht bestätigt wurden. Die entsprechenden Felder Benutzername und Passwort werden geleert, alle anderen bereits eingegebenen Daten bleiben bestehen.
+						
+						\item Der Benutzer ändert seinen Benutzernamen auf 'Kathi5'. Außerdem gibt er die beiden Passwörter 'bSdFg7HjK' und 'bSdFg7HjK1' ein. Als E-Mailadresse gibt er 'katharinahoelzlweb.de' an. Nach Drücken des Button 'Registrieren' wird der Benutzer durch Fehlermeldungen darauf hingewiesen, dass seine Passwörter nicht übereinstimmen, die E-Mailadresse ein falsches Format hat und die AGBs nicht bestätigt wurden. Die Eingabefelder der Passwörter und der E-Mailadresse werden gelöscht, alle anderen bereits eingegebenen Daten bleiben bestehen.
+						
+						\item der Benutzer gibt ergänzt nun folgende Daten: 
+							\begin{itemize}
+								\item Passwort: 'bSdFg7HjK'
+								\item Passwort: 'bSdFg7HjK'
+								\item E-Mailadresse: 'katharina\_hoelzl@web.de'
+							\end{itemize}
+						Außerdem bestätigt er die AGBs durch Setzen des entsprechenden Hackens. Nach dem Drücken des Buttons 'Registrieren' wird das Formular abgeschickt und der Benutzer bekommt an seine angegebene E-Mailadresse einen Verifizierungslink geschickt. Durch die Eingabe dieses Links im Browser wird die E-Mailadresse bestätigt und der Benutzer wird anschließend auf die Startseite weitergeleitet.			
+				\end{itemize}	
+			(vgl. \RefFuncBlue{/F10-20/})
+		\end{itemize}
 		
 	\section{Testfälle für den registrierten Benutzer}
 		\stepHc
 		\begin{itemize}
+			\item \Test{Anmeldeversuch ohne vorherige Accountbestätigung}
+			Der Benutzer befindet sich auf der Startseite, nachdem er sich registriert hat. (vgl. \RefFuncBrown{/T30-30/}) Nach Drücken des Button 'Anmelden' öffnet sich ein Drop-Down Menü, in welches der Benutzer seinen Benutzernamen 'Kathi5' und sein Passwort 'bSdFg7HjK' eingibt. Nach dem Klicken auf die Schaltfläche 'Anmelden' bekommt der Benutzer eine Fehlermeldung, welche ihn darauf hinweist, dass sein Account noch nicht bestätigt wurde. Der Benutzer wird auf die Startseite weitergeleitet.
+			
 			\item \Test{Account bestätigen durch den Systemadministrator}
 			Der Systemadministrator erhält einen Aktivierungslink per Mail um den Benutzer 'Kathi5' zu verifizieren. Er klickt diesen Link an. Dadurch wird der Account von 'Kathi5' aktiviert. (vgl. \RefFuncBlue{/F30-120/})
 			
