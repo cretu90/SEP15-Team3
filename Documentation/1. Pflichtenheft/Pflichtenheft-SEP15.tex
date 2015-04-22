@@ -762,8 +762,8 @@ Der Stellenwert der Qualitätskriterien begründet sich wie folgt:
 				 Auf der Seite 'Adminverwaltung' klickt der Administrator auf die Schaltfläche 'Benutzer anlegen' und wird auf die Seite 'Benutzer anlegen' weitergeleitet. Hier gibt der Admin folgende Daten ein:
 					\begin{itemize}
 						\item Benutzername: 'Basti3' 
-						\item Passwort: "poIuZt7R'
-						\item Passwort: "poIuZt7R'
+						\item Passwort: 'poIuZt7R'
+						\item Passwort: 'poIuZt7R'
 						\item E-Mail: 'sebastian@nrschwarz.de'
 						\item Anrede: 'Herr'
 						\item Name: 'Schwarz'
@@ -774,6 +774,23 @@ Der Stellenwert der Qualitätskriterien begründet sich wie folgt:
 						\item Ort: 'Musterstadt'
 					\end{itemize}
 				 Als Rolle wird 'Kursleiter' festgelegt. Die BenutzerID wird automatisch generiert. Über den Button 'Durchsuchen' unter dem Dummy-Bild wählt der Admin ein Bild des Dateiformates .jpg aus seinem Verzeichnis aus. Dieses erscheint nun anstelle des Dummy-Bildes. Durch Klicken des Buttons 'Benutzer anlegen' bestätigt der Admin die Daten und der neue Benutzer ist angelegt. Der Administrator wird anschließend auf die Seite 'Adminverwaltung' weitergeleitet. (vgl. \RefFuncBlue{/F40-50/})
+				
+				\item \Test{Neuen Benutzer anlegen} 
+				Auf der Seite 'Adminverwaltung' klickt der Administrator auf die Schaltfläche 'Benutzer anlegen' und wird auf die Seite 'Benutzer anlegen' weitergeleitet. Hier gibt der Admin folgende Daten ein:
+				\begin{itemize}
+					\item Benutzername: 'PatrickC' 
+					\item Passwort: 'lKjHg789'
+					\item Passwort: 'lKjHg789'
+					\item E-Mail: 'strat-fan@web.de'
+					\item Anrede: 'Herr'
+					\item Name: 'Patrick'
+					\item Vorname: 'Cretu'
+					\item Geburtstag: '03.01.1989'
+					\item Straße: 'Musterstraße 5'
+					\item Postleitzahl: '99999'
+					\item Ort: 'Musterstadt'
+				\end{itemize}
+				Als Rolle wird 'Benutzer' festgelegt. Die BenutzerID wird automatisch generiert. Durch Klicken des Buttons 'Benutzer anlegen' bestätigt der Admin die Daten und der neue Benutzer ist angelegt. Der Administrator wird anschließend auf die Seite 'Adminverwaltung' weitergeleitet. (vgl. \RefFuncBlue{/F40-50/})
 				
 				\item \Test{Neuen Benutzer anlegen} 
 				 Auf der Seite 'Adminverwaltung' klickt der Administrator auf die Schaltfläche 'Benutzer anlegen' und wird auf die Seite 'Benutzer anlegen' weitergeleitet. 
@@ -890,6 +907,7 @@ Der Stellenwert der Qualitätskriterien begründet sich wie folgt:
 				\item 18.05.2015
 				\item 25.05.2015
 				\item 01.06.2015
+				\item 08.06.2015
 			\end{itemize}		
 			Alle anderen Daten werden analog zum Testfall \RefFuncBrown{/T20-20/} eingetragen.
 			
@@ -900,10 +918,9 @@ Der Stellenwert der Qualitätskriterien begründet sich wie folgt:
 				
 				\item Nun ändert der Kursleiter den Termin auf den '05.13.2015' und drückt den Button 'Speichern'. Durch eine Fehlermeldung wird der Kursleiter darauf hingewiesen, dass der geänderte Termin kein gültiges Datum ist. Das Eingabefeld des Termins wird geleert. Der Button 'Speichern' ändert sich nicht.
 				
-				\item Der Kursleiter ändert den Termin auf den '05.05.2015' und drückt den Button 'Speichern'. Da dieses Datum akzeptiert wird, wird 'Basti3' auf die Seite 'Kursdetails' des Kurses 'Standardtanz' weitergeleitet, auf der nun im Bereich 'Kurseinheiten' die entsprechende Einheit mit dem geänderten Termin angezeigt wird.
+				\item Der Kursleiter ändert den Termin auf den '05.05.2015' und die Maximale Teilnehmerzahl auf '2'. Anschließend drückt er den Button 'Speichern'. Da dieses Datum akzeptiert wird, wird 'Basti3' auf die Seite 'Kursdetails' des Kurses 'Standardtanz' weitergeleitet, auf der nun im Bereich 'Kurseinheiten' die entsprechende Einheit mit dem geänderten Termin angezeigt wird.
 			\end{itemize}
 			(vgl. \RefFuncBlue{/F30-50/})
-				 
 			
 			\item \Test{Kurseinheit löschen}
 			Der Kursleiter 'Basti3' befindet sich auf der Seite 'Kursdetails' des Kurses 'Standardtanz'. Auf dieser befinden sich bereits die durch den Systemadministrator angegebenen Daten (vgl. \RefFuncBrown{/T10-80/}), sowie die angelegten Kurseinheiten aus dem Testfall \RefFuncBrown{/T20-40/}. Der Kursleiter wählt auf dieser Seite die Kurseinheit am '25.05.2015' durch Drücken des Button 'Bearbeiten' aus und wird auf die Seite 'Kurseinheit bearbeiten' weitergeleitet, auf welcher die Daten aus Testfall \RefFuncBrown{/T20-30/} eingetragen sind. Über die Schaltfläche 'Löschen' wird diese Kurseinheit entfernt und der Kursleiter wird auf die Seite 'Kursdetails' des Kurses 'Standardtanz' weitergeleitet. Auf dieser Seite ist nun im Bereich 'Kurseinheiten' die gelöschte Kurseinheit vom '25.05.2015' nicht mehr aufgeführt.(vgl. \RefFuncBlue{/F30-80/})			
@@ -963,7 +980,7 @@ Der Stellenwert der Qualitätskriterien begründet sich wie folgt:
 			Der Benutzer befindet sich auf der Startseite, nachdem er sich registriert hat. (vgl. \RefFuncBrown{/T30-30/}) Nach Drücken des Button 'Anmelden' öffnet sich ein Drop-Down Menü, in welches der Benutzer seinen Benutzernamen 'Kathi5' und sein Passwort 'bSdFg7HjK' eingibt. Nach dem Klicken auf die Schaltfläche 'Anmelden' bekommt der Benutzer eine Fehlermeldung, welche ihn darauf hinweist, dass sein Account noch nicht bestätigt wurde. Der Benutzer wird auf die Startseite weitergeleitet.
 			
 			\item \Test{Account bestätigen durch den Systemadministrator}
-			Der Systemadministrator befindet sich auf der Seite 'Adminverwaltung' und wird nach dem Drücken des Button 'Benutzer verwalten' auf die Seite 'Benutzer durchsuchen' weitergeleitet. Hier werden die bereits registrierten Benutzer 'Basti3', 'Ricky1' und 'Kathi5' mit den in den Testfällen \RefFuncBrown{/T10-50/}, \RefFuncBrown{/T10-60/} und \RefFuncBrown{/T30-30/} angelegten Daten angezeigt. Auf dieser Seite wählt der Admin im Drop-Down Menü 'Nicht aktiviert' aus und klickt anschließend auf den Button 'suchen'. Nun wird nur noch der Benutzer 'Kathi5' angezeigt. Der Administrator aktiviert den Account von 'Kathi5', indem er in das Kästchen rechts außen einen Hacken setzt und anschließend auf den Button 'Benutzer aktiviern' klickt. Der Benutzer 'Kathi5' ist nun aktiviert und kann sich ins System einloggen. (vgl. \RefFuncBrown{/T40-30/})  
+			Der Systemadministrator befindet sich auf der Seite 'Adminverwaltung' und wird nach dem Drücken des Button 'Benutzer verwalten' auf die Seite 'Benutzer durchsuchen' weitergeleitet. Hier werden die bereits registrierten Benutzer 'Basti3', 'Ricky1' und 'Kathi5' mit den in den Testfällen \RefFuncBrown{/T10-50/}, \RefFuncBrown{/T10-60/} und \RefFuncBrown{/T30-30/} angelegten Daten angezeigt. Auf dieser Seite wählt der Admin im Drop-Down Menü 'Nicht aktiviert' aus und klickt anschließend auf den Button 'suchen'. Nun wird nur noch der Benutzer 'Kathi5' angezeigt. Der Administrator aktiviert den Account von 'Kathi5', indem er in das Kästchen rechts außen einen Hacken setzt und anschließend auf den Button 'Benutzer aktivieren' klickt. Der Benutzer 'Kathi5' ist nun aktiviert und kann sich ins System einloggen. (vgl. \RefFuncBrown{/T40-30/})  
 			(vgl. \RefFuncBlue{/F40-110/})
 			
 			
@@ -976,6 +993,12 @@ Der Stellenwert der Qualitätskriterien begründet sich wie folgt:
 				\item Der Benutzer gibt seinen Benutzernamen 'Kathi5' und das richtige Passwort 'bSdFg7HjK' ein. Nach Drücken des 'Anmelden'-Buttons wird der Benutzer auf die Seite 'Meine Kurse' weitergeleitet. Es sind hier noch keine Kurse eingetragen.
 			\end{itemize} 
 			
+			\item \Test{Einloggen ins System} 
+			Der Benutzer 'PatrickC' klickt auf der Startseite	auf den 'Anmelden'-Button und es öffnet sich ein Drop-Down Menü, in welchem er seinen Benutzernamen 'PatrickC' und sein Passwort 'lKjHg789' eingibt. Durch Drücken der Schaltfläche 'Anmelden' im Drop-Down Menü wird der Benutzer eingeloggt und auf die Seite 'Meine Kurse' weitergeleitet. Dort sind im Moment keine Kurse eingetragen. (vgl. \RefFuncBlue{/F20-10/})
+			
+			\item \Test{Einloggen ins System} 
+			Der Benutzer 'Ricky1' klickt auf der Startseite	auf den 'Anmelden'-Button und es öffnet sich ein Drop-Down Menü, in welchem er seinen Benutzernamen 'Ricky1' und sein Passwort 'vBnMk89po' eingibt. Durch Drücken der Schaltfläche 'Anmelden' im Drop-Down Menü wird der Benutzer eingeloggt und auf die Seite 'Meine Kurse' weitergeleitet. Dort sind im Moment keine Kurse eingetragen. (vgl. \RefFuncBlue{/F20-10/})
+				
 			\item \Test{Konto aufladen} 
 			Der Benutzer 'Kathi5' klickt in seinem Profil auf die Schaltfläche 'Konto aufladen' und wird auf die Seite 'Kontoaufladung' weitergeleitet. 
 				\begin{itemize}
@@ -989,22 +1012,25 @@ Der Stellenwert der Qualitätskriterien begründet sich wie folgt:
 						 	\item Kreditkartennummer: ???
 						 	\item Betrag: 'fünfzig'
 						 \end{itemize}
-					Anschließend klickt der Nutzer auf den Button 'Aufladen' und wird durch eine Fehlermeldung darauf hingewiesen, dass ein falsches Format im Eingabefeld 'Betrag' eingetragen wurde. Dieses Feld wird geleert, die anderen Eingaben bleiben erhalten.
+					Anschließend klickt der Nutzer auf den Button 'Konto aufladen' und wird durch eine Fehlermeldung darauf hingewiesen, dass ein falsches Format im Eingabefeld 'Betrag' eingetragen wurde. Dieses Feld wird geleert, die anderen Eingaben bleiben erhalten.
 						
-					\item 'Kathi5' trägt in das Eingabefeld für den Betrag nun '50,00 ein. Nach dem Drücken des Button 'Aufladen' wird der Nutzer auf seine Profilseite weitergeleitet. Der Kontostand, welcher zuvor 0,00 Euro betrug, zeigt nun 50,00 an.  (vgl. \RefFuncBlue{/F20-180/})
+					\item 'Kathi5' trägt in das Eingabefeld für den Betrag nun '50,00' ein. Nach dem Drücken des Button 'Aufladen' wird der Nutzer auf seine Profilseite weitergeleitet. Der Kontostand, welcher zuvor 0,00 Euro betrug, zeigt nun 50,00 an.  (vgl. \RefFuncBlue{/F20-180/})
 				\end{itemize}
 			\end{itemize}
 			
 			\begin{itemize}
 				\item \Test{Kurs anmelden} 
 					\begin{itemize}
-						\item Der Benutzer 'Kathi5' befindet sich auf der Seite 'Kurse durchsuchen'. Es werden die Kurse wie im Testfall \RefFuncBrown{/T30-10/} angezeigt. Der Benutzer wählt im Bereich 'Kursangebot durchsuchen' aus der Drop-Down Liste 'Kostenlos' aus. Nach Bestätigen der Auswahl durch Drücken des Button 'Suchen', wird der Kurs 'Yoga' angezeigt. (vgl. \RefFuncBlue{/F20-160/})
+						\item Der Benutzer 'Kathi5' befindet sich auf der Seite 'Kurseangebot durchsuchen'. Es werden die Kurse wie im Testfall \RefFuncBrown{/T30-10/} angezeigt. Der Benutzer wählt im Bereich 'Kursangebot durchsuchen' aus der Drop-Down Liste 'Kostenlos' aus. Nach Bestätigen der Auswahl durch Drücken des Button 'Suchen', wird der Kurs 'Yoga' angezeigt. (vgl. \RefFuncBlue{/F20-160/})
 						
 						\item Der Benutzer wählt den Kurs 'Yoga' aus und wird auf die Seite 'Kursdetails' weitergeleitet. Angezeigt werden die Daten, die in den Testfällen \RefFuncBrown{/T10-70/} und \RefFuncBrown{/T20-10/} angelegt wurden. 'Kathi5' setzt einen Hacken in dem Kästchen 'Kursnews erhalten', um Änderungen im Kurs per E-Mail zu empfangen. Anschließend klickt sie auf den Button 'Anmelden' und wird auf die Seite 'Meine Kurse' weitergeleitet. Hier ist nun der Yoga-Kurs eingetragen und wird angezeigt. (vgl. \RefFuncBlue{/F20-120/})
 					\end{itemize}
 				
 				\item \Test{Kurseinheiten anmelden} 
-				Der Nutzer 'Kathi5'	klickt im Register 'Meine Kurse' auf den Kurs 'Yoga' und erhält dessen Detailansicht. Durch Klicken des Buttons 'Alle auswählen' und anschließend der Schaltfläche 'Speichern', trägt sich der Benutzer nun in alle verfügbaren Kurseinheiten ein. Anschließend wird er wieder auf die Seite 'Meine Kurse' zurückgeleitet. (vgl. \RefFuncBlue{/F20-190/})
+				Der Nutzer 'Kathi5'	klickt auf der Seite 'Meine Kurse' auf den Kurs 'Yoga' und erhält dessen Detailansicht. Durch Klicken des Buttons 'Alle auswählen' und anschließend der Schaltfläche 'Speichern', trägt sich der Benutzer nun in alle verfügbaren Kurseinheiten ein. Anschließend wird er wieder auf die Seite 'Meine Kurse' zurückgeleitet. (vgl. \RefFuncBlue{/F20-190/})
+				
+				\item \Test{Kurseinheiten anmelden} 
+				Der Benutzer 'PatrickC' befindet sich auf der Seite 'Kursangebot durchsuchen' und wählt den Kurs 'Standardtanz aus. Durch Anklicken dieses Kurses wird er auf die Detailseite weitergeleitet. Dort meldet er sich über die Schaltfläche 'Anmelden' für diesen Kurs an und wird auf die Seite 'Meine Kurse' weitergeleitet. Nun klickt 'PatrickC' auf den Kurs 'Standardtanz' und erhält dessen Detailansicht. Durch Setzen des Hackens bei dem Termin '05.05.2015' und dem anschließenden Drücken der Schaltfläche 'Speichern', trägt sich der Benutzer in die ausgewählte Kurseinheit ein. Anschließend wird er wieder auf die Seite 'Meine Kurse' zurückgeleitet. (vgl. \RefFuncBlue{/F20-190/})
 				
 				\item \Test{Kurs bezahlen}
 				Der Benutzer 'Kathi5' meldet sich analog zum Testfall \RefFuncBrown{/T40-50/} für den Kurs 'Standardtanz' an. Durch Klicken auf den Kurs erhält der Nutzer die Detailansicht und wählt die folgenden Einheiten durch Setzen von Häckchen aus:
@@ -1013,34 +1039,45 @@ Der Stellenwert der Qualitätskriterien begründet sich wie folgt:
 						\item 11.05.2015 
 						\item 18.05.2015 
 					\end{itemize}	
-				Durch Drücken der Schaltfläche 'Speichern' trägt sich 'Kathi5' in die ausgewählten Kurseinheiten ein. Da eine Kurseinheit 15,00 Euro kostet, werden automatisch durch das Anmelden 45,00 Euro von ihrem Guthabenkonto abgebucht. Der Benutzer wird auf die Seite 'Meine Kurse' weitergeleitet. Der Kurs 'Standardtanz' wird nun angezeigt.
-		!!!HIER GEHTS WEITER!!! 
+				Durch Drücken der Schaltfläche 'Speichern' trägt sich 'Kathi5' in die ausgewählten Kurseinheiten ein. Da eine Kurseinheit 15,00 Euro kostet, werden automatisch durch das Anmelden 45,00 Euro von ihrem Guthabenkonto abgebucht. Der Benutzer wird auf die Seite 'Meine Kurse' weitergeleitet. Der Kurs 'Standardtanz' wird nun angezeigt. (vgl. \RefFuncBlue{/F20-200/})
+		 
 				\item \Test{Kostenpflichtige Kurseinheit anmelden ohne genügend Guthaben}
-				Der Benutzer 'Kathi5' befindet sich auf der Seite 'Meine Kurse' und gelangt durch Klicken auf den Kurs 'Standardtanz' zur dessen Detailansicht.
+				Der Benutzer 'Kathi5' befindet sich auf der Seite 'Meine Kurse' und gelangt durch Klicken auf den Kurs 'Standardtanz' zur dessen Detailansicht. Dort wählt er durch Setzen des Häckchens die Kurseinheiten '01.06.2015' und '08.06.2015' aus und bestätigt durch Drücken des Button 'Speichern'. Der Benutzer erhält eine Fehlermeldung, dass durch das Belegen dieser Kurseinheiten sein Guthaben über die erlaubte Grenze hinaus überschritten wird und er sich deshalb nicht anmelden kann. Die Häckchen der beiden ausgewählten Kurseinheiten werden entfernt, der Benutzer bleibt auf der Seite 'Detailansicht'.
 				
 				\item \Test{Kurseinheit abmelden und Rückbuchung des Kurspreises}
-				Der Benutzer 'Kathi5' klickt in der Detailansicht des Kurses 'Standardtanz' auf die Kurseinheit 'Montag 25.05.2015 18-20 Uhr' und Drückt den Button 'Abmelden'. Dadurch wurde 'Kathi5' aus dieser Kurseinheit ausgetragen und der Betrag von 15 Euro wird automatisch auf das Guthabenkonto rückgebucht. (vgl. \RefFuncBlue{/F20-200/}) und (vgl. \RefFuncBlue{/F20-270/})
+				Der Benutzer 'Kathi5' entfernt in der Detailansicht des Kurses 'Standardtanz' bei der Kurseinheit '18.05.2015' den Hacken im Kästchen 'Angemeldet und drückt den Button 'Speichern'. Dadurch wurde 'Kathi5' aus dieser Kurseinheit ausgetragen und der Betrag von 15,00 Euro wird automatisch auf das Guthabenkonto rückgebucht.  (vgl. \RefFuncBlue{/F20-200/}) und (vgl. \RefFuncBlue{/F20-210/})
 				
 				\item \Test{aktuelles Guthaben ansehen}
-				Der Nutzer 'Kathi5' klickt auf die Registerkarte 'Mein Profil'. Hier wird der aktuelle Kontostand von 20 Euro angezeigt. (vgl. \RefFuncBlue{/F20-70/})
+				Der Nutzer 'Kathi5' befindet sich auf der Profilseite. Hier wird der aktuelle Kontostand von 20,00 Euro angezeigt. (vgl. \RefFuncBlue{/F20-80/})
 				
 				\item \Test{Hilfeseite anzeigen}
-				Der Benutzer 'Kathi5' befindet sich momentan auf der Kursdetailseite des Kurses 'Yoga' und lässt sich durch Drücken des Buttons 'Hilfe' die Hilfeseite anzeigen. Dort sucht er die Information zum Thema 'Profilbild hochladen'. (vgl. \RefFuncBlue{/F10-70/})
+				Der Benutzer 'Kathi5' befindet sich momentan auf der Profilseite und lässt sich durch Drücken des Buttons 'Hilfe' die Hilfeseite anzeigen. Dort sucht er die Information zum Thema 'Profilbild hochladen'. (vgl. \RefFuncBlue{/F10-80/})
 					
 				\item \Test{Hochladen eines Profilbildes}
-				Der Nutzer 'Kathi5' klickt auf die Registerkarte 'Mein Profil'. 
+				Der Nutzer 'Kathi5' befindet sich auf der Profilseite. Es werden die im Testfall \RefFuncBrown{/T30-30/} eingetragenen Daten angezeigt. Als Profilbild erscheint ein Dummy-Bild. 
 					\begin{itemize}
-						\item Nach Drücken der Schaltfläche 'Bild Hochladen' wird das Video 'Test.mp3' ausgewählt. Es erscheint eine Fehlermeldung, da eine Videodatei hochgeladen wurde.
-						\item Nach Drücken der Schaltfläche 'Bild Hochladen' wird das Bild 'KathiProfil.jpg' ausgewählt und hochgeladen. Es erscheint nun anstelle des Dummy-Bildes.		
+						\item Zunächst wird der Button 'Bearbeiten' angeklickt. Dieser ändert sich in den Button 'Speichern'. Nun können die Angaben bearbeitet werden. Nach Drücken der Schaltfläche 'Durchsuchen' wird das Video 'Test.mp3' ausgewählt. Der Benutzer klickt auf den Button 'Speichern und es erscheint eine Fehlermeldung, da eine Musikdatei hochgeladen wurde. Das Dummy-Bild bleibt erhalten, ebenso wie der Button 'Speichern'.
+						\item Nach erneutem Drücken der Schaltfläche 'Durchsuchen' wird das Bild 'KathiProfil.jpg' ausgewählt und Klicken auf den Button 'Speichern' hochgeladen. Es erscheint nun anstelle des Dummy-Bildes.	Der Button 'Speichern' wird wieder in 'Bearbeiten' geändert und die Eingabefelder können nicht geändert werden.	
 					\end{itemize}
-				
-				Nach Drücken der Schaltfläche 'Bild Hochladen' wird das Bild 'KathiProfil.jpg' ausgewählt und hochgeladen. Es erscheint nun anstelle des Dummy-Bildes. (vgl. \RefFuncBlue{/F20-60/})
-				
+				(vgl. \RefFuncBlue{/F20-60/})
+									
 				\item \Test{E-Mailadresse ändern}
-				'Kathi5' klickt auf die Registerkarte 'Mein Profil'. Nach Drücken der Schaltfläche 'Benutzerdaten ändern' ändert sie die E-Mailadresse auf 'hoelzlka@fim.uni-passau.de'. Anschließend klickt sie auf den Button 'Speichern' und erhält an die angegebene Mailadresse einen Verifizierungslink. Nach Bestätigung durch diesen Link wird der Benutzer auf die Seite 'Mein Profil' weitergeleitet, in dem die E-Mailadresse auf die Aktuelle geändert ist. (vgl. \RefFuncBlue{/F20-50/})
+				'Kathi5' befindet sich auf der Profilseite. Nach Drücken der Schaltfläche 'Bearbeiten' können die Daten, bis auf die Benutzerrolle, geändert werden. und der Button 'Bearbeiten' ändert sich in 'Speichern'. Der Benutzer ändert die E-Mailadresse auf 'hoelzlka@fim.uni-passau.de'. Anschließend klickt 'Kathi5' auf den Button 'Speichern' und erhält an die angegebene Mailadresse einen Verifizierungslink. Nach Bestätigung durch diesen Link wird der Benutzer auf die Seite 'Mein Profil' weitergeleitet, in dem die E-Mailadresse auf die Aktuelle geändert ist. (vgl. \RefFuncBlue{/F20-60/})
 				
-				\item \Test{aus dem System abmelden}
-				Der Benutzer 'Kathi5' befindet sicht momentan auf der Seite 'Mein Profil'. Durch Drücken der Schaltfläche 'Abmelden' wird 'Kathi5' aus dem System abgemeldet und zur Startseite weitergeleitet. (vgl. \RefFuncBlue{/F20-80/})
+				\item \Test{Anmelden in Kurs der bereits voll ist.}
+				Der Benutzer 'Ricky1' befindet sich auf der Seite 'Kursangebot durchsuchen' und wählt den Kurs 'Standardtanz aus. Durch Anklicken dieses Kurses wird er auf die Detailseite weitergeleitet. Dort meldet er sich über die Schaltfläche 'Anmelden' für diesen Kurs an und wird auf die Seite 'Meine Kurse' weitergeleitet. Nun klickt 'Ricky1' auf den Kurs 'Standardtanz' und erhält dessen Detailansicht. Durch Setzen des Hackens bei dem Termin '05.05.2015' und dem anschließenden Drücken der Schaltfläche 'Speichern', will sich der Benutzer in die ausgewählte Kurseinheit eintragen. Da die maximale Teilnehmerzahl aber auf 2 beschränkt ist und bereits zwei Benutzer eingetragen sind, erhält 'Ricky1' eine Fehlermeldung und bleibt auf der Seite 'Detailansicht'.
+				
+				\item \Test{Kursteilnehmer ansehen}
+				Der Benutzer 'Ricky1' befindet sich auf der Detailseite des Kurses 'Standardtanz' und klickt auf die Schaltfläche 'Zu den Teilnehmern'. Dadurch wird er auf die Seite 'Teilnehmer' weitergeleitet, auf der der Benutzername und das Profilbild der beiden Teilnehmer 'Kathi5' und 'PatrickC' eingetragen sind. (vgl. \RefFuncBlue{/F20-40/})
+				
+				\item \Test{Terminplaner ansehen}
+				Der Benutzer 'Kathi5' wählt die Registerkarte 'Terminplaner' aus. Hier werden die in den Testfällen \RefFuncBrown{/T40-70/}, \RefFuncBrown{/T40-80/}, \RefFuncBrown{/T40-100/} und \RefFuncBrown{/T40-120/} eingetragenen Kurse angezeigt. (vgl. \RefFuncGreen{/F20-230W/})
+				
+				\item \Test{Aus dem System abmelden}
+				Der Benutzer 'Kathi5' befindet sich momentan auf der Profilseite. Durch Drücken der Schaltfläche 'Abmelden' wird 'Kathi5' aus dem System abgemeldet und zur Startseite weitergeleitet. (vgl. \RefFuncBlue{/F20-90/})
+					
+				\item \Test{Passwort vergessen}
+				Der Benutzer 'Kathi5' will sich anmelden, hat aber das sein Passwort vergessen. 'Kathi5' Klickt auf den Button 'Anmelden' und anschließend in dem sich öffnenden Drop-Down Menü auf 'Passwort vergessen'. In dem nun erscheinenden Eingabefeld gibt der Benutzer seine im System gespeicherte E-Mailadresse 'hoelzlka@fim.uni-passau.de' (vgl. \RefFuncBrown{/F40-160/}) ein. An diese Adresse wird nun ein automatisch generiertes Passwort geschickt, welches der Benutzer nun zusammen mit seinem Benutzernamen in die entsprechenden Felder im Drop-Down Menü auf der Startseite eingibt. Durch Drücken des Button 'Anmelden' wird der Benutzer eingeloggt. (vgl. \RefFuncBlue{/F20-100/})
 					
 			\end{itemize}
 \section{Testfälle mit Datensatz}
