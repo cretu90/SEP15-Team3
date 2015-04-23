@@ -785,7 +785,9 @@ Der Stellenwert der Qualitätskriterien begründet sich wie folgt:
 \newcommand{\RefFuncGreen}[1]{\textcolor{Green}{\textbf{#1}}}
 \newcommand{\RefFuncBrown}[1]{\textcolor{Brown}{\textbf{#1}}}
 \chapter{Globale Testszenarien und Testfälle}
- 
+	 \begin{tiny}
+	 	KH\\
+	 \end{tiny}
 
 	\section{Testfälle für den Systemadministrator ohne bestehenden Datensatz}
 		\subsection{Setup}
@@ -802,7 +804,13 @@ Der Stellenwert der Qualitätskriterien begründet sich wie folgt:
 		\subsection{Erstellung und Verwaltung}
 			\begin{itemize}
 				\item \Test{Überziehungskredit festlegen} 
-				 Auf der Seite 'Adminverwaltung' legt der Systemadministrator den Überziehungskredit auf 10 Euro fest, indem er im Textfeld den bereits genannten Betrag '10,00' eingibt und diesen durch Drücken der Schaltfläche 'Speichern' bestätigt. Vor dieser Änderung wurde im Textfeld der Default-Wert von '0,00' angezeigt, nun zeigt dieses Feld den Wert '10,00' an. Der Administrator befindet sich weiterhin auf der Seite 'Adminverwaltung'. (vgl. \RefFuncBlue{/F40-140/})
+				Auf der Seite 'Adminverwaltung' legt der Systemadministrator den Überziehungskredit fest. Es wird hier der Wert '0,00' angezeigt.
+					\begin{itemize}
+						\item Er gibt im Textfeld 'zehn' ein und wird nach dem Drücken der Schaltfläche 'Speichern' durch eine Fehlermeldung darauf hingewiesen, dass das Eingabeformat falsch ist. Das entsprechende Eingabefeld wird geleert.
+						
+						\item Der Admin gibt im Textfeld den Betrag '10,00' ein. Nach dem Drücken der Schaltfläche Speichern bleibt der Admin auf der Seite 'Adminverwaltung' und das Eingabefeld des Überziehungskredits zeigt den Wert '10,00' an.
+					\end{itemize}
+				(vgl. \RefFuncBlue{/F40-140/})
 				
 				\item \Test{Art der Accountaktivierung festlegen}
 				 Der Administrator befindet sich auf der Seite 'Adminverwaltung'. Im Bereich 'Accountaktivierung' wird im Eingabefeld die voreingestellte minimale Voraussetzung 'Nur E-Mailverifikation' angezeigt. Dort wählt der Admin nach dem Klicken auf dieses Eingabefeld im sich öffnenden Drop-Down Menü die Aktivierungsart 'E-Mailverifikation und Aktivierung durch Administrator' aus und bestätigt seine Auswahl durch Drücken des Button 'Speichern'. Im Eingabefeld wird nun die ausgewählte Art 'E-Mailverifikation und Aktivierung durch Administrator' angezeigt. Der Administrator befindet sich weiterhin auf der Seite 'Adminverwaltung'. (vgl. \RefFuncBlue{/F40-160/})
@@ -811,8 +819,8 @@ Der Stellenwert der Qualitätskriterien begründet sich wie folgt:
 				 Auf der Seite 'Adminverwaltung' klickt der Administrator auf die Schaltfläche 'Benutzer anlegen' und wird auf die Seite 'Benutzer anlegen' weitergeleitet. Hier gibt der Admin folgende Daten ein:
 					\begin{itemize}
 						\item Benutzername: 'Basti3' 
-						\item Passwort: 'poIuZt7R'
-						\item Passwort: 'poIuZt7R'
+						\item Passwort: 'poIuZt7R1§'
+						\item Passwort: 'poIuZt7R1§'
 						\item E-Mail: 'sebastian@nrschwarz.de'
 						\item Anrede: 'Herr'
 						\item Name: 'Schwarz'
@@ -828,8 +836,8 @@ Der Stellenwert der Qualitätskriterien begründet sich wie folgt:
 				Auf der Seite 'Adminverwaltung' klickt der Administrator auf die Schaltfläche 'Benutzer anlegen' und wird auf die Seite 'Benutzer anlegen' weitergeleitet. Hier gibt der Admin folgende Daten ein:
 				\begin{itemize}
 					\item Benutzername: 'PatrickC' 
-					\item Passwort: 'lKjHg789'
-					\item Passwort: 'lKjHg789'
+					\item Passwort: 'lKjHg789!'
+					\item Passwort: 'lKjHg789!'
 					\item E-Mail: 'strat-fan@web.de'
 					\item Anrede: 'Herr'
 					\item Name: 'Patrick'
@@ -862,7 +870,7 @@ Der Stellenwert der Qualitätskriterien begründet sich wie folgt:
 					 
 					 \item Der Benutzer trägt nun im Eingabefeld des Geburtsdatums den 04.10.1991 ein. Außerdem gibt er ein anderes Passwort im ersten Passwortfeld ein: 'vBnMk89po'. Im zweiten Passwortfeld trägt er 'vBnMk89pO' ein. Nach dem Drücken der Schaltfläche 'Benutzer anlegen' wird der Benutzer mit einer Fehlermeldung darauf hingewiesen, dass seine Passwörter nicht übereinstimmen. Die beiden Passwortfelder werden wieder geleert.
 					 
-					 \item Der Benutzer gibt nun in beiden Passwortfeldern das Passwort 'vBnMk89po' ein. Durch Klicken des Buttons 'Benutzer anlegen' bestätigt der Admin die Daten und der neue Benutzer ist angelegt. Der Administrator wird anschließend auf die Seite 'Adminverwaltung' weitergeleitet.
+					 \item Der Benutzer gibt nun in beiden Passwortfeldern das Passwort 'vBnMk89po5*' ein. Durch Klicken des Buttons 'Benutzer anlegen' bestätigt der Admin die Daten und der neue Benutzer ist angelegt. Der Administrator wird anschließend auf die Seite 'Adminverwaltung' weitergeleitet.
 					\end{itemize}
 				(vgl. \RefFuncBlue{/F40-50/})
 					
@@ -1055,7 +1063,7 @@ Der Stellenwert der Qualitätskriterien begründet sich wie folgt:
 		\stepHc
 		\begin{itemize}
 			\item \Test{Anmeldeversuch ohne vorherige Accountbestätigung}
-			Der Benutzer befindet sich auf der Startseite, nachdem er sich registriert hat. (vgl. \RefFuncBrown{/T30-30/}) Nach Drücken des Button 'Anmelden' öffnet sich ein Drop-Down Menü, in welches der Benutzer seinen Benutzernamen 'Kathi5' und sein Passwort 'bSdFg7HjK' eingibt. Nach dem Klicken auf die Schaltfläche 'Anmelden' bekommt der Benutzer eine Fehlermeldung, welche ihn darauf hinweist, dass sein Account noch nicht bestätigt wurde. Der Benutzer wird auf die Startseite weitergeleitet.
+			Der Benutzer befindet sich auf der Startseite, nachdem er sich registriert hat. (vgl. \RefFuncBrown{/T30-30/}) Nach Drücken des Button 'Anmelden' öffnet sich ein Drop-Down Menü, in welches der Benutzer seinen Benutzernamen 'Kathi5' und sein Passwort 'bSdFg7HjK8*' eingibt. Nach dem Klicken auf die Schaltfläche 'Anmelden' bekommt der Benutzer eine Fehlermeldung, welche ihn darauf hinweist, dass sein Account noch nicht bestätigt wurde. Der Benutzer wird auf die Startseite weitergeleitet.
 			
 			\item \Test{Account bestätigen durch den Systemadministrator}
 			Der Systemadministrator befindet sich auf der Seite 'Adminverwaltung' und wird nach dem Drücken des Button 'Benutzer verwalten' auf die Seite 'Benutzer durchsuchen' weitergeleitet. Hier werden die bereits registrierten Benutzer 'Basti3', 'Ricky1' und 'Kathi5' mit den in den Testfällen \RefFuncBrown{/T10-50/}, \RefFuncBrown{/T10-60/} und \RefFuncBrown{/T30-30/} angelegten Daten angezeigt. Auf dieser Seite wählt der Admin im Drop-Down Menü 'Nicht aktiviert' aus und klickt anschließend auf den Button 'suchen'. Nun wird nur noch der Benutzer 'Kathi5' angezeigt. Der Administrator aktiviert den Account von 'Kathi5', indem er in das Kästchen rechts außen einen Hacken setzt und anschließend auf den Button 'Benutzer aktivieren' klickt. Der Benutzer 'Kathi5' ist nun aktiviert und kann sich ins System einloggen. (vgl. \RefFuncBrown{/T40-30/})  
@@ -1074,10 +1082,10 @@ Der Stellenwert der Qualitätskriterien begründet sich wie folgt:
 			\end{itemize} 
 			
 			\item \Test{Einloggen ins System} 
-			Der Benutzer 'PatrickC' klickt auf der Startseite	auf den 'Anmelden'-Button und es öffnet sich ein Drop-Down Menü, in welchem er seinen Benutzernamen 'PatrickC' und sein Passwort 'lKjHg789' eingibt. Durch Drücken der Schaltfläche 'Anmelden' im Drop-Down Menü wird der Benutzer eingeloggt und auf die Seite 'Meine Kurse' weitergeleitet. Dort sind im Moment keine Kurse eingetragen. (vgl. \RefFuncBlue{/F20-10/})
+			Der Benutzer 'PatrickC' klickt auf der Startseite	auf den 'Anmelden'-Button und es öffnet sich ein Drop-Down Menü, in welchem er seinen Benutzernamen 'PatrickC' und sein Passwort 'lKjHg789!' eingibt. Durch Drücken der Schaltfläche 'Anmelden' im Drop-Down Menü wird der Benutzer eingeloggt und auf die Seite 'Meine Kurse' weitergeleitet. Dort sind im Moment keine Kurse eingetragen. (vgl. \RefFuncBlue{/F20-10/})
 			
 			\item \Test{Einloggen ins System} 
-			Der Benutzer 'Ricky1' klickt auf der Startseite	auf den 'Anmelden'-Button und es öffnet sich ein Drop-Down Menü, in welchem er seinen Benutzernamen 'Ricky1' und sein Passwort 'vBnMk89po' eingibt. Durch Drücken der Schaltfläche 'Anmelden' im Drop-Down Menü wird der Benutzer eingeloggt und auf die Seite 'Meine Kurse' weitergeleitet. Dort sind im Moment keine Kurse eingetragen. (vgl. \RefFuncBlue{/F20-10/})
+			Der Benutzer 'Ricky1' klickt auf der Startseite	auf den 'Anmelden'-Button und es öffnet sich ein Drop-Down Menü, in welchem er seinen Benutzernamen 'Ricky1' und sein Passwort 'vBnMk89po5*' eingibt. Durch Drücken der Schaltfläche 'Anmelden' im Drop-Down Menü wird der Benutzer eingeloggt und auf die Seite 'Meine Kurse' weitergeleitet. Dort sind im Moment keine Kurse eingetragen. (vgl. \RefFuncBlue{/F20-10/})
 				
 			\item \Test{Konto aufladen} 
 			Der Benutzer 'Kathi5' klickt in seinem Profil auf die Schaltfläche 'Konto aufladen' und wird auf die Seite 'Kontoaufladung' weitergeleitet. 
