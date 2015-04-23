@@ -465,24 +465,26 @@ Im folgenden wird beschrieben, welche Daten persistent gespeichert werden. Jeder
 \section{System}
 \Func {} 
 \begin{itemize}
-	\item Titel (\gls{String})
-	\item CSS-Datei (String)
-	\item Impressum (String)
-	\item Logopfad (String)
-	\item AGB (String)
-	\item Hilfe (String)
+	\item Titel 
+	\item CSS-Datei 
+	\item Impressum 
+	\item Logo
+	\item AGB 
+	\item Hilfe
+	\item Überziehungskredit
+	\item Art der Registrierung 
 \end{itemize}
 
 
 \subsection{SMTP-Server}
 \Func {}
 \begin{itemize}
-	\item Benutzername (String)
-	\item Passwort (String)
-	\item Authentifizierung (\gls{Boolean})
-	\item TLS (Boolean)
-	\item Host (String)
-	\item Port (\gls{Integer})
+	\item Benutzername 
+	\item Passwort 
+	\item Authentifizierung 
+	\item TLS 
+	\item Host 
+	\item Port 
 \end{itemize}
 
 
@@ -490,24 +492,25 @@ Im folgenden wird beschrieben, welche Daten persistent gespeichert werden. Jeder
 \section{Kurs}
 \Func {} Alle Informationen über einen angebotenen Kurs. 
 \begin{itemize}
-	\item ID (Integer) (eindeutig)
+	\item ID  (eindeutig)
 	\item Daten
 	\begin{itemize}
 		\item Information zum Kurs
 		\begin{itemize}
-			\item Titel (String)
-			\item Beschreibung (String)
-			\item nächster Termin (Date)
-			\item Startdatum (Date)
-			\item Enddatum (Date)
-			\item Maximale Teilnehmerzahl (Integer)
-			\item Bildverweis (String)
-			\item Kurseinheiten (Liste von Kurseinheiten)
-			\item Teilnehmer (Liste von Registrierten Benutzer)
+			\item Titel 
+			\item Beschreibung 
+			\item nächster Termin 
+			\item Startdatum 
+			\item Enddatum 
+			\item Maximale Teilnehmerzahl
+			\item Bildverweis 
+			\item Kurseinheiten 		
 		\end{itemize}
 		\item Kontaktinformation
 		\begin{itemize}
-			\item Trainer (BenutzerID)
+			\item Liste der Kursleiter
+			\item Liste der Teilnehmer 
+			\item Liste der zu benachrichtigenden Teilnehmer
 		\end{itemize}	
 	\end{itemize}
 	
@@ -518,24 +521,24 @@ Im folgenden wird beschrieben, welche Daten persistent gespeichert werden. Jeder
 \section{Kurseinheit}
 \Func {} Alle Informationen über eine angebotene Kurseinheit
 \begin{itemize}
-	\item ID (Integer) (eindeutig)
+	\item ID (eindeutig)
 	\item Daten
 	\begin{itemize}
 		\item Information zur Kurseinheit
 		\begin{itemize}
-			\item Titel (String)
-			\item Beschreibung (String)
-			\item Beginn (Date)
-			\item Ende (Date)
-			\item Ort (String)
-			\item Preis (\gls{float})
-			\item Maximale Teilnehmerzahl (Integer)
-			\item Minimale Teilnehmerzahl (Integer)
-			\item Teilnehmer (Liste von Registrierten Benutzer) 
+			\item Titel 
+			\item Beschreibung 
+			\item Beginn 
+			\item Ende 
+			\item Ort 
+			\item Preis 
+			\item Maximale Teilnehmerzahl 
+			\item Minimale Teilnehmerzahl 			
 		\end{itemize}
 		\item Kontaktinformation
 		\begin{itemize}
-			\item Trainer (BenutzerID)
+			\item Kursleiter 
+			\item Liste der Teilnehmer 
 		\end{itemize}
 	\end{itemize}
 	
@@ -548,36 +551,37 @@ Im folgenden wird beschrieben, welche Daten persistent gespeichert werden. Jeder
 \section{Registrierte Benutzer}
 \Func {} Alle Informationen über einen registrierten Benutzer
 \begin{itemize}
-	\item ID (Integer) (eindeutig)
+	\item ID  (eindeutig)
 	\item Kennung
 	\begin{itemize}
-		\item Benutzername (String) (eindeutig)
-		\item Passwort (String) (verschlüsselt)
+		\item Benutzername (eindeutig)
+		\item Passwort (gehasht)
+		\item Salt (eindeutig)
 	\end{itemize}
 	\item Persönliche Daten
 	\begin{itemize}
 		\item Information zur eigenen Person	
 		\begin{itemize}
-			\item Vorname (String)
-			\item Nachname (String)
-			\item Geschlecht (Männlich/Weiblich)
-			\item Geburtsdatum (Date)
-			\item Bildverweis (String)
-			\item Guthaben (float)
+			\item Vorname 
+			\item Nachname 
+			\item Geschlecht 
+			\item Geburtsdatum 
+			\item Bildverweis 
+			\item Guthaben
 		\end{itemize}
 		\item Kontaktinformationen
 		\begin{itemize}
-			\item E-mailadresse (String) (eindeutig, gültig)
-			\item Ort (String)
-			\item Straße (String)
-			\item Postleitzahl (Integer)
+			\item E-Mailadresse (eindeutig, gültig)
+			\item Ort 
+			\item Straße 
+			\item Postleitzahl
 		\end{itemize}
 		\item Sonstige Daten
 		\begin{itemize}
-			\item eingeschriebene Kurse (Liste von Kursen)
-			\item eingeschriebene Kurseinheiten (Liste von Kurseinheiten)
-			\item Registrierung über Email abgeschlossen (Boolean)
-			\item Registrierung über Admin abgeschlossen (Boolean)
+			\item eingeschriebene Kurse
+			\item eingeschriebene Kurseinheiten
+			\item Registrierung über Email abgeschlossen
+			\item Registrierung über Admin abgeschlossen
 		\end{itemize}	
 	\end{itemize}
 	
@@ -586,11 +590,11 @@ Im folgenden wird beschrieben, welche Daten persistent gespeichert werden. Jeder
 
 \stepHc	 
 \section{Benutzerrolle}
-\Func {} Speichert registrierte Benutzer gemäß ihrer Rolle im System. (3 verfügbare Benutzerrollen: Administrator, Trainer und Benutzer) 
+\Func {} Speichert registrierte Benutzer gemäß ihrer Rolle im System. (3 verfügbare Benutzerrollen: Administrator, Kursleiter und Benutzer) 
 \begin{itemize}
-	\item ID (Integer) (eindeutig)
-	\item Gruppenname (String)
-	\item Benutzer-ID (Liste registrierter Benutzer)
+	\item ID (eindeutig)
+	\item Gruppenname 
+	\item Liste von Mitgliedern
 \end{itemize}
 
 
@@ -602,34 +606,39 @@ Im folgenden wird beschrieben, welche Daten persistent gespeichert werden. Jeder
 
 \section{Produktleistungen auf Serverseite}
 \begin{itemize}
-	\item \Func{} Zur Speicherung der \gls{persistent} Daten wird eine PostgreSQL Datenbank verwendet
-	\item \Func{} E-Mailbenachrichtigung, falls von Benutzer erwünscht, bei wichtigen Ereignissen (z.B Registrierung, Buchung einer Kurseinheit bzw Kurses, Terminänderung)
-	\item \Func{} Das System hat Wartungszeit von 1,6 Stunden in der Woche bzw. 7,2 Stunden im Monat.
+	\item \Func{} Zur Speicherung der \gls{persistent} Daten wird eine PostgreSQL Datenbank verwendet.
+	\item \Func{} E-Mailbenachrichtigung, falls von Benutzer erwünscht, bei wichtigen Ereignissen (z.B Registrierung, Buchung einer Kurseinheit bzw Kurses, Terminänderung).
+	\item \Func{} Das System hat Wartungszeit von 2 Stunden in der Woche bzw. 8 Stunden im Monat.
+	\item \Func{} Kurse werden bis ein halbes Jahr nach Ablauf des Enddatums für den Statistikdienst gespeichert.
+	\item \Func{} Löschen von Datensätzen wird kaskadenartig auf der Datenbank ausgeführt um Fehler bei Verlinkungen von Datensätzen zu vermeiden.
+	\item \Func{} Das System stellt einen automatisch generierten Salt zur Verfügung um eine noch größere Sicherheit zu gewährleisten.
+	\item \Func{} Die Anwendung stellt ein eigenes Bezahlsystem zur Verfügung, in der jeder User von seinem Prepaid Konto abbuchen kann.
 \end{itemize}
 
 \stepHc		
 \section{Produktleistungen auf Clientseite}
 \begin{itemize}
-	\item \Func{} Bei Fehleingabe werden bereits eingetragene Daten wieder angezeigt
-	\item \Func{} Fehlermeldungen werden im Browser ausgegeben
-	\item \Func{} Passwörter werden \gls{hashen}.
-	\item \Func{} Übertragung und Einsicht aller persönlichen Informationen erfolgen über eine SSL Verbindung
-	\item \Func{} Die Administratoren sind in der Lage registrierte Benutzer zu bearbeiten und ihnen neue Funktionen zuweisen (Trainer oder Administratoren)
-	\item \Func{} Die Administratoren haben über eine selbst geschriebene CSS Datei Einfluss auf die Optische Darstellung der Software 
-	\item \Func{} Unautorisierte Benutzeraktion (z.B anonymer User will sich für Kurs eintragen) wird nicht angezeigt, stattdessen wird auf die Registrierung bzw. Login verwiesen
-	\item \Func{} An einem Client-Browser können nicht mehrere autorisierte verschiedene Sessions zeitgleich geführt werden
+	\item \Func{} Bei Fehleingabe werden bereits eingetragene Daten wieder angezeigt, außer Passwörter und die falschen Benutzereingaben (z.B bei Registrierung).
+	\item \Func{} Fehlermeldungen werden im Browser ausgegeben.
+	\item \Func{} Passwörter werden mit SHA-256 \gls{hashen}.
+	\item \Func{} Übertragung und Einsicht aller persönlichen Informationen erfolgen über eine SSL Verbindung.
+	\item \Func{} Die Administratoren sind in der Lage registrierte Benutzer zu bearbeiten und ihnen neue Funktionen zuweisen (Kursleiter oder Administratoren).
+	\item \Func{} Die Administratoren haben über eine selbst geschriebene CSS Datei Einfluss, auf ausgewählte Tags, die Optische Darstellung der Software zu beeinflussen. 
+	\item \Func{} Unautorisierte Benutzeraktionen (z.B anonymer User will sich für Kurs eintragen) wird nicht angezeigt bzw. ausgeführt, stattdessen wird auf die Loginseite verwiesen.
+	\item \Func{} An einem Client-Browser können nicht mehrere autorisierte verschiedene Sessions zeitgleich geführt werden.
 	\item \Func{} Parallele Nutzung wird unterstützt und nach dem First Come First Serve Prinzip gehandhabt.
-	\item \Func{} Löschen von Datensätzen wird kaskadenartig auf der Datenbank ausgeführt um Fehler bei Verlinkungen von Datensätzen zu vermeiden
-	\item \Func{} Um Skalierbarkeit zu gewährleisten wird Pagination bei der anzeige von Kursen und Kurseinheiten verwendet 
-	\item \Func{} Das System stellt Validatoren zur Verfügung die Benutzereingaben auf Format Fehler überprüfen und eine Fehlermeldung bei verstoß ausgeben. (z.B. Eingabe Feld erwartet ein Datum bekommt aber ein String)
-	\item \Func{} Das System stellt einen Passwort Validator zur Verfügung, der das gewählte Passwort des Benutzers auf Sicherheitsstandarts überprüft. (mindestens 8 Zeichen, mindestens ein Sonderzeichen, mindestens eine Ziffer, Groß und Kleinbuchstaben )
-	\item \Func{} Das System stellt einen Email Validator zur Verfügung, der die vom Benutzer angegebene E-mailadresse auf Gültigkeit überprüft.
+	\item \Func{} Um Skalierbarkeit zu gewährleisten wird Pagination bei der Anzeige von Kursen, Benutzern und Kurseinheiten verwendet. 
+	\item \Func{} Das System stellt Validatoren zur Verfügung die Benutzereingaben auf Format Fehler überprüfen und eine Fehlermeldung bei verstoß ausgeben. (z.B. In einem Datumsfeld wird 33.02.1977 eingegeben)
+	\item \Func{} Das System stellt einen Passwort Validator zur Verfügung, der das gewählte Passwort des Benutzers auf Sicherheitsstandards überprüft (mindestens 8 Zeichen, mindestens ein Sonderzeichen, mindestens eine Ziffer, Groß und Kleinbuchstaben). Außerdem dürfen im Passwort keine Umlaute und kein ß vorkommen.
+	\item \Func{} Das System stellt einen E-Mail Validator zur Verfügung, der die vom Benutzer angegebene E-Mailadresse auf Gültigkeit überprüft.
 	\item \Func{} Das System stellt einen Geburtstags Validator zur Verfügung, der das vom Benutzer angegebene Geburtsdatum kontrolliert ob es nicht in der Zukunft liegt. 
-	\item \Func{} Das System stellt einen Überweisungs Validator zur Verfügung, der bei einer offline Überweisung des Trainers/Admins die angegebene BenutzerID auf Existenz überprüft  
-	\item \Func{} Verfügbarkeit der Räumlichkeit wird nicht unterstützt.
+	\item \Func{} Das System stellt einen Überweisungs Validator zur Verfügung, der bei einer offline Überweisung des Trainers/Admins die angegebene BenutzerID auf Existenz überprüft.
+	\item \Func{} Das System stellt einen Benutzernamen Validator zur Verfügung, der den vom anonymen User gewählten Benutzernamen bei der Registrierung auf bereits vergeben prüft.   
+	\item \Func{} Verfügbarkeit der Räumlichkeit und der Terminkollision wird nicht geprüft.
 	\item \Func{} Die Sprache des Systems kann auf Englisch oder Deutsch gesetzt werden. Benutzereingaben werden nicht berücksichtigt und werden unverändert angezeigt.
-	\item Der HTML 5 Code wird durch den Validator http://validator.w3.org überprüft
-	\item Es werden keine Frames verwendet
+	\item \Func{} Der HTML 5 Code wird durch den Validator http://validator.w3.org überprüft.
+	\item \Func{} Es werden keine Frames verwendet.
+	\item \Func{} Um Zugriffskonflikte beim Nutzen des Systems mit mehreren Fenstern oder Tabs zu vermeiden wird mit Invalidate Session gearbeitet. (z.B. Ein Benutzer ist im System angemeldet und arbeitet mit zwei Tabs. Er meldet sich nun in einem Fenster ab und versucht darauf hin in dem anderen Fenster sich für einen Kurs anzumelden.)  
 \end{itemize}
 
 		
