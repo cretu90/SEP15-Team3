@@ -23,31 +23,9 @@
 \newglossaryentry{Admin}{name=Administrator, description={Ein Administrator oder kurz Admin ist ein Systemverwalter, welcher besondere (weiterführende) Zugriffsrechte hat. Er betreut und verwaltet das System}}
 \newglossaryentry{Trainer}{name=Kursleiter, description={Ein Kursleiter ist ein Trainer, welcher einen oder mehrere Kurse leitet}}
 \newglossaryentry{Einheiten}{name=Kurseinheiten, description={Jeder Kurs wird in verschiedene Kurseinheiten unterteilt. Dabei entspricht eine Einheit einem stattfindenden Kurstermin}}
-\newglossaryentry{Konfiguration}{name=Konfiguration, description={Eine Konfiguration (meist durch den Systemadministrator) beinhaltet die Installation und die Auswahl von Voreinstellungen sowie beispielsweise das Bearbeiten des Impressums}}
-\newglossaryentry{Client}{name=Client, description={Ein Client ist ein Programm, welches auf einem Endgerät ausgeführt wird und Dienstleistungen von einem Server in Anspruch nimmt}}
-\newglossaryentry{Server}{name=Server, description={Ein Server ist ein Dienstleister, der in einem Netzwerk Daten oder Ressourcen zur Verfügung stellt}}
-\newglossaryentry{JSF}{name=JSF, description={engl. Java Server Faces, ist ein Framework zur Entwicklung von grafischen Benutzeroberflächen für Webprogramme.}}
-\newglossaryentry{Tomcat}{name=Apache Tomcat, description={Open Source Applikationsserver zum Ausführen von Web-Anwendungen, welche über Java geschrieben wurden}}
-\newglossaryentry{PostgreeSQL}{name=PostgreeSQL, description={PostgreeSQL ist ein freies, objektrelationales Datenbank-Verwaltungssystem}}
-\newglossaryentry{SMTP-Server}{name=Kursleiter, description={Dies ist ein Simple Mail Transfer Protokoll welches zum Austausch von E-Mails in Computernetzen dient}}
-\newglossaryentry{Orgware}{name=Orgware, description={Die Orgware beschreibt Rahmenbedingungen bei IT-Projekten (also alle organisatorischen, methodischen und personellen Maßnahmen), die weder zu der Software noch zu der Hardware gehören}}
-\newglossaryentry{Browser}{name=Browser, description={Browser wie Firefox und Internet Explorer sind spezielle Programme zur Websitedarstellung im World Wide Web}}
-\newglossaryentry{URL}{name=URL, description={engl. Uniform Resource Locator, bezeichnet die Adresse einer Webseite}}
-\newglossaryentry{Id}{name=Identifikationsnummer, description={ist eine Nummer zur eindeutigen Identifikation}}
-\newglossaryentry{Default}{name=Default, description={ist eine voreingestellte Eingabevariable}}
-\newglossaryentry{SSL}{name=SSL, description={engl. Secure Sockets Layer ist ein Netzwerkprotokoll zur sicheren Datenübertragung im Internet}}
-\newglossaryentry{Dummy}{name=Dummy, description={ ist ein Platzhalter}}
-\newglossaryentry{JPG}{name=.jpg, description={ Bezeichnung einer Bilddatei}}
-\newglossaryentry{CSS}{name=.css, description={ engl. Cascading Style Sheet, wird für die stylistische Anpassung einer Webseite verwendet}}
-\newglossaryentry{String}{name=String, description={Ein String ist eine Folge von vordefinierten Zeichen}}
-\newglossaryentry{Boolean}{name=Boolean, description={Ein Boolean ist ein Wahrheitswert, also True oder False}}
-\newglossaryentry{Integer}{name=Integer, description={Ein Integer ist ein Datentyp zur Speicherung ganzzahliger Werte}}
-\newglossaryentry{float}{name=float, description={Ein Float ist ein Datentyp zur Speicherung von Gleitkommazahlen}}
-\newglossaryentry{persistent}{name=persistenten, description={persistent bedeutet längerfristig}}
-\newglossaryentry{hashen}{name=gehasht, description={bedeutet verschlüssseln}}
-\newglossaryentry{Konsistenz}{name=Konsistenz, description={bedeutet Korrektheit}}
-
-
+\newglossaryentry{Kurs}{name=Kurse, description={Ein Kurs ist eine Veranstalung, zum Beispiel sportlicher Art. }}
+\newglossaryentry{Anonym}{name=anonymen Benutzer, description={Ein anonymer Benutzer ist nicht im System registriert und kann nur die Kurse einsehen, sich aber nicht dazu anmelden}}
+\newglossaryentry{Registriert}{name=registrierten Benutzer, description={Ein registrierter Benutzer ist im System hinterlegt und kann sich nach erfolgreicher Anmeldung zu Kursen eintragen}}
 
 
 \begin{document}
@@ -121,7 +99,7 @@
 	\begin{tiny}
 		RS
 	\end{tiny}\\
-	   Bei der Webanwendung OfCourse handelt es sich um eine Online-Plattform, welche ein allgemeines Planungssystem für Kurse darstellt. Es ermöglicht Kursleitern und Kursteilnehmern die einfache Absprache von Terminen, was bisher zumeist eine große Herausforderung darstellt.
+	   Bei der Webanwendung OfCourse handelt es sich um eine Online-Plattform, welche ein allgemeines Planungssystem für \gls{Kurs} darstellt. Es ermöglicht Kursleitern und Kursteilnehmern die einfache Absprache von Terminen, was bisher zumeist eine große Herausforderung darstellt.
     \section{Musskriterien}      
     	\subsubsection{Allgemeiner Funktionsumfang:}
       		\begin{itemize}
@@ -129,13 +107,13 @@
 	      		\item Impressum anzeigen \hyperlink{impressum}{F10-70}
 	      		\item Allgemeine Geschäftsbedingungen anzeigen \hyperlink{agb}{F10-90}
       		\end{itemize}
-     	\subsubsection{Funktionsumfang für anonymen Benutzer:}
+     	\subsubsection{Funktionsumfang für \gls{Anonym}:}
        		\begin{itemize}
 	      		\item Durchsuchen aller angebotenen Kurse \hyperlink{kursSuche}{F10-50}
 	      		\item Kursanzeige sortieren \hyperlink{kursAnzSort}{F10-40}
 	       		\item Registrieren \hyperlink{Registrieren}{F10-20}
        		\end{itemize}
-     	\subsubsection{Funktionsumfang für alle registrierten Benutzer:}
+     	\subsubsection{Funktionsumfang für alle \gls{Registriert}:}
 			\begin{itemize}
 				\item Login \hyperlink{login}{F20-10} und Logout \hyperlink{logout}{F20-90}
 				\item Kann sich zu Kursen anmelden \hyperlink{kursAnmelden}{F20-120} und abmelden \hyperlink{kursAbmelden}{F20-130}
@@ -194,10 +172,10 @@
 		 	\item Betreiber: Die Webanwendung soll von Betreibern unterschiedlichsten Fachbereichs verwendet werden können, beispielsweise Sportvereine oder Lehrinstitute, welche ihre angebotenen Veranstaltungen und Kurse per Internet organisieren möchten.
 		 	\item Benutzer: Es wird zwischen vier verschiedenen Benutzern unterschieden:
 		 	\begin{itemize}
-		 		\item Anonymer Benutzer: Anonyme Benutzer benötigen normale Kenntnisse im Umgang mit dem Computer. Sie sollten einen \gls{Browser} bedienen können, um die Webseite des \gls{Einheiten}-Manager anzuzeigen. Dort kann man nach bestimmte Veranstaltungen suchen und sich über diese informieren.
-		 		\item Registrierter Benutzer: Registrierte Benutzer bedürfen ebenso wie anonyme keine besonderen Vorkenntnisse. Sie sollen einen \gls{Browser} ihrer Wahl nutzen können und benötigen lediglich eine E-Mail-Adresse, um sich im System registrieren und somit ein Benutzerkonto erstellen zu können. Darauf folgend kann nach Veranstaltungen gesucht werden und sich für solche an- oder abmelden.
+		 		\item Anonymer Benutzer: Anonyme Benutzer benötigen normale Kenntnisse im Umgang mit dem Computer. Sie sollten einen Browser bedienen können, um die Webseite des \gls{Einheiten}-Manager anzuzeigen. Dort kann man nach bestimmte Veranstaltungen suchen und sich über diese informieren.
+		 		\item Registrierter Benutzer: Registrierte Benutzer bedürfen ebenso wie anonyme keine besonderen Vorkenntnisse. Sie sollen einen Browser ihrer Wahl nutzen können und benötigen lediglich eine E-Mail-Adresse, um sich im System registrieren und somit ein Benutzerkonto erstellen zu können. Darauf folgend kann nach Veranstaltungen gesucht werden und sich für solche an- oder abmelden.
 		 		\item Kursleiter: Ein Kursleiter ist gleichfalls auf wenig besondere IT-Kenntnisse angewiesen. Er sollte allerdings über alle nötigen Informationen seiner Veranstaltung in Kenntnis sein, um jene anlegen und verwalten zu können.
-		 		\item \gls{Admin}: Ein \gls{Admin} ist für die Verwaltung und \gls{Konfiguration} des gesamten Systems zuständig. Eine Konfiguration beinhaltet die Installation und die Auswahl von Voreinstellungen, sowie beispielsweise das Bearbeiten des Impressums. Aufgrund dessen werden grundlegende Kenntnisse im Umgang mit HTML, CSS und SQL vorausgesetzt.
+		 		\item \gls{Admin}: Ein Administrator ist für die Verwaltung und Konfiguration des gesamten Systems zuständig. Eine Konfiguration beinhaltet die Installation und die Auswahl von Voreinstellungen, sowie beispielsweise das Bearbeiten des Impressums. Aufgrund dessen werden grundlegende Kenntnisse im Umgang mit HTML, CSS und SQL vorausgesetzt.
 		 	\end{itemize}	
 		 \end{enumerate}  
         
@@ -217,16 +195,16 @@
 	
 	\section{Software}
         \begin{itemize}
-      		\item \gls{Client}:
+      		\item Client:
 	      		\begin{itemize}
 	      			\item Alle gängigen Browser in ihrer jeweiligen aktuellen Version  werden unterstützt: Mozilla Firefox 37, Internet Explorer 11, Google Chrome 42, Apple Safari 8
 	      		\end{itemize}
-          	\item \gls{Server}:
+          	\item Server:
 	            \begin{itemize}
 	            	\item Java 8
-	            	\item \gls{JSF} 2.2 (Entwicklungsframework)
-	            	\item \gls{Tomcat} 8 (Webserver)
-	            	\item \gls{PostgreeSQL} 9 (Datenbank)
+	            	\item JSF 2.2 (Entwicklungsframework)
+	            	\item Tomcat 8 (Webserver)
+	            	\item PostgreeSQL 9 (Datenbank)
 	            \end{itemize}
         \end{itemize}
         
@@ -267,7 +245,7 @@ Die Produktfunktionen sind nach Benutzergruppen geordnet. Wunschkriterien sind m
 		\subsection{Grundfunktionen}
 			\begin{itemize}
 				\item \Func{Aufruf der Startseite.}
-					Die Startseite kann mit jedem unterstützten \gls{Browser} (vgl. Produktumgebung -> 3.1 Software -> Client) via \gls{URL} aufgerufen werden.
+					Die Startseite kann mit jedem unterstützten Browser (vgl. Produktumgebung -> 3.1 Software -> Client) via URL aufgerufen werden.
 				\item \Func{Registrierung im System durch Ausfüllen eines Formulars.} \hypertarget{Registrieren}
 					Der Nutzer kann sich durch Ausfüllen eines Registrierungsformulars im System registrieren. Die Anwendung generiert für den neu registrierten Nutzer automatisch eine im System eindeutige Identifikationsnummer. Nach Abschicken des Formulars wird an die angegebene E-Mailadresse eine Bestätigungsmail  mit einem Verifizierungslink geschickt, welcher dazu dient, die E-Mailadresse des neuen Benutzers zu bestätigen. Der Nutzer wird dann auf die Startseite des Systems weitergeleitet. Ob sich der Benutzer nun schon in das System einloggen kann, hängt von der Art der Accountaktivierung ab. Diese wird durch den Administrator festgelegt(\FuncBlue{/F40-160/}). Der Account ist entweder durch die E-Mailverifikation automatisch aktiviert worden oder muss manuell durch einen Kursleiter oder einen Administrator aktiviert werden(\FuncBlue{/F30-110/}).
 				\item \Func{Anzeigen des Kursangebots.} \hypertarget{kursAngAnz}
@@ -296,7 +274,7 @@ Die Produktfunktionen sind nach Benutzergruppen geordnet. Wunschkriterien sind m
 		\subsection{Grundfunktionen}
 			\begin{itemize}
 				\item \Func{Sicheres Einloggen ins System.} \hypertarget{login}
-					Durch Eingabe des Benutzernamen, des Passworts und Klicken der 'Anmelden' - Schaltfläche kann sich der Benutzer ins System einloggen. Die Anmeldedaten werden dabei mittels \gls{SSL} übertragen. Nach erfolgreichem Anmelden wird der Nutzer auf die 'Meine Kurse' - Seite weitergeleitet.
+					Durch Eingabe des Benutzernamen, des Passworts und Klicken der 'Anmelden' - Schaltfläche kann sich der Benutzer ins System einloggen. Die Anmeldedaten werden dabei mittels SSL übertragen. Nach erfolgreichem Anmelden wird der Nutzer auf die 'Meine Kurse' - Seite weitergeleitet.
 				\item \Func{Anzeigen der angemeldeten Kurse.} \hypertarget{kurseAnzeigen}
 					Die Kurse zu denen der registrierte Benutzer angemeldet ist werden gesammelt auf der 'Meine Kurse' - Seite angezeigt.
 				\item \Func{Detailanzeige der angemeldeten Kurse.}
@@ -308,7 +286,7 @@ Die Produktfunktionen sind nach Benutzergruppen geordnet. Wunschkriterien sind m
 				\item \Func{Ändern der eigenen Benutzerdaten.} \hypertarget{profilEdit}
 					Der registrierte Benutzer kann durch Klicken der Schaltfläche 'Bearbeiten' seine eingegebenen Daten bearbeiten. Sollte die E-Mailadresse geändert werden, wird an die neue E-Mailadresse wie beim Registrierungsprozess(\FuncBlue{/F10-20/}) eine Bestätigungsmail mit einem neuen Verifizierungslink geschickt, um die neue E-Mail-Adresse auf Korrektheit zu überprüfen. Der registrierte Nutzer kann alle seine Benutzerdaten ändern mit Ausnahme seines Kontostands, seiner Benutzerrolle und der vom System generierten Identifikationsnummer. Durch Betätigen der 'Speichern' - Schaltfläche werden die Daten gespeichert.
 				\item \Func{Hochladen eines Profilbilds.}
-					Der registrierte Benutzer kann ein Profilbild hochladen. Das Bild muss das .jpg - Format haben. Anforderungen bezüglich Auflösung und Größe des Bildes werden während der Produktentwicklung festgelegt. Als Default ist ein \gls{Dummy} - Bild gesetzt.
+					Der registrierte Benutzer kann ein Profilbild hochladen. Das Bild muss das .jpg - Format haben. Anforderungen bezüglich Auflösung und Größe des Bildes werden während der Produktentwicklung festgelegt. Als Default ist ein Dummy - Bild gesetzt.
 				\item \Func{Anzeigen des aktuellen Kontostands.} \hypertarget{kontoAnzeigen}
 					Der registrierte Benutzer kann den aktuellen Kontostand seines Guthabenkontos auf seiner Profilseite einsehen. 
 				\item \Func{Aus dem System abmelden mittels 'Abmelden' - Schaltfläche.} \hypertarget{logout}
@@ -459,7 +437,7 @@ Die Produktfunktionen sind nach Benutzergruppen geordnet. Wunschkriterien sind m
 				\item \Func{Art der Accountaktivierung festlegen.} \hypertarget{regMod}
 					Die Art der Aktivierung eines Accounts eines neuen Benutzers kann vom Systemadministrator festgelegt werden. Minimale Voraussetzung für die Aktivierung eines neuen Benutzeraccounts ist die Verifizierung der E-Mailadresse durch den Benutzer. Dafür betätigt der neue Benutzer den Verifizierungslink in der an die eingegebene E-Mailadresse gesandte Bestätigungsmail(vgl. \FuncBlue{/F10-20/}). Des Weiteren kann der Administrator festlegen, dass neue Benutzeraccounts zusätzlich manuell durch einen Kursleiter und/oder einen Administrator aktiviert werden müssen. Dafür wählt der Administrator auf der Administratorseite die entsprechende Option aus der Drop-Down-Liste und betätigt die 'Speichern' - Schaltfläche. Vorgesehene Auswahloptionen sind 'Nur E-Mailverifikation', 'E-Mailverifikation und Aktivierung durch Administrator', 'E-Mailverifikation und Aktivierung durch Kursleiter', 'E-Mailverifikation und Aktivierung durch Administrator oder Kursleiter'.
 				\item \Func{Oberfläche editieren.}
-					Die Oberfläche kann vom Systemadministrator editiert werden. Durch Klicken der 'Durchsuchen' - Schaltfläche gibt der Administrator den Pfad einer \gls{CSS} - Datei an, welche durch Betätigen der 'Speichern' - Schaltfläche hochgeladen wird. Die ausgewählte Datei muss den Dateinamen 'customStyle.css' haben. In dieser Datei kann zu bestimmten Tags ein neuer Stil definiert werden. 
+					Die Oberfläche kann vom Systemadministrator editiert werden. Durch Klicken der 'Durchsuchen' - Schaltfläche gibt der Administrator den Pfad einer CSS - Datei an, welche durch Betätigen der 'Speichern' - Schaltfläche hochgeladen wird. Die ausgewählte Datei muss den Dateinamen 'customStyle.css' haben. In dieser Datei kann zu bestimmten Tags ein neuer Stil definiert werden. 
 					Die genauen Tags werden während der Produktentwicklung festgelegt. Der Administrator kann also die Oberfläche bezüglich bestimmter Punkte anpassen.  
 					Falls keine 'customStyle.css' - Datei hochgeladen wird oder einige Tags in dieser Datei nicht definiert werden, wird ein im System definierter Default - Stil verwendet.
 				\item \Func{Impressum editieren.} \hypertarget{impressumBea}
@@ -618,7 +596,7 @@ Im folgenden wird beschrieben, welche Daten persistent gespeichert werden. Jeder
 
 \section{Produktleistungen auf Serverseite}
 \begin{itemize}
-	\item \Func{} Zur Speicherung der \gls{persistent} Daten wird eine PostgreSQL Datenbank verwendet.
+	\item \Func{} Zur Speicherung der persistenten Daten wird eine PostgreSQL Datenbank verwendet.
 	\item \Func{} E-Mailbenachrichtigung, falls von Benutzer erwünscht, bei wichtigen Ereignissen (z.B Registrierung, Buchung einer Kurseinheit bzw Kurses, Terminänderung).
 	\item \Func{} Das System hat Wartungszeit von 2 Stunden in der Woche bzw. 8 Stunden im Monat.
 	\item \Func{} Kurse werden bis ein halbes Jahr nach Ablauf des Enddatums für den Statistikdienst gespeichert.
@@ -632,7 +610,7 @@ Im folgenden wird beschrieben, welche Daten persistent gespeichert werden. Jeder
 \begin{itemize}
 	\item \Func{} Bei Fehleingabe werden bereits eingetragene Daten wieder angezeigt, außer Passwörter und die falschen Benutzereingaben (z.B bei Registrierung).
 	\item \Func{} Fehlermeldungen werden im Browser ausgegeben.
-	\item \Func{} Passwörter werden mit SHA-256 \gls{hashen}.
+	\item \Func{} Passwörter werden mit SHA-256 gehasht.
 	\item \Func{} Übertragung und Einsicht aller persönlichen Informationen erfolgen über eine SSL Verbindung.
 	\item \Func{} Die Administratoren sind in der Lage registrierte Benutzer zu bearbeiten und ihnen neue Funktionen zuweisen (Kursleiter oder Administratoren).
 	\item \Func{} Die Administratoren haben über eine selbst geschriebene CSS Datei Einfluss, auf ausgewählte Tags, die Optische Darstellung der Software zu beeinflussen. 
@@ -776,7 +754,7 @@ Der Stellenwert der Qualitätskriterien begründet sich wie folgt:
 		\begin{itemize}
 		 	\item Die Benutzung soll komplett im Browser möglich sein, wobei jedoch die Kompatibilität mit älteren Browsern als definiert nicht berücksichtigt wird.
 		 	\item Personenbezogene Daten und im Speziellen die Bankverbindung sind vor unberechtigtem Zugriff von außen zu schützen.
-		 	\item Geldtransaktionen sind ebenfalls besonders zu schützen, vor allem die \gls{Konsistenz} aller Bezahlaktionen.
+		 	\item Geldtransaktionen sind ebenfalls besonders zu schützen, vor allem die Konsistenz aller Bezahlaktionen.
  \end{itemize}
  
 \resetAllCounter
@@ -866,7 +844,7 @@ Der Stellenwert der Qualitätskriterien begründet sich wie folgt:
 							\item Postleitzahl: '99999'
 							\item Ort: 'Musterstadt'
 						\end{itemize}
-					 Als Rolle wird 'Benutzer' festgelegt und im Bereich Profilbild bleibt das Dummy-Bild bestehen. Da der 40.10.1991 nicht existiert wird nach dem Drücken der Schaltfläche 'Benutzer anlegen' eine Fehlermeldung ausgegeben, welche den Benutzer auf das falsche Datum hinweist und das entsprechende Eingabefeld wird geleert. Aufgrund des zu kurzen Passwortes und der Verwendung des unerlaubten Zeichens '§' wird der Benutzer des Weiteren mit einer Fehlermeldung darauf hingewiesen, dass sein Passwort nicht akzeptiert wird. Die beiden Passworteingabefelder werden ebenfalls geleert.
+					 Als Rolle wird 'Benutzer' festgelegt und im Bereich Profilbild bleibt das Dummy-Bild bestehen. Da der 40.10.1991 nicht existiert wird nach dem Drücken der Schaltfläche 'Benutzer anlegen' eine Fehlermeldung ausgegeben, welche den Benutzer auf das falsche Datum hinweist und das entsprechende Eingabefeld wird geleert. Aufgrund des zu kurzen Passwortes und der Verwendung des unerlaubten Zeichens '§' wird der Benutzer des Weiteren mit einer Fehlermeldung darauf hingewiesen, dass sein Passwort nicht akzeptiert wird. Die beiden Passworteingabefelder werden ebenfalls geleert. (vgl. \RefFuncBlue{/L20-110/}) und (vgl. \RefFuncBlue{/L20-120/})
 					 
 					 \item Der Benutzer trägt nun im Eingabefeld des Geburtsdatums den 04.10.1991 ein. Außerdem gibt er ein anderes Passwort im ersten Passwortfeld ein: 'vBnMk89po'. Im zweiten Passwortfeld trägt er 'vBnMk89pO' ein. Nach dem Drücken der Schaltfläche 'Benutzer anlegen' wird der Benutzer mit einer Fehlermeldung darauf hingewiesen, dass seine Passwörter nicht übereinstimmen. Die beiden Passwortfelder werden wieder geleert.
 					 
@@ -926,7 +904,7 @@ Der Stellenwert der Qualitätskriterien begründet sich wie folgt:
 						 
 						 \item Der Admin wählt erneut die Schaltfläche 'Durchsuchen' im Bereich 'Oberfläche anpassen' aus. In dem sich öffnenden Fenster wählt der Administrator nun die Datei mit dem Namen 'customStyle.css' aus. Nach dem Drücken des Buttons 'Speichern' wird diese Datei hochgeladen. Durch Drücken der Taste 'F5' wird die aktuelle Seite 'Adminverwaltung' neu geladen und die Änderung durch die gewählte .css-Datei wird sichtbar. 
 					\end{itemize}
-				 (vgl. \RefFuncBlue{/F40-170/})
+				 (vgl. \RefFuncBlue{/F40-170/}) und (vgl. \RefFuncBlue{/L20-60/})
 				 
 			\end{itemize}
 			
@@ -1014,14 +992,14 @@ Der Stellenwert der Qualitätskriterien begründet sich wie folgt:
 			\stepHc
 			\begin{itemize}
 				\item \Test{Kursangebot ansehen} 
-				 Der anonyme Benutzer klickt auf der Startseite auf den Button 'Unser Kursangebot' und gelangt auf die Seite 'Kursangebot durchsuchen'. Angezeigt wird das gesamte Kursangebot aufsteigend nach dem Beginn der nächsten Kurseinheit der Kurse, welche in den Testfällen \RefFuncBrown{/T10-80/}, \RefFuncBrown{/T10-90/} und in den Testfälle von \RefFuncBrown{/T20-10/} bis \RefFuncBrown{/T20-70/} angelegt wurden. (vgl. \RefFuncBlue{/F10-30/}) 
+				 Der anonyme Benutzer klickt auf der Startseite auf den Button 'Unser Kursangebot' und gelangt auf die Seite 'Kursangebot durchsuchen'. Angezeigt wird das gesamte Kursangebot aufsteigend nach dem Beginn der nächsten Kurseinheit der Kurse, welche in den Testfällen \RefFuncBrown{/T10-80/}, \RefFuncBrown{/T10-90/} und in den Testfällen von \RefFuncBrown{/T20-10/} bis \RefFuncBrown{/T20-70/} angelegt wurden. (vgl. \RefFuncBlue{/F10-30/}) 
 				 
 				 \item \Test{Kurs suchen und Detailansicht ansehen} 
 				 Der anonyme Benutzer befindet sich auf der Seite 'Kursangebot durchsuchen'. Angezeigt werden die Daten wie im Testfall \RefFuncBrown{/T30-10/}. 
 					 \begin{itemize}
-					 \item Der Benutzer wählt auf dieser Seite im Bereich 'Kursangebot durchsuchen' aus der Drop-Down Liste 'Titel' aus und trägt im der darunterliegenden Eingabefeld den Namen 'Fußball' ein. Nach dem Drücken des Button 'Suchen' wird der Benutzer mit einer Fehlermeldung darauf hingewiesen, dass kein Kurs mit dem eingegebenen Namen existiert. Das entsprechende Eingabefeld wird geleert und der Benutzer bleibt auf Seite 'Kursangebot durchsuchen.
+					 \item Der Benutzer wählt auf dieser Seite im Bereich 'Kursangebot durchsuchen' aus der Drop-Down Liste 'Titel' aus und trägt in dem darunterliegenden Eingabefeld den Namen 'Fußball' ein. Nach dem Drücken des Button 'Suchen' wird der Benutzer mit einer Fehlermeldung darauf hingewiesen, dass kein Kurs mit dem eingegebenen Namen existiert. Das entsprechende Eingabefeld wird geleert und der Benutzer bleibt auf Seite 'Kursangebot durchsuchen.
 					 
-					 \item  Der Benutzer wählt auf dieser Seite im Bereich 'Kursangebot durchsuchen' aus der Drop-Down Liste 'Titel' aus und trägt im der darunterliegenden Eingabefeld den Namen 'Standardtanz' ein. Nach dem Klicken auf die Schaltfläche 'Suchen' wird in der Anzeige des Kursangebotes nur noch der Kurs 'Standardtanz' angezeigt.
+					 \item  Der Benutzer wählt auf dieser Seite im Bereich 'Kursangebot durchsuchen' aus der Drop-Down Liste 'Titel' aus und trägt in dem darunterliegenden Eingabefeld den Namen 'Standardtanz' ein. Nach dem Klicken auf die Schaltfläche 'Suchen' wird in der Anzeige des Kursangebotes nur noch der Kurs 'Standardtanz' angezeigt.
 					\end{itemize}
 				(vgl. \RefFuncBlue{/F10-50/})	
 				Anschließend klickt der Nutzer auf den angezeigten Kurs 'Standardtanz' und wird auf dessen Seite 'Kursdetails' weitergeleitet. Hier werden dem Benutzer die Identifikationsnummer, der Titel, die Beschreibung, der Kursleiter und die Kurseinheiten angezeigt, die in den Testfällen \RefFuncBrown{/T10-90/} und \RefFuncBrown{/T20-40/} bis \RefFuncBrown{/T20-70/} angelegt wurden. (vgl. \RefFuncBlue{/F10-60/}) 
@@ -1038,12 +1016,12 @@ Der Stellenwert der Qualitätskriterien begründet sich wie folgt:
 								\item Anrede: 'Frau'
 								\item Name: 'Hölzl'
 								\item Vorname: 'Katharina'
-								\item Geburtsdatum: '29.05.1993'
+								\item Geburtsdatum: '29.05.2016'
 								\item Adresse: 'Am Kastenfeld 39'
 								\item Postleitzahl: '94081'
 								\item Ort: 'Fürstenzell'
 							\end{itemize}
-						Der Benutzer drückt den Button 'Registrieren'. Daraufhin wird er durch verschiedene Fehlermeldungen darauf hingewiesen, dass der Benutzername 'Ricky1' bereits existiert, dass das Passwort zu kurz ist, dass keine E-Mailadresse angegeben wurde und dass die AGBs nicht bestätigt wurden. Die entsprechenden Felder Benutzername und Passwort werden geleert, alle anderen bereits eingegebenen Daten bleiben bestehen.
+						Der Benutzer drückt den Button 'Registrieren'. Daraufhin wird er durch verschiedene Fehlermeldungen darauf hingewiesen, dass der Benutzername 'Ricky1' bereits existiert, dass das Passwort zu kurz ist, dass keine E-Mailadresse angegeben wurde, dass das Datum in der Zukunft liegt und dass die AGBs nicht bestätigt wurden. Die entsprechenden Felder 'Benutzername' und 'Passwort' werden geleert, alle anderen bereits eingegebenen Daten bleiben bestehen. (vgl. \RefFuncBlue{/L20-10/}), (vgl. \RefFuncBlue{/L20-20/}), (vgl. \RefFuncBlue{/L20-140/}), (vgl. \RefFuncBlue{/L20-120/}) und (vgl. \RefFuncBlue{/L20-160/})
 						
 						\item Der Benutzer ändert seinen Benutzernamen auf 'Kathi5'. Außerdem gibt er die beiden Passwörter 'bSdFg7HjK' und 'bSdFg7HjK1' ein. Als E-Mailadresse gibt er 'katharinahoelzlweb.de' an. Nach Drücken des Button 'Registrieren' wird der Benutzer durch Fehlermeldungen darauf hingewiesen, dass seine Passwörter nicht übereinstimmen, die E-Mailadresse ein falsches Format hat und die AGBs nicht bestätigt wurden. Die Eingabefelder der Passwörter und der E-Mailadresse werden gelöscht, alle anderen bereits eingegebenen Daten bleiben bestehen.
 						
@@ -1067,7 +1045,7 @@ Der Stellenwert der Qualitätskriterien begründet sich wie folgt:
 			Der Benutzer befindet sich auf der Startseite, nachdem er sich registriert hat. (vgl. \RefFuncBrown{/T30-30/}) Nach Drücken des Button 'Anmelden' öffnet sich ein Drop-Down Menü, in welches der Benutzer seinen Benutzernamen 'Kathi5' und sein Passwort 'bSdFg7HjK8*' eingibt. Nach dem Klicken auf die Schaltfläche 'Anmelden' bekommt der Benutzer eine Fehlermeldung, welche ihn darauf hinweist, dass sein Account noch nicht bestätigt wurde. Der Benutzer wird auf die Startseite weitergeleitet.
 			
 			\item \Test{Account aktivieren durch den Systemadministrator}
-			Der Systemadministrator befindet sich auf der Seite 'Adminverwaltung' und wird nach dem Drücken des Button 'Benutzer verwalten' auf die Seite 'Benutzer durchsuchen' weitergeleitet. Hier werden die bereits registrierten Benutzer 'Basti3', 'Ricky1' und 'Kathi5' mit den in den Testfällen \RefFuncBrown{/T10-50/}, \RefFuncBrown{/T10-60/} und \RefFuncBrown{/T30-30/} angelegten Daten angezeigt. Auf dieser Seite wählt der Admin im Drop-Down Menü 'Nicht aktiviert' aus und klickt anschließend auf den Button 'suchen'. Nun wird nur noch der Benutzer 'Kathi5' angezeigt. Der Administrator aktiviert den Account von 'Kathi5', indem er in das Kästchen rechts außen einen Hacken setzt und anschließend auf den Button 'Benutzer aktivieren' klickt. Der Benutzer 'Kathi5' ist nun aktiviert und kann sich ins System einloggen. (vgl. \RefFuncBrown{/T40-30/})  
+			Der Systemadministrator befindet sich auf der Seite 'Adminverwaltung' und wird nach dem Drücken des Button 'Benutzer verwalten' auf die Seite 'Benutzer durchsuchen' weitergeleitet. Hier werden die bereits registrierten Benutzer 'Basti3', 'Ricky1' und 'Kathi5' mit den in den Testfällen \RefFuncBrown{/T10-50/}, \RefFuncBrown{/T10-60/} und \RefFuncBrown{/T30-30/} angelegten Daten angezeigt. Auf dieser Seite wählt der Admin im Drop-Down Menü 'Nicht aktiviert' aus und klickt anschließend auf den Button 'Suchen'. Nun wird nur noch der Benutzer 'Kathi5' angezeigt. Der Administrator aktiviert den Account von 'Kathi5', indem er in das Kästchen rechts außen einen Hacken setzt und anschließend auf den Button 'Benutzer aktivieren' klickt. Der Benutzer 'Kathi5' ist nun aktiviert und kann sich ins System einloggen. (vgl. \RefFuncBrown{/T40-30/})  
 			(vgl. \RefFuncBlue{/F40-110/})
 			
 			
@@ -1101,7 +1079,7 @@ Der Stellenwert der Qualitätskriterien begründet sich wie folgt:
 						 \end{itemize}
 					Außerdem gibt er seine Kreditkartendaten ein. Anschließend klickt der Nutzer auf den Button 'Konto aufladen' und wird durch eine Fehlermeldung darauf hingewiesen, dass ein falsches Format im Eingabefeld 'Betrag' eingetragen wurde. Dieses Feld wird geleert, die anderen Eingaben bleiben erhalten.
 						
-					\item 'Kathi5' trägt in das Eingabefeld für den Betrag nun '50,00' ein. Nach dem Drücken des Button 'Aufladen' wird der Nutzer auf seine Profilseite weitergeleitet. Der Kontostand, welcher zuvor 0,00 Euro betrug, zeigt nun 50,00 an.  (vgl. \RefFuncBlue{/F20-190/})
+					\item 'Kathi5' trägt in das Eingabefeld für den Betrag nun '50,00' ein. Nach dem Drücken des Button 'Konto aufladen' wird der Nutzer auf seine Profilseite weitergeleitet. Der Kontostand, welcher zuvor 0,00 Euro betrug, zeigt nun 50,00 an.  (vgl. \RefFuncBlue{/F20-190/})
 				\end{itemize}
 			\end{itemize}
 		
@@ -1132,9 +1110,9 @@ Der Stellenwert der Qualitätskriterien begründet sich wie folgt:
 				Der Benutzer 'Kathi5' befindet sich auf der Seite 'Meine Kurse' und gelangt durch Klicken auf den Kurs 'Standardtanz' zur dessen Detailansicht. Dort wählt er durch Setzen des Häckchens die Kurseinheiten '31.08.2015' und '07.09.2015' aus und bestätigt durch Drücken des Button 'Speichern'. Der Benutzer erhält eine Fehlermeldung, dass durch das Belegen dieser Kurseinheiten sein Guthaben über die erlaubte Grenze hinaus überschritten wird und er sich deshalb nicht anmelden kann. Die Häckchen der beiden ausgewählten Kurseinheiten werden entfernt, der Benutzer bleibt auf der Seite 'Detailansicht'.
 				
 				\item \Test{Kurseinheit abmelden und Rückbuchung des Kurspreises}
-				Der Benutzer 'Kathi5' entfernt in der Detailansicht des Kurses 'Standardtanz' bei der Kurseinheit '17.08.2015' den Hacken im Kästchen 'Angemeldet und drückt den Button 'Speichern'. Dadurch wurde 'Kathi5' aus dieser Kurseinheit ausgetragen und der Betrag von 15,00 Euro wird automatisch auf das Guthabenkonto rückgebucht.  (vgl. \RefFuncBlue{/F20-150/}) und (vgl. \RefFuncBlue{/F20-220/})
+				Der Benutzer 'Kathi5' entfernt in der Detailansicht des Kurses 'Standardtanz' bei der Kurseinheit '17.08.2015' den Hacken im Kästchen 'Angemeldet' und drückt den Button 'Speichern'. Dadurch wurde 'Kathi5' aus dieser Kurseinheit ausgetragen und der Betrag von 15,00 Euro wird automatisch auf das Guthabenkonto rückgebucht.  (vgl. \RefFuncBlue{/F20-150/}) und (vgl. \RefFuncBlue{/F20-220/})
 				
-				\item \Test{aktuelles Guthaben ansehen}
+				\item \Test{Aktuelles Guthaben ansehen}
 				Der Nutzer 'Kathi5' befindet sich auf der Profilseite. Hier wird der aktuelle Kontostand von 20,00 Euro angezeigt. (vgl. \RefFuncBlue{/F20-80/})
 				
 				\item \Test{Hilfeseite anzeigen}
@@ -1143,13 +1121,13 @@ Der Stellenwert der Qualitätskriterien begründet sich wie folgt:
 				\item \Test{Hochladen eines Profilbildes}
 				Der Nutzer 'Kathi5' befindet sich auf der Profilseite. Es werden die im Testfall \RefFuncBrown{/T30-30/} eingetragenen Daten angezeigt. Als Profilbild erscheint ein Dummy-Bild. 
 					\begin{itemize}
-						\item Zunächst wird der Button 'Bearbeiten' angeklickt. Dieser ändert sich in den Button 'Speichern'. Nun können die Angaben bearbeitet werden. Nach Drücken der Schaltfläche 'Durchsuchen' wird das Video 'Test.mp3' ausgewählt. Der Benutzer klickt auf den Button 'Speichern und es erscheint eine Fehlermeldung, da eine Musikdatei hochgeladen wurde. Das Dummy-Bild bleibt erhalten, ebenso wie der Button 'Speichern'.
+						\item Zunächst wird der Button 'Bearbeiten' angeklickt. Dieser ändert sich in den Button 'Speichern'. Nun können die Angaben bearbeitet werden. Nach Drücken der Schaltfläche 'Durchsuchen' wird die Musikdatei 'Test.mp3' ausgewählt. Der Benutzer klickt auf den Button 'Speichern und es erscheint eine Fehlermeldung, da eine Musikdatei hochgeladen wurde. Das Dummy-Bild bleibt erhalten, ebenso wie der Button 'Speichern'.
 						\item Nach erneutem Drücken der Schaltfläche 'Durchsuchen' wird das Bild 'KathiProfil.jpg' ausgewählt und Klicken auf den Button 'Speichern' hochgeladen. Es erscheint nun anstelle des Dummy-Bildes.	Der Button 'Speichern' wird wieder in 'Bearbeiten' geändert und die Eingabefelder können nicht geändert werden.	
 					\end{itemize}
 				(vgl. \RefFuncBlue{/F20-70/})
 									
 				\item \Test{E-Mailadresse ändern}
-				'Kathi5' befindet sich auf der Profilseite. Nach Drücken der Schaltfläche 'Bearbeiten' können die Daten, bis auf die Benutzerrolle, geändert werden. und der Button 'Bearbeiten' ändert sich in 'Speichern'. Der Benutzer ändert die E-Mailadresse auf 'hoelzlka@fim.uni-passau.de'. Anschließend klickt 'Kathi5' auf den Button 'Speichern' und erhält an die angegebene Mailadresse einen Verifizierungslink. Nach Bestätigung durch diesen Link wird der Benutzer auf die Seite 'Mein Profil' weitergeleitet, in dem die E-Mailadresse auf die Aktuelle geändert ist. (vgl. \RefFuncBlue{/F20-60/})
+				'Kathi5' befindet sich auf der Profilseite. Nach Drücken der Schaltfläche 'Bearbeiten' können die Daten, bis auf die Benutzerrolle, geändert werden und der Button 'Bearbeiten' ändert sich in 'Speichern'. Der Benutzer ändert die E-Mailadresse auf 'hoelzlka@fim.uni-passau.de'. Anschließend klickt 'Kathi5' auf den Button 'Speichern' und erhält an die angegebene Mailadresse einen Verifizierungslink. Nach Bestätigung durch diesen Link wird der Benutzer auf die Seite 'Mein Profil' weitergeleitet, in dem die E-Mailadresse auf die Aktuelle geändert ist. (vgl. \RefFuncBlue{/F20-60/})
 				
 				\item \Test{Anmelden in Kurs der bereits voll ist.}
 				Der Benutzer 'Ricky1' befindet sich auf der Seite 'Kursangebot durchsuchen' und wählt den Kurs 'Standardtanz aus. Durch Anklicken dieses Kurses wird er auf die Detailseite weitergeleitet. Dort meldet er sich über die Schaltfläche 'Anmelden' für diesen Kurs an und wird auf die Seite 'Meine Kurse' weitergeleitet. Nun klickt 'Ricky1' auf den Kurs 'Standardtanz' und erhält dessen Detailansicht. Durch Setzen des Hackens bei dem Termin '04.08.2015' und dem anschließenden Drücken der Schaltfläche 'Speichern', will sich der Benutzer in die ausgewählte Kurseinheit eintragen. Da die maximale Teilnehmerzahl aber auf 2 beschränkt ist und bereits zwei Benutzer eingetragen sind, erhält 'Ricky1' eine Fehlermeldung und bleibt auf der Seite 'Detailansicht'.
@@ -1164,7 +1142,7 @@ Der Stellenwert der Qualitätskriterien begründet sich wie folgt:
 				Der Benutzer 'Kathi5' befindet sich momentan auf der Profilseite. Durch Drücken der Schaltfläche 'Abmelden' wird 'Kathi5' aus dem System abgemeldet und zur Startseite weitergeleitet. (vgl. \RefFuncBlue{/F20-90/})
 					
 				\item \Test{Passwort vergessen}
-				Der Benutzer 'Kathi5' will sich anmelden, hat aber das sein Passwort vergessen. 'Kathi5' Klickt auf den Button 'Anmelden' und anschließend in dem sich öffnenden Drop-Down Menü auf 'Passwort vergessen'. In dem nun erscheinenden Eingabefeld gibt der Benutzer seine im System gespeicherte E-Mailadresse 'hoelzlka@fim.uni-passau.de' (vgl. \RefFuncBrown{/F40-160/}) ein. An diese Adresse wird nun ein automatisch generiertes Passwort geschickt, welches der Benutzer nun zusammen mit seinem Benutzernamen in die entsprechenden Felder im Drop-Down Menü auf der Startseite eingibt. Durch Drücken des Button 'Anmelden' wird der Benutzer eingeloggt. (vgl. \RefFuncBlue{/F20-100/})
+				Der Benutzer 'Kathi5' will sich anmelden, hat aber sein Passwort vergessen. 'Kathi5' Klickt auf den Button 'Anmelden' und anschließend in dem sich öffnenden Drop-Down Menü auf 'Passwort vergessen'. In dem nun erscheinenden Eingabefeld gibt der Benutzer seine im System gespeicherte E-Mailadresse 'hoelzlka@fim.uni-passau.de' (vgl. \RefFuncBrown{/F40-160/}) ein. An diese Adresse wird nun ein automatisch generiertes Passwort geschickt, welches der Benutzer nun zusammen mit seinem Benutzernamen in die entsprechenden Felder im Drop-Down Menü auf der Startseite eingibt. Durch Drücken des Button 'Anmelden' wird der Benutzer eingeloggt. (vgl. \RefFuncBlue{/F20-100/})
 					
 			\end{itemize}
 \section{Testfälle mit Datensatz}
@@ -1184,7 +1162,7 @@ Der Stellenwert der Qualitätskriterien begründet sich wie folgt:
 				Der Kursleiter 'Basti3' befindet sich auf der Seite 'Kurseinheiten bearbeiten' der Kurseinheit '11.05.2015' des Kurses 'Standardtanz' und trägt im Bereich 'Teilnehmer hinzufügen' den Namen 'Strohmeier', den Vornamen 'Ricky' und die BenutzerId ein. Durch Drücken des Button 'Hinzufügen' wird der Benutzer 'Ricky1' zu dieser Kurseinheit eingetragen und der Kursleiter auf die Seite 'Meine Kurse' weitergeleitet. (vgl. \RefFuncBlue{/F30-50/})
 						
 				\item \Test{Benutzerrolle aufwerten durch Systemadministrator} 
-				Der Systemadministrator klickt auf der Seite 'Adminverwaltung' auf die Schaltfläche 'Benutzer verwalten' und wird auf die Seite 'Benutzer durchsuchen'. Durch Anklicken des Benutzers 'Kathi5' wird der Admin auf die Seite 'Benutzer bearbeiten' weitergeleitet. Hier klickt er auf den Button 'Bearbeiten', welcher sich zu 'Speichern' ändert und wählt im Status des Benutzers 'Kathi5' die neue Rolle 'Kursleiter' aus. Durch Drücken des Buttons 'Speichern' bestätigt der Administrator diese Änderung und wird auf die Seite 'Adminverwaltung' weitergeleitet.(vgl. \RefFuncBlue{/F40-90/})
+				Der Systemadministrator klickt auf der Seite 'Adminverwaltung' auf die Schaltfläche 'Benutzer verwalten' und wird auf die Seite 'Benutzer durchsuchen' weitergeleitet. Durch Anklicken des Benutzers 'Kathi5' wird der Admin auf die Seite 'Benutzer bearbeiten' weitergeleitet. Hier klickt er auf den Button 'Bearbeiten', welcher sich zu 'Speichern' ändert und wählt im Status des Benutzers 'Kathi5' die neue Rolle 'Kursleiter' aus. Durch Drücken des Buttons 'Speichern' bestätigt der Administrator diese Änderung und wird auf die Seite 'Adminverwaltung' weitergeleitet.(vgl. \RefFuncBlue{/F40-90/}) und (vgl. \RefFuncBlue{/L20-50/})
 				
 				\item \Test{Teilnehmer aus Kurs entfernen durch Kursleiter}
 				Der Kursleiter 'Basti3' befindet sich auf der Seite 'Detailansicht des Kurses 'Yoga'. Hier drückt er den Button 'Zu den Teilnehmern' und wird auf die Teilnehmerseite weitergeleitet. Es ist bis jetz nur der Teilnehmer 'Kathi5' eingetragen. Auf dieser Seite wählt der Kursleiter den Teilnehmer 'Kathi5' aus und entfernt diesen aus dem Kurs durch Setzten des Häckchens und durch Drücken der Schaltfläche 'Löschen'. (vgl. \RefFuncBlue{/F30-80/})
