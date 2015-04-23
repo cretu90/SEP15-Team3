@@ -258,6 +258,10 @@ und sichert.
 \newcommand{\FuncGreen}[1]{\textcolor{Green}{\textbf{#1}}}
 
 \chapter{Produktfunktionen}
+\begin{tiny}
+	TF\\
+\end{tiny}
+\ \\
 Die Produktfunktionen sind nach Benutzergruppen geordnet. Wunschkriterien sind mit nachgestelltem 'W' gekennzeichnet.
 	\section{Anonymer Benutzer}
 		\subsection{Grundfunktionen}
@@ -265,7 +269,7 @@ Die Produktfunktionen sind nach Benutzergruppen geordnet. Wunschkriterien sind m
 				\item \Func{Aufruf der Startseite.}
 					Die Startseite kann mit jedem unterstützten \gls{Browser} (vgl. Produktumgebung -> 3.1 Software -> Client) via \gls{URL} aufgerufen werden.
 				\item \Func{Registrierung im System durch Ausfüllen eines Formulars.} \hypertarget{Registrieren}
-					Der Nutzer kann sich durch Ausfüllen eines Registrierungsformulars im System registrieren. Die Anwendung generiert für den neu registrierten Nutzer automatisch eine im System eindeutige Identifikationsnummer. Nach Abschicken des Formulars wird an die angegebene E-Mailadresse eine Bestätigungsmail  mit einem Verifizierungslink geschickt, welcher dazu dient, die E-Mailadresse des neuen Benutzers zu bestätigen. Der Nutzer wird dann auf die Startseite des Systems weitergeleitet. Ob sich der Benutzer nun schon in das System einloggen kann, hängt von der Art der Accountaktivierung ab. Diese wird durch den Administrator festgelegt(\FuncBlue{/F40-160/}). Der Account ist entweder durch die E-Mailverifikation automatisch aktiviert worden oder muss manuell durch einen Kursleiter oder einen Administrator aktiviert werden(\FuncBlue{/F30-120/}).
+					Der Nutzer kann sich durch Ausfüllen eines Registrierungsformulars im System registrieren. Die Anwendung generiert für den neu registrierten Nutzer automatisch eine im System eindeutige Identifikationsnummer. Nach Abschicken des Formulars wird an die angegebene E-Mailadresse eine Bestätigungsmail  mit einem Verifizierungslink geschickt, welcher dazu dient, die E-Mailadresse des neuen Benutzers zu bestätigen. Der Nutzer wird dann auf die Startseite des Systems weitergeleitet. Ob sich der Benutzer nun schon in das System einloggen kann, hängt von der Art der Accountaktivierung ab. Diese wird durch den Administrator festgelegt(\FuncBlue{/F40-160/}). Der Account ist entweder durch die E-Mailverifikation automatisch aktiviert worden oder muss manuell durch einen Kursleiter oder einen Administrator aktiviert werden(\FuncBlue{/F30-110/}).
 				\item \Func{Anzeigen des Kursangebots.} \hypertarget{kursAngAnz}
 					Durch Klicken der Schaltfläche 'Kursangebot' wird dem Nutzer das gesamte Kursangebot angezeigt. Die Anzeige ist automatisch aufsteigend nach dem 'Beginn' der nächsten Kurseinheit des Kurses sortiert. 
 				\item \Func{Sortieren des angezeigten Kursangebots.} \hypertarget{kursAnzSort}
@@ -281,7 +285,7 @@ Die Produktfunktionen sind nach Benutzergruppen geordnet. Wunschkriterien sind m
 				\item \Func{Anzeige der Allgemeinen Geschäftsbedingungen.} \hypertarget{agb}
 					Die Allgemeinen Geschäftsbedingungen können von jeder Seite des Systems aus angezeigt werden.
 				\item \FuncW{Wechsel der Anzeigesprache.} \hypertarget{spracheAendern}
-					Von jeder Seite des Systems aus kann durch Klicken einer entsprechenden Schaltfläche die Anzeigesprache gewechselt werden. Als Default ist 'Deutsch' ausgewählt. Als weitere Sprache ist 'Englisch' vorgesehen.
+					Von jeder Seite des Systems aus kann durch Klicken einer entsprechenden Schaltfläche die Anzeigesprache gewechselt werden. Als Default ist 'Deutsch' ausgewählt. Als weitere Sprache ist 'Englisch' vorgesehen. Vom einem Benutzer eingegebene Daten, wie beispielsweise die Beschreibung eines Kurses, werden nicht übersetzt.
 				\item \FuncW{Einschränken des angezeigten Kursangebots.} \hypertarget{kursEinschraenken}
 					Der Nutzer hat die Möglichkeit das angezeigte Kursangebot auf verschiedene Zeiträume einzuschränken. Vorgesehene Anzeigezeiträume sind 'Tagesangebot' und 'Wochenangebot'. Die Auswahl des Anzeigezeitraums ist über eine Drop-Down-Liste möglich. Bestätigt wird die Auswahl durch Klicken der 'Anzeigen' - Schaltfläche. 
 			\end{itemize}
@@ -332,7 +336,7 @@ Die Produktfunktionen sind nach Benutzergruppen geordnet. Wunschkriterien sind m
 					Eine Abmeldung von einer Kurseinheit ist nur bis drei Stunden vor deren Beginn möglich. Sollte nämlich aufgrund der Abmeldung des registrierten Nutzers die minimale Teilnehmerzahl der Kurseinheit unterschritten werden, kann der Kursleiter entscheiden, ob die Kurseinheit stattfindet oder nicht. Durch die Begrenzung der Abmeldefrist hat der Kursleiter somit noch eine gewisse Reaktionszeit und kann gegebenenfalls die anderen Teilnehmer über den Ausfall der Kurseinheit informieren. 
 				\item \Func{Nach Kursen suchen - erweitert.}
 					Der registrierte Nutzer hat die Möglichkeit das gesamte Kursangebot zu durchsuchen. Über eine Drop-Down-Liste kann der Nutzer einen Suchparameter auswählen. Nach Eingabe eines Suchbegriffs und Klicken der Schaltfläche 'Suchen' wird das Kursangebot nach dem Suchbegriff bzgl. des Suchparameters durchsucht und das Ergebnis angezeigt. 
-					Als Suchparameter sind vorgesehen 'ID', 'Titel', 'Kursleiter', 'Beginn', 'Kostenpflichtig', 'Kostenlos'.
+					Als Suchparameter sind vorgesehen 'ID', 'Titel', 'Kursleiter', 'Beginn'. Durch Auswahl einer entsprechenden Checkbox ist es möglich die Suche auf kostenlose Kurse zu beschränken.
 				\item \Func{Für Kursbenachrichtigungen eintragen}
 					Der registrierte Nutzer hat die Möglichkeit sich bei der Anmeldung zu einem Kurs(\FuncBlue{/F20-120/}) durch Auswahl einer Checkbox in der Detailansicht des Kurses für Benachrichtigungen zu diesem Kurs zu registrieren oder nicht. Per Default ist die Checkbox nicht ausgewählt.
 			\end{itemize}
@@ -369,31 +373,29 @@ Die Produktfunktionen sind nach Benutzergruppen geordnet. Wunschkriterien sind m
 		\subsection{Kurse}
 			\begin{itemize}
 				\item \Func{Eigene Kurse anzeigen.}
-					Auf der Kursleiterseite werden die Kurse, welche der Kursleiter trainiert, gesammelt angezeigt.
+					Auf der Kursleiterseite werden die Kurse, welche der Kursleiter leitet, gesammelt angezeigt.
 				\item \Func{Eigenen Kurs editieren.} \hypertarget{kursEdit}
-					Der Kursleiter hat die Möglichkeit, die Kurse, die er  trainiert zu editieren. Dafür klickt er in seinen Trainingskursen den gewünschten Kurs an und wird auf die zugehörige 'Kursdetails' - Seite weitergeleitet. Durch Betätigen der 'Bearbeiten' - Schaltfläche kann er die Kursdaten bearbeiten. Er kann alle angezeigten Kursdaten verändern mit Ausnahme der vom System generierten Identifikationsnummer. Durch Betätigen der 'Speichern' - Schaltfläche werden die Kursdaten gespeichert.
-				\item \Func{Eigenen Kurs löschen.}
-					Der Kursleiter hat die Möglichkeit, Kurse, die er  trainiert zu löschen. Dafür klickt er in seinen Trainingskursen den gewünschten Kurs an und wird dann auf die zugehörige 'Kursdetails' - Seite weitergeleitet. Dort kann er den Kurs durch Betätigen der 'Kurs löschen' - Schaltfläche löschen.
+					Der Kursleiter hat die Möglichkeit, die Kurse, die er  leitet, zu editieren. Dafür klickt er in seinen Trainingskursen den gewünschten Kurs an und wird auf die zugehörige 'Kursdetails' - Seite weitergeleitet. Durch Betätigen der 'Bearbeiten' - Schaltfläche kann er die Kursdaten bearbeiten. Er kann alle angezeigten Kursdaten verändern mit Ausnahme der vom System generierten Identifikationsnummer. Durch Betätigen der 
 				\item \Func{Kurseinheit anlegen.} \hypertarget{kurseinheitAnlegen}
-					Der Kursleiter hat die Möglichkeit Kurseinheiten für einen Kurs anzulegen, welchen er trainiert. Dafür wechselt er in die 'Kursdetails' - Oberfläche. Dort betätigt er die Schaltfläche 'Kurseinheit anlegen'. Er wird auf eine Seite weitergeleitet, auf welcher er die Daten der Kurseinheit eintragen kann. Das System generiert für die Kurseinheit eine im System eindeutige Identifikationsnummer. Durch Betätigen der 'Speichern' - Schaltfläche wird die Kurseinheit angelegt. Die Kurseinheiten können nur in dem Zeitraum zwischen Startzeitpunkt und Endzeitpunkt des zugehörigen Kurses stattfinden.
+					Der Kursleiter hat die Möglichkeit Kurseinheiten für einen Kurs anzulegen, welchen er leitet. Dafür wechselt er in die 'Kursdetails' - Oberfläche. Dort betätigt er die Schaltfläche 'Kurseinheit anlegen'. Er wird auf eine Seite weitergeleitet, auf welcher er die Daten der Kurseinheit(\FuncBlue{/D30-10/}) eintragen kann. Das System generiert für die Kurseinheit eine im System eindeutige Identifikationsnummer. Durch Betätigen der 'Speichern' - Schaltfläche wird die Kurseinheit angelegt. Die Kurseinheiten können nur in dem Zeitraum zwischen Startdatum und Enddatum des zugehörigen Kurses stattfinden.
 				\item \Func{Kurseinheit editieren.} \hypertarget{kurseinheitEdit}
-					Der Kursleiter hat die Möglichkeit Kurseinheiten der eigenen Kurse zu editieren. Dafür klickt er in der Detailansicht des Kurses die 'Bearbeiten' - Schaltfläche der Kurseinheit an und wird auf die 'Kurseinheit bearbeiten' - Oberfläche weitergeleitet. Hier kann der Kursleiter die Daten der Kurseinheit(\FuncBlue{/D30-10/}) mit Ausnahme der vom System generierten Identifikationsnummer bearbeiten. Außerdem kann der Kursleiter hier manuell durch Eingabe der Daten einen Teilnehmer zur Kurseinheit hinzufügen(\FuncBlue{/F30-60/}).
+					Der Kursleiter hat die Möglichkeit Kurseinheiten der eigenen Kurse zu editieren. Dafür klickt er in der Detailansicht des Kurses die 'Bearbeiten' - Schaltfläche der Kurseinheit an und wird auf die 'Kurseinheit bearbeiten' - Oberfläche weitergeleitet. Hier kann der Kursleiter die Daten der Kurseinheit(\FuncBlue{/D30-10/}) mit Ausnahme der vom System generierten Identifikationsnummer bearbeiten.
 				\item \Func{Teilnehmer zu Kurseinheit hinzufügen.}
-					Der Kursleiter hat die Möglichkeit durch Eingabe der Daten eines Benutzers diesen als Teilnehmer zu einer einzelnen Kurseinheit einer seiner Kurse einzutragen. Dafür muss der Kursleiter auf die 'Kurseinheit bearbeiten' - Seite der entsprechenden Kurseinheit wechseln.
+					Der Kursleiter hat die Möglichkeit durch Eingabe der Identifikationsnummer, des Namens und des Vornamens eines Benutzers diesen als Teilnehmer zu einer einzelnen Kurseinheit einer seiner Kurse einzutragen. Dafür muss der Kursleiter auf die 'Kurseinheit bearbeiten' - Seite der entsprechenden Kurseinheit wechseln.
 				\item \Func{Teilnehmer aus Kurseinheit entfernen.}
 				    Der Kursleiter hat die Möglichkeit Teilnehmer aus einer Kurseinheit eines von ihm geleiteten Kurses zu entfernen. Dafür muss der Kursleiter auf die 'Kurseinheit bearbeiten' - Seite der entsprechenden Kurseinheit wechseln. Dort wählt er den zu löschenden Teilnehmer aus der Teilnehmerliste der Kurseinheit aus und betätigt die 'Löschen' - Schaltfläche. Es besteht auch die Möglichkeit mehrere Teilnehmer gleichzeitig zu löschen.
 				\item \Func{Kurseinheit löschen.} \hypertarget{kurseinheitLoeschen}
-					Der Kursleiter kann Kurseinheiten eigener Kurse löschen. Dafür wechselt er durch Betätigen der 'Bearbeiten' - Schaltfläche der zu löschenden Kurseinheit auf die 'Kurseinheit bearbeiten' - Oberfläche. Durch Betätigen der 'Löschen' - Schaltfläche kann er die Kurseinheit löschen.
+					Der Kursleiter kann Kurseinheiten eigener Kurse löschen. Dafür wechselt er durch Betätigen der 'Bearbeiten' - Schaltfläche der zu löschenden Kurseinheit auf die 'Kurseinheit bearbeiten' - Oberfläche. Durch Betätigen der 'Löschen' - Schaltfläche kann er die Kurseinheit löschen(vgl. \FuncBlue{/L10-50/}).
 				\item \Func{Teilnehmer aus Kurs entfernen.} \hypertarget{kursUserDel}
-					Der Kursleiter kann einzelne Teilnehmer aus einem seiner eigenen Kurse entfernen. Dafür wechselt er über die 'Kursdetails' - Oberfläche auf die Teilnehmerliste des Kurses. Dort wählt er den zu entfernenden Teilnehmer aus und entfernt diesen durch Betätigen der 'Löschen' - Schaltfläche aus dem Kurs. Es besteht auch die Möglichkeit mehrere Teilnehmer gleichzeitig zu entfernen.
+					Der Kursleiter kann einzelne Teilnehmer aus einem seiner eigenen Kurse entfernen. Dafür wechselt er über die 'Kursdetails' - Oberfläche auf die Teilnehmerliste des Kurses. Dort wählt er den zu entfernenden Teilnehmer aus und entfernt diesen durch Betätigen der 'Löschen' - Schaltfläche aus dem Kurs(vgl. \FuncBlue{/L10-50/}). Es besteht auch die Möglichkeit mehrere Teilnehmer gleichzeitig zu entfernen.
 			\end{itemize}
 
 		\subsection{Benachrichtigungen}
 			\begin{itemize}
 				\item \Func{Benachrichtigung an Benutzergruppe senden.} \hypertarget{kursUserMsg}
-					Der Kursleiter kann Benachrichtigungen an alle Teilnehmer seines Kurses oder nur an die Teilnehmer einer Kurseinheit seines Kurses senden.
+					Der Kursleiter kann Benachrichtigungen an alle Teilnehmer seines Kurses oder nur an die Teilnehmer einer Kurseinheit seines Kurses senden. Voraussetzung dafür, dass die Teilnehmer Benachrichtigungen erhalten, ist deren Registrierung für die Kursbenachrichtigungen bei der Anmeldung zum Kurs.
 				\item \Func{Benachrichtigung bei Kursänderung senden.}	
-					Nimmt der Kursleiter Änderungen an einem seiner Kurse oder seiner Kurseinheiten vor, so kann er entscheiden, ob er alle Kursteilnehmer, nur die Teilnehmer der betreffenden Kurseinheit oder keinen Teilnehmer benachrichtigt.
+					Nimmt der Kursleiter Änderungen an einem seiner Kurse oder seiner Kurseinheiten vor, so kann er entscheiden, ob er alle Kursteilnehmer, nur die Teilnehmer der betreffenden Kurseinheit oder keinen Teilnehmer benachrichtigt. Voraussetzung dafür, dass die Teilnehmer Benachrichtigungen erhalten, ist deren Registrierung für die Kursbenachrichtigungen bei der Anmeldung zum Kurs.
 			\end{itemize}
 
 		\subsection{Verwaltung}
@@ -409,13 +411,13 @@ Die Produktfunktionen sind nach Benutzergruppen geordnet. Wunschkriterien sind m
 		\subsection{Kurse}
 			\begin{itemize}
 				\item \Func{Kurs anlegen.} \hypertarget{kursErstellen}
-					Der Systemadministrator kann einen neuen Kurs anlegen. Dafür betätigt der Administrator die entsprechende Schaltfläche auf der Administratorseite und wird auf die 'Neuen Kurs anlegen' - Seite weitergeleitet. Die Anwendung generiert automatisch eine für den Kurs im System eindeutige Identifikationsnummer. Der Administrator hat die Möglichkeit die Daten des Kurses(\FuncBlue{/D20-10/}), wie etwa eine Beschreibung, einzugeben. Notwendige Eingaben sind der Startzeitpunkt, der Endzeitpunkt und mindestens ein Kursleiter für den Kurs. Innerhalb des Zeitraums von Startzeitpunkt bis Endzeitpunkt können Kurseinheiten stattfinden.
+					Der Systemadministrator kann einen neuen Kurs anlegen. Dafür betätigt der Administrator die entsprechende Schaltfläche auf der Administratorseite und wird auf die 'Neuen Kurs anlegen' - Seite weitergeleitet. Die Anwendung generiert automatisch eine für den Kurs im System eindeutige Identifikationsnummer. Der Administrator hat die Möglichkeit die Daten des Kurses(\FuncBlue{/D20-10/}), wie etwa eine Beschreibung, einzugeben. Notwendige Eingaben sind der Startdatum, der Enddatum und mindestens ein Kursleiter für den Kurs. Innerhalb des Zeitraums von Startdatum bis Enddatum können Kurseinheiten stattfinden.
 				\item \Func{Kurse verwalten.} \hypertarget{kursVerwalt}
 					Der Systemadministrator kann sich alle Kurse anzeigen lassen. Dafür betätigt er die Schaltfläche 'Kurse verwalten' und wird auf die 'Kursangebot durchsuchen' - Oberfläche weitergeleitet. Dort kann er sich das gesamte Kursangebot anzeigen lassen oder nach bestimmten Kursen bezüglich verschiedener Suchparameter suchen. Durch Betätigen der Schaltfläche 'Suchen' werden die gesuchten Kurse angezeigt. Durch Klicken auf einen Kurs wird der Administrator auf die zugehörige 'Kursdetails' - Seite weitergeleitet.
 				\item \Func{Kurs bearbeiten.} \hypertarget{kursBearbeiten}
 					Der Systemadministrator hat die Möglichkeit einen beliebigen Kurs zu bearbeiten. Dafür wechselt er in die Detailansicht des zu editierenden Kurses. Durch Betätigen der 'Bearbeiten' - Schaltfläche  kann der Administrator nun die angezeigten Kursdaten editieren(vgl. \FuncBlue{/D20-10/}). Einzige Ausnahme ist die vom System generierte Identifikationsnummer des Kurses. Des Weiteren kann er Kurseinheiten anlegen, löschen oder editieren, Kursleiter zum Kurs hinzufügen oder entfernen und die Teilnehmer des Kurses editieren.
 				\item \Func{Kurs löschen.} \hypertarget{kursLoeschen}
-					Der Systemadministrator hat die Möglichkeit einen beliebigen Kurs zu löschen. Dafür wechselt er auf die 'Kursdetails' - Seite des zu löschenden Kurses. Durch Betätigen der 'Kurs löschen' - Schaltfläche wird der Kurs und damit auch alle zugehörigen Kurseinheiten gelöscht.
+					Der Systemadministrator hat die Möglichkeit einen beliebigen Kurs zu löschen. Dafür wechselt er auf die 'Kursdetails' - Seite des zu löschenden Kurses. Durch Betätigen der 'Kurs löschen' - Schaltfläche wird der Kurs und damit auch alle zugehörigen Kurseinheiten gelöscht(vgl. \FuncBlue{/L10-50/}).
 			\end{itemize}
 
 	\subsection{Benutzer}
@@ -428,7 +430,7 @@ Die Produktfunktionen sind nach Benutzergruppen geordnet. Wunschkriterien sind m
 				\item \Func{Benutzer bearbeiten.} \hypertarget{nutzerBearbeiten}
 					Der Systemadministrator hat die Möglichkeit einen beliebigen registrierten Nutzer zu bearbeiten. Dafür wechselt er auf die 'Profil' - Seite des zu bearbeitenden Nutzers. Durch Betätigen der 'Bearbeiten' - Schaltfläche kann er Administrator nun die Benutzerdaten editieren oder die Benutzerrolle verändern. Der Administrator kann alle Benutzerdaten verändern mit Ausnahme der vom System generierten Identifikationsnummer des Benutzers. Durch Betätigen der 'Speichern' - Schaltfläche werden die Daten gespeichert.
 				\item \Func{Benutzer löschen.} \hypertarget{nutzerLoeschen}
-					Der Systemadministrator hat die Möglichkeit einen beliebigen Benutzer zu löschen. Dafür wechselt er auf die 'Profil' - Seite des zu löschenden Benutzers. Durch Betätigen der 'Benutzer löschen' - Schaltfläche wird der Benutzer gelöscht. Nur der Administrator hat die Möglichkeit Benutzer zu löschen. Andernfalls könnte ein \glqq Nicht - Administrator\grqq \ einen Benutzer und damit auch sein Guthaben bzw. seine eventuellen Schulden löschen.
+					Der Systemadministrator hat die Möglichkeit einen beliebigen Benutzer zu löschen. Dafür wechselt er auf die 'Profil' - Seite des zu löschenden Benutzers. Durch Betätigen der 'Benutzer löschen' - Schaltfläche wird der Benutzer gelöscht(vgl. \FuncBlue{/L10-50/}). Nur der Administrator hat die Möglichkeit Benutzer zu löschen. Andernfalls könnte ein \glqq Nicht - Administrator\grqq \ einen Benutzer und damit auch sein Guthaben bzw. seine eventuellen Schulden löschen.
 				\item \Func{Benutzerrolle verändern.} \hypertarget{nutzerRolle}
 					Der Systemadministrator hat die Möglichkeit die Rolle jedes Nutzers zu verändern. Als Benutzerrollen sind 'Benutzer', 'Kursleiter' und 'Administrator' vorgesehen. Die Benutzerrolle kann auf der 'Benutzer bearbeiten' - Seite verändert werden.
 				\item \Func{Benutzer suchen.} \hypertarget{nutzerSuchen}
@@ -440,7 +442,7 @@ Die Produktfunktionen sind nach Benutzergruppen geordnet. Wunschkriterien sind m
 		\subsection{Verwaltung}
 			\begin{itemize}
 				\item \Func{Statistiken anzeigen} \hypertarget{statistik}
-					Der Systemadministrator hat die Möglichkeit sich Statistiken bezüglich der Einnahmen anzusehen. Er kann dafür aus 	verschiedenen Parametern wählen, welche Statistik angezeigt werden soll. Die Auswahl der Parameter erfolgt über eine Drop-Down - Liste. Vorgesehene Parameter für die Statistik sind Einnahmen pro 'Tag', pro 'Woche', pro Kursleiter', pro 'Kurs'. Bei Wahl eines der Parameter 'Tag', 'Woche' oder 'Kursleiter' ist ein graphische Darstellung in Form eines Säulendiagramms vorgesehen. Bei Parameter 'Tag' werden die Einnahmen der letzten sieben Tage angezeigt, bei Parameter 'Woche' die Einnahmen der letzten vier Wochen. Bei Wahl des Parameters 'Kurs' ist aufgrund der Menge von Kursen eine tabellarische Anzeige vorgesehen. Durch Betätigen der Schaltfläche 'Anzeigen' wird die gewählte Statistik angezeigt.
+					Der Systemadministrator hat die Möglichkeit sich Statistiken bezüglich der Einnahmen anzusehen. Er kann dafür aus 	verschiedenen Parametern wählen, welche Statistik angezeigt werden soll. Die Auswahl der Parameter erfolgt über eine Drop-Down - Liste. Vorgesehene Parameter für die Statistik sind Einnahmen pro 'Tag', pro 'Woche', pro 'Kursleiter', pro 'Kurs'. Bei Wahl eines der Parameter 'Tag', 'Woche' oder 'Kursleiter' ist ein graphische Darstellung in Form eines Säulendiagramms vorgesehen. Bei Parameter 'Tag' werden die Einnahmen der letzten sieben Tage angezeigt, bei Parameter 'Woche' die Einnahmen der letzten vier Wochen. Bei Wahl des Parameters 'Kurs' ist aufgrund der Menge von Kursen eine tabellarische Anzeige vorgesehen. Durch Betätigen der Schaltfläche 'Anzeigen' wird die gewählte Statistik angezeigt.
 				\item \Func{Guthabenkonto aufladen} \hypertarget{guthabenAuf}
 					Der Systemadministrator hat die Möglichkeit das Guthabenkonto von  registrierten Nutzern manuell aufzuladen. Damit kann er \glqq Offline - Aufladungen\grqq(\FuncBlue{/F20-190/})  des Guthabenkontos eines registrierten Nutzers auf dessen Konto im System weitergeben. Für die Kontoaufladung gibt der Administrator auf der Administratorseite die Identifikationsnummer des Benutzers, dessen Namen und den aufzuladenden Betrag ein. Durch Betätigen der Schaltfläche 'Konto aufladen' wird das Konto des Benutzers mit der eingegebenen Identifikationsnummer um den eingegebenen Betrag aufgeladen. Ab diesem Zeitpunkt kann der registrierte Benutzer das Guthaben verwenden. Das Aufladen des Guthabenkontos ist nur dann möglich, wenn der eingegebene Name auch zur Identifikationsnummer passt. So wird sichergestellt, dass durch Tippfehler bei der Identifikationsnummer nicht der falsche Nutzer das Guthaben erhält.
 				\item \Func{Überziehungskredit festlegen.}
