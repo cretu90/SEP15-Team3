@@ -120,7 +120,7 @@
 \chapter{Zielbestimmung}
 	\begin{tiny}
 		RS
-	\end{tiny}
+	\end{tiny}\\
 	   Bei der Webanwendung OfCourse handelt es sich um eine Online-Plattform, welche ein allgemeines Planungssystem für Kurse darstellt. Es ermöglicht Kursleitern und Kursteilnehmern die einfache Absprache von Terminen, was bisher zumeist eine große Herausforderung darstellt.
     \section{Musskriterien}      
     	\subsubsection{Allgemeiner Funktionsumfang:}
@@ -141,7 +141,7 @@
 				\item Kann sich zu Kursen anmelden \hyperlink{kursAnmelden}{F20-120} und abmelden \hyperlink{kursAbmelden}{F20-130}
 				\item Kann sich in Kurseinheiten eintragen \hyperlink{kurseinheitAnmelden}{F20-140} und austragen \hyperlink{kurseinheitAbmelden}{F20-150}
 				\item Kann eigene Profildaten editieren \hyperlink{profilEdit}{F20-60}
-				\item Kann Belegte Kurse anzeigen \hyperlink{kurseAnzeigen}{F20-20}
+				\item Kann belegte Kurse anzeigen \hyperlink{kurseAnzeigen}{F20-20}
 				\item Einsehen des eigenen Kontostands \hyperlink{kontoAnzeigen}{F20-80} und Geld aufladen \hyperlink{kontoAufladenOn}{F20-180} und \hyperlink{kontoAufladenOff}{F20-190}
 				\item Kann Passwort zurücksetzen \hyperlink{passwort}{F20-100}
 				\item Funktionsumfang eines Benutzers erweitert sich aufsteigend je nach zugeteilter Rolle
@@ -149,10 +149,10 @@
 		\subsubsection{Funktionsumfang für Kursleiter:}
 			\begin{itemize}
 				\item Eigene Kurse bearbeiten \hyperlink{kursEdit}{F30-20}
-				\item Kurseinheiten anlegen \hyperlink{kurseinheitAnlegen}{F30-40}, editieren \hyperlink{kurseinheitEdit}{F30-50} und löschen \hyperlink{kurseinheitLoeschen}{F30-80}
-				\item Teilnehmer aus Kurs entfernen \hyperlink{kursUserDel}{F30-90}
-				\item Nutzer eines Kurses oder einzelner Kurseinheiten benachrichtigen \hyperlink{kursUserMsg}{F30-100}
-				\item Accounts bestätigen \hyperlink{addUserKL}{F30-120}
+				\item Kurseinheiten anlegen \hyperlink{kurseinheitAnlegen}{F30-30}, editieren \hyperlink{kurseinheitEdit}{F30-40} und löschen \hyperlink{kurseinheitLoeschen}{F30-70}
+				\item Teilnehmer aus Kurs entfernen \hyperlink{kursUserDel}{F30-80}
+				\item Nutzer eines Kurses oder einzelner Kurseinheiten benachrichtigen \hyperlink{kursUserMsg}{F30-900}
+				\item Accounts bestätigen \hyperlink{addUserKL}{F30-110}
 			\end{itemize}
 		\subsubsection{Funktionsumfang für Systemadministrator:}
 			\begin{itemize}
@@ -177,6 +177,7 @@
 	     		\item Keine Einsicht in fremde Nutzerprofile, nur Admin kann Nutzerdaten einsehen
 	     		\item Kein systeminternes Kommunikationssystem zwischen den Benutzern
 	     		\item Keine Funktionen zur erleichterten Bedienung für Nutzer mit Behinderung
+	     		\item Keine spezielle Anpassung an Mobilgeräte
      		\end{itemize}
         
   
@@ -217,8 +218,7 @@
 	            	\item Java 8
 	            	\item \gls{JSF} 2.2 (Entwicklungsframework)
 	            	\item \gls{Tomcat} 8 (Webserver)
-	            	\item \gls{PostgreeSQL} 9 (Datenbank)  
-	            	\item \gls{SMTP-Server}
+	            	\item \gls{PostgreeSQL} 9 (Datenbank)
 	            \end{itemize}
         \end{itemize}
         
@@ -714,7 +714,7 @@ Im folgenden wird beschrieben, welche Daten persistent gespeichert werden. Jeder
 \chapter{Qualitätsbestimmungen}
 	\begin{tiny}
 		RS
-	\end{tiny}
+	\end{tiny}\\
 	Im Folgenden wird aufgeführt auf welche Qualitätsmerkmale der Webanwendung Wert gelegt wird. Diese orientieren sich an der Norm \textit{ISO/IEC~9126}, welche ein Modell zur Sicherstellung von Softwarequalität darstellt. In wie weit die verschiedenen Qualitätsmerkmale Einfluss auf die Webanwendung nehmen sollen, wird in der unten gezeigten Tabelle definiert.\\
 
 	\begin{table}[h]
