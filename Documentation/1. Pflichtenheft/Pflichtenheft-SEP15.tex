@@ -791,7 +791,7 @@ Der Stellenwert der Qualitätskriterien begründet sich wie folgt:
 		\subsection{Setup}
 			\begin{itemize}
 				\item \Test{Anmeldung Administrator} 
-			     Der Administrator ruft die Startseite auf und loggt sich hier über die Schaltfläche 'Anmelden' in dem sich öffnenden Drop-Down Menü mit dem vorgefertigten Benutzername 'admin1' und dem Passwort 'ersterAdmin1' ein und wird nach dem Drücken des sich im Drop-Down Menü befindenden Buttons 'Anmelden' auf die Seite 'Meine Kurse' weitergeleitet. 
+			     Der Administrator ruft die Startseite auf und loggt sich hier über die Schaltfläche 'Anmelden' in dem sich öffnenden Drop-Down Menü mit dem vorgefertigten Benutzernamen 'admin1' und dem Passwort 'ersterAdmin1' ein und wird nach dem Drücken des sich im Drop-Down Menü befindenden Buttons 'Anmelden' auf die Seite 'Meine Kurse' weitergeleitet. 
 				 
 				\item \Test{Impressum bearbeiten}
 				 Der Systemadministrator befindet sich auf der Seite 'Adminverwaltung', welche er über die Navigationsleiste ausgewählt hat, und klickt dort auf die Schaltfläche 'Impressum bearbeiten' und wird auf diese weitergeleitet. Auf der Seite 'Impressum bearbeiten' fügt er seinen Impressumstext in das Eingabefeld ein, in welchem als Default bereits ein vorgefertigtes Impressum der Firma ofCourse angegeben ist. Anschließend bestätigt der Admin die Eingabe durch Drücken des Button 'Speichern'. Mit dem Bestätigen der Änderungen am Impressum wird der Administrator wieder auch die Seite 'Adminverwaltung' geleitet. (vgl. \RefFuncBlue{/F40-180/})
@@ -888,8 +888,8 @@ Der Stellenwert der Qualitätskriterien begründet sich wie folgt:
 						\item Dort trägt er folgende Daten ein:
 							\begin{itemize}
 								\item Name: 'Standardtanz'
-								\item Startzeitpunkt: '04.08.2015'
-								\item Endzeitpunkt: '33.09.2015'
+								\item Startdatum: '04.08.2015'
+								\item Enddatum: '33.09.2015'
 								\item minimale Teilnehmerzahl: '2'
 							\end{itemize}
 						Im Bereich 'Kursleiter hinzufügen' trägt der Administrator den Benutzernamen, die E-Mailadresse und die KursleiterID des Kursleiters 'Basti3' ein. (Daten vgl. \RefFuncBrown{/T10-50/}) Da der 33.09.2015 nicht existiert, wird der Administrator nach dem Drücken des Button 'Kurs anlegen' durch eine Fehlermeldung auf seine falsche Eingabe hingewiesen. Das Feld für den Endzeitpunkt wird geleert. 
@@ -1088,11 +1088,9 @@ Der Stellenwert der Qualitätskriterien begründet sich wie folgt:
 						 	\item Benutzername: 'Kathi5'
 						 	\item Name: 'Hölzl'
 						 	\item Vorname: 'Katharina'
-						 	\item Kreditinstitut: ???
-						 	\item Kreditkartennummer: ???
 						 	\item Betrag: 'fünfzig'
 						 \end{itemize}
-					Anschließend klickt der Nutzer auf den Button 'Konto aufladen' und wird durch eine Fehlermeldung darauf hingewiesen, dass ein falsches Format im Eingabefeld 'Betrag' eingetragen wurde. Dieses Feld wird geleert, die anderen Eingaben bleiben erhalten.
+					Außerdem gibt er seine Kreditkartendaten ein. Anschließend klickt der Nutzer auf den Button 'Konto aufladen' und wird durch eine Fehlermeldung darauf hingewiesen, dass ein falsches Format im Eingabefeld 'Betrag' eingetragen wurde. Dieses Feld wird geleert, die anderen Eingaben bleiben erhalten.
 						
 					\item 'Kathi5' trägt in das Eingabefeld für den Betrag nun '50,00' ein. Nach dem Drücken des Button 'Aufladen' wird der Nutzer auf seine Profilseite weitergeleitet. Der Kontostand, welcher zuvor 0,00 Euro betrug, zeigt nun 50,00 an.  (vgl. \RefFuncBlue{/F20-180/})
 				\end{itemize}
@@ -1101,7 +1099,7 @@ Der Stellenwert der Qualitätskriterien begründet sich wie folgt:
 			\begin{itemize}
 				\item \Test{Kurs anmelden} 
 					\begin{itemize}
-						\item Der Benutzer 'Kathi5' befindet sich auf der Seite 'Kursangebot durchsuchen'. Es werden die Kurse wie im Testfall \RefFuncBrown{/T30-10/} angezeigt. Der Benutzer wählt im Bereich 'Kursangebot durchsuchen' aus der Drop-Down Liste 'Kostenlos' aus. Nach Bestätigen der Auswahl durch Drücken des Button 'Suchen', wird der Kurs 'Yoga' angezeigt. (vgl. \RefFuncBlue{/F20-160/})
+						\item Der Benutzer 'Kathi5' befindet sich auf der Seite 'Kursangebot durchsuchen'. Es werden die Kurse wie im Testfall \RefFuncBrown{/T30-10/} angezeigt. Der Benutzer wählt die Checkbox 'Kostenlos' aus. Nach Bestätigen der Auswahl durch Drücken des Button 'Suchen', wird der Kurs 'Yoga' angezeigt. (vgl. \RefFuncBlue{/F20-160/})
 						
 						\item Der Benutzer wählt den Kurs 'Yoga' aus und wird auf die Seite 'Kursdetails' weitergeleitet. Angezeigt werden die Daten, die in den Testfällen \RefFuncBrown{/T10-80/} und \RefFuncBrown{/T20-10/} angelegt wurden. 'Kathi5' setzt einen Hacken in dem Kästchen 'Kursnews erhalten', um Änderungen im Kurs per E-Mail zu empfangen. Anschließend klickt sie auf den Button 'Anmelden' und wird auf die Seite 'Meine Kurse' weitergeleitet. Hier ist nun der Yoga-Kurs eingetragen und wird angezeigt. (vgl. \RefFuncBlue{/F20-120/})
 					\end{itemize}
@@ -1163,8 +1161,6 @@ Der Stellenwert der Qualitätskriterien begründet sich wie folgt:
 \section{Testfälle mit Datensatz}
 			\stepHc
 			\begin{itemize}
-				\item \Test{Benachrichtigung durch Kursleiter}
-				'??? muss noch abgeklärt werden ???' (vgl. \RefFuncBlue{/F30-110/})
 				
 				\item \Test{Guthabenkonto aufladen durch Systemadministrator}
 				Der Systemadministrator trägt auf der Seite 'Adminverwaltung' im Bereich 'Konto aufladen' folgende Daten ein:
@@ -1195,9 +1191,6 @@ Der Stellenwert der Qualitätskriterien begründet sich wie folgt:
 				
 				\item \Test{Benutzer löschen durch Systemadministrator}
 				Der Systemadministrator drückt auf der Seite 'Adminverwaltung' den Button 'Benutzer verwalten' und wird auf die Seite 'Benutzer durchsuchen' weitergeleitet. Es werden die Benutzer 'Kathi5', 'Basti3', Ricky1' und 'PatrickC' angezeigt. Der Admin wählt in der Drop-Down Liste den Parameter 'Benutzername' aus und trägt 'Ricky1' in das darunterliegende Eingabefeld ein. Nun wird nur noch der Benutzer 'Ricky1' angezeigt. Diesen wählt der Administrator aus und wird auf dessen Profilseite weitergeleitet. Durch Drücken des Buttons 'Benutzer löschen' wird 'Ricky1' aus dem System entfernt. Der Administrator wird auf die Seite 'Adminverwaltung' zurückgeleitet. (vgl. \RefFuncBlue{/F40-80/})
-				
-				\item \Test{Kurs löschen durch Kursleiter}
-				Der Kursleiter 'Basti3' befindet sich auf der Seite 'Detailansicht' des Kurses 'Standardtanz'. Durch Drücken des Buttons 'Kurs löschen' entfernt der Kursleiter den Kurs 'Standardtanz' und wird auf die Seite 'Meine Kurse' weitergeleitet. Diese enthält nun keine Einträge mehr. (vgl. \RefFuncBlue{/F30-30/})
 				
 			\end{itemize}
 
