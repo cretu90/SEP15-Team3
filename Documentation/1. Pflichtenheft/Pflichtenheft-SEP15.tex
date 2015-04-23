@@ -120,7 +120,7 @@
 \chapter{Zielbestimmung}
 	\begin{tiny}
 		RS
-	\end{tiny}
+	\end{tiny}\\
 	   Bei der Webanwendung OfCourse handelt es sich um eine Online-Plattform, welche ein allgemeines Planungssystem für Kurse darstellt. Es ermöglicht Kursleitern und Kursteilnehmern die einfache Absprache von Terminen, was bisher zumeist eine große Herausforderung darstellt.
     \section{Musskriterien}      
     	\subsubsection{Allgemeiner Funktionsumfang:}
@@ -141,7 +141,7 @@
 				\item Kann sich zu Kursen anmelden \hyperlink{kursAnmelden}{F20-120} und abmelden \hyperlink{kursAbmelden}{F20-130}
 				\item Kann sich in Kurseinheiten eintragen \hyperlink{kurseinheitAnmelden}{F20-140} und austragen \hyperlink{kurseinheitAbmelden}{F20-150}
 				\item Kann eigene Profildaten editieren \hyperlink{profilEdit}{F20-60}
-				\item Kann Belegte Kurse anzeigen \hyperlink{kurseAnzeigen}{F20-20}
+				\item Kann belegte Kurse anzeigen \hyperlink{kurseAnzeigen}{F20-20}
 				\item Einsehen des eigenen Kontostands \hyperlink{kontoAnzeigen}{F20-80} und Geld aufladen \hyperlink{kontoAufladenOn}{F20-180} und \hyperlink{kontoAufladenOff}{F20-190}
 				\item Kann Passwort zurücksetzen \hyperlink{passwort}{F20-100}
 				\item Funktionsumfang eines Benutzers erweitert sich aufsteigend je nach zugeteilter Rolle
@@ -149,10 +149,10 @@
 		\subsubsection{Funktionsumfang für Kursleiter:}
 			\begin{itemize}
 				\item Eigene Kurse bearbeiten \hyperlink{kursEdit}{F30-20}
-				\item Kurseinheiten anlegen \hyperlink{kurseinheitAnlegen}{F30-40}, editieren \hyperlink{kurseinheitEdit}{F30-50} und löschen \hyperlink{kurseinheitLoeschen}{F30-80}
-				\item Teilnehmer aus Kurs entfernen \hyperlink{kursUserDel}{F30-90}
-				\item Nutzer eines Kurses oder einzelner Kurseinheiten benachrichtigen \hyperlink{kursUserMsg}{F30-100}
-				\item Accounts bestätigen \hyperlink{addUserKL}{F30-120}
+				\item Kurseinheiten anlegen \hyperlink{kurseinheitAnlegen}{F30-30}, editieren \hyperlink{kurseinheitEdit}{F30-40} und löschen \hyperlink{kurseinheitLoeschen}{F30-70}
+				\item Teilnehmer aus Kurs entfernen \hyperlink{kursUserDel}{F30-80}
+				\item Nutzer eines Kurses oder einzelner Kurseinheiten benachrichtigen \hyperlink{kursUserMsg}{F30-900}
+				\item Accounts bestätigen \hyperlink{addUserKL}{F30-110}
 			\end{itemize}
 		\subsubsection{Funktionsumfang für Systemadministrator:}
 			\begin{itemize}
@@ -177,6 +177,7 @@
 	     		\item Keine Einsicht in fremde Nutzerprofile, nur Admin kann Nutzerdaten einsehen
 	     		\item Kein systeminternes Kommunikationssystem zwischen den Benutzern
 	     		\item Keine Funktionen zur erleichterten Bedienung für Nutzer mit Behinderung
+	     		\item Keine spezielle Anpassung an Mobilgeräte
      		\end{itemize}
         
   
@@ -217,8 +218,7 @@
 	            	\item Java 8
 	            	\item \gls{JSF} 2.2 (Entwicklungsframework)
 	            	\item \gls{Tomcat} 8 (Webserver)
-	            	\item \gls{PostgreeSQL} 9 (Datenbank)  
-	            	\item \gls{SMTP-Server}
+	            	\item \gls{PostgreeSQL} 9 (Datenbank)
 	            \end{itemize}
         \end{itemize}
         
@@ -714,7 +714,7 @@ Im folgenden wird beschrieben, welche Daten persistent gespeichert werden. Jeder
 \chapter{Qualitätsbestimmungen}
 	\begin{tiny}
 		RS
-	\end{tiny}
+	\end{tiny}\\
 	Im Folgenden wird aufgeführt auf welche Qualitätsmerkmale der Webanwendung Wert gelegt wird. Diese orientieren sich an der Norm \textit{ISO/IEC~9126}, welche ein Modell zur Sicherstellung von Softwarequalität darstellt. In wie weit die verschiedenen Qualitätsmerkmale Einfluss auf die Webanwendung nehmen sollen, wird in der unten gezeigten Tabelle definiert.\\
 
 	\begin{table}[h]
@@ -780,13 +780,7 @@ Der Stellenwert der Qualitätskriterien begründet sich wie folgt:
 		\subsection{Erstellung und Verwaltung}
 			\begin{itemize}
 				\item \Test{Überziehungskredit festlegen} 
-				 Auf der Seite 'Adminverwaltung' legt der Systemadministrator den Überziehungskredit fest:
-					 \begin{itemize}
-					 	\item Der Administrator gibt im Textfeld 'zehn' ein. Nach Drücken der Schaltfläche 'Speichern' wird er durch eine Fehlermeldung darauf hingewiesen, dass das Eingabeformat falsch ist. Das Eingabefeld wird geleert.
-					 	
-					 	\item Der Administrator gibt im Textfeld den Betrag '10,00' ein und bestätigt diesen durch Drücken der Schaltfläche 'Speichern'. Vor dieser Änderung wurde im Textfeld der Default-Wert von '0,00' angezeigt, nun zeigt dieses Feld den Wert '10,00' an. Der Administrator befindet sich weiterhin auf der Seite 'Adminverwaltung'.
-					 \end{itemize}
-				 (vgl. \RefFuncBlue{/F40-140/})
+				 Auf der Seite 'Adminverwaltung' legt der Systemadministrator den Überziehungskredit auf 10 Euro fest, indem er im Textfeld den bereits genannten Betrag '10,00' eingibt und diesen durch Drücken der Schaltfläche 'Speichern' bestätigt. Vor dieser Änderung wurde im Textfeld der Default-Wert von '0,00' angezeigt, nun zeigt dieses Feld den Wert '10,00' an. Der Administrator befindet sich weiterhin auf der Seite 'Adminverwaltung'. (vgl. \RefFuncBlue{/F40-140/})
 				
 				\item \Test{Art der Accountaktivierung festlegen}
 				 Der Administrator befindet sich auf der Seite 'Adminverwaltung'. Im Bereich 'Accountaktivierung' wird im Eingabefeld die voreingestellte minimale Voraussetzung 'Nur E-Mailverifikation' angezeigt. Dort wählt der Admin nach dem Klicken auf dieses Eingabefeld im sich öffnenden Drop-Down Menü die Aktivierungsart 'E-Mailverifikation und Aktivierung durch Administrator' aus und bestätigt seine Auswahl durch Drücken des Button 'Speichern'. Im Eingabefeld wird nun die ausgewählte Art 'E-Mailverifikation und Aktivierung durch Administrator' angezeigt. Der Administrator befindet sich weiterhin auf der Seite 'Adminverwaltung'. (vgl. \RefFuncBlue{/F40-160/})
@@ -795,8 +789,8 @@ Der Stellenwert der Qualitätskriterien begründet sich wie folgt:
 				 Auf der Seite 'Adminverwaltung' klickt der Administrator auf die Schaltfläche 'Benutzer anlegen' und wird auf die Seite 'Benutzer anlegen' weitergeleitet. Hier gibt der Admin folgende Daten ein:
 					\begin{itemize}
 						\item Benutzername: 'Basti3' 
-						\item Passwort: 'poIuZt7R1§'
-						\item Passwort: 'poIuZt7R1§'
+						\item Passwort: 'poIuZt7R'
+						\item Passwort: 'poIuZt7R'
 						\item E-Mail: 'sebastian@nrschwarz.de'
 						\item Anrede: 'Herr'
 						\item Name: 'Schwarz'
@@ -812,8 +806,8 @@ Der Stellenwert der Qualitätskriterien begründet sich wie folgt:
 				Auf der Seite 'Adminverwaltung' klickt der Administrator auf die Schaltfläche 'Benutzer anlegen' und wird auf die Seite 'Benutzer anlegen' weitergeleitet. Hier gibt der Admin folgende Daten ein:
 				\begin{itemize}
 					\item Benutzername: 'PatrickC' 
-					\item Passwort: 'lKjHg789!'
-					\item Passwort: 'lKjHg789!'
+					\item Passwort: 'lKjHg789'
+					\item Passwort: 'lKjHg789'
 					\item E-Mail: 'strat-fan@web.de'
 					\item Anrede: 'Herr'
 					\item Name: 'Patrick'
@@ -831,8 +825,8 @@ Der Stellenwert der Qualitätskriterien begründet sich wie folgt:
 					 \item Hier gibt der Admin folgende Daten ein:
 						\begin{itemize}
 							\item Benutzername: 'Ricky1' 
-							\item Passwort: 'vBnü'
-							\item Passwort: 'vBnü'
+							\item Passwort: 'vBn§'
+							\item Passwort: 'vBn§'
 							\item E-Mail: 'ricky.strohmeier@gmx.de'
 							\item Anrede: 'Herr'
 							\item Name: 'Strohmeier'
@@ -842,11 +836,11 @@ Der Stellenwert der Qualitätskriterien begründet sich wie folgt:
 							\item Postleitzahl: '99999'
 							\item Ort: 'Musterstadt'
 						\end{itemize}
-					 Als Rolle wird 'Benutzer' festgelegt und im Bereich Profilbild bleibt das Dummy-Bild bestehen. Da der 40.10.1991 nicht existiert wird nach dem Drücken der Schaltfläche 'Benutzer anlegen' eine Fehlermeldung ausgegeben, welche den Benutzer auf das falsche Datum hinweist und das entsprechende Eingabefeld wird geleert. Aufgrund des zu kurzen Passwortes und der Verwendung des unerlaubten Zeichens 'ü' wird der Benutzer des Weiteren mit einer Fehlermeldung darauf hingewiesen, dass sein Passwort nicht akzeptiert wird. Die beiden Passworteingabefelder werden ebenfalls geleert.
+					 Als Rolle wird 'Benutzer' festgelegt und im Bereich Profilbild bleibt das Dummy-Bild bestehen. Da der 40.10.1991 nicht existiert wird nach dem Drücken der Schaltfläche 'Benutzer anlegen' eine Fehlermeldung ausgegeben, welche den Benutzer auf das falsche Datum hinweist und das entsprechende Eingabefeld wird geleert. Aufgrund des zu kurzen Passwortes und der Verwendung des unerlaubten Zeichens '§' wird der Benutzer des Weiteren mit einer Fehlermeldung darauf hingewiesen, dass sein Passwort nicht akzeptiert wird. Die beiden Passworteingabefelder werden ebenfalls geleert.
 					 
 					 \item Der Benutzer trägt nun im Eingabefeld des Geburtsdatums den 04.10.1991 ein. Außerdem gibt er ein anderes Passwort im ersten Passwortfeld ein: 'vBnMk89po'. Im zweiten Passwortfeld trägt er 'vBnMk89pO' ein. Nach dem Drücken der Schaltfläche 'Benutzer anlegen' wird der Benutzer mit einer Fehlermeldung darauf hingewiesen, dass seine Passwörter nicht übereinstimmen. Die beiden Passwortfelder werden wieder geleert.
 					 
-					 \item Der Benutzer gibt nun in beiden Passwortfeldern das Passwort 'vBnMk89po5*' ein. Durch Klicken des Buttons 'Benutzer anlegen' bestätigt der Admin die Daten und der neue Benutzer ist angelegt. Der Administrator wird anschließend auf die Seite 'Adminverwaltung' weitergeleitet.
+					 \item Der Benutzer gibt nun in beiden Passwortfeldern das Passwort 'vBnMk89po' ein. Durch Klicken des Buttons 'Benutzer anlegen' bestätigt der Admin die Daten und der neue Benutzer ist angelegt. Der Administrator wird anschließend auf die Seite 'Adminverwaltung' weitergeleitet.
 					\end{itemize}
 				(vgl. \RefFuncBlue{/F40-50/})
 					
@@ -898,9 +892,9 @@ Der Stellenwert der Qualitätskriterien begründet sich wie folgt:
 				 \item \Test{Oberfläche editieren}
 				 Der Systemadministrator befindet sich auf der Seite 'Adminverwaltung' und klickt im Bereich 'Oberfläche anpassen' auf den Button 'Durchsuchen'. 
 					\begin{itemize}
-						 \item Anschließend wählt der Admin die Datei mit dem Namen 'aenderung.css' aus und bestätigt durch Drücken der Schaltfläche 'Speichern'. Da dieser Dateiname nicht genehmigt ist wird bei erneutem Laden der Seite 'Adminverwaltung' der im System vordefinierte Default-Stil als Oberfläche angezeigt.
+						 \item In dem sich öffnenden Fenster wählt der Admin die Datei mit dem Namen 'aenderung.css' aus und bestätigt durch Drücken der Schaltfläche 'Speichern'. Da dieser Dateiname nicht genehmigt ist wird bei erneutem Laden der Seite 'Adminverwaltung' der im System vordefinierte Default-Stil als Oberfläche angezeigt.
 						 
-						 \item Der Admin wählt erneut die Schaltfläche 'Durchsuchen' im Bereich 'Oberfläche anpassen' aus. Anschließend wählt der Administrator nun die Datei mit dem Namen 'customStyle.css' aus. Nach dem Drücken des Buttons 'Speichern' wird diese Datei hochgeladen. Durch Drücken der Taste 'F5' wird die aktuelle Seite 'Adminverwaltung' neu geladen und die Änderungen durch die gewählte .css-Datei wird sichtbar. 
+						 \item Der Admin wählt erneut die Schaltfläche 'Durchsuchen' im Bereich 'Oberfläche anpassen' aus. In dem sich öffnenden Fenster wählt der Administrator nun die Datei mit dem Namen 'customStyle.css' aus. Nach dem Drücken des Buttons 'Speichern' wird diese Datei hochgeladen. Durch Drücken der Taste 'F5' wird die aktuelle Seite 'Adminverwaltung' neu geladen und die Änderungen durch die gewählte .css-Datei wird sichtbar. 
 					\end{itemize}
 				 (vgl. \RefFuncBlue{/F40-170/})
 				 
@@ -1013,21 +1007,22 @@ Der Stellenwert der Qualitätskriterien begründet sich wie folgt:
 								\item Anrede: 'Frau'
 								\item Name: 'Hölzl'
 								\item Vorname: 'Katharina'
-								\item Geburtsdatum: '29.05.2016'
+								\item Geburtsdatum: '29.05.1993'
 								\item Adresse: 'Am Kastenfeld 39'
 								\item Postleitzahl: '94081'
 								\item Ort: 'Fürstenzell'
 							\end{itemize}
-						Der Benutzer drückt den Button 'Registrieren'. Daraufhin wird er durch verschiedene Fehlermeldungen darauf hingewiesen, dass der Benutzername 'Ricky1' bereits existiert, dass das Passwort zu kurz ist, dass keine E-Mailadresse angegeben wurde und dass die AGBs nicht bestätigt wurden. Außerdem wurde ein Geburtsdatum in der Zukunft angegeben, auf das ebenfalls durch eine Fehlermeldung hingewiesen wird. Die entsprechenden Felder Benutzername und Passwort werden geleert, alle anderen bereits eingegebenen Daten bleiben bestehen.
+						Der Benutzer drückt den Button 'Registrieren'. Daraufhin wird er durch verschiedene Fehlermeldungen darauf hingewiesen, dass der Benutzername 'Ricky1' bereits existiert, dass das Passwort zu kurz ist, dass keine E-Mailadresse angegeben wurde und dass die AGBs nicht bestätigt wurden. Die entsprechenden Felder Benutzername und Passwort werden geleert, alle anderen bereits eingegebenen Daten bleiben bestehen.
 						
-						\item Der Benutzer ändert seinen Benutzernamen auf 'Kathi5'. Außerdem gibt er die beiden Passwörter 'bSdFg7HjK' und 'bSdFg7HjK1' ein. Als E-Mailadresse gibt er 'katharinahoelzlweb.de' an und im Geburtsdatum '294.05.1993' Nach Drücken des Button 'Registrieren' wird der Benutzer durch Fehlermeldungen darauf hingewiesen, dass seine Passwörter nicht übereinstimmen, die E-Mailadresse ein falsches Format hat, das Format des Geburtsdatum nicht stimmt und die AGBs nicht bestätigt wurden. Die Eingabefelder der Passwörter und der E-Mailadresse werden gelöscht, alle anderen bereits eingegebenen Daten bleiben bestehen.
+						\item Der Benutzer ändert seinen Benutzernamen auf 'Kathi5'. Außerdem gibt er die beiden Passwörter 'bSdFg7HjK' und 'bSdFg7HjK1' ein. Als E-Mailadresse gibt er 'katharinahoelzlweb.de' an. Nach Drücken des Button 'Registrieren' wird der Benutzer durch Fehlermeldungen darauf hingewiesen, dass seine Passwörter nicht übereinstimmen, die E-Mailadresse ein falsches Format hat und die AGBs nicht bestätigt wurden. Die Eingabefelder der Passwörter und der E-Mailadresse werden gelöscht, alle anderen bereits eingegebenen Daten bleiben bestehen.
 						
 						\item der Benutzer gibt ergänzt nun folgende Daten: 
 							\begin{itemize}
-								\item Passwort: 'bSdFg7HjK8*'
-								\item Passwort: 'bSdFg7HjK8*'
+
+								\item Passwort: 'bSdFg7HjK'
+								\item Passwort: 'bSdFg7HjK'
+
 								\item E-Mailadresse: 'katharina\_hoelzl@web.de'
-								\item Geburtsdatum: '29.05.1993'
 							\end{itemize}
 						Außerdem bestätigt er die AGBs durch Setzen des entsprechenden Hackens. Nach dem Drücken des Buttons 'Registrieren' wird das Formular abgeschickt und der Benutzer bekommt an seine angegebene E-Mailadresse einen Verifizierungslink geschickt. Durch die Eingabe dieses Links im Browser wird die E-Mailadresse bestätigt und der Benutzer wird anschließend auf die Startseite weitergeleitet.			
 				\end{itemize}	
@@ -1049,16 +1044,18 @@ Der Stellenwert der Qualitätskriterien begründet sich wie folgt:
 			Der Benutzer 'Kathi5' klickt auf der Startseite	auf den 'Anmelden'-Button und es öffnet sich ein Drop-Down Menü, in welchem er Benutzername und Passwort eingeben kann. (vgl. \RefFuncBlue{/F20-10/})
 			\begin{itemize}
 				\item Der Benutzer gibt seinen Benutzernamen 'Kathi5' und das falsches Passwort 'wertz6uio' ein. Nach Drücken des 'Anmelden'-Buttons erhält er die Fehlermeldung 'Ihr Benutzername oder Ihr Passwort ist falsch'.
-				\item Der Benutzer gibt den falschen Benutzernamen 'Kathi1' und das richtige Passwort 'bSdFg7HjK8*' ein. Nach Drücken des 'Anmelden'-Buttons erhält er die Fehlermeldung 'Ihr Benutzername oder Ihr Passwort ist falsch'.
+
+				\item Der Benutzer gibt den falschen Benutzernamen 'Kathi1' und das richtige Passwort 'bSdFg7HjK' ein. Nach Drücken des 'Anmelden'-Buttons erhält er die Fehlermeldung 'Ihr Benutzername oder Ihr Passwort ist falsch'.
 				\item Der Benutzer gibt seinen Benutzernamen 'Kathi5' und kein Passwort ein. Nach Drücken des 'Anmelden'-Buttons erhält er die Fehlermeldung 'Ihr Benutzername oder Ihr Passwort ist falsch'.
-				\item Der Benutzer gibt seinen Benutzernamen 'Kathi5' und das richtige Passwort 'bSdFg7HjK8*' ein. Nach Drücken des 'Anmelden'-Buttons wird der Benutzer auf die Seite 'Meine Kurse' weitergeleitet. Es sind hier noch keine Kurse eingetragen.
+				\item Der Benutzer gibt seinen Benutzernamen 'Kathi5' und das richtige Passwort 'bSdFg7HjK' ein. Nach Drücken des 'Anmelden'-Buttons wird der Benutzer auf die Seite 'Meine Kurse' weitergeleitet. Es sind hier noch keine Kurse eingetragen.
+
 			\end{itemize} 
 			
 			\item \Test{Einloggen ins System} 
-			Der Benutzer 'PatrickC' klickt auf der Startseite	auf den 'Anmelden'-Button und es öffnet sich ein Drop-Down Menü, in welchem er seinen Benutzernamen 'PatrickC' und sein Passwort 'lKjHg789!' eingibt. Durch Drücken der Schaltfläche 'Anmelden' im Drop-Down Menü wird der Benutzer eingeloggt und auf die Seite 'Meine Kurse' weitergeleitet. Dort sind im Moment keine Kurse eingetragen. (vgl. \RefFuncBlue{/F20-10/})
+			Der Benutzer 'PatrickC' klickt auf der Startseite	auf den 'Anmelden'-Button und es öffnet sich ein Drop-Down Menü, in welchem er seinen Benutzernamen 'PatrickC' und sein Passwort 'lKjHg789' eingibt. Durch Drücken der Schaltfläche 'Anmelden' im Drop-Down Menü wird der Benutzer eingeloggt und auf die Seite 'Meine Kurse' weitergeleitet. Dort sind im Moment keine Kurse eingetragen. (vgl. \RefFuncBlue{/F20-10/})
 			
 			\item \Test{Einloggen ins System} 
-			Der Benutzer 'Ricky1' klickt auf der Startseite	auf den 'Anmelden'-Button und es öffnet sich ein Drop-Down Menü, in welchem er seinen Benutzernamen 'Ricky1' und sein Passwort 'vBnMk89po5*' eingibt. Durch Drücken der Schaltfläche 'Anmelden' im Drop-Down Menü wird der Benutzer eingeloggt und auf die Seite 'Meine Kurse' weitergeleitet. Dort sind im Moment keine Kurse eingetragen. (vgl. \RefFuncBlue{/F20-10/})
+			Der Benutzer 'Ricky1' klickt auf der Startseite	auf den 'Anmelden'-Button und es öffnet sich ein Drop-Down Menü, in welchem er seinen Benutzernamen 'Ricky1' und sein Passwort 'vBnMk89po' eingibt. Durch Drücken der Schaltfläche 'Anmelden' im Drop-Down Menü wird der Benutzer eingeloggt und auf die Seite 'Meine Kurse' weitergeleitet. Dort sind im Moment keine Kurse eingetragen. (vgl. \RefFuncBlue{/F20-10/})
 				
 			\item \Test{Konto aufladen} 
 			Der Benutzer 'Kathi5' klickt in seinem Profil auf die Schaltfläche 'Konto aufladen' und wird auf die Seite 'Kontoaufladung' weitergeleitet. 
@@ -1082,7 +1079,7 @@ Der Stellenwert der Qualitätskriterien begründet sich wie folgt:
 			\begin{itemize}
 				\item \Test{Kurs anmelden} 
 					\begin{itemize}
-						\item Der Benutzer 'Kathi5' befindet sich auf der Seite 'Kursangebot durchsuchen'. Es werden die Kurse wie im Testfall \RefFuncBrown{/T30-10/} angezeigt. Der Benutzer wählt die Checkbox 'Kostenlos' aus. Nach Bestätigen der Auswahl durch Drücken des Button 'Suchen', wird der Kurs 'Yoga' angezeigt. (vgl. \RefFuncBlue{/F20-160/})
+						\item Der Benutzer 'Kathi5' befindet sich auf der Seite 'Kursangebot durchsuchen'. Es werden die Kurse wie im Testfall \RefFuncBrown{/T30-10/} angezeigt. Der Benutzer wählt im Bereich 'Kursangebot durchsuchen' aus der Drop-Down Liste 'Kostenlos' aus. Nach Bestätigen der Auswahl durch Drücken des Button 'Suchen', wird der Kurs 'Yoga' angezeigt. (vgl. \RefFuncBlue{/F20-160/})
 						
 						\item Der Benutzer wählt den Kurs 'Yoga' aus und wird auf die Seite 'Kursdetails' weitergeleitet. Angezeigt werden die Daten, die in den Testfällen \RefFuncBrown{/T10-80/} und \RefFuncBrown{/T20-10/} angelegt wurden. 'Kathi5' setzt einen Hacken in dem Kästchen 'Kursnews erhalten', um Änderungen im Kurs per E-Mail zu empfangen. Anschließend klickt sie auf den Button 'Anmelden' und wird auf die Seite 'Meine Kurse' weitergeleitet. Hier ist nun der Yoga-Kurs eingetragen und wird angezeigt. (vgl. \RefFuncBlue{/F20-120/})
 					\end{itemize}
@@ -1144,7 +1141,9 @@ Der Stellenwert der Qualitätskriterien begründet sich wie folgt:
 \section{Testfälle mit Datensatz}
 			\stepHc
 			\begin{itemize}
-		
+				\item \Test{Benachrichtigung durch Kursleiter}
+				'??? muss noch abgeklärt werden ???' (vgl. \RefFuncBlue{/F30-110/})
+				
 				\item \Test{Guthabenkonto aufladen durch Systemadministrator}
 				Der Systemadministrator trägt auf der Seite 'Adminverwaltung' im Bereich 'Konto aufladen' folgende Daten ein:
 				\begin{itemize}
