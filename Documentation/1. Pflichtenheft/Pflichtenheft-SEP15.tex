@@ -983,9 +983,9 @@ Der Stellenwert der Qualitätskriterien begründet sich wie folgt:
 				\item KursId: 'autogenerierte Id des Kurses'
 			\end{itemize}	
 			Anschließend bestätigt der Kursleiter die Kurseinheit durch Drücken des Buttons 'Speichern', welcher sich dadurch wieder zum Button 'Bearbeiten' ändert. Der Kursleiter wird auf die Seite 'Kursdetails' weitergeleitet, auf der im Bereich 'Kurseinheiten' nun die eben angelegte Kurseinheit angezeigt wird. (vgl. \RefFuncBlue{/F30-30/})
-			
+		
 			\item \Test{Kurseinheit anlegen} 
-			Analog zum vorangehenden Testfall \RefFuncBrown{/T20-20/} werden zum selben Kurs 'Standardtanz' noch fünf weitere Kurseinheiten zu den nachfolgenden Terminen angelegt:
+			Analog zum vorangehenden Testfall \RefFuncBrown{/T20-40/} werden zum selben Kurs 'Standardtanz' noch fünf weitere Kurseinheiten zu den nachfolgenden Terminen angelegt:
 			\begin{itemize}
 				\item 10.08.2015
 				\item 17.08.2015
@@ -998,11 +998,11 @@ Der Stellenwert der Qualitätskriterien begründet sich wie folgt:
 			\item \Test{Kurseinheiten editieren}
 			Der Kursleiter 'Basti3' befindet sich auf der Seite 'Meine Kurse' und klickt in seinen Trainingskursen den Kurs 'Standardtanz' an, wodurch er auf die 'Kursdetails'-Seite weitergeleitet wird, auf der bereits die durch den Systemadministrator angegebenen Daten (vgl. \RefFuncBrown{/T10-90/}) eingetragen sind. Des Weiteren werden die in den Testfällen \RefFuncBrown{/T20-40/} und \RefFuncBrown{/T20-50/} angelegten Kurseinheiten angezeigt. Der Kursleiter klickt auf den Button 'Bearbeiten', der sich neben der Kurseinheit mit dem Termin '03.08.2015' befindet. Dadurch wird er auf die Seite 'Kurseinheit bearbeiten' weitergeleitet, auf der bereits die im Testfall \RefFuncBrown{/T20-40/} angelegten Daten eingetragen sind. Nach Drücken des Button 'Bearbeiten', welcher sich dadurch zum Button 'Speichern' ändert, können die einzelnen Eingabefelder bearbeitet werden. 
 			\begin{itemize}
-				\item Der Kursleiter ändert den Termin auf den '01.10.2015' und drückt den Button 'Speichern'. Durch eine Fehlermeldung wird der Kursleiter darauf hingewiesen, dass sich der geänderte Termin außerhalb des Kurszeitraumes (vgl. \RefFuncBrown{/T10-80/}) befindet. Das Eingabefeld des Termins wird geleert. Der Button 'Speichern' ändert sich nicht.
+				\item Der Kursleiter ändert den Termin auf den '01.10.2015' und drückt den Button 'Speichern'. Durch eine Fehlermeldung wird der Kursleiter darauf hingewiesen, dass sich der geänderte Termin außerhalb des Kurszeitraumes (vgl. \RefFuncBrown{/T10-90/}) befindet. Das Eingabefeld des Termins wird geleert. Der Button 'Speichern' ändert sich nicht.
 				
 				\item Nun ändert der Kursleiter den Termin auf den '05.13.2015' und drückt den Button 'Speichern'. Durch eine Fehlermeldung wird der Kursleiter darauf hingewiesen, dass der geänderte Termin kein gültiges Datum ist. Das Eingabefeld des Termins wird geleert. Der Button 'Speichern' ändert sich nicht.
 				
-				\item Der Kursleiter ändert den Termin auf den '04.08.2015' und die Maximale Teilnehmerzahl auf '2'. Anschließend drückt er den Button 'Speichern'. Da dieses Datum akzeptiert wird, wird 'Basti3' auf die Seite 'Kursdetails' des Kurses 'Standardtanz' weitergeleitet, auf der nun im Bereich 'Kurseinheiten' die entsprechende Einheit mit dem geänderten Termin angezeigt wird.
+				\item Der Kursleiter ändert den Termin auf den '04.08.2015' und die 'Maximale Teilnehmerzahl' auf '2'. Anschließend drückt er den Button 'Speichern'. Da dieses Datum akzeptiert wird, wird 'Basti3' auf die Seite 'Kursdetails' des Kurses 'Standardtanz' weitergeleitet, auf der nun im Bereich 'Kurseinheiten' die entsprechende Einheit mit dem geänderten Termin angezeigt wird.
 			\end{itemize}
 			(vgl. \RefFuncBlue{/F30-40/})
 			
