@@ -8,28 +8,58 @@
 	Um eine bessere Übersicht und Strukturierung zu erhalten wird das ganze Projekt in Pakete aufgeteilt.
 	
 	\section{Package Action}
-	
 	\subsection{Klasse AuthenticateUser}
 	\kursiv{ManagedBean, RequestScoped}\\
+	Die Klasse ist für die Authentifizierung eines Benutzers im System zuständig.
+	\begin{itemize}
+		\item \method{public boolean login()}
+		\item \method{public boolean logout()}
+		\item \method{public User getLoginUser()}
+		\item \method{public void setLoginUser(User userToLogIn)}
+		\item \method{public SessionUser getSessionUser()}
+		\item \method{public void setSessionUser(SessionUser userSession)}
+	\end{itemize}
 	\subsection{Klasse RegisterUser}
 	\kursiv{ManagedBean, RequestScoped}\\
-	\subsection{Klasse ForgotPassword}
+	Die Klasse ist für die Registrierung eines Benutzers im System zuständig.
+	\begin{itemize}
+		\item \method{public int registerUser()}
+		\item \method{public User getUsertoRegistrate()}
+		\item \method{public void setUserToRegistrate(User userToRegistrate)}
+	\end{itemize}
+	\subsection{Klasse LostPassword}
 	\kursiv{ManagedBean, RequestScoped}\\
-	\subsection{Klasse ChangePassword}
-	\kursiv{ManagedBean, RequestScoped}\\
+	Die Klasse ist die 'Passwort  vergessen' - Funktion zuständig, d.h. sie ersetzt das alte Passwort eines Benutzers durch ein zufällig generiertes und sendet es an die eingegebene E-Mailadresse.
+	\begin{itemize}
+		\item \method{public boolean resetPassword()}
+		\item \method{public String getEmailAddressToResetPassword()}
+		\item \method{public void setEmailAddressToResetPassword(String emailToResetPassword)}
+	\end{itemize}
 	\subsection{Klasse SearchUser}
 	\kursiv{ManagedBean, ViewScoped}\\
+	\begin{itemize}
+		\item \method{public SessionUser getSessionUser()}
+	\end{itemize}
 	\subsection{Klasse SearchCourse}
 	\kursiv{ManagedBean, ViewScoped}\\
+	\begin{itemize}
+		\item \method{public SessionUser getSessionUser()}
+	\end{itemize}
 	\subsection{Klasse UserProfil}
 	\kursiv{ManagedBean, ViewScoped}\\
+	\begin{itemize}
+		\item \method{public SessionUser getSessionUser()}
+	\end{itemize}
 	\subsection{Klasse UserEdit}
 	\kursiv{ManagedBean, ViewScoped}\\
+	\begin{itemize}
+		\item \method{public SessionUser getSessionUser()}
+	\end{itemize}
 	\subsection{Klasse CourseDetail}
 	\kursiv{ManagedBean, ViewScoped}\\
 	\subsection{Klasse CourseEdit}
 	\kursiv{ManagedBean, ViewScoped}\\
-	\subsection{Klasse CourseUnitEdit}
+	\subsection{Klasse CourseUnit}
 	\kursiv{ManagedBean, ViewScoped}\\
 	\subsection{Klasse ContactUsers}
 	\kursiv{ManagedBean, RequestScoped}\\
