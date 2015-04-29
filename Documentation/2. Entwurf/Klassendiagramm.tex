@@ -37,13 +37,44 @@
 	\end{itemize}
 	\subsection{Klasse SearchUser}
 	\kursiv{ManagedBean, ViewScoped}\\
+	Diese Klasse stellt den Mechanismus zum Suchen von Benutzern zur Verfügung.
 	\begin{itemize}
+		\item \method{public ArrayList<User> getSearchResult()}
+		\item \method{public void setSearchResult(ArrayList<User> searchResult)}
+		\item \method{public void search(String searchParam, String searchTerm)}
+		\item \method{public String getSearchParam()}
+		\item \method{public void setSearchParam(String searchParam)}
+		\item \method{public String getSearchTerm()}
+		\item \method{public void setSearchTerm(String searchTerm)}
+		\item \method{public void sortBySpecicColumn()}
+		\item \method{public int getActualPageNumber()}
+		\item \method{public void goToSpecicPage()}
+		\item \method{public Pagination getPagination()}
+		\item \method{public void setPagination(Pagination pagination)}
 		\item \method{public SessionUser getSessionUser()}
+		\item \method{public void setSessionUser(SessionUser userSession)}
 	\end{itemize}
 	\subsection{Klasse SearchCourse}
 	\kursiv{ManagedBean, ViewScoped}\\
 	\begin{itemize}
+		\item \method{public void searchForFreeCourses()}
+		\item \method{public void displayCoursesInSpecificPeriod()}
+		\item \method{public String getDisplayPeriod()}
+		\item \method{public void setDisplayPeriod(String displayPeriod)}
+		\item \method{public ArrayList<User> getSearchResult()}
+		\item \method{public void setSearchResult(ArrayList<User> searchResult)}
+		\item \method{public void search(String searchParam, String searchTerm)}
+		\item \method{public String getSearchParam()}
+		\item \method{public void setSearchParam(String searchParam)}
+		\item \method{public String getSearchTerm()}
+		\item \method{public void setSearchTerm(String searchTerm)}
+		\item \method{public void sortBySpecicColumn()}
+		\item \method{public int getActualPageNumber()}
+		\item \method{public void goToSpecicPage()}
+		\item \method{public Pagination getPagination()}
+		\item \method{public void setPagination(Pagination pagination)}
 		\item \method{public SessionUser getSessionUser()}
+		\item \method{public void setSessionUser(SessionUser userSession)}
 	\end{itemize}
 	\subsection{Klasse UserProfil}
 	\kursiv{ManagedBean, ViewScoped}\\
@@ -92,7 +123,7 @@
 	Die Klasse speichert Informationen über die Session eines Benutzers. Gespeichert werden die ID des Benutzers, dessen Benutzerrolle, die gewählte Sprache.
 	\begin{itemize}
 		\item \method{public int getUserID()}
-		\item \method{public void setUserId(int userID)}
+		\item \method{public void setUserID(int userID)}
 		\item \method{public String getUserRole()}
 		\item \method{public void setUserRole(String userRole)}
 		\item \method{public String getLanguage()}
