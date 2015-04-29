@@ -1,1 +1,260 @@
-\chapter{Klassendiagramm}
+	\newcommand{\class}[1]{\paragraph{Klasse #1:}\ \\ }
+	\newcommand{\method}[1]{\textcolor{blue}{#1}}
+	\newcommand{\kursiv}[1]{{\it #1}}
+	\newcommand{\override}{{\it @Override}\ \\}
+	
+	\chapter{Klassenbeschreibung und Klassendiagramm}
+	In diesem Kapitel werden alle Klassen der Anwendung \textbf{ofCourse} aufgeführt.
+	Um eine bessere Übersicht und Strukturierung zu erhalten wird das ganze Projekt in Pakete aufgeteilt.
+	
+	\section{Package Action}
+	\subsection{Klasse SessionUser}
+	\kursiv{ManagedBean, SessionScoped}\\
+	Die Klasse speichert Informationen über die Session eines Benutzers. Gespeichert werden die ID des Benutzers, dessen Benutzerrolle, die gewählte Sprache.
+	\begin{itemize}
+		\item \method{public int getUserID()}
+		\item \method{public void setUserId(int userID)}
+		\item \method{public String getUserRole()}
+		\item \method{public void setUserRole(String userRole)}
+		\item \method{public String getLanguage()}
+		\item \method{public void setLanguage(String language)}
+	\end{itemize}
+	
+	
+	
+	\section{Package Model}
+	
+	\section{Package Services}
+	
+	\section{Package Interfaces}
+	\kursiv{Nur Kommentar: Interfaces für DAO - Damit die Datenbank einfach ausgetauscht werden kann}
+	
+	\section{Package Database}
+	
+	\subsection{Klasse DatabaseConnectionManager}
+	Die Klasse ist zuständig für das Aufbauen der Verbindungen zur Datenbank. Des Weiteren
+	speichert und verwaltet sie die Datenbankverbindungen. 
+	\begin{itemize}
+		\item \method{public synchronized Connection getConnection()}
+		\item \method{public synchronized void releaseConnection()}
+		\item \method{public static DatabaseConnectionManager getInstance()}
+		\item \method{public void shutDown()}
+	\end{itemize}
+	
+	\section{Package System}
+	
+	\subsection{Klasse CheckPhase}
+	Die Klasse ist zuständig für die Überprüfung, ob der jeweilige Benutzer die Berechtigung besitzt, auf die angeforderte Seite zu gelangen.\\
+	Die Klasse implementiert das Interface PhaseListener.
+	\begin{itemize}
+		\item \method{public PhaseId getPhaseId()}
+		\item \override
+		\method{public void beforePhase(PhaseEvent arg0)}
+		\item \override
+		\method{public void afterPhase(PhaseEvent event)}	
+	\end{itemize}
+	
+	\subsection{Klasse Maintenance}
+	Die Klasse ist zuständig dafür, dass Kurse sechs Monate nach ihrem Enddatum automatisch aus dem System gelöscht werden.\\
+	Die Klasse implementiert das Interface Runnable.
+	\begin{itemize}
+		\item \method{public boolean isMaintenaceStopped()}
+		\item \method{public synchronized void shutDown()}
+		\item \method{public static Maintenance getInstance()}
+		\item \override
+		\method{public void run()}
+	\end{itemize}
+	
+	\subsection{LaunchSystem}
+	\kursiv{ManagedBean, ApplicationScoped}\\
+	Die Klasse ist zuständig für das Starten des System. Sie startet den Maintenance - Thread, lädt Properties und stellt die Datenbankverbindung her.
+	\begin{itemize}
+		\item \kursiv{@PostConstruct}\\
+		\method{public void startSystem()}
+		\item \kursiv{@PreDestroy}\\
+		\method{public void shutdownMaintenance()}
+	\end{itemize}
+	
+	
+	
+	\section{Package Util}
+	
+	\subsection{Klasse Mail}
+	\kursiv{ManagedBean, ApplicationScoped}\\
+	Die Klasse ist für die E-Mailbenachrichtigung der Benutzer zuständig. Sie ist sowohl für die automatisch gesendeten E-Mails, wie unter anderem die Verifizierung oder Accountaktivierungsbestätigung, als auch für die von Kursleitern gesendeten Mails zuständig.
+	\begin{itemize}
+		\item \method{public boolean sendVerificationMail(int UserID)}
+		\item \method{public boolean sendConfirmaitionMail(int UserID)}
+		\item \method{public boolean sendMail(String subject, String message, ArrayList<String> mailRecipients)}
+	\end{itemize}
+	
+	\subsection{Klasse PasswordHash}
+	Diese Klasse ist zuständig für das Hashen der Passwörter.
+	\begin{itemize}
+		\item \method{public static String hash(String password, int salt)}
+	\end{itemize}
+	
+	\subsection{Klasse LanguageMangager}
+	Diese Klasse ist zuständig für die angezeigte Systemsprache. In ihr werden die unterstützten Sprachen verwaltet und sie ist zuständig für das Auslesen der Anzeigetexte aus der .properties - Datei der gewählten Sprache.
+	\begin{itemize}
+		\item \method{public static LanguageManager getInstance()}
+		\item \method{public LinkedHashMap<String, Object> getSupportedLanguages()}
+		\item \method{public String getProperty(String key)}
+		\item \method{public void switchLanguage(String language)}
+	\end{itemize}
+	
+	\subsection{Klasse PropertyManager}
+	Die Klasse ist zuständig für das Auslesen und Bearbeiten der Property - Datei, welche die Daten für die Systemkonfiguration, also die Daten für die Datenbankverbindung und den EMail - Service enthält.
+	\begin{itemize}
+		\item \method{public static PropertyManager getInstance()}
+		\item \method{public String getProperty(String key)}
+		\item \method{public String setProperty(String key)}
+	\end{itemize}
+	
+	\subsection{Klasse IDGenerator}
+	Die Klasse ist zuständig für das Generieren einer im System eindeutigen Identifikationsnummer für einen Benutzer, einen Kurs oder eine Kurseinheit.
+	\begin{itemize}
+		\item \method{public static int generateUserID()}
+		\item \method{public static int generateCourseID()}
+		\item \method{public static int generateCourseUnitID(int CourseID)}
+	\end{itemize}
+	
+	\subsection{Klasse RandomSaltGenerator}
+	Die Klasse ist zuständig für das Generieren eines zufälligen Salt, welcher für das Hashen des Benutzerpassworts benötigt wird.
+	\begin{itemize}
+		\item \method{public static int generateRandomSalt()}
+	\end{itemize} 
+	
+	\subsection{Klasse EncodingFilter}
+	Diese Klasse implementiert die Filter - Methoden um UTF-8 Encoding zu
+	ermöglichen und somit Probleme bei der Zeichendarstellung zu verhindern.
+	\begin{itemize}
+		\item \override
+		\method{public void destroy()}
+		\item \override
+		\method{public void doFilter(ServletRequest request, ServletResponse response,
+			FilterChain chain)}
+		\item \override
+		\method{public void init(FilterConfig filterConfig)}
+	\end{itemize}
+	
+	\section{Package Exception}
+	\subsection{BankAccountException}
+	Sind Fehler, welche beim Aufladen des Guthabenkontos auftreten. 
+	
+	\section{Package Validator}
+	Dieser Abschnitt beschäftigt sich mit den benötigten Validatoren, die notwendig sind, um die Eingaben des Benutzers zu überprüfen und gegebenenfalls Fehlermeldungen zu generieren.\\
+	Alles Klassen dieses Packages implementieren das Interface Validator.
+	
+	\subsection{Klasse UserNameValidator}
+	Der Validator überprüft, ob der eingegebene Benutzername schon im System vergeben ist.
+	\begin{itemize}
+		\item \override
+		\method{public void validate()}
+	\end{itemize}
+	
+	\subsection{Klasse EMailValidator}
+	Der Validator überprüft, ob die Eingabe ein gültiges E-Mail-Format besitzt und ob die eingegebene E-Mailadresse bereits im System existiert.
+	\begin{itemize}
+		\item \override
+		\method{public void validate()}
+	\end{itemize}
+	
+	\subsection{Klasse PasswordValidator}
+	Dieser Validator überprüft, ob das eingegebene Passwort gewisse Sicherheitsanforderungen bezüglich Länge und Zeichenwahl erfüllt. Vorgesehen Anforderungen an das Passwort sind mindestens 8 Zeichen, mindestens ein Sonderzeichen, mindestens eine Ziffer, Verwendung von Groß- und Kleinbuchstaben. Außerdem dürfen im Passwort keine Umlaute sowie kein 'ß' vorkommen.
+	\begin{itemize}
+		\item \override
+		\method{public void validate()}
+	\end{itemize}
+	
+	\subsection{Klasse ConfirmPasswordValidator}
+	Dieser Validator überprüft zwei Passwörter auf ihre Übereinstimmung.
+	\begin{itemize}
+		\item \override
+		\method{public void validate()}
+	\end{itemize}
+	
+	\subsection{Klasse BirthdateValidator}
+	Der Validator überprüft, ob das eingegebene Datum eingegebene Datum in der Zukunft liegt und ob es mehr als 150 Jahre zurückliegt.
+	\begin{itemize}
+		\item \override
+		\method{public void validate()}
+	\end{itemize}
+	
+	\subsection{Klasse UserImageValidator}
+	Dieser Validator überprüft eine Bilddatei auf die richtige Dateiendung .jpg. Zusätzlich wird überprüft, ob
+	die maximale Dateigröße und die maximal zugelassene Auflösung für ein Profilbild eines Benutzers eingehalten wird.
+	\begin{itemize}
+		\item \override
+		\method{public void validate()}
+	\end{itemize}
+	
+	\subsection{Klasse DateValidator}
+	Der Validator überprüft Datumseingaben.
+	\begin{itemize}
+		\item \override
+		\method{public void validate()}
+	\end{itemize}
+	
+	\subsection{Klasse CreditCardValidator}
+	Der Validator überprüft, ob eine Kreditkartenummer gültig ist.
+	\begin{itemize}
+		\item \override
+		\method{public void validate()}
+	\end{itemize}
+	
+	\subsection{Klasse CVCValidator}
+	Dieser Validator überprüft eine CVC Nummer auf ihre Gültigkeit.
+	\begin{itemize}
+		\item \override
+		\method{public void validate()}
+	\end{itemize}
+	
+	\subsection{Klasse InputTextValidator}
+	Überprüft den eingegebenen Text auf korrekte Zeichenkodierung.
+	\begin{itemize}
+		\item \override
+		\method{public void validate()}
+	\end{itemize}
+	
+	\subsection{Klasse OfflineTransactionValidator}
+	Dieser Validator überprüft, ob bei einer Offline-Aufladung des Guthabenkontos eines Benutzers der eingegebene Name und die eingegebenen Benutzeridentifikationsnummer auch zum selben Benutzer gehören.
+	\begin{itemize}
+		\item \override
+		\method{public void validate()}
+	\end{itemize}
+	
+	\subsection{Klasse PriceValidator}
+	Der Validator überprüft, ob der eingegebene Preis das korrekte Format hat, dass heißt, ob die Zahl nicht-negativ ist und zwei Nachkommastellen besitzt.
+	\begin{itemize}
+		\item \override
+		\method{public void validate()}
+	\end{itemize}
+	
+	\subsection{Klasse LogoImageValidator}
+	Dieser Validator überprüft eine Bilddatei auf die richtige Dateiendung .jpg. Zusätzlich wird überprüft, ob
+	die maximale Dateigröße und die maximal zugelassene Auflösung für ein Anwendungslogo eingehalten wird.
+	\begin{itemize}
+		\item \override
+		\method{public void validate()}
+	\end{itemize}
+	
+	\subsection{Klasse CustomStyleCSSValidator}
+	Der Validator überprüft, ob die Datei den Namen 'customStyle' besitzt und ob es sich um den Dateityp mit der Endung .css handelt.
+	\begin{itemize}
+		\item \override
+		\method{public void validate()}
+	\end{itemize}
+	
+	
+	
+	
+	\section{Verwendete Libraries}
+	In dem System verwendete Libraries:
+	\begin{itemize}
+		\item Commons Fileupload: Library für das Hochladen von Dateien.
+		\item JavaMail: Library für das Versenden von E-Mails.
+		\item JFreeChart: Library für die Erstellung von Diagrammen.
+		\item Log4J: Library für das Loggen von Meldungen.
+	\end{itemize}
+	\section{Klassendiagramm}
