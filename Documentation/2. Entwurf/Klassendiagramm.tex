@@ -7,7 +7,11 @@
 	In diesem Kapitel werden alle Klassen der Anwendung \textbf{ofCourse} aufgeführt.
 	Um eine bessere Übersicht und Strukturierung zu erhalten wird das ganze Projekt in Pakete aufgeteilt.
 	
+
 	\section{Package Action}
+		\begin{tiny}
+			TF
+		\end{tiny}
 	\subsection{Klasse AuthenticateUser}
 	\kursiv{ManagedBean, RequestScoped}\\
 	Die Klasse ist für die Authentifizierung eines Benutzers im System zuständig.
@@ -19,6 +23,7 @@
 		\item \method{public SessionUser getSessionUser()}
 		\item \method{public void setSessionUser(SessionUser userSession)}
 	\end{itemize}
+	
 	\subsection{Klasse RegisterUser}
 	\kursiv{ManagedBean, RequestScoped}\\
 	Die Klasse ist für die Registrierung eines Benutzers im System zuständig.
@@ -27,6 +32,7 @@
 		\item \method{public User getUsertoRegistrate()}
 		\item \method{public void setUserToRegistrate(User userToRegistrate)}
 	\end{itemize}
+	
 	\subsection{Klasse LostPassword}
 	\kursiv{ManagedBean, RequestScoped}\\
 	Die Klasse ist die 'Passwort  vergessen' - Funktion zuständig, d.h. sie ersetzt das alte Passwort eines Benutzers durch ein zufällig generiertes und sendet es an die eingegebene E-Mailadresse.
@@ -35,6 +41,7 @@
 		\item \method{public String getEmailAddressToResetPassword()}
 		\item \method{public void setEmailAddressToResetPassword(String emailToResetPassword)}
 	\end{itemize}
+	
 	\subsection{Klasse SearchUser}
 	\kursiv{ManagedBean, ViewScoped}\\
 	Diese Klasse stellt den Mechanismus zum Suchen von Benutzern zur Verfügung.
@@ -54,8 +61,10 @@
 		\item \method{public SessionUser getSessionUser()}
 		\item \method{public void setSessionUser(SessionUser userSession)}
 	\end{itemize}
+	
 	\subsection{Klasse SearchCourse}
 	\kursiv{ManagedBean, ViewScoped}\\
+	Diese Klasse stellt den Mechanismus zum Suchen von Kursen zur Verfügung. Außerdem wird darin die Einschränkung des Anzeigezeitraums realisiert.
 	\begin{itemize}
 		\item \method{public void searchForFreeCourses()}
 		\item \method{public void displayCoursesInSpecificPeriod()}
@@ -76,16 +85,28 @@
 		\item \method{public SessionUser getSessionUser()}
 		\item \method{public void setSessionUser(SessionUser userSession)}
 	\end{itemize}
+	
 	\subsection{Klasse UserProfil}
 	\kursiv{ManagedBean, ViewScoped}\\
+	Diese Klasse ist zuständig für die Anzeige und das Bearbeiten der Beutzerdaten. Des Weiteren realisiert die Darstellung der Liste aller vom Benutzer geleiteten Kurse.
 	\begin{itemize}
+		\item \method{public void editUserdata()}
+		\item \method{public void saveUserdata()}
+		\item \method{public boolean uploadProfilPic()}
+		\item \method{public void setUserInactive()}
+		\item \method{public void depositMoneyPerCreditcard()}
+		\item \method{public User getUser()}
+		\item \method{public void setUser(UseruserToSet)}
+		\item \method{public ArrayList<Course> getManagedCourses()}
+		\item \method{public void setManagedCourses(ArrayList<Course> managedCourses)}
+		\item \method{public int getActualPageNumber()}
+		\item \method{public void goToSpecicPage()}
+		\item \method{public Pagination getPagination()}
+		\item \method{public void setPagination(Pagination pagination)}
 		\item \method{public SessionUser getSessionUser()}
+		\item \method{public void setSessionUser(SessionUser userSession)}
 	\end{itemize}
-	\subsection{Klasse UserEdit}
-	\kursiv{ManagedBean, ViewScoped}\\
-	\begin{itemize}
-		\item \method{public SessionUser getSessionUser()}
-	\end{itemize}
+	
 	\subsection{Klasse CourseDetail}
 	\kursiv{ManagedBean, ViewScoped}\\
 	\subsection{Klasse CourseEdit}
@@ -96,6 +117,11 @@
 	\kursiv{ManagedBean, RequestScoped}\\
 	\subsection{Klasse Imprint}
 	\kursiv{ManagedBean, ViewScoped}\\
+	Die Klasse ist für die Darstellung und Bearbeitung des Impressums verantwortlich.
+	\begin{itemize}
+		\item \method{public String getImprint()}
+		\item \method{public void setImprint(String Imprint)}
+	\end{itemize}
 	\subsection{Klasse MyCourses}
 	\kursiv{ManagedBean, RequestScoped}\\
 	\subsection{Klasse CourseManagement}
@@ -111,13 +137,53 @@
 	Klasse ist zuständig für die Offline - Aufladung des Guthabenkontos von Benutzern durch den Administrator und um die Bezahlungseinstellungen zu verwalten.
 	\subsection{Klasse IncomeStatistics}
 	\kursiv{ManagedBean, ViewScoped}\\
+	Die Klasse ist für die Generierung und Darstellung der Einnahmestatistiken zuständig.
+	\begin{itemize}
+	    \item \method{public void displayStatistic(String displayParam)}
+		\item \method{public String getDisplayParam()}
+		\item \method{public void setDisplayParam(String displayParam)}
+		\item \method{public int getActualPageNumber()}
+		\item \method{public void goToSpecicPage()}
+		\item \method{public Pagination getPagination()}
+		\item \method{public void setPagination(Pagination pagination)}
+		\item \method{public SessionUser getSessionUser()}
+		\item \method{public void setSessionUser(SessionUser userSession)}
+	\end{itemize}
 	\subsection{Klasse SetupAdmin}
 	\kursiv{ManagedBean, RequestScoped}\\
 	Diese Klasse ist zuständig für das Erstellen des ersten Systemadministrators.
 	\subsection{Klasse Header}
-	\kursiv{ManagedBean, RequestScoped}
+	\kursiv{ManagedBean, RequestScoped}\\
+	Diese Klasse ist zuständig für das Laden der Anmeldeseite, das Abmelden und der Auswahl der Anzeigesprache.
+	\begin{itemize}
+		\item \method{public boolean login()}
+		\item \method{public boolean logout()}
+		\item \method{public String getChoosenLanguage()}
+		\item \method{public void setChoosenLanguage(String choosenLanguage)}
+		\item \method{public SessionUser getSessionUser()}
+		\item \method{public void setSessionUser(SessionUser userSession)}
+	\end{itemize}
+	
 	\subsection{Klasse Footer}
-	\kursiv{ManagedBean, RequestScoped}
+	\kursiv{ManagedBean, RequestScoped}\\
+	Diese Klasse ist zuständig für das Laden der AGB, der Hilfe und der Impressumsseite.
+	\begin{itemize}
+		\item \method{public void loadImprintPage()}
+		\item \method{public void loadAGBPage()}
+		\item \method{public void loadHelpPage()}
+		\item \method{public SessionUser getSessionUser()}
+		\item \method{public void setSessionUser(SessionUser userSession)}
+	\end{itemize}
+	
+	\subsection{Klasse Scheduler}
+	\kursiv{ManagedBean, RequestScoped}\\
+	Diese Klasse ist zuständig für die Generierung und Darstellung des persönlichen Terminplaners des Benutzers.
+	\begin{itemize}
+		\item \method{public void displayScheduler(ArrayList<CourseUnit> bookedCourseUnits)}
+		\item \method{public SessionUser getSessionUser()}
+		\item \method{public void setSessionUser(SessionUser userSession)}
+	\end{itemize}
+	
 	\subsection{Klasse SessionUser}
 	\kursiv{ManagedBean, SessionScoped}\\
 	Die Klasse speichert Informationen über die Session eines Benutzers. Gespeichert werden die ID des Benutzers, dessen Benutzerrolle, die gewählte Sprache.
@@ -139,7 +205,6 @@
 		\item \method{public boolean sendMail(String subject, String message, ArrayList<String> mailRecipients)}
 	\end{itemize}
 	
-	
 	\section{Package Model}
 	
 	\section{Package Services}
@@ -160,7 +225,9 @@
 	\end{itemize}
 	
 	\section{Package System}
-	
+	\begin{tiny}
+		TF
+	\end{tiny}
 	\subsection{Klasse CheckPhase}
 	Die Klasse ist zuständig für die Überprüfung, ob der jeweilige Benutzer die Berechtigung besitzt, auf die angeforderte Seite zu gelangen.\\
 	Die Klasse implementiert das Interface PhaseListener.
@@ -196,7 +263,9 @@
 	
 	
 	\section{Package Util}
-	
+	\begin{tiny}
+		TF
+	\end{tiny}
 	\subsection{Klasse PasswordHash}
 	Diese Klasse ist zuständig für das Hashen der Passwörter.
 	\begin{itemize}
@@ -252,6 +321,9 @@
 	Sind Fehler, welche beim Aufladen des Guthabenkontos auftreten. 
 	
 	\section{Package Validator}
+	\begin{tiny}
+		TF\\
+	\end{tiny}\\
 	Dieser Abschnitt beschäftigt sich mit den benötigten Validatoren, die notwendig sind, um die Eingaben des Benutzers zu überprüfen und gegebenenfalls Fehlermeldungen zu generieren.\\
 	Alles Klassen dieses Packages implementieren das Interface Validator.
 	
@@ -359,6 +431,9 @@
 	
 	
 	\section{Verwendete Libraries}
+	\begin{tiny}
+		TF\\
+	\end{tiny}\\
 	In dem System verwendete Libraries:
 	\begin{itemize}
 		\item Commons Fileupload: Library für das Hochladen von Dateien.
