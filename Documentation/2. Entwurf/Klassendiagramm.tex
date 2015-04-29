@@ -8,6 +8,55 @@
 	Um eine bessere Übersicht und Strukturierung zu erhalten wird das ganze Projekt in Pakete aufgeteilt.
 	
 	\section{Package Action}
+	
+	\subsection{Klasse AuthenticateUser}
+	\kursiv{ManagedBean, RequestScoped}\\
+	\subsection{Klasse RegisterUser}
+	\kursiv{ManagedBean, RequestScoped}\\
+	\subsection{Klasse ForgotPassword}
+	\kursiv{ManagedBean, RequestScoped}\\
+	\subsection{Klasse ChangePassword}
+	\kursiv{ManagedBean, RequestScoped}\\
+	\subsection{Klasse SearchUser}
+	\kursiv{ManagedBean, ViewScoped}\\
+	\subsection{Klasse SearchCourse}
+	\kursiv{ManagedBean, ViewScoped}\\
+	\subsection{Klasse UserProfil}
+	\kursiv{ManagedBean, ViewScoped}\\
+	\subsection{Klasse UserEdit}
+	\kursiv{ManagedBean, ViewScoped}\\
+	\subsection{Klasse CourseDetail}
+	\kursiv{ManagedBean, ViewScoped}\\
+	\subsection{Klasse CourseEdit}
+	\kursiv{ManagedBean, ViewScoped}\\
+	\subsection{Klasse CourseUnitEdit}
+	\kursiv{ManagedBean, ViewScoped}\\
+	\subsection{Klasse ContactUsers}
+	\kursiv{ManagedBean, RequestScoped}\\
+	\subsection{Klasse Imprint}
+	\kursiv{ManagedBean, ViewScoped}\\
+	\subsection{Klasse MyCourses}
+	\kursiv{ManagedBean, RequestScoped}\\
+	\subsection{Klasse CourseManagement}
+	\kursiv{ManagedBean, ViewScoped}\\
+	\subsection{Klasse UserManagement}
+	\kursiv{ManagedBean, ViewScoped}
+	\subsection{Klasse SystemConfiguration}
+	\kursiv{ManagedBean, ViewScoped}\\
+	\subsection{Klasse PaymentOnline}
+	\kursiv{ManagedBean, ViewScoped}\\
+	\subsection{Klasse PaymentOffline}
+	\kursiv{ManagedBean, ViewScoped}\\
+	Klasse ist zuständig für die Offline - Aufladung des Guthabenkontos von Benutzern durch den Administrator und um die Bezahlungseinstellungen zu verwalten.
+	\subsection{Klasse IncomeStatistics}
+	\kursiv{ManagedBean, ViewScoped}\\
+	\subsection{Klasse SetupAdmin}
+	\kursiv{ManagedBean, RequestScoped}\\
+	Diese Klasse ist zuständig für das Erstellen des ersten Systemadministrators.
+	\subsection{Klasse Header}
+	\kursiv{ManagedBean, RequestScoped}
+	\subsection{Klasse Footer}
+	\kursiv{ManagedBean, RequestScoped}
 	\subsection{Klasse SessionUser}
 	\kursiv{ManagedBean, SessionScoped}\\
 	Die Klasse speichert Informationen über die Session eines Benutzers. Gespeichert werden die ID des Benutzers, dessen Benutzerrolle, die gewählte Sprache.
@@ -20,6 +69,14 @@
 		\item \method{public void setLanguage(String language)}
 	\end{itemize}
 	
+	\subsection{Klasse Mail}
+	\kursiv{ManagedBean, ApplicationScoped}\\
+	Die Klasse ist für die E-Mailbenachrichtigung der Benutzer zuständig. Sie ist sowohl für die automatisch gesendeten E-Mails, wie unter anderem die Verifizierung oder Accountaktivierungsbestätigung, als auch für die von Kursleitern gesendeten Mails zuständig.
+	\begin{itemize}
+		\item \method{public boolean sendVerificationMail(int UserID)}
+		\item \method{public boolean sendConfirmaitionMail(int UserID)}
+		\item \method{public boolean sendMail(String subject, String message, ArrayList<String> mailRecipients)}
+	\end{itemize}
 	
 	
 	\section{Package Model}
@@ -78,15 +135,6 @@
 	
 	
 	\section{Package Util}
-	
-	\subsection{Klasse Mail}
-	\kursiv{ManagedBean, ApplicationScoped}\\
-	Die Klasse ist für die E-Mailbenachrichtigung der Benutzer zuständig. Sie ist sowohl für die automatisch gesendeten E-Mails, wie unter anderem die Verifizierung oder Accountaktivierungsbestätigung, als auch für die von Kursleitern gesendeten Mails zuständig.
-	\begin{itemize}
-		\item \method{public boolean sendVerificationMail(int UserID)}
-		\item \method{public boolean sendConfirmaitionMail(int UserID)}
-		\item \method{public boolean sendMail(String subject, String message, ArrayList<String> mailRecipients)}
-	\end{itemize}
 	
 	\subsection{Klasse PasswordHash}
 	Diese Klasse ist zuständig für das Hashen der Passwörter.
