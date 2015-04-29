@@ -5,13 +5,14 @@
 	
 	\chapter{Klassenbeschreibung und Klassendiagramm}
 	In diesem Kapitel werden alle Klassen der Anwendung \textbf{ofCourse} aufgeführt.
-	Um eine bessere Übersicht und Strukturierung zu erhalten wird das ganze Projekt in Pakete aufgeteilt.
+	Um eine bessere Übersicht und Strukturierung zu erhalten wird das ganze Projekt in Packages aufgeteilt.
 	
 
 	\section{Package Action}
 		\begin{tiny}
-			TF
-		\end{tiny}
+			TF\\
+		\end{tiny}\\
+	Dieses Package stellt die Businesslogik dess Systems \textbf{ofCourse} dar.
 	\subsection{Klasse AuthenticateUser}
 	\kursiv{ManagedBean, RequestScoped}\\
 	Die Klasse ist für die Authentifizierung eines Benutzers im System zuständig.
@@ -94,6 +95,7 @@
 		\item \method{public void saveUserdata()}
 		\item \method{public boolean uploadProfilPic()}
 		\item \method{public void setUserInactive()}
+		\item \method{public void deleteUserByAdmin()}
 		\item \method{public void depositMoneyPerCreditcard()}
 		\item \method{public User getUser()}
 		\item \method{public void setUser(UseruserToSet)}
@@ -108,33 +110,71 @@
 	\end{itemize}
 	
 	\subsection{Klasse CourseDetail}
-	\kursiv{ManagedBean, ViewScoped}\\
+	\kursiv{ManagedBean, ViewScoped}
 	\subsection{Klasse CourseEdit}
-	\kursiv{ManagedBean, ViewScoped}\\
+	\kursiv{ManagedBean, ViewScoped}
 	\subsection{Klasse CourseUnit}
-	\kursiv{ManagedBean, ViewScoped}\\
+	\kursiv{ManagedBean, ViewScoped}
 	\subsection{Klasse ContactUsers}
-	\kursiv{ManagedBean, RequestScoped}\\
-	\subsection{Klasse Imprint}
-	\kursiv{ManagedBean, ViewScoped}\\
-	Die Klasse ist für die Darstellung und Bearbeitung des Impressums verantwortlich.
-	\begin{itemize}
-		\item \method{public String getImprint()}
-		\item \method{public void setImprint(String Imprint)}
-	\end{itemize}
+	\kursiv{ManagedBean, RequestScoped}
 	\subsection{Klasse MyCourses}
-	\kursiv{ManagedBean, RequestScoped}\\
+	\kursiv{ManagedBean, RequestScoped}
 	\subsection{Klasse CourseManagement}
-	\kursiv{ManagedBean, ViewScoped}\\
+	\kursiv{ManagedBean, ViewScoped}
 	\subsection{Klasse UserManagement}
 	\kursiv{ManagedBean, ViewScoped}
+	
 	\subsection{Klasse SystemConfiguration}
 	\kursiv{ManagedBean, ViewScoped}\\
+	Die Klasse ist für die Administratoraufgaben zuständig, d.h. das Hochladen einer CSS - Datei, eines Logos, des Festlegen des Überziehungskredits und der Registrierungseinstellungen. Des Weiteren ist sie zuständig für die Weiterleitung zur Benutzer- und Kursverwaltung.
+	\begin{itemize}
+		\item \method{public void determineAccountActivationType(String accountActivationType)}
+		\item \method{public String getAccountActivationType()}
+		\item \method{public void setAccountActivationType(String accountActivationType)}
+		\item \method{public void determineOverdraftCredit(float overdraftCredit)}
+		\item \method{public float getOverdraftCredit()}
+		\item \method{public void setOverdraftCredit(float overdraftCredit)}
+		\item \method{public boolean uploadCustomStyleCSS()}
+		\item \method{public boolean uploadLogo()}
+		\item \method{public void loadEditImprintPage()}
+		\item \method{public void loadCreateNewUserPage()}
+		\item \method{public void loadManageUserPage()}
+		\item \method{public void loadCreateNewCoursePage()}
+		\item \method{public void loadManageCoursesPage()}
+		\item \method{public SessionUser getSessionUser()}
+		\item \method{public void setSessionUser(SessionUser userSession)}
+	\end{itemize}
 	\subsection{Klasse PaymentOnline}
 	\kursiv{ManagedBean, ViewScoped}\\
+	Die Klasse ist zuständig für die Online - Aufladung des Guthabenkontos von Benutzern per Kreditkarte. Die Kreditkartenabwicklung erfolgt über die InfoSun-Bank.
+	\begin{itemize}
+		\item \method{public boolean depositAmount(User user, String CreditCardNumber, int CVCNumber, float amount)}
+		\item \method{public User getUser()}
+		\item \method{public void setUser(User user)}
+		\item \method{public String getCreditCardNumber()}
+		\item \method{public void setCreditCardNumber(String creditCardNumber)}
+		\item \method{public int getCVCNumber()}
+		\item \method{public void setCVCNumber(int cvcNumber)}
+		\item \method{public int getAmountToDeposit()}
+		\item \method{public void setAmountToDeposit(float amountToDeposit)}
+		\item \method{public SessionUser getSessionUser()}
+		\item \method{public void setSessionUser(SessionUser userSession)}
+	\end{itemize}
+	
 	\subsection{Klasse PaymentOffline}
 	\kursiv{ManagedBean, ViewScoped}\\
-	Klasse ist zuständig für die Offline - Aufladung des Guthabenkontos von Benutzern durch den Administrator und um die Bezahlungseinstellungen zu verwalten.
+	Die Klasse ist zuständig für die Offline - Aufladung des Guthabenkontos von Benutzern durch den Administrator und um die Bezahlungseinstellungen zu verwalten.
+	\begin{itemize}
+		\item \method{public boolean depositAmountOnUserAccount(int userID, String userName, float amountToDeposit)}
+		\item \method{public int getUserID()}
+		\item \method{public void setUserID(int userID)}
+		\item \method{public String getUserName()}
+		\item \method{public void setUserName(String username)}
+		\item \method{public int getAmountToDeposit()}
+		\item \method{public void setAmountToDeposit(float amountToDeposit)}
+		\item \method{public SessionUser getSessionUser()}
+		\item \method{public void setSessionUser(SessionUser userSession)}
+	\end{itemize}
 	\subsection{Klasse IncomeStatistics}
 	\kursiv{ManagedBean, ViewScoped}\\
 	Die Klasse ist für die Generierung und Darstellung der Einnahmestatistiken zuständig.
@@ -149,9 +189,28 @@
 		\item \method{public SessionUser getSessionUser()}
 		\item \method{public void setSessionUser(SessionUser userSession)}
 	\end{itemize}
+	
 	\subsection{Klasse SetupAdmin}
 	\kursiv{ManagedBean, RequestScoped}\\
 	Diese Klasse ist zuständig für das Erstellen des ersten Systemadministrators.
+	\begin{itemize}
+		\item \method{public boolean createInitialAdmin()}
+		\item \method{public boolean createDefaultImprint()}
+		\item \method{public User getUser()}
+		\item \method{public void setUser(User user)}
+		\item \method{public String getImprint()}
+		\item \method{public void setImprint(String imprint)}
+	\end{itemize}
+	
+	\subsection{Klasse Imprint}
+	\kursiv{ManagedBean, ViewScoped}\\
+	Die Klasse ist für die Darstellung und Bearbeitung des Impressums verantwortlich.
+	\begin{itemize}
+		\item \method{public void editImprint(String imprint)}
+		\item \method{public String getImprint()}
+		\item \method{public void setImprint(String imprint)}
+	\end{itemize}
+	
 	\subsection{Klasse Header}
 	\kursiv{ManagedBean, RequestScoped}\\
 	Diese Klasse ist zuständig für das Laden der Anmeldeseite, das Abmelden und der Auswahl der Anzeigesprache.
