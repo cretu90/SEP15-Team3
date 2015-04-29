@@ -1,2 +1,51 @@
 \chapter{Systemfunktionen}
+
+	\title{5.1 Systemstart}
+		Beim starten des System wird die Existenz der Konfigurationsdatei geprüft. Ist diese nicht Vorhanden wird von einer Neu- bzw. Erstkonfiguration ausgegangen. Um das System starten zu können müssen folgende Daten bzw. Einstellungen getroffen werden:
+		\begin{itemize}
+			\item \emph{Datenbankeinstellungen:} Datenbankserver, Port, Benutzernamen, Passwort und maximale Anzahl an offenen Verbindungen zur Datenbank.
+			\item \emph{E-Maileinstellungen:} Mailserver, Port, Benutzername und Passwort
+			\item \emph{Systemrelevanteneinstellungen:} Überziehungskredit, Standartsprache und Art der Registrierung
+		\end{itemize}
+		
+		Nach dem lesen der Konfigurationsdatei werden die Verbindungen zur Datenbank aufgebaut(Voraussetzung ist die Konfigurationsdatei existiert). Über einen Datenbank-Kommunikationspool stellt das System eine feste Anzahl an Verbindungen für die Benutzer zur Verfügung damit auch mehrer Benutzer gleichzeit Anfragen an den SQL-Server schicken können. 
+	\title{5.2 Systemlaufzeit}
+		Damit das System startet ist eine Erstkonfiguration nötig. Während der Systemlaufzeit können folgende Fälle auftreten:
+		\begin{itemize}
+			\item \emph{Kommunikation mit der Datenbank:} Für manche Benutzeraktionen (z.B. "Aufruf der Kursdetails" oder "Suche nach Kursen") wird eine Anfrage an die Datenbank gesendet. Der Datenbankkommunkationspool Verwaltet die Anfragen und übergibt den Benutzern Verbindungen zur Datenbank (Anzahl zuvor vom Administrator festgelegt). Es können verschiedene Fälle eintreten:
+			\begin{enumerate}
+				\item \textbf{Es gibt eine freie, aktive Verbindung:} 
+				Die Methode die eine Verbindung angefragt hat bekommt sie. Die Verbindung wird aus der Liste der freien Verbindungen herausgenommen und steht für den Dauer der Benutzeraktion nicht mehr zur Verfügung. Nach der Benutzung gibt die Methode die Verbindung wieder frei und zurück an den Pool. Dort wird sie wieder in die Liste der zur Verfügung stehenden Verbindungen hinzugefügt
+				\item \textbf{Alle Verbindungen sind aktiv aber in Benutzung:} 
+				Die Methode die nach einer Verbindung angefragt hat kommt in eine Warteschlange und muss solange warten bis eine Verbindung von einer anderen Methode freigegeben wird. Dann bekommt sie diese zugewiesen.(FIFO?)
+				\item \textbf{Es gibt keine freie, aktive Verbindung obwohl nicht die maximale Anzahl an Verbindungen erreicht ist:}
+				 Wenn eine Verbindung von der Datenbank terminiert wurde(Timeout) muss eine neue Datenbankverbindung erstellt werden.
+				
+			\end{enumerate}
+			Wenn die die Benutzeraktion die eine Datenbankverbindung angefordert hat beendet ist, gibt die ausgeführte Methode die Verbindung wieder dem Datenbankkommunikationspool zurück. Dieser kann die Verbindung nun einer wartenden Methode zuweisen oder falls keine Methode wartet für sich behalten. Wenn eine Verbindung durch ein Timeout von Serverseite geschlossen wird und somit nicht mehr zur Verfügung steht erstellt der Kommunikationspool erst wieder eine Verbindung wenn sie vom System gebraucht wird(Effizient) Bei korrekter Ausführung beendet das System keine Verbindungen sondern behält sie um ein schnellen Datenbanktransfer zu gewährleisten. Folgende Aktionen können auf der Datenbank vom System und Benutzer ausgeführt werden:
+			\begin{enumerate}
+				\item \textbf{Abfrage:} 
+				Es werden Datensätze ausgelesen (z.B. Kurseinheitendetails).
+				\item \textbf{Einträge:}
+				 Es werden Datensätze geschrieben oder editiert. (z.B. Anlegen eines neuen Kurses oder Benutzers).
+				\item \textbf{Löschen:} 
+				Es werden Datensätze gelöscht. Diese Vorgang passiert Kaskadenartig auf der Datenbank damit keine fehlerhaften Verlinkungen übrigbleiben (z.B. Beim Löschen einer Kurseinheit).
+				
+			\end{enumerate}
+			
+			\item \textbf{Darstellugn der Webseite:} 
+			Die Seiten basieren auf dem Framework JSF (Java Server Faces) welches auf Servlets basiert. 
+			
+			\item \textbf{E-Mail Benachrichtigungen:} Jeder Benutzer bekommt vom System wichtige Ereignisse per E-Mail mitgeteilt (z.B. Anmeldung). Zusätzlich kann der Benutzer sich noch für andere Ereignisse per E-Mail benachrichtigen lassen (z.B. neue Kurseinheit in einem angemeldet Kurs wurde erstellt). Dies läuft über einen SMTP-Server dessen Daten vom Systemadministrator bei Erstkonfiguration eingegeben wurde.
+			
+			\item \textbf{Fehlerbehandlung:} 
+			Es kann passieren, das während das System läuft Fehler auftreten (z.B. keine Verbindung mehr zur Datenbank). Alle Fehler werden in einer Log-Datei festgehalten. Man unterscheidet hier zwischen:
+			\begin{itemize}
+				\item \textbf{RuntimeException:} Nicht behandelbar. Der Benutzer wird über eine allgemeine Fehlermeldung benachrichtigt.
+				\item \textbf{Exception:} Behandelbar, der Benutzer bekommt eine spezifische Fehlermeldung allerdings ohne oder wenig Strukturinformationen des Systems.
+				\end{itemize}
+			
+		\end{itemize} 
+	
+	\title{5.3 Systemshutdown}
    

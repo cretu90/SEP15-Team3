@@ -95,12 +95,15 @@
 				\paragraph{imprint.xhtml}
 					KH\\
 					\begin{itemize}
-						\item \textbf{Beschreibung:}
-						\item \textbf{Links:}
-						\item \textbf{Buttons:}
-						\item \textbf{Inputs:}
-						\item \textbf{Outputs:}
-						\item \textbf{BackingBean:}
+						\item \textbf{Beschreibung:} Auf dieser Seite kann das Impressum angesehen werden.
+						\item \textbf{Links:} -
+						\item \textbf{Buttons:} -
+						\item \textbf{Inputs:} -
+						\item \textbf{Outputs:} 
+							\begin{itemize}
+								\item	Anzeige des Impressums, welches vom Administrator festgelegt wurde.
+							\end{itemize}
+						\item \textbf{BackingBean:} imprint.java
 					\end{itemize}
 				
 				
@@ -160,23 +163,67 @@
 				\paragraph{myCourses.xhtml}
 					KH\\
 					\begin{itemize}
-						\item \textbf{Beschreibung:}
+						\item \textbf{Beschreibung:} Auf dieser Seite werden alle Kurse angezeigt, in die der Teilnehmer eingetragen ist.
 						\item \textbf{Links:}
+							\begin{itemize}
+								\item Kurstitel: Über die Kurstitel gelangt der Benutzer zum auf die jeweilige Kursdetailseite.
+							\end{itemize}
 						\item \textbf{Buttons:}
-						\item \textbf{Inputs:}
+						\item \textbf{Inputs:} -
 						\item \textbf{Outputs:}
-						\item \textbf{BackingBean:}
+							\begin{itemize}
+								\item Tabelle Auflistung aller Kurse: Hier werden dem Benutzer alle seine angemeldeten Kurse angezeigt.
+							\end{itemize}
+						\item \textbf{BackingBean:} myCourses.java
 					\end{itemize}
 				
 				\paragraph{profile.xhtml}
 					KH\\
 					\begin{itemize}
-						\item \textbf{Beschreibung:}
-						\item \textbf{Links:}
+						\item \textbf{Beschreibung:} Auf dieser Seite werden die persönlichen Daten und der Kontostand des Benutzers angezeigt. Der Benutzer kann die Daten ändern und sein Konto aufladen. Der Kursleiter kann hier den Benutzer aktivieren, und der Administrator den Benutzer löschen.
+						\item \textbf{Links:} -
 						\item \textbf{Buttons:}
+							\begin{itemize}
+								\item Bearbeiten: Nach Klicken auf diesen Button können die persönlichen Daten geändert werden. Der Button trägt nun die Aufschrift 'Speichern' und ist mit deren dazugehörigen Methode hinterlegt.
+								\item Speichern: Durch Drücken dieses Buttons werden die vorgenommenen Änderungen gespeichert, sofern alle Daten korrekt eingegeben wurden. Bei Änderung der E-Mail-Adresse wird außerdem eine Bestätigungsmail mit einem Verifizierungslink verschickt.
+								\item Durchsuchen: Durch Drücken dieses Buttons kann das eigene Dateiverzeichnis nach einem Bild durchsucht und hochgeladen werden.
+								\item Konto aufladen: Durch Klicken dieses Buttons wird der Benutzer auf die Seite 'Kontoaufladung' weitergeleitet.
+								\item Benutzer löschen: Durch Drücken dieses Buttons entfernt der Administrator diesen Benutzer aus dem System.
+								\item Benutzer aktivieren: Durch diesen Button kann der Benutzer je nach Einstellung der Accountaktivierung vom Kursleiter oder vom Administrator aktiviert werden.
+							\end{itemize}
 						\item \textbf{Inputs:}
+							\begin{itemize}
+								\item Vorname: Hier kann der Benutzer seinen Vornamen ändern.
+								\item Name: Hier kann der Benutzer seinen Namen ändern.
+								\item Geburtstag: Hier kann der Benutzer sein Geburtsdatum ändern.
+								\item Straße/Hausnummer: Hier kann der Benutzer seine Straße und Hausnummer ändern.
+								\item Ort: Hier kann der Benutzer seinen Ort ändern.
+								\item Postleitzahl: Hier kann der Benutzer seine Postleitzahl ändern.
+								\item E-Mail-Adresse: Hier kann der Benutzer seine E-Mail-Adresse ändern.
+								\item Benutzername: Hier kann der Benutzer seinen Benutzernamen ändern.
+								\item Passwort: Hier kann der Benutzer sein Passwort ändern.
+								\item Passwort bestätigen: Hier muss der Benutzer sein geändertes Passwort bestätigen.
+								\item Benutzerrolle: Hier kann der Administrator die Benutzerrolle eines Nutzers ändern.
+								\item Profilbild: Hier kann der Benutzer sein Profilbild ändern.
+							\end{itemize}
 						\item \textbf{Outputs:}
-						\item \textbf{BackingBean:}
+							\begin{itemize}
+								\item Benutzer-ID: Ausgabe der automatisch generierten ID.
+								\item Vorname Fehlermeldung: Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
+								\item Name Fehlermeldung: Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
+								\item Geburtstag Fehlermeldung: Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
+								\item Straße/Hausnummer Fehlermeldung: Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
+								\item Ort Fehlermeldung: Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
+								\item Postleitzahl Fehlermeldung: Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
+								\item E-Mail-Adresse Fehlermeldung: Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
+								\item Benutzername Fehlermeldung: Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
+								\item Passwort Fehlermeldung: Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
+								\item Passwort bestätigen Fehlermeldung: Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
+								\item Profilbild Fehlermeldung: Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
+								\item Kontostand: Ausgabe des aktuellen Kontostandes.
+								\item Tabelle Auflistung der Trainingskurse: Hier werden dem Kursleiter alle Kurse aufgelistet, die er leitet.
+							\end{itemize}
+						\item \textbf{BackingBean:} profile.java
 					\end{itemize}
 				
 				\paragraph{buyCredits.xhtml}
@@ -204,23 +251,29 @@
 				\paragraph{leaderProfile.xhtml}
 					KH\\
 					\begin{itemize}
-						\item \textbf{Beschreibung:}
+						\item \textbf{Beschreibung:} Auf dieser Seite werden die Daten des Kursleiters, mit Ausnahme von sensiblen Daten wie Passwort oder Kontostand, und die von ihm geleiteten Kurse angezeigt.
 						\item \textbf{Links:}
 						\item \textbf{Buttons:}
 						\item \textbf{Inputs:}
 						\item \textbf{Outputs:}
-						\item \textbf{BackingBean:}
+						\item \textbf{BackingBean:} leaderProfile.java
 					\end{itemize}
 				
 				\paragraph{listParticipants.xhtml}
 					KH\\
 					\begin{itemize}
-						\item \textbf{Beschreibung:}
+						\item \textbf{Beschreibung:} Hier kann der registrierte Benutzer die Teilnehmer eines Kurses mit Benutzername und Profilbild ansehen. Dem Kursleiter werden zusätzlich die E-Mail-Adresse und die Information über den Erhalt von Kursnews angezeigt. Außerdem kann er einen Teilnehmer aus dem Kurs entfernen.
 						\item \textbf{Links:}
 						\item \textbf{Buttons:}
+							\begin{itemize}
+								\item Löschen: Durch Drücken dieses Buttons kann der Kursleiter den entsprechenden Benutzer aus dem Kurs entfernen.
+							\end{itemize}
 						\item \textbf{Inputs:}
+							 \begin{itemize}
+							 	\item Entfernen: Durch Setzen des Häkchens wählt der Kursleiter diesen Benutzer aus, um ihn anschließend über den Button 'Löschen' zu entfernen.
+							 \end{itemize}
 						\item \textbf{Outputs:}
-						\item \textbf{BackingBean:}
+						\item \textbf{BackingBean:} listParticipants.java
 					\end{itemize}
 			
 			\subsubsection{courseLeader}
