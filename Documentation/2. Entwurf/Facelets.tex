@@ -413,11 +413,11 @@
 							\end{itemize}
 						\item \textbf{Inputs:}
 							\begin{itemize}
-								\item Accountaktivierung
-								\item Benutzer-ID
-								\item Benutzername
-								\item Betrag
-								\item Überziehungswert
+								\item Accountaktivierung: Auswahlfeld um Registrierungsmodalität festzulegen
+								\item Benutzer-ID: ID des Benutzers, dessen Kontostand erhöht werden soll
+								\item Benutzername: Name des Benutzers, dessen Kontostand erhöht werden soll
+								\item Betrag: Betrag, welcher dem Nutzer gutgeschrieben werden soll
+								\item Überziehungswert: Betrag, welcher im ganzen System zur Überziehung des Kontos akzeptiert wird
 							\end{itemize}
 						\item \textbf{Outputs:} -
 						\item \textbf{BackingBean:}
@@ -430,28 +430,29 @@
 						\item \textbf{Links:} -
 						\item \textbf{Buttons:}
 							\begin{itemize}
-								\item Durchsuchen - Profilbild
-								\item Benutzer anlegen
+								\item Durchsuchen: Öffnet ein Fenster um auf dem Computer nach einem Profilbild zu suchen
+								\item Benutzer anlegen: Legt den Benutzer an
 							\end{itemize}
 						\item \textbf{Inputs:}
 							\begin{itemize}
-								\item Anrede
-								\item Vorname
-								\item Nachname
-								\item Geburtsdatum
-								\item Straße
-								\item Postleitzahl
-								\item Ort
-								\item Benutzername
-								\item Passwort
-								\item Passwort wiederholen
-								\item E-Mail
-								\item Benutzerrolle
+								\item Anrede: Herr oder Frau
+								\item Vorname: Vorname des neuen Benutzers
+								\item Nachname: Nachname des neuen Benutzers
+								\item Geburtsdatum: Geburtsdatum des neuen Benutzers
+								\item Straße: Straße des neuen Benutzers
+								\item Postleitzahl: Postleitzahl des neuen Benutzers
+								\item Ort: Ort des neuen Benutzers
+								\item Benutzername: Benutzername des neuen Benutzers
+								\item Passwort: Passwort des neuen Benutzers
+								\item Passwort wiederholen: Passwortfeld um Passwort sicherzustellen
+								\item E-Mail: E-Mail Adresse des neuen Benutzers
+								\item Benutzerrolle: Benutzerrolle des neuen Benutzers, Administrator, Kursleiter oder normaler Benutzer
 							\end{itemize}
 						\item \textbf{Outputs:}
 							\begin{itemize}
-								\item Benutzer-ID
-								\item Profilbild
+								\item Fehlermeldung zu den einzelnen Eingabefeldern, bei falscher Eingabe
+								\item Benutzer-ID: ID des neuen Benutzers
+								\item Profilbild: Dummy-Profilbild des neuen Benutzers
 							\end{itemize}
 						\item \textbf{BackingBean:}
 					\end{itemize}
