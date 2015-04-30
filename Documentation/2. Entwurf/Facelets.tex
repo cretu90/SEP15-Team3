@@ -103,7 +103,7 @@
 							\begin{itemize}
 								\item	Anzeige des Impressums, welches vom Administrator festgelegt wurde.
 							\end{itemize}
-						\item \textbf{BackingBean:} imprint.java
+						\item \textbf{BackingBean:} -
 					\end{itemize}
 				
 				
@@ -223,7 +223,7 @@
 						\item \textbf{Buttons:}
 							\begin{itemize}
 								\item Bearbeiten: Nach Klicken auf diesen Button können die persönlichen Daten geändert werden. Der Button trägt nun die Aufschrift 'Speichern' und ist mit deren dazugehörigen Methode hinterlegt.
-								\item Speichern: Durch Drücken dieses Buttons werden die vorgenommenen Änderungen gespeichert, sofern alle Daten korrekt eingegeben wurden. Bei Änderung der E-Mail-Adresse wird außerdem eine Bestätigungsmail mit einem Verifizierungslink verschickt.
+								\item Speichern: Durch Drücken dieses Buttons werden die vorgenommenen Änderungen gespeichert, sofern alle Daten korrekt eingegeben wurden. Bei Änderung der E-Mail-Adresse wird außerdem eine Bestätigungsmail mit einem Verifizierungslink verschickt. Bei erfolgreicher Speicherung erscheint der Button 'Bearbeiten' anstelle des Button 'Speichern'.
 								\item Durchsuchen: Durch Drücken dieses Buttons kann das eigene Dateiverzeichnis nach einem Bild durchsucht und hochgeladen werden.
 								\item Konto aufladen: Durch Klicken dieses Buttons wird der Benutzer auf die Seite 'Kontoaufladung' weitergeleitet.
 								\item Benutzer löschen: Durch Drücken dieses Buttons entfernt der Administrator diesen Benutzer aus dem System.
@@ -302,10 +302,13 @@
 					KH\\
 					\begin{itemize}
 						\item \textbf{Beschreibung:} Auf dieser Seite werden die Daten des Kursleiters, mit Ausnahme von sensiblen Daten wie Passwort oder Kontostand, und die von ihm geleiteten Kurse angezeigt.
-						\item \textbf{Links:}
-						\item \textbf{Buttons:}
-						\item \textbf{Inputs:}
-						\item \textbf{Outputs:}
+						\item \textbf{Links:} -
+						\item \textbf{Buttons:} -
+						\item \textbf{Inputs:} -
+						\item \textbf{Outputs:} 
+							\begin{itemize}
+								\item Tabelle Auflistung Kursleiterdaten: Hier werden die Daten des Kursleiters und die von ihm geleiteten Kurse angezeigt.
+							\end{itemize}
 						\item \textbf{BackingBean:} leaderProfile.java
 					\end{itemize}
 				
@@ -313,7 +316,7 @@
 					KH\\
 					\begin{itemize}
 						\item \textbf{Beschreibung:} Hier kann der registrierte Benutzer die Teilnehmer eines Kurses mit Benutzername und Profilbild ansehen. Dem Kursleiter werden zusätzlich die E-Mail-Adresse und die Information über den Erhalt von Kursnews angezeigt. Außerdem kann er einen Teilnehmer aus dem Kurs entfernen.
-						\item \textbf{Links:}
+						\item \textbf{Links:} -
 						\item \textbf{Buttons:}
 							\begin{itemize}
 								\item Löschen: Durch Drücken dieses Buttons kann der Kursleiter den entsprechenden Benutzer aus dem Kurs entfernen.
@@ -322,7 +325,7 @@
 							 \begin{itemize}
 							 	\item Entfernen: Durch Setzen des Häkchens wählt der Kursleiter diesen Benutzer aus, um ihn anschließend über den Button 'Löschen' zu entfernen.
 							 \end{itemize}
-						\item \textbf{Outputs:}
+						\item \textbf{Outputs:} -
 						\item \textbf{BackingBean:} listParticipants.java
 					\end{itemize}
 			
@@ -331,9 +334,16 @@
 				\paragraph{editCourseUnit.xhtml}
 					KH\\
 					\begin{itemize}
-						\item \textbf{Beschreibung:}
-						\item \textbf{Links:}
+						\item \textbf{Beschreibung:} Auf dieser Seite können Kursleiter beziehungsweise Administrator Kurseinheiten anlegen und bearbeiten, oder Kursteilnehmer hinzufügen und entfernen
+						\item \textbf{Links:} -
 						\item \textbf{Buttons:}
+							\begin{itemize}
+								\item Bearbeiten (Kurseinheit):
+								\item Speichern (Kurseinheit):
+								\item Löschen (Kurseinheit):
+								\item Löschen (Teilnehmer):
+								\item Hinzufügen (Teilnehmer):
+							\end{itemize}
 						\item \textbf{Inputs:}
 						\item \textbf{Outputs:}
 						\item \textbf{BackingBean:}
