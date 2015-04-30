@@ -382,12 +382,77 @@
 	\subsection{Klasse User}
 	Diese Klasse stellt alle Benutzer des Systems dar. Je nach Status des Benutzers(Administrator, Kursleiter und Benutzer) sind unterschiedliche Attribute ausgefüllt.
 	\begin{itemize}
+		\item \method {public Address getAddress()}
 		\item \method {public boolean equals(Object other)}
 		\item \method {public String getEmail()}
 		\item \method {public String getFristname()}
 		\item \method {public String getLastname()}
+		\item \method {public String getUsernname()}
 		\item \method {public String getPassword()}
-		\item \method {public UserPermission getPermission}
+		\item \method {public Date getDateOfBirth()}
+		\item \method {public UserRole getUserRole()}
+		\item \method {public int getUserID()}
+		\item \method {public int hashCode()}
+		\item \method {public void setAddress(Address address)}
+		\item \method {public void setEmail(String email)}
+		\item \method {public void setFirstname(String firstname)}
+		\item \method {public void setLastname(String lastname)}
+		\item \method {public void setPassword(String password)}
+		\item \method {public void setUserRole(UserRole role)}
+		\item \method {public void setUserId(int id)}
+		\item \method {public void setUsername(String username)}
+		\item \method {public void setDateOfBirth(Date dateOfBirth)}
+	\end{itemize}
+	\subsection{Enumeration UserRole}
+	Es werden nun die verschiedenen Benutzerrollen beschrieben
+	\begin{itemize}
+		\item {registeredUser}
+		\item {courseAdmin}
+		\item {systemAdmin}
+	\end{itemize}
+	
+	\subsection{Klasse UserGroup}
+	Diese Klasse beschreibt eine Benutzergruppe (Administratoren, Kursleiter oder Benutzern) die aus mehreren registrierten Benutzern, mit gleichen Benutzerrechten, besteht.
+	\begin{itemize}
+		\item \method {public boolean equals(Object other)}
+		\item \method {public String getGroupName()}
+		\item \method {public int getUserGroupID()}
+		\item \method {public }
+		Nochmal Mit Tobi durchgehen... wirklich alle User nochmal speichern? LinkedList?!
+		
+	\end{itemize}
+	
+	\subsection{Address}
+	Diese Klasse verwaltet die Adressenangaben der Kurseinheiten und Benutzer.
+	\begin{itemize}
+		\item \method {public boolean equals(Object other)}
+		\item \method {public String getCountry()}
+		\item \method {public String getTown()}
+		\item \method {public String getStreet()}
+		\item \method {public String getRoom()}
+		\item \method {public int getHouseNumber()}
+		\item \method {public int getZipCode()}
+		\item \method {public void setCountry(String country)}
+		\item \method {public void setTown(String town)}
+		\item \method {public void setStreet(String street)}
+		\item \method {public void setRoom(String room)}
+		\item \method {public void setHouseNumber(int houseNumber)}
+		\item \method {public void setZipCode(int zipCode)}
+		
+	\end{itemize}
+	
+	\subsection{Klasse System}
+	In dieser Klasse werden die editierbaren Eigenschaften des Systems gespeichert
+	\begin{itemize}
+		\item \method {public boolean equals(Object other)}
+		\item \method {public String getCSS()}
+		\item \method {public String getImpressum()}
+		\item \method {public String getLogo()}
+		\item \method {public String getTitle()}
+		\item \method {public void setCss(String css)}
+		\item \method {public void setImpressum (String impressum)}
+		\item \method {public void setLogo(String logo)}
+		\item \method {public void setTitle(String title)}
 	\end{itemize}
 	\section{Package Services}
 	
