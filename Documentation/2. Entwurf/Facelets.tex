@@ -346,45 +346,62 @@
 							\end{itemize}
 						\item \textbf{Inputs:}
 							\begin{itemize}
-								\item Termin:
-								\item Straße/ Hausnummer:
-								\item Postleitzahl:
-								\item Stadt:
-								\item Raum:
-								\item Beschreibung:
-								\item Preis:
-								\item Kursleiter:
-								\item Mindestteilnehmerzahl:
-								\item Maximale Teilnehmerzahl:
-								\item Teilnehmer markieren:
-								\item Benutzer-ID:
-								\item Name (Teilnehmer):
-								\item Vorname (Teilnehmer):
+								\item Termin: Hier gibt der Kursleiter den Termin der Kurseinheit ein.
+								\item Straße/ Hausnummer: Hier gibt der Kursleiter Straße und Hausnummer ein.
+								\item Postleitzahl: Hier gibt der Kursleiter die entsprechende Postleitzahl ein.
+								\item Stadt: Hier gibt der Kursleiter die Stadt ein, in der die Kurseinheit stattfindet.
+								\item Raum: Hier gibt der Kursleiter den Raum ein, in dem die Kurseinheit stattfindet.
+								\item Beschreibung: Hier gibt der Kursleiter die Beschreibung der Kurseinheit ein.
+								\item Preis: Hier gibt der Kursleiter den Preis der Kurseinheit ein.
+								\item Kursleiter: Hier wird der Leiter des Kurses angezeigt.
+								\item Mindestteilnehmerzahl: Hier gibt der Kursleiter die minimale Teilnehmerzahl der Kurseinheit an.
+								\item Maximale Teilnehmerzahl: Hier gibt der Kursleiter die maximale Teilnehmerzahl der Kurseinheit an.
+								\item Teilnehmer markieren: Hier kann der Kursleiter einen Hacken setzen, um den Teilnehmer für das anschließende Löschen zu markieren.
+								\item Benutzer-ID: Hier gibt der Kursleiter die Benutzer-ID des Teilnehmers an, welchen er zu der Kurseinheit hinzufügen will.
+								\item Name (Teilnehmer): Hier gibt der Kursleiter den entsprechenden Namen des Teilnehmers an, welchen er zu der Kurseinheit hinzufügen will.
+								\item Vorname (Teilnehmer): Hier gibt der Kursleiter den entsprechenden Vornamen des Teilnehmers an, welchen er zu der Kurseinheit hinzufügen will.
 							\end{itemize}
 						\item \textbf{Outputs:}
 							\begin{itemize}
-								\item Termin (Fehlermeldung):
-								\item Ort (Fehlermeldung):
-								\item Beschreibung (Fehlermeldung):
-								\item Preis (Fehlermeldung):
-								\item Kursleiter (Fehlermeldung):
-								\item Mindestteilnehmerzahl (Fehlermeldung):
-								\item Maximale Teilnehmerzahl (Fehlermeldung):
-								\item Benutzer-ID (Fehlermeldung):
-								\item Name (Teilnehmer (Fehlermeldung)):
-								\item Vorname (Teilnehmer (Fehlermeldung)):
+								\item Termin (Fehlermeldung): Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
+								\item Straße/ Hausnummer (Fehlermeldung): Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
+								\item Postleitzahl (Fehlermeldung): Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
+								\item Stadt (Fehlermeldung): Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
+								\item Raum (Fehlermeldung): Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
+								\item Beschreibung (Fehlermeldung): Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
+								\item Preis (Fehlermeldung): Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
+								\item Kursleiter (Fehlermeldung): Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
+								\item Mindestteilnehmerzahl (Fehlermeldung): Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
+								\item Maximale Teilnehmerzahl (Fehlermeldung): Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
+								\item Status: Hier wird ausgegeben, wie viele Teilnehmer bereits in der Kurseinheit eingetragen sind.
+								\item Benutzer-ID (Fehlermeldung): Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
+								\item Name (Teilnehmer (Fehlermeldung)): Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
+								\item Vorname (Teilnehmer (Fehlermeldung)): Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
 							\end{itemize}
-						\item \textbf{BackingBean:}
+						\item \textbf{BackingBean:} editCourseUnit.java
 					\end{itemize}
 				
 				\paragraph{listUsers.xhtml}
 					KH\\
 					\begin{itemize}
-						\item \textbf{Beschreibung:}
-						\item \textbf{Links:}
+						\item \textbf{Beschreibung:} Hier werden alle im System registrierten Benutzer angezeigt. Einzelne Benutzer können nach verschiedenen Kriterien gefiltert werden oder der Administrator kann den Account von Benutzern aktiveren. 
+						\item \textbf{Links:} -
 						\item \textbf{Buttons:}
+							\begin{itemize}
+								\item Suchen: Durch Drücken dieses Buttons werden die Benutzer nach den eingegebenen Kriterien durchsucht und in der Liste angezeigt.
+								\item Benutzer aktivieren: Durch Klicken dieses Buttons wird der Account des markierten Benutzers aktiviert.
+							\end{itemize}
 						\item \textbf{Inputs:}
+							\begin{itemize}
+								\item Kriterienauswahl: Hier kann der Kursleiter auswählen, ob er nach 'Benutzer-ID', 'Benutzername', 'Name' 'Benutzerrolle' oder 'nicht aktiviert' suchen will.
+								\item Suchbegriff: Hier gibt der Kursleiter den entsprechenden Suchbegriff ein.
+								\item Benutzer aktivieren: Der Administrator kann durch Setzen des Häkchens Benutzer auswählen, um diese anschließend zu aktivieren.
+							\end{itemize}
 						\item \textbf{Outputs:}
+							\begin{itemize}
+								\item Tabelle Auflistung Benutzerdaten: Hier werden ausgewählte Daten aller im System registrierten Benutzer angezeigt.
+								\item Suchbegriff (Fehlermeldung): Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
+							\end{itemize}
 						\item \textbf{BackingBean:}
 					\end{itemize}
 			
@@ -460,7 +477,7 @@
 				\paragraph{createCourse.xhtml}
 					KH\\
 					\begin{itemize}
-						\item \textbf{Beschreibung:}
+						\item \textbf{Beschreibung:} 
 						\item \textbf{Links:}
 						\item \textbf{Buttons:}
 						\item \textbf{Inputs:}
