@@ -64,8 +64,9 @@
 							\item Passwort bestätigen (Registrierung): Hier gibt der Benutzer das gleiche Passwort erneut ein zur Bestätigung.
 							\item Geburtstag (Registrierung): Hier gibt der Benutzer sein Geburtsdatum ein.
 							\item Straße/Hausnummer (Registrierung): Hier gibt der Benutzer seine Straße und seine Hausnummer ein.
-							\item Ort (Registrierung): Hier trägt der Benutzer seinen Ort ein.
+							\item Stadt (Registrierung): Hier trägt der Benutzer seinen Ort ein.
 							\item Postleitzahl (Registrierung): Hier trägt der Benutzer seine Postleitzahl ein.
+							\item Land (Registrierung): Hier trägt der Benutzer sein Heimatland ein.
 							\item E-Mail-Adresse (Registrierung): Hier gibt der Benutzer seine E-Mail-Adresse ein.
 							\item AGBs bestätigen (Registrierung): Durch Setzten des Häkchens bestätigt der Benutzer die AGBs. 
 							\item Benutzername (Anmeldung): Der Benutzer gibt seinen Benutzernamen ein, mit dem er sich registriert hat.
@@ -81,8 +82,9 @@
 							\item Passwort bestätigen Fehlermeldung (Registrierung): Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
 							\item Geburtstag Fehlermeldung (Registrierung): Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
 							\item Straße/Hausnummer Fehlermeldung (Registrierung): Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
-							\item Ort Fehlermeldung (Registrierung): Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
+							\item Stadt Fehlermeldung (Registrierung): Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
 							\item Postleitzahl Fehlermeldung (Registrierung): Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
+							\item Land Fehlermeldung (Registrierung): Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
 							\item E-Mail-Adresse Fehlermeldung (Registrierung): Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
 							\item AGBs bestätigen Fehlermeldung (Registrierung): Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
 							\item Benutzername Fehlermeldung (Anmeldung): Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
@@ -223,8 +225,9 @@
 								\item Name: Hier kann der Benutzer seinen Namen ändern.
 								\item Geburtstag: Hier kann der Benutzer sein Geburtsdatum ändern.
 								\item Straße/Hausnummer: Hier kann der Benutzer seine Straße und Hausnummer ändern.
-								\item Ort: Hier kann der Benutzer seinen Ort ändern.
+								\item Stadt: Hier kann der Benutzer seinen Ort ändern.
 								\item Postleitzahl: Hier kann der Benutzer seine Postleitzahl ändern.
+								\item Land: Hier kann der Benutzer seine Land ändern.
 								\item E-Mail-Adresse: Hier kann der Benutzer seine E-Mail-Adresse ändern.
 								\item Benutzername: Hier kann der Benutzer seinen Benutzernamen ändern.
 								\item Passwort: Hier kann der Benutzer sein Passwort ändern.
@@ -239,8 +242,9 @@
 								\item Name Fehlermeldung: Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
 								\item Geburtstag Fehlermeldung: Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
 								\item Straße/Hausnummer Fehlermeldung: Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
-								\item Ort Fehlermeldung: Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
+								\item Stadt Fehlermeldung: Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
 								\item Postleitzahl Fehlermeldung: Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
+								\item Land Fehlermeldung: Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
 								\item E-Mail-Adresse Fehlermeldung: Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
 								\item Benutzername Fehlermeldung: Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
 								\item Passwort Fehlermeldung: Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
@@ -334,7 +338,7 @@
 						\item \textbf{Links:} -
 						\item \textbf{Buttons:}
 							\begin{itemize}
-								\item Bearbeiten (Kurseinheit): Nach Klicken auf diesen Button können die Kursdaten geändert beziehungsweise eingetragen werden. Der Button trägt nun die Aufschrift 'Speichern' und ist mit dessen dazugehöriger Methode hinterlegt.
+								\item Bearbeiten (Kurseinheit): Nach Klicken auf diesen Button können die Daten der Kurseinheit geändert beziehungsweise eingetragen werden. Der Button trägt nun die Aufschrift 'Speichern' und ist mit dessen dazugehöriger Methode hinterlegt.
 								\item Speichern (Kurseinheit): Durch Drücken dieses Buttons werden die vorgenommenen Änderungen gespeichert, sofern alle Daten korrekt eingegeben wurden. Bei erfolgreicher Speicherung erscheint der Button 'Bearbeiten' anstelle des Button 'Speichern'.
 								\item Löschen (Kurseinheit): Durch Drücken des Button 'Löschen' wird die Kurseinheit entfernt.
 								\item Löschen (Teilnehmer): Durch Drücken dieses Buttons wird der markierte Teilnehmer aus der Kurseinheit entfernt.
@@ -342,42 +346,62 @@
 							\end{itemize}
 						\item \textbf{Inputs:}
 							\begin{itemize}
-								\item Termin:
-								\item Ort:
-								\item Beschreibung:
-								\item Preis:
-								\item Kursleiter:
-								\item Mindestteilnehmerzahl:
-								\item Maximale Teilnehmerzahl:
-								\item Teilnehmer markieren:
-								\item Benutzer-ID:
-								\item Name (Teilnehmer):
-								\item Vorname (Teilnehmer):
+								\item Termin: Hier gibt der Kursleiter den Termin der Kurseinheit ein.
+								\item Straße/ Hausnummer: Hier gibt der Kursleiter Straße und Hausnummer ein.
+								\item Postleitzahl: Hier gibt der Kursleiter die entsprechende Postleitzahl ein.
+								\item Stadt: Hier gibt der Kursleiter die Stadt ein, in der die Kurseinheit stattfindet.
+								\item Raum: Hier gibt der Kursleiter den Raum ein, in dem die Kurseinheit stattfindet.
+								\item Beschreibung: Hier gibt der Kursleiter die Beschreibung der Kurseinheit ein.
+								\item Preis: Hier gibt der Kursleiter den Preis der Kurseinheit ein.
+								\item Kursleiter: Hier wird der Leiter des Kurses angezeigt.
+								\item Mindestteilnehmerzahl: Hier gibt der Kursleiter die minimale Teilnehmerzahl der Kurseinheit an.
+								\item Maximale Teilnehmerzahl: Hier gibt der Kursleiter die maximale Teilnehmerzahl der Kurseinheit an.
+								\item Teilnehmer markieren: Hier kann der Kursleiter einen Hacken setzen, um den Teilnehmer für das anschließende Löschen zu markieren.
+								\item Benutzer-ID: Hier gibt der Kursleiter die Benutzer-ID des Teilnehmers an, welchen er zu der Kurseinheit hinzufügen will.
+								\item Name (Teilnehmer): Hier gibt der Kursleiter den entsprechenden Namen des Teilnehmers an, welchen er zu der Kurseinheit hinzufügen will.
+								\item Vorname (Teilnehmer): Hier gibt der Kursleiter den entsprechenden Vornamen des Teilnehmers an, welchen er zu der Kurseinheit hinzufügen will.
 							\end{itemize}
 						\item \textbf{Outputs:}
 							\begin{itemize}
-								\item Termin (Fehlermeldung):
-								\item Ort (Fehlermeldung):
-								\item Beschreibung (Fehlermeldung):
-								\item Preis (Fehlermeldung):
-								\item Kursleiter (Fehlermeldung):
-								\item Mindestteilnehmerzahl (Fehlermeldung):
-								\item Maximale Teilnehmerzahl (Fehlermeldung):
-								\item Benutzer-ID (Fehlermeldung):
-								\item Name (Teilnehmer (Fehlermeldung)):
-								\item Vorname (Teilnehmer (Fehlermeldung)):
+								\item Termin (Fehlermeldung): Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
+								\item Straße/ Hausnummer (Fehlermeldung): Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
+								\item Postleitzahl (Fehlermeldung): Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
+								\item Stadt (Fehlermeldung): Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
+								\item Raum (Fehlermeldung): Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
+								\item Beschreibung (Fehlermeldung): Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
+								\item Preis (Fehlermeldung): Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
+								\item Kursleiter (Fehlermeldung): Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
+								\item Mindestteilnehmerzahl (Fehlermeldung): Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
+								\item Maximale Teilnehmerzahl (Fehlermeldung): Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
+								\item Status: Hier wird ausgegeben, wie viele Teilnehmer bereits in der Kurseinheit eingetragen sind.
+								\item Benutzer-ID (Fehlermeldung): Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
+								\item Name (Teilnehmer (Fehlermeldung)): Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
+								\item Vorname (Teilnehmer (Fehlermeldung)): Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
 							\end{itemize}
-						\item \textbf{BackingBean:}
+						\item \textbf{BackingBean:} editCourseUnit.java
 					\end{itemize}
 				
 				\paragraph{listUsers.xhtml}
 					KH\\
 					\begin{itemize}
-						\item \textbf{Beschreibung:}
-						\item \textbf{Links:}
+						\item \textbf{Beschreibung:} Hier werden alle im System registrierten Benutzer angezeigt. Einzelne Benutzer können nach verschiedenen Kriterien gefiltert werden oder der Administrator kann den Account von Benutzern aktiveren. 
+						\item \textbf{Links:} -
 						\item \textbf{Buttons:}
+							\begin{itemize}
+								\item Suchen: Durch Drücken dieses Buttons werden die Benutzer nach den eingegebenen Kriterien durchsucht und in der Liste angezeigt.
+								\item Benutzer aktivieren: Durch Klicken dieses Buttons wird der Account des markierten Benutzers aktiviert.
+							\end{itemize}
 						\item \textbf{Inputs:}
+							\begin{itemize}
+								\item Kriterienauswahl: Hier kann der Kursleiter auswählen, ob er nach 'Benutzer-ID', 'Benutzername', 'Name' 'Benutzerrolle' oder 'nicht aktiviert' suchen will.
+								\item Suchbegriff: Hier gibt der Kursleiter den entsprechenden Suchbegriff ein.
+								\item Benutzer aktivieren: Der Administrator kann durch Setzen des Häkchens Benutzer auswählen, um diese anschließend zu aktivieren.
+							\end{itemize}
 						\item \textbf{Outputs:}
+							\begin{itemize}
+								\item Tabelle Auflistung Benutzerdaten: Hier werden ausgewählte Daten aller im System registrierten Benutzer angezeigt.
+								\item Suchbegriff (Fehlermeldung): Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
+							\end{itemize}
 						\item \textbf{BackingBean:}
 					\end{itemize}
 			
@@ -406,11 +430,11 @@
 							\end{itemize}
 						\item \textbf{Inputs:}
 							\begin{itemize}
-								\item Accountaktivierung
-								\item Benutzer-ID
-								\item Benutzername
-								\item Betrag
-								\item Überziehungswert
+								\item Accountaktivierung: Auswahlfeld um Registrierungsmodalität festzulegen
+								\item Benutzer-ID: ID des Benutzers, dessen Kontostand erhöht werden soll
+								\item Benutzername: Name des Benutzers, dessen Kontostand erhöht werden soll
+								\item Betrag: Betrag, welcher dem Nutzer gutgeschrieben werden soll
+								\item Überziehungswert: Betrag, welcher im ganzen System zur Überziehung des Kontos akzeptiert wird
 							\end{itemize}
 						\item \textbf{Outputs:} -
 						\item \textbf{BackingBean:}
@@ -423,28 +447,29 @@
 						\item \textbf{Links:} -
 						\item \textbf{Buttons:}
 							\begin{itemize}
-								\item Durchsuchen - Profilbild
-								\item Benutzer anlegen
+								\item Durchsuchen: Öffnet ein Fenster um auf dem Computer nach einem Profilbild zu suchen
+								\item Benutzer anlegen: Legt den Benutzer an
 							\end{itemize}
 						\item \textbf{Inputs:}
 							\begin{itemize}
-								\item Anrede
-								\item Vorname
-								\item Nachname
-								\item Geburtsdatum
-								\item Straße
-								\item Postleitzahl
-								\item Ort
-								\item Benutzername
-								\item Passwort
-								\item Passwort wiederholen
-								\item E-Mail
-								\item Benutzerrolle
+								\item Anrede: Herr oder Frau
+								\item Vorname: Vorname des neuen Benutzers
+								\item Nachname: Nachname des neuen Benutzers
+								\item Geburtsdatum: Geburtsdatum des neuen Benutzers
+								\item Straße: Straße des neuen Benutzers
+								\item Postleitzahl: Postleitzahl des neuen Benutzers
+								\item Ort: Ort des neuen Benutzers
+								\item Benutzername: Benutzername des neuen Benutzers
+								\item Passwort: Passwort des neuen Benutzers
+								\item Passwort wiederholen: Passwortfeld um Passwort sicherzustellen
+								\item E-Mail: E-Mail Adresse des neuen Benutzers
+								\item Benutzerrolle: Benutzerrolle des neuen Benutzers, Administrator, Kursleiter oder normaler Benutzer
 							\end{itemize}
 						\item \textbf{Outputs:}
 							\begin{itemize}
-								\item Benutzer-ID
-								\item Profilbild
+								\item Fehlermeldung zu den einzelnen Eingabefeldern, bei falscher Eingabe
+								\item Benutzer-ID: ID des neuen Benutzers
+								\item Profilbild: Dummy-Profilbild des neuen Benutzers
 							\end{itemize}
 						\item \textbf{BackingBean:}
 					\end{itemize}
@@ -452,23 +477,60 @@
 				\paragraph{createCourse.xhtml}
 					KH\\
 					\begin{itemize}
-						\item \textbf{Beschreibung:}
-						\item \textbf{Links:}
+						\item \textbf{Beschreibung:} Hier kann der Administrator einen neuen Kurs anlegen, einen bestehenden Kurs löschen, oder Kursleiter zu bestehenden Kursen hinzufügen. Der Kursleiter kann außerdem Kurseinheiten erstellen.
+						\item \textbf{Links:} -
 						\item \textbf{Buttons:}
+							\begin{itemize}
+								\item Kurs löschen: Über diesen Button löscht der Administrator den bestehenden Kurs.
+								\item Bearbeiten: Nach Klicken auf diesen Button können die Kursdaten geändert beziehungsweise eingetragen werden. Der Button trägt nun die Aufschrift 'Speichern' und ist mit dessen dazugehöriger Methode hinterlegt.
+								\item Speichern:  Durch Drücken dieses Buttons werden die vorgenommenen Änderungen gespeichert, sofern alle Daten korrekt eingegeben wurden. Bei erfolgreicher Speicherung erscheint der Button 'Bearbeiten' anstelle des Button 'Speichern'.
+								\item Löschen (Kursleiter): Durch Drücken dieses Buttons löscht der Administrator den ausgewählten Kursleiter aus diesem Kurs. 
+								\item Hinzufügen (Kursleiter): Durch Drücken dieses Buttons wird der angegebene Kursleiter zum Kurs hinzugefügt, sofern alle Eingabe korrekt waren.
+								\item Zu den Teilnehmern: Über diesen Button gelangt der Kursleiter auf die Seite 'Teilnehmer'.
+								\item Kurseinheit anlegen: Über diesen Button gelangt der Kursleiter auf die Seite 'Kurseinheit bearbeiten'.
+								\item Bearbeiten (Kurseinheiten): Über den Button 'Bearbeiten' bei der zu bearbeitenden Kurseinheit gelangt der Kursleiter auf die Seite 'Kurseinheit bearbeiten'.
+							\end{itemize}
 						\item \textbf{Inputs:}
+							\begin{itemize}
+								\item Beschreibung: Hier gibt der Administrator die Beschreibung des Kurses ein.
+								\item Minimale Teilnehmerzahl: Hier gibt der Administrator die minimale Teilnehmerzahl des Kurses an.
+								\item Startdatum: Hier trägt der Administrator das Startdatum des Kurses ein.
+								\item Enddatum: Hier trägt der Administrator das Enddatum des Kurses ein.
+								\item Name (Kursleiter): Hier gibt der Administrator den Namen des Kursleiters ein, den er zum Kurs hinzufügen will.
+								\item E-Mail-Adresse (Kursleiter): Hier gibt der Administrator die entsprechende E-Mail-Adresse des Kursleiters ein.
+								\item Löschen (Kursleiter): Hier kann der Administrator durch Setzen des Häkchens den Kursleiter markieren, um ihn anschließend über den Button 'Löschen' zu entfernen.
+							\end{itemize}
 						\item \textbf{Outputs:}
-						\item \textbf{BackingBean:}
+							\begin{itemize}
+								\item Kurs- ID: Hier wird die automatisch generierte ID des Kurses ausgegeben.
+								\item Beschreibung (Fehlermeldung): Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
+								\item Minimale Teilnehmerzahl (Fehlermeldung): Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
+								\item Startdatum (Fehlermeldung): Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
+								\item Enddatum (Fehlermeldung): Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
+								\item Name (Kursleiter (Fehlermeldung)): Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
+								\item E-Mail-Adresse (Kursleiter (Fehlermeldung)): Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
+								\item Löschen (Kursleiter (Fehlermeldung)): Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
+								\item Tabelle Auflistung Kursleiter: Hier werden Name und E-Mail-Adresse aller Kursleiter dieses Kurses aufgelistet.
+								\item Tabelle Auflistung Kurseinheiten: Hier werden alle Kurseinheiten des Kurses angezeigt.
+							\end{itemize}
+						\item \textbf{BackingBean:} createCourse.java
 					\end{itemize}
 				
 				\paragraph{editImprint.xhtml}
 					KH\\
 					\begin{itemize}
-						\item \textbf{Beschreibung:}
-						\item \textbf{Links:}
+						\item \textbf{Beschreibung:} Hier kann der Administrator das Impressum ändern.
+						\item \textbf{Links:} -
 						\item \textbf{Buttons:}
+							\begin{itemize}
+								\item Speichern: Durch Klicken dieses Buttons werden die Änderungen im Impressum gespeichert.
+							\end{itemize}
 						\item \textbf{Inputs:}
-						\item \textbf{Outputs:}
-						\item \textbf{BackingBean:}
+							\begin{itemize}
+								\item Impressum: Hier kann das Impressum bearbeitet werden.
+							\end{itemize}
+						\item \textbf{Outputs:} -
+						\item \textbf{BackingBean:} editImprint.java
 					\end{itemize}
 				
 				\paragraph{statistics.xhtml}
