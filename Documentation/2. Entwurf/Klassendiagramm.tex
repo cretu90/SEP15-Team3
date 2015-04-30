@@ -18,7 +18,6 @@
 	Die Klasse ist für die Authentifizierung eines Benutzers im System zuständig.
 	\begin{itemize}
 		\item \method{public boolean login()}
-		\item \method{public boolean logout()}
 		\item \method{public User getLoginUser()}
 		\item \method{public void setLoginUser(User userToLogIn)}
 		\item \method{public SessionUser getSessionUser()}
@@ -95,10 +94,9 @@
 		\item \method{public void saveUserdata()}
 		\item \method{public boolean uploadProfilPic()}
 		\item \method{public void setUserInactive()}
-		\item \method{public void deleteUserByAdmin()}
 		\item \method{public void depositMoneyPerCreditcard()}
 		\item \method{public User getUser()}
-		\item \method{public void setUser(UseruserToSet)}
+		\item \method{public void setUser(User userToSet)}
 		\item \method{public ArrayList<Course> getManagedCourses()}
 		\item \method{public void setManagedCourses(ArrayList<Course> managedCourses)}
 		\item \method{public int getActualPageNumber()}
@@ -111,18 +109,96 @@
 	
 	\subsection{Klasse CourseDetail}
 	\kursiv{ManagedBean, ViewScoped}
+	
+	
 	\subsection{Klasse CourseEdit}
 	\kursiv{ManagedBean, ViewScoped}
+	
 	\subsection{Klasse CourseUnit}
 	\kursiv{ManagedBean, ViewScoped}
+	
 	\subsection{Klasse ContactUsers}
-	\kursiv{ManagedBean, RequestScoped}
+	\kursiv{ManagedBean, RequestScoped}\\
+	Die Klasse ist zuständig für die Benachrichtigung von Benutzern durch Kursleiter oder Administratoren.
+	\begin{itemize}
+		\item \method{public boolean sendEMail()}
+		\item \method{public Mail getMail()}
+	    \item \method{public void setMail(Mail mail)}
+		\item \method{public String getSubject()}
+		\item \method{public void setSubject(String subject)}
+	    \item \method{public String getMessageToSend()}
+	    \item \method{public void setMessageToSend(String messageToSend)}
+		\item \method{public ArrayList<String> getMailRecipients()}
+		\item \method{public void setMailRecipients(ArrayList<String> mailRecipients)}
+        \item \method{public SessionUser getSessionUser()}
+        \item \method{public void setSessionUser(SessionUser userSession)}
+	\end{itemize}
+	
 	\subsection{Klasse MyCourses}
-	\kursiv{ManagedBean, RequestScoped}
+	\kursiv{ManagedBean, RequestScoped}\\
+	Die Klasse ist zuständig für die Anzeige der angemeldeten Kurse eines Benutzers.
+	\begin{itemize}
+		\item \method{public ArrayList<Course> getRegisteredCourses()}
+		\item \method{public void setRegisteredCourses(ArrayList<Course> registeredCourses)}
+		\item \method{public String loadCourseDetailsPageOfSelectedCourse()}
+		\item \method{public int getActualPageNumber()}
+		\item \method{public void goToSpecicPage()}
+		\item \method{public Pagination getPagination()}
+		\item \method{public void setPagination(Pagination pagination)}
+		\item \method{public SessionUser getSessionUser()}
+		\item \method{public void setSessionUser(SessionUser userSession)}
+	\end{itemize}
+	
 	\subsection{Klasse CourseManagement}
-	\kursiv{ManagedBean, ViewScoped}
+	\kursiv{ManagedBean, ViewScoped}\\
+	Die Klasse ist zuständig für die Verwaltung der Kurse, d.h. für das Anlegen und Löschen von Kursen.
+	\begin{itemize}
+		\item \method{public boolean createCourse(Course course)}
+		\item \method{public boolean uploadCoursePic()}
+		\item \method{public boolean deleteCourse()}
+		\item \method{public boolean addCourseLeader(User leader)}
+		\item \method{public boolean removeCourseLeader()}
+		\item \method{public User getCourseLeader()}
+		\item \method{public void setCourseLeader()}
+		\item \method{public Course getCourse()}
+		\item \method{public void setCourse(Course course)}
+		\item \method{public Addresse getAddress()}
+		\item \method{public void setAddress(Address address)}
+		\item \method{public SessionUser getSessionUser()}
+		\item \method{public void setSessionUser(SessionUser userSession)}
+	\end{itemize}
+	
+	
 	\subsection{Klasse UserManagement}
-	\kursiv{ManagedBean, ViewScoped}
+	\kursiv{ManagedBean, ViewScoped}\\
+	Die Klasse ist zuständig für die Benutzerverwaltung, d.h. das Anlegen von Benutzern und das Löschen von Benutzern.
+	\begin{itemize}
+		\item \method{public boolean createUser(User user)}
+		\item \method{public boolean uploadProfilPic()}
+		\item \method{public boolean deleteUser()}
+		\item \method{public User getUser()}
+		\item \method{public void setUser(User user)}
+		\item \method{public Addresse getAddress()}
+		\item \method{public void setAddress(Address address)}
+		\item \method{public SessionUser getSessionUser()}
+		\item \method{public void setSessionUser(SessionUser userSession)}
+	\end{itemize}
+	
+	\subsection{Klasse ListParticipents}
+	\kursiv{ManagedBean, RequestScoped}
+	\begin{itemize}
+		\item \method{public ArrayList<User> getParticipients()}
+		\item \method{public void setParticipients(ArrayList<User> participients)}
+		\item \method{public boolean deleteUserFromCourse()}
+		\item \method{public ArrayList<User> getUserToDelete()}
+		\item \method{public void setUsersToDelete( ArrayList<User> usersToDelete)}
+		\item \method{public int getActualPageNumber()}
+		\item \method{public void goToSpecicPage()}
+		\item \method{public Pagination getPagination()}
+		\item \method{public void setPagination(Pagination pagination)}
+		\item \method{public SessionUser getSessionUser()}
+		\item \method{public void setSessionUser(SessionUser userSession)}
+	\end{itemize}
 	
 	\subsection{Klasse SystemConfiguration}
 	\kursiv{ManagedBean, ViewScoped}\\
@@ -136,14 +212,15 @@
 		\item \method{public void setOverdraftCredit(float overdraftCredit)}
 		\item \method{public boolean uploadCustomStyleCSS()}
 		\item \method{public boolean uploadLogo()}
-		\item \method{public void loadEditImprintPage()}
-		\item \method{public void loadCreateNewUserPage()}
-		\item \method{public void loadManageUserPage()}
-		\item \method{public void loadCreateNewCoursePage()}
-		\item \method{public void loadManageCoursesPage()}
+		\item \method{public String loadEditImprintPage()}
+		\item \method{public String loadCreateNewUserPage()}
+		\item \method{public String loadManageUserPage()}
+		\item \method{public String loadCreateNewCoursePage()}
+		\item \method{public String loadManageCoursesPage()}
 		\item \method{public SessionUser getSessionUser()}
 		\item \method{public void setSessionUser(SessionUser userSession)}
 	\end{itemize}
+	
 	\subsection{Klasse PaymentOnline}
 	\kursiv{ManagedBean, ViewScoped}\\
 	Die Klasse ist zuständig für die Online - Aufladung des Guthabenkontos von Benutzern per Kreditkarte. Die Kreditkartenabwicklung erfolgt über die InfoSun-Bank.
@@ -175,6 +252,7 @@
 		\item \method{public SessionUser getSessionUser()}
 		\item \method{public void setSessionUser(SessionUser userSession)}
 	\end{itemize}
+	
 	\subsection{Klasse IncomeStatistics}
 	\kursiv{ManagedBean, ViewScoped}\\
 	Die Klasse ist für die Generierung und Darstellung der Einnahmestatistiken zuständig.
@@ -202,7 +280,7 @@
 		\item \method{public void setImprint(String imprint)}
 	\end{itemize}
 	
-	\subsection{Klasse Imprint}
+	\subsection{Klasse EditImprint}
 	\kursiv{ManagedBean, ViewScoped}\\
 	Die Klasse ist für die Darstellung und Bearbeitung des Impressums verantwortlich.
 	\begin{itemize}
@@ -215,7 +293,7 @@
 	\kursiv{ManagedBean, RequestScoped}\\
 	Diese Klasse ist zuständig für das Laden der Anmeldeseite, das Abmelden und der Auswahl der Anzeigesprache.
 	\begin{itemize}
-		\item \method{public boolean login()}
+		\item \method{public String login()}
 		\item \method{public boolean logout()}
 		\item \method{public String getChoosenLanguage()}
 		\item \method{public void setChoosenLanguage(String choosenLanguage)}
@@ -227,9 +305,9 @@
 	\kursiv{ManagedBean, RequestScoped}\\
 	Diese Klasse ist zuständig für das Laden der AGB, der Hilfe und der Impressumsseite.
 	\begin{itemize}
-		\item \method{public void loadImprintPage()}
-		\item \method{public void loadAGBPage()}
-		\item \method{public void loadHelpPage()}
+		\item \method{public String loadImprintPage()}
+		\item \method{public String loadAGBPage()}
+		\item \method{public String loadHelpPage()}
 		\item \method{public SessionUser getSessionUser()}
 		\item \method{public void setSessionUser(SessionUser userSession)}
 	\end{itemize}
@@ -262,6 +340,8 @@
 		\item \method{public boolean sendVerificationMail(int UserID)}
 		\item \method{public boolean sendConfirmaitionMail(int UserID)}
 		\item \method{public boolean sendMail(String subject, String message, ArrayList<String> mailRecipients)}
+		\item \method{public SmtpServer getSmtpServer()}
+		\item \method{public void setSmtpServer(SmtpServer smtpServer)}
 	\end{itemize}
 	
 	\section{Package Model}
@@ -281,7 +361,7 @@
 		\item \method {public setPort(int port)}
 		\item \method {public set Tls(Boolean tls)}
 		\item \method {public void setUsername(String username)}
-		
+	
 	\end{itemize}
 	
 	\subsection{Klasse Pagination}
@@ -509,9 +589,9 @@
 		\method{public void validate()}
 	\end{itemize}
 	
-	\subsection{Klasse LogoImageValidator}
+	\subsection{Klasse ImageValidator}
 	Dieser Validator überprüft eine Bilddatei auf die richtige Dateiendung .jpg. Zusätzlich wird überprüft, ob
-	die maximale Dateigröße und die maximal zugelassene Auflösung für ein Anwendungslogo eingehalten wird.
+	die maximale Dateigröße und die maximal zugelassene Auflösung für ein Bild eingehalten wird.
 	\begin{itemize}
 		\item \override
 		\method{public void validate()}
@@ -525,8 +605,7 @@
 	\end{itemize}
 	
 	
-	
-	
+		
 	\section{Verwendete Libraries}
 	\begin{tiny}
 		TF\\
