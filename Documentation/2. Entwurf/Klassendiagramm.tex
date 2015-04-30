@@ -382,7 +382,12 @@
 	\subsection{Klasse User}
 	Diese Klasse stellt alle Benutzer des Systems dar. Je nach Status des Benutzers(Administrator, Kursleiter und Benutzer) sind unterschiedliche Attribute ausgefüllt.
 	\begin{itemize}
-		\item \method public
+		\item \method {public boolean equals(Object other)}
+		\item \method {public String getEmail()}
+		\item \method {public String getFristname()}
+		\item \method {public String getLastname()}
+		\item \method {public String getPassword()}
+		\item \method {public UserPermission getPermission}
 	\end{itemize}
 	\section{Package Services}
 	
@@ -496,6 +501,14 @@
 	\section{Package Exception}
 	\subsection{BankAccountException}
 	Sind Fehler, welche beim Aufladen des Guthabenkontos auftreten. 
+	
+	\subsection{MailingException}
+	
+	\subsection{OutOfTimeException}
+	
+	\subsection{FileNotFoundException}
+	
+	\subsection{OutOfBoundsException} ??
 	
 	\section{Package Validator}
 	\begin{tiny}
