@@ -338,7 +338,7 @@
 						\item \textbf{Links:} -
 						\item \textbf{Buttons:}
 							\begin{itemize}
-								\item Bearbeiten (Kurseinheit): Nach Klicken auf diesen Button können die Kursdaten geändert beziehungsweise eingetragen werden. Der Button trägt nun die Aufschrift 'Speichern' und ist mit dessen dazugehöriger Methode hinterlegt.
+								\item Bearbeiten (Kurseinheit): Nach Klicken auf diesen Button können die Daten der Kurseinheit geändert beziehungsweise eingetragen werden. Der Button trägt nun die Aufschrift 'Speichern' und ist mit dessen dazugehöriger Methode hinterlegt.
 								\item Speichern (Kurseinheit): Durch Drücken dieses Buttons werden die vorgenommenen Änderungen gespeichert, sofern alle Daten korrekt eingegeben wurden. Bei erfolgreicher Speicherung erscheint der Button 'Bearbeiten' anstelle des Button 'Speichern'.
 								\item Löschen (Kurseinheit): Durch Drücken des Button 'Löschen' wird die Kurseinheit entfernt.
 								\item Löschen (Teilnehmer): Durch Drücken dieses Buttons wird der markierte Teilnehmer aus der Kurseinheit entfernt.
@@ -477,23 +477,60 @@
 				\paragraph{createCourse.xhtml}
 					KH\\
 					\begin{itemize}
-						\item \textbf{Beschreibung:} 
-						\item \textbf{Links:}
+						\item \textbf{Beschreibung:} Hier kann der Administrator einen neuen Kurs anlegen, einen bestehenden Kurs löschen, oder Kursleiter zu bestehenden Kursen hinzufügen. Der Kursleiter kann außerdem Kurseinheiten erstellen.
+						\item \textbf{Links:} -
 						\item \textbf{Buttons:}
+							\begin{itemize}
+								\item Kurs löschen: Über diesen Button löscht der Administrator den bestehenden Kurs.
+								\item Bearbeiten: Nach Klicken auf diesen Button können die Kursdaten geändert beziehungsweise eingetragen werden. Der Button trägt nun die Aufschrift 'Speichern' und ist mit dessen dazugehöriger Methode hinterlegt.
+								\item Speichern:  Durch Drücken dieses Buttons werden die vorgenommenen Änderungen gespeichert, sofern alle Daten korrekt eingegeben wurden. Bei erfolgreicher Speicherung erscheint der Button 'Bearbeiten' anstelle des Button 'Speichern'.
+								\item Löschen (Kursleiter): Durch Drücken dieses Buttons löscht der Administrator den ausgewählten Kursleiter aus diesem Kurs. 
+								\item Hinzufügen (Kursleiter): Durch Drücken dieses Buttons wird der angegebene Kursleiter zum Kurs hinzugefügt, sofern alle Eingabe korrekt waren.
+								\item Zu den Teilnehmern: Über diesen Button gelangt der Kursleiter auf die Seite 'Teilnehmer'.
+								\item Kurseinheit anlegen: Über diesen Button gelangt der Kursleiter auf die Seite 'Kurseinheit bearbeiten'.
+								\item Bearbeiten (Kurseinheiten): Über den Button 'Bearbeiten' bei der zu bearbeitenden Kurseinheit gelangt der Kursleiter auf die Seite 'Kurseinheit bearbeiten'.
+							\end{itemize}
 						\item \textbf{Inputs:}
+							\begin{itemize}
+								\item Beschreibung: Hier gibt der Administrator die Beschreibung des Kurses ein.
+								\item Minimale Teilnehmerzahl: Hier gibt der Administrator die minimale Teilnehmerzahl des Kurses an.
+								\item Startdatum: Hier trägt der Administrator das Startdatum des Kurses ein.
+								\item Enddatum: Hier trägt der Administrator das Enddatum des Kurses ein.
+								\item Name (Kursleiter): Hier gibt der Administrator den Namen des Kursleiters ein, den er zum Kurs hinzufügen will.
+								\item E-Mail-Adresse (Kursleiter): Hier gibt der Administrator die entsprechende E-Mail-Adresse des Kursleiters ein.
+								\item Löschen (Kursleiter): Hier kann der Administrator durch Setzen des Häkchens den Kursleiter markieren, um ihn anschließend über den Button 'Löschen' zu entfernen.
+							\end{itemize}
 						\item \textbf{Outputs:}
-						\item \textbf{BackingBean:}
+							\begin{itemize}
+								\item Kurs- ID: Hier wird die automatisch generierte ID des Kurses ausgegeben.
+								\item Beschreibung (Fehlermeldung): Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
+								\item Minimale Teilnehmerzahl (Fehlermeldung): Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
+								\item Startdatum (Fehlermeldung): Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
+								\item Enddatum (Fehlermeldung): Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
+								\item Name (Kursleiter (Fehlermeldung)): Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
+								\item E-Mail-Adresse (Kursleiter (Fehlermeldung)): Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
+								\item Löschen (Kursleiter (Fehlermeldung)): Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
+								\item Tabelle Auflistung Kursleiter: Hier werden Name und E-Mail-Adresse aller Kursleiter dieses Kurses aufgelistet.
+								\item Tabelle Auflistung Kurseinheiten: Hier werden alle Kurseinheiten des Kurses angezeigt.
+							\end{itemize}
+						\item \textbf{BackingBean:} createCourse.java
 					\end{itemize}
 				
 				\paragraph{editImprint.xhtml}
 					KH\\
 					\begin{itemize}
-						\item \textbf{Beschreibung:}
-						\item \textbf{Links:}
+						\item \textbf{Beschreibung:} Hier kann der Administrator das Impressum ändern.
+						\item \textbf{Links:} -
 						\item \textbf{Buttons:}
+							\begin{itemize}
+								\item Speichern: Durch Klicken dieses Buttons werden die Änderungen im Impressum gespeichert.
+							\end{itemize}
 						\item \textbf{Inputs:}
-						\item \textbf{Outputs:}
-						\item \textbf{BackingBean:}
+							\begin{itemize}
+								\item Impressum: Hier kann das Impressum bearbeitet werden.
+							\end{itemize}
+						\item \textbf{Outputs:} -
+						\item \textbf{BackingBean:} editImprint.java
 					\end{itemize}
 				
 				\paragraph{statistics.xhtml}
