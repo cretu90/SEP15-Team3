@@ -127,23 +127,23 @@
 						\item \textbf{Beschreibung:} Hier kann, abhängig von der Benutzerrolle, durch die Seite navigiert werden.
 						\item \textbf{Links:}
 							\begin{itemize}
-								\item Suche
-								\item Sprache Deutsch
-								\item Sprache Englisch
-								\item Profil (Benutzer)
-								\item Meine Kurse (Benutzer)
-								\item Terminplaner (Benutzer)
+								\item Suche:
+								\item Sprache Deutsch: Ändert die angezeigte Sprache zu Deutsch
+								\item Sprache Englisch: Ändert die angezeigte Sprache zu Englisch
+								\item Profil (Benutzer): Navigiert zum eigenen Profil
+								\item Meine Kurse (Benutzer): Navigiert zur Anzeige der eigenen Kurse
+								\item Terminplaner (Benutzer): Navigiert zum persönlichen Terminplaner
 							\end{itemize}
 						\item \textbf{Buttons:}
 							\begin{itemize}
-								\item Logout (Benutzer, wenn eingeloggt)
-								\item Anmelden (Anonym)
+								\item Logout (Benutzer, wenn eingeloggt): Loggt den aktuellen eingeloggten Benutzer aus
+								\item Anmelden (Anonym): Navigiert zur Registrierungs- und Anmeldeseite
 							\end{itemize}
 						\item \textbf{Inputs:} -
 						\item \textbf{Outputs:}
 							\begin{itemize}
 								\item persönliche Loginbenachrichtigung (Benutzer, wenn eingeloggt)
-								\item Logo
+								\item Logo: Zeigt verkleinertes, vom Administrator definiertes Logo der Website
 							\end{itemize}
 						\item \textbf{BackingBean:}
 					\end{itemize}
@@ -157,13 +157,13 @@
 						\item \textbf{Links:} -
 						\item \textbf{Buttons:}
 							\begin{itemize}
-								\item Anzeigen
-								\item Suchen
+								\item Anzeigen: Zeigt die Angebote im ausgewählten Zeitraum an.
+								\item Suchen: Durchsucht die Website nach dem eingegebenen Suchbegriff mittels gewählten Suchobjekt.
 							\end{itemize}
 						\item \textbf{Inputs:}
 							\begin{itemize}
-								\item Angebotszeitraum
-								\item Suchobjekt (abhängig von Benutzerrolle)
+								\item Angebotszeitraum: Ermöglicht eine genauere Anzeige des Kursangebots, entweder Tagesangebot, Wochenangebot oder das gesamte Angebot. Die detaillierteren Suchoptionen sind nur für registrierte Benutzer verfügbar.
+								\item Suchobjekt (abhängig von Benutzerrolle): Ermöglicht eine genauere Suche, beispielsweise nach Kursen, Kursleitern oder Kurs-ID.
 							\end{itemize}
 						\item \textbf{Outputs:}
 							\begin{itemize}
@@ -177,10 +177,39 @@
 					RS\\
 					\begin{itemize}
 						\item \textbf{Beschreibung:} Detailanzeige eines einzelnen Kurses.
-						\item \textbf{Links:}
+						\item \textbf{Links:} -
 						\item \textbf{Buttons:}
+							\begin{itemize}
+								\item Anmelden (Benutzer, noch nicht angemeldet): Meldet den Benutzer zum Kurs an.
+								\item Abmelden (Benutzer, wenn angemeldet): Meldet den Benutzer vom Kurs ab.
+								\item Teilnehmer anzeigen (Kursleiter): Zeigt die zum Kurs angemeldeten Benutzer an.
+								\item Alle auswählen (Benutzer, zum Kurs angemeldet): Wählt alle Kurseinheiten des Kurses aus.
+								\item Speichern (Benutzer, zum Kurs angemeldet): Speichert alle ausgewählten Kurseinheiten und meldet den Nutzer dazu an.
+								\item Bearbeiten (Administrator, noch nicht im Bearbeitungsmodus): Ermöglicht die Bearbeitung der einzelnen Kursdetails.
+								\item Speichern (Administrator, im Bearbeitungsmodus): Speichert alle vorgenommenen Kursänderungen.
+								\item Hinzufügen (Administrator): Fügt einen Kursleiter zum Kurs hinzu.
+								\item Kurseinheit anlegen (Kursleiter): Erstellt eine neue Kurseinheit zum Kurs.
+								\item Kurseinheit bearbeiten (Kursleiter): Ermöglicht die Bearbeitung einer einzelnen Kurseinheit.
+								\item Kurs löschen (Administrator): Löscht den Kurs.
+							\end{itemize}
 						\item \textbf{Inputs:}
+							\begin{itemize}
+								\item Kursnews erhalten: Trägt Benutzer bei Anmeldung zum Kurs in die Kursnews ein.
+								\item Kurseinheit auswählen: Wählt Kurseinheit aus, zu der sich der Nutzer anmelden möchte.
+								\item Kursleiter auswählen (Administrator): Wählt Kursleiter aus, welcher gelöscht werden soll.
+								\item Kursleiter Name (Administrator): Eingabefeld für den Namen eines neuen Kursleiters.
+								\item Kursleiter E-Mail (Administrator): Eingabefeld für die E-Mail Adresse eines neuen Kursleiters.
+								\item Kursbeschreibung (Administrator): Eingabefeld für die Kursbeschreibung.
+								\item Minimale Teilnehmerzahl (Administrator): Eingabefeld für die minimale Teilnehmerzahl des Kurses.
+								\item Startdatum (Administrator): Eingabefeld für das Startdatum des Kurses.
+								\item Enddatum (Administrator): Eingabefeld für das Enddatum des Kurses.
+							\end{itemize}
 						\item \textbf{Outputs:}
+							\begin{itemize}
+								\item Tabelle Kursleiter: Tabelle mit den Kontaktinformationen der/des Kursleiters.
+								\item Tabelle Kurseinheiten: Tabelle mit allen Kurseinheiten des Kurses und zugehörigen Informationen wie Ort, Preis oder Datum.
+								\item Kurs-ID: Zeigt die zum Kurs zugehörige ID an.
+							\end{itemize}
 						\item \textbf{BackingBean:}
 					\end{itemize}
 		
