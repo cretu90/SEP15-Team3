@@ -31,6 +31,8 @@
 		\item \method{public int registerUser()}
 		\item \method{public User getUsertoRegistrate()}
 		\item \method{public void setUserToRegistrate(User userToRegistrate)}
+		\item \method{public Address getAddress()}
+		\item \method{public void Address setAddress(Address addressToSet)}
 	\end{itemize}
 	
 	\subsection{Klasse LostPassword}
@@ -97,6 +99,8 @@
 		\item \method{public void depositMoneyPerCreditcard()}
 		\item \method{public User getUser()}
 		\item \method{public void setUser(User userToSet)}
+		\item \method{public Address getAddress()}
+		\item \method{public void setAddress(Addres addressToSet)}
 		\item \method{public ArrayList<Course> getManagedCourses()}
 		\item \method{public void setManagedCourses(ArrayList<Course> managedCourses)}
 		\item \method{public int getActualPageNumber()}
@@ -108,14 +112,56 @@
 	\end{itemize}
 	
 	\subsection{Klasse CourseDetail}
-	\kursiv{ManagedBean, ViewScoped}
+	\kursiv{ManagedBean, ViewScoped}\\
+	Die Klasse ist zuständig für das  Bearbeiten und Löschen von Kursen.
+	\begin{itemize}
+		
+		
+		
+		
+		
+		
+		
+		
+		\item \method{public int getActualPageNumber()}
+		\item \method{public void goToSpecicPage()}
+		\item \method{public Pagination getPagination()}
+		\item \method{public void setPagination(Pagination pagination)}
+		\item \method{public SessionUser getSessionUser()}
+		\item \method{public void setSessionUser(SessionUser userSession)}
+	\end{itemize}
 	
-	
-	\subsection{Klasse CourseEdit}
-	\kursiv{ManagedBean, ViewScoped}
-	
-	\subsection{Klasse CourseUnit}
-	\kursiv{ManagedBean, ViewScoped}
+	\subsection{Klasse CourseUnitManagement}
+	\kursiv{ManagedBean, ViewScoped}\\
+	Die Klasse ist zuständig für das Anlegen, Bearbeiten und Löschen von Kurseinheiten.
+	\begin{itemize}
+		 \item \method{public boolean createCourseUnit(boolean isRegular)}
+		 \item \method{public void editCourseUnit()}
+		 \item \method{public boolean saveCourseUnit(boolean editAllIfRegular)}
+		 \item \method{public boolean deleteCourseUnit(boolean deleteAllIfRegular)}
+		 \item \method{public boolean addUsersToCourseUnit(ArrayList<User> user)}
+		 \item \method{public ArrayList<User> getUserToAdd()}
+		 \item \method{public void setUsersToAdd(ArrayList<User> usersToAdd)}
+		 \item \method{public boolean deleteUserFromCourse()}
+		 \item \method{public ArrayList<User> getUserToDelete()}
+		 \item \method{public void setUsersToDelete(ArrayList<User> usersToDelete)}
+		 \item \method{public boolean getIsRegularCourseUnit()}
+		 \item \method{public void setIsRegularCourseUnit(boolean isRegular)}
+		 \item \method{public Cycle getCylceOfCourseUnit()}
+		 \item \method{public void setCylceOfCourseUnit(Cycle cycle)}
+		 \item \method{public CourseUnit getCourseUnit()}
+		 \item \method{public void setCourseUnit(CourseUnit courseUnit)}
+		 \item \method{public Address getAddress()}
+		 \item \method{public void setAddress(Addres addressToSet)}
+		 \item \method{public ArrayList<User> getParticipientsOfCourseUnit()}
+	  	 \item \method{public void setParticipientsOfCourseUnit(ArrayList<User> participients)}
+		 \item \method{public int getActualPageNumber()}
+		 \item \method{public void goToSpecicPage()}
+		 \item \method{public Pagination getPagination()}
+		 \item \method{public void setPagination(Pagination pagination)}
+		 \item \method{public SessionUser getSessionUser()}
+		 \item \method{public void setSessionUser(SessionUser userSession)}
+	\end{itemize}
 	
 	\subsection{Klasse ContactUsers}
 	\kursiv{ManagedBean, RequestScoped}\\
@@ -217,6 +263,8 @@
 		\item \method{public String loadManageUserPage()}
 		\item \method{public String loadCreateNewCoursePage()}
 		\item \method{public String loadManageCoursesPage()}
+		\item \method{public System getSystem()}
+		\item \method{public void setSystem(System system)}
 		\item \method{public SessionUser getSessionUser()}
 		\item \method{public void setSessionUser(SessionUser userSession)}
 	\end{itemize}
@@ -225,15 +273,11 @@
 	\kursiv{ManagedBean, ViewScoped}\\
 	Die Klasse ist zuständig für die Online - Aufladung des Guthabenkontos von Benutzern per Kreditkarte. Die Kreditkartenabwicklung erfolgt über die InfoSun-Bank.
 	\begin{itemize}
-		\item \method{public boolean depositAmount(User user, String CreditCardNumber, int CVCNumber, float amount)}
+		\item \method{public boolean depositAmount()}
 		\item \method{public User getUser()}
 		\item \method{public void setUser(User user)}
-		\item \method{public String getCreditCardNumber()}
-		\item \method{public void setCreditCardNumber(String creditCardNumber)}
-		\item \method{public int getCVCNumber()}
-		\item \method{public void setCVCNumber(int cvcNumber)}
-		\item \method{public int getAmountToDeposit()}
-		\item \method{public void setAmountToDeposit(float amountToDeposit)}
+	    \item \method{public PaymentInformation getPaymentInformation()}
+	    \item \method{public void setPaymentInformation(PaymentInformation payInfo)}
 		\item \method{public SessionUser getSessionUser()}
 		\item \method{public void setSessionUser(SessionUser userSession)}
 	\end{itemize}
@@ -242,7 +286,7 @@
 	\kursiv{ManagedBean, ViewScoped}\\
 	Die Klasse ist zuständig für die Offline - Aufladung des Guthabenkontos von Benutzern durch den Administrator und um die Bezahlungseinstellungen zu verwalten.
 	\begin{itemize}
-		\item \method{public boolean depositAmountOnUserAccount(int userID, String userName, float amountToDeposit)}
+		\item \method{public boolean depositAmountOnUserAccount()}
 		\item \method{public int getUserID()}
 		\item \method{public void setUserID(int userID)}
 		\item \method{public String getUserName()}
@@ -422,7 +466,7 @@
 		
 	\end{itemize}
 	
-	\subsection{Address}
+	\subsection{Klasse Address}
 	Diese Klasse verwaltet die Adressenangaben der Kurseinheiten und Benutzer.
 	\begin{itemize}
 		\item \method {public boolean equals(Object other)}
@@ -441,6 +485,27 @@
 		
 	\end{itemize}
 	
+	\subsection{Klasse PaymentInformation}
+	Diese Klasse stellt die Kreditkarteninformationen, Bankdaten und den Rechnungsbetrag
+	dar.
+	\begin{itemize}
+		\item \method{public String getAccountNumber()}
+		\item \method{ public void setAccountNumber(String accountNumber)}
+		\item \method{public int getAmount()}
+		\item \method{ public void setAmount(int amount)}
+		\item \method{public String getCcHolder()}
+		\item \method{ public void setCcHolder(String ccHolder)}
+		\item \method{ public String getCcNumber()}
+		\item \method{ public void setCcNumber(String ccNumber)}
+		\item \method{ public Date getCcValidFrom()}
+		\item \method{ public void setCcValidFrom(Date ccValidFrom)}
+		\item \method{ public Date getCcValidTo()}
+		\item \method{ public void setCcValidTo(Date ccValidTo)}
+		\item \method{ public int getCvc()}
+		\item \method{ public void setCvc(int cvc)}
+		
+	\end{itemize}
+	
 	\subsection{Klasse System}
 	In dieser Klasse werden die editierbaren Eigenschaften des Systems gespeichert
 	\begin{itemize}
@@ -454,22 +519,26 @@
 		\item \method {public void setLogo(String logo)}
 		\item \method {public void setTitle(String title)}
 	\end{itemize}
+	
 	\section{Package Services}
 	
+    \subsection{Klasse HttpsHelper}
+    Dies ist eine Hilfsklasse für Https-Verbindungen.
+    \begin{itemize}
+    	\item \method{public static void setup()}
+    \end{itemize}
+    
+    \subsection{Klasse TransferAction}
+    Diese Klasse übermittelt die Zahlungsdaten an die Bank und liefert eine Zahlungsbestätigung
+    zurück.
+    \begin{itemize}
+    	\item \method{public static boolean executeBankTransaktion(PaymentInformation payInfo)}
+    \end{itemize}
+    
 	\section{Package Interfaces}
 	\kursiv{Nur Kommentar: Interfaces für DAO - Damit die Datenbank einfach ausgetauscht werden kann}
 	
 	\section{Package Database}
-	
-	\subsection{Klasse DatabaseConnectionManager}
-	Die Klasse ist zuständig für das Aufbauen der Verbindungen zur Datenbank. Des Weiteren
-	speichert und verwaltet sie die Datenbankverbindungen. 
-	\begin{itemize}
-		\item \method{public synchronized Connection getConnection()}
-		\item \method{public synchronized void releaseConnection()}
-		\item \method{public static DatabaseConnectionManager getInstance()}
-		\item \method{public void shutDown()}
-	\end{itemize}
 	
 	\section{Package System}
 	\begin{tiny}
@@ -507,6 +576,15 @@
 		\method{public void shutdownMaintenance()}
 	\end{itemize}
 	
+	\subsection{Klasse DatabaseConnectionManager}
+	Die Klasse ist zuständig für das Aufbauen der Verbindungen zur Datenbank. Des Weiteren
+	speichert und verwaltet sie die Datenbankverbindungen. 
+	\begin{itemize}
+		\item \method{public synchronized Connection getConnection()}
+		\item \method{public synchronized void releaseConnection()}
+		\item \method{public static DatabaseConnectionManager getInstance()}
+		\item \method{public void shutDown()}
+	\end{itemize}
 	
 	
 	\section{Package Util}
