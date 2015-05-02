@@ -115,14 +115,32 @@
 	\kursiv{ManagedBean, ViewScoped}\\
 	Die Klasse ist zuständig für das  Bearbeiten und Löschen von Kursen.
 	\begin{itemize}
-		
-		
-		
-		
-		
-		
-		
-		
+		\item \method{public void editCourse()}
+		\item \method{public boolean saveCourse()}
+		\item \method{public boolean deleteCourse()}
+		\item \method{public Course getCourse()}
+		\item \method{public void setCourse(Course course)}
+		\item \method{public boolean addCourseLeader()}
+		\item \method{public User getLeaderToAdd()}
+		\item \method{public void setLeaderToAdd(User leaderToAdd)}
+		\item \method{public boolean removeCourseLeaders()}
+		\item \method{public ArrayList<User> getLeadersToDelete()}
+		\item \method{public void setLeadersToDelete(ArrayList<User> leadersToDelete)}
+		\item \method{public boolean registeredForCourseNews()}
+		\item \method{public boolean signUpForCourse()}
+		\item \method{public boolean signOffForCourse()}
+		\item \method{public void selectAllCourseUnits()}
+		\item \method{public boolean signUpForCourseUnits()}
+		\item \method{public boolean signOffForCourseUnits()}
+		\item \method{public ArrayList<CourseUnits> getSelectedCourseUnits()}
+		\item \method{public void setSelectedCourseUnits(ArrayList<CourseUnits> selectedCourseUnits)}
+		\item \method{public ArrayList<User> getLeadersOfCourse()}
+		\item \method{public void setLeadersOfCourseUnit(ArrayList<User> leaders)}
+		\item \method{public ArrayList<CourseUnit> getCourseUnitsOfCourse()}
+		\item \method{public void setCourseUnitsOfCourse(ArrayList<CourseUnit> courseUnits)}
+		\item \method{public String loadParticipientsPage()}
+		\item \method{public String loadCreateCourseUnitPage()}
+		\item \method{public String loadEditCourseUnitPage()}
 		\item \method{public int getActualPageNumber()}
 		\item \method{public void goToSpecicPage()}
 		\item \method{public Pagination getPagination()}
@@ -140,8 +158,8 @@
 		 \item \method{public boolean saveCourseUnit(boolean editAllIfRegular)}
 		 \item \method{public boolean deleteCourseUnit(boolean deleteAllIfRegular)}
 		 \item \method{public boolean addUsersToCourseUnit(ArrayList<User> user)}
-		 \item \method{public ArrayList<User> getUserToAdd()}
-		 \item \method{public void setUsersToAdd(ArrayList<User> usersToAdd)}
+		 \item \method{public User getUserToAdd()}
+		 \item \method{public void setUserToAdd(User userToAdd)}
 		 \item \method{public boolean deleteUserFromCourse()}
 		 \item \method{public ArrayList<User> getUserToDelete()}
 		 \item \method{public void setUsersToDelete(ArrayList<User> usersToDelete)}
@@ -214,6 +232,22 @@
 		\item \method{public void setSessionUser(SessionUser userSession)}
 	\end{itemize}
 	
+	\subsection{Klasse AccountManagment}
+	\kursiv{ManagedBean, RequestScoped}\\
+	Die Klasse ist für die Aktivierung von Benutzeraccounts durch einen Kursleiter oder Administrator zuständig.
+	\begin{itemize}
+		\item \method{public boolean activateAccounts()}
+		\item \method{public ArrayList<User> getUsersToActivate()}
+		\item \method{public void setUsersToActivate(ArrayList<User> usersToActivate)}
+		\item \method{public ArrayList<User> getSelectedUsers()}
+		\item \method{public void setSelectedUsers(ArrayList<User> selectedUsers)}
+		\item \method{public int getActualPageNumber()}
+		\item \method{public void goToSpecicPage()}
+		\item \method{public Pagination getPagination()}
+		\item \method{public void setPagination(Pagination pagination)}
+		\item \method{public SessionUser getSessionUser()}
+		\item \method{public void setSessionUser(SessionUser userSession)}
+	\end{itemize}	
 	
 	\subsection{Klasse UserManagement}
 	\kursiv{ManagedBean, ViewScoped}\\
@@ -310,18 +344,6 @@
 		\item \method{public void setPagination(Pagination pagination)}
 		\item \method{public SessionUser getSessionUser()}
 		\item \method{public void setSessionUser(SessionUser userSession)}
-	\end{itemize}
-	
-	\subsection{Klasse SetupAdmin}
-	\kursiv{ManagedBean, RequestScoped}\\
-	Diese Klasse ist zuständig für das Erstellen des ersten Systemadministrators.
-	\begin{itemize}
-		\item \method{public boolean createInitialAdmin()}
-		\item \method{public boolean createDefaultImprint()}
-		\item \method{public User getUser()}
-		\item \method{public void setUser(User user)}
-		\item \method{public String getImprint()}
-		\item \method{public void setImprint(String imprint)}
 	\end{itemize}
 	
 	\subsection{Klasse EditImprint}
@@ -448,11 +470,20 @@
 		\item \method {public void setDateOfBirth(Date dateOfBirth)}
 	\end{itemize}
 	\subsection{Enumeration UserRole}
-	Es werden nun die verschiedenen Benutzerrollen beschrieben
+	Es werden nun die verschiedenen Benutzerrollen beschrieben.
 	\begin{itemize}
 		\item {registeredUser}
 		\item {courseAdmin}
 		\item {systemAdmin}
+	\end{itemize}
+	
+	\subsection{Enumeration UserStatus}
+	Es werden nun die verschiedenen Statuszustände eines Benutzers beschrieben.
+	\begin{itemize}
+		\item {anonymous}
+		\item {notActivated}
+		\item {registered}
+		\item {inactive}
 	\end{itemize}
 	
 	\subsection{Klasse UserGroup}
@@ -531,14 +562,133 @@
     \subsection{Klasse TransferAction}
     Diese Klasse übermittelt die Zahlungsdaten an die Bank und liefert eine Zahlungsbestätigung
     zurück.
-    \begin{itemize}
-    	\item \method{public static boolean executeBankTransaktion(PaymentInformation payInfo)}
-    \end{itemize}
+	    \begin{itemize}
+	    	\item \method{public static boolean executeBankTransaktion(PaymentInformation payInfo)}
+	    \end{itemize}
     
 	\section{Package Interfaces}
-	\kursiv{Nur Kommentar: Interfaces für DAO - Damit die Datenbank einfach ausgetauscht werden kann}
-	
+	Dieses Package stellt Interfaces zur Verfügung, welche die DAO - Klassen implementieren müssen damit gegebenenfalls  ein Wechsel der Datenbank einfach möglich ist.
+	    \class{UserInteraction}
+		Diese Klasse stellt Datenbankanfragen um Benutzerdaten zu erhalten oder in die
+		Datenbank zu schreiben.
+		\begin{itemize}
+			\item \method{public boolean createUser(User user, Address address)}
+			\item \method{public ArrayList<User> getUsers(Pagination pagination)}
+			\item \method{public ArrayList<User> getUsers(Pagination pagination, String searchString)}
+			\item \method{public ArrayList<User> getUsersOrdered(Pagination pagination, String searchString, String orderParam)}
+			\item \method{public User getUser(int userID)}
+			\item \method{public int getUserID(String username)}
+			\item \method{public boolean updateUser(User user, Address address)}
+			\item \method{public boolean deleteUser(int userID)}
+			\item \method{public ArrayList<Courses> getCoursesLeadedBy(int userID, Pagination pagination)}
+		\end{itemize}
+		
+		\class{CourseInteraction}
+		Diese Klasse stellt Datenbankanfragen um Kursdaten zu erhalten oder in die Datenbank
+		zu schreiben.
+		\begin{itemize}
+			\item \method{public boolean createCourse(Course course, Address address)}
+			\item \method{public ArrayList<Course> getCourses(Pagination pagination)}
+			\item \method{public ArrayList<Course> getCourses(Pagination pagination, String searchString)}
+			\item \method{public ArrayList<Course> getCoursesOrdered(Pagination pagination, String searchString, String orderParam)}
+			\item \method{public ArrayList<User> getLeaders(int courseID)}
+			\item \method{public Course getCourse(int courseID)}
+			\item \method{public boolean updateCourse(Course course, Address address)}
+			\item \method{public boolean deleteCourse(int courseID)}
+			\item \method{public boolean addUserToCourse(int userID)}
+			\item \method{public boolean removeUserFromCourse(int userID)}
+			\item \method{public boolean addLeaderToCourse(int userID)}
+			\item \method{public boolean removeLeaderFromCourse(int userID)}
+		\end{itemize}
+		
+		\class{CourseUnitInteraction}
+		Diese Klasse stellt Datenbankanfragen um Kurseinheitsdaten zu erhalten oder in die Datenbank
+		zu schreiben.
+		\begin{itemize}
+			\item \method{public boolean createCourseUnit(CourseUnit courseUnit, Address address)}
+			\item \method{public CourseUnit getCourseUnit(int courseUnitID)}
+			\item \method{public ArrayList<CourseUnit> getCourseUnitsFromCourse(int courseID, Pagination pagination)}
+			\item \method{public boolean updateCourseUnit(CourseUnit courseUnit, Address address)}
+			\item \method{public boolean deleteCourseUnit(int courseUnitID)}
+			\item \method{public boolean addUserToCourseUnit(int userID)}
+			\item \method{public boolean removeUserFromCourseUnit(int userID)}
+		\end{itemize}
+		
 	\section{Package Database}
+	\subsection{Package DatabaseGeneral}
+	
+		\class{Klasse SetupAdmin}
+		Diese Klasse ist zuständig für das Erstellen des ersten Systemadministrators.
+		\begin{itemize}
+			\item \method{public boolean createInitialAdmin()}
+			\item \method{public boolean createDefaultImprint()}
+		\end{itemize}
+	
+		\class{Klasse DatabaseTableCreator}
+		Diese Klasse ist zuständig für das Erstellen der Tabellen in der Datenbank, falls diese noch nicht existieren.
+		\begin{itemize}
+			\item \method{public static boolean buildUpDatabase()}
+		\end{itemize}
+	
+		\class{Klasse DatabaseTableDetroyer}
+		Diese Klasse ist zuständig für das Löschen der Tabellen in der Datenbank, falls diese existieren.
+		\begin{itemize}
+			\item \method{public static boolean destroyDatabaseTables()}
+		\end{itemize}
+	
+	\subsection{Package DAO}
+		\class{UserDAO}
+		Diese Klasse stellt Datenbankanfragen um Benutzerdaten zu erhalten oder in die
+		Datenbank zu schreiben.
+		\begin{itemize}
+			\item \method{public boolean createUser(User user, Address address)}
+			\item \method{public ArrayList<User> getUsers(Pagination pagination)}
+			\item \method{public ArrayList<User> getUsers(Pagination pagination, String searchString)}
+			\item \method{public ArrayList<User> getUsersOrdered(Pagination pagination, String searchString, String orderParam)}
+			\item \method{public User getUser(int userID)}
+			\item \method{public int getUserID(String username)}
+			\item \method{public boolean updateUser(User user, Address address)}
+			\item \method{public boolean deleteUser(int userID)}
+			\item \method{public ArrayList<Courses> getCoursesLeadedBy(int userID, Pagination pagination)}
+			\end{itemize}
+		
+		\class{CourseDAO}
+		Diese Klasse stellt Datenbankanfragen um Kursdaten zu erhalten oder in die Datenbank
+		zu schreiben.
+		\begin{itemize}
+			\item \method{public boolean createCourse(Course course, Address address)}
+			\item \method{public ArrayList<Course> getCourses(Pagination pagination)}
+			\item \method{public ArrayList<Course> getCourses(Pagination pagination, String searchString)}
+			\item \method{public ArrayList<Course> getCoursesOrdered(Pagination pagination, String searchString, String orderParam)}
+			\item \method{public ArrayList<User> getLeaders(int courseID)}
+			\item \method{public Course getCourse(int courseID)}
+			\item \method{public boolean updateCourse(Course course, Address address)}
+			\item \method{public boolean deleteCourse(int courseID)}
+			\item \method{public boolean addUserToCourse(int userID)}
+			\item \method{public boolean removeUserFromCourse(int userID)}
+			\item \method{public boolean addLeaderToCourse(int userID)}
+			\item \method{public boolean removeLeaderFromCourse(int userID)}
+		\end{itemize}
+		
+		\class{CourseUnitDAO}
+		Diese Klasse stellt Datenbankanfragen um Kurseinheitsdaten zu erhalten oder in die Datenbank
+		zu schreiben.
+		\begin{itemize}
+			\item \method{public boolean createCourseUnit(CourseUnit courseUnit, Address address)}
+			\item \method{public CourseUnit getCourseUnit(int courseUnitID)}
+			\item \method{public ArrayList<CourseUnit> getCourseUnitsFromCourse(int courseID, Pagination pagination)}
+			\item \method{public boolean updateCourseUnit(CourseUnit courseUnit, Address address)}
+			\item \method{public boolean deleteCourseUnit(int courseUnitID)}
+			\item \method{public boolean addUserToCourseUnit(int userID)}
+			\item \method{public boolean removeUserFromCourseUnit(int userID)}
+		\end{itemize}
+		
+		\class{StatisticDAO}
+		Diese Klasse stellt Datenbankanfragen um Statistikdaten zu erhalten oder in die Datenbank
+		zu schreiben.
+		\begin{itemize}
+			\item 
+		\end{itemize}
 	
 	\section{Package System}
 	\begin{tiny}
@@ -759,18 +909,18 @@
 		\item \override
 		\method{public void validate()}
 	\end{itemize}
-	
-	
 		
 	\section{Verwendete Libraries}
 	\begin{tiny}
 		TF\\
 	\end{tiny}\\
-	In dem System verwendete Libraries:
+	In dem System zusätzlich verwendete Libraries:
 	\begin{itemize}
 		\item Commons Fileupload: Library für das Hochladen von Dateien.
 		\item JavaMail: Library für das Versenden von E-Mails.
 		\item JFreeChart: Library für die Erstellung von Diagrammen.
 		\item Log4J: Library für das Loggen von Meldungen.
+		\item JSF 2.2(Mojarra 2.2.10): Library zur Entwicklung von grafischen Benutzeroberflächen für Webapplikationen
 	\end{itemize}
+
 	\section{Klassendiagramm}
