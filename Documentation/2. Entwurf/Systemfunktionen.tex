@@ -1,6 +1,10 @@
 \chapter{Systemfunktionen}
 
-	\title{5.1 Systemstart}
+	\title{5.Konfigurationsdatei}
+		Die Konfigurationsdatei wird zwingend benötigt und wird bei Erstinstallation vom System angelegt und liegt auf dem Server bereit. Die Datei kann mit einem beliebigen Text-Editor von einem Systemadministrator bearbeitet werden.
+	
+
+	\title{5.2 Systemstart}
 		Beim starten des System wird die Existenz der Konfigurationsdatei geprüft. Ist diese nicht Vorhanden wird von einer Neu- bzw. Erstkonfiguration ausgegangen. Um das System starten zu können müssen folgende Daten bzw. Einstellungen getroffen werden:
 		\begin{itemize}
 			\item \emph{Datenbankeinstellungen:} Datenbankserver, Port, Benutzernamen, Passwort und maximale Anzahl an offenen Verbindungen zur Datenbank.
@@ -8,8 +12,8 @@
 			\item \emph{Systemrelevanteneinstellungen:} Überziehungskredit, Standartsprache und Art der Registrierung
 		\end{itemize}
 		
-		Nach dem lesen der Konfigurationsdatei werden die Verbindungen zur Datenbank aufgebaut(Voraussetzung ist die Konfigurationsdatei existiert). Über einen Datenbank-Kommunikationspool stellt das System eine feste Anzahl an Verbindungen für die Benutzer zur Verfügung damit auch mehrer Benutzer gleichzeit Anfragen an den SQL-Server schicken können. 
-	\title{5.2 Systemlaufzeit}
+		Nach dem lesen der Konfigurationsdatei werden die Verbindungen zur Datenbank aufgebaut(Voraussetzung ist die Konfigurationsdatei existiert). Über einen Datenbank-Kommunikationspool stellt das System eine feste Anzahl an Verbindungen für die Benutzer zur Verfügung damit auch mehrer Benutzer gleichzeit Anfragen an den SQL-Server schicken können. Da eine dauerhafte Verbindung zur Datenbank benötigt wird, muss dieser Vorgang in der Initialisierungsphase des Systems geschehen. Das wird durch @postConstruct gewährleistet. 
+	\title{5.3 Systemlaufzeit}
 		Damit das System startet ist eine Erstkonfiguration nötig. Während der Systemlaufzeit können folgende Fälle auftreten:
 		\begin{itemize}
 			\item \emph{Kommunikation mit der Datenbank:} Für manche Benutzeraktionen (z.B. "Aufruf der Kursdetails" oder "Suche nach Kursen") wird eine Anfrage an die Datenbank gesendet. Der Datenbankkommunkationspool Verwaltet die Anfragen und übergibt den Benutzern Verbindungen zur Datenbank (Anzahl zuvor vom Administrator festgelegt). Es können verschiedene Fälle eintreten:
@@ -44,8 +48,11 @@
 				\item \textbf{RuntimeException:} Nicht behandelbar. Der Benutzer wird über eine allgemeine Fehlermeldung benachrichtigt.
 				\item \textbf{Exception:} Behandelbar, der Benutzer bekommt eine spezifische Fehlermeldung allerdings ohne oder wenig Strukturinformationen des Systems.
 				\end{itemize}
-			
+				
+			\item \textbf{Wartungsthread:} 
+			Für systeminterne Wartungsarbeiten wird ein Thread zur Verfügung gestellt der in gewissen Abständen gestartet wird. Dieser hat primär die Aufgabe alte und nicht mehr gebrauchte Datensätze zu löschen und somit die Effizienz des Systems zu gewährleisten.
 		\end{itemize} 
 	
-	\title{5.3 Systemshutdown}
+	\title{5.4 Systemshutdown}
+	Beim Herunterfahren des System wird die Priorität vorallem auf das korrekte Schließen der Datenbankverbindungen gelegt. Dieser Vorgang wird mit einem Shutdown-Hook umgesetzt. Dieser Shutdown-Hook läuft in einem eigenen Thread und bei Ausführung werden alle freien Datenbankverbindungen geschlossen und die gerade in Benutzung sind solange aufrechterhalten bis sie wieder frei sind. Darauf folgt auch deren Schließung. Um Sicher zu gehen, dass keine Ressourcen der Datenbank verschwendet werden wird dies mit dem @preDestroy umgesetzt. 
    
