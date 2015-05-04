@@ -5,8 +5,12 @@
 	
 	\chapter{Klassenbeschreibung und Klassendiagramm}
 	In diesem Kapitel werden alle Klassen der Anwendung \textbf{ofCourse} aufgeführt.
-	Um eine bessere Übersicht und Strukturierung zu erhalten wird das ganze Projekt in Packages aufgeteilt.
-	
+	Um eine bessere Übersicht und Strukturierung zu erhalten wird das ganze Projekt in Packages aufgeteilt.Außerdem enthalten folgende Klassen Implementierungen:
+	\begin{itemize}
+		\item Alle ValidatorenKlassen: implements Validator
+		\item Alle ViewScopedKlassen: implements Serializable
+		\item Alle ExceptionKlassen: extends Exception
+	\end{itemize}
 
 	\section{Package Action}
 		\begin{tiny}
@@ -32,7 +36,9 @@
 		\item \method{public User getUsertoRegistrate()}
 		\item \method{public void setUserToRegistrate(User userToRegistrate)}
 		\item \method{public Address getAddress()}
-		\item \method{public void Address setAddress(Address addressToSet)}
+		\item \method{public void setAddress(Address addressToSet)}
+		\item \method{public SessionUser getSessionUser()}
+		\item \method{public void setSessionUser(SessionUser userSession)}
 	\end{itemize}
 	
 	\subsection{Klasse LostPassword}
@@ -42,6 +48,8 @@
 		\item \method{public boolean resetPassword()}
 		\item \method{public String getEmailAddressToResetPassword()}
 		\item \method{public void setEmailAddressToResetPassword(String emailToResetPassword)}
+		\item \method{public User getUser()}
+		\item \method{public void setUser(User user)}
 	\end{itemize}
 	
 	\subsection{Klasse SearchUser}
@@ -55,9 +63,9 @@
 		\item \method{public void setSearchParam(String searchParam)}
 		\item \method{public String getSearchTerm()}
 		\item \method{public void setSearchTerm(String searchTerm)}
-		\item \method{public void sortBySpecicColumn()}
+		\item \method{public void sortBySpecificColumn()}
 		\item \method{public int getActualPageNumber()}
-		\item \method{public void goToSpecicPage()}
+		\item \method{public void goToSpecificPage()}
 		\item \method{public Pagination getPagination()}
 		\item \method{public void setPagination(Pagination pagination)}
 		\item \method{public SessionUser getSessionUser()}
@@ -72,16 +80,16 @@
 		\item \method{public void displayCoursesInSpecificPeriod()}
 		\item \method{public String getDisplayPeriod()}
 		\item \method{public void setDisplayPeriod(String displayPeriod)}
-		\item \method{public ArrayList<User> getSearchResult()}
-		\item \method{public void setSearchResult(ArrayList<User> searchResult)}
+		\item \method{public ArrayList<Course> getSearchResult()}
+		\item \method{public void setSearchResult(ArrayList<Course> searchResult)}
 		\item \method{public void search(String searchParam, String searchTerm)}
 		\item \method{public String getSearchParam()}
 		\item \method{public void setSearchParam(String searchParam)}
 		\item \method{public String getSearchTerm()}
 		\item \method{public void setSearchTerm(String searchTerm)}
-		\item \method{public void sortBySpecicColumn()}
+		\item \method{public void sortBySpecificColumn()}
 		\item \method{public int getActualPageNumber()}
-		\item \method{public void goToSpecicPage()}
+		\item \method{public void goToSpecificPage()}
 		\item \method{public Pagination getPagination()}
 		\item \method{public void setPagination(Pagination pagination)}
 		\item \method{public SessionUser getSessionUser()}
@@ -90,7 +98,7 @@
 	
 	\subsection{Klasse UserProfil}
 	\kursiv{ManagedBean, ViewScoped}\\
-	Diese Klasse ist zuständig für die Anzeige und das Bearbeiten der Beutzerdaten. Des Weiteren realisiert die Darstellung der Liste aller vom Benutzer geleiteten Kurse.
+	Diese Klasse ist zuständig für die Anzeige und das Bearbeiten der Benutzerdaten. Des Weiteren realisiert die Darstellung der Liste aller vom Benutzer geleiteten Kurse.
 	\begin{itemize}
 		\item \method{public void editUserdata()}
 		\item \method{public void saveUserdata()}
@@ -100,11 +108,11 @@
 		\item \method{public User getUser()}
 		\item \method{public void setUser(User userToSet)}
 		\item \method{public Address getAddress()}
-		\item \method{public void setAddress(Addres addressToSet)}
+		\item \method{public void setAddress(Address addressToSet)}
 		\item \method{public ArrayList<Course> getManagedCourses()}
 		\item \method{public void setManagedCourses(ArrayList<Course> managedCourses)}
 		\item \method{public int getActualPageNumber()}
-		\item \method{public void goToSpecicPage()}
+		\item \method{public void goToSpecificPage()}
 		\item \method{public Pagination getPagination()}
 		\item \method{public void setPagination(Pagination pagination)}
 		\item \method{public SessionUser getSessionUser()}
@@ -132,8 +140,8 @@
 		\item \method{public void selectAllCourseUnits()}
 		\item \method{public boolean signUpForCourseUnits()}
 		\item \method{public boolean signOffForCourseUnits()}
-		\item \method{public ArrayList<CourseUnits> getSelectedCourseUnits()}
-		\item \method{public void setSelectedCourseUnits(ArrayList<CourseUnits> selectedCourseUnits)}
+		\item \method{public ArrayList<CourseUnit> getSelectedCourseUnits()}
+		\item \method{public void setSelectedCourseUnits(ArrayList<CourseUnit> selectedCourseUnits)}
 		\item \method{public ArrayList<User> getLeadersOfCourse()}
 		\item \method{public void setLeadersOfCourseUnit(ArrayList<User> leaders)}
 		\item \method{public ArrayList<CourseUnit> getCourseUnitsOfCourse()}
@@ -142,7 +150,7 @@
 		\item \method{public String loadCreateCourseUnitPage()}
 		\item \method{public String loadEditCourseUnitPage()}
 		\item \method{public int getActualPageNumber()}
-		\item \method{public void goToSpecicPage()}
+		\item \method{public void goToSpecificPage()}
 		\item \method{public Pagination getPagination()}
 		\item \method{public void setPagination(Pagination pagination)}
 		\item \method{public SessionUser getSessionUser()}
@@ -170,11 +178,11 @@
 		 \item \method{public CourseUnit getCourseUnit()}
 		 \item \method{public void setCourseUnit(CourseUnit courseUnit)}
 		 \item \method{public Address getAddress()}
-		 \item \method{public void setAddress(Addres addressToSet)}
+		 \item \method{public void setAddress(Address addressToSet)}
 		 \item \method{public ArrayList<User> getParticipientsOfCourseUnit()}
 	  	 \item \method{public void setParticipientsOfCourseUnit(ArrayList<User> participients)}
 		 \item \method{public int getActualPageNumber()}
-		 \item \method{public void goToSpecicPage()}
+		 \item \method{public void goToSpecificPage()}
 		 \item \method{public Pagination getPagination()}
 		 \item \method{public void setPagination(Pagination pagination)}
 		 \item \method{public SessionUser getSessionUser()}
@@ -206,7 +214,7 @@
 		\item \method{public void setRegisteredCourses(ArrayList<Course> registeredCourses)}
 		\item \method{public String loadCourseDetailsPageOfSelectedCourse()}
 		\item \method{public int getActualPageNumber()}
-		\item \method{public void goToSpecicPage()}
+		\item \method{public void goToSpecificPage()}
 		\item \method{public Pagination getPagination()}
 		\item \method{public void setPagination(Pagination pagination)}
 		\item \method{public SessionUser getSessionUser()}
@@ -226,7 +234,7 @@
 		\item \method{public void setCourseLeader()}
 		\item \method{public Course getCourse()}
 		\item \method{public void setCourse(Course course)}
-		\item \method{public Addresse getAddress()}
+		\item \method{public Address getAddress()}
 		\item \method{public void setAddress(Address address)}
 		\item \method{public SessionUser getSessionUser()}
 		\item \method{public void setSessionUser(SessionUser userSession)}
@@ -242,7 +250,7 @@
 		\item \method{public ArrayList<User> getSelectedUsers()}
 		\item \method{public void setSelectedUsers(ArrayList<User> selectedUsers)}
 		\item \method{public int getActualPageNumber()}
-		\item \method{public void goToSpecicPage()}
+		\item \method{public void goToSpecificPage()}
 		\item \method{public Pagination getPagination()}
 		\item \method{public void setPagination(Pagination pagination)}
 		\item \method{public SessionUser getSessionUser()}
@@ -258,7 +266,7 @@
 		\item \method{public boolean deleteUser()}
 		\item \method{public User getUser()}
 		\item \method{public void setUser(User user)}
-		\item \method{public Addresse getAddress()}
+		\item \method{public Address getAddress()}
 		\item \method{public void setAddress(Address address)}
 		\item \method{public SessionUser getSessionUser()}
 		\item \method{public void setSessionUser(SessionUser userSession)}
@@ -266,6 +274,7 @@
 	
 	\subsection{Klasse ListParticipents}
 	\kursiv{ManagedBean, RequestScoped}
+	Die Klasse ist zuständig für das Anzeigen der Teilnehmer einer Kurseinheit oder eines Kurses.
 	\begin{itemize}
 		\item \method{public ArrayList<User> getParticipients()}
 		\item \method{public void setParticipients(ArrayList<User> participients)}
@@ -273,7 +282,7 @@
 		\item \method{public ArrayList<User> getUserToDelete()}
 		\item \method{public void setUsersToDelete( ArrayList<User> usersToDelete)}
 		\item \method{public int getActualPageNumber()}
-		\item \method{public void goToSpecicPage()}
+		\item \method{public void goToSpecificPage()}
 		\item \method{public Pagination getPagination()}
 		\item \method{public void setPagination(Pagination pagination)}
 		\item \method{public SessionUser getSessionUser()}
@@ -321,10 +330,8 @@
 	Die Klasse ist zuständig für die Offline - Aufladung des Guthabenkontos von Benutzern durch den Administrator und um die Bezahlungseinstellungen zu verwalten.
 	\begin{itemize}
 		\item \method{public boolean depositAmountOnUserAccount()}
-		\item \method{public int getUserID()}
-		\item \method{public void setUserID(int userID)}
-		\item \method{public String getUserName()}
-		\item \method{public void setUserName(String username)}
+		\item \method{public User getUser()}
+		\item \method{public void setUser(User user)}
 		\item \method{public int getAmountToDeposit()}
 		\item \method{public void setAmountToDeposit(float amountToDeposit)}
 		\item \method{public SessionUser getSessionUser()}
@@ -332,14 +339,14 @@
 	\end{itemize}
 	
 	\subsection{Klasse IncomeStatistics}
-	\kursiv{ManagedBean, ViewScoped}\\
+	\kursiv{ManagedBean, RequestScoped}\\
 	Die Klasse ist für die Generierung und Darstellung der Einnahmestatistiken zuständig.
 	\begin{itemize}
 	    \item \method{public void displayStatistic(String displayParam)}
 		\item \method{public String getDisplayParam()}
 		\item \method{public void setDisplayParam(String displayParam)}
 		\item \method{public int getActualPageNumber()}
-		\item \method{public void goToSpecicPage()}
+		\item \method{public void goToSpecificPage()}
 		\item \method{public Pagination getPagination()}
 		\item \method{public void setPagination(Pagination pagination)}
 		\item \method{public SessionUser getSessionUser()}
@@ -353,6 +360,8 @@
 		\item \method{public void editImprint(String imprint)}
 		\item \method{public String getImprint()}
 		\item \method{public void setImprint(String imprint)}
+		\item \method{public SessionUser getSessionUser()}
+		\item \method{public void setSessionUser(SessionUser userSession)}
 	\end{itemize}
 	
 	\subsection{Klasse Header}
@@ -374,8 +383,6 @@
 		\item \method{public String loadImprintPage()}
 		\item \method{public String loadAGBPage()}
 		\item \method{public String loadHelpPage()}
-		\item \method{public SessionUser getSessionUser()}
-		\item \method{public void setSessionUser(SessionUser userSession)}
 	\end{itemize}
 	
 	\subsection{Klasse Scheduler}
@@ -393,6 +400,8 @@
 	\begin{itemize}
 		\item \method{public int getUserID()}
 		\item \method{public void setUserID(int userID)}
+		\item \method{public int getUserStatus()}
+		\item \method{public void setUserStatus(int userStatus)}
 		\item \method{public String getUserRole()}
 		\item \method{public void setUserRole(String userRole)}
 		\item \method{public String getLanguage()}
@@ -567,6 +576,9 @@
 	    \end{itemize}
     
 	\section{Package Interfaces}
+	\begin{tiny}
+		TF\\
+	\end{tiny}\\
 	Dieses Package stellt Interfaces zur Verfügung, welche die DAO - Klassen implementieren müssen damit gegebenenfalls  ein Wechsel der Datenbank einfach möglich ist.
 	    \class{UserInteraction}
 		Diese Klasse stellt Datenbankanfragen um Benutzerdaten zu erhalten oder in die
@@ -580,7 +592,7 @@
 			\item \method{public int getUserID(String username)}
 			\item \method{public boolean updateUser(User user, Address address)}
 			\item \method{public boolean deleteUser(int userID)}
-			\item \method{public ArrayList<Courses> getCoursesLeadedBy(int userID, Pagination pagination)}
+			\item \method{public ArrayList<Course> getCoursesLeadedBy(int userID, Pagination pagination)}
 		\end{itemize}
 		
 		\class{CourseInteraction}
@@ -615,22 +627,25 @@
 		\end{itemize}
 		
 	\section{Package Database}
+	\begin{tiny}
+		TF
+	\end{tiny}
 	\subsection{Package DatabaseGeneral}
 	
-		\class{Klasse SetupAdmin}
+		\class{SetupAdmin}
 		Diese Klasse ist zuständig für das Erstellen des ersten Systemadministrators.
 		\begin{itemize}
 			\item \method{public boolean createInitialAdmin()}
 			\item \method{public boolean createDefaultImprint()}
 		\end{itemize}
 	
-		\class{Klasse DatabaseTableCreator}
+		\class{DatabaseTableCreator}
 		Diese Klasse ist zuständig für das Erstellen der Tabellen in der Datenbank, falls diese noch nicht existieren.
 		\begin{itemize}
 			\item \method{public static boolean buildUpDatabase()}
 		\end{itemize}
 	
-		\class{Klasse DatabaseTableDetroyer}
+		\class{DatabaseTableDetroyer}
 		Diese Klasse ist zuständig für das Löschen der Tabellen in der Datenbank, falls diese existieren.
 		\begin{itemize}
 			\item \method{public static boolean destroyDatabaseTables()}
@@ -649,7 +664,7 @@
 			\item \method{public int getUserID(String username)}
 			\item \method{public boolean updateUser(User user, Address address)}
 			\item \method{public boolean deleteUser(int userID)}
-			\item \method{public ArrayList<Courses> getCoursesLeadedBy(int userID, Pagination pagination)}
+			\item \method{public ArrayList<Course> getCoursesLeadedBy(int userID, Pagination pagination)}
 			\end{itemize}
 		
 		\class{CourseDAO}
@@ -716,7 +731,7 @@
 		\method{public void run()}
 	\end{itemize}
 	
-	\subsection{LaunchSystem}
+	\subsection{Klasse LaunchSystem}
 	\kursiv{ManagedBean, ApplicationScoped}\\
 	Die Klasse ist zuständig für das Starten des System. Sie startet den Maintenance - Thread, lädt Properties und stellt die Datenbankverbindung her.
 	\begin{itemize}
@@ -747,7 +762,7 @@
 		\item \method{public static String hash(String password, int salt)}
 	\end{itemize}
 	
-	\subsection{Klasse LanguageMangager}
+	\subsection{Klasse LanguageManagager}
 	Diese Klasse ist zuständig für die angezeigte Systemsprache. In ihr werden die unterstützten Sprachen verwaltet und sie ist zuständig für das Auslesen der Anzeigetexte aus der .properties - Datei der gewählten Sprache.
 	\begin{itemize}
 		\item \method{public static LanguageManager getInstance()}
@@ -792,18 +807,37 @@
 	\end{itemize}
 	
 	\section{Package Exception}
+	\subsection{Klasse CustomExceptionHandler}
+	Diese Klasse ist zuständig für die Weiterleitung zu Fehlerseiten, falls ein Fehler aufgetreten
+	ist. \\
+	Die Klasse CustomExceptionHandler erbt aus ExceptionHandlerWrapper.
+		\begin{itemize}
+			\item \override
+			\method{public ExceptionHandler getWrapped()}
+		\end{itemize}
+		
+	\subsection{Klasse CustomExceptionHandlerFactory}
+	Diese Klasse ist zuständig für das  Initialisieren des CustomExceptionHandler-Objekts, welches die auftretenden Fehler behandeln soll.\\
+	Die Klasse CustomExceptionHandlerFactory erbt aus ExceptionHandlerFactory.
+	\begin{itemize}
+		\item \override
+		\method{public ExceptionHandler getExceptionHandler()}
+	\end{itemize}
+	
 	\subsection{BankAccountException}
-	Sind Fehler, welche beim Aufladen des Guthabenkontos auftreten. 
+	Diese Klasse behandelt Exceptions im Zusammenhang mit der Bankverbindung.
 	
 	\subsection{MailingException}
+	Diese Klasse behandelt Exceptions im Zusammenhang mit der E-Mailversendung.
 	
 	\subsection{OutOfTimeException}
+	Diese Klasse behandelt TimeOutExceptions im Zusammenhang mit der Bankverbindung
+	und den Datenbankverbindungen.
 	
-	\subsection{FileNotFoundException}
+	\subsection{InvalidDatabaseTransferException}
+	Diese Klasse behandelt SQL-Exceptions.
 	
-	\subsection{OutOfBoundsException} ??
-	
-	\section{Package Validator}
+	\section{Package CustomValidator}
 	\begin{tiny}
 		TF\\
 	\end{tiny}\\
@@ -838,7 +872,7 @@
 		\method{public void validate()}
 	\end{itemize}
 	
-	\subsection{Klasse BirthdateValidator}
+	\subsection{Klasse DateOfBirthValidator}
 	Der Validator überprüft, ob das eingegebene Datum eingegebene Datum in der Zukunft liegt und ob es mehr als 150 Jahre zurückliegt.
 	\begin{itemize}
 		\item \override
@@ -924,3 +958,15 @@
 	\end{itemize}
 
 	\section{Klassendiagramm}
+	\begin{tiny}
+		SeSc und TF\\
+	\end{tiny}\\
+	Um sich dieses Diagramm genauer ansehen zu können, muss es mit einem PDF-Reader
+	geöffnet werden, der eine Zoom-Funktion besitzt.
+	
+	\begin{center}
+		\includegraphics[width=1.0\linewidth]{Grafiken/OfCourseumlcd}
+		Abbildung: UML-Klassendiagramm des ofCourse-Systems
+	\end{center}
+
+
