@@ -581,8 +581,7 @@
 	\end{tiny}\\
 	Dieses Package stellt Interfaces zur Verfügung, welche die DAO - Klassen implementieren müssen damit gegebenenfalls  ein Wechsel der Datenbank einfach möglich ist.
 	    \class{UserInteraction}
-		Diese Klasse stellt Datenbankanfragen um Benutzerdaten zu erhalten oder in die
-		Datenbank zu schreiben.
+		Dieses Interface gibt vor, welche Methoden für Datenbankanfragen für das Erhalten bzw. das Schreiben von Benutzerdaten vorhanden sein müssen.
 		\begin{itemize}
 			\item \method{public boolean createUser(User user, Address address)}
 			\item \method{public ArrayList<User> getUsers(Pagination pagination)}
@@ -596,8 +595,7 @@
 		\end{itemize}
 		
 		\class{CourseInteraction}
-		Diese Klasse stellt Datenbankanfragen um Kursdaten zu erhalten oder in die Datenbank
-		zu schreiben.
+		Dieses Interface gibt vor, welche Methoden für Datenbankanfragen für das Erhalten bzw. das Schreiben von Kursdaten vorhanden sein müssen.
 		\begin{itemize}
 			\item \method{public boolean createCourse(Course course, Address address)}
 			\item \method{public ArrayList<Course> getCourses(Pagination pagination)}
@@ -614,8 +612,7 @@
 		\end{itemize}
 		
 		\class{CourseUnitInteraction}
-		Diese Klasse stellt Datenbankanfragen um Kurseinheitsdaten zu erhalten oder in die Datenbank
-		zu schreiben.
+			Dieses Interface gibt vor, welche Methoden für Datenbankanfragen für das Erhalten bzw. das Schreiben von Kurseinheitsdaten vorhanden sein müssen.
 		\begin{itemize}
 			\item \method{public boolean createCourseUnit(CourseUnit courseUnit, Address address)}
 			\item \method{public CourseUnit getCourseUnit(int courseUnitID)}
@@ -625,6 +622,15 @@
 			\item \method{public boolean addUserToCourseUnit(int userID)}
 			\item \method{public boolean removeUserFromCourseUnit(int userID)}
 		\end{itemize}
+		
+		\class{StatisticsInteraction}
+			Dieses Interface gibt vor, welche Methoden für Datenbankanfragen für das Erhalten von Statistikdaten oder das Schreiben dieser in die Datenbank vorhanden sein müssen.
+			\begin{itemize}
+				\item \method{public HashMap<Date,float> getIncomePerDay(Date actualDate)}
+				\item \method{public HashMap<Date,float> getIncomePerWeek(Date actualDate)}
+				\item \method{public HashMap<User,float> getIncomePerLeader(Pagination pagination)}
+				\item \method{public HashMap<Course,float> getIncomePerCourse(Pagination pagination)}
+			\end{itemize}
 		
 	\section{Package Database}
 	\begin{tiny}
@@ -702,7 +708,10 @@
 		Diese Klasse stellt Datenbankanfragen um Statistikdaten zu erhalten oder in die Datenbank
 		zu schreiben.
 		\begin{itemize}
-			\item 
+			\item \method{public HashMap<Date,float> getIncomePerDay(Date actualDate)}
+			\item \method{public HashMap<Date,float> getIncomePerWeek(Date actualDate)}
+			\item \method{public HashMap<User,float> getIncomePerLeader(Pagination pagination)}
+			\item \method{public HashMap<Course,float> getIncomePerCourse(Pagination pagination)}
 		\end{itemize}
 	
 	\section{Package System}
