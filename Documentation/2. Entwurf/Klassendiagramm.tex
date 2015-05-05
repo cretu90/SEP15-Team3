@@ -453,7 +453,47 @@
 	\end{itemize}
 	
 	\subsection{Klasse Course}
+		\item \method {public String getTitle()}
+		\item \method {public String getDiscription()}
+		\item \method {public CourseUnit getNextCourseUnit()}
+		\item \method {public Date getStartdate()}
+		\item \method {public Date getEnddate()}
+		\item \method {public int getMaxUsers()}
+		\item \method {public ArrayList<CourseUnit> getCourseUnits()}
+		\item \method {public ArrayList<User> getCoursAdmins()}
+		\item \method {public ArrayList<User> getUsers()}
+		\item \method {public ArrayList<User> getUsersToInform()}
+		\item \method {public void setTitle(String title)}
+		\item \method {public void setDiscription(String discription)}
+		\item \method {public void setNextCourseUnit(CourseUnit nextCourseUnit)}
+		\item \method {public void setStartdate(Date startDate)}
+		\item \method {public void setEnddate(Date endDate)}
+		\item \method {public void setMaxUsers(int maxUsers)}
+		\item \method {public void setCourseUnits(ArrayList<CourseUnit> courseUnits) }
+		\item \method {public void setCoursAdmins(ArrayList<User> coursAdmins)}
+		\item \method {public void setUsers(ArrayList<User> users)}
+		\item \method {public void setUsersToInform(ArrayList<User> usersToInform)} 
 	\subsection{Klasse CourseUnit}
+		\item \method {public String getTitle()}
+		\item \method {public String getDiscription()}
+		\item \method {public Date getStarttime()}
+		\item \method {public Date getEndtime()}
+		\item \method {public Address getAddress()}
+		\item \method {public float getPrice()}
+		\item \method {public int getMaxUsers()}
+		\item \method {public int getMinUsers()}
+		\item \method {public User getCourseAdmin()}
+		\item \method {public ArrayList<User> getUsers()}
+		\item \method {public void setTitle(String title)}
+		\item \method {public void setDiscription(String discription)}
+		\item \method {public void setStarttime(Date startingTime)}
+		\item \method {public void setEndtime(Date endTime)}
+		\item \method {public void setAddress(Address address)
+		\item \method {public void setPrice(float price)}
+		\item \method {public void setMaxUsers(int maxUsers)}
+		\item \method {public void setMinUsers(int minUsers)}
+		\item \method {public void setCourseAdmin(User courseAdmin)}
+		\item \method {public void setUsers(ArrayList<User> users)}
 	\subsection{Klasse User}
 	Diese Klasse stellt alle Benutzer des Systems dar. Je nach Status des Benutzers(Administrator, Kursleiter und Benutzer) sind unterschiedliche Attribute ausgefüllt.
 	\begin{itemize}
