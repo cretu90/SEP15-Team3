@@ -3,8 +3,9 @@
 MB
 \end{tiny}
 \section{Schichtenarchitektur}
+\\
     %Bild der Schichtenarchitektur
-    \includegraphics[scale=0.45]{Grafiken/Schichtenarchitektur.pdf}
+    \includegraphics[scale=0.50]{Grafiken/Schichtenarchitektur.pdf}
 	\subsection{Faces-Servlet}
 	    Das Faces-Servlet fungiert im System als Controller, der eine HTTP-Request abfangt, diese bearbeitet, sowie weiterleitet. Das Faces-Servlet muss in jeder JSF-Applikation konfiguriert sein und wird in der web.xml Datei definiert. 
     \subsection{Facelets}
@@ -50,5 +51,16 @@ Es werden im System auf bereits vorhandenen Libraries zurückgegriffen.
 	\subsection{Exceptions}
 	Sollten Fehler auftreten auf die der User keinen Einfluss hat, so wird der Nutzer auf eine Fehler-Seite geleitet. Auf dieser Seite befinden sich Informationen zu dem Fehler und es wird eine weitere Vorgehensweise zur Verfügung gestellt. Bestimmte Exceptions wie beispielsweise eine SQL-Exception werden gefangen und geworfen, indem globale Exception-Handler implementiert werden. Bei kritischen Exceptions wird auch eine Logfile angefertigt, um im Nachhinein genau zu verfolgen wo und wann der Fehler aufgetreten ist.
 	\subsection{HTTP-Statuscodes}
-	Für den User werden in der web.xml HTTP-Statuscodes generiert. Somit bleiben kryptische Fehlermeldungen seitens des Webservers dem User verborgen. Dem User werden die Fehler auf einer neuen Seite angezeigt: 		     
+	Für den User werden in der web.xml HTTP-Statuscodes generiert. Somit bleiben kryptische Fehlermeldungen seitens des Webservers dem User verborgen. Dem User werden die Fehler auf einer neuen Seite angezeigt: \\ \\
+	\begin{tabular}{|l|l|}
+		\hline
+		Status Code & Beschreibung \\
+		\hline
+		403 & Zugriff nicht autorisiert \\
+		404 & Datei/Ressource nicht vorhanden \\
+		408 & Server-Timeout \\
+		500 & Interner Server Fehler \\
+		503 & Server nicht erreichbar \\
+		\hline
+ 	\end{tabular}		     
 
