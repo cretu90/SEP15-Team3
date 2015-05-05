@@ -478,7 +478,6 @@
 	
 	
 	\subsection{Klasse CourseUnit}
-	test
 	\begin{itemize}
 		\item \method {public String getTitle()}
 		\item \method {public String getDiscription()}
@@ -530,30 +529,20 @@
 	\subsection{Enumeration UserRole}
 	Es werden nun die verschiedenen Benutzerrollen beschrieben.
 	\begin{itemize}
-		\item {registeredUser}
-		\item {courseAdmin}
-		\item {systemAdmin}
+		\item {REGISTERED\_USER}
+		\item {COURSE\_LEADER}
+		\item {SYSTEM\_ADMINISTRATOR}
 	\end{itemize}
 	
 	\subsection{Enumeration UserStatus}
 	Es werden nun die verschiedenen Statuszustände eines Benutzers beschrieben.
 	\begin{itemize}
-		\item {anonymous}
-		\item {notActivated}
-		\item {registered}
-		\item {inactive}
+		\item {ANONYMOUS}
+		\item {NOT\_ACTIVATED}
+		\item {REGISTERED}
+		\item {INACTIVE}
 	\end{itemize}
-	
-	\subsection{Klasse UserGroup}
-	Diese Klasse beschreibt eine Benutzergruppe (Administratoren, Kursleiter oder Benutzern) die aus mehreren registrierten Benutzern, mit gleichen Benutzerrechten, besteht.
-	\begin{itemize}
-		\item \method {public boolean equals(Object other)}
-		\item \method {public String getGroupName()}
-		\item \method {public int getUserGroupID()}
-		\item \method {public }
-		Nochmal Mit Tobi durchgehen... wirklich alle User nochmal speichern? LinkedList?!
-		
-	\end{itemize}
+
 	
 	\subsection{Klasse Address}
 	Diese Klasse verwaltet die Adressenangaben der Kurseinheiten und Benutzer.
@@ -888,12 +877,11 @@
 	\subsection{MailingException}
 	Diese Klasse behandelt Exceptions im Zusammenhang mit der E-Mailversendung.
 	
-	\subsection{OutOfTimeException}
-	Diese Klasse behandelt TimeOutExceptions im Zusammenhang mit der Bankverbindung
-	und den Datenbankverbindungen.
+	\subsection{CourseRegistrationException}
+    Dies sind Fehler, welche beim An- oder Abmelden zu Kursen/Kurseinheiten auftreten können. 
 	
 	\subsection{InvalidDatabaseTransferException}
-	Diese Klasse behandelt SQL-Exceptions.
+	Diese Klasse behandelt SQL-Exceptions und  TimeOut - Exceptions im Zusammenhang mit der Datenbankverbindungen.
 	
 	\section{Package CustomValidator}
 	\begin{tiny}
