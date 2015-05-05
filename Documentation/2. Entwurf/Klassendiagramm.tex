@@ -5,18 +5,18 @@
 	
 	\chapter{Klassenbeschreibung und Klassendiagramm}
 	In diesem Kapitel werden alle Klassen der Anwendung \textbf{ofCourse} aufgeführt.
-	Um eine bessere Übersicht und Strukturierung zu erhalten wird das ganze Projekt in Packages aufgeteilt.Außerdem enthalten folgende Klassen Implementierungen:
+	Um eine bessere Übersicht und Strukturierung zu erhalten wird das ganze Projekt in Packages aufgeteilt. Außerdem enthalten folgende Klassen nachfolgende Implementierungen:
 	\begin{itemize}
-		\item Alle ValidatorenKlassen: implements Validator
-		\item Alle ViewScopedKlassen: implements Serializable
-		\item Alle ExceptionKlassen: extends Exception
+		\item Alle Validator - Klassen: implements Validator
+		\item Alle ViewScoped - Klassen: implements Serializable
+		\item Alle Exception - Klassen: extends Exception
 	\end{itemize}
 
 	\section{Package Action}
 		\begin{tiny}
 			TF\\
 		\end{tiny}\\
-	Dieses Package stellt die Businesslogik dess Systems \textbf{ofCourse} dar.
+	Dieses Package stellt die Businesslogik des Systems \textbf{ofCourse} dar.
 	\subsection{Klasse AuthenticateUser}
 	\kursiv{ManagedBean, RequestScoped}\\
 	Die Klasse ist für die Authentifizierung eines Benutzers im System zuständig.
@@ -32,7 +32,7 @@
 	\kursiv{ManagedBean, RequestScoped}\\
 	Die Klasse ist für die Registrierung eines Benutzers im System zuständig.
 	\begin{itemize}
-		\item \method{public int registerUser()}
+		\item \method{public boolean registerUser()}
 		\item \method{public User getUsertoRegistrate()}
 		\item \method{public void setUserToRegistrate(User userToRegistrate)}
 		\item \method{public Address getAddress()}
@@ -43,7 +43,7 @@
 	
 	\subsection{Klasse LostPassword}
 	\kursiv{ManagedBean, RequestScoped}\\
-	Die Klasse ist die 'Passwort  vergessen' - Funktion zuständig, d.h. sie ersetzt das alte Passwort eines Benutzers durch ein zufällig generiertes und sendet es an die eingegebene E-Mailadresse.
+	Die Klasse ist für die 'Passwort  vergessen' - Funktion zuständig, d.h. sie ersetzt das alte Passwort eines Benutzers durch ein zufällig generiertes und sendet es an die eingegebene E-Mailadresse.
 	\begin{itemize}
 		\item \method{public boolean resetPassword()}
 		\item \method{public String getEmailAddressToResetPassword()}
@@ -74,7 +74,7 @@
 	
 	\subsection{Klasse SearchCourse}
 	\kursiv{ManagedBean, ViewScoped}\\
-	Diese Klasse stellt den Mechanismus zum Suchen von Kursen zur Verfügung. Außerdem wird darin die Einschränkung des Anzeigezeitraums realisiert.
+	Diese Klasse stellt den Mechanismus zum Suchen von Kursen zur Verfügung. Außerdem wird darin die Einschränkung des angezeigten Kursangebots realisiert.
 	\begin{itemize}
 		\item \method{public void searchForFreeCourses()}
 		\item \method{public void displayCoursesInSpecificPeriod()}
@@ -98,7 +98,7 @@
 	
 	\subsection{Klasse UserProfil}
 	\kursiv{ManagedBean, ViewScoped}\\
-	Diese Klasse ist zuständig für die Anzeige und das Bearbeiten der Benutzerdaten. Des Weiteren realisiert die Darstellung der Liste aller vom Benutzer geleiteten Kurse.
+	Diese Klasse ist zuständig für die Anzeige und das Bearbeiten der Benutzerdaten. Des Weiteren realisiert sie die Darstellung der Liste aller vom Benutzer geleiteten Kurse.
 	\begin{itemize}
 		\item \method{public void editUserdata()}
 		\item \method{public void saveUserdata()}
@@ -121,29 +121,22 @@
 	
 	\subsection{Klasse CourseDetail}
 	\kursiv{ManagedBean, ViewScoped}\\
-	Die Klasse ist zuständig für das  Bearbeiten und Löschen von Kursen.
+	Die Klasse ist zuständig für die Anzeige der Kursdetails und das Bearbeiten von Kursen.
 	\begin{itemize}
 		\item \method{public void editCourse()}
 		\item \method{public boolean saveCourse()}
-		\item \method{public boolean deleteCourse()}
 		\item \method{public Course getCourse()}
 		\item \method{public void setCourse(Course course)}
-		\item \method{public boolean addCourseLeader()}
-		\item \method{public User getLeaderToAdd()}
-		\item \method{public void setLeaderToAdd(User leaderToAdd)}
-		\item \method{public boolean removeCourseLeaders()}
-		\item \method{public ArrayList<User> getLeadersToDelete()}
-		\item \method{public void setLeadersToDelete(ArrayList<User> leadersToDelete)}
 		\item \method{public boolean registeredForCourseNews()}
-		\item \method{public boolean signUpForCourse()}
-		\item \method{public boolean signOffForCourse()}
+		\item \method{public boolean signUpForCourse() throws CourseRegistrationException}
+		\item \method{public boolean signOffForCourse() throws CourseRegistrationException}
 		\item \method{public void selectAllCourseUnits()}
-		\item \method{public boolean signUpForCourseUnits()}
-		\item \method{public boolean signOffForCourseUnits()}
+		\item \method{public boolean signUpForCourseUnits() throws CourseRegistrationException}
+		\item \method{public boolean signOffForCourseUnits() throws CourseRegistrationException}
 		\item \method{public ArrayList<CourseUnit> getSelectedCourseUnits()}
 		\item \method{public void setSelectedCourseUnits(ArrayList<CourseUnit> selectedCourseUnits)}
 		\item \method{public ArrayList<User> getLeadersOfCourse()}
-		\item \method{public void setLeadersOfCourseUnit(ArrayList<User> leaders)}
+		\item \method{public void setLeadersOfCourse(ArrayList<User> leaders)}
 		\item \method{public ArrayList<CourseUnit> getCourseUnitsOfCourse()}
 		\item \method{public void setCourseUnitsOfCourse(ArrayList<CourseUnit> courseUnits)}
 		\item \method{public String loadParticipientsPage()}
@@ -193,7 +186,7 @@
 	\kursiv{ManagedBean, RequestScoped}\\
 	Die Klasse ist zuständig für die Benachrichtigung von Benutzern durch Kursleiter oder Administratoren.
 	\begin{itemize}
-		\item \method{public boolean sendEMail()}
+		\item \method{public boolean sendEMail() throws MailingException}
 		\item \method{public Mail getMail()}
 	    \item \method{public void setMail(Mail mail)}
 		\item \method{public String getSubject()}
@@ -223,13 +216,18 @@
 	
 	\subsection{Klasse CourseManagement}
 	\kursiv{ManagedBean, ViewScoped}\\
-	Die Klasse ist zuständig für die Verwaltung der Kurse, d.h. für das Anlegen und Löschen von Kursen.
+	Die Klasse ist zuständig für die Verwaltung der Kurse, d.h. für das Anlegen und Löschen von Kursen sowie die Trainerverwaltung.
 	\begin{itemize}
 		\item \method{public boolean createCourse(Course course)}
 		\item \method{public boolean uploadCoursePic()}
 		\item \method{public boolean deleteCourse()}
 		\item \method{public boolean addCourseLeader(User leader)}
+		\item \method{public User getLeaderToAdd()}
+		\item \method{public void setLeaderToAdd(User leaderToAdd)}
 		\item \method{public boolean removeCourseLeader()}
+		\item \method{public boolean removeCourseLeaders()}
+		\item \method{public ArrayList<User> getLeadersToDelete()}
+		\item \method{public void setLeadersToDelete(ArrayList<User> leadersToDelete)}
 		\item \method{public User getCourseLeader()}
 		\item \method{public void setCourseLeader()}
 		\item \method{public Course getCourse()}
@@ -273,8 +271,8 @@
 	\end{itemize}
 	
 	\subsection{Klasse ListParticipents}
-	\kursiv{ManagedBean, RequestScoped}
-	Die Klasse ist zuständig für das Anzeigen der Teilnehmer einer Kurseinheit oder eines Kurses.
+	\kursiv{ManagedBean, RequestScoped}\\
+	Die Klasse ist zuständig für das Anzeigen der Teilnehmer einer Kurseinheit oder eines Kurses und für die Entfernung einzelner Benutzer aus Kursen oder Kurseinheiten.
 	\begin{itemize}
 		\item \method{public ArrayList<User> getParticipients()}
 		\item \method{public void setParticipients(ArrayList<User> participients)}
@@ -291,7 +289,7 @@
 	
 	\subsection{Klasse SystemConfiguration}
 	\kursiv{ManagedBean, ViewScoped}\\
-	Die Klasse ist für die Administratoraufgaben zuständig, d.h. das Hochladen einer CSS - Datei, eines Logos, des Festlegen des Überziehungskredits und der Registrierungseinstellungen. Des Weiteren ist sie zuständig für die Weiterleitung zur Benutzer- und Kursverwaltung.
+	Die Klasse ist für Einstellungen bezüglich des Systems zuständig, d.h. das Hochladen einer CSS - Datei, eines Logos, des Festlegen des Überziehungskredits und der Registrierungseinstellungen. Des Weiteren ist sie zuständig für die Weiterleitung zur Benutzer- und Kursverwaltung.
 	\begin{itemize}
 		\item \method{public void determineAccountActivationType(String accountActivationType)}
 		\item \method{public String getAccountActivationType()}
@@ -316,7 +314,7 @@
 	\kursiv{ManagedBean, ViewScoped}\\
 	Die Klasse ist zuständig für die Online - Aufladung des Guthabenkontos von Benutzern per Kreditkarte. Die Kreditkartenabwicklung erfolgt über die InfoSun-Bank.
 	\begin{itemize}
-		\item \method{public boolean depositAmount()}
+		\item \method{public boolean depositAmount() throws BankAccountException}
 		\item \method{public User getUser()}
 		\item \method{public void setUser(User user)}
 	    \item \method{public PaymentInformation getPaymentInformation()}
@@ -329,7 +327,7 @@
 	\kursiv{ManagedBean, ViewScoped}\\
 	Die Klasse ist zuständig für die Offline - Aufladung des Guthabenkontos von Benutzern durch den Administrator und um die Bezahlungseinstellungen zu verwalten.
 	\begin{itemize}
-		\item \method{public boolean depositAmountOnUserAccount()}
+		\item \method{public boolean depositAmountOnUserAccount() throws BankAccountException}
 		\item \method{public User getUser()}
 		\item \method{public void setUser(User user)}
 		\item \method{public int getAmountToDeposit()}
@@ -390,13 +388,15 @@
 	Diese Klasse ist zuständig für die Generierung und Darstellung des persönlichen Terminplaners des Benutzers.
 	\begin{itemize}
 		\item \method{public void displayScheduler(ArrayList<CourseUnit> bookedCourseUnits)}
+		\item \method{public void displayNextWeek()}
+		\item \method{public void displayPreviousWeek()}
 		\item \method{public SessionUser getSessionUser()}
 		\item \method{public void setSessionUser(SessionUser userSession)}
 	\end{itemize}
 	
 	\subsection{Klasse SessionUser}
 	\kursiv{ManagedBean, SessionScoped}\\
-	Die Klasse speichert Informationen über die Session eines Benutzers. Gespeichert werden die ID des Benutzers, dessen Benutzerrolle, die gewählte Sprache.
+	Die Klasse speichert Informationen über die Session eines Benutzers. Gespeichert werden die ID des Benutzers, dessen Benutzerrolle, der aktuelle Status des Benutzers und die gewählte Sprache.
 	\begin{itemize}
 		\item \method{public int getUserID()}
 		\item \method{public void setUserID(int userID)}
@@ -412,29 +412,29 @@
 	\kursiv{ManagedBean, ApplicationScoped}\\
 	Die Klasse ist für die E-Mailbenachrichtigung der Benutzer zuständig. Sie ist sowohl für die automatisch gesendeten E-Mails, wie unter anderem die Verifizierung oder Accountaktivierungsbestätigung, als auch für die von Kursleitern gesendeten Mails zuständig.
 	\begin{itemize}
-		\item \method{public boolean sendVerificationMail(int UserID)}
-		\item \method{public boolean sendConfirmaitionMail(int UserID)}
-		\item \method{public boolean sendMail(String subject, String message, ArrayList<String> mailRecipients)}
+		\item \method{public boolean sendVerificationMail(int UserID) throws MailingException}
+		\item \method{public boolean sendConfirmaitionMail(int UserID) throws MailingException}
+		\item \method{public boolean sendMail(String subject, String message, ArrayList<String> mailRecipients) throws MailingException}
 		\item \method{public SmtpServer getSmtpServer()}
 		\item \method{public void setSmtpServer(SmtpServer smtpServer)}
 	\end{itemize}
 	
 	\section{Package Model}
-	Das Pakte Model enthält die Klassen für Aufzählungstypen. Die privaten Attribute können durch die jeweiligen "getter" und "setter" Methoden aufgerufen und gesetzt werden.
+	Das Pakte Model enthält die Klassen für Aufzählungstypen. Die privaten Attribute können durch die jeweiligen \glqq getter\grqq- \ und \glqq setter\grqq- \ Methoden aufgerufen und gesetzt werden.
 	\subsection{Klasse SmtpServer}
-	Die Klasse enthält die Zugangsdaten des E-Mail Servers
+	Die Klasse enthält die Zugangsdaten des E-Mail Servers.
 	\begin{itemize}
-		\item \method {public getHostaddr()}
-		\item \method {public getPassword()}
+		\item \method {public String getHostaddr()}
+		\item \method {public String getPassword()}
 		\item \method {public int getPort()}
 		\item \method {public String getUsername()}
-		\item \method {public isAuthentificated()}
-		\item \method {public isTls()}
-		\item \method {public setAuthentificated(Boolean authentificated)}
-		\item \method {public setHostaddr(String hostaddr)}
-		\item \method {public setPassword(String password)}
-		\item \method {public setPort(int port)}
-		\item \method {public set Tls(Boolean tls)}
+		\item \method {public boolean isAuthentificated()}
+		\item \method {public boolean isTls()}
+		\item \method {public void setAuthentificated(Boolean authentificated)}
+		\item \method {public void setHostaddr(String hostaddr)}
+		\item \method {public void setPassword(String password)}
+		\item \method {public void setPort(int port)}
+		\item \method {public void setTls(Boolean tls)}
 		\item \method {public void setUsername(String username)}
 	
 	\end{itemize}
@@ -445,10 +445,10 @@
 		\item \method {public int getItemsPerPage()}
 		\item \method {public int getShownPageNum()}
 		\item \method {public String getSortColumn()}
-		\item \method {public isSortAsc()}
-		\item \method {public setItemsPerPage(int itemsPerPage)}
-		\item \method {public void setSortColum(String sortColumn)}
-		\item \method {public setShownPageNum(int shownPageNum)}
+		\item \method {public boolean isSortAsc()}
+		\item \method {public void setItemsPerPage(int itemsPerPage)}
+		\item \method {public void setSortColumn(String sortColumn)}
+		\item \method {public void setShownPageNum(int shownPageNum)}
 		\item \method {public void setSortAsc(boolean sortAsc)}
 	\end{itemize}
 	
@@ -471,7 +471,7 @@
 		\item \method {public void setEnddate(Date endDate)}
 		\item \method {public void setMaxUsers(int maxUsers)}
 		\item \method {public void setCourseUnits(ArrayList<CourseUnit> courseUnits) }
-		\item \method {public void setCoursAdmins(ArrayList<User> coursAdmins)}
+		\item \method {public void setCourseAdmins(ArrayList<User> coursAdmins)}
 		\item \method {public void setUsers(ArrayList<User> users)}
 		\item \method {public void setUsersToInform(ArrayList<User> usersToInform)}  
 	\end{itemize}
@@ -564,7 +564,7 @@
 	\end{itemize}
 	
 	\subsection{Klasse PaymentInformation}
-	Diese Klasse stellt die Kreditkarteninformationen, Bankdaten und den Rechnungsbetrag
+	Diese Klasse stellt die Kreditkarteninformationen, Bankdaten und den Einzahlungsbetrag
 	dar.
 	\begin{itemize}
 		\item \method{public String getAccountNumber()}
@@ -585,7 +585,7 @@
 	\end{itemize}
 	
 	\subsection{Klasse System}
-	In dieser Klasse werden die editierbaren Eigenschaften des Systems gespeichert
+	In dieser Klasse werden die editierbaren Eigenschaften des Systems gespeichert.
 	\begin{itemize}
 		\item \method {public boolean equals(Object other)}
 		\item \method {public String getCSS()}
