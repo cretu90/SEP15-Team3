@@ -1,0 +1,10 @@
+index - Startseite
+listCourses - gesamtes Kursangebot
+agb - AGBs
+navigation - Navigation
+courseDetails - Detailanzeige eines einzelnen Kurses
+buyCredits - Kontoaufladung mittels Kreditkarte
+scheduler - Terminplaner
+adminManagement - Admin Verwaltungsseite
+createUser - Admin Benutzer anlegen Seite
+statistics - Statistiken

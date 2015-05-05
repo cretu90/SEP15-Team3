@@ -25,13 +25,13 @@
 			
 			\subsubsection{common}
 			
-				\paragraph{index.xhtml}
+				\paragraph{index.xhtml} \hypertarget{index}
 					RS\\
 					\begin{itemize}
 						\item \textbf{Beschreibung:} Dieses Facelet stellt die Startseite des Systems dar.
 						\item \textbf{Links:}
 							\begin{itemize}
-								\item Gesamtes Kursangebot, listCourses.xhtml
+								\item Gesamtes Kursangebot, \hyperlink{listCourses}{listCourses.xhtml}
 							\end{itemize}
 						\item \textbf{Buttons:} -
 						\item \textbf{Inputs:} -
@@ -108,7 +108,7 @@
 						\item \textbf{BackingBean:} -
 					\end{itemize}
 				
-				\paragraph{agb.xhtml}
+				\paragraph{agb.xhtml} \hypertarget{agb}
 					RS\\
 					\begin{itemize}
 						\item \textbf{Beschreibung:} Dieses Facelet dient der Anzeige der Allgemeinen Geschäftsbedingungen.
@@ -121,7 +121,7 @@
 							\end{itemize}
 						\item \textbf{BackingBean:} -
 					\end{itemize}
-				\paragraph{navigation.xhtml}
+				\paragraph{navigation.xhtml} \hypertarget{navigation}
 					RS\\
 					\begin{itemize}
 						\item \textbf{Beschreibung:} Hier kann, abhängig von der Benutzerrolle, durch die Seite navigiert werden.
@@ -143,14 +143,14 @@
 						\item \textbf{Outputs:}
 							\begin{itemize}
 								\item persönliche Loginbenachrichtigung (Benutzer, wenn eingeloggt).
-								\item Logo: Zeigt verkleinertes, vom Administrator definiertes Logo der Website.
+								\item Logo: Zeigt verkleinertes, vom Administrator definiertes Logo der Website. Beim klick gelangt der Nutzer zur \hyperlink{index}{Startseite}.
 							\end{itemize}
 						\item \textbf{BackingBean:}
 					\end{itemize}
 		
 			\subsubsection{courses}
 				
-				\paragraph{listCourses.xhtml}
+				\paragraph{listCourses.xhtml} \hypertarget{listCourses}
 					RS\\
 					\begin{itemize}
 						\item \textbf{Beschreibung:} Hier können alle Kurse angezeigt und durchsucht werden.
@@ -173,10 +173,10 @@
 						\item \textbf{BackingBean:}
 					\end{itemize}
 				
-				\paragraph{courseDetails.xhtml}
+				\paragraph{courseDetails.xhtml} \hypertarget{courseDetails}
 					RS\\
 					\begin{itemize}
-						\item \textbf{Beschreibung:} Detailanzeige eines einzelnen Kurses.
+						\item \textbf{Beschreibung:} Zur genaueren Betrachtung eines einzelnen Kurses wird dieses Facelet benötigt.
 						\item \textbf{Links:} -
 						\item \textbf{Buttons:}
 							\begin{itemize}
@@ -286,7 +286,7 @@
 						\item \textbf{BackingBean:} profile.java
 					\end{itemize}
 				
-				\paragraph{buyCredits.xhtml}
+				\paragraph{buyCredits.xhtml} \hypertarget{buyCredits}
 					RS\\
 					\begin{itemize}
 						\item \textbf{Beschreibung:} Hier kann der Nutzer mittels Kreditkarte seinen systeminternen Kontostand erhöhen.
@@ -312,7 +312,7 @@
 						\item \textbf{BackingBean:}
 					\end{itemize}
 				
-				\paragraph{scheduler.xhtml}
+				\paragraph{scheduler.xhtml} \hypertarget{scheduler}
 					RS\\
 					\begin{itemize}
 						\item \textbf{Beschreibung:} Persönlicher Terminplaner mit anstehenden Kursen.
@@ -439,7 +439,7 @@
 			
 			\subsubsection{systemAdministrator}
 			
-				\paragraph{adminManagement.xhtml}
+				\paragraph{adminManagement.xhtml} \hypertarget{adminManagement}
 					RS\\
 					\begin{itemize}
 						\item \textbf{Beschreibung:} Dieses Facelet stellt die zentrale Systemverwaltung für den Administrator dar. Hier kann er Kurse und Benutzer jeweils anlegen und verwalten, das Konto eines Nutzers aufladen, zu den Statistiken gelangen, den Überziehungskredit für Nutzer festlegen und das System optisch anpassen.
@@ -475,36 +475,36 @@
 						\item \textbf{BackingBean:}
 					\end{itemize}
 				
-				\paragraph{createUser.xhtml}
+				\paragraph{createUser.xhtml} \hypertarget{createUser}
 					RS\\
 					\begin{itemize}
 						\item \textbf{Beschreibung:} Hier kann der Systemadministrator einen neuen Benutzer mit festgelegter Benutzerrolle anlegen.
 						\item \textbf{Links:} -
 						\item \textbf{Buttons:}
 							\begin{itemize}
-								\item Durchsuchen: Öffnet ein Fenster um auf dem Computer nach einem Profilbild zu suchen
-								\item Benutzer anlegen: Legt den Benutzer an
+								\item Durchsuchen: Öffnet ein Fenster um auf dem Computer nach einem Profilbild zu suchen.
+								\item Benutzer anlegen: Legt den Benutzer an.
 							\end{itemize}
 						\item \textbf{Inputs:}
 							\begin{itemize}
-								\item Anrede: Herr oder Frau
-								\item Vorname: Vorname des neuen Benutzers
-								\item Nachname: Nachname des neuen Benutzers
-								\item Geburtsdatum: Geburtsdatum des neuen Benutzers
-								\item Straße: Straße des neuen Benutzers
-								\item Postleitzahl: Postleitzahl des neuen Benutzers
-								\item Stadt: Stadt des neuen Benutzers
-								\item Benutzername: Benutzername des neuen Benutzers
-								\item Passwort: Passwort des neuen Benutzers
-								\item Passwort wiederholen: Passwortfeld um Passwort sicherzustellen
-								\item E-Mail: E-Mail Adresse des neuen Benutzers
-								\item Benutzerrolle: Benutzerrolle des neuen Benutzers, Administrator, Kursleiter oder normaler Benutzer
+								\item Anrede: Herr oder Frau.
+								\item Vorname: Vorname des neuen Benutzers.
+								\item Nachname: Nachname des neuen Benutzers.
+								\item Geburtsdatum: Geburtsdatum des neuen Benutzers.
+								\item Straße: Straße des neuen Benutzers.
+								\item Postleitzahl: Postleitzahl des neuen Benutzers.
+								\item Stadt: Stadt des neuen Benutzers.
+								\item Benutzername: Benutzername des neuen Benutzers.
+								\item Passwort: Passwort des neuen Benutzers.
+								\item Passwort wiederholen: Passwortfeld um Passwort sicherzustellen.
+								\item E-Mail: E-Mail Adresse des neuen Benutzers.
+								\item Benutzerrolle: Benutzerrolle des neuen Benutzers, Administrator, Kursleiter oder normaler Benutzer.
 							\end{itemize}
 						\item \textbf{Outputs:}
 							\begin{itemize}
-								\item Fehlermeldung zu den einzelnen Eingabefeldern, bei falscher Eingabe
-								\item Benutzer-ID: ID des neuen Benutzers
-								\item Profilbild: Dummy-Profilbild des neuen Benutzers
+								\item Fehlermeldung zu den einzelnen Eingabefeldern, bei falscher Eingabe.
+								\item Benutzer-ID: ID des neuen Benutzers.
+								\item Profilbild: Dummy-Profilbild des neuen Benutzers.
 							\end{itemize}
 						\item \textbf{BackingBean:}
 					\end{itemize}
@@ -568,7 +568,7 @@
 						\item \textbf{BackingBean:} editImprint.java
 					\end{itemize}
 				
-				\paragraph{statistics.xhtml}
+				\paragraph{statistics.xhtml} \hypertarget{statistics}
 					RS\\
 					\begin{itemize}
 						\item \textbf{Beschreibung:} Hier kann der Administrator die Statistiken zum System betrachten.
