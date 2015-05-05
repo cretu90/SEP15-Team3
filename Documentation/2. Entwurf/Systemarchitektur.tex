@@ -12,9 +12,9 @@ MB
    	\subsection{Model}
    	Das Model kann in vier Bereiche unterteilt werden. Zunächst gäbe es die Upper Layer, welche die Backing Beans beinhalten, die Lower Layer mit den Data Access Objects (DAOs) und dem Connection Pool (CP), des Weiteren gäbe es noch die Data Transfer Objects (DTOs) und die Utils. 
    		\subsubsection{Upper Layer}
-   		Die "Upper Layer" besteht aus den Backing Beans. In Diesen ist zum Einen die Geschäftslogik enthalten, zum Anderen werden dort die überlieferten Benutzereingaben der Facelets übergeben, weiterverarbeitet und gespeichert.
+   		Die \glqq Upper Layer\grqq{} besteht aus den Backing Beans. In Diesen ist zum Einen die Geschäftslogik enthalten, zum Anderen werden dort die überlieferten Benutzereingaben der Facelets übergeben, weiterverarbeitet und gespeichert.
     	\subsubsection{Lower Layer}
-    	In der "Lower Layer" befinden sich die Data Access Objects und der Connection Pool. Mithilfe des CP greifen die DAOs auf die darunterliegende Database (DB) zu.
+    	In der \glqq Lower Layer\grqq{} befinden sich die Data Access Objects und der Connection Pool. Mithilfe des CP greifen die DAOs auf die darunterliegende Database (DB) zu.
     	\subsubsection{DTO}
     	Die Data Transfer Objects dienen als Schnittstelle zwischen den Backing Beans und den zugehörigen DAOs. Sie bündeln logisch zusammenhängende Daten in einem Objekt, um zeitintensive Fernzugriffe durch einen zu ersetzen.
     	\subsubsection{Utils}
@@ -25,14 +25,26 @@ MB
 Im Nachfolgendem werden die im System eingesetzten Design Patterns beschrieben:
 	\begin{itemize}
 		\item \textbf{Data Transfer Object:} Das DTO fassen mehrere Daten in einem Objekt zusammen, damit sie in einem Aufruf übergeben werden. Somit können Datensätze durch die Schichten transportiert werden.
-		\item Dependency Injection: 
-		\item Object Pooling:
-		\item Creational Pattern:
+		\item \textbf{Dependency Injection:} "Dependency Injection" ist ein JSF Standard, um Backing Beans zu verwalten. Hierbei werden die benötigten Objekte an einem zentralen Ort hinterlegt, was auch die Flexibilität erhöht.  
+		\item \textbf{Creational Pattern:} Die Creational Pattern kann man wiederum in folgende Pattern unterscheiden.
 			\begin{itemize}
-				\item Factory Pattern:
-				\item Singleton:
+				\item \textbf{Factory Pattern:} Hier werden mehrere ähnliche Objekte durch Aufruf einer Methode anstatt durch direkten Aufruf eines Konstruktors erzeugt.
+				\item \textbf{Object Pooling:} Beim Object Pooling werden ressourcenintensive Objekte (hier Datenbankverbindungen) in einem Pool (Connection Pool) bereitgehalten, um sie bei Bedarf erneut nutzen zu können, was sich wiederum positiv auf die Ausführungszeit auswirkt.
+				\item \textbf{Singleton:} Es soll sichergestellt werden, dass von einem Objekt jeweils nur eine Instanz existiert. Diese sind darüber hinaus global verfügbar.  
 			\end{itemize}
-		\item Singleton:
 	\end{itemize}
-\section{Fehlerbehandlung}		     
+\section{Einsatz externer Libraries}
+Es werden im System auf bereits vorhandenen Libraries zurückgegriffen.
+	\begin{itemize}
+		\item \textbf{PostgreSQL JDBC 9.4-1201:} Der PostgreSQL JDBC-Treiber wird für die Kommunikation mit der Datenbank verwendet.
+		\item \textbf{JSF 2.2:} Für die Implementierung von JSF wird das Framework Mojarra 2.2.10 benutzt.
+		\item \textbf{JavaMail API 1.5.2:} Library für das Versenden von Emails.
+		\item \textbf{Bootstrap 3.3.0:} Bootstrap dient als Grundlage für das Design der Facelets.
+		\item \textbf{Tomcat 8.0.21:} Webcontainer, um die in Java geschriebenen Webapplikationen auszuführen.  
+	\end{itemize}
+\section{Fehlerbehandlung}
+	\subsection{Nicht-Autorisierter Zugriff}
+	\subsection{Fehlerhafte Benutzereingaben}
+	\subsection{Exceptions}
+	\subsection{HTTP-Statuscodes}		     
 
