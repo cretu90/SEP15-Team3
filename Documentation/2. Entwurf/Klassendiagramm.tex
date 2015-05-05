@@ -420,6 +420,9 @@
 	\end{itemize}
 	
 	\section{Package Model}
+	\begin{tiny}
+		SeSc \\
+	\end{tiny}\\
 	Das Pakte Model enthält die Klassen für Aufzählungstypen. Die privaten Attribute können durch die jeweiligen \glqq getter\grqq- \ und \glqq setter\grqq- \ Methoden aufgerufen und gesetzt werden.
 	\subsection{Klasse SmtpServer}
 	Die Klasse enthält die Zugangsdaten des E-Mail Servers.
@@ -599,7 +602,9 @@
 	\end{itemize}
 	
 	\section{Package Services}
-	
+	\begin{tiny}
+		TF
+	\end{tiny}
     \subsection{Klasse HttpsHelper}
     Dies ist eine Hilfsklasse für Https-Verbindungen.
     \begin{itemize}
@@ -664,10 +669,10 @@
 		\class{StatisticsInteraction}
 			Dieses Interface gibt vor, welche Methoden für Datenbankanfragen für das Erhalten von Statistikdaten oder das Schreiben dieser in die Datenbank vorhanden sein müssen.
 			\begin{itemize}
-				\item \method{public HashMap<Date,float> getIncomePerDay(Date actualDate)}
-				\item \method{public HashMap<Date,float> getIncomePerWeek(Date actualDate)}
-				\item \method{public HashMap<User,float> getIncomePerLeader(Pagination pagination)}
-				\item \method{public HashMap<Course,float> getIncomePerCourse(Pagination pagination)}
+				\item \method{public HashMap<Date, Float> getIncomePerDay(Date actualDate)}
+				\item \method{public HashMap<Date, Float> getIncomePerWeek(Date actualDate)}
+				\item \method{public HashMap<User, Float> getIncomePerLeader(Pagination pagination)}
+				\item \method{public HashMap<Course, Float> getIncomePerCourse(Pagination pagination)}
 			\end{itemize}
 		
 	\section{Package Database}
@@ -686,19 +691,20 @@
 		\class{DatabaseTableCreator}
 		Diese Klasse ist zuständig für das Erstellen der Tabellen in der Datenbank, falls diese noch nicht existieren.
 		\begin{itemize}
-			\item \method{public static boolean buildUpDatabase()}
+			\item \method{public static boolean buildUpDatabase() throws InvalidDatabaseTransferException}
 		\end{itemize}
 	
 		\class{DatabaseTableDetroyer}
 		Diese Klasse ist zuständig für das Löschen der Tabellen in der Datenbank, falls diese existieren.
 		\begin{itemize}
-			\item \method{public static boolean destroyDatabaseTables()}
+			\item \method{public static boolean destroyDatabaseTables() throws InvalidDatabaseTransferException}
 		\end{itemize}
 	
 	\subsection{Package DAO}
 		\class{UserDAO}
-		Diese Klasse stellt Datenbankanfragen um Benutzerdaten zu erhalten oder in die
-		Datenbank zu schreiben.
+		Diese Klasse stellt Datenbankanfragen zur Verfügung um Benutzerdaten zu erhalten oder in die
+		Datenbank zu schreiben.\\
+		Sämtliche Methoden können die \kursiv{InvalidDatabaseTransferException} werfen.
 		\begin{itemize}
 			\item \method{public boolean createUser(User user, Address address)}
 			\item \method{public ArrayList<User> getUsers(Pagination pagination)}
@@ -712,8 +718,9 @@
 			\end{itemize}
 		
 		\class{CourseDAO}
-		Diese Klasse stellt Datenbankanfragen um Kursdaten zu erhalten oder in die Datenbank
-		zu schreiben.
+		Diese Klasse stellt Datenbankanfragen zur Verfügung um Kursdaten zu erhalten oder in die Datenbank
+		zu schreiben.\\
+		Sämtliche Methoden können die \kursiv{InvalidDatabaseTransferException} werfen.
 		\begin{itemize}
 			\item \method{public boolean createCourse(Course course, Address address)}
 			\item \method{public ArrayList<Course> getCourses(Pagination pagination)}
@@ -730,8 +737,8 @@
 		\end{itemize}
 		
 		\class{CourseUnitDAO}
-		Diese Klasse stellt Datenbankanfragen um Kurseinheitsdaten zu erhalten oder in die Datenbank
-		zu schreiben.
+		Diese Klasse stellt Datenbankanfragen zur Verfügung um Kurseinheitsdaten zu erhalten oder in die Datenbank zu schreiben.\\
+		Sämtliche Methoden können die \kursiv{InvalidDatabaseTransferException} werfen.
 		\begin{itemize}
 			\item \method{public boolean createCourseUnit(CourseUnit courseUnit, Address address)}
 			\item \method{public CourseUnit getCourseUnit(int courseUnitID)}
@@ -743,13 +750,14 @@
 		\end{itemize}
 		
 		\class{StatisticDAO}
-		Diese Klasse stellt Datenbankanfragen um Statistikdaten zu erhalten oder in die Datenbank
-		zu schreiben.
+		Diese Klasse stellt Datenbankanfragen zur Verfügung um Statistikdaten zu erhalten oder in die Datenbank
+		zu schreiben.\\
+		Sämtliche Methoden können die \kursiv{InvalidDatabaseTransferException} werfen.
 		\begin{itemize}
-			\item \method{public HashMap<Date,float> getIncomePerDay(Date actualDate)}
-			\item \method{public HashMap<Date,float> getIncomePerWeek(Date actualDate)}
-			\item \method{public HashMap<User,float> getIncomePerLeader(Pagination pagination)}
-			\item \method{public HashMap<Course,float> getIncomePerCourse(Pagination pagination)}
+			\item \method{public HashMap<Date, Float> getIncomePerDay(Date actualDate)}
+			\item \method{public HashMap<Date, Float> getIncomePerWeek(Date actualDate)}
+			\item \method{public HashMap<User, Float> getIncomePerLeader(Pagination pagination)}
+			\item \method{public HashMap<Course, Float> getIncomePerCourse(Pagination pagination)}
 		\end{itemize}
 	
 	\section{Package System}
@@ -768,7 +776,7 @@
 	\end{itemize}
 	
 	\subsection{Klasse Maintenance}
-	Die Klasse ist zuständig dafür, dass Kurse sechs Monate nach ihrem Enddatum automatisch aus dem System gelöscht werden.\\
+	Die Klasse ist zuständig den Wartungsthread, der dafür sorgt, dass Kurse sechs Monate nach ihrem Enddatum automatisch aus dem System gelöscht werden.\\
 	Die Klasse implementiert das Interface Runnable.
 	\begin{itemize}
 		\item \method{public boolean isMaintenaceStopped()}
@@ -810,7 +818,7 @@
 	\end{itemize}
 	
 	\subsection{Klasse LanguageManagager}
-	Diese Klasse ist zuständig für die angezeigte Systemsprache. In ihr werden die unterstützten Sprachen verwaltet und sie ist zuständig für das Auslesen der Anzeigetexte aus der .properties - Datei der gewählten Sprache.
+	Diese Klasse ist zuständig für die angezeigte Systemsprache. In ihr werden die unterstützten Sprachen verwaltet und sie ist zuständig für das Auslesen der Anzeigetexte aus der Properties - Datei der gewählten Sprache.
 	\begin{itemize}
 		\item \method{public static LanguageManager getInstance()}
 		\item \method{public LinkedHashMap<String, Object> getSupportedLanguages()}
@@ -819,7 +827,7 @@
 	\end{itemize}
 	
 	\subsection{Klasse PropertyManager}
-	Die Klasse ist zuständig für das Auslesen und Bearbeiten der Property - Datei, welche die Daten für die Systemkonfiguration, also die Daten für die Datenbankverbindung und den EMail - Service enthält.
+	Die Klasse ist zuständig für das Auslesen der Property - Datei, welche die Daten für die Systemkonfiguration, also die Daten für die Datenbankverbindung und den E-Mail - Service enthält.
 	\begin{itemize}
 		\item \method{public static PropertyManager getInstance()}
 		\item \method{public String getProperty(String key)}
@@ -854,6 +862,9 @@
 	\end{itemize}
 	
 	\section{Package Exception}
+	\begin{tiny}
+		SeSc
+	\end{tiny}
 	\subsection{Klasse CustomExceptionHandler}
 	Diese Klasse ist zuständig für die Weiterleitung zu Fehlerseiten, falls ein Fehler aufgetreten
 	ist. \\
@@ -888,7 +899,7 @@
 		TF\\
 	\end{tiny}\\
 	Dieser Abschnitt beschäftigt sich mit den benötigten Validatoren, die notwendig sind, um die Eingaben des Benutzers zu überprüfen und gegebenenfalls Fehlermeldungen zu generieren.\\
-	Alles Klassen dieses Packages implementieren das Interface Validator.
+	Alle Klassen dieses Packages implementieren das Interface Validator.
 	
 	\subsection{Klasse UserNameValidator}
 	Der Validator überprüft, ob der eingegebene Benutzername schon im System vergeben ist.
@@ -905,7 +916,7 @@
 	\end{itemize}
 	
 	\subsection{Klasse PasswordValidator}
-	Dieser Validator überprüft, ob das eingegebene Passwort gewisse Sicherheitsanforderungen bezüglich Länge und Zeichenwahl erfüllt. Vorgesehen Anforderungen an das Passwort sind mindestens 8 Zeichen, mindestens ein Sonderzeichen, mindestens eine Ziffer, Verwendung von Groß- und Kleinbuchstaben. Außerdem dürfen im Passwort keine Umlaute sowie kein 'ß' vorkommen.
+	Dieser Validator überprüft, ob das eingegebene Passwort gewisse Sicherheitsanforderungen bezüglich Länge und Zeichenwahl erfüllt. Vorgesehene Anforderungen an das Passwort sind mindestens 8 Zeichen, mindestens ein Sonderzeichen, mindestens eine Ziffer, Verwendung von Groß- und Kleinbuchstaben. Außerdem dürfen im Passwort keine Umlaute sowie kein \grq ß\grq \ vorkommen.
 	\begin{itemize}
 		\item \override
 		\method{public void validate()}
@@ -919,7 +930,7 @@
 	\end{itemize}
 	
 	\subsection{Klasse DateOfBirthValidator}
-	Der Validator überprüft, ob das eingegebene Datum eingegebene Datum in der Zukunft liegt und ob es mehr als 150 Jahre zurückliegt.
+	Der Validator überprüft, ob das eingegebene Datum eingegebene Datum in der Zukunft liegt oder ob es mehr als 150 Jahre zurückliegt.
 	\begin{itemize}
 		\item \override
 		\method{public void validate()}
@@ -977,7 +988,7 @@
 	
 	\subsection{Klasse ImageValidator}
 	Dieser Validator überprüft eine Bilddatei auf die richtige Dateiendung .jpg. Zusätzlich wird überprüft, ob
-	die maximale Dateigröße und die maximal zugelassene Auflösung für ein Bild eingehalten wird.
+	die maximale Dateigröße und die maximal zugelassene Auflösung für ein Bild(Logo oder Kursbild) eingehalten wird.
 	\begin{itemize}
 		\item \override
 		\method{public void validate()}
@@ -1000,12 +1011,11 @@
 		\item JavaMail: Library für das Versenden von E-Mails.
 		\item JFreeChart: Library für die Erstellung von Diagrammen.
 		\item Log4J: Library für das Loggen von Meldungen.
-		\item JSF 2.2(Mojarra 2.2.10): Library zur Entwicklung von grafischen Benutzeroberflächen für Webapplikationen
 	\end{itemize}
 
 	\section{Klassendiagramm}
 	\begin{tiny}
-		SeSc und TF\\
+		Diagramm: SeSc und TF\ \ Layout: SeSc\\
 	\end{tiny}\\
 	Um sich dieses Diagramm genauer ansehen zu können, muss es mit einem PDF-Reader
 	geöffnet werden, der eine Zoom-Funktion besitzt.
