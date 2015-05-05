@@ -117,7 +117,7 @@
 						\item \textbf{Inputs:} -
 						\item \textbf{Outputs:}
 							\begin{itemize}
-								\item von Betreibern festgelegte Allgemeine Geschäftsbedingungen
+								\item von Betreibern festgelegte Allgemeine Geschäftsbedingungen.
 							\end{itemize}
 						\item \textbf{BackingBean:} -
 					\end{itemize}
@@ -128,22 +128,22 @@
 						\item \textbf{Links:}
 							\begin{itemize}
 								\item Suche: Navigiert zur Kurse durchsuchen Seite.
-								\item Sprache Deutsch: Ändert die angezeigte Sprache zu Deutsch
-								\item Sprache Englisch: Ändert die angezeigte Sprache zu Englisch
-								\item Profil (Benutzer): Navigiert zum eigenen Profil
-								\item Meine Kurse (Benutzer): Navigiert zur Anzeige der eigenen Kurse
-								\item Terminplaner (Benutzer): Navigiert zum persönlichen Terminplaner
+								\item Sprache Deutsch: Ändert die angezeigte Sprache zu Deutsch.
+								\item Sprache Englisch: Ändert die angezeigte Sprache zu Englisch.
+								\item Profil (Benutzer): Navigiert zum eigenen Profil.
+								\item Meine Kurse (Benutzer): Navigiert zur Anzeige der eigenen Kurse.
+								\item Terminplaner (Benutzer): Navigiert zum persönlichen Terminplaner.
 							\end{itemize}
 						\item \textbf{Buttons:}
 							\begin{itemize}
-								\item Logout (Benutzer, wenn eingeloggt): Loggt den aktuellen eingeloggten Benutzer aus
-								\item Anmelden (Anonym): Navigiert zur Registrierungs- und Anmeldeseite
+								\item Logout (Benutzer, wenn eingeloggt): Loggt den aktuellen eingeloggten Benutzer aus.
+								\item Anmelden (Anonym): Navigiert zur Registrierungs- und Anmeldeseite.
 							\end{itemize}
 						\item \textbf{Inputs:} -
 						\item \textbf{Outputs:}
 							\begin{itemize}
-								\item persönliche Loginbenachrichtigung (Benutzer, wenn eingeloggt)
-								\item Logo: Zeigt verkleinertes, vom Administrator definiertes Logo der Website
+								\item persönliche Loginbenachrichtigung (Benutzer, wenn eingeloggt).
+								\item Logo: Zeigt verkleinertes, vom Administrator definiertes Logo der Website.
 							\end{itemize}
 						\item \textbf{BackingBean:}
 					\end{itemize}
@@ -167,8 +167,8 @@
 							\end{itemize}
 						\item \textbf{Outputs:}
 							\begin{itemize}
-								\item Tabelle mit Ergebnissen der Suche
-								\item Schaltfläche um zwischen Ergebnissen zu Blättern
+								\item Tabelle mit Ergebnissen der Suche.
+								\item Schaltfläche um zwischen Ergebnissen zu Blättern.
 							\end{itemize}
 						\item \textbf{BackingBean:}
 					\end{itemize}
@@ -209,6 +209,7 @@
 								\item Tabelle Kursleiter: Tabelle mit den Kontaktinformationen der/des Kursleiters.
 								\item Tabelle Kurseinheiten: Tabelle mit allen Kurseinheiten des Kurses und zugehörigen Informationen wie Ort, Preis oder Datum.
 								\item Kurs-ID: Zeigt die zum Kurs zugehörige ID an.
+								\item Fehlermeldung zu den einzelnen Eingabefeldern, bei falscher Eingabe.
 							\end{itemize}
 						\item \textbf{BackingBean:}
 					\end{itemize}
@@ -292,19 +293,22 @@
 						\item \textbf{Links:} -
 						\item \textbf{Buttons:}
 							\begin{itemize}
-								\item Konto aufladen
+								\item Konto aufladen: Führt die Kontoaufladung aus.
 							\end{itemize}
 						\item \textbf{Inputs:}
 							\begin{itemize}
-								\item Benutzer-ID
-								\item Benutzername
-								\item Nachname
-								\item Vorname
-								\item Kreditinstitut
-								\item Kreditkartennummer
-								\item Betrag
+								\item Benutzer-ID: Benutzer-ID des Nutzers zur Kontoaufladung.
+								\item Benutzername: Benutzername des Nutzers zur Kontoaufladung.
+								\item Nachname: Nachname des Nutzers zur Kontoaufladung.
+								\item Vorname: Vorname des Nutzers zur Kontoaufladung.
+								\item Kreditinstitut: Name des Kreditinstitutes des Nutzers zur Kontoaufladung.
+								\item Kreditkartennummer: Nummer der Kreditkarte des Nutzers zur Kontoaufladung.
+								\item Betrag: Geldbetrag, welcher auf das systeminterne Konto des Nutzers gebucht werden soll.
 							\end{itemize}
-						\item \textbf{Outputs:} -
+						\item \textbf{Outputs:}
+							\begin{itemize}
+								\item Fehlermeldung zu den einzelnen Eingabefeldern, bei falscher Eingabe.
+							\end{itemize}
 						\item \textbf{BackingBean:}
 					\end{itemize}
 				
@@ -314,9 +318,8 @@
 						\item \textbf{Beschreibung:} Persönlicher Terminplaner mit anstehenden Kursen.
 						\item \textbf{Links:}
 							\begin{itemize}
-								\item Wochenansicht vorwärts: Zeigt die Termine der nächsten Woche an
-								\item Wochenansicht rückwärts:
-								Zeigt die Termine der letzten Woche an
+								\item Wochenansicht vorwärts: Zeigt die Termine der nächsten Woche an.
+								\item Wochenansicht rückwärts: Zeigt die Termine der letzten Woche an.
 							\end{itemize}
 						\item \textbf{Buttons:} -
 						\item \textbf{Inputs:} -
@@ -459,13 +462,16 @@
 							\end{itemize}
 						\item \textbf{Inputs:}
 							\begin{itemize}
-								\item Accountaktivierung: Auswahlfeld um Registrierungsmodalität festzulegen
-								\item Benutzer-ID: ID des Benutzers, dessen Kontostand erhöht werden soll
-								\item Benutzername: Name des Benutzers, dessen Kontostand erhöht werden soll
-								\item Betrag: Betrag, welcher dem Nutzer gutgeschrieben werden soll
-								\item Überziehungswert: Betrag, welcher im ganzen System zur Überziehung des Kontos akzeptiert wird
+								\item Accountaktivierung: Auswahlfeld um Registrierungsmodalität festzulegen.
+								\item Benutzer-ID: ID des Benutzers, dessen Kontostand erhöht werden soll.
+								\item Benutzername: Name des Benutzers, dessen Kontostand erhöht werden soll.
+								\item Betrag: Betrag, welcher dem Nutzer gutgeschrieben werden soll.
+								\item Überziehungswert: Betrag, welcher im ganzen System zur Überziehung des Kontos akzeptiert wird.
 							\end{itemize}
-						\item \textbf{Outputs:} -
+						\item \textbf{Outputs:}
+							\begin{itemize}
+								\item Fehlermeldung zu den einzelnen Eingabefeldern, bei falscher Eingabe oder fehlerhaften Uploads.
+							\end{itemize}
 						\item \textbf{BackingBean:}
 					\end{itemize}
 				
@@ -487,7 +493,7 @@
 								\item Geburtsdatum: Geburtsdatum des neuen Benutzers
 								\item Straße: Straße des neuen Benutzers
 								\item Postleitzahl: Postleitzahl des neuen Benutzers
-								\item Ort: Ort des neuen Benutzers
+								\item Stadt: Stadt des neuen Benutzers
 								\item Benutzername: Benutzername des neuen Benutzers
 								\item Passwort: Passwort des neuen Benutzers
 								\item Passwort wiederholen: Passwortfeld um Passwort sicherzustellen
@@ -531,7 +537,7 @@
 							\end{itemize}
 						\item \textbf{Outputs:}
 							\begin{itemize}
-								\item Kurs- ID: Hier wird die automatisch generierte ID des Kurses ausgegeben.
+								\item Kurs-ID: Hier wird die automatisch generierte ID des Kurses ausgegeben.
 								\item Beschreibung (Fehlermeldung): Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
 								\item Minimale Teilnehmerzahl (Fehlermeldung): Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
 								\item Startdatum (Fehlermeldung): Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
@@ -566,9 +572,16 @@
 					RS\\
 					\begin{itemize}
 						\item \textbf{Beschreibung:} Hier kann der Administrator die Statistiken zum System betrachten.
-						\item \textbf{Links:}
-						\item \textbf{Buttons:}
+						\item \textbf{Links:} -
+						\item \textbf{Buttons:} -
 						\item \textbf{Inputs:}
+							\begin{itemize}
+								\item Einnahmen: Der Administrator kann hier auswählen, für welchen Zeitraum, Kursleiter oder Kurs die Einnahmen angezeigt werden sollen.
+							\end{itemize}
 						\item \textbf{Outputs:}
+							\begin{itemize}
+								\item Säulendiagramm: Bei der Auswahl für die Anzeige von Einnahmen in einem Zeitraum oder für Kursleiter wird die Statistik als Säulendiagramm dargestellt
+								\item Tabelle: Bei der Auswahl für die Anzeige von Einnahmen für Kurse wird die Statistik als Tabelle dargestellt.
+							\end{itemize}
 						\item \textbf{BackingBean:}
 					\end{itemize}
