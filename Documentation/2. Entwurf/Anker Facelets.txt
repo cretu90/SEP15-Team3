@@ -1,5 +1,5 @@
 index - Startseite
-listCourses - gesamtes Kursangebot
+search - Suchen seite
 agb - AGBs
 navigation - Navigation
 courseDetails - Detailanzeige eines einzelnen Kurses
