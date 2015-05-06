@@ -31,7 +31,7 @@
 				 Wenn eine Verbindung von der Datenbank terminiert wurde(Timeout) muss eine neue Datenbankverbindung erstellt werden.
 				
 			\end{enumerate}
-			\\
+			
 			Wenn die die Benutzeraktion die eine Datenbankverbindung angefordert hat beendet ist, gibt die ausgeführte Methode die Verbindung wieder dem Datenbankkommunikationspool zurück. Dieser kann die Verbindung nun einer wartenden Methode zuweisen oder falls keine Methode wartet für sich behalten. Wenn eine Verbindung durch ein Timeout von Serverseite geschlossen wird und somit nicht mehr zur Verfügung steht erstellt der Kommunikationspool erst wieder eine Verbindung wenn sie vom System gebraucht wird(Effizient) Bei korrekter Ausführung beendet das System keine Verbindungen sondern behält sie um ein schnellen Datenbanktransfer zu gewährleisten. Folgende Aktionen können auf der Datenbank vom System und Benutzer ausgeführt werden:
 			\begin{enumerate}
 				\item \emph{Abfrage:} \\
@@ -57,12 +57,12 @@
 				\item \textbf{Exception:} \\
 				Behandelbar, der Benutzer bekommt eine spezifische Fehlermeldung allerdings ohne oder wenig Strukturinformationen des Systems.
 				\end{itemize}
-			\\	
-			\item \textbf{Wartungsthread:} \\
+			
+			\item \textbf{Wartungsthread:}
 			Für systeminterne Wartungsarbeiten wird ein Thread zur Verfügung gestellt der in gewissen Abständen gestartet wird. Dieser hat primär die Aufgabe alte und nicht mehr gebrauchte Datensätze zu löschen und somit die Effizienz des Systems zu gewährleisten.
 		\end{itemize} 
 	
-\section{Systemshutdown}\\
+\section{Systemshutdown}
 
 	Beim Herunterfahren des System wird die Priorität vorallem auf das korrekte Schließen der Datenbankverbindungen gelegt. Dieser Vorgang wird mit einem Shutdown-Hook umgesetzt. Dieser Shutdown-Hook läuft in einem eigenen Thread und bei Ausführung werden alle freien Datenbankverbindungen geschlossen und die gerade in Benutzung sind solange aufrechterhalten bis sie wieder frei sind. Darauf folgt auch deren Schließung. Um Sicher zu gehen, dass keine Ressourcen der Datenbank verschwendet werden wird dies mit dem @preDestroy umgesetzt. 
    
