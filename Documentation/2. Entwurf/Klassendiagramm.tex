@@ -487,7 +487,6 @@
 		\item \method {public Cylce getCycle()}
 		\item \method {public ArrayList<User> getUsers()}
 		\item \method {public String getCourseImage()}
-		\item \method {public float getAccountBalance()}
 		\item \method {public void setTitle(String title)}
 		\item \method {public void setDiscription(String discription)}
 		\item \method {public void setStarttime(Date startingTime)}
@@ -499,8 +498,7 @@
 		\item \method {public void setMinUsers(int minUsers)}
 		\item \method {public void setCourseAdmin(User courseAdmin)}
 		\item \method {public void setUsers(ArrayList<User> users)} 
-		\item \method{public void setCourseImage()}
-		\item \method{public void setAccountBalance()}
+		\item \method{public void setCourseImage(String image)}
 		\end{itemize}
 	
 	\subsection{Klasse Cycle}
@@ -529,6 +527,8 @@
 		\item \method {public Date getDateOfBirth()}
 		\item \method {public String getProfilImage()}
 		\item \method {public UserRole getUserRole()}
+		\item \method {public UserStatus getUserStatus()}
+		\item \method {public float getAccountBalance()}
 		\item \method {public int getUserID()}
 		\item \method {public int hashCode()}
 		\item \method {public void setAddress(Address address)}
@@ -541,7 +541,9 @@
 		\item \method {public void setUserId(int id)}
 		\item \method {public void setUsername(String username)}
 		\item \method {public void setDateOfBirth(Date dateOfBirth)}
-		\item \method{public void setProfilImage()}
+		\item \method {public void setProfilImage(String profilImage)}
+		\item \method {public void setUserStatus(UserStatus status)}
+		\item \method {public void setAccountBalance(float balance)}
 	\end{itemize}
 	\subsection{Enumeration UserRole}
 	Es werden nun die verschiedenen Benutzerrollen beschrieben.
@@ -698,7 +700,7 @@
 		\class{SetupAdmin}
 		Diese Klasse ist zuständig für das Erstellen des ersten Systemadministrators.
 		\begin{itemize}
-			\item \method{public boolean createInitialAdmin()}
+			\item \method{public boolean createInitialAdmin() throws InvalidDatabaseTransferException}
 			\item \method{public boolean createDefaultImprint()}
 		\end{itemize}
 	
@@ -742,6 +744,7 @@
 			\item \method{public ArrayList<Course> getCoursesOrdered(Pagination pagination, String searchString, String orderParam)}
 			\item \method{public ArrayList<User> getLeaders(int courseID)}
 			\item \method{public Course getCourse(int courseID)}
+			\item \method{public ArrayList<Course> getCoursesOf(int UserID)}
 			\item \method{public boolean updateCourse(Course course, Address address)}
 			\item \method{public boolean deleteCourse(int courseID)}
 			\item \method{public boolean addUserToCourse(int userID)}
@@ -761,6 +764,7 @@
 			\item \method{public boolean deleteCourseUnit(int courseUnitID)}
 			\item \method{public boolean addUserToCourseUnit(int userID)}
 			\item \method{public boolean removeUserFromCourseUnit(int userID)}
+			\item \method{poblic boolean getCourseUnitsOf(int userID)}
 		\end{itemize}
 		
 		\class{Statistic}
