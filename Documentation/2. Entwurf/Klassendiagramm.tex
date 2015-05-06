@@ -357,7 +357,7 @@
 		\item \method{public void setSessionUser(SessionUser userSession)}
 	\end{itemize}
 	
-	\subsection{Klasse Header}
+	\subsection{Klasse Navigation}
 	\kursiv{ManagedBean, RequestScoped}\\
 	Diese Klasse ist zuständig für das Laden der Anmeldeseite, das Abmelden und der Auswahl der Anzeigesprache.
 	\begin{itemize}
@@ -418,7 +418,7 @@
 	\begin{tiny}
 		SeSc \\
 	\end{tiny}\\
-	Das Pakte Model enthält die Klassen für Aufzählungstypen. Die privaten Attribute können durch die jeweiligen \glqq getter\grqq- \ und \glqq setter\grqq- \ Methoden aufgerufen und gesetzt werden.
+	Das Package Model enthält die Klassen für Aufzählungstypen. Die privaten Attribute können durch die jeweiligen \glqq getter\grqq- \ und \glqq setter\grqq- \ Methoden aufgerufen und gesetzt werden.
 	\subsection{Klasse SmtpServer}
 	Die Klasse enthält die Zugangsdaten des E-Mail Servers.
 	\begin{itemize}
@@ -434,7 +434,6 @@
 		\item \method {public void setPort(int port)}
 		\item \method {public void setTls(Boolean tls)}
 		\item \method {public void setUsername(String username)}
-	
 	\end{itemize}
 	
 	\subsection{Klasse Pagination}
@@ -519,16 +518,19 @@
 		\item \method {public Address getAddress()}
 		\item \method {public boolean equals(Object other)}
 		\item \method {public String getEmail()}
+		\item \method {public String getSalutation()}
 		\item \method {public String getFristname()}
 		\item \method {public String getLastname()}
 		\item \method {public String getUsernname()}
 		\item \method {public String getPassword()}
 		\item \method {public Date getDateOfBirth()}
+		\item \method {public String getProfilImage()}
 		\item \method {public UserRole getUserRole()}
 		\item \method {public int getUserID()}
 		\item \method {public int hashCode()}
 		\item \method {public void setAddress(Address address)}
 		\item \method {public void setEmail(String email)}
+		\item \method {public String getSalutation()}
 		\item \method {public void setFirstname(String firstname)}
 		\item \method {public void setLastname(String lastname)}
 		\item \method {public void setPassword(String password)}
@@ -536,6 +538,7 @@
 		\item \method {public void setUserId(int id)}
 		\item \method {public void setUsername(String username)}
 		\item \method {public void setDateOfBirth(Date dateOfBirth)}
+		\item \method{public void getProfilImage()}
 	\end{itemize}
 	\subsection{Enumeration UserRole}
 	Es werden nun die verschiedenen Benutzerrollen beschrieben.
