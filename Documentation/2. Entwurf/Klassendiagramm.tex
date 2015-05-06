@@ -711,7 +711,7 @@
 		\end{itemize}
 	
 	\subsection{Package DAO}
-		\class{UserDAO}
+		\class{User}
 		Diese Klasse stellt Datenbankanfragen zur Verfügung um Benutzerdaten zu erhalten oder in die
 		Datenbank zu schreiben.\\
 		Sämtliche Methoden können die \kursiv{InvalidDatabaseTransferException} werfen.
@@ -727,7 +727,7 @@
 			\item \method{public ArrayList<Course> getCoursesLeadedBy(int userID, Pagination pagination)}
 			\end{itemize}
 		
-		\class{CourseDAO}
+		\class{Course}
 		Diese Klasse stellt Datenbankanfragen zur Verfügung um Kursdaten zu erhalten oder in die Datenbank
 		zu schreiben.\\
 		Sämtliche Methoden können die \kursiv{InvalidDatabaseTransferException} werfen.
@@ -746,7 +746,7 @@
 			\item \method{public boolean removeLeaderFromCourse(int userID)}
 		\end{itemize}
 		
-		\class{CourseUnitDAO}
+		\class{CourseUnit}
 		Diese Klasse stellt Datenbankanfragen zur Verfügung um Kurseinheitsdaten zu erhalten oder in die Datenbank zu schreiben.\\
 		Sämtliche Methoden können die \kursiv{InvalidDatabaseTransferException} werfen.
 		\begin{itemize}
@@ -759,7 +759,7 @@
 			\item \method{public boolean removeUserFromCourseUnit(int userID)}
 		\end{itemize}
 		
-		\class{StatisticDAO}
+		\class{Statistic}
 		Diese Klasse stellt Datenbankanfragen zur Verfügung um Statistikdaten zu erhalten oder in die Datenbank
 		zu schreiben.\\
 		Sämtliche Methoden können die \kursiv{InvalidDatabaseTransferException} werfen.
@@ -901,7 +901,7 @@
 	\subsection{CourseRegistrationException}
     Dies sind Fehler, welche beim An- oder Abmelden zu Kursen/Kurseinheiten auftreten können. 
 	
-	\subsection{InvalidDatabaseTransferException}
+	\subsection{InvalidDBTransferException}
 	Diese Klasse behandelt SQL-Exceptions und  TimeOut - Exceptions im Zusammenhang mit der Datenbankverbindungen.
 	
 	\section{Package CustomValidator}
