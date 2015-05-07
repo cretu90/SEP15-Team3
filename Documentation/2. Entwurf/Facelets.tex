@@ -1,6 +1,6 @@
 \chapter{Facelets}
 
-	Dieses Kapitel enthält alle benötigten  Facelets. Jedes Facelet wird in unterschiedliche  Bereiche aufgeteilt:
+	Dieses Kapitel enthält alle benötigten Facelets. Jedes Facelet wird in unterschiedliche  Bereiche aufgeteilt:
 	\begin{itemize}
 		\item \textbf{Beschreibung} beinhaltet die Funktionen des Facelets.
 		\item \textbf{Links} enthält die Seiten, auf welche weitergeleitet wird.
@@ -11,7 +11,7 @@
 	\end{itemize}
 	
 	\section{Templates}
-		Kathi, Ricky
+		KH, RS
 		Das Standard-Template, an dem sich alle Facelets orientieren ist in Abbildung 4.1 zu sehen. Hier wird in drei Teilbereiche unterschieden. Es gibt den Teilbereich \glqq Header\grqq\, welcher hauptsächlich die von der Benutzerrolle abhängige Navigation (\hyperlink{navigation}{navigation.xhtml}) beinhaltet, den Teilbereich \glqq Content\grqq\, welcher abhängig vom jeweils aufgerufenen Facelet befüllt wird und den Teilbereich \glqq Footer\grqq\, welcher den unteren Bereich der dargestellten Seite befüllt (\hyperlink{footer}{footer.xhtml}).
 
 			\begin{figure}[h]
@@ -75,6 +75,23 @@
 		\subsection{open}
 			
 			\subsubsection{common}
+			
+				\paragraph{errorPage.xhtml} \hypertarget{errorPage}
+					KH\\
+					\begin{itemize}
+						\item \textbf{Beschreibung:} Der Benutzer wird auf diese Seite weitergeleitet, wenn Exceptions auftreten, auf die der Nutzer keinen Einfluss hat. Die entsprechende Fehlermeldung wird dann angezeigt.
+						\item \textbf{Links:}
+						\begin{itemize}
+							\item Startseite: Über diesen Link gelangt der Benutzer zurück zur Startseite. (\hyperlink{index}{index.xhtml})
+						\end{itemize}
+						\item \textbf{Buttons:} -
+						\item \textbf{Inputs:} -
+						\item \textbf{Outputs:}
+						\begin{itemize}
+							\item Fehlermeldung: Hier wird die entsprechende Fehlermeldung ausgegeben.
+						\end{itemize}
+						\item \textbf{BackingBean:} -
+					\end{itemize}
 			
 				\paragraph{index.xhtml} \hypertarget{index}
 					RS\\
