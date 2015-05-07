@@ -60,6 +60,30 @@
 			
 			\item \textbf{Wartungsthread:}
 			Für systeminterne Wartungsarbeiten wird ein Thread zur Verfügung gestellt der in gewissen Abständen gestartet wird. Dieser hat primär die Aufgabe alte und nicht mehr gebrauchte Datensätze zu löschen und somit die Effizienz des Systems zu gewährleisten.
+			
+			\item \textbf{Aktivitätsloging:}\\
+			Das System stellt eine Log-Datei zur Verfügung, die alle Aktivitäten dokumentiert. Dies dient vor allem dem Systemadministrator bei der Fehlersuche falls nicht vorgesehene Probleme auftreten. Hier wird auf das Framework "log4j" zurückgegriffen. Die Einträge der Logdatei können vom Administrator gefilltert werden:
+			\begin{itemize}
+				\item \emph{FATAL:}\\
+				Ein kritischer Fehler ist aufgetreten und das System kann nicht mehr weiter ausgeführt werden.
+				\item \emph{ERROR:}\\
+				Exceptions wurden geworfen und behandelt. Das System wird alternativ fortgesetzt.
+				\item \emph{WARN:}\\
+				Auftreten einer unerwarteten Situation. Das System läuft weiter.
+				\item \emph{INFO:}\\
+				Allgemeine Informationen(z.B. Programm gestartet, Programm beendet, Verbindung zur Datenbank aufgebaut).
+				\item \emph{DEBUG:}\\
+				allgemeines Debugging(Fehler können leichter gefunden werden).
+				\item \emph{TRACE:}\\
+				ausführliches Debugging mit Kommentaren.
+				\item \emph{ALL:}\\
+				Alle Meldungen werden ungefiltert ausgegeben.
+				\item \emph{OFF:}\\
+				Logging ist deaktiviert.
+			\end{itemize}
+			
+			Die Log-Datei ist nur für den Systemadministrator einsehbar und wird auf dem Server des Systems gespeichert(nicht in der Datenbank!). Bei auftretenden Fehlern sollte der Administrator diese Log-Datei an das Entwickler Team weiter geben, damit diese den Fehler reproduzieren und beheben können.
+			
 		\end{itemize} 
 	
 \section{Systemshutdown}
