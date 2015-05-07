@@ -12,7 +12,7 @@ In diesem Kapitel werden die systeminternen Entitäten und deren Relationen unte
 
 \section{Beschreibung}
 \subsection{User}
-Ein im System registrierter Nutzer, welcher entweder als einfacher registrierter Nutzer, oder zusätzlich als Kursleiter, Administrator, oder auch beides gespeichert wird und anhand der 'ID' eindeutig identifizierbar ist. Ein User kann eine Adresse angeben (vgl. 'Address'). Zusätzlich werden die gezahlten Beiträge des Nutzers in der systeminternen Geldstatistik (vgl. 'Statistics') gespeichert, sofern sich dieser zu zahlungspflichtigen Kurseinheiten (vgl. 'Course unit') angemeldet hat. Ein User kann an beliebig vielen Kursen (vgl. 'Course') und Kurseinheiten teilnehmen. Das Attribut 'Course news' beschreibt, ob der Nutzer Nachrichten zu einem Kurs abonniert hat zu dem er angemeldet ist. 'E-mail verification' bzw. 'Admin verification' prüfen, ob der Nutzer über seinen persönlichen E-mail Account bzw. durch einen Administrator verifiziert wurde.
+Ein im System registrierter Nutzer, welcher entweder als einfacher registrierter Nutzer, oder zusätzlich als Kursleiter, Administrator, oder auch beides gespeichert wird und anhand der 'ID' eindeutig identifizierbar ist. Ein User kann eine Adresse angeben (vgl. 'Address'). Zusätzlich werden die gezahlten Beiträge des Nutzers zusammen mit dem Buchungsdatum in der systeminternen Geldstatistik gespeichert, sofern sich dieser zu zahlungspflichtigen Kurseinheiten (vgl. 'Course unit') angemeldet hat. Ein User kann an beliebig vielen Kursen (vgl. 'Course') und Kurseinheiten teilnehmen. Die Attribute 'E-mail verification' bzw. 'Admin verification' prüfen, ob der Nutzer über seinen persönlichen E-mail Account bzw. durch einen Administrator verifiziert wurde.
 
 \subsection{Course Instructor}
 Ein registrierter Nutzer, welcher im System als Kursleiter gespeichert und anhand seiner 'ID' eindeutig identifizierbar ist. Ein 'Course instructor' kann beliebig viele Kurse leiten (vgl. 'Course').
@@ -30,10 +30,7 @@ Enthält vom Systemadministrator festgelegte Attribute, welche der Funktionalit�
 Enthält den Titel der Webanwendung ('System title'), den Titel der CSS-Datei ('CSS') und kann bei Bedarf von allen im System gespeicherten Administratoren editiert werden.
 
 \subsection{Course}
-Ein angebotener Kurs zudem sich beliebig viele Nutzer anmelden können und von mindestens einem 'Course instructor' geleitet wird. Ein 'Course' kann beliebig viele Kurseinheiten (vgl. 'Course units') anbieten und ist anhand der 'ID' eindeutig identifizierbar. Zusätzlich werden die gezahlten Beiträge innerhalb eines Kurses in der systeminternen Geldstatistik (vgl. 'Statistics') gespeichert.
+Ein angebotener Kurs zudem sich beliebig viele Nutzer anmelden können und von mindestens einem 'Course instructor' geleitet wird. Ein 'Course' kann beliebig viele Kurseinheiten (vgl. 'Course units') anbieten und ist anhand der 'ID' eindeutig identifizierbar. Zusätzlich werden die gezahlten Beiträge innerhalb eines Kurses in der systeminternen Geldstatistik (vgl. 'Statistics') gespeichert. Das Attribut 'User To Be Informed' beschreibt, ob ein Nutzer Nachrichten zu einem Kurs abonniert hat zu dem er angemeldet ist.
 
 \subsection{Course unit}
 Eine Kurseinheit, welche innerhalb genau eines Kurses (vgl. 'Course') angeboten wird und anhand seiner 'ID' eindeutig identifizierbar ist. Sie hat genau eine Anschrift (vgl. 'Address'). An einer Kurseinheit können beliebig viele Nutzer teilnehmen, vorausgesetzt die maximale Teilnehmerzahl ('max. participants') ist noch nicht erreicht. 
-
-\subsection{Statistics}
-Die Geldstatistik, welche die über das System eingenommen Geldbeträge ('Amount') an einem bestimmten Datum ('Date') angibt.
