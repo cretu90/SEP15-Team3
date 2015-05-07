@@ -19,3 +19,4 @@ activateUsers - User aktivieren Kursleiter
 listUsers - Liste aller Benutzer
 createCourse - Kurs anlegen Admin
 editImprint - Impressum bearbeiten
+footer - Footer
