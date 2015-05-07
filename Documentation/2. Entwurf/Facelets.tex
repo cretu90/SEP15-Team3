@@ -160,6 +160,7 @@
 								\item Meine Kurse (Benutzer): Navigiert zur Anzeige der eigenen Kurse.
 								\item Terminplaner (Benutzer): Navigiert zum persönlichen Terminplaner.
 								\item Seitenverwaltung (Administrator): Lässt den Seitenadministrator zur Seitenverwaltung navigieren.
+								\item Benutzer aktivieren: (Kursleiter, Administrator): Navigiert zur Benutzer aktivieren Seite.
 							\end{itemize}
 						\item \textbf{Buttons:}
 							\begin{itemize}
@@ -285,12 +286,12 @@
 						\item \textbf{Links:} -
 						\item \textbf{Buttons:}
 							\begin{itemize}
-								\item Bearbeiten: Nach Klicken auf diesen Button können die persönlichen Daten geändert werden. Der Button trägt nun die Aufschrift 'Speichern' und ist mit dessen dazugehöriger Methode hinterlegt.
-								\item Speichern: Durch Drücken dieses Buttons werden die vorgenommenen Änderungen gespeichert, sofern alle Daten korrekt eingegeben wurden. Bei Änderung der E-Mail-Adresse wird außerdem eine Bestätigungsmail mit einem Verifizierungslink verschickt. Bei erfolgreicher Speicherung erscheint der Button 'Bearbeiten' anstelle des Button 'Speichern'.
-								\item Durchsuchen: Durch Drücken dieses Buttons kann das eigene Dateiverzeichnis nach einem Bild durchsucht und hochgeladen werden.
-								\item Konto aufladen: Durch Klicken dieses Buttons wird der Benutzer auf die Seite 'Kontoaufladung' weitergeleitet.
-								\item Benutzer löschen: Durch Drücken dieses Buttons entfernt der Administrator diesen Benutzer aus dem System.
-								\item Benutzer aktivieren: Durch diesen Button kann der Benutzer je nach Einstellung der Accountaktivierung vom Kursleiter oder vom Administrator aktiviert werden.
+								\item Bearbeiten: Nach Klicken auf diesen Button können die persönlichen Daten geändert werden. Der Button trägt nun die Aufschrift 'Speichern' und ist mit dessen dazugehöriger Methode hinterlegt. Zugehörige Methode: editUserData()
+								\item Speichern: Durch Drücken dieses Buttons werden die vorgenommenen Änderungen gespeichert, sofern alle Daten korrekt eingegeben wurden. Bei Änderung der E-Mail-Adresse wird außerdem eine Bestätigungsmail mit einem Verifizierungslink verschickt. Bei erfolgreicher Speicherung erscheint der Button 'Bearbeiten' anstelle des Button 'Speichern'. Zugehörige Methode: saveUserData()
+								\item Durchsuchen: Durch Drücken dieses Buttons kann das eigene Dateiverzeichnis nach einem Bild durchsucht werden.
+								\item Hochladen: Durch Drücken dieses Buttons wird das ausgewählte Profilbild hochgeladen. Zugehörige Methode: uploadProfilPic()
+								\item Konto aufladen: Durch Klicken dieses Buttons wird der Benutzer auf die Seite 'Kontoaufladung' weitergeleitet. Zugehörige Methode: depositMoneyPerCreditCard()
+								\item Benutzer löschen: Durch Drücken dieses Buttons entfernt der Administrator diesen Benutzer aus dem System, oder der Benutzer kann sich selbst auf inaktiv setzen. Zugehörige Methoden: deleteUser(), setUserInactive() 
 							\end{itemize}
 						\item \textbf{Inputs:}
 							\begin{itemize}
