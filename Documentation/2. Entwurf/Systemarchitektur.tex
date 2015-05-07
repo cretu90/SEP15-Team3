@@ -7,9 +7,9 @@ MB
     %Bild der Schichtenarchitektur
     \includegraphics[scale=0.50]{Grafiken/Schichtenarchitektur.pdf}
 	\subsection{Faces-Servlet}
-	    Das Faces-Servlet fungiert im System als Controller, der eine HTTP-Request abfangt, diese bearbeitet, sowie weiterleitet. Das Faces-Servlet muss in jeder JSF-Applikation konfiguriert sein und wird in der web.xml Datei definiert. 
+	    Das Faces-Servlet fungiert im System als Controller, der eine HTTP-Request abfängt, diese bearbeitet, sowie weiterleitet. Das Faces-Servlet muss in jeder JSF-Applikation konfiguriert sein und wird in der web.xml Datei definiert. 
     \subsection{Facelets}
-    	Die View wird durch Facelets repräsentiert. Es stellt den Inhalt dar, der vom Controller übergeben wird. Des Weiteren werden in der View die Benutzerinteraktionen entgegengenommen. Genauer auf Facelets wird unter Kapitel 4 Facelets eingegangen.
+    	Die View wird durch Facelets repräsentiert. Sie stellen die Inhalte dar, der vom Controller übergeben wird. Des Weiteren werden in der View die Benutzerinteraktionen entgegengenommen. Genauer auf Facelets wird unter Kapitel 4 Facelets eingegangen.
    	\subsection{Model}
    	Das Model kann in vier Bereiche unterteilt werden. Zunächst gäbe es die \glqq Upper Layer\grqq{}, welche die Backing Beans beinhalten, die \glqq Lower Layer\grqq{} mit den Data Access Objects (DAOs) und dem Connection Pool (CP), des Weiteren gäbe es noch die Data Transfer Objects (DTOs) und die Utils. 
    		\subsubsection{Upper Layer}
@@ -21,11 +21,11 @@ MB
     	\subsubsection{Utils}
     	Utils fungieren als Hilfs- und Verwalterklasse. Die Utils werden auch wiederum unterteilt, die man entweder den Backing Beans oder den DAOs zuordnen kann. 
     \subsection{Database}
-    Die Database (DB) beinhaltet alle relevanten Daten, die für das System benötigt werden. Die DB kapselt die Daten von der Außenwelt ab, somit haben nur die DAOs haben Zugriff auf die DB. 
+    Die Database (DB) beinhaltet alle relevanten Daten, die für das System benötigt werden. Die DB kapselt die Daten von der Außenwelt ab, somit haben nur die DAOs Zugriff auf die DB. 
 \section{Design Patterns}
 Im Nachfolgendem werden die im System eingesetzten Design Patterns beschrieben:
 	\begin{itemize}
-		\item \textbf{Data Transfer Object:} Das DTO fassen mehrere Daten in einem Objekt zusammen, damit sie in einem Aufruf übergeben werden. Somit können Datensätze durch die Schichten transportiert werden.
+		\item \textbf{Data Transfer Object:} Das DTO fasst mehrere Daten in einem Objekt zusammen, damit sie in einem Aufruf übergeben werden. Somit können Datensätze durch die Schichten transportiert werden.
 		\item \textbf{Dependency Injection:} Dependency Injection ist ein JSF Standard, um Backing Beans zu verwalten. Hierbei werden die benötigten Objekte an einem zentralen Ort hinterlegt, was auch die Flexibilität erhöht.  
 		\item \textbf{Creational Pattern:} Die Creational Pattern kann man wiederum in folgende Pattern unterscheiden.
 			\begin{itemize}
@@ -50,7 +50,7 @@ Es werden im System auf bereits vorhandenen Libraries zurückgegriffen.
 	\subsection{Nicht-Autorisierter Zugriff}
 	Sofern der User eine Aktion ausführen will, aber nicht die entsprechenden Rechte besitzt, wird eine Fehlermeldung ausgegeben (beispielsweise will ein Gast nach einem bestimmten Kurs suchen, was aber nur registrierte User vorbehalten ist) und der Gast wird gegebenenfalls auf die Login Seite verwiesen. Die Facelets werden mit einem Phaselistener überprüft.
 	\subsection{Fehlerhafte Benutzereingaben}
-	Wenn ein Gast sich registrieren will, aber in den Formulardaten ein ungültige Eingabe tätigt, so soll der Gast nicht alles neu eingeben müssen, sondern nur die fehlerhaften Stellen neu eingeben. Der Fehler wird auf derselben Seite angezeigt, somit wird keine Fehler-Seite extra benötigt.
+	Wenn ein Gast sich registrieren will, aber in den Formulardaten eine ungültige Eingabe tätigt, so soll der Gast nicht alles neu eingeben müssen, sondern nur die fehlerhaften Stellen neu eingeben. Der Fehler wird auf derselben Seite angezeigt, somit wird keine Fehler-Seite extra benötigt.
 	\subsection{Exceptions}
 	Sollten Fehler auftreten auf die der User keinen Einfluss hat, so wird der Nutzer auf eine Fehler-Seite geleitet. Auf dieser Seite befinden sich Informationen zu dem Fehler und es wird eine weitere Vorgehensweise zur Verfügung gestellt. Bestimmte Exceptions wie beispielsweise eine SQL-Exception werden gefangen und geworfen, indem globale Exception-Handler implementiert werden. Bei kritischen Exceptions wird auch eine Logfile angefertigt, um im Nachhinein genau zu verfolgen wo und wann der Fehler aufgetreten ist.
 	\subsection{HTTP-Statuscodes}
