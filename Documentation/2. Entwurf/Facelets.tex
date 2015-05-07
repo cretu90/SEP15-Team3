@@ -74,7 +74,7 @@
 					\item \textbf{Buttons:}
 						\begin{itemize}
 							\item Registrieren: Durch Drücken dieses Buttons wird der neue Benutzer mit den eingegebenen Daten im System gespeichert und es wird eine Bestätigungsmail mit dem Verifizierungslink an die angegebene E-Mail-Adresse verschickt, sofern alle Daten korrekt eingegeben wurden. \\ Zugehörige Methode: registerUser()
-							\item Anmelden: Durch Drücken dieses Buttons wird der registrierte Benutzer im System angemeldet und auf die Seite 'Meine Kurse' weitergeleitet, sofern Benutzername und Passwort korrekt eingegeben wurden. \\ Zugehörige Methode: login()
+							\item Anmelden: Durch Drücken dieses Buttons wird der registrierte Benutzer im System angemeldet und auf die Seite 'Meine Kurse' (\hyperlink{myCourses}{myCourses.xhtml}) weitergeleitet, sofern Benutzername und Passwort korrekt eingegeben wurden. \\ Zugehörige Methode: login()
 							\item Passwort vergessen: Durch Drücken dieses Buttons wird an die angegebene E-Mail-Adresse ein automatisch generiertes Passwort geschickt, sofern die Adresse im System existiert. \\ Zugehörige Methode: resetPassword()
 						\end{itemize}
 					\item \textbf{Inputs:}
@@ -122,7 +122,7 @@
 						\end{itemize}
 				\end{itemize}
 				
-				\paragraph{imprint.xhtml}
+				\paragraph{imprint.xhtml} \hypertarget{imprint}
 					KH\\
 					\begin{itemize}
 						\item \textbf{Beschreibung:} Auf dieser Seite kann das Impressum angezeigt werden.
@@ -261,13 +261,13 @@
 		
 			\subsubsection{registeredUser}
 				
-				\paragraph{myCourses.xhtml}
+				\paragraph{myCourses.xhtml} \hypertarget{myCourses}
 					KH\\
 					\begin{itemize}
 						\item \textbf{Beschreibung:} Auf dieser Seite werden alle Kurse angezeigt, in die der Teilnehmer eingetragen ist.
 						\item \textbf{Links:}
 							\begin{itemize}
-								\item Kurstitel: Über die Kurstitel gelangt der Benutzer auf die jeweilige Kursdetailseite.
+								\item Kurstitel: Über die Kurstitel gelangt der Benutzer auf die jeweilige Kursdetailseite. (\hyperlink{courseDetails}{courseDetails.xhtml})
 							\end{itemize}
 						\item \textbf{Buttons:} -
 						\item \textbf{Inputs:} -
@@ -281,7 +281,7 @@
 							\end{itemize}
 					\end{itemize}
 				
-				\paragraph{profile.xhtml}
+				\paragraph{profile.xhtml} \hypertarget{profile}
 					KH\\
 					\begin{itemize}
 						\item \textbf{Beschreibung:} Auf dieser Seite werden die persönlichen Daten und der Kontostand des Benutzers angezeigt. Der Benutzer kann die Daten ändern und sein Konto aufladen. Der Kursleiter kann hier den Benutzer aktivieren, und der Administrator den Benutzer löschen.
@@ -292,7 +292,7 @@
 								\item Speichern: Durch Drücken dieses Buttons werden die vorgenommenen Änderungen gespeichert, sofern alle Daten korrekt eingegeben wurden. Bei Änderung der E-Mail-Adresse wird außerdem eine Bestätigungsmail mit einem Verifizierungslink verschickt. Bei erfolgreicher Speicherung erscheint der Button 'Bearbeiten' anstelle des Button 'Speichern'. \\ Zugehörige Methode: saveUserData()
 								\item Durchsuchen: Durch Drücken dieses Buttons kann das eigene Dateiverzeichnis nach einem Bild durchsucht werden.
 								\item Hochladen: Durch Drücken dieses Buttons wird das ausgewählte Profilbild hochgeladen. \\ Zugehörige Methode: uploadProfilPic()
-								\item Konto aufladen: Durch Klicken dieses Buttons wird der Benutzer auf die Seite 'Kontoaufladung' weitergeleitet. \\ Zugehörige Methode: depositMoneyPerCreditCard()
+								\item Konto aufladen: Durch Klicken dieses Buttons wird der Benutzer auf die Seite 'Kontoaufladung' (\hyperlink{buyCredits}{buyCredits.xhtml})  weitergeleitet. \\ Zugehörige Methode: depositMoneyPerCreditCard()
 								\item Benutzer löschen: Durch Drücken dieses Buttons entfernt der Administrator diesen Benutzer aus dem System, oder der Benutzer kann sich selbst auf inaktiv setzen. \\ Zugehörige Methoden: deleteUser(), setUserInactive() 
 							\end{itemize}
 						\item \textbf{Inputs:}
@@ -387,7 +387,7 @@
 							\end{itemize}
 					\end{itemize}
 				
-				\paragraph{leaderProfile.xhtml}
+				\paragraph{leaderProfile.xhtml} \hypertarget{leaderProfile}
 					KH\\
 					\begin{itemize}
 						\item \textbf{Beschreibung:} Auf dieser Seite werden die Daten des Kursleiters, mit Ausnahme von sensiblen Daten wie Passwort oder Kontostand, und die von ihm geleiteten Kurse angezeigt.
@@ -404,7 +404,7 @@
 						\end{itemize}
 					\end{itemize}
 				
-				\paragraph{listParticipants.xhtml}
+				\paragraph{listParticipants.xhtml} \hypertarget{listParticipants}
 					KH\\
 					\begin{itemize}
 						\item \textbf{Beschreibung:} Hier kann der registrierte Benutzer die Teilnehmer eines Kurses mit Benutzername und Profilbild ansehen. Dem Kursleiter werden zusätzlich die E-Mail-Adresse und die Information über den Erhalt von Kursnews angezeigt. Außerdem kann er einen Teilnehmer aus dem Kurs entfernen.
@@ -417,7 +417,10 @@
 							 \begin{itemize}
 							 	\item Entfernen: Durch Setzen des Häkchens wählt der Kursleiter diesen Benutzer aus, um ihn anschließend über den Button 'Löschen' zu entfernen.
 							 \end{itemize}
-						\item \textbf{Outputs:} -
+						\item \textbf{Outputs:} 
+							\begin{itemize}
+								\item Tabelle Auflistung Kursteilnehmer: Hier werden die Teilnehmer des Kurses angezeigt.
+							\end{itemize}
 						\item \textbf{BackingBean:}
 							\begin{itemize}
 								\item ListParticipants.java
@@ -426,7 +429,7 @@
 			
 			\subsubsection{courseLeader}
 			
-				\paragraph{editCourseUnit.xhtml}
+				\paragraph{editCourseUnit.xhtml} \hypertarget{editCourseUnit}
 					KH\\
 					\begin{itemize}
 						\item \textbf{Beschreibung:} Auf dieser Seite können Kursleiter beziehungsweise Administratoren Kurseinheiten anlegen und bearbeiten, oder Kursteilnehmer hinzufügen und entfernen
@@ -445,7 +448,7 @@
 								\item Straße/ Hausnummer: Hier gibt der Kursleiter Straße und Hausnummer ein.
 								\item Postleitzahl: Hier gibt der Kursleiter die entsprechende Postleitzahl ein.
 								\item Stadt: Hier gibt der Kursleiter die Stadt ein, in der die Kurseinheit stattfindet.
-								\item Raum: Hier gibt der Kursleiter den Raum ein, in dem die Kurseinheit stattfindet.
+								\item Ort: Hier gibt der Kursleiter den Ort (Raumnummer, Turnhalle,..) ein, in dem die Kurseinheit stattfindet.
 								\item Beschreibung: Hier gibt der Kursleiter die Beschreibung der Kurseinheit ein.
 								\item Preis: Hier gibt der Kursleiter den Preis der Kurseinheit ein.
 								\item Kursleiter: Hier wird der Leiter des Kurses angezeigt.
@@ -455,6 +458,9 @@
 								\item Benutzer-ID: Hier gibt der Kursleiter die Benutzer-ID des Teilnehmers an, welchen er zu der Kurseinheit hinzufügen will.
 								\item Name (Teilnehmer): Hier gibt der Kursleiter den entsprechenden Namen des Teilnehmers an, welchen er zu der Kurseinheit hinzufügen will.
 								\item Vorname (Teilnehmer): Hier gibt der Kursleiter den entsprechenden Vornamen des Teilnehmers an, welchen er zu der Kurseinheit hinzufügen will.
+								\item Checkbox regelmäßig: Durch Setzen dieses Hackens markiert der Kursleiter den Kurs als regelmäßig.
+								\item Turnus: Hier wählt der Kursleiter aus einem Drop-Down Menü aus, ob der Kurs beispielsweise wöchentlich stattfinden soll.
+								\item Einheitenanzahl: Hier gibt der Kursleiter an, wie viele Einheiten er anlegen will.
 							\end{itemize}
 						\item \textbf{Outputs:}
 							\begin{itemize}
@@ -472,6 +478,7 @@
 								\item Benutzer-ID (Fehlermeldung): Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
 								\item Name (Teilnehmer (Fehlermeldung)): Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
 								\item Vorname (Teilnehmer (Fehlermeldung)): Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
+								\item Einheitenanzahl: Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
 							\end{itemize}
 						\item \textbf{BackingBean:}
 							\begin{itemize}
@@ -479,7 +486,7 @@
 							\end{itemize}
 					\end{itemize}
 				
-				\paragraph{activateUsers.xhtml}
+				\paragraph{activateUsers.xhtml} \hypertarget{activateUsers}
 					KH\\
 					\begin{itemize}
 						\item \textbf{Beschreibung:} Hier werden alle im System noch nicht aktivierten Benutzer angezeigt. Diese können nun vom Kursleiter oder Administrator aktiviert werden. 
@@ -544,7 +551,7 @@
 							\end{itemize}
 					\end{itemize}
 				
-				\paragraph{listUsers.xhtml}
+				\paragraph{listUsers.xhtml} \hypertarget{listUsers}
 					KH\\
 					\begin{itemize}
 						\item \textbf{Beschreibung:} Hier werden alle im System registrierten Benutzer angezeigt. Einzelne Benutzer können vom Administrator nach verschiedenen Kriterien gefiltert werden. 
@@ -607,7 +614,7 @@
 							\end{itemize}
 					\end{itemize}
 				
-				\paragraph{createCourse.xhtml}
+				\paragraph{createCourse.xhtml} \hypertarget{createCourse}
 					KH\\
 					\begin{itemize}
 						\item \textbf{Beschreibung:} Hier kann der Administrator einen neuen Kurs anlegen, einen bestehenden Kurs löschen, oder Kursleiter zu bestehenden Kursen hinzufügen. Der Kursleiter kann außerdem Kurseinheiten erstellen.
@@ -649,7 +656,7 @@
 							\end{itemize}
 					\end{itemize}
 				
-				\paragraph{editImprint.xhtml}
+				\paragraph{editImprint.xhtml} \hypertarget{editImprint}
 					KH\\
 					\begin{itemize}
 						\item \textbf{Beschreibung:} Hier kann der Administrator das Impressum ändern.

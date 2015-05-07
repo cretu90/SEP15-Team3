@@ -8,3 +8,14 @@ scheduler - Terminplaner
 adminManagement - Admin Verwaltungsseite
 createUser - Admin Benutzer anlegen Seite
 statistics - Statistiken
+authenticate - Anmeldung
+myCourses - Meine Kurse
+imprint - Impressum
+profile- Profil Nutzer
+leader Profile - Profil Kursleiter
+listParticipants - Teilnehmerliste Kurseinheit
+editCourseUnit - Kurseinheit bearbeiten
+activateUsers - User aktivieren Kursleiter
+listUsers - Liste aller Benutzer
+createCourse - Kurs anlegen Admin
+editImprint - Impressum bearbeiten
