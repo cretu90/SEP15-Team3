@@ -73,9 +73,9 @@
 					\item \textbf{Links:} -
 					\item \textbf{Buttons:}
 						\begin{itemize}
-							\item Registrieren: Durch Drücken dieses Buttons wird der neue Benutzer mit den eingegebenen Daten im System gespeichert und es wird eine Bestätigungsmail mit dem Verifizierungslink an die angegebene E-Mail-Adresse verschickt, sofern alle Daten korrekt eingegeben wurden. Zugehörige Methode: registerUser()
-							\item Anmelden: Durch Drücken dieses Buttons wird der registrierte Benutzer im System angemeldet und auf die Seite 'Meine Kurse' weitergeleitet, sofern Benutzername und Passwort korrekt eingegeben wurden. Zugehörige Methode: login()
-							\item Passwort vergessen: Durch Drücken dieses Buttons wird an die angegebene E-Mail-Adresse ein automatisch generiertes Passwort geschickt, sofern die Adresse im System existiert. Zugehörige Methode: resetPassword()
+							\item Registrieren: Durch Drücken dieses Buttons wird der neue Benutzer mit den eingegebenen Daten im System gespeichert und es wird eine Bestätigungsmail mit dem Verifizierungslink an die angegebene E-Mail-Adresse verschickt, sofern alle Daten korrekt eingegeben wurden. \\ Zugehörige Methode: registerUser()
+							\item Anmelden: Durch Drücken dieses Buttons wird der registrierte Benutzer im System angemeldet und auf die Seite 'Meine Kurse' weitergeleitet, sofern Benutzername und Passwort korrekt eingegeben wurden. \\ Zugehörige Methode: login()
+							\item Passwort vergessen: Durch Drücken dieses Buttons wird an die angegebene E-Mail-Adresse ein automatisch generiertes Passwort geschickt, sofern die Adresse im System existiert. \\ Zugehörige Methode: resetPassword()
 						\end{itemize}
 					\item \textbf{Inputs:}
 						\begin{itemize}
@@ -166,8 +166,8 @@
 							\end{itemize}
 						\item \textbf{Buttons:}
 							\begin{itemize}
-								\item Logout (Benutzer, wenn eingeloggt): Loggt den aktuellen eingeloggten Benutzer aus. Zugehörige Methode: logout()
-								\item Anmelden (Anonym): Navigiert zur Registrierungs- und Anmeldeseite. Zugehörige Methode: login()
+								\item Logout (Benutzer, wenn eingeloggt): Loggt den aktuellen eingeloggten Benutzer aus. \\ Zugehörige Methode: logout()
+								\item Anmelden (Anonym): Navigiert zur Registrierungs- und Anmeldeseite. \\ Zugehörige Methode: login()
 							\end{itemize}
 						\item \textbf{Inputs:} -
 						\item \textbf{Outputs:}
@@ -189,8 +189,8 @@
 						\item \textbf{Links:} -
 						\item \textbf{Buttons:}
 							\begin{itemize}
-								\item Anzeigen: Zeigt die Angebote im ausgewählten Zeitraum an. Zugehörige Methode: displayCoursesInSpecificPeriod()
-								\item Suchen: Durchsucht die Website nach dem eingegebenen Suchbegriff mittels gewählten Suchobjekt. Zugehörige Methode: search()
+								\item Anzeigen: Zeigt die Angebote im ausgewählten Zeitraum an. \\ Zugehörige Methode: displayCoursesInSpecificPeriod()
+								\item Suchen: Durchsucht die Website nach dem eingegebenen Suchbegriff mittels gewählten Suchobjekt. \\ Zugehörige Methode: search()
 							\end{itemize}
 						\item \textbf{Inputs:}
 							\begin{itemize}
@@ -215,17 +215,17 @@
 						\item \textbf{Links:} -
 						\item \textbf{Buttons:}
 							\begin{itemize}
-								\item Anmelden (Benutzer, noch nicht angemeldet): Meldet den Benutzer zum Kurs an. Zugehörige Methode: signUpForCourse()
-								\item Abmelden (Benutzer, wenn angemeldet): Meldet den Benutzer vom Kurs ab. Zugehörige Methode: signOffFromCourse()
-								\item Teilnehmer anzeigen (Kursleiter): Zeigt die zum Kurs angemeldeten Benutzer an. Zugehörige Methode: loadParticipantsPage()
-								\item Alle auswählen (Benutzer, zum Kurs angemeldet): Wählt alle Kurseinheiten des Kurses aus. Zugehörige Methode: selectAllCourseUnits()
-								\item Speichern (Benutzer, zum Kurs angemeldet): Speichert alle ausgewählten Kurseinheiten und meldet den Nutzer dazu an. Zugehörige Methode: signUpForCourseUnits()
-								\item Bearbeiten (Administrator, noch nicht im Bearbeitungsmodus): Ermöglicht die Bearbeitung der einzelnen Kursdetails. Zugehörige Methode: editCourse()
-								\item Speichern (Administrator, im Bearbeitungsmodus): Speichert alle vorgenommenen Kursänderungen. Zugehörige Methode: saveCourse()
+								\item Anmelden (Benutzer, noch nicht angemeldet): Meldet den Benutzer zum Kurs an. \\ Zugehörige Methode: signUpForCourse()
+								\item Abmelden (Benutzer, wenn angemeldet): Meldet den Benutzer vom Kurs ab. \\ Zugehörige Methode: signOffFromCourse()
+								\item Teilnehmer anzeigen (Kursleiter): Zeigt die zum Kurs angemeldeten Benutzer an. \\ Zugehörige Methode: loadParticipantsPage()
+								\item Alle auswählen (Benutzer, zum Kurs angemeldet): Wählt alle Kurseinheiten des Kurses aus. \\ Zugehörige Methode: selectAllCourseUnits()
+								\item Speichern (Benutzer, zum Kurs angemeldet): Speichert alle ausgewählten Kurseinheiten und meldet den Nutzer dazu an. \\ Zugehörige Methode: signUpForCourseUnits()
+								\item Bearbeiten (Administrator, noch nicht im Bearbeitungsmodus): Ermöglicht die Bearbeitung der einzelnen Kursdetails. \\ Zugehörige Methode: editCourse()
+								\item Speichern (Administrator, im Bearbeitungsmodus): Speichert alle vorgenommenen Kursänderungen. \\ Zugehörige Methode: saveCourse()
 								\item Hinzufügen (Administrator): Fügt einen Kursleiter zum Kurs hinzu. Zugehörige Methode: addCourseLeader()
-								\item Kurseinheit anlegen (Kursleiter): Erstellt eine neue Kurseinheit zum Kurs. Zugehörige Methode: loadCreateCourseUnitPage()
-								\item Kurseinheit bearbeiten (Kursleiter): Ermöglicht die Bearbeitung einer einzelnen Kurseinheit. Zugehörige Methode: loadEditCourseUnitPage()
-								\item Kurs löschen (Administrator): Löscht den Kurs. Zugehörige Methode: deleteCourse()
+								\item Kurseinheit anlegen (Kursleiter): Erstellt eine neue Kurseinheit zum Kurs. \\ Zugehörige Methode: loadCreateCourseUnitPage()
+								\item Kurseinheit bearbeiten (Kursleiter): Ermöglicht die Bearbeitung einer einzelnen Kurseinheit. \\ Zugehörige Methode: loadEditCourseUnitPage()
+								\item Kurs löschen (Administrator): Löscht den Kurs. \\ Zugehörige Methode: deleteCourse()
 							\end{itemize}
 						\item \textbf{Inputs:}
 							\begin{itemize}
@@ -288,12 +288,12 @@
 						\item \textbf{Links:} -
 						\item \textbf{Buttons:}
 							\begin{itemize}
-								\item Bearbeiten: Nach Klicken auf diesen Button können die persönlichen Daten geändert werden. Der Button trägt nun die Aufschrift 'Speichern' und ist mit dessen dazugehöriger Methode hinterlegt. Zugehörige Methode: editUserData()
-								\item Speichern: Durch Drücken dieses Buttons werden die vorgenommenen Änderungen gespeichert, sofern alle Daten korrekt eingegeben wurden. Bei Änderung der E-Mail-Adresse wird außerdem eine Bestätigungsmail mit einem Verifizierungslink verschickt. Bei erfolgreicher Speicherung erscheint der Button 'Bearbeiten' anstelle des Button 'Speichern'. Zugehörige Methode: saveUserData()
+								\item Bearbeiten: Nach Klicken auf diesen Button können die persönlichen Daten geändert werden. Der Button trägt nun die Aufschrift 'Speichern' und ist mit dessen dazugehöriger Methode hinterlegt. \\ Zugehörige Methode: editUserData()
+								\item Speichern: Durch Drücken dieses Buttons werden die vorgenommenen Änderungen gespeichert, sofern alle Daten korrekt eingegeben wurden. Bei Änderung der E-Mail-Adresse wird außerdem eine Bestätigungsmail mit einem Verifizierungslink verschickt. Bei erfolgreicher Speicherung erscheint der Button 'Bearbeiten' anstelle des Button 'Speichern'. \\ Zugehörige Methode: saveUserData()
 								\item Durchsuchen: Durch Drücken dieses Buttons kann das eigene Dateiverzeichnis nach einem Bild durchsucht werden.
-								\item Hochladen: Durch Drücken dieses Buttons wird das ausgewählte Profilbild hochgeladen. Zugehörige Methode: uploadProfilPic()
-								\item Konto aufladen: Durch Klicken dieses Buttons wird der Benutzer auf die Seite 'Kontoaufladung' weitergeleitet. Zugehörige Methode: depositMoneyPerCreditCard()
-								\item Benutzer löschen: Durch Drücken dieses Buttons entfernt der Administrator diesen Benutzer aus dem System, oder der Benutzer kann sich selbst auf inaktiv setzen. Zugehörige Methoden: deleteUser(), setUserInactive() 
+								\item Hochladen: Durch Drücken dieses Buttons wird das ausgewählte Profilbild hochgeladen. \\ Zugehörige Methode: uploadProfilPic()
+								\item Konto aufladen: Durch Klicken dieses Buttons wird der Benutzer auf die Seite 'Kontoaufladung' weitergeleitet. \\ Zugehörige Methode: depositMoneyPerCreditCard()
+								\item Benutzer löschen: Durch Drücken dieses Buttons entfernt der Administrator diesen Benutzer aus dem System, oder der Benutzer kann sich selbst auf inaktiv setzen. \\ Zugehörige Methoden: deleteUser(), setUserInactive() 
 							\end{itemize}
 						\item \textbf{Inputs:}
 							\begin{itemize}
@@ -343,7 +343,7 @@
 						\item \textbf{Links:} -
 						\item \textbf{Buttons:}
 							\begin{itemize}
-								\item Konto aufladen: Führt die Kontoaufladung aus.
+								\item Konto aufladen: Führt die Kontoaufladung aus. \\ Zugehörige Methode: depositAmount()
 							\end{itemize}
 						\item \textbf{Inputs:}
 							\begin{itemize}
@@ -400,8 +400,7 @@
 							\end{itemize}
 						\item \textbf{BackingBean:}
 						\begin{itemize}
-							\item UserProfile.java
-							\item UserManagement.java			
+							\item UserProfile.java			
 						\end{itemize}
 					\end{itemize}
 				
@@ -412,7 +411,7 @@
 						\item \textbf{Links:} -
 						\item \textbf{Buttons:}
 							\begin{itemize}
-								\item Löschen: Durch Drücken dieses Buttons kann der Kursleiter den entsprechenden Benutzer aus dem Kurs entfernen.
+								\item Löschen: Durch Drücken dieses Buttons kann der Kursleiter den entsprechenden Benutzer aus dem Kurs entfernen. \\ Zugehörige Methode: deleteUserFromCourse()
 							\end{itemize}
 						\item \textbf{Inputs:}
 							 \begin{itemize}
@@ -434,11 +433,11 @@
 						\item \textbf{Links:} -
 						\item \textbf{Buttons:}
 							\begin{itemize}
-								\item Bearbeiten (Kurseinheit): Nach Klicken auf diesen Button können die Daten der Kurseinheit geändert beziehungsweise eingetragen werden. Der Button trägt nun die Aufschrift 'Speichern' und ist mit dessen dazugehöriger Methode hinterlegt.
-								\item Speichern (Kurseinheit): Durch Drücken dieses Buttons werden die vorgenommenen Änderungen gespeichert, sofern alle Daten korrekt eingegeben wurden. Bei erfolgreicher Speicherung erscheint der Button 'Bearbeiten' anstelle des Button 'Speichern'.
-								\item Löschen (Kurseinheit): Durch Drücken des Button 'Löschen' wird die Kurseinheit entfernt.
-								\item Löschen (Teilnehmer): Durch Drücken dieses Buttons wird der markierte Teilnehmer aus der Kurseinheit entfernt.
-								\item Hinzufügen (Teilnehmer): Durch Drücken dieses Buttons wird der angegebene Teilnehmer zu dieser Kurseinheit hinzugefügt, sofern der Benutzername im System existiert und die Daten korrekt eingegeben wurden.
+								\item Bearbeiten (Kurseinheit): Nach Klicken auf diesen Button können die Daten der Kurseinheit geändert beziehungsweise eingetragen werden. Der Button trägt nun die Aufschrift 'Speichern' und ist mit dessen dazugehöriger Methode hinterlegt. \\ Zugehörige Methode: editCourseUnit()
+								\item Speichern (Kurseinheit): Durch Drücken dieses Buttons werden die vorgenommenen Änderungen gespeichert, sofern alle Daten korrekt eingegeben wurden. Bei erfolgreicher Speicherung erscheint der Button 'Bearbeiten' anstelle des Button 'Speichern'. \\ Zugehörige Methode: saveCourseUnit()
+								\item Löschen (Kurseinheit): Durch Drücken des Button 'Löschen' wird die Kurseinheit entfernt. \\ Zugehörige Methode: deleteCourseUnit()
+								\item Löschen (Teilnehmer): Durch Drücken dieses Buttons wird der markierte Teilnehmer aus der Kurseinheit entfernt. \\ Zugehörige Methode: deleteUserFromCourseUnit()
+								\item Hinzufügen (Teilnehmer): Durch Drücken dieses Buttons wird der angegebene Teilnehmer zu dieser Kurseinheit hinzugefügt, sofern der Benutzername im System existiert und die Daten korrekt eingegeben wurden. \\ Zugehörige Methode: addUserToCourseUnit()
 							\end{itemize}
 						\item \textbf{Inputs:}
 							\begin{itemize}
@@ -487,7 +486,7 @@
 						\item \textbf{Links:} -
 						\item \textbf{Buttons:}
 							\begin{itemize}
-								\item Benutzer aktivieren: Durch Klicken dieses Buttons wird der Account des markierten Benutzers aktiviert. Zugehörige Methode: activateAccounts()
+								\item Benutzer aktivieren: Durch Klicken dieses Buttons wird der Account des markierten Benutzers aktiviert. \\ Zugehörige Methode: activateAccounts()
 							\end{itemize}
 						\item \textbf{Inputs:}
 							\begin{itemize}
@@ -512,19 +511,19 @@
 						\item \textbf{Links:} -
 						\item \textbf{Buttons:}
 							\begin{itemize}
-								\item Benutzer verwalten: Navigiert zu Benutzer verwalten Seite.
-								\item Benutzer anlegen: Navigiert zu Benutzer anlegen Seite.
-								\item Kurse verwalten: Navigiert zu Kurse verwalten Seite.
-								\item Kurs anlegen: Navigiert zu Kurs anlegen Seite.
-								\item Aktivierungsmodalität speichern: Speichert die ausgewählte Art der Benutzeraktivierung.
-								\item Guthaben aufladen: Erhöht den Kontostand eines bestimmten Benutzer um die eingegebene Summe. 
-								\item Überziehungswert speichern: Speichert den Wert der möglichen Kontoüberziehung.
-								\item Statistiken anzeigen: Navigiert zur Anwendungsstatistik Seite.
+								\item Benutzer verwalten: Navigiert zu Benutzer verwalten Seite. \\ Zugehörige Methode: loadManageUserPage()
+								\item Benutzer anlegen: Navigiert zu Benutzer anlegen Seite. \\ Zugehörige Methode: loadCreateNewUserPage()
+								\item Kurse verwalten: Navigiert zu Kurse verwalten Seite. \\ Zugehörige Methode: loadManageCoursesPage()
+								\item Kurs anlegen: Navigiert zu Kurs anlegen Seite. \\ Zugehörige Methode: loadCreateNewCoursePage()
+								\item Aktivierungsmodalität speichern: Speichert die ausgewählte Art der Benutzeraktivierung. \\ Zugehörige Methode: determineAccountActivationType()
+								\item Guthaben aufladen: Erhöht den Kontostand eines bestimmten Benutzer um die eingegebene Summe. \\ Zugehörige Methode: depositAmountOnUserAccount()
+								\item Überziehungswert speichern: Speichert den Wert der möglichen Kontoüberziehung. \\ Zugehörige Methode: determineOverdraftCredit()
+								\item Statistiken anzeigen: Navigiert zur Anwendungsstatistik Seite. \\ Zugehörige Methode: loadStatisticPage()
 								\item Logo durchsuchen: Öffnet ein Fenster um das Logo der Website vom Computer auszuwählen.
-								\item Logo speichern: Speichert das benutzerdefinierte Logo für die Website.
-								\item Oberfläche CSS durchsuchen: Öffnet ein Fenster um die benutzerdefinierte CSS-Datei vom Computer auszuwählen.
-								\item Oberfläche CSS speichern: Speichert die benutzerdefinierte CSS-Datei.
-								\item Impressum bearbeiten: Navigiert zur Impressum bearbeiten Seite.
+								\item Logo speichern: Speichert das benutzerdefinierte Logo für die Website. \\ Zugehörige Methode: uploadLogo()
+								\item Oberfläche CSS durchsuchen: Öffnet ein Fenster um die benutzerdefinierte CSS-Datei vom Computer auszuwählen. 
+								\item Oberfläche CSS speichern: Speichert die benutzerdefinierte CSS-Datei. \\ Zugehörige Methode: uploadCustomStyleCSS()
+								\item Impressum bearbeiten: Navigiert zur Impressum bearbeiten Seite. \\ Zugehörige Methode: loadEditImprintPage()
 							\end{itemize}
 						\item \textbf{Inputs:}
 							\begin{itemize}
@@ -548,18 +547,16 @@
 				\paragraph{listUsers.xhtml}
 					KH\\
 					\begin{itemize}
-						\item \textbf{Beschreibung:} Hier werden alle im System registrierten Benutzer angezeigt. Einzelne Benutzer können nach verschiedenen Kriterien gefiltert werden oder der Administrator kann den Account von Benutzern aktiveren. 
+						\item \textbf{Beschreibung:} Hier werden alle im System registrierten Benutzer angezeigt. Einzelne Benutzer können vom Administrator nach verschiedenen Kriterien gefiltert werden. 
 						\item \textbf{Links:} -
 						\item \textbf{Buttons:}
 						\begin{itemize}
-							\item Suchen: Durch Drücken dieses Buttons werden die Benutzer nach den eingegebenen Kriterien durchsucht und in der Liste angezeigt.
-							\item Benutzer aktivieren: Durch Klicken dieses Buttons wird der Account des markierten Benutzers aktiviert.
+							\item Suchen: Durch Drücken dieses Buttons werden die Benutzer nach den eingegebenen Kriterien durchsucht und in der Liste angezeigt. \\ Zugehörige Methode: search()
 						\end{itemize}
 						\item \textbf{Inputs:}
 						\begin{itemize}
-							\item Kriterienauswahl: Hier kann der Kursleiter auswählen, ob er nach 'Benutzer-ID', 'Benutzername', 'Name' 'Benutzerrolle' oder 'nicht aktiviert' suchen will.
+							\item Kriterienauswahl: Hier kann der Kursleiter auswählen, ob er nach 'Benutzer-ID', 'Benutzername', 'Name' oder 'Benutzerrolle' suchen will.
 							\item Suchbegriff: Hier gibt der Kursleiter den entsprechenden Suchbegriff ein.
-							\item Benutzer aktivieren: Der Administrator kann durch Setzen des Häkchens Benutzer auswählen, um diese anschließend zu aktivieren.
 						\end{itemize}
 						\item \textbf{Outputs:}
 						\begin{itemize}
@@ -569,7 +566,6 @@
 						\item \textbf{BackingBean:}
 						\begin{itemize}
 							\item SearchUser.java
-							\item AccountManagement.java
 						\end{itemize}
 					\end{itemize}
 				
@@ -580,8 +576,9 @@
 						\item \textbf{Links:} -
 						\item \textbf{Buttons:}
 							\begin{itemize}
-								\item Durchsuchen: Öffnet ein Fenster um auf dem Computer nach einem Profilbild zu suchen.
-								\item Benutzer anlegen: Legt den Benutzer an.
+								\item Durchsuchen: Öffnet ein Fenster um auf dem Computer nach einem Profilbild zu suchen. 
+								\item Hochladen: Lädt das ausgewählte Profilbild hoch.\\ Zugehörige Methode: uploadprofilePic()
+								\item Benutzer anlegen: Legt den Benutzer an. \\ Zugehörige Methode: createUser()
 							\end{itemize}
 						\item \textbf{Inputs:}
 							\begin{itemize}
@@ -617,37 +614,34 @@
 						\item \textbf{Links:} -
 						\item \textbf{Buttons:}
 							\begin{itemize}
-								\item Kurs löschen: Über diesen Button löscht der Administrator den bestehenden Kurs.
-								\item Bearbeiten: Nach Klicken auf diesen Button können die Kursdaten geändert beziehungsweise eingetragen werden. Der Button trägt nun die Aufschrift 'Speichern' und ist mit dessen dazugehöriger Methode hinterlegt.
-								\item Speichern:  Durch Drücken dieses Buttons werden die vorgenommenen Änderungen gespeichert, sofern alle Daten korrekt eingegeben wurden. Bei erfolgreicher Speicherung erscheint der Button 'Bearbeiten' anstelle des Button 'Speichern'.
-								\item Löschen (Kursleiter): Durch Drücken dieses Buttons löscht der Administrator den ausgewählten Kursleiter aus diesem Kurs. 
-								\item Hinzufügen (Kursleiter): Durch Drücken dieses Buttons wird der angegebene Kursleiter zum Kurs hinzugefügt, sofern alle Eingabe korrekt waren.
-								\item Zu den Teilnehmern: Über diesen Button gelangt der Kursleiter auf die Seite 'Teilnehmer'.
-								\item Kurseinheit anlegen: Über diesen Button gelangt der Kursleiter auf die Seite 'Kurseinheit bearbeiten'.
-								\item Bearbeiten (Kurseinheiten): Über den Button 'Bearbeiten' bei der zu bearbeitenden Kurseinheit gelangt der Kursleiter auf die Seite 'Kurseinheit bearbeiten'.
+								\item Kurs anlegen:  Durch Drücken dieses Buttons wird der Kurs angelegt, sofern alle Daten korrekt eingegeben wurden. \\ Zugehörige Methode: createCourse()
+								\item Löschen (Kursleiter): Durch Drücken dieses Buttons löscht der Administrator den ausgewählten Kursleiter aus diesem Kurs. \\ Zugehörige Methode: removeCourseLeader()
+								\item Hinzufügen (Kursleiter): Durch Drücken dieses Buttons wird der angegebene Kursleiter zum Kurs hinzugefügt, sofern alle Eingabe korrekt waren.	\\ Zugehörige Methode: addCourseLeader()
 							\end{itemize}
 						\item \textbf{Inputs:}
 							\begin{itemize}
+								\item Kursname: Hier gibt der Administrator den Kursnamen ein.
 								\item Beschreibung: Hier gibt der Administrator die Beschreibung des Kurses ein.
-								\item Minimale Teilnehmerzahl: Hier gibt der Administrator die minimale Teilnehmerzahl des Kurses an.
+								\item Maximale Teilnehmerzahl: Hier gibt der Administrator die maximale Teilnehmerzahl des Kurses an.
 								\item Startdatum: Hier trägt der Administrator das Startdatum des Kurses ein.
 								\item Enddatum: Hier trägt der Administrator das Enddatum des Kurses ein.
 								\item Name (Kursleiter): Hier gibt der Administrator den Namen des Kursleiters ein, den er zum Kurs hinzufügen will.
 								\item E-Mail-Adresse (Kursleiter): Hier gibt der Administrator die entsprechende E-Mail-Adresse des Kursleiters ein.
+								\item Kursleiter-ID: Hier gibt der Administrator die entsprechende ID ein.
 								\item Löschen (Kursleiter): Hier kann der Administrator durch Setzen des Häkchens den Kursleiter markieren, um ihn anschließend über den Button 'Löschen' zu entfernen.
 							\end{itemize}
 						\item \textbf{Outputs:}
 							\begin{itemize}
 								\item Kurs-ID: Hier wird die automatisch generierte ID des Kurses ausgegeben.
 								\item Beschreibung (Fehlermeldung): Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
-								\item Minimale Teilnehmerzahl (Fehlermeldung): Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
+								\item Maximale Teilnehmerzahl (Fehlermeldung): Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
 								\item Startdatum (Fehlermeldung): Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
 								\item Enddatum (Fehlermeldung): Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
 								\item Name (Kursleiter (Fehlermeldung)): Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
 								\item E-Mail-Adresse (Kursleiter (Fehlermeldung)): Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
+								\item Kursleiter-ID (Fehlermeldung): Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
 								\item Löschen (Kursleiter (Fehlermeldung)): Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
 								\item Tabelle Auflistung Kursleiter: Hier werden Name und E-Mail-Adresse aller Kursleiter dieses Kurses aufgelistet.
-								\item Tabelle Auflistung Kurseinheiten: Hier werden alle Kurseinheiten des Kurses angezeigt.
 							\end{itemize}
 						\item \textbf{BackingBean:}
 							\begin{itemize}
@@ -662,7 +656,7 @@
 						\item \textbf{Links:} -
 						\item \textbf{Buttons:}
 							\begin{itemize}
-								\item Speichern: Durch Klicken dieses Buttons werden die Änderungen im Impressum gespeichert.
+								\item Speichern: Durch Klicken dieses Buttons werden die Änderungen im Impressum gespeichert. \\ Zugehörige Methode: editImprint()
 							\end{itemize}
 						\item \textbf{Inputs:}
 							\begin{itemize}
@@ -682,7 +676,7 @@
 						\item \textbf{Links:} -
 						\item \textbf{Buttons:}
 							\begin{itemize}
-								\item Anzeigen: Ausgewählte Statistik anzeigen.
+								\item Anzeigen: Ausgewählte Statistik anzeigen. \\ Zugehörige Methode: displayScheduler()
 							\end{itemize}
 						\item \textbf{Inputs:}
 							\begin{itemize}
