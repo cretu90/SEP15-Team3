@@ -26,24 +26,24 @@
 				\item \textbf{Beschreibung:} Hier kann, abhängig von der Benutzerrolle, durch die Seite navigiert werden.
 				\item \textbf{Links:}
 					\begin{itemize}
-						\item Suche: Navigiert zur Kurse durchsuchen Seite. 
+						\item Suche: Navigiert zur Kurse durchsuchen Seite. \hyperlink{search}{search.xhtml}
 						\item Sprache Deutsch: Ändert die angezeigte Sprache zu Deutsch.
 						\item Sprache Englisch: Ändert die angezeigte Sprache zu Englisch.
-						\item Profil (Benutzer): Navigiert zum eigenen Profil.
-						\item Meine Kurse (Benutzer): Navigiert zur Anzeige der eigenen Kurse.
-						\item Terminplaner (Benutzer): Navigiert zum persönlichen Terminplaner.
-						\item Seitenverwaltung (Administrator): Lässt den Seitenadministrator zur Seitenverwaltung navigieren.
-						\item Benutzer aktivieren: (Kursleiter, Administrator): Navigiert zur Benutzer aktivieren Seite.
+						\item Profil (Benutzer): Navigiert zum eigenen Profil. \hyperlink{profile}{profile.xhtml}
+						\item Meine Kurse (Benutzer): Navigiert zur Anzeige der eigenen Kurse. \hyperlink{myCourses}{myCourses.xhtml}
+						\item Terminplaner (Benutzer): Navigiert zum persönlichen Terminplaner. \hyperlink{scheduler}{scheduler.xhtml}
+						\item Seitenverwaltung (Administrator): Lässt den Seitenadministrator zur Seitenverwaltung navigieren. \hyperlink{adminManagement}{adminManagement.xhtml}
+						\item Benutzer aktivieren: (Kursleiter, Administrator): Navigiert zur Benutzer aktivieren Seite. \hyperlink{activateUsers}{activateUsers.xhtml}
 					\end{itemize}
 				\item \textbf{Buttons:}
 					\begin{itemize}
 						\item Logout (Benutzer, wenn eingeloggt): Loggt den aktuellen eingeloggten Benutzer aus. \\ Zugehörige Methode: logout()
-						\item Anmelden (Anonym): Navigiert zur Registrierungs- und Anmeldeseite. \\ Zugehörige Methode: login()
+						\item Anmelden (Anonym): Navigiert zur Registrierungs- und Anmeldeseite. \hyperlink{authenticate}{authenticate.xhtml} \\ Zugehörige Methode: login()
 					\end{itemize}
 				\item \textbf{Inputs:} -
 				\item \textbf{Outputs:}
 					\begin{itemize}
-						\item Logo: Zeigt verkleinertes, vom Administrator definiertes Logo der Website. Beim klick gelangt der Nutzer zur \hyperlink{index}{Startseite}.
+						\item Logo: Zeigt verkleinertes, vom Administrator definiertes Logo der Website. Beim klick gelangt der Nutzer zur Startseite \hyperlink{index}{index.xhtml}.
 					\end{itemize}
 				\item \textbf{BackingBean:}
 					\begin{itemize}
@@ -58,9 +58,9 @@
 				\item \textbf{Links:} -
 				\item \textbf{Buttons:}
 					\begin{itemize}
-						\item AGB: Navigiert zum Facelet mit den Allgemeinen Geschäftsbedingungen. Zugehörige Methode: loadAGBPage()
-						\item Impressum: Navigiert zum Facelet mit dem Impressum der Webanwendung. Zugehörige Methode: loadImprintPage()
-						\item Hilfe: Navigiert zur Hilfeseite. Zugehörige Methode: loadHelpPage()
+						\item AGB: Navigiert zum Facelet mit den Allgemeinen Geschäftsbedingungen, also \hyperlink{agb}{agb.xhtml}. Zugehörige Methode: loadAGBPage()
+						\item Impressum: Navigiert zum Facelet mit dem Impressum der Webanwendung, also \hyperlink{imprint}{imprint.xhtml}. Zugehörige Methode: loadImprintPage()
+						\item Hilfe: Navigiert zur Hilfeseite, also COMPLETEuserHelp.html. Zugehörige Methode: loadHelpPage()
 					\end{itemize}
 				\item \textbf{Inputs:} -
 				\item \textbf{Outputs:} -
@@ -233,14 +233,14 @@
 							\begin{itemize}
 								\item Anmelden (Benutzer, noch nicht angemeldet): Meldet den Benutzer zum Kurs an. \\ Zugehörige Methode: signUpForCourse()
 								\item Abmelden (Benutzer, wenn angemeldet): Meldet den Benutzer vom Kurs ab. \\ Zugehörige Methode: signOffFromCourse()
-								\item Teilnehmer anzeigen (Kursleiter): Zeigt die zum Kurs angemeldeten Benutzer an. \\ Zugehörige Methode: loadParticipantsPage()
+								\item Teilnehmer anzeigen (Benutzer): Zeigt die zum Kurs angemeldeten Benutzer an. \hyperlink{listParticipants}{listParticipants.xhtml} \\ Zugehörige Methode: loadParticipantsPage()
 								\item Alle auswählen (Benutzer, zum Kurs angemeldet): Wählt alle Kurseinheiten des Kurses aus. \\ Zugehörige Methode: selectAllCourseUnits()
 								\item Speichern (Benutzer, zum Kurs angemeldet): Speichert alle ausgewählten Kurseinheiten und meldet den Nutzer dazu an. \\ Zugehörige Methode: signUpForCourseUnits()
 								\item Bearbeiten (Administrator, noch nicht im Bearbeitungsmodus): Ermöglicht die Bearbeitung der einzelnen Kursdetails. \\ Zugehörige Methode: editCourse()
 								\item Speichern (Administrator, im Bearbeitungsmodus): Speichert alle vorgenommenen Kursänderungen. \\ Zugehörige Methode: saveCourse()
 								\item Hinzufügen (Administrator): Fügt einen Kursleiter zum Kurs hinzu. Zugehörige Methode: addCourseLeader()
 								\item Kurseinheit anlegen (Kursleiter): Erstellt eine neue Kurseinheit zum Kurs. \\ Zugehörige Methode: loadCreateCourseUnitPage()
-								\item Kurseinheit bearbeiten (Kursleiter): Ermöglicht die Bearbeitung einer einzelnen Kurseinheit. \\ Zugehörige Methode: loadEditCourseUnitPage()
+								\item Kurseinheit bearbeiten (Kursleiter): Ermöglicht die Bearbeitung einer einzelnen Kurseinheit. \hyperlink{editCourseUnit}{editCourseUnit.xhtml} \\ Zugehörige Methode: loadEditCourseUnitPage()
 								\item Kurs löschen (Administrator): Löscht den Kurs. \\ Zugehörige Methode: deleteCourse()
 							\end{itemize}
 						\item \textbf{Inputs:}
@@ -534,19 +534,19 @@
 						\item \textbf{Links:} -
 						\item \textbf{Buttons:}
 							\begin{itemize}
-								\item Benutzer verwalten: Navigiert zu Benutzer verwalten Seite. \\ Zugehörige Methode: loadManageUserPage()
-								\item Benutzer anlegen: Navigiert zu Benutzer anlegen Seite. \\ Zugehörige Methode: loadCreateNewUserPage()
-								\item Kurse verwalten: Navigiert zu Kurse verwalten Seite. \\ Zugehörige Methode: loadManageCoursesPage()
-								\item Kurs anlegen: Navigiert zu Kurs anlegen Seite. \\ Zugehörige Methode: loadCreateNewCoursePage()
+								\item Benutzer verwalten: Navigiert zu Benutzer verwalten Seite. \hyperlink{listUsers}{listUsers.xhtml} \\ Zugehörige Methode: loadManageUserPage()
+								\item Benutzer anlegen: Navigiert zu Benutzer anlegen Seite. \hyperlink{createUser}{createUser.xhtml} \\ Zugehörige Methode: loadCreateNewUserPage()
+								\item Kurse verwalten: Navigiert zu Kurse verwalten Seite. \hyperlink{search}{search.xhtml}\\ Zugehörige Methode: loadManageCoursesPage()
+								\item Kurs anlegen: Navigiert zu Kurs anlegen Seite. \hyperlink{createCourse}{createCourse.xhtml} \\ Zugehörige Methode: loadCreateNewCoursePage()
 								\item Aktivierungsmodalität speichern: Speichert die ausgewählte Art der Benutzeraktivierung. \\ Zugehörige Methode: determineAccountActivationType()
 								\item Guthaben aufladen: Erhöht den Kontostand eines bestimmten Benutzer um die eingegebene Summe. \\ Zugehörige Methode: depositAmountOnUserAccount()
 								\item Überziehungswert speichern: Speichert den Wert der möglichen Kontoüberziehung. \\ Zugehörige Methode: determineOverdraftCredit()
-								\item Statistiken anzeigen: Navigiert zur Anwendungsstatistik Seite. \\ Zugehörige Methode: loadStatisticPage()
+								\item Statistiken anzeigen: Navigiert zur Anwendungsstatistik Seite. \hyperlink{statistics}{statistics.xhtml} \\ Zugehörige Methode: loadStatisticPage()
 								\item Logo durchsuchen: Öffnet ein Fenster um das Logo der Website vom Computer auszuwählen.
 								\item Logo speichern: Speichert das benutzerdefinierte Logo für die Website. \\ Zugehörige Methode: uploadLogo()
 								\item Oberfläche CSS durchsuchen: Öffnet ein Fenster um die benutzerdefinierte CSS-Datei vom Computer auszuwählen. 
 								\item Oberfläche CSS speichern: Speichert die benutzerdefinierte CSS-Datei. \\ Zugehörige Methode: uploadCustomStyleCSS()
-								\item Impressum bearbeiten: Navigiert zur Impressum bearbeiten Seite. \\ Zugehörige Methode: loadEditImprintPage()
+								\item Impressum bearbeiten: Navigiert zur Impressum bearbeiten Seite. \hyperlink{editImprint}{editImprint.xhtml} \\ Zugehörige Methode: loadEditImprintPage()
 							\end{itemize}
 						\item \textbf{Inputs:}
 							\begin{itemize}
@@ -566,7 +566,7 @@
 								\item PaymentOffline.java
 							\end{itemize}
 					\end{itemize}
-				
+											
 				\paragraph{listUsers.xhtml} \hypertarget{listUsers}
 					KH\\
 					\begin{itemize}
