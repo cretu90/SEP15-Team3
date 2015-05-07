@@ -480,30 +480,25 @@
 							\end{itemize}
 					\end{itemize}
 				
-				\paragraph{listUsers.xhtml}
+				\paragraph{activateUsers.xhtml}
 					KH\\
 					\begin{itemize}
-						\item \textbf{Beschreibung:} Hier werden alle im System registrierten Benutzer angezeigt. Einzelne Benutzer können nach verschiedenen Kriterien gefiltert werden oder der Administrator kann den Account von Benutzern aktiveren. 
+						\item \textbf{Beschreibung:} Hier werden alle im System noch nicht aktivierten Benutzer angezeigt. Diese können nun vom Kursleiter oder Administrator aktiviert werden. 
 						\item \textbf{Links:} -
 						\item \textbf{Buttons:}
 							\begin{itemize}
-								\item Suchen: Durch Drücken dieses Buttons werden die Benutzer nach den eingegebenen Kriterien durchsucht und in der Liste angezeigt.
-								\item Benutzer aktivieren: Durch Klicken dieses Buttons wird der Account des markierten Benutzers aktiviert.
+								\item Benutzer aktivieren: Durch Klicken dieses Buttons wird der Account des markierten Benutzers aktiviert. Zugehörige Methode: activateAccounts()
 							\end{itemize}
 						\item \textbf{Inputs:}
 							\begin{itemize}
-								\item Kriterienauswahl: Hier kann der Kursleiter auswählen, ob er nach 'Benutzer-ID', 'Benutzername', 'Name' 'Benutzerrolle' oder 'nicht aktiviert' suchen will.
-								\item Suchbegriff: Hier gibt der Kursleiter den entsprechenden Suchbegriff ein.
-								\item Benutzer aktivieren: Der Administrator kann durch Setzen des Häkchens Benutzer auswählen, um diese anschließend zu aktivieren.
+								\item Benutzer aktivieren: Der Kursleiter kann durch Setzen des Häkchens Benutzer auswählen, um diese anschließend zu aktivieren.
 							\end{itemize}
 						\item \textbf{Outputs:}
 							\begin{itemize}
-								\item Tabelle Auflistung Benutzerdaten: Hier werden ausgewählte Daten aller im System registrierten Benutzer angezeigt.
-								\item Suchbegriff (Fehlermeldung): Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
+								\item Tabelle Auflistung Benutzerdaten: Hier werden ausgewählte Daten aller im System registrierten, aber noch nicht aktivierten Benutzer angezeigt.
 							\end{itemize}
 						\item \textbf{BackingBean:}
 							\begin{itemize}
-								\item SearchUser.java
 								\item AccountManagement.java
 							\end{itemize}
 					\end{itemize}
@@ -548,6 +543,34 @@
 								\item SystemConfiguration.java
 								\item PaymentOffline.java
 							\end{itemize}
+					\end{itemize}
+				
+				\paragraph{listUsers.xhtml}
+					KH\\
+					\begin{itemize}
+						\item \textbf{Beschreibung:} Hier werden alle im System registrierten Benutzer angezeigt. Einzelne Benutzer können nach verschiedenen Kriterien gefiltert werden oder der Administrator kann den Account von Benutzern aktiveren. 
+						\item \textbf{Links:} -
+						\item \textbf{Buttons:}
+						\begin{itemize}
+							\item Suchen: Durch Drücken dieses Buttons werden die Benutzer nach den eingegebenen Kriterien durchsucht und in der Liste angezeigt.
+							\item Benutzer aktivieren: Durch Klicken dieses Buttons wird der Account des markierten Benutzers aktiviert.
+						\end{itemize}
+						\item \textbf{Inputs:}
+						\begin{itemize}
+							\item Kriterienauswahl: Hier kann der Kursleiter auswählen, ob er nach 'Benutzer-ID', 'Benutzername', 'Name' 'Benutzerrolle' oder 'nicht aktiviert' suchen will.
+							\item Suchbegriff: Hier gibt der Kursleiter den entsprechenden Suchbegriff ein.
+							\item Benutzer aktivieren: Der Administrator kann durch Setzen des Häkchens Benutzer auswählen, um diese anschließend zu aktivieren.
+						\end{itemize}
+						\item \textbf{Outputs:}
+						\begin{itemize}
+							\item Tabelle Auflistung Benutzerdaten: Hier werden ausgewählte Daten aller im System registrierten Benutzer angezeigt.
+							\item Suchbegriff (Fehlermeldung): Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
+						\end{itemize}
+						\item \textbf{BackingBean:}
+						\begin{itemize}
+							\item SearchUser.java
+							\item AccountManagement.java
+						\end{itemize}
 					\end{itemize}
 				
 				\paragraph{createUser.xhtml} \hypertarget{createUser}
