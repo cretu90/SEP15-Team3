@@ -123,11 +123,11 @@
 		\item \method{public Course getCourse()}
 		\item \method{public void setCourse(Course course)}
 		\item \method{public boolean registeredForCourseNews()}
-		\item \method{public boolean signUpForCourse() throws CourseRegistrationException}
-		\item \method{public boolean signOffForCourse() throws CourseRegistrationException}
+		\item \method{public String signUpForCourse() throws CourseRegistrationException}
+		\item \method{public String signOffFromCourse() throws CourseRegistrationException}
 		\item \method{public void selectAllCourseUnits()}
-		\item \method{public boolean signUpForCourseUnits() throws CourseRegistrationException}
-		\item \method{public boolean signOffForCourseUnits() throws CourseRegistrationException}
+		\item \method{public String signUpForCourseUnits() throws CourseRegistrationException}
+		\item \method{public String signOffFromCourseUnits() throws CourseRegistrationException}
 		\item \method{public ArrayList<CourseUnit> getSelectedCourseUnits()}
 		\item \method{public void setSelectedCourseUnits(ArrayList<CourseUnit> selectedCourseUnits)}
 		\item \method{public ArrayList<User> getLeadersOfCourse()}
@@ -153,10 +153,10 @@
 		 \item \method{public void editCourseUnit()}
 		 \item \method{public boolean saveCourseUnit(boolean editAllIfRegular)}
 		 \item \method{public boolean deleteCourseUnit(boolean deleteAllIfRegular)}
-		 \item \method{public boolean addUsersToCourseUnit(ArrayList<User> user)}
+		 \item \method{public boolean addUserToCourseUnit(User user)}
 		 \item \method{public User getUserToAdd()}
 		 \item \method{public void setUserToAdd(User userToAdd)}
-		 \item \method{public boolean deleteUserFromCourse()}
+		 \item \method{public boolean deleteUsersFromCourse()}
 		 \item \method{public ArrayList<User> getUserToDelete()}
 		 \item \method{public void setUsersToDelete(ArrayList<User> usersToDelete)}
 		 \item \method{public boolean getIsRegularCourseUnit()}
@@ -233,7 +233,7 @@
 	\end{itemize}
 	
 	\subsection{Klasse AccountManagment}
-	\kursiv{ManagedBean, RequestScoped}\\
+	\kursiv{ManagedBean, ViewScoped}\\
 	Die Klasse ist für die Aktivierung von Benutzeraccounts durch einen Kursleiter oder Administrator zuständig.
 	\begin{itemize}
 		\item \method{public boolean activateAccounts()}
@@ -298,6 +298,7 @@
 		\item \method{public String loadManageUserPage()}
 		\item \method{public String loadCreateNewCoursePage()}
 		\item \method{public String loadManageCoursesPage()}
+		\item \method{public String loadStatisticPage()}
 		\item \method{public System getSystem()}
 		\item \method{public void setSystem(System system)}
 		\item \method{public SessionUser getSessionUser()}
@@ -305,7 +306,7 @@
 	\end{itemize}
 	
 	\subsection{Klasse PaymentOnline}
-	\kursiv{ManagedBean, ViewScoped}\\
+	\kursiv{ManagedBean, RequestScoped}\\
 	Die Klasse ist zuständig für die Online - Aufladung des Guthabenkontos von Benutzern per Kreditkarte. Die Kreditkartenabwicklung erfolgt über die InfoSun-Bank.
 	\begin{itemize}
 		\item \method{public boolean depositAmount() throws BankAccountException}
@@ -318,7 +319,7 @@
 	\end{itemize}
 	
 	\subsection{Klasse PaymentOffline}
-	\kursiv{ManagedBean, ViewScoped}\\
+	\kursiv{ManagedBean, RequestScoped}\\
 	Die Klasse ist zuständig für die Offline - Aufladung des Guthabenkontos von Benutzern durch den Administrator und um die Bezahlungseinstellungen zu verwalten.
 	\begin{itemize}
 		\item \method{public boolean depositAmountOnUserAccount() throws BankAccountException}
@@ -346,7 +347,7 @@
 	\end{itemize}
 	
 	\subsection{Klasse EditImprint}
-	\kursiv{ManagedBean, ViewScoped}\\
+	\kursiv{ManagedBean, RequestScoped}\\
 	Die Klasse ist für die Darstellung und Bearbeitung des Impressums verantwortlich.
 	\begin{itemize}
 		\item \method{public void editImprint(String imprint)}
@@ -449,6 +450,7 @@
 	\end{itemize}
 	
 	\subsection{Klasse Course}
+	Diese Klasse stellt die Kurse des Systems dar.
 	\begin{itemize}
 		\item \method {public String getTitle()}
 		\item \method {public String getDiscription()}
@@ -456,6 +458,7 @@
 		\item \method {public Date getStartdate()}
 		\item \method {public Date getEnddate()}
 		\item \method {public int getMaxUsers()}
+		\item \method {public String getCourseImage()}
 		\item \method {public ArrayList<CourseUnit> getCourseUnits()}
 		\item \method {public ArrayList<User> getCoursAdmins()}
 		\item \method {public ArrayList<User> getUsers()}
@@ -469,11 +472,13 @@
 		\item \method {public void setCourseUnits(ArrayList<CourseUnit> courseUnits) }
 		\item \method {public void setCourseAdmins(ArrayList<User> coursAdmins)}
 		\item \method {public void setUsers(ArrayList<User> users)}
-		\item \method {public void setUsersToInform(ArrayList<User> usersToInform)}  
+		\item \method {public void setUsersToInform(ArrayList<User> usersToInform)} 
+		\item \method {public void setCourseImage(String image)} 
 	\end{itemize}
 	
 	
 	\subsection{Klasse CourseUnit}
+	Diese Klasse stellt die Kurseinheiten eines Kurses im Systems dar.
 	\begin{itemize}
 		\item \method {public String getTitle()}
 		\item \method {public String getDiscription()}
@@ -487,6 +492,7 @@
 		\item \method {public Cylce getCycle()}
 		\item \method {public ArrayList<User> getUsers()}
 		\item \method {public String getCourseImage()}
+		\item \method {public String getLocation()}
 		\item \method {public void setTitle(String title)}
 		\item \method {public void setDiscription(String discription)}
 		\item \method {public void setStarttime(Date startingTime)}
@@ -498,10 +504,12 @@
 		\item \method {public void setMinUsers(int minUsers)}
 		\item \method {public void setCourseAdmin(User courseAdmin)}
 		\item \method {public void setUsers(ArrayList<User> users)} 
-		\item \method{public void setCourseImage(String image)}
+		\item \method {public void setCourseImage(String image)}
+		\item \method {public void setLocation(String location)}
 		\end{itemize}
 	
 	\subsection{Klasse Cycle}
+	Die Klasse Cycle wird benutzt um den Zyklus von regelmäßigen Kurseinheiten zu speichern.
 	\begin{itemize}
 		\item \method {public Date getStarttime()}
 		\item \method {public int getTurnus()}
@@ -568,15 +576,13 @@
 	\begin{itemize}
 		\item \method {public boolean equals(Object other)}
 		\item \method {public String getCountry()}
-		\item \method {public String getTown()}
+		\item \method {public String getCity()}
 		\item \method {public String getStreet()}
-		\item \method {public String getRoom()}
 		\item \method {public int getHouseNumber()}
 		\item \method {public int getZipCode()}
 		\item \method {public void setCountry(String country)}
-		\item \method {public void setTown(String town)}
+		\item \method {public void setCity(String city)}
 		\item \method {public void setStreet(String street)}
-		\item \method {public void setRoom(String room)}
 		\item \method {public void setHouseNumber(int houseNumber)}
 		\item \method {public void setZipCode(int zipCode)}
 		
@@ -642,32 +648,33 @@
 	    \class{UserInteraction}
 		Dieses Interface gibt vor, welche Methoden für Datenbankanfragen für das Erhalten bzw. das Schreiben von Benutzerdaten vorhanden sein müssen.
 		\begin{itemize}
-			\item \method{public boolean createUser(User user, Address address)}
+			\item \method{public void createUser(User user, Address address)}
 			\item \method{public ArrayList<User> getUsers(Pagination pagination)}
 			\item \method{public ArrayList<User> getUsers(Pagination pagination, String searchString)}
 			\item \method{public ArrayList<User> getUsersOrdered(Pagination pagination, String searchString, String orderParam)}
 			\item \method{public User getUser(int userID)}
 			\item \method{public int getUserID(String username)}
-			\item \method{public boolean updateUser(User user, Address address)}
-			\item \method{public boolean deleteUser(int userID)}
+			\item \method{public void updateUser(User user, Address address)}
+			\item \method{public void deleteUser(int userID)}
 			\item \method{public ArrayList<Course> getCoursesLeadedBy(int userID, Pagination pagination)}
 		\end{itemize}
 		
 		\class{CourseInteraction}
 		Dieses Interface gibt vor, welche Methoden für Datenbankanfragen für das Erhalten bzw. das Schreiben von Kursdaten vorhanden sein müssen.
 		\begin{itemize}
-			\item \method{public boolean createCourse(Course course, Address address)}
+			\item \method{public void createCourse(Course course, Address address)}
 			\item \method{public ArrayList<Course> getCourses(Pagination pagination)}
 			\item \method{public ArrayList<Course> getCourses(Pagination pagination, String searchString)}
 			\item \method{public ArrayList<Course> getCoursesOrdered(Pagination pagination, String searchString, String orderParam)}
 			\item \method{public ArrayList<User> getLeaders(int courseID)}
 			\item \method{public Course getCourse(int courseID)}
-			\item \method{public boolean updateCourse(Course course, Address address)}
-			\item \method{public boolean deleteCourse(int courseID)}
-			\item \method{public boolean addUserToCourse(int userID)}
-			\item \method{public boolean removeUserFromCourse(int userID)}
-			\item \method{public boolean addLeaderToCourse(int userID)}
-			\item \method{public boolean removeLeaderFromCourse(int userID)}
+			\item \method{public ArrayList<Course> getCoursesOf(int UserID)}
+			\item \method{public void updateCourse(Course course, Address address)}
+			\item \method{public void deleteCourse(int courseID)}
+			\item \method{public void addUserToCourse(int userID)}
+			\item \method{public void removeUserFromCourse(int userID)}
+			\item \method{public void addLeaderToCourse(int userID)}
+			\item \method{public void removeLeaderFromCourse(int userID)}
 		\end{itemize}
 		
 		\class{CourseUnitInteraction}
@@ -676,10 +683,11 @@
 			\item \method{public boolean createCourseUnit(CourseUnit courseUnit, Address address)}
 			\item \method{public CourseUnit getCourseUnit(int courseUnitID)}
 			\item \method{public ArrayList<CourseUnit> getCourseUnitsFromCourse(int courseID, Pagination pagination)}
-			\item \method{public boolean updateCourseUnit(CourseUnit courseUnit, Address address)}
-			\item \method{public boolean deleteCourseUnit(int courseUnitID)}
-			\item \method{public boolean addUserToCourseUnit(int userID)}
-			\item \method{public boolean removeUserFromCourseUnit(int userID)}
+			\item \method{public ArrayList<CourseUnit> getCourseUnitsOf(int userID)}
+			\item \method{public void updateCourseUnit(CourseUnit courseUnit, Address address)}
+			\item \method{public void deleteCourseUnit(int courseUnitID)}
+			\item \method{public void addUserToCourseUnit(int userID)}
+			\item \method{public void removeUserFromCourseUnit(int userID)}
 		\end{itemize}
 		
 		\class{StatisticsInteraction}
@@ -700,74 +708,73 @@
 		\class{SetupAdmin}
 		Diese Klasse ist zuständig für das Erstellen des ersten Systemadministrators.
 		\begin{itemize}
-			\item \method{public boolean createInitialAdmin() throws InvalidDatabaseTransferException}
-			\item \method{public boolean createDefaultImprint()}
+			\item \method{public void createInitialAdmin() throws InvalidDatabaseTransferException}
 		\end{itemize}
 	
 		\class{DatabaseTableCreator}
 		Diese Klasse ist zuständig für das Erstellen der Tabellen in der Datenbank, falls diese noch nicht existieren.
 		\begin{itemize}
-			\item \method{public static boolean buildUpDatabase() throws InvalidDatabaseTransferException}
+			\item \method{public static void buildUpDatabase() throws InvalidDatabaseTransferException}
 		\end{itemize}
 	
 		\class{DatabaseTableDetroyer}
 		Diese Klasse ist zuständig für das Löschen der Tabellen in der Datenbank, falls diese existieren.
 		\begin{itemize}
-			\item \method{public static boolean destroyDatabaseTables() throws InvalidDatabaseTransferException}
+			\item \method{public static void destroyDatabaseTables() throws InvalidDatabaseTransferException}
 		\end{itemize}
 	
 	\subsection{Package DAO}
-		\class{User}
+		\class{UserDAO}
 		Diese Klasse stellt Datenbankanfragen zur Verfügung um Benutzerdaten zu erhalten oder in die
 		Datenbank zu schreiben.\\
 		Sämtliche Methoden können die \kursiv{InvalidDatabaseTransferException} werfen.
 		\begin{itemize}
-			\item \method{public boolean createUser(User user, Address address)}
+			\item \method{public void createUser(User user, Address address)}
 			\item \method{public ArrayList<User> getUsers(Pagination pagination)}
 			\item \method{public ArrayList<User> getUsers(Pagination pagination, String searchString)}
 			\item \method{public ArrayList<User> getUsersOrdered(Pagination pagination, String searchString, String orderParam)}
 			\item \method{public User getUser(int userID)}
 			\item \method{public int getUserID(String username)}
-			\item \method{public boolean updateUser(User user, Address address)}
-			\item \method{public boolean deleteUser(int userID)}
+			\item \method{public void updateUser(User user, Address address)}
+			\item \method{public void deleteUser(int userID)}
 			\item \method{public ArrayList<Course> getCoursesLeadedBy(int userID, Pagination pagination)}
 			\end{itemize}
 		
-		\class{Course}
+		\class{CourseDAO}
 		Diese Klasse stellt Datenbankanfragen zur Verfügung um Kursdaten zu erhalten oder in die Datenbank
 		zu schreiben.\\
 		Sämtliche Methoden können die \kursiv{InvalidDatabaseTransferException} werfen.
 		\begin{itemize}
-			\item \method{public boolean createCourse(Course course, Address address)}
+			\item \method{public void createCourse(Course course, Address address)}
 			\item \method{public ArrayList<Course> getCourses(Pagination pagination)}
 			\item \method{public ArrayList<Course> getCourses(Pagination pagination, String searchString)}
 			\item \method{public ArrayList<Course> getCoursesOrdered(Pagination pagination, String searchString, String orderParam)}
 			\item \method{public ArrayList<User> getLeaders(int courseID)}
 			\item \method{public Course getCourse(int courseID)}
 			\item \method{public ArrayList<Course> getCoursesOf(int UserID)}
-			\item \method{public boolean updateCourse(Course course, Address address)}
-			\item \method{public boolean deleteCourse(int courseID)}
-			\item \method{public boolean addUserToCourse(int userID)}
-			\item \method{public boolean removeUserFromCourse(int userID)}
-			\item \method{public boolean addLeaderToCourse(int userID)}
-			\item \method{public boolean removeLeaderFromCourse(int userID)}
+			\item \method{public void updateCourse(Course course, Address address)}
+			\item \method{public void deleteCourse(int courseID)}
+			\item \method{public void addUserToCourse(int userID)}
+			\item \method{public void removeUserFromCourse(int userID)}
+			\item \method{public void addLeaderToCourse(int userID)}
+			\item \method{public void removeLeaderFromCourse(int userID)}
 		\end{itemize}
 		
-		\class{CourseUnit}
+		\class{CourseUnitDAO}
 		Diese Klasse stellt Datenbankanfragen zur Verfügung um Kurseinheitsdaten zu erhalten oder in die Datenbank zu schreiben.\\
 		Sämtliche Methoden können die \kursiv{InvalidDatabaseTransferException} werfen.
 		\begin{itemize}
-			\item \method{public boolean createCourseUnit(CourseUnit courseUnit, Address address)}
+			\item \method{public void createCourseUnit(CourseUnit courseUnit, Address address)}
 			\item \method{public CourseUnit getCourseUnit(int courseUnitID)}
 			\item \method{public ArrayList<CourseUnit> getCourseUnitsFromCourse(int courseID, Pagination pagination)}
-			\item \method{public boolean updateCourseUnit(CourseUnit courseUnit, Address address)}
-			\item \method{public boolean deleteCourseUnit(int courseUnitID)}
-			\item \method{public boolean addUserToCourseUnit(int userID)}
-			\item \method{public boolean removeUserFromCourseUnit(int userID)}
-			\item \method{poblic boolean getCourseUnitsOf(int userID)}
+			\item \method{public void updateCourseUnit(CourseUnit courseUnit, Address address)}
+			\item \method{public void deleteCourseUnit(int courseUnitID)}
+			\item \method{public void addUserToCourseUnit(int userID)}
+			\item \method{public void removeUserFromCourseUnit(int userID)}
+			\item \method{public ArrayList<CourseUnit> getCourseUnitsOf(int userID)}
 		\end{itemize}
 		
-		\class{Statistic}
+		\class{StatisticDAO}
 		Diese Klasse stellt Datenbankanfragen zur Verfügung um Statistikdaten zu erhalten oder in die Datenbank
 		zu schreiben.\\
 		Sämtliche Methoden können die \kursiv{InvalidDatabaseTransferException} werfen.
@@ -1019,28 +1026,19 @@
 		\method{public void validate()}
 	\end{itemize}
 		
-	\section{Verwendete Libraries}
-	\begin{tiny}
-		TF\\
-	\end{tiny}\\
-	In dem System zusätzlich verwendete Libraries:
-	\begin{itemize}
-		\item Commons Fileupload: Library für das Hochladen von Dateien.
-		\item JavaMail: Library für das Versenden von E-Mails.
-		\item JFreeChart: Library für die Erstellung von Diagrammen.
-		\item Log4J: Library für das Loggen von Meldungen.
-	\end{itemize}
-
 	\section{Klassendiagramm}
 	\begin{tiny}
 		Diagramm: SeSc und TF\ \ Layout: SeSc\\
 	\end{tiny}\\
+	In der nachfolgenden Abbildung 3.1 ist das UML-Klassendiagramm des ofCourse-Systems dargestellt.\\
 	Um sich dieses Diagramm genauer ansehen zu können, muss es mit einem PDF-Reader
 	geöffnet werden, der eine Zoom-Funktion besitzt.
 	
-	\begin{center}
-		\includegraphics[width=1.0\linewidth]{Grafiken/OfCourseFinalumlcd}
-		Abbildung: UML-Klassendiagramm des ofCourse-Systems
-	\end{center}
+		\begin{figure}[h]
+			\centering
+			\includegraphics[width=1.0\linewidth]{Grafiken/OfCourseFinalumlcd}
+			\caption{UML-Klassendiagramm des ofCourse-Systems}
+		\end{figure}
+	
 
 
