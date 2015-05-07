@@ -28,9 +28,9 @@
 				\item \textbf{Links:} -
 				\item \textbf{Buttons:}
 					\begin{itemize}
-						\item AGB: Navigiert zum Facelet mit den Allgemeinen Geschäftsbedingungen.
-						\item Impressum: Navigiert zum Facelet mit dem Impressum der Webanwendung.
-						\item Hilfe: Navigiert zur Hilfeseite.
+						\item AGB: Navigiert zum Facelet mit den Allgemeinen Geschäftsbedingungen. Zugehörige Methode: loadAGBPage()
+						\item Impressum: Navigiert zum Facelet mit dem Impressum der Webanwendung. Zugehörige Methode: loadImprintPage()
+						\item Hilfe: Navigiert zur Hilfeseite. Zugehörige Methode: loadHelpPage()
 					\end{itemize}
 				\item \textbf{Inputs:} -
 				\item \textbf{Outputs:} -
@@ -153,7 +153,7 @@
 						\item \textbf{Beschreibung:} Hier kann, abhängig von der Benutzerrolle, durch die Seite navigiert werden.
 						\item \textbf{Links:}
 							\begin{itemize}
-								\item Suche: Navigiert zur Kurse durchsuchen Seite.
+								\item Suche: Navigiert zur Kurse durchsuchen Seite. 
 								\item Sprache Deutsch: Ändert die angezeigte Sprache zu Deutsch.
 								\item Sprache Englisch: Ändert die angezeigte Sprache zu Englisch.
 								\item Profil (Benutzer): Navigiert zum eigenen Profil.
@@ -163,8 +163,8 @@
 							\end{itemize}
 						\item \textbf{Buttons:}
 							\begin{itemize}
-								\item Logout (Benutzer, wenn eingeloggt): Loggt den aktuellen eingeloggten Benutzer aus.
-								\item Anmelden (Anonym): Navigiert zur Registrierungs- und Anmeldeseite.
+								\item Logout (Benutzer, wenn eingeloggt): Loggt den aktuellen eingeloggten Benutzer aus. Zugehörige Methode: logout()
+								\item Anmelden (Anonym): Navigiert zur Registrierungs- und Anmeldeseite. Zugehörige Methode: login()
 							\end{itemize}
 						\item \textbf{Inputs:} -
 						\item \textbf{Outputs:}
@@ -186,8 +186,8 @@
 						\item \textbf{Links:} -
 						\item \textbf{Buttons:}
 							\begin{itemize}
-								\item Anzeigen: Zeigt die Angebote im ausgewählten Zeitraum an.
-								\item Suchen: Durchsucht die Website nach dem eingegebenen Suchbegriff mittels gewählten Suchobjekt.
+								\item Anzeigen: Zeigt die Angebote im ausgewählten Zeitraum an. Zugehörige Methode: displayCoursesInSpecificPeriod()
+								\item Suchen: Durchsucht die Website nach dem eingegebenen Suchbegriff mittels gewählten Suchobjekt. Zugehörige Methode: search()
 							\end{itemize}
 						\item \textbf{Inputs:}
 							\begin{itemize}
@@ -212,17 +212,17 @@
 						\item \textbf{Links:} -
 						\item \textbf{Buttons:}
 							\begin{itemize}
-								\item Anmelden (Benutzer, noch nicht angemeldet): Meldet den Benutzer zum Kurs an.
-								\item Abmelden (Benutzer, wenn angemeldet): Meldet den Benutzer vom Kurs ab.
-								\item Teilnehmer anzeigen (Kursleiter): Zeigt die zum Kurs angemeldeten Benutzer an.
-								\item Alle auswählen (Benutzer, zum Kurs angemeldet): Wählt alle Kurseinheiten des Kurses aus.
-								\item Speichern (Benutzer, zum Kurs angemeldet): Speichert alle ausgewählten Kurseinheiten und meldet den Nutzer dazu an.
-								\item Bearbeiten (Administrator, noch nicht im Bearbeitungsmodus): Ermöglicht die Bearbeitung der einzelnen Kursdetails.
-								\item Speichern (Administrator, im Bearbeitungsmodus): Speichert alle vorgenommenen Kursänderungen.
-								\item Hinzufügen (Administrator): Fügt einen Kursleiter zum Kurs hinzu.
-								\item Kurseinheit anlegen (Kursleiter): Erstellt eine neue Kurseinheit zum Kurs.
-								\item Kurseinheit bearbeiten (Kursleiter): Ermöglicht die Bearbeitung einer einzelnen Kurseinheit.
-								\item Kurs löschen (Administrator): Löscht den Kurs.
+								\item Anmelden (Benutzer, noch nicht angemeldet): Meldet den Benutzer zum Kurs an. Zugehörige Methode: signUpForCourse()
+								\item Abmelden (Benutzer, wenn angemeldet): Meldet den Benutzer vom Kurs ab. Zugehörige Methode: signOffFromCourse()
+								\item Teilnehmer anzeigen (Kursleiter): Zeigt die zum Kurs angemeldeten Benutzer an. Zugehörige Methode: loadParticipantsPage()
+								\item Alle auswählen (Benutzer, zum Kurs angemeldet): Wählt alle Kurseinheiten des Kurses aus. Zugehörige Methode: selectAllCourseUnits()
+								\item Speichern (Benutzer, zum Kurs angemeldet): Speichert alle ausgewählten Kurseinheiten und meldet den Nutzer dazu an. Zugehörige Methode: signUpForCourseUnits()
+								\item Bearbeiten (Administrator, noch nicht im Bearbeitungsmodus): Ermöglicht die Bearbeitung der einzelnen Kursdetails. Zugehörige Methode: editCourse()
+								\item Speichern (Administrator, im Bearbeitungsmodus): Speichert alle vorgenommenen Kursänderungen. Zugehörige Methode: saveCourse()
+								\item Hinzufügen (Administrator): Fügt einen Kursleiter zum Kurs hinzu. Zugehörige Methode: addCourseLeader()
+								\item Kurseinheit anlegen (Kursleiter): Erstellt eine neue Kurseinheit zum Kurs. Zugehörige Methode: loadCreateCourseUnitPage()
+								\item Kurseinheit bearbeiten (Kursleiter): Ermöglicht die Bearbeitung einer einzelnen Kurseinheit. Zugehörige Methode: loadEditCourseUnitPage()
+								\item Kurs löschen (Administrator): Löscht den Kurs. Zugehörige Methode: deleteCourse()
 							\end{itemize}
 						\item \textbf{Inputs:}
 							\begin{itemize}
