@@ -8,3 +8,4 @@ scheduler - Terminplaner
 adminManagement - Admin Verwaltungsseite
 createUser - Admin Benutzer anlegen Seite
 statistics - Statistiken
+footer - Footer
