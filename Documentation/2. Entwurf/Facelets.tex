@@ -12,17 +12,45 @@
 	
 	\section{Templates}
 		Kathi, Ricky
-		Das Standard-Template, an dem sich alle Facelets orientieren ist in Abbildung 4.1 zu sehen. Hier wird in drei Teilbereiche unterschieden. Es gibt den Teilbereich "Header", welcher hauptsächlich die von der Benutzerrolle abhängige Navigation (\hyperlink{navigation}{navigation.xhtml}) beinhaltet, den Teilbereich "Content", welcher abhängig vom jeweils aufgerufenen Facelet befüllt wird und den Teilbereich "Footer", welcher den unteren Bereich der dargestellten Seite befüllt (\hyperlink{footer}{footer.xhtml}).
-	
-		\paragraph{layout.xhtml}
+		Das Standard-Template, an dem sich alle Facelets orientieren ist in Abbildung 4.1 zu sehen. Hier wird in drei Teilbereiche unterschieden. Es gibt den Teilbereich \glqq Header\grqq\, welcher hauptsächlich die von der Benutzerrolle abhängige Navigation (\hyperlink{navigation}{navigation.xhtml}) beinhaltet, den Teilbereich \glqq Content\grqq\, welcher abhängig vom jeweils aufgerufenen Facelet befüllt wird und den Teilbereich \glqq Footer\grqq\, welcher den unteren Bereich der dargestellten Seite befüllt (\hyperlink{footer}{footer.xhtml}).
+
 			\begin{figure}[h]
 				\centering
-				\includegraphics[width=0.435\textwidth, angle=0]{Grafiken/Template.png}
+				\includegraphics[width=0.3\textwidth]{Grafiken/Template.png}
 	  			\caption{Standard-Template für alle Facelets}
 			\end{figure}
+			
+		\paragraph{navigation.xhtml} \hypertarget{navigation}
+			RS\\
+			\begin{itemize}
+				\item \textbf{Beschreibung:} Hier kann, abhängig von der Benutzerrolle, durch die Seite navigiert werden.
+				\item \textbf{Links:}
+					\begin{itemize}
+						\item Suche: Navigiert zur Kurse durchsuchen Seite. 
+						\item Sprache Deutsch: Ändert die angezeigte Sprache zu Deutsch.
+						\item Sprache Englisch: Ändert die angezeigte Sprache zu Englisch.
+						\item Profil (Benutzer): Navigiert zum eigenen Profil.
+						\item Meine Kurse (Benutzer): Navigiert zur Anzeige der eigenen Kurse.
+						\item Terminplaner (Benutzer): Navigiert zum persönlichen Terminplaner.
+						\item Seitenverwaltung (Administrator): Lässt den Seitenadministrator zur Seitenverwaltung navigieren.
+						\item Benutzer aktivieren: (Kursleiter, Administrator): Navigiert zur Benutzer aktivieren Seite.
+					\end{itemize}
+				\item \textbf{Buttons:}
+					\begin{itemize}
+						\item Logout (Benutzer, wenn eingeloggt): Loggt den aktuellen eingeloggten Benutzer aus. \\ Zugehörige Methode: logout()
+						\item Anmelden (Anonym): Navigiert zur Registrierungs- und Anmeldeseite. \\ Zugehörige Methode: login()
+					\end{itemize}
+				\item \textbf{Inputs:} -
+				\item \textbf{Outputs:}
+					\begin{itemize}
+						\item Logo: Zeigt verkleinertes, vom Administrator definiertes Logo der Website. Beim klick gelangt der Nutzer zur \hyperlink{index}{Startseite}.
+					\end{itemize}
+				\item \textbf{BackingBean:}
+					\begin{itemize}
+						\item Navigation.java
+					\end{itemize}
+			\end{itemize}
 
-		\paragraph{header.xhtml}
-		
 		\paragraph{footer.xhtml} \hypertarget{footer}
 			RS\\
 			\begin{itemize}
@@ -149,36 +177,7 @@
 							\end{itemize}
 						\item \textbf{BackingBean:} -
 					\end{itemize}
-				\paragraph{navigation.xhtml} \hypertarget{navigation}
-					RS\\
-					\begin{itemize}
-						\item \textbf{Beschreibung:} Hier kann, abhängig von der Benutzerrolle, durch die Seite navigiert werden.
-						\item \textbf{Links:}
-							\begin{itemize}
-								\item Suche: Navigiert zur Kurse durchsuchen Seite. 
-								\item Sprache Deutsch: Ändert die angezeigte Sprache zu Deutsch.
-								\item Sprache Englisch: Ändert die angezeigte Sprache zu Englisch.
-								\item Profil (Benutzer): Navigiert zum eigenen Profil.
-								\item Meine Kurse (Benutzer): Navigiert zur Anzeige der eigenen Kurse.
-								\item Terminplaner (Benutzer): Navigiert zum persönlichen Terminplaner.
-								\item Seitenverwaltung (Administrator): Lässt den Seitenadministrator zur Seitenverwaltung navigieren.
-								\item Benutzer aktivieren: (Kursleiter, Administrator): Navigiert zur Benutzer aktivieren Seite.
-							\end{itemize}
-						\item \textbf{Buttons:}
-							\begin{itemize}
-								\item Logout (Benutzer, wenn eingeloggt): Loggt den aktuellen eingeloggten Benutzer aus. \\ Zugehörige Methode: logout()
-								\item Anmelden (Anonym): Navigiert zur Registrierungs- und Anmeldeseite. \\ Zugehörige Methode: login()
-							\end{itemize}
-						\item \textbf{Inputs:} -
-						\item \textbf{Outputs:}
-							\begin{itemize}
-								\item Logo: Zeigt verkleinertes, vom Administrator definiertes Logo der Website. Beim klick gelangt der Nutzer zur \hyperlink{index}{Startseite}.
-							\end{itemize}
-						\item \textbf{BackingBean:}
-							\begin{itemize}
-								\item Navigation.java
-							\end{itemize}
-					\end{itemize}
+
 		
 			\subsubsection{courses}
 				
