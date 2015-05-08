@@ -1,13 +1,13 @@
 \chapter{Facelets}
 
-	Dieses Kapitel enthält alle benötigten Facelets. Jedes Facelet wird in unterschiedliche  Bereiche aufgeteilt:
+	Dieses Kapitel enthält alle benötigten Facelets, welche die View der Webanwendung darstellen. Jedes Facelet wird in unterschiedliche  Bereiche aufgeteilt:
 	\begin{itemize}
-		\item \textbf{Beschreibung} beinhaltet die Funktionen des Facelets.
-		\item \textbf{Links} enthält die Seiten, auf welche weitergeleitet wird.
+		\item \textbf{Beschreibung} Kurzbeschreibung der Funktion/-en des jeweiligen Facelets.
+		\item \textbf{Links} enthält alle Links des Facelets, die zu einem anderen Facelet führen.
 		\item \textbf{Buttons} listet die sich auf der Seite befindlichen Buttons mit deren hinterlegten Methoden auf.
 		\item \textbf{Inputs} enthält eine Liste aller Eingabefelder auf der Seite.
 		\item \textbf{Outputs} enthält eine Liste aller Ausgabefelder auf der Seite.
-		\item \textbf{Backing Bean} gibt das mit dem Facelet verbundene Bean an.
+		\item \textbf{Backing Beans} enthält eine Liste aller, mit dem jeweiligen Facelet verbundenen, Beans.
 	\end{itemize}
 	
 	\section{Templates}
@@ -68,6 +68,21 @@
 					\begin{itemize}
 						\item Footer.java
 					\end{itemize}
+			\end{itemize}
+
+		\paragraph{template.xhtml} \hypertarget{template}
+			RS\\
+			\begin{itemize}
+				\item \textbf{Beschreibung:} Dieses Facelet dient der einheitlichen Darstellung und Struktur aller Facelets im System. Letztere ist in Abbildung 4.1 genauer dargestellt.
+				\item \textbf{Links:} -
+				\item \textbf{Buttons:} -
+				\item \textbf{Inputs:}
+					\begin{itemize}
+						\item Navigation: Bindet \hyperlink{navigation}{navigation.xhtml} in den Header ein.
+						\item Footer: Bindet \hyperlink{footer}{footer.xhtml} in den Footer ein.
+					\end{itemize}
+				\item \textbf{Outputs:} -
+				\item \textbf{BackingBean:} -
 			\end{itemize}
 	
 	\section{Facelets}
@@ -239,7 +254,7 @@
 								\item Bearbeiten (Administrator, noch nicht im Bearbeitungsmodus): Ermöglicht die Bearbeitung der einzelnen Kursdetails. \\ Zugehörige Methode: editCourse()
 								\item Speichern (Administrator, im Bearbeitungsmodus): Speichert alle vorgenommenen Kursänderungen. \\ Zugehörige Methode: saveCourse()
 								\item Hinzufügen (Administrator): Fügt einen Kursleiter zum Kurs hinzu. Zugehörige Methode: addCourseLeader()
-								\item Kurseinheit anlegen (Kursleiter): Erstellt eine neue Kurseinheit zum Kurs. \\ Zugehörige Methode: loadCreateCourseUnitPage()
+								\item Kurseinheit anlegen (Kursleiter): Erstellt eine neue Kurseinheit zum Kurs. \hyperlink{editCourseUnit}{editCourseUnit.xhtml} \\ Zugehörige Methode: loadCreateCourseUnitPage()
 								\item Kurseinheit bearbeiten (Kursleiter): Ermöglicht die Bearbeitung einer einzelnen Kurseinheit. \hyperlink{editCourseUnit}{editCourseUnit.xhtml} \\ Zugehörige Methode: loadEditCourseUnitPage()
 								\item Kurs löschen (Administrator): Löscht den Kurs. \\ Zugehörige Methode: deleteCourse()
 							\end{itemize}
