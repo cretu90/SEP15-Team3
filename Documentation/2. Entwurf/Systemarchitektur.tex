@@ -24,13 +24,13 @@ MB
     Für die persistente Speicherung von Daten ist die Database (DB) zuständig. Dort werden Daten wie z.B. \textit{BenutzerID, Benutzername, Kurseinheit, Kurslehrer} etc. gespeichert. Zugriff auf die DB haben nur die DAOs. 
 
 \section{Package-Diagramm}
- Um einen kleinen Überblick der verwendeten Packages im System zu bekommen, soll die folgende Figur dazu Abhilfe schaffen. \\ 
+ Um einen kleinen Überblick der verwendeten Packages im System zu bekommen, soll die folgende Figur dazu Abhilfe schaffen. \\ \\
 \includegraphics[scale=0.45]{Grafiken/PackageDiagramm.pdf}      
     
 \section{Design Patterns}
 Damit keine wiederkehrenden Entwurfsprobleme bei der Softwareentwicklung auftreten, werden bewährte Lösungsansätze, die sogenannten \glqq Design Patterns\grqq{}, benutzt. Sie dienen dazu den Entwurf möglichst flexibel, erweiterbar und auch einfach zu gestalten. Aufgrund dessen werden im Nachfolgendem die für das System eingesetzten \textit{Design Patterns} beschrieben:
 	\begin{itemize}
-		\item \textbf{Model 2:} Bei dem Architekturmuster \textit{Model 2} wird die View (Facelets) von der Geschäftslogik (Backing Beans) bei einer Java-Webapplikation getrennt. Der Ablauf sieht im Groben so aus, dass ein HTTP-Request eines Clients an den Controller (Faces-Servlet) weitergeleitet wird. Darauffolgend \glqq steuert\grqq{} der Controller alle notwendigen Schritte zur Beschaffung des Inhalts für die Darstellung. Der Controller legt den Inhalt in einer Backing Beans ab und entscheidet, welcher View der Inhalt übergeben wird. Die View wiederum stellt den Inhalt dar, der vom Controller weitergereicht wurde.
+%		\item \textbf{Model 2:} Bei dem Architekturmuster \textit{Model 2} wird die View (Facelets) von der Geschäftslogik (Backing Beans) bei einer Java-Webapplikation getrennt. Der Ablauf sieht im Groben so aus, dass ein HTTP-Request eines Clients an den Controller (Faces-Servlet) weitergeleitet wird. Darauffolgend \glqq steuert\grqq{} der Controller alle notwendigen Schritte zur Beschaffung des Inhalts für die Darstellung. Der Controller legt den Inhalt in einer Backing Beans ab und entscheidet, welcher View der Inhalt übergeben wird. Die View wiederum stellt den Inhalt dar, der vom Controller weitergereicht wurde.
 		\item \textbf{Data Transfer Object:} Das DTO fasst mehrere Daten in einem Objekt zusammen, damit sie in einem Aufruf übergeben werden. Somit können Datensätze durch die Schichten transportiert werden.
 		\item \textbf{Dependency Injection:} Dependency Injection ist ein JSF Standard, um Backing Beans zu verwalten. Hierbei werden die benötigten Objekte an einem zentralen Ort hinterlegt, was auch die Flexibilität erhöht.  
 		\item \textbf{Creational Pattern:} Die Creational Patterns sind eine Teilmenge der Design Patterns und dienen als Entwurfsmuster für die Erzeugung von Objekten. Man kann diese in folgende Pattern unterscheiden.
@@ -52,13 +52,13 @@ Es werden im System auf bereits vorhandenen Libraries zurückgegriffen.
 	\end{itemize}
 \section{Fehlerbehandlung}
 	\subsection{Nicht-Autorisierter Zugriff}
-	Sofern der User eine Aktion ausführen will, aber nicht die entsprechenden dafür Rechte besitzt, wird eine Fehlermeldung ausgegeben. Beispielsweise will sich ein Gast bestimmte Details eines Kurs ansehen, was aber nur registrierte User vorbehalten ist. Dem Gast wird eine Fehlermeldung angezeigt und gegebenenfalls auf die Login Seite verwiesen. Zur Realisierung hierfür werden die Facelets von einem Phaselistener überprüft.
+	Sofern der User eine Aktion ausführen will, aber nicht die entsprechenden Rechte dafür besitzt, wird eine Fehlermeldung ausgegeben. Beispielsweise will sich ein Gast bestimmte Details eines Kurs anzeigen lassen, was aber nur registrierten Usern vorbehalten ist. Dem Gast wird eine Fehlermeldung angezeigt und gegebenenfalls auf die Login Seite verwiesen. Zur Realisierung hierfür werden die Facelets von einem Phaselistener überprüft.
 	\subsection{Fehlerhafte Benutzereingaben}
-	Wenn ein Gast sich registrieren will, aber in den Formulardaten eine ungültige Eingabe tätigt, so soll der Gast nicht alles neu eingeben müssen, sondern nur die fehlerhaften Stellen neu. Der Fehler wird auf derselben Seite angezeigt, somit wird keine Fehler-Seite extra benötigt.
+	Wenn ein Gast sich registrieren will, aber in den Formulardaten eine ungültige Eingabe tätigt, so soll der Gast nicht alles neu eingeben müssen, sondern nur die fehlerhaften Stellen. Der Fehler wird auf derselben Seite angezeigt, somit wird keine Fehler-Seite extra benötigt.
 	\subsection{Exceptions}
-	Sollten Fehler auftreten auf die der User keinen Einfluss hat, so wird der Nutzer auf eine Fehler-Seite geleitet. Auf dieser Seite befinden sich Informationen zu dem Fehler und es wird eine weitere Vorgehensweise zur Verfügung gestellt. Bestimmte Exceptions wie beispielsweise eine SQL-Exception werden gefangen und geworfen, indem globale Exception-Handler implementiert werden. Bei kritischen Exceptions wird auch eine Logfile angefertigt, um im Nachhinein genau zu verfolgen wo und wann der Fehler aufgetreten ist.
+	Sollten Fehler auftreten auf die der User keinen Einfluss hat, so wird der Nutzer auf eine Fehler-Seite geleitet. Auf dieser Seite befinden sich Informationen zu dem Fehler und es wird eine weitere Vorgehensweise zur Verfügung gestellt. Bestimmte Exceptions wie beispielsweise eine SQL-Exception, die in der DAO Schicht auftreten kann, werden gefangen und geworfen, indem globale Exception-Handler implementiert werden (Kapitel 3.8.6 InvalidDBTransferException). Bei kritischen Exceptions wird auch eine Logfile angefertigt, um im Nachhinein genau zu verfolgen können wo und wann der Fehler aufgetreten ist.
 	\subsection{HTTP-Statuscodes}
-	Für den User werden HTTP-Statuscodes generiert. Somit bleiben kryptische Fehlermeldungen seitens des Webservers dem User verborgen. Dem User werden die Fehler auf einer neuen Seite angezeigt: \\ \\
+	Für den User werden HTTP-Statuscodes generiert. Somit bleiben kryptische Fehlermeldungen dem User verborgen. Dieser Fehler kann bei Problemen seitens des Webservers auftreten. Dem User werden die Fehler auf einer neuen Seite angezeigt: \\ \\
 	\begin{tabular}{|l|l|}
 		\hline
 		Status Code & Beschreibung \\
