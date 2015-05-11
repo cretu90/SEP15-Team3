@@ -106,7 +106,7 @@
 				\item \textbf{Beschreibung:} Der Benutzer wird auf diese Seite weitergeleitet, wenn Exceptions auftreten, auf die der Nutzer keinen Einfluss hat. Die entsprechende Fehlermeldung wird dann angezeigt.
 				\item \textbf{Links:}
 					\begin{itemize}
-						\item Startseite: Über diesen Link gelangt der Benutzer zurück zur Startseite. (\hyperlink{index}{index.xhtml})
+						\item Startseite: Über diesen Link gelangt der Benutzer zurück zur Startseite. (\hyperlink{index}{index.xhtml}) \\Ziel: 
 					\end{itemize}
 				\item \textbf{Buttons:} -
 				\item \textbf{Inputs:} -
@@ -116,6 +116,19 @@
 					\end{itemize}
 				\item \textbf{BackingBean:} -
 				\item \textbf{Tag-Library:}
+					\begin{center}
+						\begin{longtable}{|p{6cm} | p{6cm}| p{2cm}|}
+							
+							\hline \multicolumn{1}{|c|}{\textbf{Name}} & \multicolumn{1}{c|}{\textbf{Namensraum}} & \multicolumn{1}{c|}{\textbf{Präfix}} \\ \hline
+							\endfirsthead
+							\hline
+							\endlastfoot
+							\textit{HTML-Custom-Tag-Library} & http://java.sun.com/jsf/html & h\\ \hline
+							\textit{Core-Tag-Library} & http://java.sun.com/jsf/core & f\\ \hline
+							\textit{Facelets-Tag-Library} & http://java.sun.com/jsf/facelets & ui\\ \hline
+						\end{longtable}
+					\end{center} 
+					
 				\item \textbf{\"{U}bergabeparameter:}
 			\end{itemize}
 		
@@ -168,6 +181,33 @@
 				\item Benutzername (Anmeldung): Der Benutzer gibt seinen Benutzernamen ein, mit dem er sich registriert hat.
 				\item Passwort (Anmeldung): Der Benutzer gibt sein Passwort ein, mit dem er sich registriert hat.
 				\item E-Mail-Adresse (Passwort vergessen): Der Benutzer gibt seine im System bereits gespeicherte E-Mailadresse ein.
+				
+				\begin{center}
+					\begin{longtable}{|p{3cm} |p{4cm} | p{4cm}|p{3cm}|}
+						
+						\hline \multicolumn{1}{|c|}{\textbf{Feld}} & \multicolumn{1}{|c|}{\textbf{Action}} & \multicolumn{1}{|c|}{\textbf{JSF-Tag}} &  \multicolumn{1}{|c|}{\textbf{Scope}} \\ \hline
+						\endfirsthead
+						\hline
+						\endlastfoot
+							\textit{Anrede} & AuthenticateAction & inputText & Request\\ \hline
+							\textit{Vorname} & AuthenticateAction & inputText & Request\\ \hline
+							\textit{Name} & AuthenticateAction & inputText & Request\\ \hline
+							\textit{Benutzername} & AuthenticateAction & inputText & Request\\ \hline
+							\textit{Passwort} & AuthenticateAction & inputSecret & Request\\ \hline
+							\textit{Passwort bestätigen} & AuthenticateAction & inputText & Request\\ \hline
+							\textit{Geburtstag} & AuthenticateAction & inputText & Request\\ \hline
+							\textit{Straße/Hausnummer} & AuthenticateAction & inputText & Request\\ \hline
+							\textit{Stadt} & AuthenticateAction & inputText & Request\\ \hline
+							\textit{Postleitzahl} & AuthenticateAction & inputText & Request\\ \hline
+							\textit{Land} & AuthenticateAction & inputText & Request\\ \hline
+							\textit{E-Mail-Adresse} & AuthenticateAction & inputText & Request\\ \hline
+							\textit{AGBs bestätigen} & AuthenticateAction & inputText & Request\\ \hline
+							\textit{Benutzername} & AuthenticateAction & inputText & Request\\ \hline
+							\textit{Passwort} & AuthenticateAction & inputText & Request\\ \hline
+							\textit{E-Mail-Adresse} & AuthenticateAction & inputText & Request\\ \hline
+					\end{longtable}
+				\end{center}
+				
 			\end{itemize}
 			\item \textbf{Outputs:} 
 			\begin{itemize}
