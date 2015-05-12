@@ -11,6 +11,19 @@
 			\item \textbf{\"{U}bergabeparameter} gibt an, welche Parameter übergeben werden.
 			\item \textbf{Tag-Library} gibt die benötigten Tag-Bibliotheken an.
 		\end{itemize}
+		Für jedes Facelet werden folgende Tag-Librarys verwendet:
+			\begin{center}
+				\begin{longtable}{|p{6cm} | p{6cm}| p{2cm}|}
+					
+					\hline \multicolumn{1}{|c|}{\textbf{Name}} & \multicolumn{1}{c|}{\textbf{Namensraum}} & \multicolumn{1}{c|}{\textbf{Präfix}} \\ \hline
+					\endfirsthead
+					\hline
+					\endlastfoot
+					\textit{HTML-Custom-Tag-Library} & http://java.sun.com/jsf/html & h\\ \hline
+					\textit{Core-Tag-Library} & http://java.sun.com/jsf/core & f\\ \hline
+					\textit{Facelets-Tag-Library} & http://java.sun.com/jsf/facelets & ui\\ \hline
+				\end{longtable}
+			\end{center}
 		
 		\section{Templates}
 		KH, RS
@@ -116,18 +129,7 @@
 					\end{itemize}
 				\item \textbf{BackingBean:} -
 				\item \textbf{Tag-Library:}
-					\begin{center}
-						\begin{longtable}{|p{6cm} | p{6cm}| p{2cm}|}
-							
-							\hline \multicolumn{1}{|c|}{\textbf{Name}} & \multicolumn{1}{c|}{\textbf{Namensraum}} & \multicolumn{1}{c|}{\textbf{Präfix}} \\ \hline
-							\endfirsthead
-							\hline
-							\endlastfoot
-							\textit{HTML-Custom-Tag-Library} & http://java.sun.com/jsf/html & h\\ \hline
-							\textit{Core-Tag-Library} & http://java.sun.com/jsf/core & f\\ \hline
-							\textit{Facelets-Tag-Library} & http://java.sun.com/jsf/facelets & ui\\ \hline
-						\end{longtable}
-					\end{center} 
+					 
 					
 				\item \textbf{\"{U}bergabeparameter:}
 			\end{itemize}
