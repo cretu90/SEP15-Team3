@@ -119,19 +119,28 @@
 				\item \textbf{Beschreibung:} Der Benutzer wird auf diese Seite weitergeleitet, wenn Exceptions auftreten, auf die der Nutzer keinen Einfluss hat. Die entsprechende Fehlermeldung wird dann angezeigt.
 				\item \textbf{Links:}
 					\begin{itemize}
-						\item Startseite: Über diesen Link gelangt der Benutzer zurück zur Startseite. (\hyperlink{index}{index.xhtml}) \\Ziel: 
+						\item Startseite: Über diesen Link gelangt der Benutzer zurück zur Startseite. (\hyperlink{index}{index.xhtml})
 					\end{itemize}
+					
+					\begin{center}
+						\begin{longtable}{|p{4cm} |p{6cm} |}
+							
+							\hline \multicolumn{1}{|c|}{\textbf{Link}} & \multicolumn{1}{|c|}{\textbf{\"{U}bergabeparameter}} \\ \hline
+							\endfirsthead
+							\hline
+							\endlastfoot
+							
+							\textit{Startseite } & ...\\ \hline
+						\end{longtable}
+					\end{center}
+					
 				\item \textbf{Buttons:} -
 				\item \textbf{Inputs:} -
 				\item \textbf{Outputs:}
 					\begin{itemize}
 						\item Fehlermeldung: Hier wird die entsprechende Fehlermeldung ausgegeben.
 					\end{itemize}
-				\item \textbf{BackingBean:} -
-				\item \textbf{Tag-Library:}
-					 
-					
-				\item \textbf{\"{U}bergabeparameter:}
+				\item \textbf{BackingBean:} -	
 			\end{itemize}
 		
 		\paragraph{index.xhtml} \hypertarget{index}
@@ -165,6 +174,21 @@
 				\item Anmelden: Durch Drücken dieses Buttons wird der registrierte Benutzer im System angemeldet und auf die Seite 'Meine Kurse' (\hyperlink{myCourses}{myCourses.xhtml}) weitergeleitet, sofern Benutzername und Passwort korrekt eingegeben wurden. \\ Zugehörige Methode: login()
 				\item Passwort vergessen: Durch Drücken dieses Buttons wird an die angegebene E-Mail-Adresse ein automatisch generiertes Passwort geschickt, sofern die Adresse im System existiert. \\ Zugehörige Methode: resetPassword()
 			\end{itemize}
+			
+			\begin{center}
+				\begin{longtable}{|p{4cm} |p{4cm} | p{4cm}|}
+					
+					\hline \multicolumn{1}{|c|}{\textbf{Button}} & \multicolumn{1}{|c|}{\textbf{Methode}} & \multicolumn{1}{|c|}{\textbf{\"{U}bergabeparameter}} \\ \hline
+					\endfirsthead
+					\hline
+					\endlastfoot
+					
+						\textit{Registrieren } & registerUser() & ... \\ \hline
+						\textit{Anmelden } & login() & ... \\ \hline
+						\textit{Passwort vergessen } & resetPassword() & ... \\ \hline
+				\end{longtable}
+			\end{center}
+			
 			\item \textbf{Inputs:}
 			\begin{itemize}
 				\item Anrede (Registrierung): Hier wählt der Benutzer die Anrede 'Herr' oder 'Frau' aus.
@@ -185,28 +209,28 @@
 				\item E-Mail-Adresse (Passwort vergessen): Der Benutzer gibt seine im System bereits gespeicherte E-Mailadresse ein.
 				
 				\begin{center}
-					\begin{longtable}{|p{4cm} |p{4cm} | p{4cm}|p{3cm}|}
+					\begin{longtable}{|p{3cm} |p{4cm} | p{4cm}|p{3cm} |p{2cm}|}
 						
-						\hline \multicolumn{1}{|c|}{\textbf{Feld}} & \multicolumn{1}{|c|}{\textbf{Action}} & \multicolumn{1}{|c|}{\textbf{JSF-Tag}} &  \multicolumn{1}{|c|}{\textbf{Scope}} \\ \hline
+						\hline \multicolumn{1}{|c|}{\textbf{Feld}} & \multicolumn{1}{|c|}{\textbf{Action}} & \multicolumn{1}{|c|}{\textbf{Validatoren}}  &  \multicolumn{1}{|c|}{\textbf{Konverter}} &  \multicolumn{1}{|c|}{\textbf{ID}} \\ \hline
 						\endfirsthead
 						\hline
 						\endlastfoot
-							\textit{Anrede (R)} & AuthenticateAction & inputText & Request\\ \hline
-							\textit{Vorname (R)} & AuthenticateAction & inputText & Request\\ \hline
-							\textit{Name (R)} & AuthenticateAction & inputText & Request\\ \hline
-							\textit{Benutzername (R)} & AuthenticateAction & inputText & Request\\ \hline
-							\textit{Passwort (R)} & AuthenticateAction & inputSecret & Request\\ \hline
-							\textit{Passwort bestätigen (R)} & AuthenticateAction & inputText & Request\\ \hline
-							\textit{Geburtstag (R)} & AuthenticateAction & inputText & Request\\ \hline
-							\textit{Straße/ Hausnummer (R)} & AuthenticateAction & inputText & Request\\ \hline
-							\textit{Stadt (R)} & AuthenticateAction & inputText & Request\\ \hline
-							\textit{Postleitzahl (R)} & AuthenticateAction & inputText & Request\\ \hline
-							\textit{Land (R)} & AuthenticateAction & inputText & Request\\ \hline
-							\textit{E-Mail-Adresse (R)} & AuthenticateAction & inputText & Request\\ \hline
-							\textit{AGBs bestätigen (R)} & AuthenticateAction & inputText & Request\\ \hline
-							\textit{Benutzername (A)} & AuthenticateAction & inputText & Request\\ \hline
-							\textit{Passwort (A)} & AuthenticateAction & inputText & Request\\ \hline
-							\textit{E-Mail-Adresse (Passwort vergessen)} & AuthenticateAction & inputText & Request\\ \hline
+							\textit{Anrede (R)} & AuthenticateAction & ... & ... & ..\\ \hline
+							\textit{Vorname (R)} & AuthenticateAction & ... & ... & ..\\ \hline
+							\textit{Name (R)} & AuthenticateAction & ... & ... & ..\\ \hline
+							\textit{Benutzername (R)} & AuthenticateAction & ... & ... & ..\\ \hline
+							\textit{Passwort (R)} & AuthenticateAction & ... & ... & ..\\ \hline
+							\textit{Passwort bestätigen (R)} & AuthenticateAction & ... & ... & ..\\ \hline
+							\textit{Geburtstag (R)} & AuthenticateAction & ... & ... & ..\\ \hline
+							\textit{Straße/ Hausnummer (R)} & AuthenticateAction & ... & ... & ..\\ \hline
+							\textit{Stadt (R)} & AuthenticateAction& ... & ... & ..\\ \hline
+							\textit{Postleitzahl (R)} & AuthenticateAction & ... & ... & ..\\ \hline
+							\textit{Land (R)} & AuthenticateAction & ... & ... & ..\\ \hline
+							\textit{E-Mail-Adresse (R)} & AuthenticateAction & ... & ... & ..\\ \hline
+							\textit{AGBs bestätigen (R)} & AuthenticateAction & ... & ... & ..\\ \hline
+							\textit{Benutzername (A)} & AuthenticateAction& ... & ... & ..\\ \hline
+							\textit{Passwort (A)} & AuthenticateAction & ... & ... & ..\\ \hline
+							\textit{E-Mail-Adresse (Passwort vergessen)} & AuthenticateAction & ... & ... & ..\\ \hline
 					\end{longtable}
 				\end{center}
 				
@@ -230,13 +254,11 @@
 				\item E-Mail-Adresse Fehlermeldung (Passwort vergessen): Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
 			\end{itemize}
 			\item \textbf{BackingBean:}
-			\begin{itemize}
-				\item AuthenticateUser.java
-				\item RegisterUser.java
-				\item LostPassword.java
-			\end{itemize}
-			\item \textbf{Tag-Library:}
-			\item \textbf{\"{U}bergabeparameter:}
+				\begin{itemize}
+					\item AuthenticateUser.java
+					\item RegisterUser.java
+					\item LostPassword.java
+				\end{itemize}
 		\end{itemize}
 		
 		\paragraph{imprint.xhtml} \hypertarget{imprint}
@@ -247,12 +269,10 @@
 			\item \textbf{Buttons:} -
 			\item \textbf{Inputs:} -
 			\item \textbf{Outputs:} 
-			\begin{itemize}
-				\item	Anzeige des Impressums, welches vom Administrator festgelegt wurde.
-			\end{itemize}
+				\begin{itemize}
+					\item	Anzeige des Impressums, welches vom Administrator festgelegt wurde.
+				\end{itemize}
 			\item \textbf{BackingBean:} -
-			\item \textbf{Tag-Library:}
-			\item \textbf{\"{U}bergabeparameter:}
 		\end{itemize}
 		
 		\paragraph{agb.xhtml} \hypertarget{agb}
@@ -365,6 +385,19 @@
 				\begin{itemize}
 					\item Kurstitel: Über die Kurstitel gelangt der Benutzer auf die jeweilige Kursdetailseite. (\hyperlink{courseDetails}{courseDetails.xhtml})
 				\end{itemize}
+				
+				\begin{center}
+					\begin{longtable}{|p{4cm} |p{6cm} |}
+						
+						\hline \multicolumn{1}{|c|}{\textbf{Link}} & \multicolumn{1}{|c|}{\textbf{\"{U}bergabeparameter}} \\ \hline
+						\endfirsthead
+						\hline
+						\endlastfoot
+						
+						\textit{Kurstitel } & ...\\ \hline
+					\end{longtable}
+				\end{center}
+				
 			\item \textbf{Buttons:} -
 			\item \textbf{Inputs:} -
 			\item \textbf{Outputs:}
@@ -375,8 +408,6 @@
 				\begin{itemize}
 					\item MyCourses.java
 				\end{itemize}
-			\item \textbf{Tag-Library:}
-			\item \textbf{\"{U}bergabeparameter:}
 		\end{itemize}
 		
 		\paragraph{profile.xhtml} \hypertarget{profile}
@@ -393,6 +424,24 @@
 					\item Konto aufladen: Durch Klicken dieses Buttons wird der Benutzer auf die Seite 'Kontoaufladung' (\hyperlink{buyCredits}{buyCredits.xhtml})  weitergeleitet. \\ Zugehörige Methode: depositMoneyPerCreditCard()
 					\item Benutzer löschen: Durch Drücken dieses Buttons entfernt der Administrator diesen Benutzer aus dem System, oder der Benutzer kann sich selbst auf inaktiv setzen. \\ Zugehörige Methoden: deleteUser(), setUserInactive() 
 				\end{itemize}
+				
+					\begin{center}
+						\begin{longtable}{|p{4cm} |p{6cm} | p{4cm}|}
+							
+							\hline \multicolumn{1}{|c|}{\textbf{Button}} & \multicolumn{1}{|c|}{\textbf{Methode}} & \multicolumn{1}{|c|}{\textbf{\"{U}bergabeparameter}} \\ \hline
+							\endfirsthead
+							\hline
+							\endlastfoot
+							
+							\textit{Bearbeiten } & editUserData() & ... \\ \hline
+							\textit{Speichern } & saveUserData() & ... \\ \hline
+							\textit{Duchsuchen } & - & ... \\ \hline
+							\textit{Hochladen } & uploadProfilPic() & ... \\ \hline
+							\textit{Kontoaufladen } & depositMoneyPerCreditCard() & ... \\ \hline
+							\textit{Benutzer löschen} &  deleteUser(), setUserInactive()  & ... \\ \hline
+						\end{longtable}
+					\end{center}
+				
 			\item \textbf{Inputs:}
 				\begin{itemize}
 					\item Vorname: Hier kann der Benutzer seinen Vornamen ändern.
@@ -409,6 +458,31 @@
 					\item Benutzerrolle: Hier kann der Administrator die Benutzerrolle eines Nutzers ändern.
 					\item Profilbild: Hier kann der Benutzer sein Profilbild ändern.
 				\end{itemize}
+				
+				\begin{center}
+					\begin{longtable}{|p{3cm} |p{4cm} | p{4cm}|p{3cm} |p{2cm}|}
+						
+						\hline \multicolumn{1}{|c|}{\textbf{Feld}} & \multicolumn{1}{|c|}{\textbf{Action}} & \multicolumn{1}{|c|}{\textbf{Validatoren}}  &  \multicolumn{1}{|c|}{\textbf{Konverter}} &  \multicolumn{1}{|c|}{\textbf{ID}} \\ \hline
+						\endfirsthead
+						\hline
+						\endlastfoot
+						
+							\textit{Vorname } & AuthenticateAction & ... & ... & ..\\ \hline
+							\textit{Name } & AuthenticateAction & ... & ... & ..\\ \hline
+							\textit{Geburtstag } & AuthenticateAction & ... & ... & ..\\ \hline
+							\textit{Straße/ Hausnummer } & AuthenticateAction & ... & ... & ..\\ \hline
+							\textit{Stadt } & AuthenticateAction& ... & ... & ..\\ \hline
+							\textit{Postleitzahl} & AuthenticateAction & ... & ... & ..\\ \hline
+							\textit{Land } & AuthenticateAction & ... & ... & ..\\ \hline
+							\textit{E-Mail-Adresse } & AuthenticateAction & ... & ... & ..\\ \hline
+							\textit{Benutzername } & AuthenticateAction & ... & ... & ..\\ \hline
+							\textit{Passwort } & AuthenticateAction & ... & ... & ..\\ \hline
+							\textit{Passwort bestätigen} & AuthenticateAction & ... & ... & ..\\ \hline
+							\textit{Benutzerrolle} & AuthenticateAction & ... & ... & ..\\ \hline
+							\textit{Profilbild} & AuthenticateAction& ... & ... & ..\\ \hline
+					\end{longtable}
+				\end{center}
+				
 			\item \textbf{Outputs:}
 				\begin{itemize}
 					\item Benutzer-ID: Ausgabe der automatisch generierten ID.
@@ -432,8 +506,6 @@
 					\item UserProfile.java
 					\item UserManagement.java				
 				\end{itemize}
-			\item \textbf{Tag-Library:}
-			\item \textbf{\"{U}bergabeparameter:}
 		\end{itemize}
 		
 		\paragraph{buyCredits.xhtml} \hypertarget{buyCredits}
@@ -506,8 +578,6 @@
 			\begin{itemize}
 				\item UserProfile.java			
 			\end{itemize}
-			\item \textbf{Tag-Library:}
-			\item \textbf{\"{U}bergabeparameter:}
 		\end{itemize}
 		
 		\paragraph{listParticipants.xhtml} \hypertarget{listParticipants}
@@ -518,10 +588,37 @@
 			\item \textbf{Buttons:}
 			\begin{itemize}
 				\item Löschen: Durch Drücken dieses Buttons kann der Kursleiter den entsprechenden Benutzer aus dem Kurs entfernen. \\ Zugehörige Methode: deleteUserFromCourse()
+				
+				\begin{center}
+					\begin{longtable}{|p{4cm} |p{6cm} | p{4cm}|}
+						
+						\hline \multicolumn{1}{|c|}{\textbf{Button}} & \multicolumn{1}{|c|}{\textbf{Methode}} & \multicolumn{1}{|c|}{\textbf{\"{U}bergabeparameter}} \\ \hline
+						\endfirsthead
+						\hline
+						\endlastfoot
+						
+						\textit{Löschen } & deleteUserFromCourse() & ... \\ \hline
+					\end{longtable}
+				\end{center}
+				
 			\end{itemize}
 			\item \textbf{Inputs:}
 			\begin{itemize}
 				\item Entfernen: Durch Setzen des Häkchens wählt der Kursleiter diesen Benutzer aus, um ihn anschließend über den Button 'Löschen' zu entfernen.
+				
+				\begin{center}
+					\begin{longtable}{|p{3cm} |p{4cm} | p{4cm}|p{3cm} |p{2cm}|}
+						
+						\hline \multicolumn{1}{|c|}{\textbf{Feld}} & \multicolumn{1}{|c|}{\textbf{Action}} & \multicolumn{1}{|c|}{\textbf{Validatoren}}  &  \multicolumn{1}{|c|}{\textbf{Konverter}} &  \multicolumn{1}{|c|}{\textbf{ID}} \\ \hline
+						\endfirsthead
+						\hline
+						\endlastfoot
+						
+						\textit{Entfernen} & AuthenticateAction & ... & ... & ..\\ \hline
+					
+					\end{longtable}
+				\end{center}
+				
 			\end{itemize}
 			\item \textbf{Outputs:} 
 			\begin{itemize}
@@ -531,8 +628,6 @@
 			\begin{itemize}
 				\item ListParticipants.java
 			\end{itemize}
-			\item \textbf{Tag-Library:}
-			\item \textbf{\"{U}bergabeparameter:}
 		\end{itemize}
 		
 		\subsubsection{courseLeader}
@@ -550,6 +645,24 @@
 					\item Löschen (Teilnehmer): Durch Drücken dieses Buttons wird der markierte Teilnehmer aus der Kurseinheit entfernt. \\ Zugehörige Methode: deleteUserFromCourseUnit()
 					\item Hinzufügen (Teilnehmer): Durch Drücken dieses Buttons wird der angegebene Teilnehmer zu dieser Kurseinheit hinzugefügt, sofern der Benutzername im System existiert und die Daten korrekt eingegeben wurden. \\ Zugehörige Methode: addUserToCourseUnit()
 				\end{itemize}
+				
+				\begin{center}
+					\begin{longtable}{|p{4cm} |p{6cm} | p{4cm}|}
+						
+						\hline \multicolumn{1}{|c|}{\textbf{Button}} & \multicolumn{1}{|c|}{\textbf{Methode}} & \multicolumn{1}{|c|}{\textbf{\"{U}bergabeparameter}} \\ \hline
+						\endfirsthead
+						\hline
+						\endlastfoot
+						
+							\textit{Bearbeiten (Kurseinheit) } & editCourseUnit() & ... \\ \hline
+							\textit{Speichern (Kurseinheit) } & saveCourseUnit() & ... \\ \hline
+							\textit{Löschen (Kurseinheit) } & deleteCourseUnit() & ... \\ \hline
+							\textit{Löschen (Teilnehmer) } & deleteUserFromCourseUnit() & ... \\ \hline
+							\textit{Hinzufügen (Teilnehmer) } & addUserToCourseUnit() & ... \\ \hline
+					\end{longtable}
+				\end{center}
+				
+				
 			\item \textbf{Inputs:}
 				\begin{itemize}
 					\item Termin: Hier gibt der Kursleiter den Termin der Kurseinheit ein.
@@ -570,6 +683,35 @@
 					\item Turnus: Hier wählt der Kursleiter aus einem Drop-Down Menü aus, ob der Kurs beispielsweise wöchentlich stattfinden soll.
 					\item Einheitenanzahl: Hier gibt der Kursleiter an, wie viele Einheiten er anlegen will.
 				\end{itemize}
+				
+				\begin{center}
+					\begin{longtable}{|p{3cm} |p{4cm} | p{4cm}|p{3cm} |p{2cm}|}
+						
+						\hline \multicolumn{1}{|c|}{\textbf{Feld}} & \multicolumn{1}{|c|}{\textbf{Action}} & \multicolumn{1}{|c|}{\textbf{Validatoren}}  &  \multicolumn{1}{|c|}{\textbf{Konverter}} &  \multicolumn{1}{|c|}{\textbf{ID}} \\ \hline
+						\endfirsthead
+						\hline
+						\endlastfoot
+						
+							\textit{Termin } & AuthenticateAction & ... & ... & ..\\ \hline
+							\textit{Straße/ Hausnummer } & AuthenticateAction & ... & ... & ..\\ \hline
+							\textit{Postleitzahl} & AuthenticateAction & ... & ... & ..\\ \hline
+							\textit{Stadt } & AuthenticateAction& ... & ... & ..\\ \hline
+							\textit{Ort } & AuthenticateAction & ... & ... & ..\\ \hline
+							\textit{Beschreibung } & AuthenticateAction & ... & ... & ..\\ \hline
+							\textit{Preis } & AuthenticateAction & ... & ... & ..\\ \hline
+							\textit{Kursleiter } & AuthenticateAction & ... & ... & ..\\ \hline
+							\textit{Mindestteil- nehmerzahl} & AuthenticateAction & ... & ... & ..\\ \hline
+							\textit{Maximale Teilnehmerzahl} & AuthenticateAction & ... & ... & ..\\ \hline
+							\textit{Teilnehmer markieren} & AuthenticateAction& ... & ... & ..\\ \hline
+							\textit{Benutzer-ID} & AuthenticateAction& ... & ... & ..\\ \hline
+							\textit{Name (Teilnehmer)} & AuthenticateAction& ... & ... & ..\\ \hline
+							\textit{Vorname (Teilnehmer)} & AuthenticateAction& ... & ... & ..\\ \hline
+							\textit{regelmäßig} & AuthenticateAction& ... & ... & ..\\ \hline
+							\textit{Turnus} & AuthenticateAction& ... & ... & ..\\ \hline
+							\textit{Einheitenanzahl} & AuthenticateAction& ... & ... & ..\\ \hline
+					\end{longtable}
+				\end{center}
+				
 			\item \textbf{Outputs:}
 				\begin{itemize}
 					\item Termin (Fehlermeldung): Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
@@ -592,8 +734,6 @@
 				\begin{itemize}
 					\item CourseUnitManagement.java
 				\end{itemize}
-			\item \textbf{Tag-Library:}
-			\item \textbf{\"{U}bergabeparameter:}
 		\end{itemize}
 		
 		\paragraph{activateUsers.xhtml} \hypertarget{activateUsers}
@@ -605,10 +745,36 @@
 				\begin{itemize}
 					\item Benutzer aktivieren: Durch Klicken dieses Buttons wird der Account des markierten Benutzers aktiviert. \\ Zugehörige Methode: activateAccounts()
 				\end{itemize}
+				
+				\begin{center}
+					\begin{longtable}{|p{4cm} |p{6cm} | p{4cm}|}
+						
+						\hline \multicolumn{1}{|c|}{\textbf{Button}} & \multicolumn{1}{|c|}{\textbf{Methode}} & \multicolumn{1}{|c|}{\textbf{\"{U}bergabeparameter}} \\ \hline
+						\endfirsthead
+						\hline
+						\endlastfoot
+						
+						\textit{Benutzer aktivieren } & activateAccounts() & ... \\ \hline
+					\end{longtable}
+				\end{center}
+				
 			\item \textbf{Inputs:}
 				\begin{itemize}
 					\item Benutzer aktivieren: Der Kursleiter kann durch Setzen des Häkchens Benutzer auswählen, um diese anschließend zu aktivieren.
 				\end{itemize}
+				
+				\begin{center}
+					\begin{longtable}{|p{3cm} |p{4cm} | p{4cm}|p{3cm} |p{2cm}|}
+						
+						\hline \multicolumn{1}{|c|}{\textbf{Feld}} & \multicolumn{1}{|c|}{\textbf{Action}} & \multicolumn{1}{|c|}{\textbf{Validatoren}}  &  \multicolumn{1}{|c|}{\textbf{Konverter}} &  \multicolumn{1}{|c|}{\textbf{ID}} \\ \hline
+						\endfirsthead
+						\hline
+						\endlastfoot
+						
+						\textit{Benutzer aktivieren } & AuthenticateAction & ... & ... & ..\\ \hline
+					\end{longtable}
+				\end{center}
+				
 			\item \textbf{Outputs:}
 				\begin{itemize}
 					\item Tabelle Auflistung Benutzerdaten: Hier werden ausgewählte Daten aller im System registrierten, aber noch nicht aktivierten Benutzer angezeigt.
@@ -617,8 +783,6 @@
 				\begin{itemize}
 					\item AccountManagement.java
 				\end{itemize}
-			\item \textbf{Tag-Library:}
-			\item \textbf{\"{U}bergabeparameter:}
 		\end{itemize}
 		
 		\subsubsection{systemAdministrator}
@@ -673,12 +837,39 @@
 			\item \textbf{Buttons:}
 				\begin{itemize}
 					\item Suchen: Durch Drücken dieses Buttons werden die Benutzer nach den eingegebenen Kriterien durchsucht und in der Liste angezeigt. \\ Zugehörige Methode: search()
+					
+					\begin{center}
+						\begin{longtable}{|p{4cm} |p{6cm} | p{4cm}|}
+							
+							\hline \multicolumn{1}{|c|}{\textbf{Button}} & \multicolumn{1}{|c|}{\textbf{Methode}} & \multicolumn{1}{|c|}{\textbf{\"{U}bergabeparameter}} \\ \hline
+							\endfirsthead
+							\hline
+							\endlastfoot
+							
+							\textit{Suchen } & search() & ... \\ \hline
+						\end{longtable}
+					\end{center}
+					
 				\end{itemize}
 			\item \textbf{Inputs:}
 				\begin{itemize}
 					\item Kriterienauswahl: Hier kann der Kursleiter auswählen, ob er nach 'Benutzer-ID', 'Benutzername', 'Name' oder 'Benutzerrolle' suchen will.
 					\item Suchbegriff: Hier gibt der Kursleiter den entsprechenden Suchbegriff ein.
 				\end{itemize}
+				
+				\begin{center}
+					\begin{longtable}{|p{3cm} |p{4cm} | p{4cm}|p{3cm} |p{2cm}|}
+						
+						\hline \multicolumn{1}{|c|}{\textbf{Feld}} & \multicolumn{1}{|c|}{\textbf{Action}} & \multicolumn{1}{|c|}{\textbf{Validatoren}}  &  \multicolumn{1}{|c|}{\textbf{Konverter}} &  \multicolumn{1}{|c|}{\textbf{ID}} \\ \hline
+						\endfirsthead
+						\hline
+						\endlastfoot
+						
+							\textit{Kriterienauswahl } & AuthenticateAction & ... & ... & ..\\ \hline
+							\textit{Suchbegriff } & AuthenticateAction & ... & ... & ..\\ \hline
+					\end{longtable}
+				\end{center}
+				
 			\item \textbf{Outputs:}
 				\begin{itemize}
 					\item Tabelle Auflistung Benutzerdaten: Hier werden ausgewählte Daten aller im System registrierten Benutzer angezeigt.
@@ -688,8 +879,6 @@
 				\begin{itemize}
 					\item SearchUser.java
 				\end{itemize}
-			\item \textbf{Tag-Library:}
-			\item \textbf{\"{U}bergabeparameter:}
 		\end{itemize}
 		
 		\paragraph{createUser.xhtml} \hypertarget{createUser}
@@ -743,6 +932,22 @@
 					\item Löschen (Kursleiter): Durch Drücken dieses Buttons löscht der Administrator den ausgewählten Kursleiter aus diesem Kurs. \\ Zugehörige Methode: removeCourseLeader()
 					\item Hinzufügen (Kursleiter): Durch Drücken dieses Buttons wird der angegebene Kursleiter zum Kurs hinzugefügt, sofern alle Eingabe korrekt waren.	\\ Zugehörige Methode: addCourseLeader()
 				\end{itemize}
+				
+				\begin{center}
+					\begin{longtable}{|p{4cm} |p{6cm} | p{4cm}|}
+						
+						\hline \multicolumn{1}{|c|}{\textbf{Button}} & \multicolumn{1}{|c|}{\textbf{Methode}} & \multicolumn{1}{|c|}{\textbf{\"{U}bergabeparameter}} \\ \hline
+						\endfirsthead
+						\hline
+						\endlastfoot
+						
+						\textit{Kurs anlegen} & createCourse() & ... \\ \hline
+						\textit{Löschen (Kursleiter)} &  removeCourseLeader() & ... \\ \hline
+						\textit{Hinzufügen (Kursleiter)} &addCourseLeader() & ... \\ \hline
+					\end{longtable}
+				\end{center}
+				
+				
 			\item \textbf{Inputs:}
 				\begin{itemize}
 					\item Kursname: Hier gibt der Administrator den Kursnamen ein.
@@ -755,6 +960,27 @@
 					\item Kursleiter-ID: Hier gibt der Administrator die entsprechende ID ein.
 					\item Löschen (Kursleiter): Hier kann der Administrator durch Setzen des Häkchens den Kursleiter markieren, um ihn anschließend über den Button 'Löschen' zu entfernen.
 				\end{itemize}
+				
+				\begin{center}
+					\begin{longtable}{|p{3cm} |p{4cm} | p{4cm}|p{3cm} |p{2cm}|}
+						
+						\hline \multicolumn{1}{|c|}{\textbf{Feld}} & \multicolumn{1}{|c|}{\textbf{Action}} & \multicolumn{1}{|c|}{\textbf{Validatoren}}  &  \multicolumn{1}{|c|}{\textbf{Konverter}} &  \multicolumn{1}{|c|}{\textbf{ID}} \\ \hline
+						\endfirsthead
+						\hline
+						\endlastfoot
+						
+							\textit{Kursname } & AuthenticateAction & ... & ... & ..\\ \hline
+							\textit{Beschreibung } & AuthenticateAction & ... & ... & ..\\ \hline
+							\textit{Maximale Teilnehmerzahl} & AuthenticateAction & ... & ... & ..\\ \hline
+							\textit{Startdatum} & AuthenticateAction& ... & ... & ..\\ \hline
+							\textit{Enddatum} & AuthenticateAction& ... & ... & ..\\ \hline
+							\textit{Name (Kursleiter)} & AuthenticateAction& ... & ... & ..\\ \hline
+							\textit{E-Mail-Adresse (Kursleiter)} & AuthenticateAction& ... & ... & ..\\ \hline
+							\textit{Kursleiter-ID} & AuthenticateAction& ... & ... & ..\\ \hline
+							\textit{Löschen (Kursleiter)} & AuthenticateAction& ... & ... & ..\\ \hline
+					\end{longtable}
+				\end{center}
+				
 			\item \textbf{Outputs:}
 				\begin{itemize}
 					\item Kurs-ID: Hier wird die automatisch generierte ID des Kurses ausgegeben.
@@ -772,8 +998,6 @@
 				\begin{itemize}
 					\item CourseManagement.java
 				\end{itemize}
-			\item \textbf{Tag-Library:}
-			\item \textbf{\"{U}bergabeparameter:}
 		\end{itemize}
 		
 		\paragraph{editImprint.xhtml} \hypertarget{editImprint}
@@ -785,17 +1009,41 @@
 				\begin{itemize}
 					\item Speichern: Durch Klicken dieses Buttons werden die Änderungen im Impressum gespeichert. \\ Zugehörige Methode: editImprint()
 				\end{itemize}
+				
+				\begin{center}
+					\begin{longtable}{|p{4cm} |p{6cm} | p{4cm}|}
+						
+						\hline \multicolumn{1}{|c|}{\textbf{Button}} & \multicolumn{1}{|c|}{\textbf{Methode}} & \multicolumn{1}{|c|}{\textbf{\"{U}bergabeparameter}} \\ \hline
+						\endfirsthead
+						\hline
+						\endlastfoot
+						
+						\textit{Speichern} & editImprint() & ... \\ \hline
+					\end{longtable}
+				\end{center}
+				
 			\item \textbf{Inputs:}
 				\begin{itemize}
 					\item Impressum: Hier kann das Impressum bearbeitet werden.
 				\end{itemize}
+				
+				\begin{center}
+					\begin{longtable}{|p{3cm} |p{4cm} | p{4cm}|p{3cm} |p{2cm}|}
+						
+						\hline \multicolumn{1}{|c|}{\textbf{Feld}} & \multicolumn{1}{|c|}{\textbf{Action}} & \multicolumn{1}{|c|}{\textbf{Validatoren}}  &  \multicolumn{1}{|c|}{\textbf{Konverter}} &  \multicolumn{1}{|c|}{\textbf{ID}} \\ \hline
+						\endfirsthead
+						\hline
+						\endlastfoot
+						
+						\textit{Impressum } & AuthenticateAction & ... & ... & ..\\ \hline
+					\end{longtable}
+				\end{center}
+				
 			\item \textbf{Outputs:} -
 			\item \textbf{BackingBean:}
 				\begin{itemize}
 					\item EditImprint.java				
 				\end{itemize}
-			\item \textbf{Tag-Library:}
-			\item \textbf{\"{U}bergabeparameter:}
 		\end{itemize}
 		
 		\paragraph{statistics.xhtml} \hypertarget{statistics}
