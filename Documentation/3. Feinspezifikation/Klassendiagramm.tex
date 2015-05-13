@@ -82,7 +82,6 @@
 		\item \method{public void setSearchParam(String searchParam)}
 		\item \method{public String getSearchTerm()}
 		\item \method{public void setSearchTerm(String searchTerm)}
-		\item \method{public void setSearchOnlyFreeCourses(boolean onlyFree)}
 		\item \method{public List<Course> getSearchResult()}
 		\item \method{public void setSearchResult(List<Course> searchResult)}
 		\item \method{public String loadCourseDetailsPageOfSelectedCourse()}
@@ -160,7 +159,7 @@
 		\item \method{public User getUserToAdd()}
 		\item \method{public void setUserToAdd(User userToAdd)}
 		\item \method{public void deleteUsersFromCourse()}
-		\item \method{public List<User> getUserToDelete()}
+		\item \method{public List<User> getUsersToDelete()}
 		\item \method{public void setUsersToDelete(List<User> usersToDelete)}
 		\item \method{public boolean getIsRegularCourseUnit()}
 		\item \method{public Cycle getCylceOfCourseUnit()}
@@ -358,8 +357,6 @@
 	\begin{itemize}
 		\item \method{public String login()}
 		\item \method{public String logout()}
-		\item \method{public String getChoosenLanguage()}
-		\item \method{public void setChoosenLanguage(String choosenLanguage)}
 		\item \method{public SessionUser getSessionUser()}
 		\item \method{public void setSessionUser(SessionUser userSession)}
 	\end{itemize}
@@ -804,7 +801,7 @@
 		\item \method{public static String hash(String password, int salt)}
 	\end{itemize}
 	
-	\subsection{Klasse LanguageManagager}
+	\subsection{Klasse LanguageManager}
 	Diese Klasse ist zuständig für die angezeigte Systemsprache. In ihr werden die unterstützten Sprachen verwaltet und sie ist zuständig für das Auslesen der Anzeigetexte aus der Properties - Datei der gewählten Sprache.
 	\begin{itemize}
 		\item \method{public static LanguageManager getInstance()}
@@ -832,7 +829,6 @@
 			FilterChain chain) throws IOException, ServletException}
 		\item \override
 		\method{public void init(FilterConfig filterConfig) throws ServletException}
-		\item \method{protected String selectEncoding(ServletRequest request)}
 	\end{itemize}
 	
 	\section{Package exception}
