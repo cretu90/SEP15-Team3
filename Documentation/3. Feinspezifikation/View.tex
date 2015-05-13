@@ -209,30 +209,57 @@
 				\item E-Mail-Adresse (Passwort vergessen): Der Benutzer gibt seine im System bereits gespeicherte E-Mailadresse ein.
 				
 				\begin{center}
-					\begin{longtable}{|p{3cm} |p{4cm} | p{4cm}|p{3cm} |p{2cm}|}
+					\begin{longtable}{|p{3cm} |p{5cm} | p{4cm}|p{3cm}|}
 						
-						\hline \multicolumn{1}{|c|}{\textbf{Feld}} & \multicolumn{1}{|c|}{\textbf{Action}} & \multicolumn{1}{|c|}{\textbf{Validatoren}}  &  \multicolumn{1}{|c|}{\textbf{Konverter}} &  \multicolumn{1}{|c|}{\textbf{ID}} \\ \hline
+						\hline \multicolumn{1}{|c|}{\textbf{Eingabefeld}} & \multicolumn{1}{|c|}{\textbf{Backing-Bean-Attribute}} & \multicolumn{1}{|c|}{\textbf{Typ}}  &  \multicolumn{1}{|c|}{\textbf{ID}} \\ \hline
 						\endfirsthead
 						\hline
 						\endlastfoot
-							\textit{Anrede (R)} & AuthenticateAction & ... & ... & ..\\ \hline
-							\textit{Vorname (R)} & AuthenticateAction & ... & ... & ..\\ \hline
-							\textit{Name (R)} & AuthenticateAction & ... & ... & ..\\ \hline
-							\textit{Benutzername (R)} & AuthenticateAction & ... & ... & ..\\ \hline
-							\textit{Passwort (R)} & AuthenticateAction & ... & ... & ..\\ \hline
-							\textit{Passwort bestätigen (R)} & AuthenticateAction & ... & ... & ..\\ \hline
-							\textit{Geburtstag (R)} & AuthenticateAction & ... & ... & ..\\ \hline
-							\textit{Straße/ Hausnummer (R)} & AuthenticateAction & ... & ... & ..\\ \hline
-							\textit{Stadt (R)} & AuthenticateAction& ... & ... & ..\\ \hline
-							\textit{Postleitzahl (R)} & AuthenticateAction & ... & ... & ..\\ \hline
-							\textit{Land (R)} & AuthenticateAction & ... & ... & ..\\ \hline
-							\textit{E-Mail-Adresse (R)} & AuthenticateAction & ... & ... & ..\\ \hline
-							\textit{AGBs bestätigen (R)} & AuthenticateAction & ... & ... & ..\\ \hline
-							\textit{Benutzername (A)} & AuthenticateAction& ... & ... & ..\\ \hline
-							\textit{Passwort (A)} & AuthenticateAction & ... & ... & ..\\ \hline
-							\textit{E-Mail-Adresse (Passwort vergessen)} & AuthenticateAction & ... & ... & ..\\ \hline
+							\textit{Anrede (R)} & - & selectOneMenu & ... \\ \hline
+							\textit{Vorname (R)} & - & inputText & ... \\ \hline
+							\textit{Name (R)} & - & inputText & ... \\ \hline
+							\textit{Benutzername (R)} & - & inputText & ...\\ \hline
+							\textit{Passwort (R)} & - & inputSecret & ... \\ \hline
+							\textit{Passwort bestätigen (R)} &- & inputSecret & ...\\ \hline
+							\textit{Geburtstag (R)} & - & inputText & ... \\ \hline
+							\textit{Straße/ Hausnummer (R)} & - & inputText & ...\\ \hline
+							\textit{Stadt (R)} & - & inputText & ... \\ \hline
+							\textit{Postleitzahl (R)} & - & inputText & ... \\ \hline
+							\textit{Land (R)} & - & inputText & ... \\ \hline
+							\textit{E-Mail-Adresse (R)} & - & inputText & ...\\ \hline
+							\textit{AGBs bestätigen (R)} & - & selectBooleanCheckbox & ... \\ \hline
+							\textit{Benutzername (A)} & - & inputText & ... \\ \hline
+							\textit{Passwort (A)} & - & inputSecret & ... \\ \hline
+							\textit{E-Mail-Adresse (Passwort vergessen)} & - & inputText & ... \\ \hline
 					\end{longtable}
 				\end{center}
+				
+				\begin{center}
+					\begin{longtable}{|p{3cm} |p{8cm} | p{5cm}|}
+						
+						\hline \multicolumn{1}{|c|}{\textbf{Eingabefeld}} & \multicolumn{1}{|c|}{\textbf{Validator}} & \multicolumn{1}{|c|}{\textbf{Konverter}} \\ \hline
+						\endfirsthead
+						\hline
+						\endlastfoot
+						\textit{Anrede (R)} & - & ...  \\ \hline
+						\textit{Vorname (R)} & validateLength (minimum ="", maximum =""), validateRequired & ... \\ \hline
+						\textit{Name (R)} & validateLength (minimum ="", maximum =""), validateRequired & ...  \\ \hline
+						\textit{Benutzername (R)} & validateLength (minimum ="", maximum =""), validateRegex (pattern =""), validateRequired  & ... \\ \hline
+						\textit{Passwort (R)} & validateLength (minimum ="", maximum =""), validateRegex (pattern =""), validateRequired & ...  \\ \hline
+						\textit{Passwort bestätigen (R)} & validateLength (minimum ="", maximum =""), validateRequired & ... \\ \hline
+						\textit{Geburtstag (R)} & validateRequired & convertDateTime  \\ \hline
+						\textit{Straße/ Hausnummer (R)} & validateLength (minimum ="", maximum =""), validateRequired & ... \\ \hline
+						\textit{Stadt (R)} & validateLength (minimum ="", maximum =""), validateRequired & ...  \\ \hline
+						\textit{Postleitzahl (R)} & validateLength (minimum ="", maximum =""), validateRequired & ... \\ \hline
+						\textit{Land (R)} & validateLength (minimum ="", maximum =""), validateRequired & ...  \\ \hline
+						\textit{E-Mail-Adresse (R)} & validateLength (minimum ="", maximum =""), validateRequired & ... \\ \hline
+						\textit{AGBs bestätigen (R)} & - & ...  \\ \hline
+						\textit{Benutzername (A)} & validateRequired & ...  \\ \hline
+						\textit{Passwort (A)} & validateRequired & ...  \\ \hline
+						\textit{E-Mail-Adresse (Passwort vergessen)} & validateRequired & ... \\ \hline
+					\end{longtable}
+				\end{center}
+				
 				
 			\end{itemize}
 			\item \textbf{Outputs:} 
@@ -253,6 +280,32 @@
 				\item Passwort Fehlermeldung (Anmeldung): Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
 				\item E-Mail-Adresse Fehlermeldung (Passwort vergessen): Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
 			\end{itemize}
+			
+				\begin{center}
+					\begin{longtable}{|p{5cm} | p{4cm}|p{3cm}|}
+						
+						\hline \multicolumn{1}{|c|}{\textbf{Ausgabefeld}} & \multicolumn{1}{|c|}{\textbf{Typ}}  &  \multicolumn{1}{|c|}{\textbf{ID}} \\ \hline
+						\endfirsthead
+						\hline
+						\endlastfoot
+						\textit{Vorname Fehlermeldung (R)}  & outputText & ... \\ \hline
+						\textit{Name Fehlermeldung (R)} & outputText & ... \\ \hline
+						\textit{Benutzername Fehlermeldung (R)}& outputText & ...\\ \hline
+						\textit{Passwort Fehlermeldung (R)}& outputText & ... \\ \hline
+						\textit{Passwort bestätigen Fehlermeldung (R)}& outputText & ...\\ \hline
+						\textit{Geburtstag  Fehlermeldung(R)} & outputText & ... \\ \hline
+						\textit{Straße/ Hausnummer Fehlermeldung (R)}& outputText & ...\\ \hline
+						\textit{Stadt Fehlermeldung (R)}& outputText & ... \\ \hline
+						\textit{Postleitzahl Fehlermeldung (R)} & outputText & ... \\ \hline
+						\textit{Land Fehlermeldung (R)} & outputText & ... \\ \hline
+						\textit{E-Mail-Adresse Fehlermeldung (R)} & outputText & ...\\ \hline
+						\textit{AGBs bestätigen Fehlermeldung (R)} & outputText & ... \\ \hline
+						\textit{Benutzername Fehlermeldung (A)}& outputText & ... \\ \hline
+						\textit{Passwort Fehlermeldung (A)} &  outputText & ... \\ \hline
+						\textit{E-Mail-Adresse Fehlermeldung (Passwort vergessen)}  & outputText & ... \\ \hline
+					\end{longtable}
+				\end{center}
+			
 			\item \textbf{BackingBean:}
 				\begin{itemize}
 					\item AuthenticateUser.java
@@ -272,6 +325,18 @@
 				\begin{itemize}
 					\item	Anzeige des Impressums, welches vom Administrator festgelegt wurde.
 				\end{itemize}
+				
+				\begin{center}
+					\begin{longtable}{|p{5cm} | p{4cm}|p{3cm}|}
+						
+						\hline \multicolumn{1}{|c|}{\textbf{Ausgabefeld}} & \multicolumn{1}{|c|}{\textbf{Typ}}  &  \multicolumn{1}{|c|}{\textbf{ID}} \\ \hline
+						\endfirsthead
+						\hline
+						\endlastfoot
+						\textit{Impressum)}  & outputText & ... \\ \hline
+					\end{longtable}
+				\end{center}
+				
 			\item \textbf{BackingBean:} -
 		\end{itemize}
 		
@@ -404,6 +469,18 @@
 				\begin{itemize}
 					\item Tabelle Auflistung aller Kurse: Hier werden dem Benutzer alle seine angemeldeten Kurse angezeigt.
 				\end{itemize}
+				
+				\begin{center}
+					\begin{longtable}{|p{5cm} | p{4cm}|p{3cm}|}
+						
+						\hline \multicolumn{1}{|c|}{\textbf{Ausgabefeld}} & \multicolumn{1}{|c|}{\textbf{Typ}}  &  \multicolumn{1}{|c|}{\textbf{ID}} \\ \hline
+						\endfirsthead
+						\hline
+						\endlastfoot
+						\textit{Kurstabelle}  & outputText & ... \\ \hline
+					\end{longtable}
+				\end{center}
+				
 			\item \textbf{BackingBean:}
 				\begin{itemize}
 					\item MyCourses.java
@@ -501,6 +578,32 @@
 					\item Kontostand: Ausgabe des aktuellen Kontostandes.
 					\item Tabelle Auflistung der Trainingskurse: Hier werden dem Kursleiter alle Kurse aufgelistet, die er leitet.
 				\end{itemize}
+				
+				\begin{center}
+					\begin{longtable}{|p{5cm} | p{4cm}|p{3cm}|}
+						
+						\hline \multicolumn{1}{|c|}{\textbf{Ausgabefeld}} & \multicolumn{1}{|c|}{\textbf{Typ}}  &  \multicolumn{1}{|c|}{\textbf{ID}} \\ \hline
+						\endfirsthead
+						\hline
+						\endlastfoot
+						\textit{Benutzer-ID}  & outputText & ... \\ \hline
+						\textit{Vorname Fehlermeldung }  & outputText & ... \\ \hline
+						\textit{Name Fehlermeldung } & outputText & ... \\ \hline
+						\textit{Geburtstag  Fehlermeldung} & outputText & ... \\ \hline
+						\textit{Straße/ Hausnummer Fehlermeldung }& outputText & ...\\ \hline
+						\textit{Stadt Fehlermeldung }& outputText & ... \\ \hline
+						\textit{Postleitzahl Fehlermeldung } & outputText & ... \\ \hline
+						\textit{Land Fehlermeldung } & outputText & ... \\ \hline
+						\textit{E-Mail-Adresse Fehlermeldung} & outputText & ...\\ \hline
+						\textit{Benutzername Fehlermeldung }& outputText & ... \\ \hline
+						\textit{Passwort Fehlermeldung} &  outputText & ... \\ \hline
+						\textit{Passwort bestätigen Fehlermeldung}  & outputText & ... \\ \hline
+						\textit{Profilbild Fehlermeldung} &  outputText & ... \\ \hline
+						\textit{Kontostand} &  outputText & ... \\ \hline
+						\textit{Tabelle Trainingskurse} &  outputText & ... \\ \hline
+					\end{longtable}
+				\end{center}
+				
 			\item \textbf{BackingBean:}
 				\begin{itemize}
 					\item UserProfile.java
@@ -574,6 +677,18 @@
 			\begin{itemize}
 				\item Tabelle Auflistung Kursleiterdaten: Hier werden die Daten des Kursleiters und die von ihm geleiteten Kurse angezeigt.
 			\end{itemize}
+			
+			\begin{center}
+				\begin{longtable}{|p{5cm} | p{4cm}|p{3cm}|}
+					
+					\hline \multicolumn{1}{|c|}{\textbf{Ausgabefeld}} & \multicolumn{1}{|c|}{\textbf{Typ}}  &  \multicolumn{1}{|c|}{\textbf{ID}} \\ \hline
+					\endfirsthead
+					\hline
+					\endlastfoot
+					\textit{Tabelle Kursleiterdaten}  & outputText & ... \\ \hline
+				\end{longtable}
+			\end{center}
+			
 			\item \textbf{BackingBean:}
 			\begin{itemize}
 				\item UserProfile.java			
@@ -624,6 +739,19 @@
 			\begin{itemize}
 				\item Tabelle Auflistung Kursteilnehmer: Hier werden die Teilnehmer des Kurses angezeigt.
 			\end{itemize}
+			
+			\begin{center}
+				\begin{longtable}{|p{5cm} | p{4cm}|p{3cm}|}
+					
+					\hline \multicolumn{1}{|c|}{\textbf{Ausgabefeld}} & \multicolumn{1}{|c|}{\textbf{Typ}}  &  \multicolumn{1}{|c|}{\textbf{ID}} \\ \hline
+					\endfirsthead
+					\hline
+					\endlastfoot
+					\textit{Tabelle Kursteilnehmer}  & outputText & ... \\ \hline
+				\end{longtable}
+			\end{center}
+			
+			
 			\item \textbf{BackingBean:}
 			\begin{itemize}
 				\item ListParticipants.java
@@ -730,6 +858,32 @@
 					\item Vorname (Teilnehmer (Fehlermeldung)): Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
 					\item Einheitenanzahl: Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
 				\end{itemize}
+				
+				\begin{center}
+					\begin{longtable}{|p{5cm} | p{4cm}|p{3cm}|}
+						
+						\hline \multicolumn{1}{|c|}{\textbf{Ausgabefeld}} & \multicolumn{1}{|c|}{\textbf{Typ}}  &  \multicolumn{1}{|c|}{\textbf{ID}} \\ \hline
+						\endfirsthead
+						\hline
+						\endlastfoot
+						\textit{Termin (Fehlermeldung)}  & outputText & ... \\ \hline
+						\textit{Straße/ Hausnummer (Fehlermeldung) }  & outputText & ... \\ \hline
+						\textit{Postleitzahl (Fehlermeldung)} & outputText & ... \\ \hline
+						\textit{Stadt (Fehlermeldung)} & outputText & ... \\ \hline
+						\textit{Raum (Fehlermeldung)}& outputText & ...\\ \hline
+						\textit{Beschreibung (Fehlermeldung)}& outputText & ... \\ \hline
+						\textit{Preis (Fehlermeldung) } & outputText & ... \\ \hline
+						\textit{Kursleiter (Fehlermeldung) } & outputText & ... \\ \hline
+						\textit{Mindestteilnehmerzahl (Fehlermeldung)} & outputText & ...\\ \hline
+						\textit{Maximale Teilnehmerzahl (Fehlermeldung) }& outputText & ... \\ \hline
+						\textit{Status} &  outputText & ... \\ \hline
+						\textit{Benutzer-ID (Fehlermeldung)}  & outputText & ... \\ \hline
+						\textit{Name (Teilnehmer (Fehlermeldung))} &  outputText & ... \\ \hline
+						\textit{Vorname (Teilnehmer (Fehlermeldung))} &  outputText & ... \\ \hline
+						\textit{Einheitenanzahl} &  outputText & ... \\ \hline
+					\end{longtable}
+				\end{center}
+				
 			\item \textbf{BackingBean:}
 				\begin{itemize}
 					\item CourseUnitManagement.java
