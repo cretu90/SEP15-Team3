@@ -106,9 +106,6 @@
 				\begin{itemize}
 					\item Navigation.java
 				\end{itemize}
-			\item \textbf{Tag-Library:}
-			\item \textbf{\"{U}bergabeparameter:}
-			
 		\end{itemize}
 		
 		\paragraph{footer.xhtml} \hypertarget{footer}
@@ -141,8 +138,6 @@
 			\begin{itemize}
 				\item Footer.java
 			\end{itemize}
-			\item \textbf{Tag-Library:}
-			\item \textbf{\"{U}bergabeparameter:}
 		\end{itemize}
 		
 		\paragraph{template.xhtml} \hypertarget{template}
@@ -169,8 +164,6 @@
 			\end{center}
 			\item \textbf{Outputs:} -
 			\item \textbf{BackingBean:} -
-			\item \textbf{Tag-Library:}
-			\item \textbf{\"{U}bergabeparameter:}
 		\end{itemize}
 		
 		\section{Facelets}
@@ -221,8 +214,6 @@
 				\item Logo der Website
 			\end{itemize}
 			\item \textbf{BackingBean:} -
-			\item \textbf{Tag-Library:}
-			\item \textbf{\"{U}bergabeparameter:}
 		\end{itemize}
 		
 		\paragraph{authenticate.xhtml} \hypertarget{authenticate}
@@ -415,8 +406,6 @@
 				\item von Betreibern festgelegte Allgemeine Geschäftsbedingungen.
 			\end{itemize}
 			\item \textbf{BackingBean:} -
-			\item \textbf{Tag-Library:}
-			\item \textbf{\"{U}bergabeparameter:}
 		\end{itemize}
 		
 		
@@ -467,6 +456,27 @@
 				\item Kurseinheit bearbeiten (Kursleiter): Ermöglicht die Bearbeitung einer einzelnen Kurseinheit. \hyperlink{editCourseUnit}{editCourseUnit.xhtml} \\ Zugehörige Methode: loadEditCourseUnitPage()
 				\item Kurs löschen (Administrator): Löscht den Kurs. \\ Zugehörige Methode: deleteCourse()
 			\end{itemize}
+			\begin{center}
+				\begin{longtable}{|p{4cm} |p{6cm} | p{4cm}|}
+						
+					\hline \multicolumn{1}{|c|}{\textbf{Button}} & \multicolumn{1}{|c|}{\textbf{Methode}} & \multicolumn{1}{|c|}{\textbf{\"{U}bergabeparameter}} \\ \hline
+					\endfirsthead
+					\hline
+					\endlastfoot
+			
+					\textit{Anmelden (B)} & ... & ... \\ \hline
+					\textit{Abmelden (B)} &  ... & ... \\ \hline
+					\textit{Benutzer anzeigen (B)} & ... & ... \\ \hline
+					\textit{Alle auswählen (B)} & ... & ... \\ \hline
+					\textit{Speichern (B)} & ... & ... \\ \hline
+					\textit{Bearbeiten (A)} & ... & ... \\ \hline
+					\textit{Speichern (A)} & ... & ... \\ \hline
+					\textit{Hinzufügen (A)} & ... & ... \\ \hline
+					\textit{Kurseinheit anlegen (K)} & ... & ... \\ \hline
+					\textit{Kurseinheit bearbeiten (K)} & ... & ... \\ \hline
+					\textit{Kurs löschen (A)} & ... & ... \\ \hline
+				\end{longtable}
+			\end{center}
 			\item \textbf{Inputs:}
 			\begin{itemize}
 				\item Kursnews erhalten: Trägt Benutzer bei Anmeldung zum Kurs in die Kursnews ein.
@@ -480,6 +490,25 @@
 				\item Startdatum (Administrator): Eingabefeld für das Startdatum des Kurses.
 				\item Enddatum (Administrator): Eingabefeld für das Enddatum des Kurses.
 			\end{itemize}
+				\begin{center}
+					\begin{longtable}{|p{3cm} |p{4cm} | p{4cm}|p{3cm} |p{2cm}|}
+						
+						\hline \multicolumn{1}{|c|}{\textbf{Feld}} & \multicolumn{1}{|c|}{\textbf{Action}} & \multicolumn{1}{|c|}{\textbf{Validatoren}}  &  \multicolumn{1}{|c|}{\textbf{Konverter}} &  \multicolumn{1}{|c|}{\textbf{ID}} \\ \hline
+						\endfirsthead
+						\hline
+						\endlastfoot
+						\textit{Kursnews erhalten} & ... & ... & ... & ..\\ \hline
+						\textit{Kurseinheit auswählen} & ... & ... & ... & ..\\ \hline
+						\textit{Kursleiter auswählen (A)} & ... & ... & ... & ..\\ \hline
+						\textit{Kursleiter Name (A)} & ... & ... & ... & ..\\ \hline
+						\textit{Kursleiter E-Mail (A)} & ... & ... & ... & ..\\ \hline
+						\textit{Kursbeschreibung (A)} & ... & ... & ... & ..\\ \hline
+						\textit{Minimale Teilnehmerzahl (A)} & ... & ... & ... & ..\\ \hline
+						\textit{Maximale Teilnehmerzahl (A)} & ... & ... & ... & ..\\ \hline
+						\textit{Startdatum (A)} & ... & ... & ... & ..\\ \hline
+						\textit{Enddatum (A)} & ... & ... & ... & ..\\ \hline
+					\end{longtable}
+				\end{center}
 			\item \textbf{Outputs:}
 			\begin{itemize}
 				\item Tabelle Kursleiter: Tabelle mit den Kontaktinformationen der/des Kursleiters.
@@ -490,6 +519,28 @@
 				\item Maximale Teilnehmerzahl: Zeigt die für den Kurs maximale Teilnehmerzahl an.
 				\item Fehlermeldung zu den einzelnen Eingabefeldern, bei falscher Eingabe.
 			\end{itemize}
+					\begin{center}
+						\begin{longtable}{|p{5cm} | p{4cm}|p{3cm}|}
+							
+							\hline \multicolumn{1}{|c|}{\textbf{Ausgabefeld}} & \multicolumn{1}{|c|}{\textbf{Typ}}  &  \multicolumn{1}{|c|}{\textbf{ID}} \\ \hline
+							\endfirsthead
+							\hline
+							\endlastfoot
+							\textit{Tabelle Kursleiter}  & dataTable & ... \\ \hline
+							\textit{Tabelle Kurseinheiten}  & dataTable & ... \\ \hline
+							\textit{Kurs-ID}  & outputText & ... \\ \hline
+							\textit{Kursbeschreibung}  & outputText & ... \\ \hline
+							\textit{Minimale Teilnehmerzahl}  & outputText & ... \\ \hline
+							\textit{Maximale Teilnehmerzahl}  & outputText & ... \\ \hline
+							\textit{Kursleiter Name Fehlermeldung}  & outputText & ... \\ \hline
+							\textit{Kursleiter E-Mail Fehlermeldung}  & outputText & ... \\ \hline
+							\textit{Kursbeschreibung Fehlermeldung}  & outputText & ... \\ \hline
+							\textit{Minimale Teilnehmerzahl Fehlermeldung}  & outputText & ... \\ \hline
+							\textit{Maximale Teilnehmerzahl Fehlermeldung}  & outputText & ... \\ \hline
+							\textit{Startdatum Fehlermeldung}  & outputText & ... \\ \hline
+							\textit{Enddatum Fehlermeldung}  & outputText & ... \\ \hline
+						\end{longtable}
+					\end{center}
 			\item \textbf{BackingBean:}
 			\begin{itemize}
 				\item CourseDetail.java
@@ -751,13 +802,13 @@
 							\endfirsthead
 							\hline
 							\endlastfoot
-							\textit{CVC-Nummer}  & outputText & ... \\ \hline
-							\textit{Ablaufadtum}  & outputText & ... \\ \hline
-							\textit{Nachname}  & outputText & ... \\ \hline
-							\textit{Vorname}  & outputText & ... \\ \hline
-							\textit{Kredit-Institut}  & outputText & ... \\ \hline
-							\textit{Kreditkarten-nummer}  & outputText & ... \\ \hline
-							\textit{Betrag}  & outputText & ... \\ \hline
+							\textit{CVC-Nummer Fehlermeldung}  & outputText & ... \\ \hline
+							\textit{Ablaufadtum Fehlermeldung}  & outputText & ... \\ \hline
+							\textit{Nachname Fehlermeldung}  & outputText & ... \\ \hline
+							\textit{Vorname Fehlermeldung}  & outputText & ... \\ \hline
+							\textit{Kredit-Institut Fehlermeldung}  & outputText & ... \\ \hline
+							\textit{Kreditkarten-nummer Fehlermeldung}  & outputText & ... \\ \hline
+							\textit{Betrag Fehlermeldung}  & outputText & ... \\ \hline
 						\end{longtable}
 					\end{center}
 			\item \textbf{BackingBean:}
@@ -1185,10 +1236,10 @@
 							\endfirsthead
 							\hline
 							\endlastfoot
-							\textit{Benutzer-ID}  & outputText & ... \\ \hline
-							\textit{Benutzername}  & outputText & ... \\ \hline
-							\textit{Betrag} & outputText & ...\\ \hline
-							\textit{Überziehungswert} & outputText & ...\\ \hline
+							\textit{Benutzer-ID Fehlermeldung}  & outputText & ... \\ \hline
+							\textit{Benutzername Fehlermeldung}  & outputText & ... \\ \hline
+							\textit{Betrag Fehlermeldung} & outputText & ...\\ \hline
+							\textit{Überziehungswert Fehlermeldung} & outputText & ...\\ \hline
 						\end{longtable}
 					\end{center}
 			\item \textbf{BackingBean:}
@@ -1310,18 +1361,18 @@
 						\endfirsthead
 						\hline
 						\endlastfoot
-						\textit{Anrede} & AuthenticateAction & ... & ... & ..\\ \hline
-						\textit{Vorname} & AuthenticateAction & ... & ... & ..\\ \hline
-						\textit{Nachname} & AuthenticateAction & ... & ... & ..\\ \hline
-						\textit{Geburtsdatum} & AuthenticateAction & ... & ... & ..\\ \hline
-						\textit{Straße} & AuthenticateAction & ... & ... & ..\\ \hline
-						\textit{Postleitzahl} & AuthenticateAction & ... & ... & ..\\ \hline	
-						\textit{Stadt} & AuthenticateAction & ... & ... & ..\\ \hline
-						\textit{Benutzername} & AuthenticateAction & ... & ... & ..\\ \hline	
-						\textit{Passwort} & AuthenticateAction & ... & ... & ..\\ \hline	
-						\textit{Passwort wiederholen} & AuthenticateAction & ... & ... & ..\\ \hline
-						\textit{E-Mail} & AuthenticateAction & ... & ... & ..\\ \hline
-						\textit{Benutzerrolle} & AuthenticateAction & ... & ... & ..\\ \hline
+						\textit{Anrede} & ... & ... & ... & ..\\ \hline
+						\textit{Vorname} & ... & ... & ... & ..\\ \hline
+						\textit{Nachname} & ... & ... & ... & ..\\ \hline
+						\textit{Geburtsdatum} & ... & ... & ... & ..\\ \hline
+						\textit{Straße} & ... & ... & ... & ..\\ \hline
+						\textit{Postleitzahl} & ... & ... & ... & ..\\ \hline	
+						\textit{Stadt} & ... & ... & ... & ..\\ \hline
+						\textit{Benutzername} & ... & ... & ... & ..\\ \hline	
+						\textit{Passwort} & ... & ... & ... & ..\\ \hline	
+						\textit{Passwort wiederholen} & ... & ... & ... & ..\\ \hline
+						\textit{E-Mail} & ... & ... & ... & ..\\ \hline
+						\textit{Benutzerrolle} & ... & ... & ... & ..\\ \hline
 					\end{longtable}
 				\end{center}
 			\item \textbf{Outputs:}
@@ -1330,12 +1381,31 @@
 				\item Benutzer-ID: ID des neuen Benutzers.
 				\item Profilbild: Dummy-Profilbild des neuen Benutzers.
 			\end{itemize}
+					\begin{center}
+						\begin{longtable}{|p{5cm} | p{4cm}|p{3cm}|}
+							
+							\hline \multicolumn{1}{|c|}{\textbf{Ausgabefeld}} & \multicolumn{1}{|c|}{\textbf{Typ}}  &  \multicolumn{1}{|c|}{\textbf{ID}} \\ \hline
+							\endfirsthead
+							\hline
+							\endlastfoot
+							\textit{Benutzer-ID}  & outputText & ... \\ \hline
+							\textit{Profilbild}  & graphicImage & ... \\ \hline
+							\textit{Vorname Fehlermeldung}  & outputText & ... \\ \hline
+							\textit{Nachname Fehlermeldung}  & outputText & ... \\ \hline
+							\textit{Geburtsdatum Fehlermeldung}  & outputText & ... \\ \hline
+							\textit{Straße Fehlermeldung}  & outputText & ... \\ \hline
+							\textit{Postleitzahl Fehlermeldung}  & outputText & ... \\ \hline
+							\textit{Stadt Fehlermeldung}  & outputText & ... \\ \hline
+							\textit{Benutzername Fehlermeldung}  & outputText & ... \\ \hline
+							\textit{Passwort Fehlermeldung}  & outputText & ... \\ \hline
+							\textit{Passwort wiederholen Fehlermeldung}  & outputText & ... \\ \hline
+							\textit{E-Mail Fehlermeldung}  & outputText & ... \\ \hline
+						\end{longtable}
+					\end{center}
 			\item \textbf{BackingBean:}
 			\begin{itemize}
 				\item UserManagement.java
 			\end{itemize}
-			\item \textbf{Tag-Library:}
-			\item \textbf{\"{U}bergabeparameter:}
 		\end{itemize}
 		
 		\paragraph{createCourse.xhtml} \hypertarget{createCourse}
@@ -1506,6 +1576,4 @@
 			\begin{itemize}
 				\item IncomeStatistics.java
 			\end{itemize}
-			\item \textbf{Tag-Library:}
-			\item \textbf{\"{U}bergabeparameter:}
 		\end{itemize}
