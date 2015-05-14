@@ -1045,16 +1045,16 @@
 						\textit{Stadt} & validateLength (minimum ="", maximum =""), validateRequired & -  \\ \hline
 						\textit{Ort} & validateLength (minimum ="", maximum =""), validateRequired & -  \\ \hline
 						\textit{Beschreibung} & validateLength (minimum ="", maximum =""), validateRequired & - \\ \hline
-						\textit{Preis} & PriceValidator, validateRequired  &  \\ \hline
-						\textit{Kursleiter} & validateLength (minimum ="", maximum =""), validateRequired & ...  \\ \hline
-						\textit{Mindesteil- nehmerzahl} & ???, validateRequired & ... \\ \hline
-						\textit{Maximale Teilnehmerzahl} & ???, validateRequired & ... \\ \hline
-						\textit{Teilnehmer markieren} & - & ... \\ \hline
-						\textit{Benutzer-ID} & validateLength (minimum ="", maximum =""), validateRequired & ... \\ \hline
-						\textit{Name (Teilnehmer)} & validateLength (minimum ="", maximum =""), validateRequired & ... \\ \hline
-						\textit{Vorname (Teilnehmer)} & validateLength (minimum ="", maximum =""), validateRequired & ... \\ \hline
-						\textit{Checkbox regelmäßig} & - & ... \\ \hline
-						\textit{Einheitenanzahl} & ??? & ... \\ \hline
+						\textit{Preis} & PriceValidator, validateRequired  & convertNumber \\ \hline
+						\textit{Kursleiter} & validateLength (minimum ="", maximum =""), validateRequired & -  \\ \hline
+						\textit{Mindesteil- nehmerzahl} & ???, validateRequired & convertNumber \\ \hline
+						\textit{Maximale Teilnehmerzahl} & ???, validateRequired & convertNumber \\ \hline
+						\textit{Teilnehmer markieren} & - & - \\ \hline
+						\textit{Benutzer-ID} & validateLength (minimum ="", maximum =""), validateRequired & convertNumber \\ \hline
+						\textit{Name (Teilnehmer)} & validateLength (minimum ="", maximum =""), validateRequired & - \\ \hline
+						\textit{Vorname (Teilnehmer)} & validateLength (minimum ="", maximum =""), validateRequired & - \\ \hline
+						\textit{Checkbox regelmäßig} & - & - \\ \hline
+						\textit{Einheitenanzahl} & ??? & convertNumber \\ \hline
 					\end{longtable}
 				\end{center}
 				
@@ -1157,7 +1157,7 @@
 						\endfirsthead
 						\hline
 						\endlastfoot
-						\textit{Benutzer aktivieren} & - & ... \\ \hline
+						\textit{Benutzer aktivieren} & - & - \\ \hline
 					\end{longtable}
 				\end{center}
 				
@@ -1324,8 +1324,8 @@
 						\endfirsthead
 						\hline
 						\endlastfoot
-						\textit{Kriterienauswahl} & - & ... \\ \hline
-						\textit{Suchbegriff} & validateLength (minimum ="", maximum ="") & ... \\ \hline
+						\textit{Kriterienauswahl} & - & - \\ \hline
+						\textit{Suchbegriff} & validateLength (minimum ="", maximum ="") & - \\ \hline
 					\end{longtable}
 				\end{center}
 				
@@ -1508,7 +1508,7 @@
 						\textit{Name (Kursleiter)} & - & inputText & name \\ \hline
 						\textit{E-Mail-Adresse (Kursleiter)} & - & inputText & mailkursleiter \\ \hline
 						\textit{Kursleiter-ID} & - & inputText & idkursleiter \\ \hline
-						\textit{Löschen (Kursleiter)} & - & selectBooleanCheckbox & löschen- kursleiter \\ \hline
+						\textit{Löschen (Kursleiter)} & - & selectBooleanCheckbox & löschenkursleiter \\ \hline
 						\textit{Profilbild Pfad} & CoursManagement. Course.courseImage & inputText & bildpfad \\ \hline
 					\end{longtable}
 				\end{center}
@@ -1520,16 +1520,16 @@
 						\endfirsthead
 						\hline
 						\endlastfoot
-						\textit{Kursname} & validateLength (minimum ="", maximum =""), validateRequired & ... \\ \hline
-						\textit{Beschreibung} & validateLength (minimum ="", maximum =""), validateRequired & ... \\ \hline
-						\textit{Maximale Teilnehmerzahl} & ???, validateRequired & ... \\ \hline
-						\textit{Startdatum} & DateValidator, validateRequired & ... \\ \hline
-						\textit{Enddatum} & DateValidator, validateRequired & ... \\ \hline
-						\textit{Name (Kursleiter)} & validateLength (minimum ="", maximum =""), validateRequired & ... \\ \hline
-						\textit{E-Mail-Adresse (Kursleiter)} & validateRequired, EMailValidator & ... \\ \hline
-						\textit{Kursleiter-ID} & validateRequired, ??? & ... \\ \hline
-						\textit{Löschen (Kursleiter)} & - & ... \\ \hline
-						\textit{Profilbild Pfad} & ImageValidator & ... \\ \hline
+						\textit{Kursname} & validateLength (minimum ="", maximum =""), validateRequired & - \\ \hline
+						\textit{Beschreibung} & validateLength (minimum ="", maximum =""), validateRequired & - \\ \hline
+						\textit{Maximale Teilnehmerzahl} & ???, validateRequired & - \\ \hline
+						\textit{Startdatum} & DateValidator, validateRequired & covertDateTime \\ \hline
+						\textit{Enddatum} & DateValidator, validateRequired & converDateTime \\ \hline
+						\textit{Name (Kursleiter)} & validateLength (minimum ="", maximum =""), validateRequired & - \\ \hline
+						\textit{E-Mail-Adresse (Kursleiter)} & validateRequired, EMailValidator & - \\ \hline
+						\textit{Kursleiter-ID} & validateRequired, ??? & convertNumber \\ \hline
+						\textit{Löschen (Kursleiter)} & - & - \\ \hline
+						\textit{Profilbild Pfad} & ImageValidator & - \\ \hline
 					\end{longtable}
 				\end{center}
 				
@@ -1622,7 +1622,7 @@
 						\endfirsthead
 						\hline
 						\endlastfoot
-						\textit{Impressum} & validateRequired, validateLength (minimum ="", maximum ="") & ... \\ \hline
+						\textit{Impressum} & validateRequired, validateLength (minimum ="", maximum ="") & - \\ \hline
 					\end{longtable}
 				\end{center}
 				
