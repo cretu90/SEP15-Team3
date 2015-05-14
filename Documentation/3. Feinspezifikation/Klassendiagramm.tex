@@ -6,7 +6,8 @@
 	\newcommand{\override}{{\it @Override}\ \\}
 	
 	In diesem Kapitel werden alle Klassen der Anwendung \textbf{ofCourse} aufgeführt.
-	Um eine bessere Übersicht und Strukturierung zu erhalten wird das ganze Projekt in Packages aufgeteilt.
+	Um eine bessere Übersicht und Strukturierung zu erhalten wird das ganze Projekt in Packages aufgeteilt.\\
+	Die Packagestruktur ist wie folgt aufgebaut: de.OfCourse.PACKAGENAME.
 	
 	\section{Package action}
 	\begin{tiny}
@@ -37,7 +38,8 @@
 	
 	\subsection{Klasse LostPassword}
 	\kursiv{ManagedBean, RequestScoped}\\
-	Die Klasse ist für die 'Passwort  vergessen' - Funktion zuständig, d.h. sie ersetzt das alte Passwort eines Benutzers durch ein zufällig generiertes und sendet es an die eingegebene E-Mailadresse.
+	Die Klasse ist für die 'Passwort  vergessen' - Funktion zuständig, d.h. sie ersetzt das alte Passwort
+	eines Benutzers durch ein zufällig generiertes und sendet es an die eingegebene E-Mailadresse.
 	\begin{itemize}
 		\item \method{public void resetPassword()}
 		\item \method{public String getEmailAddressToResetPassword()}
@@ -101,8 +103,8 @@
 		\item \method{public String editUserdata()}
 		\item \method{public String saveUserdata()}
 		\item \method{public void uploadProfilPic()}
-		\item \method{public String setUserInactive()}
-		\item \method{public void depositMoneyPerCreditcard()}
+		\item \method{public UserStatus setUserInactive()}
+		\item \method{public String depositMoneyPerCreditcard()}
 		\item \method{public User getUser()}
 		\item \method{public void setUser(User userToSet)}
 		\item \method{public List<Course> getManagedCourses()}
