@@ -8,8 +8,6 @@
 			\item \textbf{Inputs} enthält eine Liste aller Eingabefelder auf der Seite.
 			\item \textbf{Outputs} enthält eine Liste aller Ausgabefelder auf der Seite.
 			\item \textbf{Backing Beans} enthält eine Liste aller, mit dem jeweiligen Facelet verbundenen, Beans.
-			\item \textbf{\"{U}bergabeparameter} gibt an, welche Parameter übergeben werden.
-			\item \textbf{Tag-Library} gibt die benötigten Tag-Bibliotheken an.
 		\end{itemize}
 		Für jedes Facelet werden folgende Tag-Libraries verwendet:
 			\begin{center}
@@ -59,14 +57,14 @@
 					\hline
 					\endlastfoot
 
-					\textit{Suche} & ...\\ \hline
-					\textit{Sprache Deutsch} & ...\\ \hline
-					\textit{Sprache Englisch} & ...\\ \hline
-					\textit{Profil (B)} & ...\\ \hline
-					\textit{Meine Kurse (B)} & ...\\ \hline
-					\textit{Terminplaner (B)} & ...\\ \hline
-					\textit{Seitenverwaltung (A)} & ...\\ \hline
-					\textit{Benutzer aktivieren (K, A)} & ...\\ \hline
+					\textit{Suche} & -\\ \hline
+					\textit{Sprache Deutsch} & chososenLanguage = ger\\ \hline
+					\textit{Sprache Englisch} & choosenLanguage = eng\\ \hline
+					\textit{Profil (B)} & -\\ \hline
+					\textit{Meine Kurse (B)} & -\\ \hline
+					\textit{Terminplaner (B)} & -\\ \hline
+					\textit{Seitenverwaltung (A)} & -\\ \hline
+					\textit{Benutzer aktivieren (K, A)} & -\\ \hline
 				\end{longtable}
 			\end{center}
 
@@ -83,8 +81,8 @@
 						\hline
 						\endlastfoot
 					
-							\textit{Logout (B)} & ... & ... \\ \hline
-							\textit{Anmelden} & ... & ... \\ \hline
+							\textit{Logout (B)} & logout() & - \\ \hline
+							\textit{Anmelden} & login() & - \\ \hline
 					\end{longtable}
 				\end{center}
 			\item \textbf{Inputs:} -
@@ -99,7 +97,7 @@
 						\endfirsthead
 						\hline
 						\endlastfoot
-						\textit{Logo}  & ... & ... \\ \hline
+						\textit{Logo}  & graphicImage & ... \\ \hline
 					\end{longtable}
 				\end{center}
 			\item \textbf{BackingBean:}
@@ -127,9 +125,9 @@
 					\hline
 					\endlastfoot
 
-						\textit{AGB} & ... & ... \\ \hline
-						\textit{Impressum} & ... & ... \\ \hline
-						\textit{Hilfe} & ... & ... \\ \hline
+						\textit{AGB} & loadAGBPage() & - \\ \hline
+						\textit{Impressum} & loadImprintPage() & - \\ \hline
+						\textit{Hilfe} & loadHelpPage() & - \\ \hline
 				\end{longtable}
 			\end{center}
 			\item \textbf{Inputs:} -
@@ -158,8 +156,8 @@
 					\endfirsthead
 					\hline
 					\endlastfoot
-					\textit{Navigation} & ... & ... & ... \\ \hline
-					\textit{Footer} & ... & ... & ... \\ \hline
+					\textit{Navigation} & - & xhtml & - \\ \hline
+					\textit{Footer} & - & xhtml & - \\ \hline
 				\end{longtable}
 			\end{center}
 			\item \textbf{Outputs:} -
@@ -207,12 +205,33 @@
 			\begin{itemize}
 				\item Gesamtes Kursangebot, \hyperlink{search}{search.xhtml}
 			\end{itemize}
+				\begin{center}
+					\begin{longtable}{|p{4cm} |p{6cm} |}
+						
+						\hline \multicolumn{1}{|c|}{\textbf{Link}} & \multicolumn{1}{|c|}{\textbf{\"{U}bergabeparameter}} \\ \hline
+						\endfirsthead
+						\hline
+						\endlastfoot
+						
+						\textit{Gesamtes Kursangebot} & -\\ \hline
+					\end{longtable}
+				\end{center}
 			\item \textbf{Buttons:} -
 			\item \textbf{Inputs:} -
 			\item \textbf{Outputs:}
 			\begin{itemize}
 				\item Logo der Website
 			\end{itemize}
+					\begin{center}
+						\begin{longtable}{|p{5cm} | p{4cm}|p{3cm}|}
+							
+							\hline \multicolumn{1}{|c|}{\textbf{Ausgabefeld}} & \multicolumn{1}{|c|}{\textbf{Typ}}  &  \multicolumn{1}{|c|}{\textbf{ID}} \\ \hline
+							\endfirsthead
+							\hline
+							\endlastfoot
+							\textit{Logo der Website}  & graphicImage & ... \\ \hline
+						\end{longtable}
+					\end{center}
 			\item \textbf{BackingBean:} -
 		\end{itemize}
 		
