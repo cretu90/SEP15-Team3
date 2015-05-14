@@ -295,18 +295,18 @@
 						\endfirsthead
 						\hline
 						\endlastfoot
-						\textit{Anrede (R)} & - & ...  \\ \hline
+						\textit{Anrede (R)} & validateRequired & ...  \\ \hline
 						\textit{Vorname (R)} & validateLength (minimum ="", maximum =""), validateRequired & ... \\ \hline
 						\textit{Name (R)} & validateLength (minimum ="", maximum =""), validateRequired & ...  \\ \hline
-						\textit{Benutzername (R)} & validateLength (minimum ="", maximum =""), validateRegex (pattern =""), validateRequired  & ... \\ \hline
-						\textit{Passwort (R)} & validateLength (minimum ="", maximum =""), validateRegex (pattern =""), validateRequired & ...  \\ \hline
-						\textit{Passwort bestätigen (R)} & validateLength (minimum ="", maximum =""), validateRequired & ... \\ \hline
-						\textit{Geburtstag (R)} & validateRequired & convertDateTime  \\ \hline
+						\textit{Benutzername (R)} & UserNameValidator, validateLength (minimum ="", maximum =""), validateRegex (pattern =""), validateRequired  & ... \\ \hline
+						\textit{Passwort (R)} & PasswordValidator, validateRequired & ...  \\ \hline
+						\textit{Passwort bestätigen (R)} & confirmPasswordValidator, validateRequired & ... \\ \hline
+						\textit{Geburtstag (R)} & DateOfBirthValidator, validateRequired & convertDateTime  \\ \hline
 						\textit{Straße/ Hausnummer (R)} & validateLength (minimum ="", maximum =""), validateRequired & ... \\ \hline
 						\textit{Stadt (R)} & validateLength (minimum ="", maximum =""), validateRequired & ...  \\ \hline
 						\textit{Postleitzahl (R)} & validateLength (minimum ="", maximum =""), validateRequired & ... \\ \hline
 						\textit{Land (R)} & validateLength (minimum ="", maximum =""), validateRequired & ...  \\ \hline
-						\textit{E-Mail-Adresse (R)} & validateLength (minimum ="", maximum =""), validateRequired & ... \\ \hline
+						\textit{E-Mail-Adresse (R)} & EMailValidator, validateLength (minimum ="", maximum =""), validateRequired & ... \\ \hline
 						\textit{AGBs bestätigen (R)} & - & ...  \\ \hline
 						\textit{Benutzername (A)} & validateRequired & ...  \\ \hline
 						\textit{Passwort (A)} & validateRequired & ...  \\ \hline
@@ -318,6 +318,7 @@
 			\end{itemize}
 			\item \textbf{Outputs:} 
 			\begin{itemize}
+				\item Anrede Fehlermeldung (Registrierung): Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
 				\item Vorname Fehlermeldung (Registrierung): Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
 				\item Name Fehlermeldung (Registrierung): Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
 				\item Benutzername Fehlermeldung (Registrierung): Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
@@ -342,6 +343,7 @@
 						\endfirsthead
 						\hline
 						\endlastfoot
+						\textit{Anrede Fehlermeldung (R)}  & outputText & ... \\ \hline
 						\textit{Vorname Fehlermeldung (R)}  & outputText & ... \\ \hline
 						\textit{Name Fehlermeldung (R)} & outputText & ... \\ \hline
 						\textit{Benutzername Fehlermeldung (R)}& outputText & ...\\ \hline
@@ -681,15 +683,15 @@
 						\textit{Anrede} & validateRequired & ... \\ \hline
 						\textit{Vorname} & validateLength (minimum ="", maximum =""), validateRequired & ... \\ \hline
 						\textit{Name} & validateLength (minimum ="", maximum =""), validateRequired & ...  \\ \hline
-						\textit{Geburtstag} & validateRequired & convertDateTime  \\ \hline
+						\textit{Geburtstag} & DateOfBirthValidator, validateRequired & convertDateTime  \\ \hline
 						\textit{Straße/ Hausnummer} & validateLength (minimum ="", maximum =""), validateRequired & ... \\ \hline
 						\textit{Stadt} & validateLength (minimum ="", maximum =""), validateRequired & ...  \\ \hline
 						\textit{Postleitzahl} & validateLength (minimum ="", maximum =""), validateRequired & ... \\ \hline
 						\textit{Land} & validateLength (minimum ="", maximum =""), validateRequired & ...  \\ \hline
-						\textit{E-Mail-Adresse} & validateLength (minimum ="", maximum =""), validateRequired & ... \\ \hline
-						\textit{Benutzername} & validateLength (minimum ="", maximum =""), validateRegex (pattern =""), validateRequired  & ... \\ \hline
-						\textit{Passwort} & validateLength (minimum ="", maximum =""), validateRegex (pattern =""), validateRequired & ...  \\ \hline
-						\textit{Passwort bestätigen} & validateLength (minimum ="", maximum =""), validateRequired & ... \\ \hline
+						\textit{E-Mail-Adresse} & EMailValidator, validateLength (minimum ="", maximum =""), validateRequired & ... \\ \hline
+						\textit{Benutzername} & UserNameValidator, validateLength (minimum ="", maximum =""), validateRegex (pattern =""), validateRequired  & ... \\ \hline
+						\textit{Passwort} & PasswordValidator, validateRequired & ...  \\ \hline
+						\textit{Passwort bestätigen} & validateRequired & ... \\ \hline
 						\textit{Benutzerrolle} & validateRequired & ... \\ \hline
 						\textit{Profilbild} & ... & ... \\ \hline
 					\end{longtable}
