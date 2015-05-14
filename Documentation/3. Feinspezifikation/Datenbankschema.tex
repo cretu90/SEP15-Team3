@@ -10,7 +10,7 @@ In diesem Kapitel werden die Tabellen der Datenbank des Systems \grqq ofCourse\g
 Zum besseren Verständnis sowie zur einfacheren Wartbarkeit und Erweiterung des Datenbankschemas werden die SQL-Syntax Namenskonventionen eingehalten. Dazu werden in den SQL-Statements Schlüsselwörter nur in Großbuchstaben geschrieben. Die Namen der Tabellen sowie deren Attribute bestehen ausschließlich aus Kleinbuchstaben, Wörter werden dabei durch einen Unterstrich getrennt. Die Benennung der Tabellen \texttt{users}, \texttt{courses}, \texttt{course\_units}, \texttt{addresses} und \texttt{cycles} ergibt sich aus dem Plural der Bezeichnungen der entsprechenden DTOs aus dem Paket action (vgl. Paketübersicht). Die Benennung der Tabellen \texttt{system\_attributes} und \texttt{customization\_data} ergibt sich aus der jeweiligen Entität des im Entwurf vorgestellten ER-Diagramms.
 
 \section{Datenbanktabellen}
-In diesem Abschnitt werden die Datenbanktabellen aufgelistet und beschrieben. Es wird die zweite Normalform verwendet. Zu jeder Tabelle wird das SQL CREATE-Statement angegeben, welches die jeweilige Tabelle erzeugt. Mit Ausnahme von \texttt{course\_instructors}, \texttt{course\_participants}, \texttt{system\_attributes}, \texttt{customization\_data} und \texttt{monetary\_statistics} dient die Spalte \texttt{id} jeder Tabelle als Primärschlüssel und wird per \texttt{auto\_increment} generiert. Dies geschieht PostgreSQL-spezifisch durch Angabe des Typs \texttt{SERIAL}. Aufgrund der Wichtigkeit einiger Spalten bezüglich der Funktionalität des Systems, sowie zur Sicherstellung der Integrität der jeweiligen Tabellen, dürfen diese nicht leer stehen. Zu diesem Zweck wird das Schlüsselwort \texttt{NOT NULL} verwendet. Des Weiteren werden für bestimmte Spalten Enums verwendet (vgl. 6.4).
+In diesem Abschnitt werden die Datenbanktabellen aufgelistet und beschrieben. Es wird die zweite Normalform verwendet. Zu jeder Tabelle wird das SQL CREATE-Statement angegeben, welches die jeweilige Tabelle erzeugt. Des Weiteren werden für bestimmte Spalten Enums verwendet (vgl. 6.4).
 
 \subsection{users}
 Die Tabelle \texttt{users} enthält sämtliche im System registrierten Nutzer. Dazu zählen ebenso Kursleiter als auch Administratoren. Verschiedene Nutzer können nicht dieselbe E-Mail Adresse oder den gleichen Nickname teilen. Dies wird durch Angeben des Schlüsselworts \texttt{UNIQUE} sichergestellt. Des Weiteren werden nur die Hashwerte der Passwörter gespeichert.
@@ -40,7 +40,7 @@ Die Tabelle \texttt{courses} enthält alle im System angebotenen Kurse. Die Spal
 \begin{verbatim}
 CREATE TABLE courses (
     id                     SERIAL     PRIMARY KEY,
-    user_to_be_informed    REFERENCES users(id) ON DELETE CASCADE,
+    user_to_be_informed    REFERENCES users(id)    ON DELETE CASCADE,
     titel                  TEXT(100),
     max_participants       INTEGER    CHECK (max_participants > 0),
     start_date             DATE       NOT NULL,
@@ -73,7 +73,7 @@ Die Tabelle \texttt{addresses} enthält alle Adressen der registrierten Nutzer s
 \begin{verbatim}
 CREATE TABLE addresses (
     id             SERIAL       PRIMARY KEY,
-    user           REFERENCES users(id) ON DELETE CASCADE,
+    user           REFERENCES users(id)        ON DELETE CASCADE,
     course_unit    REFERENCES course_units(id) ON DELETE CASCADE,
     country        VARCHAR(15)  NOT NULL,
     city           VARCHAR(25)  NOT NULL,
@@ -89,7 +89,7 @@ Die Tabelle \texttt{cycles} enthält alle Zyklen innerhalb der angebotenen Kurse
 \begin{verbatim}
 CREATE TABLE cycles (
     id           SERIAL     PRIMARY KEY,
-    course       REFERENCES courses(id) ON DELETE CASCADE,
+    course       REFERENCES courses(id)    ON DELETE CASCADE,
     period       PERIOD,
     cycle_end    INTEGER    NOT NULL
 )
@@ -100,9 +100,9 @@ Die Tabelle \texttt{course\_instructors} enthält die Zuteilungen aller Kursleit
 
 \begin{verbatim}
 CREATE TABLE course_instructors (
-    course_instructor    REFERENCES users(id) ON DELETE CASCADE,
+    course_instructor    REFERENCES users(id)   ON DELETE CASCADE,
     course               REFERENCES courses(id) ON DELETE CASCADE,
-	PRIMARY KEY (course_instructor, course)
+    PRIMARY KEY (course_instructor, course)
 )
 \end{verbatim}
 
@@ -111,7 +111,7 @@ Die Tabelle \texttt{course\_participants} enthält die Zuteilungen aller Kurstei
 
 \begin{verbatim}
 CREATE TABLE course_participants (
-    participant    REFERENCES users(id) ON DELETE CASCADE,
+    participant    REFERENCES users(id)   ON DELETE CASCADE,
     course         REFERENCES courses(id) ON DELETE CASCADE,
     PRIMARY KEY (participant, course)
 )
@@ -122,7 +122,7 @@ Die Tabelle \texttt{course\_unit\_participants} enthält die Zuteilungen aller T
 
 \begin{verbatim}
 CREATE TABLE course_participants (
-    participant    REFERENCES users(id) ON DELETE CASCADE,
+    participant    REFERENCES users(id)        ON DELETE CASCADE,
     course_unit    REFERENCES course_units(id) ON DELETE CASCADE,
     PRIMARY KEY (participant, course_unit)
 )
@@ -133,8 +133,8 @@ Die Tabelle \texttt{system\_attributes} enthält von den Systemadministratoren f
 
 \begin{verbatim}
 CREATE TABLE system_attributes (
-	lock                 CHAR(1)        PRIMARY KEY    									 DEFAULT 'X'    UNIQUE
-						 CHECK (lock = 'X'),
+    lock                 CHAR(1)        PRIMARY KEY    									 DEFAULT 'X'    UNIQUE
+                                        CHECK (lock = 'X'),
     activation_type      ACTIVATION     NOT NULL,
     withdrawal_hours     INTEGER        NOT NULL,
     application_hours    INTEGER        NOT NULL,
@@ -149,7 +149,7 @@ Die Tabelle \texttt{customization\_data} enthält keys und values zu Daten, die 
 \begin{verbatim}
 CREATE TABLE customization_data (
     lock     CHAR(1)        PRIMARY KEY    DEFAULT 'X'
-    		 UNIQUE    CHECK (lock = 'X'),
+                            UNIQUE         CHECK (lock = 'X'),
     css      VARCHAR(30)    NOT NULL,
     title    VARCHAR(30)    NOT NULL
 )
@@ -160,8 +160,8 @@ Die Tabelle \texttt{monetary\_statistics} beschreibt die Geldstatistik des Syste
 
 \begin{verbatim}
 CREATE TABLE monetary_statistics (
-    user      REFERENCES users(id) ON DELETE CASCADE,
-    course    REFERENCES courses(id) ON DELETE CASCADE,
+    user      REFERENCES users(id)         ON DELETE CASCADE,
+    course    REFERENCES courses(id)       ON DELETE CASCADE,
     amount    DECIMAL(6, 2)    NOT NULL    CHECK (amount > 0),
     date      DATE             NOT NULL,
     PRIMARY KEY (user, course)
@@ -169,7 +169,25 @@ CREATE TABLE monetary_statistics (
 \end{verbatim}
 
 \section{Constraints}
+Das Sicherstellen der Integrität der Datenbanktabellen erfolgt durch die nachfolgenden constraints:
 
+\begin{itemize}
+\item Mit Ausnahme von \texttt{course\_instructors}, \texttt{course\_participants}, \texttt{system\_attributes}, \texttt{customization\_data} und \texttt{monetary\_statistics} dient die Spalte \texttt{id} jeder Tabelle als Primärschlüssel und wird per \texttt{auto\_increment} generiert. Dies geschieht PostgreSQL-spezifisch durch Angabe des Typs \texttt{SERIAL}.
+\item Aufgrund der Wichtigkeit einiger Spalten bezüglich der Funktionalität des Systems dürfen diese nicht leer stehen. Zu diesem Zweck wird das Schlüsselwort \texttt{NOT NULL} verwendet.
+\item Das Löschen eines Tupels aus den Tabellen \texttt{users}, \texttt{courses} oder \texttt{course\_units} führt zum kaskadierenden Löschen der Datensätze, die über foreign key constraints verbundenen sind. Durch Verwendung des SQL-Befehls ON DELETE CASCADE bei den Attributen \texttt{users(id)}, \texttt{courses(id)} und \texttt{course\_units(id)}, wirkt sich dies wie folgt aus:
+
+\begin{itemize}
+\item Wird ein Tupel aus der Tabelle \texttt{users} gelöscht, werden alle Tupel aus \texttt{courses}, \texttt{addresses}, \texttt{course\_instructors}, \texttt{course\_participants}, \texttt{course\_unit\_participants} und \texttt{monetary\_statistics} entfernt, bei denen das referenzierte Attribut der \texttt{id} des gelöschten Tupels aus der Tabelle \texttt{users} gleicht.
+
+\item Wird ein Tupel aus der Tabelle \texttt{courses} gelöscht, werden alle Tupel aus \texttt{course\_units}, \texttt{cycles}, \texttt{course\_instructors}, \texttt{course\_participants} und \texttt{monetary\_statistics} entfernt, bei denen das referenzierte Attribut der \texttt{id} des gelöschten Tupels aus der Tabelle \texttt{courses} gleicht.
+
+\item Wird ein Tupel aus der Tabelle \texttt{course\_units} gelöscht, werden alle Tupel aus \texttt{addresses} und \texttt{course\_unit\_participants} entfernt, bei denen das referenzierte Attribut der \texttt{id} des gelöschten Tupels aus der Tabelle \texttt{course\_units} gleicht.
+\end{itemize}
+
+\item Um eine Spalte initial mit einem default-Wert zu belegen wird das Schlüsselwort \texttt{DEFAULT} verwendet, gefolgt von dem entsprechenden Wert.
+
+\item Die constraints \texttt{UNIQUE} und \texttt{CHECK} werden, aufgrund der individuellen Bedeutung für die jeweilige Tabelle, in deren Beschreibung genauer erklärt.
+\end{itemize}
 
 \section{Enums}
 Folgende Attribute können, innerhalb des Systems, nur ausgewählte, vordefinierte Werte annehmen. Zu diesem Zweck wird, spezifisch für PostgreSQL, jeweils ein Enum erstellt.
@@ -178,7 +196,7 @@ Folgende Attribute können, innerhalb des Systems, nur ausgewählte, vordefinier
 
 \begin{verbatim}
 CREATE TYPE gender AS ENUM (
-'male', 'female'
+	'male', 'female'
 )
 \end{verbatim}
 
@@ -186,7 +204,7 @@ CREATE TYPE gender AS ENUM (
 
 \begin{verbatim}
 CREATE TYPE role AS ENUM (
-'registered_user', 'course_instructor', 'administrator', 'inactive'
+	'registered_user', 'course_instructor', 'administrator', 	'inactive'
 )
 \end{verbatim}
 
@@ -194,7 +212,7 @@ CREATE TYPE role AS ENUM (
 
 \begin{verbatim}
 CREATE TYPE period AS ENUM (
-'months', 'weeks', 'days', 'hours'
+	'months', 'weeks', 'days', 'hours'
 )
 \end{verbatim}
 
@@ -202,6 +220,6 @@ CREATE TYPE period AS ENUM (
 
 \begin{verbatim}
 CREATE TYPE activation AS ENUM (
-'e-mail', 'admin', 'complete'
+	'e-mail', 'admin', 'complete'
 )
 \end{verbatim}
