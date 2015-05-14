@@ -133,7 +133,8 @@ Die Tabelle \texttt{system\_attributes} enthält von den Systemadministratoren f
 
 \begin{verbatim}
 CREATE TABLE system_attributes (
-	lock                 CHAR(1)        PRIMARY KEY    DEFAULT 'X'    UNIQUE    CHECK (lock = 'X'),
+	lock                 CHAR(1)        PRIMARY KEY    									 DEFAULT 'X'    UNIQUE
+						 CHECK (lock = 'X'),
     activation_type      ACTIVATION     NOT NULL,
     withdrawal_hours     INTEGER        NOT NULL,
     application_hours    INTEGER        NOT NULL,
@@ -147,7 +148,8 @@ Die Tabelle \texttt{customization\_data} enthält keys und values zu Daten, die 
 
 \begin{verbatim}
 CREATE TABLE customization_data (
-    lock     CHAR(1)        PRIMARY KEY    DEFAULT 'X'    UNIQUE    CHECK (lock = 'X'),
+    lock     CHAR(1)        PRIMARY KEY    DEFAULT 'X'
+    		 UNIQUE    CHECK (lock = 'X'),
     css      VARCHAR(30)    NOT NULL,
     title    VARCHAR(30)    NOT NULL
 )
