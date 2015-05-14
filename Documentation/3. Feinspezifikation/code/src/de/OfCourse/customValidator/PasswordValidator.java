@@ -9,7 +9,12 @@ import javax.faces.validator.Validator;
 import javax.faces.validator.ValidatorException;
 
 /**
- * @author 
+ * This class checks wether the inserted password fullfills certain security requirements regarding
+ * length and coice of signs. Provided requirements to the passwords ar at least 8 signs,
+ * at least one special charakter, at least one number, usage of lower and upper case. Furthermore
+ * it's not allowed to use mutations like 'ß'.
+ * 
+ * @author Kathi
  *
  */
 public class PasswordValidator implements Validator {

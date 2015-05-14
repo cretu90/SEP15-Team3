@@ -9,7 +9,9 @@ import javax.faces.validator.Validator;
 import javax.faces.validator.ValidatorException;
 
 /**
- * @author 
+ * This class checks wether the inserted text has a correct character encoding.
+ * 
+ * @author Kathi
  *
  */
 public class InputTextValidator implements Validator {

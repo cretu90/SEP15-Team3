@@ -9,7 +9,10 @@ import javax.faces.validator.Validator;
 import javax.faces.validator.ValidatorException;
 
 /**
- * @author 
+ * This class checks wether the input has a valid mail format (e.g. one and only one @ sign) 
+ * and wether it is already existing in da database.
+ * 
+ * @author Kathi 
  *
  */
 public class EMailValidator implements Validator {

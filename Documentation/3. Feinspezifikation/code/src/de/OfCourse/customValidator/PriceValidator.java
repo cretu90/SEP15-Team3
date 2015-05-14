@@ -9,7 +9,9 @@ import javax.faces.validator.Validator;
 import javax.faces.validator.ValidatorException;
 
 /**
- * @author 
+ * This class checks wether the inserted price has a valid format (not negativ, with 2 decimal places).
+ * 
+ * @author Kathi
  *
  */
 public class PriceValidator implements Validator {

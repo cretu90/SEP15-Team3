@@ -9,7 +9,9 @@ import javax.faces.validator.Validator;
 import javax.faces.validator.ValidatorException;
 
 /**
- * @author 
+ * This class checks wether a valid cvc number was inserted.
+ * 
+ * @author Kathi
  *
  */
 public class CVCValidator implements Validator {

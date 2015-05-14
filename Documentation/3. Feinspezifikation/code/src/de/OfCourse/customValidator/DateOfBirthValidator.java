@@ -9,7 +9,9 @@ import javax.faces.validator.Validator;
 import javax.faces.validator.ValidatorException;
 
 /**
- * @author 
+ * This class checks wether the inserted date is in the futur or more than 150 years in the past.
+ * 
+ * @author Kathi
  *
  */
 public class DateOfBirthValidator implements Validator {

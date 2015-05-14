@@ -9,7 +9,9 @@ import javax.faces.validator.Validator;
 import javax.faces.validator.ValidatorException;
 
 /**
- * @author 
+ * This class checks all inserted dates.
+ * 
+ * @author Kathi
  *
  */
 public class DateValidator implements Validator {

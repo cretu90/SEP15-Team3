@@ -9,7 +9,10 @@ import javax.faces.validator.Validator;
 import javax.faces.validator.ValidatorException;
 
 /**
- * @author 
+ * This class checks in case of offline charging of an users credit, wether 
+ * the entered name and the entered unserid belong to the same user.
+ * 
+ * @author Kathi
  *
  */
 public class OfflineTransactionValidator implements Validator {

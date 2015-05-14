@@ -9,7 +9,9 @@ import javax.faces.validator.Validator;
 import javax.faces.validator.ValidatorException;
 
 /**
- * @author 
+ * This class checks wether the entered username already exists in the system.
+ * 
+ * @author Kathi
  *
  */
 public class UserNameValidator implements Validator {

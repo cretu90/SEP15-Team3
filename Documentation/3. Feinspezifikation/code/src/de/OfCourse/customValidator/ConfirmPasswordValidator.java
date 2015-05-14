@@ -9,7 +9,9 @@ import javax.faces.validator.Validator;
 import javax.faces.validator.ValidatorException;
 
 /**
- * @author 
+ * This class checks wether the two inserted passwords are equal.
+ * 
+ * @author Kathi
  *
  */
 public class ConfirmPasswordValidator implements Validator {
