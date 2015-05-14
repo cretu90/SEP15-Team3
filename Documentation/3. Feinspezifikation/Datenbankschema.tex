@@ -187,6 +187,8 @@ Das Sicherstellen der Integrität der Datenbanktabellen erfolgt durch die nachfo
 \item Um eine Spalte initial mit einem default-Wert zu belegen wird das Schlüsselwort \texttt{DEFAULT} verwendet, gefolgt von dem entsprechenden Wert.
 
 \item Die constraints \texttt{UNIQUE} und \texttt{CHECK} werden, aufgrund der individuellen Bedeutung für die jeweilige Tabelle, in deren Beschreibung genauer erklärt.
+
+\item Die Tabellen \texttt{system\_attributes} und \texttt{customization\_data} enthalten jeweils das Attribut \texttt{lock}. Dadurch soll sichergestellt werden, dass diese beiden Tabellen, welche ausschließlich system- und konfigurations-spezifische Daten beinhalten, jeweils nur eine Zeile enthalten.
 \end{itemize}
 
 \section{Enums}
