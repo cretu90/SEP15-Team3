@@ -7,7 +7,7 @@ PC
 In diesem Kapitel werden die Tabellen der Datenbank des Systems \grqq ofCourse\grqq\ beschrieben und die Eigenschaften des Schemas erläutert.
 
 \section{Namenskonventionen}
-Zum besseren Verständnis sowie zur einfacheren Wartbarkeit und Erweiterung des Datenbankschemas werden die SQL-Syntax Namenskonventionen eingehalten. Dazu werden in den SQL-Statements Schlüsselwörter nur in Großbuchstaben geschrieben. Die Namen der Tabellen sowie deren Attribute bestehen ausschließlich aus Kleinbuchstaben, Wörter werden dabei durch einen Unterstrich getrennt. Die Benennung der Tabellen \texttt{users}, \texttt{courses}, \texttt{course\_units}, \texttt{addresses} und \texttt{cycles} ergibt sich aus dem Plural der Bezeichnungen der entsprechenden DTOs aus dem Paket action (vgl. Paketübersicht). Die Benennung der Tabellen \texttt{system\_attributes} und \texttt{customization\_data} ergibt sich aus der jeweiligen Entität des im Entwurf vorgestellten ER-Diagramms.
+Zum besseren Verständnis sowie zur einfacheren Wartbarkeit und Erweiterung des Datenbankschemas werden die SQL-Syntax Namenskonventionen eingehalten. Dazu werden in den SQL-Statements Schlüsselwörter nur in Großbuchstaben geschrieben. Die Namen der Tabellen sowie deren Attribute bestehen ausschließlich aus Kleinbuchstaben, Wörter werden dabei durch einen Unterstrich getrennt. Die Benennung der Tabellen \texttt{users}, \texttt{courses}, \texttt{course\_units}, \texttt{addresses} und \texttt{cycles} ergibt sich aus dem Plural der Bezeichnungen der entsprechenden DTOs aus dem Paket model (vgl. Klassendiagramm). Die Benennung der Tabellen \texttt{system\_attributes} und \texttt{customization\_data} ergibt sich aus der jeweiligen Entität des im Entwurf vorgestellten ER-Diagramms.
 
 \section{Datenbanktabellen}
 In diesem Abschnitt werden die Datenbanktabellen aufgelistet und beschrieben. Es wird die zweite Normalform verwendet. Zu jeder Tabelle wird das SQL CREATE-Statement angegeben, welches die jeweilige Tabelle erzeugt. Des Weiteren werden für bestimmte Spalten Enums verwendet (vgl. 6.4).
@@ -148,8 +148,8 @@ Die Tabelle \texttt{customization\_data} enthält keys und values zu Daten, die 
 
 \begin{verbatim}
 CREATE TABLE customization_data (
-    lock     CHAR(1)        PRIMARY KEY    DEFAULT 'X'
-                            UNIQUE         CHECK (lock = 'X'),
+    lock     CHAR(1)        PRIMARY KEY    DEFAULT 'X'    UNIQUE
+                            CHECK (lock = 'X'),
     css      VARCHAR(30)    NOT NULL,
     title    VARCHAR(30)    NOT NULL
 )
@@ -198,7 +198,7 @@ Folgende Attribute können, innerhalb des Systems, nur ausgewählte, vordefinier
 
 \begin{verbatim}
 CREATE TYPE gender AS ENUM (
-	'male', 'female'
+    'male', 'female'
 )
 \end{verbatim}
 
@@ -206,7 +206,7 @@ CREATE TYPE gender AS ENUM (
 
 \begin{verbatim}
 CREATE TYPE role AS ENUM (
-	'registered_user', 'course_instructor', 'administrator', 	'inactive'
+    'registered_user', 'course_instructor', 'administrator', 'inactive'
 )
 \end{verbatim}
 
@@ -214,7 +214,7 @@ CREATE TYPE role AS ENUM (
 
 \begin{verbatim}
 CREATE TYPE period AS ENUM (
-	'months', 'weeks', 'days', 'hours'
+    'months', 'weeks', 'days', 'hours'
 )
 \end{verbatim}
 
@@ -222,6 +222,6 @@ CREATE TYPE period AS ENUM (
 
 \begin{verbatim}
 CREATE TYPE activation AS ENUM (
-	'e-mail', 'admin', 'complete'
+    'e-mail', 'admin', 'complete'
 )
 \end{verbatim}
