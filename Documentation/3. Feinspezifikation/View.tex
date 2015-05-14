@@ -446,8 +446,6 @@
 			\begin{itemize}
 				\item SearchCourse.java
 			\end{itemize}
-			\item \textbf{Tag-Library:}
-			\item \textbf{\"{U}bergabeparameter:}
 		\end{itemize}
 		
 		\paragraph{courseDetails.xhtml} \hypertarget{courseDetails}
@@ -497,8 +495,6 @@
 				\item CourseDetail.java
 				\item CourseManagement.java
 			\end{itemize}
-			\item \textbf{Tag-Library:}
-			\item \textbf{\"{U}bergabeparameter:}
 		\end{itemize}
 		
 		\subsection{users}
@@ -706,6 +702,17 @@
 			\begin{itemize}
 				\item Konto aufladen: Führt die Kontoaufladung aus. \\ Zugehörige Methode: depositAmount()
 			\end{itemize}
+			\begin{center}
+				\begin{longtable}{|p{4cm} |p{6cm} | p{4cm}|}
+						
+					\hline \multicolumn{1}{|c|}{\textbf{Button}} & \multicolumn{1}{|c|}{\textbf{Methode}} & \multicolumn{1}{|c|}{\textbf{\"{U}bergabeparameter}} \\ \hline
+					\endfirsthead
+					\hline
+					\endlastfoot
+			
+					\textit{Konto aufladen} & depositAmount() & ... \\ \hline
+				\end{longtable}
+			\end{center}
 			\item \textbf{Inputs:}
 			\begin{itemize}
 				\item CVC-Nummer: Prüfnummer der Kreditkarte.
@@ -716,17 +723,47 @@
 				\item Kreditkartennummer: Nummer der Kreditkarte des Nutzers zur Kontoaufladung.
 				\item Betrag: Geldbetrag, welcher auf das systeminterne Konto des Nutzers gebucht werden soll.
 			\end{itemize}
+				\begin{center}
+					\begin{longtable}{|p{3cm} |p{4cm} | p{4cm}|p{3cm} |p{2cm}|}
+						
+						\hline \multicolumn{1}{|c|}{\textbf{Feld}} & \multicolumn{1}{|c|}{\textbf{Action}} & \multicolumn{1}{|c|}{\textbf{Validatoren}}  &  \multicolumn{1}{|c|}{\textbf{Konverter}} &  \multicolumn{1}{|c|}{\textbf{ID}} \\ \hline
+						\endfirsthead
+						\hline
+						\endlastfoot
+						\textit{CVC-Nummer} & ... & ... & ... & ..\\ \hline
+						\textit{Ablaufdatum} & ... & ... & ... & ..\\ \hline
+						\textit{Nachname} & ... & ... & ... & ..\\ \hline
+						\textit{Vorname} & ... & ... & ... & ..\\ \hline
+						\textit{Kredit-institut} & ... & ... & ... & ..\\ \hline
+						\textit{Kreditkarten-nummer} & ... & ... & ... & ..\\ \hline
+						\textit{Betrag} & ... & ... & ... & ..\\ \hline
+					\end{longtable}
+				\end{center}
 			\item \textbf{Outputs:}
 			\begin{itemize}
 				\item Fehlermeldung zu den einzelnen Eingabefeldern, bei falscher Eingabe.
 				\item Bestätigungsmeldung bei erfolgreicher Aufladung des Kontos.
 			\end{itemize}
+					\begin{center}
+						\begin{longtable}{|p{5cm} | p{4cm}|p{3cm}|}
+							
+							\hline \multicolumn{1}{|c|}{\textbf{Ausgabefeld}} & \multicolumn{1}{|c|}{\textbf{Typ}}  &  \multicolumn{1}{|c|}{\textbf{ID}} \\ \hline
+							\endfirsthead
+							\hline
+							\endlastfoot
+							\textit{CVC-Nummer}  & outputText & ... \\ \hline
+							\textit{Ablaufadtum}  & outputText & ... \\ \hline
+							\textit{Nachname}  & outputText & ... \\ \hline
+							\textit{Vorname}  & outputText & ... \\ \hline
+							\textit{Kredit-Institut}  & outputText & ... \\ \hline
+							\textit{Kreditkarten-nummer}  & outputText & ... \\ \hline
+							\textit{Betrag}  & outputText & ... \\ \hline
+						\end{longtable}
+					\end{center}
 			\item \textbf{BackingBean:}
 			\begin{itemize}
 				\item PayementOnline.java
 			\end{itemize}
-			\item \textbf{Tag-Library:}
-			\item \textbf{\"{U}bergabeparameter:}
 		\end{itemize}
 		
 		\paragraph{scheduler.xhtml} \hypertarget{scheduler}
@@ -748,8 +785,6 @@
 			\begin{itemize}
 				\item Scheduler.java
 			\end{itemize}
-			\item \textbf{Tag-Library:}
-			\item \textbf{\"{U}bergabeparameter:}
 		\end{itemize}
 		
 		\paragraph{leaderProfile.xhtml} \hypertarget{leaderProfile}
@@ -1093,6 +1128,29 @@
 				\item Oberfläche CSS speichern: Speichert die benutzerdefinierte CSS-Datei. \\ Zugehörige Methode: uploadCustomStyleCSS()
 				\item Impressum bearbeiten: Navigiert zur Impressum bearbeiten Seite. \hyperlink{editImprint}{editImprint.xhtml} \\ Zugehörige Methode: loadEditImprintPage()
 			\end{itemize}
+			\begin{center}
+				\begin{longtable}{|p{4cm} |p{6cm} | p{4cm}|}
+						
+					\hline \multicolumn{1}{|c|}{\textbf{Button}} & \multicolumn{1}{|c|}{\textbf{Methode}} & \multicolumn{1}{|c|}{\textbf{\"{U}bergabeparameter}} \\ \hline
+					\endfirsthead
+					\hline
+					\endlastfoot
+			
+					\textit{Benutzer verwalten} & ... & ... \\ \hline
+					\textit{Benutzer anlegen} &  ... & ... \\ \hline
+					\textit{Kurse verwalten} & ... & ... \\ \hline
+					\textit{Kurs anlegen} & ... & ... \\ \hline
+					\textit{Aktivierungsmodalität speichern} & ... & ... \\ \hline
+					\textit{Guthaben aufladen} & ... & ... \\ \hline
+					\textit{Überziehungswert speichern} & ... & ... \\ \hline
+					\textit{Statistiken anzeigen} & ... & ... \\ \hline
+					\textit{Logo durchsuchen} & ... & ... \\ \hline
+					\textit{Logo speichern} & ... & ... \\ \hline
+					\textit{Oberfläche CSS durchsuchen} & ... & ... \\ \hline
+					\textit{Oberfläche CSS speichern} & ... & ... \\ \hline
+					\textit{Impressum bearbeiten} & ... & ... \\ \hline
+				\end{longtable}
+			\end{center}
 			\item \textbf{Inputs:}
 			\begin{itemize}
 				\item Accountaktivierung: Auswahlfeld um Registrierungsmodalität festzulegen.
@@ -1101,17 +1159,43 @@
 				\item Betrag: Betrag, welcher dem Nutzer gutgeschrieben werden soll.
 				\item Überziehungswert: Betrag, welcher im ganzen System zur Überziehung des Kontos akzeptiert wird.
 			\end{itemize}
+				\begin{center}
+					\begin{longtable}{|p{3cm} |p{4cm} | p{4cm}|p{3cm} |p{2cm}|}
+						
+						\hline \multicolumn{1}{|c|}{\textbf{Feld}} & \multicolumn{1}{|c|}{\textbf{Action}} & \multicolumn{1}{|c|}{\textbf{Validatoren}}  &  \multicolumn{1}{|c|}{\textbf{Konverter}} &  \multicolumn{1}{|c|}{\textbf{ID}} \\ \hline
+						\endfirsthead
+						\hline
+						\endlastfoot
+						\textit{Account-Aktivierung} & ... & ... & ... & ..\\ \hline
+						\textit{Benutzer-ID} & ... & ... & ... & ..\\ \hline
+						\textit{Benutzername} & ... & ... & ... & ..\\ \hline
+						\textit{Betrag} & ... & ... & ... & ..\\ \hline
+						\textit{Überziehungswert} & ... & ... & ... & ..\\ \hline
+					\end{longtable}
+				\end{center}
 			\item \textbf{Outputs:}
 			\begin{itemize}
 				\item Fehlermeldung zu den einzelnen Eingabefeldern, bei falscher Eingabe oder fehlerhaften Uploads.
 			\end{itemize}
+
+					\begin{center}
+						\begin{longtable}{|p{5cm} | p{4cm}|p{3cm}|}
+							
+							\hline \multicolumn{1}{|c|}{\textbf{Ausgabefeld}} & \multicolumn{1}{|c|}{\textbf{Typ}}  &  \multicolumn{1}{|c|}{\textbf{ID}} \\ \hline
+							\endfirsthead
+							\hline
+							\endlastfoot
+							\textit{Benutzer-ID}  & outputText & ... \\ \hline
+							\textit{Benutzername}  & outputText & ... \\ \hline
+							\textit{Betrag} & outputText & ...\\ \hline
+							\textit{Überziehungswert} & outputText & ...\\ \hline
+						\end{longtable}
+					\end{center}
 			\item \textbf{BackingBean:}
 			\begin{itemize}
 				\item SystemConfiguration.java
 				\item PaymentOffline.java
 			\end{itemize}
-			\item \textbf{Tag-Library:}
-			\item \textbf{\"{U}bergabeparameter:}
 		\end{itemize}
 		
 		\paragraph{listUsers.xhtml} \hypertarget{listUsers}
@@ -1190,6 +1274,19 @@
 				\item Hochladen: Lädt das ausgewählte Profilbild hoch.\\ Zugehörige Methode: uploadprofilePic()
 				\item Benutzer anlegen: Legt den Benutzer an. \\ Zugehörige Methode: createUser()
 			\end{itemize}
+			\begin{center}
+				\begin{longtable}{|p{4cm} |p{6cm} | p{4cm}|}
+						
+					\hline \multicolumn{1}{|c|}{\textbf{Button}} & \multicolumn{1}{|c|}{\textbf{Methode}} & \multicolumn{1}{|c|}{\textbf{\"{U}bergabeparameter}} \\ \hline
+					\endfirsthead
+					\hline
+					\endlastfoot
+			
+					\textit{Durchsuchen} & ... & ... \\ \hline
+					\textit{Hochladen} &  ... & ... \\ \hline
+					\textit{Benutzer anlegen} & ... & ... \\ \hline
+				\end{longtable}
+			\end{center}
 			\item \textbf{Inputs:}
 			\begin{itemize}
 				\item Anrede: Herr oder Frau.
@@ -1204,7 +1301,29 @@
 				\item Passwort wiederholen: Passwortfeld um Passwort sicherzustellen.
 				\item E-Mail: E-Mail Adresse des neuen Benutzers.
 				\item Benutzerrolle: Benutzerrolle des neuen Benutzers, Administrator, Kursleiter oder normaler Benutzer.
-			\end{itemize}
+				\end{itemize}
+				
+				\begin{center}
+					\begin{longtable}{|p{3cm} |p{4cm} | p{4cm}|p{3cm} |p{2cm}|}
+						
+						\hline \multicolumn{1}{|c|}{\textbf{Feld}} & \multicolumn{1}{|c|}{\textbf{Action}} & \multicolumn{1}{|c|}{\textbf{Validatoren}}  &  \multicolumn{1}{|c|}{\textbf{Konverter}} &  \multicolumn{1}{|c|}{\textbf{ID}} \\ \hline
+						\endfirsthead
+						\hline
+						\endlastfoot
+						\textit{Anrede} & AuthenticateAction & ... & ... & ..\\ \hline
+						\textit{Vorname} & AuthenticateAction & ... & ... & ..\\ \hline
+						\textit{Nachname} & AuthenticateAction & ... & ... & ..\\ \hline
+						\textit{Geburtsdatum} & AuthenticateAction & ... & ... & ..\\ \hline
+						\textit{Straße} & AuthenticateAction & ... & ... & ..\\ \hline
+						\textit{Postleitzahl} & AuthenticateAction & ... & ... & ..\\ \hline	
+						\textit{Stadt} & AuthenticateAction & ... & ... & ..\\ \hline
+						\textit{Benutzername} & AuthenticateAction & ... & ... & ..\\ \hline	
+						\textit{Passwort} & AuthenticateAction & ... & ... & ..\\ \hline	
+						\textit{Passwort wiederholen} & AuthenticateAction & ... & ... & ..\\ \hline
+						\textit{E-Mail} & AuthenticateAction & ... & ... & ..\\ \hline
+						\textit{Benutzerrolle} & AuthenticateAction & ... & ... & ..\\ \hline
+					\end{longtable}
+				\end{center}
 			\item \textbf{Outputs:}
 			\begin{itemize}
 				\item Fehlermeldung zu den einzelnen Eingabefeldern, bei falscher Eingabe.
