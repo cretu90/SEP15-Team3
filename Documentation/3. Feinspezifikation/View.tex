@@ -1425,9 +1425,9 @@
 					\hline
 					\endlastfoot
 			
-					\textit{Durchsuchen} & ... & ... \\ \hline
-					\textit{Hochladen} &  ... & ... \\ \hline
-					\textit{Benutzer anlegen} & ... & ... \\ \hline
+					\textit{Durchsuchen} & - & ... \\ \hline
+					\textit{Hochladen} &  uploadprofilePic() & ... \\ \hline
+					\textit{Benutzer anlegen} & createUser() & ... \\ \hline
 				\end{longtable}
 			\end{center}
 			\item \textbf{Inputs:}
@@ -1453,18 +1453,18 @@
 						\endfirsthead
 						\hline
 						\endlastfoot
-						\textit{Anrede} & ... & ... & ... & ..\\ \hline
-						\textit{Vorname} & ... & ... & ... & ..\\ \hline
-						\textit{Nachname} & ... & ... & ... & ..\\ \hline
-						\textit{Geburtsdatum} & ... & ... & ... & ..\\ \hline
-						\textit{Straße} & ... & ... & ... & ..\\ \hline
-						\textit{Postleitzahl} & ... & ... & ... & ..\\ \hline	
-						\textit{Stadt} & ... & ... & ... & ..\\ \hline
-						\textit{Benutzername} & ... & ... & ... & ..\\ \hline	
-						\textit{Passwort} & ... & ... & ... & ..\\ \hline	
-						\textit{Passwort wiederholen} & ... & ... & ... & ..\\ \hline
-						\textit{E-Mail} & ... & ... & ... & ..\\ \hline
-						\textit{Benutzerrolle} & ... & ... & ... & ..\\ \hline
+						\textit{Anrede} & ... & - & ... & ..\\ \hline
+						\textit{Vorname} & ... & InputTextValidator & ... & ..\\ \hline
+						\textit{Nachname} & ... & InputTextValidator & ... & ..\\ \hline
+						\textit{Geburtsdatum} & ... & DateOfBirthValidator & ... & ..\\ \hline
+						\textit{Straße} & ... & InputTextValidator & ... & ..\\ \hline
+						\textit{Postleitzahl} & ... & InputTextValidator & ... & ..\\ \hline	
+						\textit{Stadt} & ... & InputTextValidator & ... & ..\\ \hline
+						\textit{Benutzername} & ... & UserNameValidator & ... & ..\\ \hline	
+						\textit{Passwort} & ... & PasswordValidator & ... & ..\\ \hline	
+						\textit{Passwort wiederholen} & ... & ConfirmPassword-Validator & ... & ..\\ \hline
+						\textit{E-Mail} & ... & EMailValidator & ... & ..\\ \hline
+						\textit{Benutzerrolle} & ... & - & ... & ..\\ \hline
 					\end{longtable}
 				\end{center}
 			\item \textbf{Outputs:}
@@ -1480,18 +1480,18 @@
 							\endfirsthead
 							\hline
 							\endlastfoot
-							\textit{Benutzer-ID}  & outputText & ... \\ \hline
-							\textit{Profilbild}  & graphicImage & ... \\ \hline
-							\textit{Vorname Fehlermeldung}  & outputText & ... \\ \hline
-							\textit{Nachname Fehlermeldung}  & outputText & ... \\ \hline
-							\textit{Geburtsdatum Fehlermeldung}  & outputText & ... \\ \hline
-							\textit{Straße Fehlermeldung}  & outputText & ... \\ \hline
-							\textit{Postleitzahl Fehlermeldung}  & outputText & ... \\ \hline
-							\textit{Stadt Fehlermeldung}  & outputText & ... \\ \hline
-							\textit{Benutzername Fehlermeldung}  & outputText & ... \\ \hline
-							\textit{Passwort Fehlermeldung}  & outputText & ... \\ \hline
-							\textit{Passwort wiederholen Fehlermeldung}  & outputText & ... \\ \hline
-							\textit{E-Mail Fehlermeldung}  & outputText & ... \\ \hline
+							\textit{Benutzer-ID}  & outputText & benutzerid \\ \hline
+							\textit{Profilbild}  & graphicImage & profilbild \\ \hline
+							\textit{Vorname Fehlermeldung}  & outputText & vnamefehler \\ \hline
+							\textit{Nachname Fehlermeldung}  & outputText & nnamefehler \\ \hline
+							\textit{Geburtsdatum Fehlermeldung}  & outputText & gebdatfehler \\ \hline
+							\textit{Straße Fehlermeldung}  & outputText & strassefehler \\ \hline
+							\textit{Postleitzahl Fehlermeldung}  & outputText & plzfehler \\ \hline
+							\textit{Stadt Fehlermeldung}  & outputText & stadtfehler \\ \hline
+							\textit{Benutzername Fehlermeldung}  & outputText & benutzername-fehler \\ \hline
+							\textit{Passwort Fehlermeldung}  & outputText & passwortfehler \\ \hline
+							\textit{Passwort wiederholen Fehlermeldung}  & outputText & passwortwhfehler \\ \hline
+							\textit{E-Mail Fehlermeldung}  & outputText & mailfehler \\ \hline
 						\end{longtable}
 					\end{center}
 			\item \textbf{BackingBean:}
