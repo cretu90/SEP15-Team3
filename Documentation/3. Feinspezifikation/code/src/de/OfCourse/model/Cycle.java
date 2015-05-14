@@ -6,21 +6,22 @@ package de.OfCourse.model;
 import java.util.Date;
 
 /**
- * @author Fuchs
+ * This class contains the information of courseunits which will take place regulary
+ * @author Sebastian
  *
  */
 public class Cycle {
 
     /**
-     * 
+     * starttime, the Date and time when the first courseUnit will take place
      */
     private Date starttime;
     /**
-     * 
+     * turnus, the days till the next unit should take place
      */
     private int turnus;
     /**
-     * 
+     * numberOfUnits, the number of units which should take place 
      */
     private int numberOfUnits;
 

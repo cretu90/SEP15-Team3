@@ -187,7 +187,7 @@
 							\hline
 							\endlastfoot
 							
-							\textit{Startseite } & ...\\ \hline
+							\textit{Startseite } & - \\ \hline
 						\end{longtable}
 					\end{center}
 					
@@ -256,9 +256,9 @@
 					\hline
 					\endlastfoot
 					
-						\textit{Registrieren } & registerUser() & ... \\ \hline
-						\textit{Anmelden } & login() & ... \\ \hline
-						\textit{Passwort vergessen } & resetPassword() & ... \\ \hline
+						\textit{Registrieren } & registerUser() & - \\ \hline
+						\textit{Anmelden } & login() & - \\ \hline
+						\textit{Passwort vergessen } & resetPassword() & - \\ \hline
 				\end{longtable}
 			\end{center}
 			
@@ -288,22 +288,22 @@
 						\endfirsthead
 						\hline
 						\endlastfoot
-							\textit{Anrede (R)} & - & selectOneMenu & ... \\ \hline
-							\textit{Vorname (R)} & - & inputText & ... \\ \hline
-							\textit{Name (R)} & - & inputText & ... \\ \hline
-							\textit{Benutzername (R)} & - & inputText & ...\\ \hline
-							\textit{Passwort (R)} & - & inputSecret & ... \\ \hline
-							\textit{Passwort bestätigen (R)} &- & inputSecret & ...\\ \hline
-							\textit{Geburtstag (R)} & - & inputText & ... \\ \hline
-							\textit{Straße/ Hausnummer (R)} & - & inputText & ...\\ \hline
-							\textit{Stadt (R)} & - & inputText & ... \\ \hline
-							\textit{Postleitzahl (R)} & - & inputText & ... \\ \hline
-							\textit{Land (R)} & - & inputText & ... \\ \hline
-							\textit{E-Mail-Adresse (R)} & - & inputText & ...\\ \hline
-							\textit{AGBs bestätigen (R)} & - & selectBooleanCheckbox & ... \\ \hline
-							\textit{Benutzername (A)} & - & inputText & ... \\ \hline
-							\textit{Passwort (A)} & - & inputSecret & ... \\ \hline
-							\textit{E-Mail-Adresse (Passwort vergessen)} & - & inputText & ... \\ \hline
+							\textit{Anrede (R)} & - & selectOneMenu & anrede \\ \hline
+							\textit{Vorname (R)} & - & inputText & vorname \\ \hline
+							\textit{Name (R)} & - & inputText & name \\ \hline
+							\textit{Benutzername (R)} & - & inputText & benutzername\\ \hline
+							\textit{Passwort (R)} & - & inputSecret & passwort \\ \hline
+							\textit{Passwort bestätigen (R)} &- & inputSecret & bestätigungs- passwort\\ \hline
+							\textit{Geburtstag (R)} & - & inputText & geburtstag \\ \hline
+							\textit{Straße/ Hausnummer (R)} & - & inputText & straße\\ \hline
+							\textit{Stadt (R)} & - & inputText & stadt \\ \hline
+							\textit{Postleitzahl (R)} & - & inputText & postleitzahl \\ \hline
+							\textit{Land (R)} & - & inputText & land \\ \hline
+							\textit{E-Mail-Adresse (R)} & - & inputText & mail\\ \hline
+							\textit{AGBs bestätigen (R)} & - & selectBooleanCheckbox & agb \\ \hline
+							\textit{Benutzername (A)} & - & inputText & anmeldungs- benutzername \\ \hline
+							\textit{Passwort (A)} & - & inputSecret & anmeldungs- passwort \\ \hline
+							\textit{E-Mail-Adresse (Passwort vergessen)} & - & inputText & Passwortmail \\ \hline
 					\end{longtable}
 				\end{center}
 				
@@ -314,22 +314,22 @@
 						\endfirsthead
 						\hline
 						\endlastfoot
-						\textit{Anrede (R)} & validateRequired & ...  \\ \hline
-						\textit{Vorname (R)} & validateLength (minimum ="", maximum =""), validateRequired & ... \\ \hline
-						\textit{Name (R)} & validateLength (minimum ="", maximum =""), validateRequired & ...  \\ \hline
-						\textit{Benutzername (R)} & UserNameValidator, validateLength (minimum ="", maximum =""), validateRegex (pattern =""), validateRequired  & ... \\ \hline
-						\textit{Passwort (R)} & PasswordValidator, validateRequired & ...  \\ \hline
-						\textit{Passwort bestätigen (R)} & confirmPasswordValidator, validateRequired & ... \\ \hline
+						\textit{Anrede (R)} & validateRequired & -  \\ \hline
+						\textit{Vorname (R)} & validateLength (minimum ="", maximum =""), validateRequired & - \\ \hline
+						\textit{Name (R)} & validateLength (minimum ="", maximum =""), validateRequired & -  \\ \hline
+						\textit{Benutzername (R)} & UserNameValidator, validateLength (minimum ="", maximum =""), validateRegex (pattern =""), validateRequired  & - \\ \hline
+						\textit{Passwort (R)} & PasswordValidator, validateRequired & -  \\ \hline
+						\textit{Passwort bestätigen (R)} & confirmPasswordValidator, validateRequired & - \\ \hline
 						\textit{Geburtstag (R)} & DateOfBirthValidator, validateRequired & convertDateTime  \\ \hline
-						\textit{Straße/ Hausnummer (R)} & validateLength (minimum ="", maximum =""), validateRequired & ... \\ \hline
-						\textit{Stadt (R)} & validateLength (minimum ="", maximum =""), validateRequired & ...  \\ \hline
-						\textit{Postleitzahl (R)} & validateLength (minimum ="", maximum =""), validateRequired & ... \\ \hline
-						\textit{Land (R)} & validateLength (minimum ="", maximum =""), validateRequired & ...  \\ \hline
-						\textit{E-Mail-Adresse (R)} & EMailValidator, validateLength (minimum ="", maximum =""), validateRequired & ... \\ \hline
-						\textit{AGBs bestätigen (R)} & - & ...  \\ \hline
-						\textit{Benutzername (A)} & validateRequired & ...  \\ \hline
-						\textit{Passwort (A)} & validateRequired & ...  \\ \hline
-						\textit{E-Mail-Adresse (Passwort vergessen)} & validateRequired & ... \\ \hline
+						\textit{Straße/ Hausnummer (R)} & validateLength (minimum ="", maximum =""), validateRequired & - \\ \hline
+						\textit{Stadt (R)} & validateLength (minimum ="", maximum =""), validateRequired & -  \\ \hline
+						\textit{Postleitzahl (R)} & validateLength (minimum ="", maximum =""), validateRequired & - \\ \hline
+						\textit{Land (R)} & validateLength (minimum ="", maximum =""), validateRequired & -  \\ \hline
+						\textit{E-Mail-Adresse (R)} & EMailValidator, validateLength (minimum ="", maximum =""), validateRequired & - \\ \hline
+						\textit{AGBs bestätigen (R)} & - & -  \\ \hline
+						\textit{Benutzername (A)} & validateRequired & - \\ \hline
+						\textit{Passwort (A)} & validateRequired & -  \\ \hline
+						\textit{E-Mail-Adresse (Passwort vergessen)} & validateRequired & - \\ \hline
 					\end{longtable}
 				\end{center}
 				
@@ -356,28 +356,28 @@
 			\end{itemize}
 			
 				\begin{center}
-					\begin{longtable}{|p{5cm} | p{4cm}|p{3cm}|}
+					\begin{longtable}{|p{5cm} | p{4cm}|p{5cm}|}
 						
 						\hline \multicolumn{1}{|c|}{\textbf{Ausgabefeld}} & \multicolumn{1}{|c|}{\textbf{Typ}}  &  \multicolumn{1}{|c|}{\textbf{ID}} \\ \hline
 						\endfirsthead
 						\hline
 						\endlastfoot
-						\textit{Anrede Fehlermeldung (R)}  & outputText & ... \\ \hline
-						\textit{Vorname Fehlermeldung (R)}  & outputText & ... \\ \hline
-						\textit{Name Fehlermeldung (R)} & outputText & ... \\ \hline
-						\textit{Benutzername Fehlermeldung (R)}& outputText & ...\\ \hline
-						\textit{Passwort Fehlermeldung (R)}& outputText & ... \\ \hline
-						\textit{Passwort bestätigen Fehlermeldung (R)}& outputText & ...\\ \hline
-						\textit{Geburtstag  Fehlermeldung(R)} & outputText & ... \\ \hline
-						\textit{Straße/ Hausnummer Fehlermeldung (R)}& outputText & ...\\ \hline
-						\textit{Stadt Fehlermeldung (R)}& outputText & ... \\ \hline
-						\textit{Postleitzahl Fehlermeldung (R)} & outputText & ... \\ \hline
-						\textit{Land Fehlermeldung (R)} & outputText & ... \\ \hline
-						\textit{E-Mail-Adresse Fehlermeldung (R)} & outputText & ...\\ \hline
-						\textit{AGBs bestätigen Fehlermeldung (R)} & outputText & ... \\ \hline
-						\textit{Benutzername Fehlermeldung (A)}& outputText & ... \\ \hline
-						\textit{Passwort Fehlermeldung (A)} &  outputText & ... \\ \hline
-						\textit{E-Mail-Adresse Fehlermeldung (Passwort vergessen)}  & outputText & ... \\ \hline
+						\textit{Anrede Fehlermeldung (R)}  & outputText & anredefehler \\ \hline
+						\textit{Vorname Fehlermeldung (R)}  & outputText & vornamenfehler \\ \hline
+						\textit{Name Fehlermeldung (R)} & outputText & namenfehler \\ \hline
+						\textit{Benutzername Fehlermeldung (R)}& outputText & nutzernamenfehler\\ \hline
+						\textit{Passwort Fehlermeldung (R)}& outputText & passwortfehler\\ \hline
+						\textit{Passwort bestätigen Fehlermeldung (R)}& outputText & bestätigungspwfehler\\ \hline
+						\textit{Geburtstag  Fehlermeldung(R)} & outputText & geburtstagsfehler \\ \hline
+						\textit{Straße/ Hausnummer Fehlermeldung (R)}& outputText & straßenfehler\\ \hline
+						\textit{Stadt Fehlermeldung (R)}& outputText & stadtfehler \\ \hline
+						\textit{Postleitzahl Fehlermeldung (R)} & outputText & postleitzahlfehler \\ \hline
+						\textit{Land Fehlermeldung (R)} & outputText & landfehler \\ \hline
+						\textit{E-Mail-Adresse Fehlermeldung (R)} & outputText & mailfehler\\ \hline
+						\textit{AGBs bestätigen Fehlermeldung (R)} & outputText & agbfehler \\ \hline
+						\textit{Benutzername Fehlermeldung (A)}& outputText & anmeldenamefehler \\ \hline
+						\textit{Passwort Fehlermeldung (A)} &  outputText & anmeldepwfehler \\ \hline
+						\textit{E-Mail-Adresse Fehlermeldung (Passwort vergessen)}  & outputText & mailpw \\ \hline
 					\end{longtable}
 				\end{center}
 			
@@ -408,7 +408,7 @@
 						\endfirsthead
 						\hline
 						\endlastfoot
-						\textit{Impressum)}  & outputText & ... \\ \hline
+						\textit{Impressum}  & outputText & impressumzeigen \\ \hline
 					\end{longtable}
 				\end{center}
 				
@@ -583,14 +583,14 @@
 				\end{itemize}
 				
 				\begin{center}
-					\begin{longtable}{|p{4cm} |p{6cm} |}
+					\begin{longtable}{|p{3cm} |p{10cm} |}
 						
 						\hline \multicolumn{1}{|c|}{\textbf{Link}} & \multicolumn{1}{|c|}{\textbf{\"{U}bergabeparameter}} \\ \hline
 						\endfirsthead
 						\hline
 						\endlastfoot
 						
-						\textit{Kurstitel } & ...\\ \hline
+						\textit{Kurstitel } & courseId (Id des ausgewählen Kurses wird übergeben)\\ \hline
 					\end{longtable}
 				\end{center}
 				
@@ -608,7 +608,7 @@
 						\endfirsthead
 						\hline
 						\endlastfoot
-						\textit{Kurstabelle}  & dataTable & ... \\ \hline
+						\textit{Kurstabelle}  & dataTable & kurstabelle \\ \hline
 					\end{longtable}
 				\end{center}
 				
@@ -641,12 +641,12 @@
 							\hline
 							\endlastfoot
 							
-							\textit{Bearbeiten } & editUserData() & ... \\ \hline
-							\textit{Speichern } & saveUserData() & ... \\ \hline
-							\textit{Duchsuchen } & - & ... \\ \hline
-							\textit{Hochladen } & uploadProfilPic() & ... \\ \hline
-							\textit{Kontoaufladen } & depositMoneyPerCreditCard() & ... \\ \hline
-							\textit{Benutzer löschen} &  deleteUser(), setUserInactive()  & ... \\ \hline
+							\textit{Bearbeiten } & editUserData() & - \\ \hline
+							\textit{Speichern } & saveUserData() & - \\ \hline
+							\textit{Duchsuchen } & - & - \\ \hline
+							\textit{Hochladen } & uploadProfilPic() & - \\ \hline
+							\textit{Kontoaufladen } & depositMoneyPerCreditCard() & - \\ \hline
+							\textit{Benutzer löschen} &  deleteUser(), setUserInactive()  & - \\ \hline
 						\end{longtable}
 					\end{center}
 				
@@ -675,20 +675,20 @@
 						\endfirsthead
 						\hline
 						\endlastfoot
-						\textit{Anrede} & UserProfil.User.salutation & selectOneMenu & ... \\ \hline
-						\textit{Vorname} & UserProfil.User.fistname & inputText & ... \\ \hline
-						\textit{Name} & UserProfil.User.lastname & inputText & ... \\ \hline
-						\textit{Geburtstag } & UserProfil.User.dateOfBirth & inputText & ... \\ \hline
-						\textit{Straße/ Hausnummer} & UserProfil.Address.street, UserProfil.Address.houseNumber  & inputText & ...\\ \hline
-						\textit{Stadt} & UserProfil.Address.city & inputText & ... \\ \hline
-						\textit{Postleitzahl} & UserProfil.Address.zipCode & inputText & ... \\ \hline
-						\textit{Land} & UserProfil.Address.country & inputText & ... \\ \hline
-						\textit{E-Mail-Adresse} & UserProfil.User.email & inputText & ...\\ \hline
-						\textit{Benutzername} & UserProfil.User.username & inputText & ... \\ \hline
-						\textit{Passwort} & UserProfil.User.password  & inputSecret & ... \\ \hline
-						\textit{Passwort bestätigen} & UserProfil.User.password & inputSecret & ... \\ \hline
-						\textit{Benutzerrolle} & UserProfil.User.userRole & inputText & ... \\ \hline
-						\textit{Profilbild Pfad} & UserProfil.User.profilImage & inputText & ... \\ \hline
+						\textit{Anrede} & UserProfil.User.salutation & selectOneMenu & anrede \\ \hline
+						\textit{Vorname} & UserProfil.User.fistname & inputText & vorname \\ \hline
+						\textit{Name} & UserProfil.User.lastname & inputText & name \\ \hline
+						\textit{Geburtstag } & UserProfil.User.dateOfBirth & inputText & geburtstag \\ \hline
+						\textit{Straße/ Hausnummer} & UserProfil.Address.street, UserProfil.Address.houseNumber  & inputText & straße\\ \hline
+						\textit{Stadt} & UserProfil.Address.city & inputText & stadt \\ \hline
+						\textit{Postleitzahl} & UserProfil.Address.zipCode & inputText & postleitzahl \\ \hline
+						\textit{Land} & UserProfil.Address.country & inputText & land \\ \hline
+						\textit{E-Mail-Adresse} & UserProfil.User.email & inputText & mail\\ \hline
+						\textit{Benutzername} & UserProfil.User.username & inputText & benutzername \\ \hline
+						\textit{Passwort} & UserProfil.User.password  & inputSecret & passwort \\ \hline
+						\textit{Passwort bestätigen} & UserProfil.User.password & inputSecret & bestätigungs- passwort \\ \hline
+						\textit{Benutzerrolle} & UserProfil.User.userRole & inputText & rolle \\ \hline
+						\textit{Profilbild Pfad} & UserProfil.User.profilImage & inputText & bildpfad \\ \hline
 					\end{longtable}
 				\end{center}
 				
@@ -699,20 +699,20 @@
 						\endfirsthead
 						\hline
 						\endlastfoot
-						\textit{Anrede} & validateRequired & ... \\ \hline
-						\textit{Vorname} & validateLength (minimum ="", maximum =""), validateRequired & ... \\ \hline
-						\textit{Name} & validateLength (minimum ="", maximum =""), validateRequired & ...  \\ \hline
+						\textit{Anrede} & validateRequired & - \\ \hline
+						\textit{Vorname} & validateLength (minimum ="", maximum =""), validateRequired & - \\ \hline
+						\textit{Name} & validateLength (minimum ="", maximum =""), validateRequired & -  \\ \hline
 						\textit{Geburtstag} & DateOfBirthValidator, validateRequired & convertDateTime  \\ \hline
-						\textit{Straße/ Hausnummer} & validateLength (minimum ="", maximum =""), validateRequired & ... \\ \hline
-						\textit{Stadt} & validateLength (minimum ="", maximum =""), validateRequired & ...  \\ \hline
-						\textit{Postleitzahl} & validateLength (minimum ="", maximum =""), validateRequired & ... \\ \hline
-						\textit{Land} & validateLength (minimum ="", maximum =""), validateRequired & ...  \\ \hline
-						\textit{E-Mail-Adresse} & EMailValidator, validateLength (minimum ="", maximum =""), validateRequired & ... \\ \hline
-						\textit{Benutzername} & UserNameValidator, validateLength (minimum ="", maximum =""), validateRegex (pattern =""), validateRequired  & ... \\ \hline
-						\textit{Passwort} & PasswordValidator, validateRequired & ...  \\ \hline
-						\textit{Passwort bestätigen} & ConfirmPasswordValidator, validateRequired & ... \\ \hline
-						\textit{Benutzerrolle} & validateRequired & ... \\ \hline
-						\textit{Profilbild Pfad} & UserImageValidator & ... \\ \hline
+						\textit{Straße/ Hausnummer} & validateLength (minimum ="", maximum =""), validateRequired & - \\ \hline
+						\textit{Stadt} & validateLength (minimum ="", maximum =""), validateRequired & -  \\ \hline
+						\textit{Postleitzahl} & validateLength (minimum ="", maximum =""), validateRequired & - \\ \hline
+						\textit{Land} & validateLength (minimum ="", maximum =""), validateRequired & -  \\ \hline
+						\textit{E-Mail-Adresse} & EMailValidator, validateLength (minimum ="", maximum =""), validateRequired & - \\ \hline
+						\textit{Benutzername} & UserNameValidator, validateLength (minimum ="", maximum =""), validateRegex (pattern =""), validateRequired  & - \\ \hline
+						\textit{Passwort} & PasswordValidator, validateRequired & -  \\ \hline
+						\textit{Passwort bestätigen} & ConfirmPasswordValidator, validateRequired & - \\ \hline
+						\textit{Benutzerrolle} & validateRequired & - \\ \hline
+						\textit{Profilbild Pfad} & UserImageValidator & - \\ \hline
 					\end{longtable}
 				\end{center}
 				
@@ -738,28 +738,28 @@
 				\end{itemize}
 				
 				\begin{center}
-					\begin{longtable}{|p{5cm} | p{4cm}|p{3cm}|}
+					\begin{longtable}{|p{5cm} | p{4cm}|p{5cm}|}
 						
 						\hline \multicolumn{1}{|c|}{\textbf{Ausgabefeld}} & \multicolumn{1}{|c|}{\textbf{Typ}}  &  \multicolumn{1}{|c|}{\textbf{ID}} \\ \hline
 						\endfirsthead
 						\hline
 						\endlastfoot
-						\textit{Benutzer-ID}  & outputText & ... \\ \hline
-						\textit{Vorname Fehlermeldung }  & outputText & ... \\ \hline
-						\textit{Name Fehlermeldung } & outputText & ... \\ \hline
-						\textit{Geburtstag  Fehlermeldung} & outputText & ... \\ \hline
-						\textit{Straße/ Hausnummer Fehlermeldung }& outputText & ...\\ \hline
-						\textit{Stadt Fehlermeldung }& outputText & ... \\ \hline
-						\textit{Postleitzahl Fehlermeldung } & outputText & ... \\ \hline
-						\textit{Land Fehlermeldung } & outputText & ... \\ \hline
-						\textit{E-Mail-Adresse Fehlermeldung} & outputText & ...\\ \hline
-						\textit{Benutzername Fehlermeldung }& outputText & ... \\ \hline
-						\textit{Passwort Fehlermeldung} &  outputText & ... \\ \hline
-						\textit{Passwort bestätigen Fehlermeldung}  & outputText & ... \\ \hline
-						\textit{Profilbild Fehlermeldung} &  outputText & ... \\ \hline
-						\textit{Kontostand} &  outputText & ... \\ \hline
-						\textit{Tabelle Trainingskurse} &  dataTable & ... \\ \hline
-						\textit{Profilbild} &  graphicImage & ... \\ \hline
+						\textit{Benutzer-ID}  & outputText & nutzerid \\ \hline
+						\textit{Vorname Fehlermeldung }  & outputText & vornamefehler \\ \hline
+						\textit{Name Fehlermeldung } & outputText & namefehler \\ \hline
+						\textit{Geburtstag  Fehlermeldung} & outputText & geburtstagsfehler \\ \hline
+						\textit{Straße/ Hausnummer Fehlermeldung }& outputText & straßefehler\\ \hline
+						\textit{Stadt Fehlermeldung }& outputText & stadtfehler \\ \hline
+						\textit{Postleitzahl Fehlermeldung } & outputText & postleitzahlfehler \\ \hline
+						\textit{Land Fehlermeldung } & outputText & landfehler \\ \hline
+						\textit{E-Mail-Adresse Fehlermeldung} & outputText & mailfehler\\ \hline
+						\textit{Benutzername Fehlermeldung }& outputText & nutzernamefehler \\ \hline
+						\textit{Passwort Fehlermeldung} &  outputText & passwortfehler \\ \hline
+						\textit{Passwort bestätigen Fehlermeldung}  & outputText & bestätigungspwfehler \\ \hline
+						\textit{Profilbild Fehlermeldung} &  outputText & bildfehler \\ \hline
+						\textit{Kontostand} &  outputText & kontostand \\ \hline
+						\textit{Tabelle Trainingskurse} &  dataTable & trainingskurse \\ \hline
+						\textit{Profilbild} &  graphicImage & bild \\ \hline
 					\end{longtable}
 				\end{center}
 				
@@ -883,7 +883,7 @@
 					\endfirsthead
 					\hline
 					\endlastfoot
-					\textit{Tabelle Kursleiterdaten}  & dataTable & ... \\ \hline
+					\textit{Tabelle Kursleiterdaten}  & dataTable & kursleiterdaten \\ \hline
 				\end{longtable}
 			\end{center}
 			
@@ -910,7 +910,7 @@
 						\hline
 						\endlastfoot
 						
-						\textit{Löschen } & deleteUserFromCourse() & ... \\ \hline
+						\textit{Löschen } & deleteUserFromCourse() & - \\ \hline
 					\end{longtable}
 				\end{center}
 				
@@ -926,7 +926,7 @@
 						\endfirsthead
 						\hline
 						\endlastfoot
-						\textit{Entfernen} & - & selectBooleanCheckbox & ... \\ \hline
+						\textit{Entfernen} & - & selectBooleanCheckbox & entfernen \\ \hline
 					\end{longtable}
 				\end{center}
 				
@@ -937,7 +937,7 @@
 						\endfirsthead
 						\hline
 						\endlastfoot
-						\textit{Entfernen} & - & ... \\ \hline
+						\textit{Entfernen} & - & - \\ \hline
 					\end{longtable}
 				\end{center}
 				
@@ -954,7 +954,7 @@
 					\endfirsthead
 					\hline
 					\endlastfoot
-					\textit{Tabelle Kursteilnehmer}  & dataTable & ... \\ \hline
+					\textit{Tabelle Kursteilnehmer}  & dataTable & kursteilnehmer \\ \hline
 				\end{longtable}
 			\end{center}
 			
@@ -989,11 +989,11 @@
 						\hline
 						\endlastfoot
 						
-							\textit{Bearbeiten (Kurseinheit) } & editCourseUnit() & ... \\ \hline
-							\textit{Speichern (Kurseinheit) } & saveCourseUnit() & ... \\ \hline
-							\textit{Löschen (Kurseinheit) } & deleteCourseUnit() & ... \\ \hline
-							\textit{Löschen (Teilnehmer) } & deleteUserFromCourseUnit() & ... \\ \hline
-							\textit{Hinzufügen (Teilnehmer) } & addUserToCourseUnit() & ... \\ \hline
+							\textit{Bearbeiten (Kurseinheit) } & editCourseUnit() & - \\ \hline
+							\textit{Speichern (Kurseinheit) } & saveCourseUnit() & - \\ \hline
+							\textit{Löschen (Kurseinheit) } & deleteCourseUnit() & - \\ \hline
+							\textit{Löschen (Teilnehmer) } & deleteUserFromCourseUnit() & - \\ \hline
+							\textit{Hinzufügen (Teilnehmer) } & addUserToCourseUnit() & - \\ \hline
 					\end{longtable}
 				\end{center}
 				
@@ -1028,24 +1028,24 @@
 						\endfirsthead
 						\hline
 						\endlastfoot
-						\textit{Termin} & CourseUnitManagement. CourseUnit.date & inputText & ... \\ \hline
-						\textit{Startzeit} & CourseUnitManagement. CourseUnit.starttime & inputText & ... \\ \hline
-						\textit{Endzeit} & CourseUnitManagement. CourseUnit.endtime & inputText & ... \\ \hline
-						\textit{Straße/ Hausnummer} & CourseUnitManagement. Address.street, CourseUnitManagement. Address.houseNumber & inputText & ...\\ \hline
-						\textit{Postleitzahl} & CourseUnitManagement. Address.zipCode & inputText & ... \\ \hline
-						\textit{Stadt} & CourseUnitManagement. Address.city & inputText & ... \\ \hline
-						\textit{Ort} & CourseUnitManagement. CourseUnit.location & inputText & ... \\ \hline
-						\textit{Beschreibung} & CourseUnitManagement. CourseUnit.description & inputText & ...\\ \hline
-						\textit{Preis} & CourseUnitManagement. CourseUnit.price & inputText & ... \\ \hline
-						\textit{Kursleiter} & CourseUnitManagement. CourseUnit.courseAdmin & inputText & ... \\ \hline
-						\textit{Mindestteil- nehmerzahl} & CourseUnitManagement. CourseUnit.minUsers & inputText & ... \\ \hline
-						\textit{Maximale Teilnehmerzahl} & CourseUnitManagement. CourseUnit.maxUsers & inputText & ... \\ \hline
-						\textit{Teilnehmer markieren} & - & selectBooleanCheckbox & ... \\ \hline
-						\textit{Benutzer-ID} & - & inputText & ... \\ \hline
-						\textit{Name Teilnehmer} & - & inputText & ... \\ \hline
-						\textit{Vorname Teilnehmer} & - & inputText & ... \\ \hline
-						\textit{Checkbox regelmäßig} & CourseUnitManagement. CourseUnit.cycle & selectBooleanCheckbox & ... \\ \hline
-						\textit{Einheitenanzahl} & - & inputText & ... \\ \hline
+						\textit{Termin} & CourseUnitManagement. CourseUnit.date & inputText & termin \\ \hline
+						\textit{Startzeit} & CourseUnitManagement. CourseUnit.starttime & inputText & startzeit \\ \hline
+						\textit{Endzeit} & CourseUnitManagement. CourseUnit.endtime & inputText & endzeit \\ \hline
+						\textit{Straße/ Hausnummer} & CourseUnitManagement. Address.street, CourseUnitManagement. Address.houseNumber & inputText & straße\\ \hline
+						\textit{Postleitzahl} & CourseUnitManagement. Address.zipCode & inputText & postleitzahl \\ \hline
+						\textit{Stadt} & CourseUnitManagement. Address.city & inputText & stadt \\ \hline
+						\textit{Ort} & CourseUnitManagement. CourseUnit.location & inputText & ort \\ \hline
+						\textit{Beschreibung} & CourseUnitManagement. CourseUnit.description & inputText & beschreibung\\ \hline
+						\textit{Preis} & CourseUnitManagement. CourseUnit.price & inputText & preis \\ \hline
+						\textit{Kursleiter} & CourseUnitManagement. CourseUnit.courseAdmin & inputText & kursleiter \\ \hline
+						\textit{Mindestteil- nehmerzahl} & CourseUnitManagement. CourseUnit.minUsers & inputText & minteilnehmer \\ \hline
+						\textit{Maximale Teilnehmerzahl} & CourseUnitManagement. CourseUnit.maxUsers & inputText & maxteilnehmer \\ \hline
+						\textit{Teilnehmer markieren} & - & selectBooleanCheckbox & markteilnehmer \\ \hline
+						\textit{Benutzer-ID} & - & inputText & idnutzer \\ \hline
+						\textit{Name Teilnehmer} & - & inputText & nameteilnehmer \\ \hline
+						\textit{Vorname Teilnehmer} & - & inputText & vornameteilnehmer \\ \hline
+						\textit{Checkbox regelmäßig} & CourseUnitManagement. CourseUnit.cycle & selectBooleanCheckbox & regelmäßig \\ \hline
+						\textit{Einheitenanzahl} & - & inputText & einheiten \\ \hline
 					\end{longtable}
 				\end{center}
 				
@@ -1056,24 +1056,24 @@
 						\endfirsthead
 						\hline
 						\endlastfoot
-						\textit{Termin} & DateValidator , validateRequired & ... \\ \hline
-						\textit{Startzeit} & ??? , validateRequired & ... \\ \hline
-						\textit{Endzeit} & ??? , validateRequired & ... \\ \hline
-						\textit{Straße/ Hausnummer} & validateLength (minimum ="", maximum =""), validateRequired & ... \\ \hline
-						\textit{Postleitzahl} & validateLength (minimum ="", maximum =""), validateRequired & ... \\ \hline
-						\textit{Stadt} & validateLength (minimum ="", maximum =""), validateRequired & ...  \\ \hline
-						\textit{Ort} & validateLength (minimum ="", maximum =""), validateRequired & ...  \\ \hline
-						\textit{Beschreibung} & validateLength (minimum ="", maximum =""), validateRequired & ... \\ \hline
-						\textit{Preis} & PriceValidator, validateRequired  & ... \\ \hline
-						\textit{Kursleiter} & validateLength (minimum ="", maximum =""), validateRequired & ...  \\ \hline
-						\textit{Mindesteil- nehmerzahl} & ???, validateRequired & ... \\ \hline
-						\textit{Maximale Teilnehmerzahl} & ???, validateRequired & ... \\ \hline
-						\textit{Teilnehmer markieren} & - & ... \\ \hline
-						\textit{Benutzer-ID} & validateLength (minimum ="", maximum =""), validateRequired & ... \\ \hline
-						\textit{Name (Teilnehmer)} & validateLength (minimum ="", maximum =""), validateRequired & ... \\ \hline
-						\textit{Vorname (Teilnehmer)} & validateLength (minimum ="", maximum =""), validateRequired & ... \\ \hline
-						\textit{Checkbox regelmäßig} & - & ... \\ \hline
-						\textit{Einheitenanzahl} & ??? & ... \\ \hline
+						\textit{Termin} & DateValidator , validateRequired & convertDateTime \\ \hline
+						\textit{Startzeit} & ??? , validateRequired & convertDateTime \\ \hline
+						\textit{Endzeit} & ??? , validateRequired & convertDateTime \\ \hline
+						\textit{Straße/ Hausnummer} & validateLength (minimum ="", maximum =""), validateRequired & - \\ \hline
+						\textit{Postleitzahl} & validateLength (minimum ="", maximum =""), validateRequired & - \\ \hline
+						\textit{Stadt} & validateLength (minimum ="", maximum =""), validateRequired & -  \\ \hline
+						\textit{Ort} & validateLength (minimum ="", maximum =""), validateRequired & -  \\ \hline
+						\textit{Beschreibung} & validateLength (minimum ="", maximum =""), validateRequired & - \\ \hline
+						\textit{Preis} & PriceValidator, validateRequired  & convertNumber \\ \hline
+						\textit{Kursleiter} & validateLength (minimum ="", maximum =""), validateRequired & -  \\ \hline
+						\textit{Mindesteil- nehmerzahl} & ???, validateRequired & convertNumber \\ \hline
+						\textit{Maximale Teilnehmerzahl} & ???, validateRequired & convertNumber \\ \hline
+						\textit{Teilnehmer markieren} & - & - \\ \hline
+						\textit{Benutzer-ID} & validateLength (minimum ="", maximum =""), validateRequired & convertNumber \\ \hline
+						\textit{Name (Teilnehmer)} & validateLength (minimum ="", maximum =""), validateRequired & - \\ \hline
+						\textit{Vorname (Teilnehmer)} & validateLength (minimum ="", maximum =""), validateRequired & - \\ \hline
+						\textit{Checkbox regelmäßig} & - & - \\ \hline
+						\textit{Einheitenanzahl} & ??? & convertNumber \\ \hline
 					\end{longtable}
 				\end{center}
 				
@@ -1099,29 +1099,29 @@
 				\end{itemize}
 				
 				\begin{center}
-					\begin{longtable}{|p{5cm} | p{4cm}|p{3cm}|}
+					\begin{longtable}{|p{5cm} | p{4cm}|p{5cm}|}
 						
 						\hline \multicolumn{1}{|c|}{\textbf{Ausgabefeld}} & \multicolumn{1}{|c|}{\textbf{Typ}}  &  \multicolumn{1}{|c|}{\textbf{ID}} \\ \hline
 						\endfirsthead
 						\hline
 						\endlastfoot
-						\textit{Termin (Fehlermeldung)}  & outputText & ... \\ \hline
-						\textit{Startzeit (Fehlermeldung)}  & outputText & ... \\ \hline
-						\textit{Endzeit (Fehlermeldung)}  & outputText & ... \\ \hline
-						\textit{Straße/ Hausnummer (Fehlermeldung) }  & outputText & ... \\ \hline
-						\textit{Postleitzahl (Fehlermeldung)} & outputText & ... \\ \hline
-						\textit{Stadt (Fehlermeldung)} & outputText & ... \\ \hline
-						\textit{Raum (Fehlermeldung)}& outputText & ...\\ \hline
-						\textit{Beschreibung (Fehlermeldung)}& outputText & ... \\ \hline
-						\textit{Preis (Fehlermeldung) } & outputText & ... \\ \hline
-						\textit{Kursleiter (Fehlermeldung) } & outputText & ... \\ \hline
-						\textit{Mindestteilnehmerzahl (Fehlermeldung)} & outputText & ...\\ \hline
-						\textit{Maximale Teilnehmerzahl (Fehlermeldung) }& outputText & ... \\ \hline
-						\textit{Status} &  outputText & ... \\ \hline
-						\textit{Benutzer-ID (Fehlermeldung)}  & outputText & ... \\ \hline
-						\textit{Name (Teilnehmer (Fehlermeldung))} &  outputText & ... \\ \hline
-						\textit{Vorname (Teilnehmer (Fehlermeldung))} &  outputText & ... \\ \hline
-						\textit{Einheitenanzahl} &  outputText & ... \\ \hline
+						\textit{Termin (Fehlermeldung)}  & outputText & terminfehler \\ \hline
+						\textit{Startzeit (Fehlermeldung)}  & outputText & startzeitfehler \\ \hline
+						\textit{Endzeit (Fehlermeldung)}  & outputText & endzeitfehler \\ \hline
+						\textit{Straße/ Hausnummer (Fehlermeldung) }  & outputText & straßenfehler \\ \hline
+						\textit{Postleitzahl (Fehlermeldung)} & outputText & postleitzahlfehler \\ \hline
+						\textit{Stadt (Fehlermeldung)} & outputText & stadtfehler \\ \hline
+						\textit{Raum (Fehlermeldung)}& outputText & raumfehler\\ \hline
+						\textit{Beschreibung (Fehlermeldung)}& outputText & beschreibungsfehler\\ \hline
+						\textit{Preis (Fehlermeldung) } & outputText & preisfehler \\ \hline
+						\textit{Kursleiter (Fehlermeldung) } & outputText & kursleiter- fehler \\ \hline
+						\textit{Mindestteilnehmerzahl (Fehlermeldung)} & outputText & minteilnehmerfehler\\ \hline
+						\textit{Maximale Teilnehmerzahl (Fehlermeldung) }& outputText & maxteilnehmerfehler \\ \hline
+						\textit{Status} &  outputText & statusfehler \\ \hline
+						\textit{Benutzer-ID (Fehlermeldung)}  & outputText & nutzeridfehler \\ \hline
+						\textit{Name (Teilnehmer (Fehlermeldung))} &  outputText & namefehler \\ \hline
+						\textit{Vorname (Teilnehmer (Fehlermeldung))} &  outputText & vornamefehler \\ \hline
+						\textit{Einheitenanzahl} &  outputText & einheitenfehler \\ \hline
 					\end{longtable}
 				\end{center}
 				
@@ -1149,7 +1149,7 @@
 						\hline
 						\endlastfoot
 						
-						\textit{Benutzer aktivieren } & activateAccounts() & ... \\ \hline
+						\textit{Benutzer aktivieren } & activateAccounts() & - \\ \hline
 					\end{longtable}
 				\end{center}
 				
@@ -1165,7 +1165,7 @@
 						\endfirsthead
 						\hline
 						\endlastfoot
-						\textit{Benutzer aktivieren} & AccountManagement. User.userStatus & selectBooleanCheckbox & ... \\ \hline
+						\textit{Benutzer aktivieren} & AccountManagement. User.userStatus & selectBooleanCheckbox & nutzeraktiv \\ \hline
 					\end{longtable}
 				\end{center}
 				
@@ -1176,7 +1176,7 @@
 						\endfirsthead
 						\hline
 						\endlastfoot
-						\textit{Benutzer aktivieren} & - & ... \\ \hline
+						\textit{Benutzer aktivieren} & - & - \\ \hline
 					\end{longtable}
 				\end{center}
 				
@@ -1192,7 +1192,7 @@
 							\endfirsthead
 							\hline
 							\endlastfoot
-							\textit{Benutzerdaten Tabelle}  & dataTable & ... \\ \hline
+							\textit{Benutzerdaten Tabelle}  & dataTable & nutzerdaten \\ \hline
 						\end{longtable}
 					\end{center}
 				
@@ -1314,7 +1314,7 @@
 						\hline
 						\endlastfoot
 						
-						\textit{Suchen } & search() & ... \\ \hline
+						\textit{Suchen } & search() & - \\ \hline
 					\end{longtable}
 				\end{center}
 				
@@ -1331,8 +1331,8 @@
 						\endfirsthead
 						\hline
 						\endlastfoot
-						\textit{Kriterienauswahl} & - & selectOneMenu & ... \\ \hline
-						\textit{Suchbegriff} & - & inputText & ... \\ \hline
+						\textit{Kriterienauswahl} & - & selectOneMenu & kriterien \\ \hline
+						\textit{Suchbegriff} & - & inputText & suchen \\ \hline
 					\end{longtable}
 				\end{center}
 				
@@ -1343,8 +1343,8 @@
 						\endfirsthead
 						\hline
 						\endlastfoot
-						\textit{Kriterienauswahl} & - & ... \\ \hline
-						\textit{Suchbegriff} & validateLength (minimum ="", maximum ="") & ... \\ \hline
+						\textit{Kriterienauswahl} & - & - \\ \hline
+						\textit{Suchbegriff} & validateLength (minimum ="", maximum ="") & - \\ \hline
 					\end{longtable}
 				\end{center}
 				
@@ -1361,8 +1361,8 @@
 							\endfirsthead
 							\hline
 							\endlastfoot
-							\textit{Benutzerdaten Tabelle}  & dataTable & ... \\ \hline
-							\textit{Suchbegriff Fehlermeldung}  & outputText & ... \\ \hline
+							\textit{Benutzerdaten Tabelle}  & dataTable & nutzerdaten \\ \hline
+							\textit{Suchbegriff Fehlermeldung}  & outputText & suchefehler \\ \hline
 						\end{longtable}
 					\end{center}
 				
@@ -1488,11 +1488,11 @@
 						\hline
 						\endlastfoot
 						
-						\textit{Kurs anlegen} & createCourse() & ... \\ \hline
-						\textit{Löschen (Kursleiter)} &  removeCourseLeader() & ... \\ \hline
-						\textit{Hinzufügen (Kursleiter)} & addCourseLeader() & ... \\ \hline
-						\textit{Durchsuchen} & - & ... \\ \hline
-						\textit{Hochladen} & uploadCoursePic() & ... \\ \hline
+						\textit{Kurs anlegen} & createCourse() & - \\ \hline
+						\textit{Löschen (Kursleiter)} &  removeCourseLeader() & - \\ \hline
+						\textit{Hinzufügen (Kursleiter)} & addCourseLeader() & - \\ \hline
+						\textit{Durchsuchen} & - & - \\ \hline
+						\textit{Hochladen} & uploadCoursePic() & - \\ \hline
 					\end{longtable}
 				\end{center}
 				
@@ -1519,16 +1519,16 @@
 						\endfirsthead
 						\hline
 						\endlastfoot
-						\textit{Kursname} & CourseManagement. Course.title & inputText & ... \\ \hline
-						\textit{Beschreibung} & CourseManagement. Course.description & inputText & ... \\ \hline
-						\textit{Maximale Teilnehmerzahl} & CourseManagement. Course.maxUsers & inputText & ... \\ \hline
-						\textit{Startdatum} & CourseManagement. Course.startdate & inputText & ... \\ \hline
-						\textit{Enddatum} & CourseManagement. Course.enddate & inputText & ... \\ \hline
-						\textit{Name (Kursleiter)} & - & inputText & ... \\ \hline
-						\textit{E-Mail-Adresse (Kursleiter)} & - & inputText & ... \\ \hline
-						\textit{Kursleiter-ID} & - & inputText & ... \\ \hline
-						\textit{Löschen (Kursleiter)} & - & selectBooleanCheckbox & ... \\ \hline
-						\textit{Profilbild Pfad} & CoursManagement. Course.courseImage & inputText & ... \\ \hline
+						\textit{Kursname} & CourseManagement. Course.title & inputText & kursname \\ \hline
+						\textit{Beschreibung} & CourseManagement. Course.description & inputText & beschreibung \\ \hline
+						\textit{Maximale Teilnehmerzahl} & CourseManagement. Course.maxUsers & inputText & maxteilnehmer \\ \hline
+						\textit{Startdatum} & CourseManagement. Course.startdate & inputText & startdatum \\ \hline
+						\textit{Enddatum} & CourseManagement. Course.enddate & inputText & enddatum \\ \hline
+						\textit{Name (Kursleiter)} & - & inputText & name \\ \hline
+						\textit{E-Mail-Adresse (Kursleiter)} & - & inputText & mailkursleiter \\ \hline
+						\textit{Kursleiter-ID} & - & inputText & idkursleiter \\ \hline
+						\textit{Löschen (Kursleiter)} & - & selectBooleanCheckbox & löschenkursleiter \\ \hline
+						\textit{Profilbild Pfad} & CoursManagement. Course.courseImage & inputText & bildpfad \\ \hline
 					\end{longtable}
 				\end{center}
 				
@@ -1539,16 +1539,16 @@
 						\endfirsthead
 						\hline
 						\endlastfoot
-						\textit{Kursname} & validateLength (minimum ="", maximum =""), validateRequired & ... \\ \hline
-						\textit{Beschreibung} & validateLength (minimum ="", maximum =""), validateRequired & ... \\ \hline
-						\textit{Maximale Teilnehmerzahl} & ???, validateRequired & ... \\ \hline
-						\textit{Startdatum} & DateValidator, validateRequired & ... \\ \hline
-						\textit{Enddatum} & DateValidator, validateRequired & ... \\ \hline
-						\textit{Name (Kursleiter)} & validateLength (minimum ="", maximum =""), validateRequired & ... \\ \hline
-						\textit{E-Mail-Adresse (Kursleiter)} & validateRequired, EMailValidator & ... \\ \hline
-						\textit{Kursleiter-ID} & validateRequired, ??? & ... \\ \hline
-						\textit{Löschen (Kursleiter)} & - & ... \\ \hline
-						\textit{Profilbild Pfad} & ImageValidator & ... \\ \hline
+						\textit{Kursname} & validateLength (minimum ="", maximum =""), validateRequired & - \\ \hline
+						\textit{Beschreibung} & validateLength (minimum ="", maximum =""), validateRequired & - \\ \hline
+						\textit{Maximale Teilnehmerzahl} & ???, validateRequired & - \\ \hline
+						\textit{Startdatum} & DateValidator, validateRequired & covertDateTime \\ \hline
+						\textit{Enddatum} & DateValidator, validateRequired & converDateTime \\ \hline
+						\textit{Name (Kursleiter)} & validateLength (minimum ="", maximum =""), validateRequired & - \\ \hline
+						\textit{E-Mail-Adresse (Kursleiter)} & validateRequired, EMailValidator & - \\ \hline
+						\textit{Kursleiter-ID} & validateRequired, ??? & convertNumber \\ \hline
+						\textit{Löschen (Kursleiter)} & - & - \\ \hline
+						\textit{Profilbild Pfad} & ImageValidator & - \\ \hline
 					\end{longtable}
 				\end{center}
 				
@@ -1569,24 +1569,24 @@
 				\end{itemize}
 				
 				\begin{center}
-					\begin{longtable}{|p{5cm} | p{4cm}|p{3cm}|}
+					\begin{longtable}{|p{5cm} | p{4cm}|p{5cm}|}
 						
 						\hline \multicolumn{1}{|c|}{\textbf{Ausgabefeld}} & \multicolumn{1}{|c|}{\textbf{Typ}}  &  \multicolumn{1}{|c|}{\textbf{ID}} \\ \hline
 						\endfirsthead
 						\hline
 						\endlastfoot
-						\textit{Kurs-ID}  & outputText & ... \\ \hline
-						\textit{Beschreibung Fehlermeldung}  & outputText & ... \\ \hline
-						\textit{Maximale Teilnehmerzahl Fehlermeldung}  & outputText & ... \\ \hline
-						\textit{Startdatum Fehlermeldung}  & outputText & ... \\ \hline
-						\textit{Enddatum Fehlermeldung}  & outputText & ... \\ \hline
-						\textit{Name Kursleiter Fehlermeldung}  & outputText & ... \\ \hline
-						\textit{E-Mail-Adresse Kursleiter Fehlermeldung}  & outputText & ... \\ \hline
-						\textit{Kursleiter-ID Fehlermeldung}  & outputText & ... \\ \hline
-						\textit{Löschen Kursleiter Fehlermeldung}  & outputText & ... \\ \hline
-						\textit{Kursleiter Tabelle}  & dataTable & ... \\ \hline
-						\textit{Kurseinheiten Tabelle}  & dataTable & ... \\ \hline
-						\textit{Kursbild}  & graphicImage & ... \\ \hline
+						\textit{Kurs-ID}  & outputText & idkurs \\ \hline
+						\textit{Beschreibung Fehlermeldung}  & outputText & beschreibungs- fehler \\ \hline
+						\textit{Maximale Teilnehmerzahl Fehlermeldung}  & outputText & maxteilnehmerfehler \\ \hline
+						\textit{Startdatum Fehlermeldung}  & outputText & startdatumsfehler \\ \hline
+						\textit{Enddatum Fehlermeldung}  & outputText & enddatumsfehler \\ \hline
+						\textit{Name Kursleiter Fehlermeldung}  & outputText & namefehler \\ \hline
+						\textit{E-Mail-Adresse Kursleiter Fehlermeldung}  & outputText & mailfehler\\ \hline
+						\textit{Kursleiter-ID Fehlermeldung}  & outputText & idkursleiterfehler \\ \hline
+						\textit{Löschen Kursleiter Fehlermeldung}  & outputText & leiterlöschenfehler \\ \hline
+						\textit{Kursleiter Tabelle}  & dataTable & kursleiter \\ \hline
+						\textit{Kurseinheiten Tabelle}  & dataTable & kurseinheiten \\ \hline
+						\textit{Kursbild}  & graphicImage & bild \\ \hline
 					\end{longtable}
 				\end{center}
 				
@@ -1614,7 +1614,7 @@
 						\hline
 						\endlastfoot
 						
-						\textit{Speichern} & editImprint() & ... \\ \hline
+						\textit{Speichern} & editImprint() & - \\ \hline
 					\end{longtable}
 				\end{center}
 				
@@ -1630,7 +1630,7 @@
 						\endfirsthead
 						\hline
 						\endlastfoot
-						\textit{Impressum} & EditImprint.system. impressum & inputText & ... \\ \hline
+						\textit{Impressum} & EditImprint.system. impressum & inputText & impressum \\ \hline
 					\end{longtable}
 				\end{center}
 				
@@ -1641,7 +1641,7 @@
 						\endfirsthead
 						\hline
 						\endlastfoot
-						\textit{Impressum} & validateRequired, validateLength (minimum ="", maximum ="") & ... \\ \hline
+						\textit{Impressum} & validateRequired, validateLength (minimum ="", maximum ="") & - \\ \hline
 					\end{longtable}
 				\end{center}
 				

@@ -7,21 +7,65 @@ import java.util.Date;
 import java.util.List;
 
 /**
- * @author
+ * This class contains all inforamtion about a Course 
+ * @author Sebastian
  *
  */
 public class Course {
 
+	/**
+	 * title, the coursetitel 
+	 * 
+	 */
     private String title;
+    /**
+     * description, the description of the course (could include information, needed equipment etc)
+	 * 
+	 */
     private String description;
+    /**
+     * nextCourseUnit, the next CourseUnit of the Course which will be hold.
+	 * 
+	 */
     private CourseUnit nextCourseUnit;
+    /**
+     * startdate, the Date when the Course will start.
+	 * 
+	 */
     private Date startdate;
+    /**
+     * enddate, the Date when the Course will end.
+	 * 
+	 */
     private Date enddate;
+    /**
+     * maxUsers, the maximal amount of Users the Course can handle.
+	 * 
+	 */
     private int maxUsers;
+    /**
+	 * courseImage, the Logo of the Course
+	 */
     private String courseImage;
+    /**
+     * courseUnits, a List of the CourseUnits which the Course provides
+	 * 
+	 */
     private List<CourseUnit> courseUnits;
+    /**
+     * courseAdmins, a list of courseAdmins who can hold and create CourseUnits of the Course
+	 * 
+	 */
     private List<User> courseAdmins;
+    /**
+     * users, a list of users who participate in the course
+	 * 
+	 */
     private List<User> users;
+    /**
+     * usersToInform,  list of users who wanted to be inform about changes in the course
+	 * 
+	 */
     private List<User> usersToInform;
 
     public String getTitle() {

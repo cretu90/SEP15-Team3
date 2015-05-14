@@ -4,29 +4,31 @@
 package de.OfCourse.model;
 
 /**
- * @author
+ * The class contains all information about the address of Users and Courses
+ * @author Sebastian
  *
  */
 public class Address {
 
     /**
-     * 
+     * country, the Country where the User lives or where the Course will be hold
      */
     private String country;
     /**
-     * 
+     * city, the city where the User lives or where the Course will be hold
      */
     private String city;
     /**
      * 
+     * street, the street where the User lives or where the Course will be hold
      */
     private String street;
     /**
-     * 
+     * houseNumber, the houseNumber where the User lives or where the Course will be hold
      */
     private int houseNumber;
     /**
-     * 
+     * zipCode, the zipdCode where the User lives or where the Course will be hold
      */
     private int zipCode;
 

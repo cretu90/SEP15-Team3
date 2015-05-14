@@ -4,25 +4,26 @@
 package de.OfCourse.model;
 
 /**
- * @author
+ * This class contains all information which are relevant for the System
+ * @author Sebastian
  *
  */
 public class System {
 
     /**
-     * 
+     * css, the css which defines the look of the WebSite
      */
     private String css;
     /**
-     * 
+     * imprint, the Impressum for the WebSite
      */
     private String imprint;
     /**
-     * 
+     * logo, the Logo of the Company or club
      */
     private String logo;
     /**
-     * 
+     * title, the title of the company or club
      */
     private String title;
 
