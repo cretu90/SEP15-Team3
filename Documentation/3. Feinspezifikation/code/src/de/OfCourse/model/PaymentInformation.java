@@ -45,7 +45,7 @@ public class PaymentInformation {
      */
     private Date ccValidTo;
     /**
-     * cvc, the CardValidationCode which is a Security feature and needed for online transfers
+     * cvc, the CardValidationCode which is a Security feature and is needed for online transfers
      * 
      */
     private int cvc;
@@ -107,60 +107,75 @@ public class PaymentInformation {
     }
 
     /**
-     * @return the ccNumber
+     * Getter methode of the ccNumber attribute
+     * @return the ccNumber - attribute
      */
     public String getCcNumber() {
 	return ccNumber;
     }
 
     /**
+     * Setter methode of the ccNumber attribute
+     * 
      * @param ccNumber
-     *            the ccNumber to set
+     *            the ccNumber to set - attribute
      */
     public void setCcNumber(String ccNumber) {
 	this.ccNumber = ccNumber;
     }
 
     /**
-     * @return the ccValidFrom
+     * Getter methode of the ccValidFrom attribute
+     * 
+     * @return the ccValidFrom - attribute
      */
     public Date getCcValidFrom() {
 	return ccValidFrom;
     }
 
     /**
+     * Setter methode of the ccValidFrom attribute
+     * 
      * @param ccValidFrom
-     *            the ccValidFrom to set
+     *            the ccValidFrom to set - attribute
      */
     public void setCcValidFrom(Date ccValidFrom) {
 	this.ccValidFrom = ccValidFrom;
     }
 
     /**
-     * @return the ccValidTo
+     * Getter methode of the ccValidTo attribute
+     * 
+     * @return the ccValidTo - attribute
      */
     public Date getCcValidTo() {
 	return ccValidTo;
     }
 
     /**
+     * Setter methode of the ccValidTo attribute
+     * 
      * @param ccValidTo
-     *            the ccValidTo to set
+     *            the ccValidTo to set - attribute
      */
     public void setCcValidTo(Date ccValidTo) {
 	this.ccValidTo = ccValidTo;
     }
 
     /**
-     * @return the cvc
+     * Getter methode of the cvc attribute
+     * 
+     * @return the cvc - attribute
      */
     public int getCvc() {
 	return cvc;
     }
 
     /**
+     * Setter methode of the cvc attribute
+     * 
      * @param cvc
-     *            the cvc to set
+     *            the cvc to set - attribute
      */
     public void setCvc(int cvc) {
 	this.cvc = cvc;

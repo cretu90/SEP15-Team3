@@ -4,28 +4,34 @@
 package de.OfCourse.model;
 
 /**
- * @author
+ * This class contains all Information for the SMTP Server which is needed for the E-Mail dispatch 
+ * @author Sebastian
  *
  */
 public class SmtpServer {
 
     /**
+     * hostaddr, the URL address to the E-Mail Server
      * 
      */
     private String hostaddr;
     /**
+     * password, the password for the Login on the E-Mail Server
      * 
      */
     private String password;
     /**
+     * port, the portnumber which is needed for the connection with the E-Mail Server
      * 
      */
     private int port;
     /**
+     * username, the username for the Login on the E-Mail Server
      * 
      */
     private String username;
     /**
+     * 
      * 
      */
     private boolean authenticated;

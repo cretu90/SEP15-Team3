@@ -6,61 +6,62 @@ package de.OfCourse.model;
 import java.util.Date;
 
 /**
+ * This class contains all Information about a User
  * @author
  *
  */
 public class User {
 
     /**
-     * 
+     * address, the address where the user lives
      */
     private Address address;
     /**
-     * 
+     * email, the E-Mailaddress of the user
      */
     private String email;
     /**
-     * 
+     * salutation, the gender of the user
      */
     private String salutation;
     /**
-     * 
+     * firstname, the firstname of the user
      */
     private String firstname;
     /**
-     * 
+     * lastname, the lastname of the user
      */
     private String lastname;
     /**
-     * 
+     * username, the username which the user needs for the login
      */
     private String username;
     /**
-     * 
+     * password, the password which the user needs for the login
      */
     private String password;
     /**
-     * 
+     * dateOfBirth, the date of Birth of the the User
      */
     private Date dateOfBirth;
     /**
-     * 
+     * prfilImage, the profil image of the user
      */
     private String profilImage;
     /**
-     * 
+     * userRole, the role which the user has in the System
      */
     private UserRole userRole;
     /**
-     * 
+     * userSatus, the status which the user has at the moment
      */
     private UserStatus userStatus;
     /**
-     * 
+     * accountBalance, the amount of money the user has on his profil
      */
     private float accountBalance;
     /**
-     * 
+     *  userID, the id with which the user can be identify
      */
     private int userID;
 
