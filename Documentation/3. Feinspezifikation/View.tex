@@ -646,7 +646,7 @@
 					\item Passwort: Hier kann der Benutzer sein Passwort ändern.
 					\item Passwort bestätigen: Hier muss der Benutzer sein geändertes Passwort bestätigen.
 					\item Benutzerrolle: Hier kann der Administrator die Benutzerrolle eines Nutzers ändern.
-					\item Profilbild: Hier kann der Benutzer sein Profilbild ändern.
+					\item Profilbild Pfad: Hier kann der Benutzer sein Profilbild ändern.
 				\end{itemize}
 				
 				\begin{center}
@@ -669,7 +669,7 @@
 						\textit{Passwort} & UserProfil.User.password  & inputSecret & ... \\ \hline
 						\textit{Passwort bestätigen} & UserProfil.User.password & inputSecret & ... \\ \hline
 						\textit{Benutzerrolle} & UserProfil.User.userRole & inputText & ... \\ \hline
-						\textit{Profilbild} & UserProfil.User.profilImage & inputText & ... \\ \hline
+						\textit{Profilbild Pfad} & UserProfil.User.profilImage & inputText & ... \\ \hline
 					\end{longtable}
 				\end{center}
 				
@@ -691,9 +691,9 @@
 						\textit{E-Mail-Adresse} & EMailValidator, validateLength (minimum ="", maximum =""), validateRequired & ... \\ \hline
 						\textit{Benutzername} & UserNameValidator, validateLength (minimum ="", maximum =""), validateRegex (pattern =""), validateRequired  & ... \\ \hline
 						\textit{Passwort} & PasswordValidator, validateRequired & ...  \\ \hline
-						\textit{Passwort bestätigen} & validateRequired & ... \\ \hline
+						\textit{Passwort bestätigen} & ConfirmPasswordValidator, validateRequired & ... \\ \hline
 						\textit{Benutzerrolle} & validateRequired & ... \\ \hline
-						\textit{Profilbild} & ... & ... \\ \hline
+						\textit{Profilbild Pfad} & UserImageValidator & ... \\ \hline
 					\end{longtable}
 				\end{center}
 				
@@ -715,6 +715,7 @@
 					\item Profilbild Fehlermeldung: Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
 					\item Kontostand: Ausgabe des aktuellen Kontostandes.
 					\item Tabelle Auflistung der Trainingskurse: Hier werden dem Kursleiter alle Kurse aufgelistet, die er leitet.
+					\item Profilbild: Hier wird das Profilbild angezeigt.
 				\end{itemize}
 				
 				\begin{center}
@@ -739,6 +740,7 @@
 						\textit{Profilbild Fehlermeldung} &  outputText & ... \\ \hline
 						\textit{Kontostand} &  outputText & ... \\ \hline
 						\textit{Tabelle Trainingskurse} &  dataTable & ... \\ \hline
+						\textit{Profilbild} &  graphicImage & ... \\ \hline
 					\end{longtable}
 				\end{center}
 				
@@ -1007,7 +1009,7 @@
 						\endfirsthead
 						\hline
 						\endlastfoot
-						\textit{Termin} & CourseUnitManagement. CourseUnit.??? & inputText & ... \\ \hline
+						\textit{Termin} & CourseUnitManagement. CourseUnit.date & inputText & ... \\ \hline
 						\textit{Startzeit} & CourseUnitManagement. CourseUnit.starttime & inputText & ... \\ \hline
 						\textit{Endzeit} & CourseUnitManagement. CourseUnit.endtime & inputText & ... \\ \hline
 						\textit{Straße/ Hausnummer} & CourseUnitManagement. Address.street, CourseUnitManagement. Address.houseNumber & inputText & ...\\ \hline
@@ -1035,7 +1037,7 @@
 						\endfirsthead
 						\hline
 						\endlastfoot
-						\textit{Termin} & ??? , validateRequired & ... \\ \hline
+						\textit{Termin} & DateValidator , validateRequired & ... \\ \hline
 						\textit{Startzeit} & ??? , validateRequired & ... \\ \hline
 						\textit{Endzeit} & ??? , validateRequired & ... \\ \hline
 						\textit{Straße/ Hausnummer} & validateLength (minimum ="", maximum =""), validateRequired & ... \\ \hline
@@ -1043,8 +1045,8 @@
 						\textit{Stadt} & validateLength (minimum ="", maximum =""), validateRequired & ...  \\ \hline
 						\textit{Ort} & validateLength (minimum ="", maximum =""), validateRequired & ...  \\ \hline
 						\textit{Beschreibung} & validateLength (minimum ="", maximum =""), validateRequired & ... \\ \hline
-						\textit{Preis} & ???, validateRequired  & ... \\ \hline
-						\textit{Kursleiter} & validateLength (minimum ="", maximum =""),???, validateRequired & ...  \\ \hline
+						\textit{Preis} & PriceValidator, validateRequired  & ... \\ \hline
+						\textit{Kursleiter} & validateLength (minimum ="", maximum =""), validateRequired & ...  \\ \hline
 						\textit{Mindesteil- nehmerzahl} & ???, validateRequired & ... \\ \hline
 						\textit{Maximale Teilnehmerzahl} & ???, validateRequired & ... \\ \hline
 						\textit{Teilnehmer markieren} & - & ... \\ \hline
@@ -1323,7 +1325,7 @@
 						\hline
 						\endlastfoot
 						\textit{Kriterienauswahl} & - & ... \\ \hline
-						\textit{Suchbegriff} & - & ... \\ \hline
+						\textit{Suchbegriff} & validateLength (minimum ="", maximum ="") & ... \\ \hline
 					\end{longtable}
 				\end{center}
 				
@@ -1455,6 +1457,8 @@
 					\item Kurs anlegen:  Durch Drücken dieses Buttons wird der Kurs angelegt, sofern alle Daten korrekt eingegeben wurden. \\ Zugehörige Methode: createCourse()
 					\item Löschen (Kursleiter): Durch Drücken dieses Buttons löscht der Administrator den ausgewählten Kursleiter aus diesem Kurs. \\ Zugehörige Methode: removeCourseLeader()
 					\item Hinzufügen (Kursleiter): Durch Drücken dieses Buttons wird der angegebene Kursleiter zum Kurs hinzugefügt, sofern alle Eingabe korrekt waren.	\\ Zugehörige Methode: addCourseLeader()
+					\item Durchsuchen: Durch Drücken dieses Buttons kann der Administrator ein Kursbild aus seinem Dateiverzeichnis auswählen.
+					\item Hochladen: Durch Drücken dieses Buttons wird das ausgewählte Bild hochgeladen. \\ Zugehörige Methode: uploadCoursePic()
 				\end{itemize}
 				
 				\begin{center}
@@ -1467,7 +1471,9 @@
 						
 						\textit{Kurs anlegen} & createCourse() & ... \\ \hline
 						\textit{Löschen (Kursleiter)} &  removeCourseLeader() & ... \\ \hline
-						\textit{Hinzufügen (Kursleiter)} &addCourseLeader() & ... \\ \hline
+						\textit{Hinzufügen (Kursleiter)} & addCourseLeader() & ... \\ \hline
+						\textit{Durchsuchen} & - & ... \\ \hline
+						\textit{Hochladen} & uploadCoursePic() & ... \\ \hline
 					\end{longtable}
 				\end{center}
 				
@@ -1483,6 +1489,8 @@
 					\item E-Mail-Adresse (Kursleiter): Hier gibt der Administrator die entsprechende E-Mail-Adresse des Kursleiters ein.
 					\item Kursleiter-ID: Hier gibt der Administrator die entsprechende ID ein.
 					\item Löschen (Kursleiter): Hier kann der Administrator durch Setzen des Häkchens den Kursleiter markieren, um ihn anschließend über den Button 'Löschen' zu entfernen.
+					\item Profilbild Pfad: Hier wird der Pfad des ausgewählten Profilbildes angezeigt.
+					
 				\end{itemize}
 				
 				\begin{center}
@@ -1501,6 +1509,7 @@
 						\textit{E-Mail-Adresse (Kursleiter)} & - & inputText & ... \\ \hline
 						\textit{Kursleiter-ID} & - & inputText & ... \\ \hline
 						\textit{Löschen (Kursleiter)} & - & selectBooleanCheckbox & ... \\ \hline
+						\textit{Profilbild Pfad} & CoursManagement. Course.courseImage & inputText & ... \\ \hline
 					\end{longtable}
 				\end{center}
 				
@@ -1511,15 +1520,16 @@
 						\endfirsthead
 						\hline
 						\endlastfoot
-						\textit{Kursname} & - & ... \\ \hline
-						\textit{Beschreibung} & - & ... \\ \hline
-						\textit{Maximale Teilnehmerzahl} & - & ... \\ \hline
-						\textit{Startdatum} & - & ... \\ \hline
-						\textit{Enddatum} & - & ... \\ \hline
-						\textit{Name (Kursleiter)} & - & ... \\ \hline
-						\textit{E-Mail-Adresse (Kursleiter)} & - & ... \\ \hline
-						\textit{Kursleiter-ID} & - & ... \\ \hline
+						\textit{Kursname} & validateLength (minimum ="", maximum =""), validateRequired & ... \\ \hline
+						\textit{Beschreibung} & validateLength (minimum ="", maximum =""), validateRequired & ... \\ \hline
+						\textit{Maximale Teilnehmerzahl} & ???, validateRequired & ... \\ \hline
+						\textit{Startdatum} & DateValidator, validateRequired & ... \\ \hline
+						\textit{Enddatum} & DateValidator, validateRequired & ... \\ \hline
+						\textit{Name (Kursleiter)} & validateLength (minimum ="", maximum =""), validateRequired & ... \\ \hline
+						\textit{E-Mail-Adresse (Kursleiter)} & validateRequired, EMailValidator & ... \\ \hline
+						\textit{Kursleiter-ID} & validateRequired, ??? & ... \\ \hline
 						\textit{Löschen (Kursleiter)} & - & ... \\ \hline
+						\textit{Profilbild Pfad} & ImageValidator & ... \\ \hline
 					\end{longtable}
 				\end{center}
 				
@@ -1536,6 +1546,7 @@
 					\item Löschen (Kursleiter (Fehlermeldung)): Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
 					\item Tabelle Auflistung Kursleiter: Hier werden Name und E-Mail-Adresse aller Kursleiter dieses Kurses aufgelistet.
 					\item Tabelle Auflistung Kurseinheiten: Hier werden die Kurseinheiten dieses Kurses aufgelistet.
+					\item Kursbild: Hier wird das Kursbild angezeigt.
 				\end{itemize}
 				
 				\begin{center}
@@ -1556,6 +1567,7 @@
 						\textit{Löschen Kursleiter Fehlermeldung}  & outputText & ... \\ \hline
 						\textit{Kursleiter Tabelle}  & dataTable & ... \\ \hline
 						\textit{Kurseinheiten Tabelle}  & dataTable & ... \\ \hline
+						\textit{Kursbild}  & graphicImage & ... \\ \hline
 					\end{longtable}
 				\end{center}
 				
@@ -1610,7 +1622,7 @@
 						\endfirsthead
 						\hline
 						\endlastfoot
-						\textit{Impressum} & - & ... \\ \hline
+						\textit{Impressum} & validateRequired, validateLength (minimum ="", maximum ="") & ... \\ \hline
 					\end{longtable}
 				\end{center}
 				
