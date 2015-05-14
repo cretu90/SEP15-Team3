@@ -202,10 +202,7 @@
 					
 				\item \textbf{Buttons:} -
 				\item \textbf{Inputs:} -
-				\item \textbf{Outputs:}
-					\begin{itemize}
-						\item Fehlermeldung: Hier wird die entsprechende Fehlermeldung ausgegeben.
-					\end{itemize}
+				\item \textbf{Outputs:} -			
 				\item \textbf{BackingBean:} -	
 			\end{itemize}
 		
@@ -603,28 +600,51 @@
 				\end{itemize}
 				
 				\begin{center}
-					\begin{longtable}{|p{3cm} |p{4cm} | p{4cm}|p{3cm} |p{2cm}|}
+					\begin{longtable}{|p{3cm} |p{5cm} | p{4cm}|p{3cm}|}
 						
-						\hline \multicolumn{1}{|c|}{\textbf{Feld}} & \multicolumn{1}{|c|}{\textbf{Action}} & \multicolumn{1}{|c|}{\textbf{Validatoren}}  &  \multicolumn{1}{|c|}{\textbf{Konverter}} &  \multicolumn{1}{|c|}{\textbf{ID}} \\ \hline
+						\hline \multicolumn{1}{|c|}{\textbf{Eingabefeld}} & \multicolumn{1}{|c|}{\textbf{Backing-Bean-Attribute}} & \multicolumn{1}{|c|}{\textbf{Typ}}  &  \multicolumn{1}{|c|}{\textbf{ID}} \\ \hline
 						\endfirsthead
 						\hline
 						\endlastfoot
-						
-							\textit{Vorname } & AuthenticateAction & ... & ... & ..\\ \hline
-							\textit{Name } & AuthenticateAction & ... & ... & ..\\ \hline
-							\textit{Geburtstag } & AuthenticateAction & ... & ... & ..\\ \hline
-							\textit{Straße/ Hausnummer } & AuthenticateAction & ... & ... & ..\\ \hline
-							\textit{Stadt } & AuthenticateAction& ... & ... & ..\\ \hline
-							\textit{Postleitzahl} & AuthenticateAction & ... & ... & ..\\ \hline
-							\textit{Land } & AuthenticateAction & ... & ... & ..\\ \hline
-							\textit{E-Mail-Adresse } & AuthenticateAction & ... & ... & ..\\ \hline
-							\textit{Benutzername } & AuthenticateAction & ... & ... & ..\\ \hline
-							\textit{Passwort } & AuthenticateAction & ... & ... & ..\\ \hline
-							\textit{Passwort bestätigen} & AuthenticateAction & ... & ... & ..\\ \hline
-							\textit{Benutzerrolle} & AuthenticateAction & ... & ... & ..\\ \hline
-							\textit{Profilbild} & AuthenticateAction& ... & ... & ..\\ \hline
+						\textit{Vorname} & - & inputText & ... \\ \hline
+						\textit{Name} & - & inputText & ... \\ \hline
+						\textit{Geburtstag } & - & inputText & ... \\ \hline
+						\textit{Straße/ Hausnummer} & - & inputText & ...\\ \hline
+						\textit{Stadt} & - & inputText & ... \\ \hline
+						\textit{Postleitzahl} & - & inputText & ... \\ \hline
+						\textit{Land} & - & inputText & ... \\ \hline
+						\textit{E-Mail-Adresse} & - & inputText & ...\\ \hline
+						\textit{Benutzername} & - & inputText & ... \\ \hline
+						\textit{Passwort} & - & inputSecret & ... \\ \hline
+						\textit{Passwort bestätigen} & - & inputSecret & ... \\ \hline
+						\textit{Benutzerrolle} & - & inputText & ... \\ \hline
+						\textit{Profilbild} & - & inputText & ... \\ \hline
 					\end{longtable}
 				\end{center}
+				
+				\begin{center}
+					\begin{longtable}{|p{3cm} |p{8cm} | p{5cm}|}
+						
+						\hline \multicolumn{1}{|c|}{\textbf{Eingabefeld}} & \multicolumn{1}{|c|}{\textbf{Validator}} & \multicolumn{1}{|c|}{\textbf{Konverter}} \\ \hline
+						\endfirsthead
+						\hline
+						\endlastfoot
+						\textit{Vorname} & validateLength (minimum ="", maximum =""), validateRequired & ... \\ \hline
+						\textit{Name} & validateLength (minimum ="", maximum =""), validateRequired & ...  \\ \hline
+						\textit{Geburtstag} & validateRequired & convertDateTime  \\ \hline
+						\textit{Straße/ Hausnummer} & validateLength (minimum ="", maximum =""), validateRequired & ... \\ \hline
+						\textit{Stadt} & validateLength (minimum ="", maximum =""), validateRequired & ...  \\ \hline
+						\textit{Postleitzahl} & validateLength (minimum ="", maximum =""), validateRequired & ... \\ \hline
+						\textit{Land} & validateLength (minimum ="", maximum =""), validateRequired & ...  \\ \hline
+						\textit{E-Mail-Adresse} & validateLength (minimum ="", maximum =""), validateRequired & ... \\ \hline
+						\textit{Benutzername} & validateLength (minimum ="", maximum =""), validateRegex (pattern =""), validateRequired  & ... \\ \hline
+						\textit{Passwort} & validateLength (minimum ="", maximum =""), validateRegex (pattern =""), validateRequired & ...  \\ \hline
+						\textit{Passwort bestätigen} & validateLength (minimum ="", maximum =""), validateRequired & ... \\ \hline
+						\textit{Benutzerrolle} & validateRequired & ... \\ \hline
+						\textit{Profilbild} & ... & ... \\ \hline
+					\end{longtable}
+				\end{center}
+				
 				
 			\item \textbf{Outputs:}
 				\begin{itemize}
@@ -788,15 +808,24 @@
 				\item Entfernen: Durch Setzen des Häkchens wählt der Kursleiter diesen Benutzer aus, um ihn anschließend über den Button 'Löschen' zu entfernen.
 				
 				\begin{center}
-					\begin{longtable}{|p{3cm} |p{4cm} | p{4cm}|p{3cm} |p{2cm}|}
+					\begin{longtable}{|p{3cm} |p{5cm} | p{4cm}|p{3cm}|}
 						
-						\hline \multicolumn{1}{|c|}{\textbf{Feld}} & \multicolumn{1}{|c|}{\textbf{Action}} & \multicolumn{1}{|c|}{\textbf{Validatoren}}  &  \multicolumn{1}{|c|}{\textbf{Konverter}} &  \multicolumn{1}{|c|}{\textbf{ID}} \\ \hline
+						\hline \multicolumn{1}{|c|}{\textbf{Eingabefeld}} & \multicolumn{1}{|c|}{\textbf{Backing-Bean-Attribute}} & \multicolumn{1}{|c|}{\textbf{Typ}}  &  \multicolumn{1}{|c|}{\textbf{ID}} \\ \hline
 						\endfirsthead
 						\hline
 						\endlastfoot
+						\textit{Entfernen} & - & selectBooleanCheckbox & ... \\ \hline
+					\end{longtable}
+				\end{center}
+				
+				\begin{center}
+					\begin{longtable}{|p{3cm} |p{8cm} | p{5cm}|}
 						
-						\textit{Entfernen} & AuthenticateAction & ... & ... & ..\\ \hline
-					
+						\hline \multicolumn{1}{|c|}{\textbf{Eingabefeld}} & \multicolumn{1}{|c|}{\textbf{Validator}} & \multicolumn{1}{|c|}{\textbf{Konverter}} \\ \hline
+						\endfirsthead
+						\hline
+						\endlastfoot
+						\textit{Entfernen} & - & ... \\ \hline
 					\end{longtable}
 				\end{center}
 				
@@ -813,7 +842,7 @@
 					\endfirsthead
 					\hline
 					\endlastfoot
-					\textit{Tabelle Kursteilnehmer}  & outputText & ... \\ \hline
+					\textit{Tabelle Kursteilnehmer}  & dataTable & ... \\ \hline
 				\end{longtable}
 			\end{center}
 			
@@ -879,30 +908,54 @@
 				\end{itemize}
 				
 				\begin{center}
-					\begin{longtable}{|p{3cm} |p{4cm} | p{4cm}|p{3cm} |p{2cm}|}
+					\begin{longtable}{|p{3cm} |p{5cm} | p{4cm}|p{3cm}|}
 						
-						\hline \multicolumn{1}{|c|}{\textbf{Feld}} & \multicolumn{1}{|c|}{\textbf{Action}} & \multicolumn{1}{|c|}{\textbf{Validatoren}}  &  \multicolumn{1}{|c|}{\textbf{Konverter}} &  \multicolumn{1}{|c|}{\textbf{ID}} \\ \hline
+						\hline \multicolumn{1}{|c|}{\textbf{Eingabefeld}} & \multicolumn{1}{|c|}{\textbf{Backing-Bean-Attribute}} & \multicolumn{1}{|c|}{\textbf{Typ}}  &  \multicolumn{1}{|c|}{\textbf{ID}} \\ \hline
 						\endfirsthead
 						\hline
 						\endlastfoot
+						\textit{Termin} & - & inputText & ... \\ \hline
+						\textit{Straße/ Hausnummer} & - & inputText & ...\\ \hline
+						\textit{Postleitzahl} & - & inputText & ... \\ \hline
+						\textit{Stadt} & - & inputText & ... \\ \hline
+						\textit{Ort} & - & inputText & ... \\ \hline
+						\textit{Beschreibung} & - & inputText & ...\\ \hline
+						\textit{Preis} & - & inputText & ... \\ \hline
+						\textit{Kursleiter} & - & inputText & ... \\ \hline
+						\textit{Mindestteil- nehmerzahl} & - & inputText & ... \\ \hline
+						\textit{Maximale Teilnehmerzahl} & - & inputText & ... \\ \hline
+						\textit{Teilnehmer markieren} & - & selectBooleanCheckbox & ... \\ \hline
+						\textit{Benutzer-ID} & - & inputText & ... \\ \hline
+						\textit{Name Teilnehmer} & - & inputText & ... \\ \hline
+						\textit{Vorname Teilnehmer} & - & inputText & ... \\ \hline
+						\textit{Checkbox regelmäßig} & - & selectBooleanCheckbox & ... \\ \hline
+						\textit{Einheitenanzahl} & - & inputText & ... \\ \hline
+					\end{longtable}
+				\end{center}
+				
+				\begin{center}
+					\begin{longtable}{|p{3cm} |p{8cm} | p{5cm}|}
 						
-							\textit{Termin } & AuthenticateAction & ... & ... & ..\\ \hline
-							\textit{Straße/ Hausnummer } & AuthenticateAction & ... & ... & ..\\ \hline
-							\textit{Postleitzahl} & AuthenticateAction & ... & ... & ..\\ \hline
-							\textit{Stadt } & AuthenticateAction& ... & ... & ..\\ \hline
-							\textit{Ort } & AuthenticateAction & ... & ... & ..\\ \hline
-							\textit{Beschreibung } & AuthenticateAction & ... & ... & ..\\ \hline
-							\textit{Preis } & AuthenticateAction & ... & ... & ..\\ \hline
-							\textit{Kursleiter } & AuthenticateAction & ... & ... & ..\\ \hline
-							\textit{Mindestteil- nehmerzahl} & AuthenticateAction & ... & ... & ..\\ \hline
-							\textit{Maximale Teilnehmerzahl} & AuthenticateAction & ... & ... & ..\\ \hline
-							\textit{Teilnehmer markieren} & AuthenticateAction& ... & ... & ..\\ \hline
-							\textit{Benutzer-ID} & AuthenticateAction& ... & ... & ..\\ \hline
-							\textit{Name (Teilnehmer)} & AuthenticateAction& ... & ... & ..\\ \hline
-							\textit{Vorname (Teilnehmer)} & AuthenticateAction& ... & ... & ..\\ \hline
-							\textit{regelmäßig} & AuthenticateAction& ... & ... & ..\\ \hline
-							\textit{Turnus} & AuthenticateAction& ... & ... & ..\\ \hline
-							\textit{Einheitenanzahl} & AuthenticateAction& ... & ... & ..\\ \hline
+						\hline \multicolumn{1}{|c|}{\textbf{Eingabefeld}} & \multicolumn{1}{|c|}{\textbf{Validator}} & \multicolumn{1}{|c|}{\textbf{Konverter}} \\ \hline
+						\endfirsthead
+						\hline
+						\endlastfoot
+						\textit{Termin} & ??? , validateRequired & ... \\ \hline
+						\textit{Straße/ Hausnummer} & validateLength (minimum ="", maximum =""), validateRequired & ... \\ \hline
+						\textit{Postleitzahl} & validateLength (minimum ="", maximum =""), validateRequired & ... \\ \hline
+						\textit{Stadt} & validateLength (minimum ="", maximum =""), validateRequired & ...  \\ \hline
+						\textit{Ort} & validateLength (minimum ="", maximum =""), validateRequired & ...  \\ \hline
+						\textit{Beschreibung} & validateLength (minimum ="", maximum =""), validateRequired & ... \\ \hline
+						\textit{Preis} & ???, validateRequired  & ... \\ \hline
+						\textit{Kursleiter} & validateLength (minimum ="", maximum =""),???, validateRequired & ...  \\ \hline
+						\textit{Mindesteil- nehmerzahl} & ???, validateRequired & ... \\ \hline
+						\textit{Maximale Teilnehmerzahl} & ???, validateRequired & ... \\ \hline
+						\textit{Teilnehmer markieren} & - & ... \\ \hline
+						\textit{Benutzer-ID} & validateLength (minimum ="", maximum =""), validateRequired & ... \\ \hline
+						\textit{Name (Teilnehmer)} & validateLength (minimum ="", maximum =""), validateRequired & ... \\ \hline
+						\textit{Vorname (Teilnehmer)} & validateLength (minimum ="", maximum =""), validateRequired & ... \\ \hline
+						\textit{Checkbox regelmäßig} & - & ... \\ \hline
+						\textit{Einheitenanzahl} & ??? & ... \\ \hline
 					\end{longtable}
 				\end{center}
 				
@@ -999,6 +1052,18 @@
 				\begin{itemize}
 					\item Tabelle Auflistung Benutzerdaten: Hier werden ausgewählte Daten aller im System registrierten, aber noch nicht aktivierten Benutzer angezeigt.
 				\end{itemize}
+				
+					\begin{center}
+						\begin{longtable}{|p{5cm} | p{4cm}|p{3cm}|}
+							
+							\hline \multicolumn{1}{|c|}{\textbf{Ausgabefeld}} & \multicolumn{1}{|c|}{\textbf{Typ}}  &  \multicolumn{1}{|c|}{\textbf{ID}} \\ \hline
+							\endfirsthead
+							\hline
+							\endlastfoot
+							\textit{Benutzerdaten Tabelle}  & dataTable & ... \\ \hline
+						\end{longtable}
+					\end{center}
+				
 			\item \textbf{BackingBean:}
 				\begin{itemize}
 					\item AccountManagement.java
@@ -1095,6 +1160,19 @@
 					\item Tabelle Auflistung Benutzerdaten: Hier werden ausgewählte Daten aller im System registrierten Benutzer angezeigt.
 					\item Suchbegriff (Fehlermeldung): Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
 				\end{itemize}
+				
+					\begin{center}
+						\begin{longtable}{|p{5cm} | p{4cm}|p{3cm}|}
+							
+							\hline \multicolumn{1}{|c|}{\textbf{Ausgabefeld}} & \multicolumn{1}{|c|}{\textbf{Typ}}  &  \multicolumn{1}{|c|}{\textbf{ID}} \\ \hline
+							\endfirsthead
+							\hline
+							\endlastfoot
+							\textit{Benutzerdaten Tabelle}  & dataTable & ... \\ \hline
+							\textit{Suchbegriff Fehlermeldung}  & outputText & ... \\ \hline
+						\end{longtable}
+					\end{center}
+				
 			\item \textbf{BackingBean:}
 				\begin{itemize}
 					\item SearchUser.java
@@ -1214,6 +1292,27 @@
 					\item Löschen (Kursleiter (Fehlermeldung)): Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
 					\item Tabelle Auflistung Kursleiter: Hier werden Name und E-Mail-Adresse aller Kursleiter dieses Kurses aufgelistet.
 				\end{itemize}
+				
+				\begin{center}
+					\begin{longtable}{|p{5cm} | p{4cm}|p{3cm}|}
+						
+						\hline \multicolumn{1}{|c|}{\textbf{Ausgabefeld}} & \multicolumn{1}{|c|}{\textbf{Typ}}  &  \multicolumn{1}{|c|}{\textbf{ID}} \\ \hline
+						\endfirsthead
+						\hline
+						\endlastfoot
+						\textit{Kurs-ID}  & outputText & ... \\ \hline
+						\textit{Beschreibung Fehlermeldung}  & outputText & ... \\ \hline
+						\textit{Maximale Teilnehmerzahl Fehlermeldung}  & outputText & ... \\ \hline
+						\textit{Startdatum Fehlermeldung}  & outputText & ... \\ \hline
+						\textit{Enddatum Fehlermeldung}  & outputText & ... \\ \hline
+						\textit{Name Kursleiter Fehlermeldung}  & outputText & ... \\ \hline
+						\textit{E-Mail-Adresse Kursleiter Fehlermeldung}  & outputText & ... \\ \hline
+						\textit{Kursleiter-ID Fehlermeldung}  & outputText & ... \\ \hline
+						\textit{Löschen Kursleiter Fehlermeldung}  & outputText & ... \\ \hline
+						\textit{Kursleiter Tabelle}  & dataTable & ... \\ \hline
+					\end{longtable}
+				\end{center}
+				
 			\item \textbf{BackingBean:}
 				\begin{itemize}
 					\item CourseManagement.java
