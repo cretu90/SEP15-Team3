@@ -655,15 +655,14 @@
 		\paragraph{profile.xhtml} \hypertarget{profile}
 		KH\\
 		\begin{itemize}
-			\item \textbf{Beschreibung:} Auf dieser Seite werden die persönlichen Daten und der Kontostand des Benutzers angezeigt. Der Benutzer kann die Daten ändern und sein Konto aufladen. Der Kursleiter kann hier den Benutzer aktivieren, und der Administrator den Benutzer löschen.
+			\item \textbf{Beschreibung:} Auf dieser Seite werden die persönlichen Daten und der Kontostand des Benutzers angezeigt. Erstere kann er hier ändern. Der Kursleiter kann hier den Benutzer aktivieren, und der Administrator den Benutzer löschen.
 			\item \textbf{Links:} -
 			\item \textbf{Buttons:}
 				\begin{itemize}
 					\item Bearbeiten: Nach Klicken auf diesen Button können die persönlichen Daten geändert werden. Der Button trägt nun die Aufschrift 'Speichern' und ist mit dessen dazugehöriger Methode hinterlegt. \\ Zugehörige Methode: editUserData()
 					\item Speichern: Durch Drücken dieses Buttons werden die vorgenommenen Änderungen gespeichert, sofern alle Daten korrekt eingegeben wurden. Bei Änderung der E-Mail-Adresse wird außerdem eine Bestätigungsmail mit einem Verifizierungslink verschickt. Bei erfolgreicher Speicherung erscheint der Button 'Bearbeiten' anstelle des Button 'Speichern'. \\ Zugehörige Methode: saveUserData()
 					\item Durchsuchen: Durch Drücken dieses Buttons kann das eigene Dateiverzeichnis nach einem Bild durchsucht werden.
-					\item Hochladen: Durch Drücken dieses Buttons wird das ausgewählte Profilbild hochgeladen. \\ Zugehörige Methode: uploadProfilPic()
-					\item Konto aufladen: Durch Klicken dieses Buttons wird der Benutzer auf die Seite 'Kontoaufladung' (\hyperlink{buyCredits}{buyCredits.xhtml})  weitergeleitet. \\ Zugehörige Methode: depositMoneyPerCreditCard()
+					\item Hochladen: Durch Drücken dieses Buttons wird das ausgewählte Profilbild hochgeladen. \\ Zugehörige Methode: uploadProfilPic()  weitergeleitet. \\
 					\item Benutzer löschen: Durch Drücken dieses Buttons entfernt der Administrator diesen Benutzer aus dem System, oder der Benutzer kann sich selbst auf inaktiv setzen. \\ Zugehörige Methoden: deleteUser(), setUserInactive() 
 				\end{itemize}
 				
@@ -679,7 +678,6 @@
 							\textit{Speichern } & saveUserData() & - \\ \hline
 							\textit{Duchsuchen } & - & - \\ \hline
 							\textit{Hochladen } & uploadProfilPic() & - \\ \hline
-							\textit{Kontoaufladen } & depositMoneyPerCreditCard() & - \\ \hline
 							\textit{Benutzer löschen} &  deleteUser(), setUserInactive()  & - \\ \hline
 						\end{longtable}
 					\end{center}
@@ -802,79 +800,6 @@
 					\item UserProfile.java
 					\item UserManagement.java				
 				\end{itemize}
-		\end{itemize}
-		
-		\paragraph{buyCredits.xhtml} \hypertarget{buyCredits}
-		RS\\
-		\begin{itemize}
-			\item \textbf{Beschreibung:} Hier kann der Nutzer mittels Kreditkarte seinen systeminternen Kontostand erhöhen.
-			\item \textbf{Links:} -
-			\item \textbf{Buttons:}
-			\begin{itemize}
-				\item Konto aufladen: Führt die Kontoaufladung aus. \\ Zugehörige Methode: depositAmount()
-			\end{itemize}
-			\begin{center}
-				\begin{longtable}{|p{4cm} |p{6cm} | p{4cm}|}
-						
-					\hline \multicolumn{1}{|c|}{\textbf{Button}} & \multicolumn{1}{|c|}{\textbf{Methode}} & \multicolumn{1}{|c|}{\textbf{\"{U}bergabeparameter}} \\ \hline
-					\endfirsthead
-					\hline
-					\endlastfoot
-			
-					\textit{Konto aufladen} & depositAmount() & ... \\ \hline
-				\end{longtable}
-			\end{center}
-			\item \textbf{Inputs:}
-			\begin{itemize}
-				\item CVC-Nummer: Prüfnummer der Kreditkarte.
-				\item Ablaufdatum: Ablaufdatum der Kreditkarte.
-				\item Nachname: Nachname des Nutzers zur Kontoaufladung.
-				\item Vorname: Vorname des Nutzers zur Kontoaufladung.
-				\item Kreditinstitut: Name des Kreditinstitutes des Nutzers zur Kontoaufladung.
-				\item Kreditkartennummer: Nummer der Kreditkarte des Nutzers zur Kontoaufladung.
-				\item Betrag: Geldbetrag, welcher auf das systeminterne Konto des Nutzers gebucht werden soll.
-			\end{itemize}
-				\begin{center}
-					\begin{longtable}{|p{3cm} |p{4cm} | p{4cm}|p{3cm} |p{2cm}|}
-						
-						\hline \multicolumn{1}{|c|}{\textbf{Feld}} & \multicolumn{1}{|c|}{\textbf{Action}} & \multicolumn{1}{|c|}{\textbf{Validatoren}}  &  \multicolumn{1}{|c|}{\textbf{Konverter}} &  \multicolumn{1}{|c|}{\textbf{ID}} \\ \hline
-						\endfirsthead
-						\hline
-						\endlastfoot
-						\textit{CVC-Nummer} & ... & CVCValidator & ... & ..\\ \hline
-						\textit{Ablaufdatum} & ... & DateValidator & ... & ..\\ \hline
-						\textit{Nachname} & ... & InputTextValidator & ... & ..\\ \hline
-						\textit{Vorname} & ... & InputTextValidator & ... & ..\\ \hline
-						\textit{Kredit-institut} & ... & InputTextValidator & ... & ..\\ \hline
-						\textit{Kreditkarten-nummer} & ... & CreditCardValidator & ... & ..\\ \hline
-						\textit{Betrag} & ... & PriceValidator & ... & ..\\ \hline
-					\end{longtable}
-				\end{center}
-			\item \textbf{Outputs:}
-			\begin{itemize}
-				\item Fehlermeldung zu den einzelnen Eingabefeldern, bei falscher Eingabe.
-				\item Bestätigungsmeldung bei erfolgreicher Aufladung des Kontos.
-			\end{itemize}
-					\begin{center}
-						\begin{longtable}{|p{5cm} | p{4cm}|p{3cm}|}
-							
-							\hline \multicolumn{1}{|c|}{\textbf{Ausgabefeld}} & \multicolumn{1}{|c|}{\textbf{Typ}}  &  \multicolumn{1}{|c|}{\textbf{ID}} \\ \hline
-							\endfirsthead
-							\hline
-							\endlastfoot
-							\textit{CVC-Nummer Fehlermeldung}  & outputText & cvcfehler \\ \hline
-							\textit{Ablaufadtum Fehlermeldung}  & outputText & datefehler \\ \hline
-							\textit{Nachname Fehlermeldung}  & outputText & nnamefehler \\ \hline
-							\textit{Vorname Fehlermeldung}  & outputText & vnamefehler \\ \hline
-							\textit{Kredit-Institut Fehlermeldung}  & outputText & kinstitutfehler \\ \hline
-							\textit{Kreditkarten-nummer Fehlermeldung}  & outputText & knummerfehler \\ \hline
-							\textit{Betrag Fehlermeldung}  & outputText & betragfehler \\ \hline
-						\end{longtable}
-					\end{center}
-			\item \textbf{BackingBean:}
-			\begin{itemize}
-				\item PayementOnline.java
-			\end{itemize}
 		\end{itemize}
 		
 		\paragraph{scheduler.xhtml} \hypertarget{scheduler}
@@ -1241,7 +1166,7 @@
 		\paragraph{adminManagement.xhtml} \hypertarget{adminManagement}
 		RS\\
 		\begin{itemize}
-			\item \textbf{Beschreibung:} Dieses Facelet stellt die zentrale Systemverwaltung für den Administrator dar. Hier kann er Kurse und Benutzer jeweils anlegen und verwalten, das Konto eines Nutzers aufladen, zu den Statistiken gelangen, den Überziehungskredit für Nutzer festlegen und das System optisch anpassen.
+			\item \textbf{Beschreibung:} Dieses Facelet stellt die zentrale Systemverwaltung für den Administrator dar. Hier kann er Kurse und Benutzer jeweils anlegen und verwalten, das Konto eines Nutzers aufladen, den Überziehungskredit für Nutzer festlegen und das System optisch anpassen.
 			\item \textbf{Links:} -
 			\item \textbf{Buttons:}
 			\begin{itemize}
@@ -1252,11 +1177,6 @@
 				\item Aktivierungsmodalität speichern: Speichert die ausgewählte Art der Benutzeraktivierung. \\ Zugehörige Methode: determineAccountActivationType()
 				\item Guthaben aufladen: Erhöht den Kontostand eines bestimmten Benutzer um die eingegebene Summe. \\ Zugehörige Methode: depositAmountOnUserAccount()
 				\item Überziehungswert speichern: Speichert den Wert der möglichen Kontoüberziehung. \\ Zugehörige Methode: determineOverdraftCredit()
-				\item Statistiken anzeigen: Navigiert zur Anwendungsstatistik Seite. \hyperlink{statistics}{statistics.xhtml} \\ Zugehörige Methode: loadStatisticPage()
-				\item Logo durchsuchen: Öffnet ein Fenster um das Logo der Website vom Computer auszuwählen.
-				\item Logo speichern: Speichert das benutzerdefinierte Logo für die Website. \\ Zugehörige Methode: uploadLogo()
-				\item Oberfläche CSS durchsuchen: Öffnet ein Fenster um die benutzerdefinierte CSS-Datei vom Computer auszuwählen. 
-				\item Oberfläche CSS speichern: Speichert die benutzerdefinierte CSS-Datei. \\ Zugehörige Methode: uploadCustomStyleCSS()
 				\item Impressum bearbeiten: Navigiert zur Impressum bearbeiten Seite. \hyperlink{editImprint}{editImprint.xhtml} \\ Zugehörige Methode: loadEditImprintPage()
 			\end{itemize}
 			\begin{center}
@@ -1274,11 +1194,6 @@
 					\textit{Aktivierungsmodalität speichern} & ... & ... \\ \hline
 					\textit{Guthaben aufladen} & ... & ... \\ \hline
 					\textit{Überziehungswert speichern} & ... & ... \\ \hline
-					\textit{Statistiken anzeigen} & ... & ... \\ \hline
-					\textit{Logo durchsuchen} & ... & ... \\ \hline
-					\textit{Logo speichern} & ... & ... \\ \hline
-					\textit{Oberfläche CSS durchsuchen} & ... & ... \\ \hline
-					\textit{Oberfläche CSS speichern} & ... & ... \\ \hline
 					\textit{Impressum bearbeiten} & ... & ... \\ \hline
 				\end{longtable}
 			\end{center}
@@ -1684,28 +1599,4 @@
 				\begin{itemize}
 					\item EditImprint.java				
 				\end{itemize}
-		\end{itemize}
-		
-		\paragraph{statistics.xhtml} \hypertarget{statistics}
-		RS\\
-		\begin{itemize}
-			\item \textbf{Beschreibung:} Hier kann der Administrator die Statistiken zum System betrachten.
-			\item \textbf{Links:} -
-			\item \textbf{Buttons:}
-			\begin{itemize}
-				\item Anzeigen: Ausgewählte Statistik anzeigen. \\ Zugehörige Methode: displayScheduler()
-			\end{itemize}
-			\item \textbf{Inputs:}
-			\begin{itemize}
-				\item Einnahmen: Der Administrator kann hier auswählen, für welchen Zeitraum, Kursleiter oder Kurs die Einnahmen angezeigt werden sollen.
-			\end{itemize}
-			\item \textbf{Outputs:}
-			\begin{itemize}
-				\item Säulendiagramm: Bei der Auswahl für die Anzeige von Einnahmen in einem Zeitraum oder für Kursleiter wird die Statistik als Säulendiagramm dargestellt
-				\item Tabelle: Bei der Auswahl für die Anzeige von Einnahmen für Kurse wird die Statistik als Tabelle dargestellt.
-			\end{itemize}
-			\item \textbf{BackingBean:}
-			\begin{itemize}
-				\item IncomeStatistics.java
-			\end{itemize}
 		\end{itemize}
