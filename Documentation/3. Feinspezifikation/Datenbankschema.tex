@@ -13,7 +13,7 @@ Zum besseren Verständnis sowie zur einfacheren Wartbarkeit und Erweiterung des 
 In diesem Abschnitt werden die Datenbanktabellen aufgelistet und beschrieben. Es wird die zweite Normalform verwendet. Zu jeder Tabelle wird das SQL CREATE-Statement angegeben, welches die jeweilige Tabelle erzeugt. Des Weiteren werden für bestimmte Spalten Enums verwendet (vgl. 6.4).
 
 \subsection{users}
-Die Tabelle \texttt{users} enthält sämtliche im System registrierten Nutzer. Dazu zählen ebenso Kursleiter als auch Administratoren. Verschiedene Nutzer können nicht dieselbe E-Mail Adresse oder den gleichen Nickname teilen. Dies wird durch Angeben des Schlüsselworts \texttt{UNIQUE} sichergestellt. Des Weiteren werden nur die Hashwerte der Passwörter gespeichert.
+Die Tabelle \texttt{users} enthält sämtliche im System registrierten Nutzer. Dazu zählen ebenso Kursleiter als auch Administratoren. Des Weiteren werden nur die Hashwerte der Passwörter gespeichert.
 	
 \begin{verbatim}
 
@@ -73,8 +73,8 @@ Die Tabelle \texttt{addresses} enthält alle Adressen der registrierten Nutzer s
 \begin{verbatim}
 CREATE TABLE addresses (
     id             SERIAL       PRIMARY KEY,
-    user           REFERENCES users(id)        ON DELETE CASCADE,
-    course_unit    REFERENCES course_units(id) ON DELETE CASCADE,
+    user           REFERENCES users(id)           UNIQUE    ON DELETE CASCADE,
+    course_unit    REFERENCES course_units(id)    UNIQUE    ON DELETE CASCADE,
     country        VARCHAR(15)  NOT NULL,
     city           VARCHAR(25)  NOT NULL,
     zip_code       INTEGER      NOT NULL,
@@ -89,7 +89,7 @@ Die Tabelle \texttt{cycles} enthält alle Zyklen innerhalb der angebotenen Kurse
 \begin{verbatim}
 CREATE TABLE cycles (
     id           SERIAL     PRIMARY KEY,
-    course       REFERENCES courses(id)    ON DELETE CASCADE,
+    course       REFERENCES courses(id)    UNIQUE    ON DELETE CASCADE,
     period       PERIOD,
     cycle_end    INTEGER    NOT NULL
 )
@@ -163,8 +163,7 @@ CREATE TABLE monetary_statistics (
     user      REFERENCES users(id)         ON DELETE CASCADE,
     course    REFERENCES courses(id)       ON DELETE CASCADE,
     amount    DECIMAL(6, 2)    NOT NULL    CHECK (amount > 0),
-    date      DATE             NOT NULL,
-    PRIMARY KEY (user, course)
+    date      DATE             NOT NULL
 )
 \end{verbatim}
 
@@ -186,7 +185,9 @@ Das Sicherstellen der Integrität der Datenbanktabellen erfolgt durch die nachfo
 
 \item Um eine Spalte initial mit einem default-Wert zu belegen wird das Schlüsselwort \texttt{DEFAULT} verwendet, gefolgt von dem entsprechenden Wert.
 
-\item Die constraints \texttt{UNIQUE} und \texttt{CHECK} werden, aufgrund der individuellen Bedeutung für die jeweilige Tabelle, in deren Beschreibung genauer erklärt.
+\item Durch die Angabe des Schlüsselworts \texttt{UNIQUE} wird sichergestellt, dass innerhalb einer Spalte jeder Wert nur einmal vorkommen darf.
+
+\item Der constraint \texttt{CHECK} wird, aufgrund der individuellen Bedeutung für die jeweilige Tabelle, in deren Beschreibung genauer erklärt.
 
 \item Die Tabellen \texttt{system\_attributes} und \texttt{customization\_data} enthalten jeweils das Attribut \texttt{lock}. Dadurch soll sichergestellt werden, dass diese beiden Tabellen, welche ausschließlich system- und konfigurations-spezifische Daten beinhalten, jeweils nur eine Zeile enthalten.
 \end{itemize}
