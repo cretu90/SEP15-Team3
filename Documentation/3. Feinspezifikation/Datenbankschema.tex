@@ -40,7 +40,6 @@ Die Tabelle \texttt{courses} enthält alle im System angebotenen Kurse. Falls di
 \begin{verbatim}
 CREATE TABLE courses (
     id                     SERIAL     PRIMARY KEY,
-    user_to_be_informed    REFERENCES users(id)    ON DELETE CASCADE,
     titel                  TEXT(150),
     max_participants       INTEGER    CHECK (max_participants > 0),
     start_date             DATE       NOT NULL,
