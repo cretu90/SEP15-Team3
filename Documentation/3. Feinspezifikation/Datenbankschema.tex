@@ -19,15 +19,15 @@ Die Tabelle \texttt{users} enthält sämtliche im System registrierten Nutzer. D
 
 CREATE TABLE users (
     id                     SERIAL          PRIMARY KEY,
-    first_name             VARCHAR(25),
-    name                   VARCHAR(25),
-    nickname               VARCHAR(25)     NOT NULL UNIQUE,
-    e-mail                 VARCHAR(319)    NOT NULL UNIQUE,
-    pw_hash                VARCHAR(64)     NOT NULL,
+    first_name             VARCHAR(100),
+    name                   VARCHAR(100),
+    nickname               VARCHAR(100)    NOT NULL UNIQUE,
+    email                  VARCHAR(319)    NOT NULL UNIQUE,
+    pw_hash                VARCHAR(256)    NOT NULL,
     date_of_birth          DATE,
     gender                 GENDER,
     credit_balance         BOOLEAN         NOT NULL,
-    e-mail_verification    BOOLEAN         NOT NULL,
+    email_verification     BOOLEAN         NOT NULL,
     admin_verfication      BOOLEAN         NOT NULL,
     profile_image          BYTEA,
     user_role              ROLE            NOT NULL,
@@ -35,13 +35,13 @@ CREATE TABLE users (
 \end{verbatim}
 
 \subsection{courses}
-Die Tabelle \texttt{courses} enthält alle im System angebotenen Kurse. Die Spalte \texttt{user\_to\_be\_informed} bezieht sich auf das Attribut \texttt{id} der Tabelle \texttt{users} und beinhaltet die Nutzer, die automatisch über Kursinformationen zum entsprechenden Kurs benachrichtigt werden sollen. Falls die maximale Anzahl an Teilnehmern für einen Kurs angegeben wurde wird zusätzlich wird geprüft, ob dieser Wert größer Null ist.
+Die Tabelle \texttt{courses} enthält alle im System angebotenen Kurse. Falls die maximale Anzahl an Teilnehmern für einen Kurs angegeben wurde wird zusätzlich wird geprüft, ob dieser Wert größer Null ist.
 
 \begin{verbatim}
 CREATE TABLE courses (
     id                     SERIAL     PRIMARY KEY,
     user_to_be_informed    REFERENCES users(id)    ON DELETE CASCADE,
-    titel                  TEXT(100),
+    titel                  TEXT(150),
     max_participants       INTEGER    CHECK (max_participants > 0),
     start_date             DATE       NOT NULL,
     end_date               DATE       NOT NULL,
@@ -57,7 +57,7 @@ CREATE TABLE course_units (
     id                  SERIAL       PRIMARY KEY,
     course_id           REFERENCES courses(id)   ON DELETE CASCADE,
     max_participants    INTEGER      NOT NULL    CHECK (max_participants > 0),
-    titel               TEXT(100),
+    titel               TEXT(150),
     min_participants    INTEGER                  CHECK (min_participants > 0),
     fee                 DECIMAL(6,2)             CHECK (fee >= 0),
     location            TEXT(100),
@@ -75,10 +75,10 @@ CREATE TABLE addresses (
     id             SERIAL       PRIMARY KEY,
     user           REFERENCES users(id)           UNIQUE    ON DELETE CASCADE,
     course_unit    REFERENCES course_units(id)    UNIQUE    ON DELETE CASCADE,
-    country        VARCHAR(15)  NOT NULL,
-    city           VARCHAR(25)  NOT NULL,
+    country        VARCHAR(100)  NOT NULL,
+    city           VARCHAR(100)  NOT NULL,
     zip_code       INTEGER      NOT NULL,
-    street         VARCHAR(35),
+    street         VARCHAR(100),
     house_nr       INTEGER
 )
 \end{verbatim}
@@ -92,6 +92,17 @@ CREATE TABLE cycles (
     course       REFERENCES courses(id)    UNIQUE    ON DELETE CASCADE,
     period       PERIOD,
     cycle_end    INTEGER    NOT NULL
+)
+\end{verbatim}
+
+\subsection{inform_users}
+Die Tabelle \texttt{inform_users} enthält alle Nutzer, die sich, bei einem bestimmten Kurs, zu Benachrichtigungen bezüglich Kursinformationen angemeldet haben.
+
+\begin{verbatim}
+CREATE TABLE course_instructors (
+    user      REFERENCES users(id)   ON DELETE CASCADE,
+    course    REFERENCES courses(id) ON DELETE CASCADE,
+    PRIMARY KEY (user, course)
 )
 \end{verbatim}
 
@@ -133,13 +144,13 @@ Die Tabelle \texttt{system\_attributes} enthält von den Systemadministratoren f
 
 \begin{verbatim}
 CREATE TABLE system_attributes (
-    lock                 CHAR(1)        PRIMARY KEY    									 DEFAULT 'X'    UNIQUE
-                                        CHECK (lock = 'X'),
-    activation_type      ACTIVATION     NOT NULL,
-    withdrawal_hours     INTEGER        NOT NULL,
-    application_hours    INTEGER        NOT NULL,
-    verifiation_key      VARCHAR(50)    NOT NULL,
-    storage_interval     INTEGER        NOT NULL
+    lock                 CHAR(1)         PRIMARY KEY    									 DEFAULT 'X'     UNIQUE
+                                         CHECK (lock = 'X'),
+    activation_type      ACTIVATION      NOT NULL,
+    withdrawal_hours     INTEGER         NOT NULL,
+    application_hours    INTEGER         NOT NULL,
+    verifiation_key      VARCHAR(100)    NOT NULL,
+    storage_interval     INTEGER         NOT NULL
 )
 \end{verbatim}
 
@@ -223,6 +234,6 @@ CREATE TYPE period AS ENUM (
 
 \begin{verbatim}
 CREATE TYPE activation AS ENUM (
-    'e-mail', 'admin', 'complete'
+    'email', 'admin', 'complete'
 )
 \end{verbatim}
