@@ -58,8 +58,8 @@
 					\endlastfoot
 
 					\textit{Suche} & -\\ \hline
-					\textit{Sprache Deutsch} & chososenLanguage = ger\\ \hline
-					\textit{Sprache Englisch} & choosenLanguage = eng\\ \hline
+					\textit{Sprache Deutsch} & language = ger\\ \hline
+					\textit{Sprache Englisch} & language = eng\\ \hline
 					\textit{Profil (B)} & -\\ \hline
 					\textit{Meine Kurse (B)} & -\\ \hline
 					\textit{Terminplaner (B)} & -\\ \hline
@@ -97,7 +97,7 @@
 						\endfirsthead
 						\hline
 						\endlastfoot
-						\textit{Logo}  & graphicImage & ... \\ \hline
+						\textit{Logo}  & graphicImage & logo \\ \hline
 					\end{longtable}
 				\end{center}
 			\item \textbf{BackingBean:}
@@ -141,7 +141,7 @@
 		\paragraph{template.xhtml} \hypertarget{template}
 		RS\\
 		\begin{itemize}
-			\item \textbf{Beschreibung:} Dieses Facelet dient der einheitlichen Darstellung und Struktur aller Facelets im System. Letztere ist in Abbildung 4.1 genauer dargestellt.
+			\item \textbf{Beschreibung:} Dieses Facelet dient der einheitlichen Darstellung und Struktur aller Facelets im System. Letztere ist in Abbildung 5.1 genauer dargestellt.
 			\item \textbf{Links:} -
 			\item \textbf{Buttons:} -
 			\item \textbf{Inputs:}
@@ -156,8 +156,8 @@
 					\endfirsthead
 					\hline
 					\endlastfoot
-					\textit{Navigation} & - & xhtml & - \\ \hline
-					\textit{Footer} & - & xhtml & - \\ \hline
+					\textit{Navigation} & - & xhtml & header \\ \hline
+					\textit{Footer} & - & xhtml & footer \\ \hline
 				\end{longtable}
 			\end{center}
 			\item \textbf{Outputs:} -
@@ -229,7 +229,7 @@
 							\endfirsthead
 							\hline
 							\endlastfoot
-							\textit{Logo der Website}  & graphicImage & ... \\ \hline
+							\textit{Logo der Website}  & graphicImage & bigLogo \\ \hline
 						\end{longtable}
 					\end{center}
 			\item \textbf{BackingBean:} -
@@ -426,6 +426,16 @@
 			\begin{itemize}
 				\item von Betreibern festgelegte Allgemeine Geschäftsbedingungen.
 			\end{itemize}
+				\begin{center}
+					\begin{longtable}{|p{5cm} | p{4cm}|p{3cm}|}
+						
+						\hline \multicolumn{1}{|c|}{\textbf{Ausgabefeld}} & \multicolumn{1}{|c|}{\textbf{Typ}}  &  \multicolumn{1}{|c|}{\textbf{ID}} \\ \hline
+						\endfirsthead
+						\hline
+						\endlastfoot
+						\textit{AGB}  & outputText & agbzeigen \\ \hline
+					\end{longtable}
+				\end{center}
 			\item \textbf{BackingBean:} -
 		\end{itemize}
 		
@@ -450,8 +460,8 @@
 					\hline
 					\endlastfoot
 			
-					\textit{Anzeigen} & displayCoursesInSpecificPeriod() & ... \\ \hline
-					\textit{Suchen} &  search() & ... \\ \hline
+					\textit{Anzeigen} & displayCoursesInSpecificPeriod() & - \\ \hline
+					\textit{Suchen} &  search() & - \\ \hline
 				\end{longtable}
 			\end{center}
 			\item \textbf{Inputs:}
@@ -466,8 +476,8 @@
 						\endfirsthead
 						\hline
 						\endlastfoot
-						\textit{Angebots-zeitraum} & ... & ... & ... & ..\\ \hline
-						\textit{Suchobjekt} & ... & ... & ... & ..\\ \hline
+						\textit{Angebots-zeitraum} & setDisplayPeriod() & validateRequired & - & time\\ \hline
+						\textit{Suchobjekt} & setSearchParam() & validateRequired & - & searchParam\\ \hline
 					\end{longtable}
 				\end{center}
 			\item \textbf{Outputs:}
@@ -482,8 +492,8 @@
 							\endfirsthead
 							\hline
 							\endlastfoot
-							\textit{Suchtabelle}  & dataTable & ... \\ \hline
-							\textit{Schaltfläche}  & ... & ... \\ \hline
+							\textit{Suchtabelle}  & dataTable & searchTable \\ \hline
+							\textit{Schaltfläche}  & panelGroup & pageNav \\ \hline
 						\end{longtable}
 					\end{center}
 			\item \textbf{BackingBean:}
