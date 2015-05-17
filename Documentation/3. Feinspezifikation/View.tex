@@ -229,7 +229,7 @@
 							\endfirsthead
 							\hline
 							\endlastfoot
-							\textit{Logo der Website}  & graphicImage & bigLogo \\ \hline
+							\textit{Logo der Website}  & graphicImage & biglogo \\ \hline
 						\end{longtable}
 					\end{center}
 			\item \textbf{BackingBean:} -
@@ -477,7 +477,7 @@
 						\hline
 						\endlastfoot
 						\textit{Angebots-zeitraum} & setDisplayPeriod() & validateRequired & - & time\\ \hline
-						\textit{Suchobjekt} & setSearchParam() & validateRequired & - & searchParam\\ \hline
+						\textit{Suchobjekt} & setSearchParam() & validateRequired & - & searchparam\\ \hline
 					\end{longtable}
 				\end{center}
 			\item \textbf{Outputs:}
@@ -492,8 +492,8 @@
 							\endfirsthead
 							\hline
 							\endlastfoot
-							\textit{Suchtabelle}  & dataTable & searchTable \\ \hline
-							\textit{Schaltfläche}  & panelGroup & pageNav \\ \hline
+							\textit{Suchtabelle}  & dataTable & searchtable \\ \hline
+							\textit{Schaltfläche}  & panelGroup & pagenav \\ \hline
 						\end{longtable}
 					\end{center}
 			\item \textbf{BackingBean:}
@@ -529,17 +529,17 @@
 					\hline
 					\endlastfoot
 			
-					\textit{Anmelden (B)} & signUpForCourse() & ... \\ \hline
-					\textit{Abmelden (B)} &  signOffFromCourse() & ... \\ \hline
-					\textit{Benutzer anzeigen (B)} & loadParticipantsPage() & ... \\ \hline
-					\textit{Alle auswählen (B)} & selectAllCourseUnits() & ... \\ \hline
-					\textit{Speichern (B)} & signUpForCourseUnits() & ... \\ \hline
-					\textit{Bearbeiten (A)} & editCourse() & ... \\ \hline
-					\textit{Speichern (A)} & saveCourse() & ... \\ \hline
-					\textit{Hinzufügen (A)} & addCourseLeader() & ... \\ \hline
-					\textit{Kurseinheit anlegen (K)} & loadCreateCourseUnitPage() & ... \\ \hline
-					\textit{Kurseinheit bearbeiten (K)} & loadEditCourseUnitPage() & ... \\ \hline
-					\textit{Kurs löschen (A)} & deleteCourse() & ... \\ \hline
+					\textit{Anmelden (B)} & signUpForCourse() & - \\ \hline
+					\textit{Abmelden (B)} &  signOffFromCourse() & - \\ \hline
+					\textit{Benutzer anzeigen (B)} & loadParticipantsPage() & - \\ \hline
+					\textit{Alle auswählen (B)} & selectAllCourseUnits() & - \\ \hline
+					\textit{Speichern (B)} & signUpForCourseUnits() & - \\ \hline
+					\textit{Bearbeiten (A)} & editCourse() & - \\ \hline
+					\textit{Speichern (A)} & saveCourse() & - \\ \hline
+					\textit{Hinzufügen (A)} & addCourseLeader() & - \\ \hline
+					\textit{Kurseinheit anlegen (K)} & loadCreateCourseUnitPage() & - \\ \hline
+					\textit{Kurseinheit bearbeiten (K)} & loadEditCourseUnitPage() & - \\ \hline
+					\textit{Kurs löschen (A)} & deleteCourse() & - \\ \hline
 				\end{longtable}
 			\end{center}
 			\item \textbf{Inputs:}
@@ -558,20 +558,20 @@
 				\begin{center}
 					\begin{longtable}{|p{3cm} |p{4cm} | p{4cm}|p{3cm} |p{2cm}|}
 						
-						\hline \multicolumn{1}{|c|}{\textbf{Feld}} & \multicolumn{1}{|c|}{\textbf{Action}} & \multicolumn{1}{|c|}{\textbf{Validatoren}}  &  \multicolumn{1}{|c|}{\textbf{Konverter}} &  \multicolumn{1}{|c|}{\textbf{ID}} \\ \hline
+						\hline \multicolumn{1}{|c|}{\textbf{Feld}} & \multicolumn{1}{|c|}{\textbf{Backing-Bean-Attribute}} & \multicolumn{1}{|c|}{\textbf{Validatoren}}  &  \multicolumn{1}{|c|}{\textbf{Konverter}} &  \multicolumn{1}{|c|}{\textbf{ID}} \\ \hline
 						\endfirsthead
 						\hline
 						\endlastfoot
-						\textit{Kursnews erhalten} & ... & ... & ... & ..\\ \hline
-						\textit{Kurseinheit auswählen} & ... & ... & ... & ..\\ \hline
-						\textit{Kursleiter auswählen (A)} & ... & ... & ... & ..\\ \hline
-						\textit{Kursleiter Name (A)} & ... & ... & ... & ..\\ \hline
-						\textit{Kursleiter E-Mail (A)} & ... & ... & ... & ..\\ \hline
-						\textit{Kursbeschreibung (A)} & ... & ... & ... & ..\\ \hline
-						\textit{Minimale Teilnehmerzahl (A)} & ... & ... & ... & ..\\ \hline
-						\textit{Maximale Teilnehmerzahl (A)} & ... & ... & ... & ..\\ \hline
-						\textit{Startdatum (A)} & ... & ... & ... & ..\\ \hline
-						\textit{Enddatum (A)} & ... & ... & ... & ..\\ \hline
+						\textit{Kursnews erhalten} & ... & - & - & getcnews\\ \hline
+						\textit{Kurseinheit auswählen} & ... & - & - & selectcunit\\ \hline
+						\textit{Kursleiter auswählen (A)} & ... & - & - & selectcleader\\ \hline
+						\textit{Kursleiter Name (A)} & ... & InputTextValidator, validateRequired, validateLength (min = 1, max = 200) & - & cleadername\\ \hline
+						\textit{Kursleiter E-Mail (A)} & ... & EMailValidator, validateRequired, validateLength (min = 5, max = 319) & - & cleadermail\\ \hline
+						\textit{Kursbeschreibung (A)} & ... & InputTextValidator, validateLength (min = 0, max = 1000) & - & cdetails\\ \hline
+						\textit{Minimale Teilnehmerzahl (A)} & ... & - & convertNumber & minparticipants\\ \hline
+						\textit{Maximale Teilnehmerzahl (A)} & ... & - & convertNumber & maxparticipants\\ \hline
+						\textit{Startdatum (A)} & ... & DateValidator, validateRequired & convertDateTime & begin\\ \hline
+						\textit{Enddatum (A)} & ... & DateValidator, validateRequired & convertDateTime & end\\ \hline
 					\end{longtable}
 				\end{center}
 			\item \textbf{Outputs:}
@@ -821,12 +821,34 @@
 				\item Wochenansicht vorwärts: Zeigt die Termine der nächsten Woche an.
 				\item Wochenansicht rückwärts: Zeigt die Termine der letzten Woche an.
 			\end{itemize}
+				\begin{center}
+					\begin{longtable}{|p{3cm} |p{10cm} |}
+						
+						\hline \multicolumn{1}{|c|}{\textbf{Link}} & \multicolumn{1}{|c|}{\textbf{\"{U}bergabeparameter}} \\ \hline
+						\endfirsthead
+						\hline
+						\endlastfoot
+						
+						\textit{Wochenansicht vorwärts} & - \\ \hline
+						\textit{Wochenansicht rückwärts} & - \\ \hline
+					\end{longtable}
+				\end{center}
 			\item \textbf{Buttons:} -
 			\item \textbf{Inputs:} -
 			\item \textbf{Outputs:}
 			\begin{itemize}
 				\item Wochentabelle: Zeigt von Montag bis Sonntag alle belegten Kurseinheiten an. Orientiert sich am klassischen Stundenplan, also mit stündlicher Ansicht.
 			\end{itemize}
+				\begin{center}
+					\begin{longtable}{|p{5cm} | p{4cm}|p{5cm}|}
+						
+						\hline \multicolumn{1}{|c|}{\textbf{Ausgabefeld}} & \multicolumn{1}{|c|}{\textbf{Typ}}  &  \multicolumn{1}{|c|}{\textbf{ID}} \\ \hline
+						\endfirsthead
+						\hline
+						\endlastfoot
+						\textit{Wochentabelle}  & dataTable & wtable \\ \hline
+					\end{longtable}
+				\end{center}
 			\item \textbf{BackingBean:}
 			\begin{itemize}
 				\item Scheduler.java
@@ -1197,14 +1219,14 @@
 					\hline
 					\endlastfoot
 			
-					\textit{Benutzer verwalten} & ... & ... \\ \hline
-					\textit{Benutzer anlegen} &  ... & ... \\ \hline
-					\textit{Kurse verwalten} & ... & ... \\ \hline
-					\textit{Kurs anlegen} & ... & ... \\ \hline
-					\textit{Aktivierungsmodalität speichern} & ... & ... \\ \hline
-					\textit{Guthaben aufladen} & ... & ... \\ \hline
-					\textit{Überziehungswert speichern} & ... & ... \\ \hline
-					\textit{Impressum bearbeiten} & ... & ... \\ \hline
+					\textit{Benutzer verwalten} & loadManageUserPage() & - \\ \hline
+					\textit{Benutzer anlegen} &  loadCreateNewUserPage() & - \\ \hline
+					\textit{Kurse verwalten} & loadManageCoursesPage() & - \\ \hline
+					\textit{Kurs anlegen} & loadCreateNewCoursePage() & - \\ \hline
+					\textit{Aktivierungsmodalität speichern} & determineAccountActivationType() & - \\ \hline
+					\textit{Guthaben aufladen} & depositAmountOnUserAccount() & - \\ \hline
+					\textit{Überziehungswert speichern} & determineOverdraftCredit() & - \\ \hline
+					\textit{Impressum bearbeiten} & loadEditImprintPage() & - \\ \hline
 				\end{longtable}
 			\end{center}
 			\item \textbf{Inputs:}
@@ -1218,15 +1240,15 @@
 				\begin{center}
 					\begin{longtable}{|p{3cm} |p{4cm} | p{4cm}|p{3cm} |p{2cm}|}
 						
-						\hline \multicolumn{1}{|c|}{\textbf{Feld}} & \multicolumn{1}{|c|}{\textbf{Action}} & \multicolumn{1}{|c|}{\textbf{Validatoren}}  &  \multicolumn{1}{|c|}{\textbf{Konverter}} &  \multicolumn{1}{|c|}{\textbf{ID}} \\ \hline
+						\hline \multicolumn{1}{|c|}{\textbf{Feld}} & \multicolumn{1}{|c|}{\textbf{Backing-Bean-Attribute}} & \multicolumn{1}{|c|}{\textbf{Validatoren}}  &  \multicolumn{1}{|c|}{\textbf{Konverter}} &  \multicolumn{1}{|c|}{\textbf{ID}} \\ \hline
 						\endfirsthead
 						\hline
 						\endlastfoot
-						\textit{Account-Aktivierung} & ... & ... & ... & ..\\ \hline
-						\textit{Benutzer-ID} & ... & ... & ... & ..\\ \hline
-						\textit{Benutzername} & ... & ... & ... & ..\\ \hline
-						\textit{Betrag} & ... & ... & ... & ..\\ \hline
-						\textit{Überziehungswert} & ... & ... & ... & ..\\ \hline
+						\textit{Account-Aktivierung} & ... & - & - & accactivation\\ \hline
+						\textit{Benutzer-ID} & ... & validateRequired & convertNumber & userid\\ \hline
+						\textit{Benutzername} & ... & validateRequired & - & username\\ \hline
+						\textit{Betrag} & ... & validateRequired & convertNumber & amount \\ \hline
+						\textit{Überziehungswert} & ... & validateRequired & convertNumber & overdraft\\ \hline
 					\end{longtable}
 				\end{center}
 			\item \textbf{Outputs:}
@@ -1235,16 +1257,16 @@
 			\end{itemize}
 
 					\begin{center}
-						\begin{longtable}{|p{5cm} | p{4cm}|p{3cm}|}
+						\begin{longtable}{|p{5cm} | p{3cm}|p{5cm}|}
 							
 							\hline \multicolumn{1}{|c|}{\textbf{Ausgabefeld}} & \multicolumn{1}{|c|}{\textbf{Typ}}  &  \multicolumn{1}{|c|}{\textbf{ID}} \\ \hline
 							\endfirsthead
 							\hline
 							\endlastfoot
-							\textit{Benutzer-ID Fehlermeldung}  & outputText & ... \\ \hline
-							\textit{Benutzername Fehlermeldung}  & outputText & ... \\ \hline
-							\textit{Betrag Fehlermeldung} & outputText & ...\\ \hline
-							\textit{Überziehungswert Fehlermeldung} & outputText & ...\\ \hline
+							\textit{Benutzer-ID Fehlermeldung}  & outputText & useridfehlermeldung \\ \hline
+							\textit{Benutzername Fehlermeldung}  & outputText & usernamefehlermeldung \\ \hline
+							\textit{Betrag Fehlermeldung} & outputText & amountfehlermeldung\\ \hline
+							\textit{Überziehungswert Fehlermeldung} & outputText & overdraftfehlermeldung\\ \hline
 						\end{longtable}
 					\end{center}
 			\item \textbf{BackingBean:}
