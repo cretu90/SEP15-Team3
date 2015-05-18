@@ -104,7 +104,6 @@
 		\item \method{public String saveUserdata()}
 		\item \method{public void uploadProfilPic()}
 		\item \method{public UserStatus setUserInactive()}
-		\item \method{public String depositMoneyPerCreditcard()}
 		\item \method{public User getUser()}
 		\item \method{public void setUser(User userToSet)}
 		\item \method{public List<Course> getManagedCourses()}
@@ -287,32 +286,17 @@
 		\item \method{public void determineOverdraftCredit()}
 		\item \method{public float getOverdraftCredit()}
 		\item \method{public void setOverdraftCredit(float overdraftCredit)}
-		\item \method{public void uploadCustomStyleCSS()}
-		\item \method{public void uploadLogo()}
 		\item \method{public String loadEditImprintPage()}
 		\item \method{public String loadCreateNewUserPage()}
 		\item \method{public String loadManageUserPage()}
 		\item \method{public String loadCreateNewCoursePage()}
 		\item \method{public String loadManageCoursesPage()}
-		\item \method{public String loadStatisticPage()}
 		\item \method{public System getSystem()}
 		\item \method{public void setSystem(System system)}
 		\item \method{public SessionUser getSessionUser()}
 		\item \method{public void setSessionUser(SessionUser userSession)}
 	\end{itemize}
 	
-	\subsection{Klasse PaymentOnline}
-	\kursiv{ManagedBean, RequestScoped}\\
-	Die Klasse ist zuständig für die Online - Aufladung des Guthabenkontos von Benutzern per Kreditkarte. Die Kreditkartenabwicklung erfolgt über die InfoSun-Bank.
-	\begin{itemize}
-		\item \method{public boolean depositAmount() throws BankAccountException}
-		\item \method{public User getUser()}
-		\item \method{public void setUser(User user)}
-		\item \method{public PaymentInformation getPaymentInformation()}
-		\item \method{public void setPaymentInformation(PaymentInformation payInfo)}
-		\item \method{public SessionUser getSessionUser()}
-		\item \method{public void setSessionUser(SessionUser userSession)}
-	\end{itemize}
 	
 	\subsection{Klasse PaymentOffline}
 	\kursiv{ManagedBean, RequestScoped}\\
@@ -327,20 +311,6 @@
 		\item \method{public void setSessionUser(SessionUser userSession)}
 	\end{itemize}
 	
-	\subsection{Klasse IncomeStatistics}
-	\kursiv{ManagedBean, ViewScoped}\\
-	Die Klasse ist für die Generierung und Darstellung der Einnahmestatistiken zuständig.
-	\begin{itemize}
-		\item \method{public String displayStatistic()}
-		\item \method{public String getDisplayParam()}
-		\item \method{public void setDisplayParam(String displayParam)}
-		\item \method{public int getActualPageNumber()}
-		\item \method{public void goToSpecificPage()}
-		\item \method{public Pagination getPagination()}
-		\item \method{public void setPagination(Pagination pagination)}
-		\item \method{public SessionUser getSessionUser()}
-		\item \method{public void setSessionUser(SessionUser userSession)}
-	\end{itemize}
 	
 	\subsection{Klasse EditImprint}
 	\kursiv{ManagedBean, RequestScoped}\\
@@ -593,30 +563,9 @@
 		\item \method {public void setCity(String city)}
 		\item \method {public void setStreet(String street)}
 		\item \method {public void setHouseNumber(int houseNumber)}
-		\item \method {public void setZipCode(int zipCode)}
-		
+		\item \method {public void setZipCode(int zipCode)}	
 	\end{itemize}
 	
-	\subsection{Klasse PaymentInformation}
-	Diese Klasse stellt die Kreditkarteninformationen, Bankdaten und den Einzahlungsbetrag
-	dar.
-	\begin{itemize}
-		\item \method{public String getAccountNumber()}
-		\item \method{ public void setAccountNumber(String accountNumber)}
-		\item \method{public int getAmount()}
-		\item \method{ public void setAmount(int amount)}
-		\item \method{public String getCcHolder()}
-		\item \method{ public void setCcHolder(String ccHolder)}
-		\item \method{ public String getCcNumber()}
-		\item \method{ public void setCcNumber(String ccNumber)}
-		\item \method{ public Date getCcValidFrom()}
-		\item \method{ public void setCcValidFrom(Date ccValidFrom)}
-		\item \method{ public Date getCcValidTo()}
-		\item \method{ public void setCcValidTo(Date ccValidTo)}
-		\item \method{ public int getCvc()}
-		\item \method{ public void setCvc(int cvc)}
-		
-	\end{itemize}
 	
 	\subsection{Klasse System}
 	In dieser Klasse werden die editierbaren Eigenschaften des Systems gespeichert.
@@ -726,16 +675,6 @@
 		\item \method{public static List<CourseUnit> getCourseUnitsOf(int userID)}
 	\end{itemize}
 	
-	\class{StatisticDAO}
-	Diese Klasse stellt Datenbankanfragen zur Verfügung um Statistikdaten zu erhalten oder in die Datenbank
-	zu schreiben.\\
-	Sämtliche Methoden können die \kursiv{InvalidDBTransferException} werfen.
-	\begin{itemize}
-		\item \method{public static Map<Date, Float> getIncomePerDay(Date actualDate)}
-		\item \method{public static Map<Date, Float> getIncomePerWeek(Date actualDate)}
-		\item \method{public static Map<User, Float> getIncomePerLeader(Pagination pagination)}
-		\item \method{public static Map<Course, Float> getIncomePerCourse(Pagination pagination)}
-	\end{itemize}
 	
 	\class{GeneralDAO}
 	Die Klasse ist zuständig für das Holen einer im System eindeutigen Identifikationsnummer für einen Benutzer, einen Kurs oder eine Kurseinheit.
@@ -930,22 +869,6 @@
 			throws ValidatorException}
 	\end{itemize}
 	
-	\subsection{Klasse CreditCardValidator}
-	Der Validator überprüft, ob eine Kreditkartenummer gültig ist.
-	\begin{itemize}
-		\item \override
-		\method{public void validate(FacesContext fctx, UIComponent component, Object value)
-			throws ValidatorException}
-	\end{itemize}
-	
-	\subsection{Klasse CVCValidator}
-	Dieser Validator überprüft eine CVC Nummer auf ihre Gültigkeit.
-	\begin{itemize}
-		\item \override
-		\method{public void validate(FacesContext fctx, UIComponent component, Object value)
-			throws ValidatorException}
-	\end{itemize}
-	
 	\subsection{Klasse InputTextValidator}
 	Überprüft den eingegebenen Text auf korrekte Zeichenkodierung.
 	\begin{itemize}
@@ -973,14 +896,6 @@
 	\subsection{Klasse ImageValidator}
 	Dieser Validator überprüft eine Bilddatei auf die richtige Dateiendung .jpg. Zusätzlich wird überprüft, ob
 	die maximale Dateigröße und die maximal zugelassene Auflösung für ein Bild(Logo oder Kursbild) eingehalten wird.
-	\begin{itemize}
-		\item \override
-		\method{public void validate(FacesContext fctx, UIComponent component, Object value)
-			throws ValidatorException}
-	\end{itemize}
-	
-	\subsection{Klasse CustomStyleCSSValidator}
-	Der Validator überprüft, ob die Datei den Namen 'customStyle' besitzt und ob es sich um den Dateityp mit der Endung .css handelt.
 	\begin{itemize}
 		\item \override
 		\method{public void validate(FacesContext fctx, UIComponent component, Object value)
