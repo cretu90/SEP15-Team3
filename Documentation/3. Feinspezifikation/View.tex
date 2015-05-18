@@ -190,11 +190,7 @@
 							\textit{Startseite } & - \\ \hline
 						\end{longtable}
 					\end{center}
-					
-				\item \textbf{Buttons:} -
-				\item \textbf{Inputs:} -
-				\item \textbf{Outputs:} -			
-				\item \textbf{BackingBean:} -	
+						
 			\end{itemize}
 		
 		\paragraph{index.xhtml} \hypertarget{index}
@@ -240,7 +236,6 @@
 		\begin{itemize}
 			\item \textbf{Beschreibung:}
 			Auf dieser Seite kann man sich im System anmelden, ein neues Benutzerkonto generieren oder ein neues Passwort anfordern.
-			\item \textbf{Links:} -
 			\item \textbf{Buttons:}
 			\begin{itemize}
 				\item Registrieren: Durch Drücken dieses Buttons wird der neue Benutzer mit den eingegebenen Daten im System gespeichert und es wird eine Bestätigungsmail mit dem Verifizierungslink an die angegebene E-Mail-Adresse verschickt, sofern alle Daten korrekt eingegeben wurden. \\ Zugehörige Methode: registerUser()
@@ -288,21 +283,21 @@
 						\endfirsthead
 						\hline
 						\endlastfoot
-							\textit{Anrede (R)} & - & selectOneMenu & anrede \\ \hline
-							\textit{Vorname (R)} & - & inputText & vorname \\ \hline
-							\textit{Name (R)} & - & inputText & name \\ \hline
-							\textit{Benutzername (R)} & - & inputText & benutzername\\ \hline
-							\textit{Passwort (R)} & - & inputSecret & passwort \\ \hline
-							\textit{Passwort bestätigen (R)} &- & inputSecret & bestätigungs- passwort\\ \hline
-							\textit{Geburtstag (R)} & - & inputText & geburtstag \\ \hline
-							\textit{Straße/ Hausnummer (R)} & - & inputText & straße\\ \hline
-							\textit{Stadt (R)} & - & inputText & stadt \\ \hline
-							\textit{Postleitzahl (R)} & - & inputText & postleitzahl \\ \hline
-							\textit{Land (R)} & - & inputText & land \\ \hline
-							\textit{E-Mail-Adresse (R)} & - & inputText & mail\\ \hline
-							\textit{AGBs bestätigen (R)} & - & selectBooleanCheckbox & agb \\ \hline
-							\textit{Benutzername (A)} & - & inputText & anmeldungs- benutzername \\ \hline
-							\textit{Passwort (A)} & - & inputSecret & anmeldungs- passwort \\ \hline
+							\textit{Anrede (Registrierg)} & - & selectOneMenu & anrede \\ \hline
+							\textit{Vorname (Registrierg)} & - & inputText & vorname \\ \hline
+							\textit{Name (Registrierg)} & - & inputText & name \\ \hline
+							\textit{Benutzername (Registrierg)} & - & inputText & benutzername\\ \hline
+							\textit{Passwort (Registrierg)} & - & inputSecret & passwort \\ \hline
+							\textit{Passwort bestätigen (Registrierg)} &- & inputSecret & bestätigungs- passwort\\ \hline
+							\textit{Geburtstag (Registrierg)} & - & inputText & geburtstag \\ \hline
+							\textit{Straße/ Hausnummer (Registrierg)} & - & inputText & straße\\ \hline
+							\textit{Stadt (Registrierg)} & - & inputText & stadt \\ \hline
+							\textit{Postleitzahl (Registrierg)} & - & inputText & postleitzahl \\ \hline
+							\textit{Land (Registrierg)} & - & inputText & land \\ \hline
+							\textit{E-Mail-Adresse (Registrierg)} & - & inputText & mail\\ \hline
+							\textit{AGBs bestätigen (Registrierg)} & - & selectBooleanCheckbox & agb \\ \hline
+							\textit{Benutzername (Anmeldung)} & - & inputText & anmeldungs- benutzername \\ \hline
+							\textit{Passwort (Anmeldung)} & - & inputSecret & anmeldungs- passwort \\ \hline
 							\textit{E-Mail-Adresse (Passwort vergessen)} & - & inputText & Passwortmail \\ \hline
 					\end{longtable}
 				\end{center}
@@ -314,21 +309,21 @@
 						\endfirsthead
 						\hline
 						\endlastfoot
-						\textit{Anrede (R)} & validateRequired & -  \\ \hline
-						\textit{Vorname (R)} & validateLength (minimum ="", maximum =""), validateRequired & - \\ \hline
-						\textit{Name (R)} & validateLength (minimum ="", maximum =""), validateRequired & -  \\ \hline
-						\textit{Benutzername (R)} & UserNameValidator, validateLength (minimum ="", maximum =""), validateRegex (pattern =""), validateRequired  & - \\ \hline
-						\textit{Passwort (R)} & PasswordValidator, validateRequired & -  \\ \hline
-						\textit{Passwort bestätigen (R)} & confirmPasswordValidator, validateRequired & - \\ \hline
-						\textit{Geburtstag (R)} & DateOfBirthValidator, validateRequired & convertDateTime  \\ \hline
-						\textit{Straße/ Hausnummer (R)} & validateLength (minimum ="", maximum =""), validateRequired & - \\ \hline
-						\textit{Stadt (R)} & validateLength (minimum ="", maximum =""), validateRequired & -  \\ \hline
-						\textit{Postleitzahl (R)} & validateLength (minimum ="", maximum =""), validateRequired & - \\ \hline
-						\textit{Land (R)} & validateLength (minimum ="", maximum =""), validateRequired & -  \\ \hline
-						\textit{E-Mail-Adresse (R)} & EMailValidator, validateLength (minimum ="", maximum =""), validateRequired & - \\ \hline
-						\textit{AGBs bestätigen (R)} & - & -  \\ \hline
-						\textit{Benutzername (A)} & validateRequired & - \\ \hline
-						\textit{Passwort (A)} & validateRequired & -  \\ \hline
+						\textit{Anrede (Registrierg)} & validateRequired & -  \\ \hline
+						\textit{Vorname (Registrierg)} & validateLength (min = 0, max = 100) & - \\ \hline
+						\textit{Name (Registrierg)} & validateLength (min = 0, max =100) & -  \\ \hline
+						\textit{Benutzername (Registrierg)} & UserNameValidator, validateLength (min = 5 , max =100), validateRegex (pattern =""), validateRequired  & - \\ \hline
+						\textit{Passwort (Registrierg)} & PasswordValidator (mindestens 8 Zeichen, mind. 1 Sonderzeichen, mind. 1 Ziffer, Groß- und Kleinbuchstaben, keine Umlaute, kein 'ß'), validateRequired & -  \\ \hline
+						\textit{Passwort bestätigen (Registrierg)} & confirmPasswordValidator, validateRequired & - \\ \hline
+						\textit{Geburtstag (Registrierg)} & DateOfBirthValidator & convertDateTime  \\ \hline
+						\textit{Straße/ Hausnummer (Registrierg)} & validateLength (min = 0, max = 100) & - \\ \hline
+						\textit{Stadt (Registrierg)} & validateLength (min = 1, max = 100), validateRequired & -  \\ \hline
+						\textit{Postleitzahl (Registrierg)} & validateLength (min = 1, max = ????), validateRequired & - \\ \hline
+						\textit{Land (Registrierg)} & validateLength (min = 1, max = 100), validateRequired & -  \\ \hline
+						\textit{E-Mail-Adresse (Registrierg)} & EMailValidator, validateLength (min = 1, max = 319), validateRequired & - \\ \hline
+						\textit{AGBs bestätigen (Registrierg)} & - & -  \\ \hline
+						\textit{Benutzername (Anmeldung)} & validateRequired & - \\ \hline
+						\textit{Passwort (Anmeldung)} & validateRequired & -  \\ \hline
 						\textit{E-Mail-Adresse (Passwort vergessen)} & validateRequired & - \\ \hline
 					\end{longtable}
 				\end{center}
