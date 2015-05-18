@@ -1,9 +1,9 @@
 /**
  * 
  */
-package de.OfCourse.Database.DatabaseGeneral;
+package de.ofCourse.Database.DatabaseGeneral;
 
-import de.OfCourse.exception.InvalidDBTransferException;
+import de.ofCourse.exception.InvalidDBTransferException;
 
 /**
  * @author

@@ -1,14 +1,14 @@
 /**
  * 
  */
-package de.OfCourse.Database.dao;
+package de.ofCourse.Database.dao;
 
 import java.util.List;
 
-import de.OfCourse.exception.InvalidDBTransferException;
-import de.OfCourse.model.Course;
-import de.OfCourse.model.Pagination;
-import de.OfCourse.model.User;
+import de.ofCourse.exception.InvalidDBTransferException;
+import de.ofCourse.model.Course;
+import de.ofCourse.model.PaginationData;
+import de.ofCourse.model.User;
 
 /**
  * @author
@@ -28,7 +28,7 @@ public class UserDAO {
      * @return
      * @throws InvalidDBTransferException
      */
-    public static List<User> getUsers(Pagination pagination)
+    public static List<User> getUsers(PaginationData pagination)
 	    throws InvalidDBTransferException {
 	return null;
     }
@@ -39,7 +39,7 @@ public class UserDAO {
      * @return
      * @throws InvalidDBTransferException
      */
-    public static List<User> getUsers(Pagination pagination, String searchString)
+    public static List<User> getUsers(PaginationData pagination, String searchString)
 	    throws InvalidDBTransferException {
 	return null;
     }
@@ -51,7 +51,7 @@ public class UserDAO {
      * @return
      * @throws InvalidDBTransferException
      */
-    public static List<User> getUsersOrdered(Pagination pagination,
+    public static List<User> getUsersOrdered(PaginationData pagination,
 	    String searchString, String orderParam)
 	    throws InvalidDBTransferException {
 	return null;
@@ -97,7 +97,7 @@ public class UserDAO {
      * @throws InvalidDBTransferException
      */
     public static List<Course> getCoursesLeadedBy(int userID,
-	    Pagination pagination) throws InvalidDBTransferException {
+	    PaginationData pagination) throws InvalidDBTransferException {
 	return null;
     }
 

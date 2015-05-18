@@ -1,7 +1,7 @@
 /**
  * This package represents the business logic of the ofCourse system.
  */
-package de.OfCourse.action;
+package de.ofCourse.action;
 
 import java.util.List;
 
@@ -9,14 +9,14 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.ViewScoped;
 
-import de.OfCourse.model.Course;
-import de.OfCourse.model.Pagination;
-import de.OfCourse.model.User;
-import de.OfCourse.model.UserStatus;
+import de.ofCourse.model.Course;
+import de.ofCourse.model.PaginationData;
+import de.ofCourse.model.User;
+import de.ofCourse.model.UserStatus;
 
 /**
- * Displays the profile of a user and provides the funtionality to edit the data
- * of the user. In case of the user is a course leader the courses mananged by
+ * Displays the profile of a user and provides the functionality to edit the data
+ * of the user. In case of the user is a course leader the courses managed by
  * the user are displayed as well.
  * <p>
  * The user can edit his complete userdata except his id, his user role and his
@@ -33,9 +33,13 @@ import de.OfCourse.model.UserStatus;
  * @author Tobias Fuchs
  *
  */
+/**
+ * @author Fuchs
+ *
+ */
 @ManagedBean
 @ViewScoped
-public class UserProfil {
+public class UserProfilBean implements Pagination {
 
     /**
      * Stores the displayed or entered data of the user
@@ -43,7 +47,7 @@ public class UserProfil {
     private User user;
 
     /**
-     * Stores the manged courses of a user in case of the user is a course
+     * Stores the managed courses of a user in case of the user is a course
      * leader
      */
     private List<Course> managedCourses;
@@ -53,7 +57,7 @@ public class UserProfil {
      * information that is necessary for pagination, e.g. the number of elements
      * per page.
      */
-    private Pagination pagination;
+    private PaginationData pagination;
 
     /**
      * This ManagedProperty represents the actual session of a user. It stores
@@ -82,6 +86,13 @@ public class UserProfil {
      */
     public String saveUserdata() {
 	return null;
+    }
+
+    /**
+     * Initializes the profile page page of the user with the details of the
+     * user.
+     */
+    public void init() {
     }
 
     /**
@@ -165,7 +176,7 @@ public class UserProfil {
      * 
      * @return the pagination object, that stores the information for pagination
      */
-    public Pagination getPagination() {
+    public PaginationData getPagination() {
 	return pagination;
     }
 
@@ -176,7 +187,7 @@ public class UserProfil {
      *            the new pagination object, that stores the information for
      *            pagination
      */
-    public void setPagination(Pagination pagination) {
+    public void setPagination(PaginationData pagination) {
     }
 
     /**
@@ -195,6 +206,12 @@ public class UserProfil {
      *            session of the user
      */
     public void setSessionUser(SessionUser userSession) {
+    }
+
+    @Override
+    public void sortBySpecificColumn(String columnname) {
+	// TODO Auto-generated method stub
+
     }
 
 }

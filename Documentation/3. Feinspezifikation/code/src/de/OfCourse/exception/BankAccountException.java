@@ -1,4 +1,4 @@
-package de.OfCourse.exception;
+package de.ofCourse.exception;
 
 public class BankAccountException extends RuntimeException {
 

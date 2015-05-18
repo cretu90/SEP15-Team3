@@ -1,7 +1,7 @@
 /**
  * 
  */
-package de.OfCourse.exception;
+package de.ofCourse.exception;
 
 /**
  * @author 

@@ -1,7 +1,7 @@
 /**
  * This package represents the business logic of the ofCourse system.
  */
-package de.OfCourse.action;
+package de.ofCourse.action;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
@@ -26,7 +26,7 @@ import javax.faces.bean.RequestScoped;
  */
 @ManagedBean
 @RequestScoped
-public class Navigation {
+public class NavigationBean {
 
     /**
      * This ManagedProperty represents the actual session of a user. It stores

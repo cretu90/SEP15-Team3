@@ -1,7 +1,7 @@
 /**
  * This package represents the business logic of the ofCourse system.
  */
-package de.OfCourse.action;
+package de.ofCourse.action;
 
 import java.util.List;
 
@@ -9,7 +9,7 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.RequestScoped;
 
-import de.OfCourse.exception.MailingException;
+import de.ofCourse.exception.MailingException;
 
 /**
  * Provides the service of sending messages between the course leader and the
@@ -25,7 +25,7 @@ import de.OfCourse.exception.MailingException;
  */
 @ManagedBean
 @RequestScoped
-public class ContactUsers {
+public class ContactUsersBean {
 
     /**
      * This Managed Property represents a mail - object that contains all
@@ -61,11 +61,11 @@ public class ContactUsers {
      * Sends messages from the course leader to the participants of one of his
      * courses or course units in case of there are made changes relating to the
      * course or course unit about the course leader wants to inform. The
-     * participants only recieve these messages if they registered for course
+     * participants only receive these messages if they registered for course
      * news as they signed in the course.
      * 
      * @throws MailingException
-     *             if a mailing execption occured
+     *             if a mailing exception occurred
      */
     public void sendEMail() throws MailingException {
     }
@@ -83,7 +83,7 @@ public class ContactUsers {
      * Sets the value of the attribute <code>mail</code>.
      * 
      * @param mail
-     *            the new mail object that contains the new neccessary
+     *            the new mail object that contains the new necessary
      *            information for establishing a connection to the SMTP - server
      */
     public void setMail(Mail mail) {

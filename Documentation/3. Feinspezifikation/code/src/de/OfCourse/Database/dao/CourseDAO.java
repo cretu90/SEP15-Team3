@@ -1,14 +1,14 @@
 /**
  * 
  */
-package de.OfCourse.Database.dao;
+package de.ofCourse.Database.dao;
 
 import java.util.List;
 
-import de.OfCourse.exception.InvalidDBTransferException;
-import de.OfCourse.model.Course;
-import de.OfCourse.model.Pagination;
-import de.OfCourse.model.User;
+import de.ofCourse.exception.InvalidDBTransferException;
+import de.ofCourse.model.Course;
+import de.ofCourse.model.PaginationData;
+import de.ofCourse.model.User;
 
 /**
  * @author
@@ -20,17 +20,17 @@ public class CourseDAO {
 	    throws InvalidDBTransferException {
     }
 
-    public static List<Course> getCourses(Pagination pagination)
+    public static List<Course> getCourses(PaginationData pagination)
 	    throws InvalidDBTransferException {
 	return null;
     }
 
-    public static List<Course> getCourses(Pagination pagination,
+    public static List<Course> getCourses(PaginationData pagination,
 	    String searchString) throws InvalidDBTransferException {
 	return null;
     }
 
-    public static List<Course> getCoursesOrdered(Pagination pagination,
+    public static List<Course> getCoursesOrdered(PaginationData pagination,
 	    String searchString, String orderParam)
 	    throws InvalidDBTransferException {
 	return null;

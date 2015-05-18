@@ -1,10 +1,12 @@
 /**
  * 
  */
-package de.OfCourse.model;
+package de.ofCourse.model;
 
 /**
- * This class contains all Information for the SMTP Server which is needed for the E-Mail dispatch 
+ * This class contains all Information for the SMTP Server which is needed for
+ * the E-Mail dispatch
+ * 
  * @author Sebastian
  *
  */
@@ -21,7 +23,8 @@ public class SmtpServer {
      */
     private String password;
     /**
-     * port, the portnumber which is needed for the connection with the E-Mail Server
+     * port, the portnumber which is needed for the connection with the E-Mail
+     * Server
      * 
      */
     private int port;

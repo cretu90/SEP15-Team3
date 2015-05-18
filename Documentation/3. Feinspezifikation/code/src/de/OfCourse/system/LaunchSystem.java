@@ -1,7 +1,7 @@
 /**
  * This package represents system functionality.
  */
-package de.OfCourse.system;
+package de.ofCourse.system;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
@@ -14,9 +14,9 @@ import javax.faces.bean.ManagedBean;
  * 
  * <p>
  * It initializes the maintenance thread, the DatabaseConnectionManager that is
- * responsible for setting up and manageing the database connections.
+ * responsible for setting up and managing the database connections.
  * Furthermore the class sets up the required tables in the database and creates
- * an inital administrator to access the system.<br>
+ * an initial administrator to access the system.<br>
  * In addition it provides the functionality of a regulated shutdown of the
  * application. That includes stopping the maintenance and and shutting down
  * database connection.

@@ -1,7 +1,7 @@
 /**
  * This package represents the business logic of the ofCourse system.
  */
-package de.OfCourse.action;
+package de.ofCourse.action;
 
 import java.util.List;
 
@@ -9,8 +9,8 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.RequestScoped;
 
-import de.OfCourse.model.Course;
-import de.OfCourse.model.User;
+import de.ofCourse.model.Course;
+import de.ofCourse.model.User;
 
 /**
  * Provides functionality for administrators to create and delete courses and to
@@ -23,7 +23,7 @@ import de.OfCourse.model.User;
  * to do so he has the possibility to add a new leader to a course by entering
  * the data of the leader.<br>
  * For deleting a leader from a course the administrator has to selected the
- * leader to delete. He has the posibility to remove more than one leader from a
+ * leader to delete. He has the possibility to remove more than one leader from a
  * course at once.
  * 
  * @author Tobias Fuchs
@@ -31,7 +31,7 @@ import de.OfCourse.model.User;
  */
 @ManagedBean
 @RequestScoped
-public class CourseManagement {
+public class CourseManagementBean {
 
     /**
      * Stores an leader that is to be added to the course.
@@ -97,6 +97,11 @@ public class CourseManagement {
     public void addCourseLeader() {
     }
 
+    /**
+     * Does some initializing work.
+     */
+    public void init(){}
+    
     /**
      * Returns the value of the attribute <code>leaderToAdd</code>.
      * 

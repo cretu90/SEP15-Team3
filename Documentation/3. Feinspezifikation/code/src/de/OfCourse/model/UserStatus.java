@@ -1,7 +1,7 @@
 /**
  * 
  */
-package de.OfCourse.model;
+package de.ofCourse.model;
 
 /**
  * This class represents the different statuses which the user can have
@@ -23,7 +23,8 @@ public enum UserStatus {
      */
     REGISTERED,
     /**
-     * The user is inactiv(because he has deleted his profil or was deleted by an adminstrator)
+     * The user is inactiv(because he has deleted his profil or was deleted by
+     * an adminstrator)
      */
     INACTIVE;
 }

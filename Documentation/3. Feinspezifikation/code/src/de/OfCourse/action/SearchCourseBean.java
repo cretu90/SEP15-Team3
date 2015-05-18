@@ -1,7 +1,7 @@
 /**
  * This package represents the business logic of the ofCourse system.
  */
-package de.OfCourse.action;
+package de.ofCourse.action;
 
 import java.util.List;
 
@@ -9,8 +9,8 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.ViewScoped;
 
-import de.OfCourse.model.Course;
-import de.OfCourse.model.Pagination;
+import de.ofCourse.model.Course;
+import de.ofCourse.model.PaginationData;
 
 /**
  * Provides the service of displaying the course offer of the system and the
@@ -23,13 +23,14 @@ import de.OfCourse.model.Pagination;
  * 
  * <p>
  * This class is ManagedBean and controller of the facelet <code>search</code>.
+ * </p>
  * 
  * @author Tobias Fuchs
  *
  */
 @ManagedBean
 @ViewScoped
-public class SearchCourse {
+public class SearchCourseBean implements Pagination {
 
     /**
      * Stores the display period that was selected by the user. With the display
@@ -64,7 +65,7 @@ public class SearchCourse {
      * information that is necessary for pagination, e.g. the number of elements
      * per page.
      */
-    private Pagination pagination;
+    private PaginationData pagination;
 
     /**
      * This ManagedProperty represents the actual session of a user. It stores
@@ -83,6 +84,13 @@ public class SearchCourse {
      * 
      */
     public void displayCoursesInSpecificPeriod() {
+    }
+
+    /**
+     * Initializes the search page with course offer of the system.
+     */
+    public void init() {
+
     }
 
     /**
@@ -229,7 +237,7 @@ public class SearchCourse {
      * 
      * @return the pagination object, that stores the information for pagination
      */
-    public Pagination getPagination() {
+    public PaginationData getPagination() {
 	return pagination;
     }
 
@@ -240,7 +248,7 @@ public class SearchCourse {
      *            the new pagination object, that stores the information for
      *            pagination
      */
-    public void setPagination(Pagination pagination) {
+    public void setPagination(PaginationData pagination) {
     }
 
     /**

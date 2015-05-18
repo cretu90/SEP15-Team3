@@ -1,7 +1,7 @@
 /**
  * This package provides utility functionality for the ofCourse system.
  */
-package de.OfCourse.utilities;
+package de.ofCourse.utilities;
 
 /**
  * Provides the functionality to read out a property file, which contains system

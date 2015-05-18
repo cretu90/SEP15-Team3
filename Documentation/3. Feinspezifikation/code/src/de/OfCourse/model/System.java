@@ -1,10 +1,11 @@
 /**
  * 
  */
-package de.OfCourse.model;
+package de.ofCourse.model;
 
 /**
  * This class contains all information which are relevant for the System
+ * 
  * @author Sebastian
  *
  */

@@ -1,12 +1,13 @@
 /**
  * 
  */
-package de.OfCourse.model;
+package de.ofCourse.model;
 
 import java.util.Date;
 
 /**
  * This class contains all Information about a User
+ * 
  * @author
  *
  */
@@ -61,7 +62,7 @@ public class User {
      */
     private float accountBalance;
     /**
-     *  userID, the id with which the user can be identify
+     * userID, the id with which the user can be identify
      */
     private int userID;
 
@@ -192,7 +193,7 @@ public class User {
      * @param sal
      */
     public void setSalutation(String sal) {
-	this.salutation = salutation;
+	this.salutation = sal;
     }
 
     /**

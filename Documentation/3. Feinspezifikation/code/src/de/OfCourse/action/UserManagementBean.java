@@ -1,11 +1,11 @@
 /**
  * This package represents the business logic of the ofCourse system.
  */
-package de.OfCourse.action;
+package de.ofCourse.action;
 
 import javax.faces.bean.ManagedProperty;
 
-import de.OfCourse.model.User;
+import de.ofCourse.model.User;
 
 /**
  * Provides functionality for administrators to create and delete users.
@@ -22,7 +22,7 @@ import de.OfCourse.model.User;
  * @author Tobias Fuchs
  *
  */
-public class UserManagement {
+public class UserManagementBean {
 
     /**
      * 
@@ -69,6 +69,11 @@ public class UserManagement {
 	return null;
     }
 
+    /**
+     * Does some initializing work.
+     */
+    public void init(){}
+    
     /**
      * Returns the value of the attribute <code>user</code>.
      * 

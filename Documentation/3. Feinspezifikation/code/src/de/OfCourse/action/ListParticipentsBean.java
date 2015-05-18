@@ -1,7 +1,7 @@
 /**
  * This package represents the business logic of the ofCourse system.
  */
-package de.OfCourse.action;
+package de.ofCourse.action;
 
 import java.util.List;
 
@@ -9,12 +9,12 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.ViewScoped;
 
-import de.OfCourse.model.Pagination;
-import de.OfCourse.model.User;
+import de.ofCourse.model.PaginationData;
+import de.ofCourse.model.User;
 
 /**
  * Displays the participants that attend a certain course and offers the course
- * leader the possibility to delete users from on of his manged courses.
+ * leader the possibility to delete users from on of his managed courses.
  * <p>
  * 
  * Supports pagination to display the users.
@@ -28,7 +28,7 @@ import de.OfCourse.model.User;
  */
 @ManagedBean
 @ViewScoped
-public class ListParticipents {
+public class ListParticipentsBean implements Pagination {
 
     /**
      * Stores the the list of participants that is displayed on the page.
@@ -45,7 +45,7 @@ public class ListParticipents {
      * information that is necessary for pagination, e.g. the number of elements
      * per page.
      */
-    private Pagination pagination;
+    private PaginationData pagination;
 
     /**
      * This ManagedProperty represents the actual session of a user. It stores
@@ -71,6 +71,13 @@ public class ListParticipents {
      *            the new participants list
      */
     public void setParticipients(List<User> participients) {
+    }
+
+    /**
+     * Initializes the <code>listParticipants</code> page with the participants
+     * of the course.
+     */
+    public void init() {
     }
 
     /**
@@ -136,7 +143,7 @@ public class ListParticipents {
      * 
      * @return the pagination object, that stores the information for pagination
      */
-    public Pagination getPagination() {
+    public PaginationData getPagination() {
 	return pagination;
     }
 
@@ -147,7 +154,7 @@ public class ListParticipents {
      *            the new pagination object, that stores the information for
      *            pagination
      */
-    public void setPagination(Pagination pagination) {
+    public void setPagination(PaginationData pagination) {
     }
 
     /**
@@ -166,6 +173,12 @@ public class ListParticipents {
      *            session of the user
      */
     public void setSessionUser(SessionUser userSession) {
+    }
+
+    @Override
+    public void sortBySpecificColumn(String columnname) {
+	// TODO Auto-generated method stub
+
     }
 
 }

@@ -1,7 +1,7 @@
 /**
  * 
  */
-package de.OfCourse.services;
+package de.ofCourse.services;
 
 /**
  * @author

@@ -1,16 +1,16 @@
 /**
  * This package represents the business logic of the ofCourse system.
  */
-package de.OfCourse.action;
+package de.ofCourse.action;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.RequestScoped;
 
-import de.OfCourse.model.User;
+import de.ofCourse.model.User;
 
 /**
- * Provides the funtcion that a user can log in the system by entering his
+ * Provides the function that a user can log in the system by entering his
  * username and his password.<br>
  * <p>
  * It is checked whether the user is registered in the system.<br>
@@ -25,7 +25,7 @@ import de.OfCourse.model.User;
  */
 @ManagedBean
 @RequestScoped
-public class AuthenticateUser {
+public class AuthenticateUserBean {
 
     /**
      * Represents a user object. It stores the entered username and the entered
@@ -43,7 +43,7 @@ public class AuthenticateUser {
 
     /**
      * Returns the link to the <code>myCourses</code> page if the entered
-     * username and the respecetive password are valid.<p>
+     * username and the respective password are valid.<p>
      * It is checked whether the entered username and the respective password
      * belong to a user that is registered in the system. If this is true, the
      * log in action is successful and the user is directed to his

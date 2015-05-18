@@ -1,13 +1,13 @@
 /**
  * 
  */
-package de.OfCourse.model;
+package de.ofCourse.model;
 
 /**
  * @author
  *
  */
-public class Pagination {
+public class PaginationData {
 
     /**
      * 

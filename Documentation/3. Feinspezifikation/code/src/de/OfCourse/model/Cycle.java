@@ -1,12 +1,14 @@
 /**
  * 
  */
-package de.OfCourse.model;
+package de.ofCourse.model;
 
 import java.util.Date;
 
 /**
- * This class contains the information of courseunits which will take place regulary
+ * This class contains the information of courseunits which will take place
+ * regulary
+ * 
  * @author Sebastian
  *
  */
@@ -21,7 +23,7 @@ public class Cycle {
      */
     private int turnus;
     /**
-     * numberOfUnits, the number of units which should take place 
+     * numberOfUnits, the number of units which should take place
      */
     private int numberOfUnits;
 

@@ -1,7 +1,7 @@
 /**
  * This package represents the business logic of the ofCourse system.
  */
-package de.OfCourse.action;
+package de.ofCourse.action;
 
 import java.util.List;
 
@@ -9,13 +9,13 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.ViewScoped;
 
-import de.OfCourse.model.Pagination;
-import de.OfCourse.model.User;
+import de.ofCourse.model.PaginationData;
+import de.ofCourse.model.User;
 
 /**
  * Provides the service of searching for users in the system.<br>
  * The user can search for users by selecting certain parameters and entering a
- * search term for thr parameter. Only the adminitrator has the possibility to
+ * search term for the parameter. Only the administrator has the possibility to
  * search for users in the system.<br>
  * This class supports pagination to display the found users.
  * 
@@ -28,7 +28,7 @@ import de.OfCourse.model.User;
  */
 @ManagedBean
 @ViewScoped
-public class SearchUser {
+public class SearchUserBean implements Pagination {
 
     /**
      * Stores the the search result that is displayed on the page. In this case
@@ -51,7 +51,7 @@ public class SearchUser {
      * information that is necessary for pagination, e.g. the number of elements
      * per page.
      */
-    private Pagination pagination;
+    private PaginationData pagination;
 
     /**
      * This ManagedProperty represents the actual session of a user. It stores
@@ -79,6 +79,12 @@ public class SearchUser {
      */
     public List<User> getSearchResult() {
 	return searchResult;
+    }
+
+    /**
+     * Initializes the list users page with the users of the system.
+     */
+    public void init() {
     }
 
     /**
@@ -175,7 +181,7 @@ public class SearchUser {
      * 
      * @return the pagination object, that stores the information for pagination
      */
-    public Pagination getPagination() {
+    public PaginationData getPagination() {
 	return pagination;
     }
 
@@ -186,7 +192,7 @@ public class SearchUser {
      *            the new pagination object, that stores the information for
      *            pagination
      */
-    public void setPagination(Pagination pagination) {
+    public void setPagination(PaginationData pagination) {
     }
 
     /**

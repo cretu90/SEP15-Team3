@@ -1,7 +1,7 @@
 /**
  * This package represents the business logic of the ofCourse system.
  */
-package de.OfCourse.action;
+package de.ofCourse.action;
 
 import java.util.List;
 
@@ -9,8 +9,8 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.ViewScoped;
 
-import de.OfCourse.model.Course;
-import de.OfCourse.model.Pagination;
+import de.ofCourse.model.Course;
+import de.ofCourse.model.PaginationData;
 
 /**
  * Displays the courses that are attended by a certain user and offers the user
@@ -28,7 +28,7 @@ import de.OfCourse.model.Pagination;
  */
 @ManagedBean
 @ViewScoped
-public class MyCourses {
+public class MyCoursesBean implements Pagination {
 
     /**
      * List of courses that the user attends
@@ -40,7 +40,7 @@ public class MyCourses {
      * information that is necessary for pagination, e.g. the number of elements
      * per page.
      */
-    private Pagination pagination;
+    private PaginationData pagination;
 
     /**
      * This ManagedProperty represents the actual session of a user. It stores
@@ -60,6 +60,13 @@ public class MyCourses {
     }
 
     /**
+     * Initializes the <code>myCourses</code> page with the courses that the
+     * user attends.
+     */
+    public void init() {
+    }
+
+    /**
      * Sets the value of the attribute <code>registeredCourses</code>.
      * 
      * @param registeredCourses
@@ -69,7 +76,7 @@ public class MyCourses {
     }
 
     /**
-     * Redriects the user to the <code>courseDetail</code> page of the selected
+     * Redirects the user to the <code>courseDetail</code> page of the selected
      * course.
      * 
      * @return link to the <code>courseDetail</code> page
@@ -103,7 +110,7 @@ public class MyCourses {
      * 
      * @return the pagination object, that stores the information for pagination
      */
-    public Pagination getPagination() {
+    public PaginationData getPagination() {
 	return pagination;
     }
 
@@ -114,7 +121,7 @@ public class MyCourses {
      *            the new pagination object, that stores the information for
      *            pagination
      */
-    public void setPagination(Pagination pagination) {
+    public void setPagination(PaginationData pagination) {
     }
 
     /**
@@ -133,6 +140,12 @@ public class MyCourses {
      *            session of the user
      */
     public void setSessionUser(SessionUser userSession) {
+    }
+
+    @Override
+    public void sortBySpecificColumn(String columnname) {
+	// TODO Auto-generated method stub
+
     }
 
 }

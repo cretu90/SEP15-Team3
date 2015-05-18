@@ -1,19 +1,19 @@
 /**
  * This package represents the business logic of the ofCourse system.
  */
-package de.OfCourse.action;
+package de.ofCourse.action;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.RequestScoped;
 
-import de.OfCourse.exception.BankAccountException;
-import de.OfCourse.model.User;
+import de.ofCourse.exception.BankAccountException;
+import de.ofCourse.model.User;
 
 /**
  * Provides the functionality of toping up the account balance of a user by the
  * administrator.<br>
- * To do this the adminrator has to enter the amount to deposit and the name and
+ * To do this the administrator has to enter the amount to deposit and the name and
  * id of the user on which the money is to be deposited.<br>
  * So it is possible to pass money that was paid to the administrator to the
  * users account.
@@ -26,7 +26,7 @@ import de.OfCourse.model.User;
  */
 @ManagedBean
 @RequestScoped
-public class PaymentOffline {
+public class PaymentOfflineBean {
 
     /**
      * Stores the data of the user who gets the money on his account
@@ -64,7 +64,7 @@ public class PaymentOffline {
      *         <code>false</code> otherwise
      * 
      * @throws BankAccountException
-     *             if there accours an error during topping up the user account
+     *             if there occurs an error during toping up the user account
      */
     public boolean depositAmountOnUserAccount() throws BankAccountException {
 	return false;

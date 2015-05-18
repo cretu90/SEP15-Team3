@@ -1,7 +1,7 @@
 /**
  * This package represents the business logic of the ofCourse system.
  */
-package de.OfCourse.action;
+package de.ofCourse.action;
 
 import java.util.List;
 
@@ -9,15 +9,15 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.ViewScoped;
 
-import de.OfCourse.exception.CourseRegistrationException;
-import de.OfCourse.model.Course;
-import de.OfCourse.model.CourseUnit;
-import de.OfCourse.model.Pagination;
-import de.OfCourse.model.User;
+import de.ofCourse.exception.CourseRegistrationException;
+import de.ofCourse.model.Course;
+import de.ofCourse.model.CourseUnit;
+import de.ofCourse.model.PaginationData;
+import de.ofCourse.model.User;
 
 /**
  * Displays the details of a course and its course units and provides the
- * funtionality to edit the data of the course. In addition it manages the sign
+ * functionality to edit the data of the course. In addition it manages the sign
  * up and sign off action of courses and course units.
  * <p>
  * 
@@ -38,7 +38,7 @@ import de.OfCourse.model.User;
  */
 @ManagedBean
 @ViewScoped
-public class CourseDetail {
+public class CourseDetailBean implements Pagination {
 
     /**
      * Stores the displayed or entered data of the course.
@@ -70,7 +70,7 @@ public class CourseDetail {
      * information that is necessary for pagination, e.g. the number of elements
      * per page.
      */
-    private Pagination pagination;
+    private PaginationData paginationData;
 
     /**
      * This ManagedProperty represents the actual session of a user. It stores
@@ -99,6 +99,13 @@ public class CourseDetail {
      */
     public String saveCourse() {
 	return null;
+    }
+
+    /**
+     * Initializes the course details page with the details of the course that
+     * is to display.
+     */
+    public void init() {
     }
 
     /**
@@ -141,7 +148,7 @@ public class CourseDetail {
      * @return link to the page
      * 
      * @throws CourseRegistrationException
-     *             if a exception occours during the sign up process
+     *             if a exception occurs during the sign up process
      */
     public String signUpForCourse() throws CourseRegistrationException {
 	return null;
@@ -190,7 +197,7 @@ public class CourseDetail {
      * @return link to the page
      * 
      * @throws CourseRegistrationException
-     *             if a exception occours during the sign up process
+     *             if a exception occurs during the sign up process
      */
     public String signUpForCourseUnits() throws CourseRegistrationException {
 	return null;
@@ -213,7 +220,7 @@ public class CourseDetail {
      * @return link to the page
      * 
      * @throws CourseRegistrationException
-     *             if a exception occours during the sign off process
+     *             if a exception occurs during the sign off process
      */
     public String signOffFromCourseUnits() throws CourseRegistrationException {
 	return null;
@@ -302,42 +309,46 @@ public class CourseDetail {
     }
 
     /**
-     * Returns the number of the actual displayed page.<br>
-     * This method is necessary for the paging.
-     * 
-     * @return the number of the actual displayed page
+     * {@inheritDoc}
      */
+    @Override
     public int getActualPageNumber() {
 	return 0;
     }
 
     /**
-     * Realizes the display of certain pages, that means only a fixed number of
-     * database entries are presented at once. Furthermore it is responsible for
-     * the navigation between the pages, especially for getting the next page,
-     * the previous page or to jump to a specific page.
-     * 
+     * {@inheritDoc}
      */
+    @Override
     public void goToSpecificPage() {
     }
 
     /**
-     * Returns the value of the attribute <code>pagination</code>.
-     * 
-     * @return the pagination object, that stores the information for pagination
+     * {@inheritDoc}
      */
-    public Pagination getPagination() {
-	return pagination;
+    @Override
+    public void sortBySpecificColumn(String columnname) {
+	// TODO Auto-generated method stub
     }
 
     /**
-     * Sets the value of the attribute <code>pagination</code>.
+     * Returns the value of the attribute <code>paginationData</code>.
+     * 
+     * @return the pagination data object, that stores the information for
+     *         pagination
+     */
+    public PaginationData getPaginationData() {
+	return paginationData;
+    }
+
+    /**
+     * Sets the value of the attribute <code>paginationData</code>.
      * 
      * @param pagination
-     *            the new pagination object, that stores the information for
-     *            pagination
+     *            the new pagination data object, that stores the information
+     *            for pagination
      */
-    public void setPagination(Pagination pagination) {
+    public void setPaginationData(PaginationData pagination) {
     }
 
     /**
@@ -357,4 +368,5 @@ public class CourseDetail {
      */
     public void setSessionUser(SessionUser userSession) {
     }
+
 }

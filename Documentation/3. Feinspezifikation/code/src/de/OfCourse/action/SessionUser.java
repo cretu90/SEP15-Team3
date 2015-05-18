@@ -1,13 +1,13 @@
 /**
  * This package represents the business logic of the ofCourse system.
  */
-package de.OfCourse.action;
+package de.ofCourse.action;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
-import de.OfCourse.model.UserRole;
-import de.OfCourse.model.UserStatus;
+import de.ofCourse.model.UserRole;
+import de.ofCourse.model.UserStatus;
 
 /**
  * Represents the management of the session of a logged in user.<p>

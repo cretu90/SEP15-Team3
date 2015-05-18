@@ -1,7 +1,7 @@
 /**
  * This package represents the business logic of the ofCourse system.
  */
-package de.OfCourse.action;
+package de.ofCourse.action;
 
 import java.util.List;
 
@@ -9,8 +9,8 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.ViewScoped;
 
-import de.OfCourse.model.Pagination;
-import de.OfCourse.model.User;
+import de.ofCourse.model.PaginationData;
+import de.ofCourse.model.User;
 
 /**
  * Provides functionality for course leaders and administrators to activate user
@@ -30,7 +30,7 @@ import de.OfCourse.model.User;
  */
 @ManagedBean
 @ViewScoped
-public class AccountManagment {
+public class AccountManagmentBean implements Pagination {
 
     /**
      * The users that are selected by the user and shall be activated.
@@ -47,7 +47,7 @@ public class AccountManagment {
      * information that is necessary for pagination, e.g. the number of elements
      * per page.
      */
-    private Pagination pagination;
+    private PaginationData pagination;
 
     /**
      * This ManagedProperty represents the actual session of a user. It stores
@@ -68,6 +68,14 @@ public class AccountManagment {
      * system.
      */
     public void activateAccounts() {
+    }
+
+    /**
+     * Initializes the <code>activateUsers</code> page with the users that have
+     * registered in the system, but are not yet activated.
+     */
+    public void init() {
+
     }
 
     /**
@@ -130,7 +138,7 @@ public class AccountManagment {
      * 
      * @return the pagination object, that stores the information for pagination
      */
-    public Pagination getPagination() {
+    public PaginationData getPagination() {
 	return pagination;
     }
 
@@ -141,7 +149,7 @@ public class AccountManagment {
      *            the new pagination object, that stores the information for
      *            pagination
      */
-    public void setPagination(Pagination pagination) {
+    public void setPagination(PaginationData pagination) {
     }
 
     /**
@@ -160,6 +168,12 @@ public class AccountManagment {
      *            session of the user
      */
     public void setSessionUser(SessionUser userSession) {
+    }
+
+    @Override
+    public void sortBySpecificColumn(String columnname) {
+	// TODO Auto-generated method stub
+
     }
 
 }

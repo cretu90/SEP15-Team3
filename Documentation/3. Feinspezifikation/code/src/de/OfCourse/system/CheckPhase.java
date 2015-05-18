@@ -1,7 +1,7 @@
 /**
  * This package represents system functionality. 
  */
-package de.OfCourse.system;
+package de.ofCourse.system;
 
 import javax.faces.event.PhaseEvent;
 import javax.faces.event.PhaseId;

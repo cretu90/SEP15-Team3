@@ -1,18 +1,18 @@
 /**
  * This package represents the business logic of the ofCourse system.
  */
-package de.OfCourse.action;
+package de.ofCourse.action;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
 
 /**
- * Provides the funtionalities for the administrator relating to the system,
+ * Provides the functionalities for the administrator relating to the system,
  * like registration management or payment settings.
  * 
  * <p>
  * Furthermore it is responsible for directing the user to sites where the
- * administrator can manange the users of the system, like creating new users or
+ * administrator can manage the users of the system, like creating new users or
  * to sites where he can manage the courses of the system, like creating a new
  * course.
  * <p>
@@ -24,7 +24,7 @@ import javax.faces.bean.RequestScoped;
  */
 @ManagedBean
 @RequestScoped
-public class SystemConfiguration {
+public class SystemConfigurationBean {
 
     /**
      * Stores the type of account activation that was selected by the
@@ -61,7 +61,7 @@ public class SystemConfiguration {
      * Returns the value of the attribute <code>accountActivationType</code>
      * that stores the selected type of account activation.
      * 
-     * @return the selcted account activation type
+     * @return the selected account activation type
      */
     public String getAccountActivationType() {
 	return accountActivationType;
@@ -102,16 +102,6 @@ public class SystemConfiguration {
      *            the new overdraft credit
      */
     public void setOverdraftCredit(float overdraftCredit) {
-    }
-
-    /**
-     * Redirects the user to a page where the imprint of the system can be
-     * edited.
-     * 
-     * @return link to the <code>editImprint</code> page
-     */
-    public String loadEditImprintPage() {
-	return null;
     }
 
     /**

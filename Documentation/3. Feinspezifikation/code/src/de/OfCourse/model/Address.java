@@ -1,17 +1,21 @@
 /**
  * 
  */
-package de.OfCourse.model;
+package de.ofCourse.model;
 
 /**
  * The class contains all information about the address of Users and Courses
+ * 
  * @author Sebastian
  *
  */
 public class Address {
 
+    private String location;
+    
     /**
-     * country, the Country where the User lives or where the Course will be hold
+     * country, the Country where the User lives or where the Course will be
+     * hold
      */
     private String country;
     /**
@@ -24,11 +28,13 @@ public class Address {
      */
     private String street;
     /**
-     * houseNumber, the houseNumber where the User lives or where the Course will be hold
+     * houseNumber, the houseNumber where the User lives or where the Course
+     * will be hold
      */
     private int houseNumber;
     /**
-     * zipCode, the zipdCode where the User lives or where the Course will be hold
+     * zipCode, the zipdCode where the User lives or where the Course will be
+     * hold
      */
     private int zipCode;
 
@@ -109,6 +115,20 @@ public class Address {
      */
     public void setZipCode(int zipCode) {
 	this.zipCode = zipCode;
+    }
+
+    /**
+     * @return the location
+     */
+    public String getLocation() {
+	return location;
+    }
+
+    /**
+     * @param location the location to set
+     */
+    public void setLocation(String location) {
+	this.location = location;
     }
 
 }

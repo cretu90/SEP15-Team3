@@ -1,7 +1,7 @@
 /**
  * This package represents the business logic of the ofCourse system.
  */
-package de.OfCourse.action;
+package de.ofCourse.action;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
@@ -23,7 +23,7 @@ import javax.faces.bean.RequestScoped;
  */
 @ManagedBean
 @RequestScoped
-public class Scheduler {
+public class SchedulerBean {
 
     /**
      * This ManagedProperty represents the actual session of a user. It stores
@@ -33,9 +33,8 @@ public class Scheduler {
     @ManagedProperty("#{sessionUser}")
     private SessionUser sessionUser;
 
-
     /**
-     * Swaps the actual displayed week in the sheduler to the following week.
+     * Swaps the actual displayed week in the scheduler to the following week.
      * The method checks whether there is a next week to display. If this is
      * true, it displays the scheduler of the following week.
      */
@@ -43,11 +42,19 @@ public class Scheduler {
     }
 
     /**
-     * Swaps the actual displayed week in the sheduler to the previous week. The
-     * method checks whether there is a previous week to display. If this is
+     * Swaps the actual displayed week in the scheduler to the previous week.
+     * The method checks whether there is a previous week to display. If this is
      * true, it displays the scheduler of the previous week.
      */
     public void displayPreviousWeek() {
+    }
+
+    /**
+     * Initializes the scheduler of the logged in user with the course units the
+     * user registered for.
+     */
+    public void init() {
+
     }
 
     /**

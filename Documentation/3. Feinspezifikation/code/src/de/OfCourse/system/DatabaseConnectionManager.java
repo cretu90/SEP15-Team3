@@ -1,7 +1,7 @@
 /**
  *This package represents system functionality. 
  */
-package de.OfCourse.system;
+package de.ofCourse.system;
 
 import java.sql.Connection;
 import java.util.LinkedList;

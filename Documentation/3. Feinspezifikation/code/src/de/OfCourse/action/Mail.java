@@ -1,14 +1,14 @@
 /**
  * This package represents the business logic of the ofCourse system.
  */
-package de.OfCourse.action;
+package de.ofCourse.action;
 
 import java.util.List;
 
 import javax.faces.bean.ApplicationScoped;
 import javax.faces.bean.ManagedBean;
 
-import de.OfCourse.model.SmtpServer;
+import de.ofCourse.model.SmtpServer;
 
 /**
  * Sends emails to lists of recipients and provides the service of sending
@@ -34,7 +34,7 @@ public class Mail {
      * a message.
      * 
      * @param recipients
-     *            List of recipients who recieve the message
+     *            List of recipients who receive the message
      * @param sender
      *            sender of the email
      * @param subject
@@ -47,25 +47,25 @@ public class Mail {
     }
 
     /**
-     * Generates an authentification messages.<br>
+     * Generates an authentication messages.<br>
      * This message is sent when a user registers himself in the system. The
      * message contains an verification link, the verifies the entered email and
-     * activites the account in case of the type of account activation is set to
-     * email verfification.
+     * activates the account in case of the type of account activation is set to
+     * email verification.
      * 
      * 
      * @param userID
-     *            ID of the user, who recieves the message.
+     *            ID of the user, who receives the message.
      */
     public void sendAuthentificationMessage(int userID) {
     }
 
     /**
      * Generates a mail that requests an user to conform his email - address.<br>
-     * This method is used if the user changes his email in his profil.
+     * This method is used if the user changes his email in his profile.
      * 
      * @param userID
-     *            ID of the user, who recieves the message.
+     *            ID of the user, who receives the message.
      */
     public void sendConfirmationMessage(int userID) {
     }
@@ -76,7 +76,7 @@ public class Mail {
      * The message contains the new generated password.
      * 
      * @param userID
-     *            ID of the user, who recieves the message.
+     *            ID of the user, who receives the message.
      */
     public void sendNewPasswordMessage(int userID) {
     }

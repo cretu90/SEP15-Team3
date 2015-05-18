@@ -1,7 +1,7 @@
 /**
  * This package represents system functionality.
  */
-package de.OfCourse.system;
+package de.ofCourse.system;
 
 /**
  * Provides the maintenance service of the system which is responsible for

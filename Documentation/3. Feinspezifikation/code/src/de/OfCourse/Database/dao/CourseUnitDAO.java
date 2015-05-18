@@ -1,13 +1,13 @@
 /**
  * 
  */
-package de.OfCourse.Database.dao;
+package de.ofCourse.Database.dao;
 
 import java.util.List;
 
-import de.OfCourse.exception.InvalidDBTransferException;
-import de.OfCourse.model.CourseUnit;
-import de.OfCourse.model.Pagination;
+import de.ofCourse.exception.InvalidDBTransferException;
+import de.ofCourse.model.CourseUnit;
+import de.ofCourse.model.PaginationData;
 
 /**
  * @author
@@ -25,7 +25,7 @@ public class CourseUnitDAO {
     }
 
     public static List<CourseUnit> getCourseUnitsFromCourse(int courseID,
-	    Pagination pagination) throws InvalidDBTransferException {
+	    PaginationData pagination) throws InvalidDBTransferException {
 	return null;
     }
 

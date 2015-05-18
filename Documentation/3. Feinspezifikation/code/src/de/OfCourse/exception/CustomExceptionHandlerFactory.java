@@ -1,7 +1,7 @@
 /**
  * 
  */
-package de.OfCourse.exception;
+package de.ofCourse.exception;
 
 import javax.faces.context.ExceptionHandler;
 import javax.faces.context.ExceptionHandlerFactory;

@@ -1,13 +1,13 @@
 /**
  * This package represents the business logic of the ofCourse system.
  */
-package de.OfCourse.action;
+package de.ofCourse.action;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.RequestScoped;
 
-import de.OfCourse.model.User;
+import de.ofCourse.model.User;
 
 /**
  * Provides the functionality to register in the the system by entering the
@@ -15,8 +15,8 @@ import de.OfCourse.model.User;
  * After the registration a verification link is sent to the entered email
  * address to ensure that it is a valid address.
  * <p>
- * Whether the user can log on the sytsem after verifying the entered email
- * address depends on the type of account acvtivation determined by the
+ * Whether the user can log on the system after verifying the entered email
+ * address depends on the type of account activation determined by the
  * administrator.
  * 
  * <p>
@@ -28,7 +28,7 @@ import de.OfCourse.model.User;
  */
 @ManagedBean
 @RequestScoped
-public class RegisterUser {
+public class RegisterUserBean {
 
     /**
      * Represents a user object. It stores the data which is entered by the user
@@ -49,7 +49,7 @@ public class RegisterUser {
      * It creates with the entered data a new database entry and sends a mail
      * with a verification link to the entered email address which is used to
      * ensure that the entered email address really exists.<br>
-     * If there goes something wrong during registration, e.g. the choosen
+     * If there goes something wrong during registration, e.g. the chosen
      * username is already in use, a error message is displayed.
      */
     public void registerUser() {

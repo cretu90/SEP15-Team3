@@ -1,7 +1,7 @@
 /**
  * This package represents the business logic of the ofCourse system.
  */
-package de.OfCourse.action;
+package de.ofCourse.action;
 
 import java.util.List;
 
@@ -9,10 +9,10 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.ViewScoped;
 
-import de.OfCourse.model.CourseUnit;
-import de.OfCourse.model.Cycle;
-import de.OfCourse.model.Pagination;
-import de.OfCourse.model.User;
+import de.ofCourse.model.CourseUnit;
+import de.ofCourse.model.Cycle;
+import de.ofCourse.model.PaginationData;
+import de.ofCourse.model.User;
 
 /**
  * Provides functionality for course leaders to create, edit and delete course
@@ -26,10 +26,10 @@ import de.OfCourse.model.User;
  * by entering the data of the user. This user need not to pay for this course
  * unit<br>
  * For deleting a users from a course unit the course leader has to selected the
- * user to delete. He has the posibility to remove more than one user from a
+ * user to delete. He has the possibility to remove more than one user from a
  * course at once.
  * <p>
- * Furthermore this class offers the funtionality to create and edit course
+ * Furthermore this class offers the functionality to create and edit course
  * units that take place regularly at once.
  * 
  * <p>
@@ -41,7 +41,7 @@ import de.OfCourse.model.User;
  */
 @ManagedBean
 @ViewScoped
-public class CourseUnitManagement {
+public class CourseUnitManagementBean implements Pagination {
 
     /**
      * Stores an user that is to be added to the course unit.
@@ -80,7 +80,7 @@ public class CourseUnitManagement {
      * information that is necessary for pagination, e.g. the number of elements
      * per page.
      */
-    private Pagination pagination;
+    private PaginationData pagination;
 
     /**
      * This ManagedProperty represents the actual session of a user. It stores
@@ -105,6 +105,12 @@ public class CourseUnitManagement {
     }
 
     /**
+     * Initializes the course unit page with the details of the course unit that
+     * is to display.
+     */
+    public void init(){}
+    
+    /**
      * Realizes the editing of a course unit that takes place not regularly.<br>
      * Editing the course unit means that the database entry of the course unit
      * is updated updated with the entered data.
@@ -123,7 +129,7 @@ public class CourseUnitManagement {
      * unit is edited.<br>
      * Editing the course unit means that the database entry(ies) of the course
      * unit(s) is updated.<br>
-     * After the edit, the participants recieve a message to inform about the
+     * After the edit, the participants receive a message to inform about the
      * changes.
      * 
      * @param editAllIfRegular
@@ -265,7 +271,7 @@ public class CourseUnitManagement {
      * Sets the value of the attribute <code>participientsOfCourseUnit</code>.
      * 
      * @param participients
-     *            the new paricipants list
+     *            the new participants list
      */
     public void setParticipientsOfCourseUnit(List<User> participients) {
     }
@@ -294,7 +300,7 @@ public class CourseUnitManagement {
      * 
      * @return the pagination object, that stores the information for pagination
      */
-    public Pagination getPagination() {
+    public PaginationData getPagination() {
 	return pagination;
     }
 
@@ -305,7 +311,7 @@ public class CourseUnitManagement {
      *            the new pagination object, that stores the information for
      *            pagination
      */
-    public void setPagination(Pagination pagination) {
+    public void setPagination(PaginationData pagination) {
     }
 
     /**
@@ -324,6 +330,12 @@ public class CourseUnitManagement {
      *            session of the user
      */
     public void setSessionUser(SessionUser userSession) {
+    }
+
+    @Override
+    public void sortBySpecificColumn(String columnname) {
+	// TODO Auto-generated method stub
+	
     }
 
 }

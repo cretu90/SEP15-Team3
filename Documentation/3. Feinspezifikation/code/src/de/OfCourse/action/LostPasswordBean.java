@@ -1,23 +1,23 @@
 /**
  * This package represents the business logic of the ofCourse system.
  */
-package de.OfCourse.action;
+package de.ofCourse.action;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.RequestScoped;
 
-import de.OfCourse.model.User;
+import de.ofCourse.model.User;
 
 /**
- * Provides the funtionality to reset a lost password by entering a e-mail
+ * Provides the functionality to reset a lost password by entering a e-mail
  * address, generating automatically a new one and sending this new generated
  * password to the entered email address.
  * <p>
  * 
  * Before a password is reseted and replaced by a new generated, it is checked
  * whether the entered email address is stored in the system.<br>
- * If <code>true</code>, the old password is reseted, a new one gereated and
+ * If <code>true</code>, the old password is reseted, a new one generated and
  * sent to the email address.<br>
  * If <code>false</code>, a error message is displayed on the page.
  * 
@@ -29,7 +29,7 @@ import de.OfCourse.model.User;
  */
 @ManagedBean
 @RequestScoped
-public class LostPassword {
+public class LostPasswordBean {
 
     /**
      * Stores the entered e-mail address to which the new password should be
