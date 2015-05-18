@@ -1214,7 +1214,6 @@
 				\item Aktivierungsmodalität speichern: Speichert die ausgewählte Art der Benutzeraktivierung. \\ Zugehörige Methode: determineAccountActivationType()
 				\item Guthaben aufladen: Erhöht den Kontostand eines bestimmten Benutzer um die eingegebene Summe. \\ Zugehörige Methode: depositAmountOnUserAccount()
 				\item Überziehungswert speichern: Speichert den Wert der möglichen Kontoüberziehung. \\ Zugehörige Methode: determineOverdraftCredit()
-				\item Impressum bearbeiten: Navigiert zur Impressum bearbeiten Seite. \hyperlink{editImprint}{editImprint.xhtml} \\ Zugehörige Methode: loadEditImprintPage()
 			\end{itemize}
 			\begin{center}
 				\begin{longtable}{|p{4cm} |p{6cm} | p{4cm}|}
@@ -1231,7 +1230,6 @@
 					\textit{Aktivierungsmodalität speichern} & determineAccountActivationType() & - \\ \hline
 					\textit{Guthaben aufladen} & depositAmountOnUserAccount() & - \\ \hline
 					\textit{Überziehungswert speichern} & determineOverdraftCredit() & - \\ \hline
-					\textit{Impressum bearbeiten} & loadEditImprintPage() & - \\ \hline
 				\end{longtable}
 			\end{center}
 			\item \textbf{Inputs:}
@@ -1579,61 +1577,5 @@
 			\item \textbf{BackingBean:}
 				\begin{itemize}
 					\item CourseManagement.java
-				\end{itemize}
-		\end{itemize}
-		
-		\paragraph{editImprint.xhtml} \hypertarget{editImprint}
-		KH\\
-		\begin{itemize}
-			\item \textbf{Beschreibung:} Hier kann der Administrator das Impressum ändern.
-			\item \textbf{Links:} -
-			\item \textbf{Buttons:}
-				\begin{itemize}
-					\item Speichern: Durch Klicken dieses Buttons werden die Änderungen im Impressum gespeichert. \\ Zugehörige Methode: editImprint()
-				\end{itemize}
-				
-				\begin{center}
-					\begin{longtable}{|p{4cm} |p{6cm} | p{4cm}|}
-						
-						\hline \multicolumn{1}{|c|}{\textbf{Button}} & \multicolumn{1}{|c|}{\textbf{Methode}} & \multicolumn{1}{|c|}{\textbf{\"{U}bergabeparameter}} \\ \hline
-						\endfirsthead
-						\hline
-						\endlastfoot
-						
-						\textit{Speichern} & editImprint() & - \\ \hline
-					\end{longtable}
-				\end{center}
-				
-			\item \textbf{Inputs:}
-				\begin{itemize}
-					\item Impressum: Hier kann das Impressum bearbeitet werden.
-				\end{itemize}
-				
-				\begin{center}
-					\begin{longtable}{|p{3cm} |p{5cm} | p{4cm}|p{3cm}|}
-						
-						\hline \multicolumn{1}{|c|}{\textbf{Eingabefeld}} & \multicolumn{1}{|c|}{\textbf{Backing-Bean-Attribute}} & \multicolumn{1}{|c|}{\textbf{Typ}}  &  \multicolumn{1}{|c|}{\textbf{ID}} \\ \hline
-						\endfirsthead
-						\hline
-						\endlastfoot
-						\textit{Impressum} & EditImprint.system. impressum & inputText & impressum \\ \hline
-					\end{longtable}
-				\end{center}
-				
-				\begin{center}
-					\begin{longtable}{|p{3cm} |p{8cm} | p{5cm}|}
-						
-						\hline \multicolumn{1}{|c|}{\textbf{Eingabefeld}} & \multicolumn{1}{|c|}{\textbf{Validator}} & \multicolumn{1}{|c|}{\textbf{Konverter}} \\ \hline
-						\endfirsthead
-						\hline
-						\endlastfoot
-						\textit{Impressum} & validateRequired, validateLength (minimum ="", maximum ="") & - \\ \hline
-					\end{longtable}
-				\end{center}
-				
-			\item \textbf{Outputs:} -
-			\item \textbf{BackingBean:}
-				\begin{itemize}
-					\item EditImprint.java				
 				\end{itemize}
 		\end{itemize}
