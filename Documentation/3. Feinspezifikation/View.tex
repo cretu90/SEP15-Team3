@@ -388,9 +388,6 @@
 		KH\\
 		\begin{itemize}
 			\item \textbf{Beschreibung:} Auf dieser Seite kann das Impressum angezeigt werden.
-			\item \textbf{Links:} -
-			\item \textbf{Buttons:} -
-			\item \textbf{Inputs:} -
 			\item \textbf{Outputs:} 
 				\begin{itemize}
 					\item	Anzeige des Impressums, welches vom Administrator festgelegt wurde.
@@ -406,8 +403,6 @@
 						\textit{Impressum}  & outputText & impressumzeigen \\ \hline
 					\end{longtable}
 				\end{center}
-				
-			\item \textbf{BackingBean:} -
 		\end{itemize}
 		
 		\paragraph{agb.xhtml} \hypertarget{agb}
@@ -629,12 +624,27 @@
 						\hline
 						\endlastfoot
 						
-						\textit{Kurstitel } & courseId (Id des ausgewählen Kurses wird übergeben)\\ \hline
+						\textit{Kurstitel } & courseId (Id des ausgewählten Kurses wird übergeben)\\ \hline
 					\end{longtable}
 				\end{center}
 				
-			\item \textbf{Buttons:} -
-			\item \textbf{Inputs:} -
+			\item \textbf{Buttons:} 
+				\begin{itemize}
+					\item Details: Über den Detailsbutton hinter dem jeweiligen Kurs gelangt der Benutzer auf die gewünschte Kursdetailseite. (\hyperlink{courseDetails}{courseDetails.xhtml})
+				\end{itemize}
+					 \begin{center}
+					 	\begin{longtable}{|p{4cm} |p{6cm} | p{4cm}|}
+					 		
+					 		\hline \multicolumn{1}{|c|}{\textbf{Button}} & \multicolumn{1}{|c|}{\textbf{Methode}} & \multicolumn{1}{|c|}{\textbf{\"{U}bergabeparameter}} \\ \hline
+					 		\endfirsthead
+					 		\hline
+					 		\endlastfoot
+					 		
+					 		\textit{Details} & ... &  courseId (Id des ausgewählten Kurses wird übergeben) \\ \hline
+					 	\end{longtable}
+					 \end{center}
+				
+				
 			\item \textbf{Outputs:}
 				\begin{itemize}
 					\item Tabelle Auflistung aller Kurse: Hier werden dem Benutzer alle seine angemeldeten Kurse angezeigt.
