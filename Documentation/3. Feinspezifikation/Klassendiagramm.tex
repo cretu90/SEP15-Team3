@@ -7,7 +7,7 @@
 	
 	In diesem Kapitel werden alle Klassen der Anwendung \textbf{ofCourse} aufgeführt.
 	Um eine bessere Übersicht und Strukturierung zu erhalten wird das ganze Projekt in Packages aufgeteilt.\\
-	Die Packagestruktur ist wie folgt aufgebaut: de.OfCourse.PACKAGENAME.
+	Die Packagestruktur ist wie folgt aufgebaut: de.ofCourse.PACKAGENAME.
 	
 	\section{Package action}
 	\begin{tiny}
@@ -65,8 +65,8 @@
 		\item \method{public void sortBySpecificColumn(String columnname)}
 		\item \method{public int getActualPageNumber()}
 		\item \method{public void goToSpecificPage()}
-		\item \method{public Pagination getPagination()}
-		\item \method{public void setPagination(Pagination pagination)}
+		\item \method{public PaginationData getPaginationData()}
+		\item \method{public void setPaginationData(PaginationData paginationData)}
 		\item \method{public SessionUser getSessionUser()}
 		\item \method{public void setSessionUser(SessionUser userSession)}
 	\end{itemize}
@@ -90,8 +90,8 @@
 		\item \method{public void sortBySpecificColumn()}
 		\item \method{public int getActualPageNumber()}
 		\item \method{public void goToSpecificPage()}
-		\item \method{public Pagination getPagination()}
-		\item \method{public void setPagination(Pagination pagination)}
+		\item \method{public PaginationData getPaginationData()}
+		\item \method{public void setPaginationData(PaginationData paginationData)}
 		\item \method{public SessionUser getSessionUser()}
 		\item \method{public void setSessionUser(SessionUser userSession)}
 	\end{itemize}
@@ -110,8 +110,8 @@
 		\item \method{public void setManagedCourses(List<Course> managedCourses)}
 		\item \method{public int getActualPageNumber()}
 		\item \method{public void goToSpecificPage()}
-		\item \method{public Pagination getPagination()}
-		\item \method{public void setPagination(Pagination pagination)}
+		\item \method{public PaginationData getPaginationData()}
+		\item \method{public void setPaginationData(PaginationData paginationData)}
 		\item \method{public SessionUser getSessionUser()}
 		\item \method{public void setSessionUser(SessionUser userSession)}
 	\end{itemize}
@@ -142,8 +142,8 @@
 		\item \method{public String loadEditCourseUnitPage()}
 		\item \method{public int getActualPageNumber()}
 		\item \method{public void goToSpecificPage()}
-		\item \method{public Pagination getPagination()}
-		\item \method{public void setPagination(Pagination pagination)}
+		\item \method{public PaginationData getPaginationData()}
+		\item \method{public void setPaginationData(PaginationData paginationData)}
 		\item \method{public SessionUser getSessionUser()}
 		\item \method{public void setSessionUser(SessionUser userSession)}
 	\end{itemize}
@@ -171,8 +171,8 @@
 		\item \method{public void setParticipientsOfCourseUnit(List<User> participients)}
 		\item \method{public int getActualPageNumber()}
 		\item \method{public void goToSpecificPage()}
-		\item \method{public Pagination getPagination()}
-		\item \method{public void setPagination(Pagination pagination)}
+		\item \method{public PaginationData getPaginationData()}
+		\item \method{public void setPaginationData(PaginationData paginationData)}
 		\item \method{public SessionUser getSessionUser()}
 		\item \method{public void setSessionUser(SessionUser userSession)}
 	\end{itemize}
@@ -203,8 +203,8 @@
 		\item \method{public String loadCourseDetailsPageOfSelectedCourse()}
 		\item \method{public int getActualPageNumber()}
 		\item \method{public void goToSpecificPage()}
-		\item \method{public Pagination getPagination()}
-		\item \method{public void setPagination(Pagination pagination)}
+		\item \method{public PaginationData getPaginationData()}
+		\item \method{public void setPaginationData(PaginationData paginationData)}
 		\item \method{public SessionUser getSessionUser()}
 		\item \method{public void setSessionUser(SessionUser userSession)}
 	\end{itemize}
@@ -239,8 +239,8 @@
 		\item \method{public void setUsers(List<User> users)}
 		\item \method{public int getActualPageNumber()}
 		\item \method{public void goToSpecificPage()}
-		\item \method{public Pagination getPagination()}
-		\item \method{public void setPagination(Pagination pagination)}
+		\item \method{public PaginationData getPaginationData()}
+		\item \method{public void setPaginationData(PaginationData paginationData)}
 		\item \method{public SessionUser getSessionUser()}
 		\item \method{public void setSessionUser(SessionUser userSession)}
 	\end{itemize}	
@@ -270,8 +270,8 @@
 		\item \method{public String cancel()}
 		\item \method{public int getActualPageNumber()}
 		\item \method{public void goToSpecificPage()}
-		\item \method{public Pagination getPagination()}
-		\item \method{public void setPagination(Pagination pagination)}
+		\item \method{public PaginationData getPaginationData()}
+		\item \method{public void setPaginationData(PaginationData paginationData)}
 		\item \method{public SessionUser getSessionUser()}
 		\item \method{public void setSessionUser(SessionUser userSession)}
 	\end{itemize}
@@ -311,17 +311,6 @@
 		\item \method{public void setSessionUser(SessionUser userSession)}
 	\end{itemize}
 	
-	
-	\subsection{Klasse EditImprint}
-	\kursiv{ManagedBean, RequestScoped}\\
-	Die Klasse ist für die Darstellung und Bearbeitung des Impressums verantwortlich.
-	\begin{itemize}
-		\item \method{public String editImprint()}
-		\item \method{public String getImprint()}
-		\item \method{public void setImprint(String imprint)}
-		\item \method{public SessionUser getSessionUser()}
-		\item \method{public void setSessionUser(SessionUser userSession)}
-	\end{itemize}
 	
 	\subsection{Klasse Navigation}
 	\kursiv{ManagedBean, RequestScoped}\\
@@ -377,20 +366,15 @@
 		\item \method{public void sendNewPasswordMessage (int userID)}
 		\item \method{public SmtpServer getSmtpServer()}
 		\item \method{public void setSmtpServer(SmtpServer smtpServer)}
-	\end{itemize}
+	\end{itemize}	
 	
-	\subsection{Interface Session}
-	\begin{itemize}
-		\item \method{public SessionUser getSessionUser()}
-		\item \method{public void setSessionUser(SessionUser userSession)}
-	\end{itemize}
-	
-	\subsection{Interface PaginationInfo}
+	\subsection{Interface Pagination}
 	\begin{itemize}
 		\item \method{public int getActualPageNumber()}
 		\item \method{public void goToSpecificPage()}
-		\item \method{public Pagination getPagination()}
-		\item \method{public void setPagination(Pagination pagination)}
+		\item \method{public void sortBySpecificColumn(String columnname)}
+		\item \method{public PaginationData getPaginationData()}
+		\item \method{public void setPagination(PaginationData paginationData)}
 	\end{itemize}
 	
 	\section{Package model}
@@ -405,9 +389,9 @@
 		\item \method {public String getPassword()}
 		\item \method {public int getPort()}
 		\item \method {public String getUsername()}
-		\item \method {public boolean isAuthentificated()}
+		\item \method {public boolean isAuthenticated()}
 		\item \method {public boolean isTls()}
-		\item \method {public void setAuthentificated(boolean authentificated)}
+		\item \method {public void setAuthenticated(boolean authenticated)}
 		\item \method {public void setHostaddr(String hostaddr)}
 		\item \method {public void setPassword(String password)}
 		\item \method {public void setPort(int port)}
@@ -415,7 +399,7 @@
 		\item \method {public void setUsername(String username)}
 	\end{itemize}
 	
-	\subsection{Klasse Pagination}
+	\subsection{Klasse PaginationData}
 	Die Klasse steuert die Anzeige von Listen der Kurse, Benutzer und Benutzereinheiten um Skalierbarkeit zu bewahren.
 	\begin{itemize}
 		\item \method {public int getItemsPerPage()}
@@ -590,15 +574,7 @@
 	\begin{itemize}
 		\item \method{public static void setup()}
 	\end{itemize}
-	
-	\subsection{Klasse TransferAction}
-	Diese Klasse übermittelt die Zahlungsdaten an die Bank und liefert eine Zahlungsbestätigung
-	zurück.
-	\begin{itemize}
-		\item \method{public static boolean executeBankTransaktion(PaymentInformation payInfo)}
-	\end{itemize}
-	
-	
+		
 	
 	\section{Package database}
 	\begin{tiny}
@@ -639,6 +615,7 @@
 		\item \method{public static void updateUser(User user)}
 		\item \method{public static void deleteUser(int userID)}
 		\item \method{public static List<Course> getCoursesLeadedBy(int userID, Pagination pagination)}
+		\item \method{public static int getNewUserID()}
 	\end{itemize}
 	
 	\class{CourseDAO}
@@ -659,6 +636,7 @@
 		\item \method{public static void removeUserFromCourse(int userID)}
 		\item \method{public static void addLeaderToCourse(int userID)}
 		\item \method{public static void removeLeaderFromCourse(int userID)}
+		\item \method{public static int getNewCourseID()}
 	\end{itemize}
 	
 	\class{CourseUnitDAO}
@@ -673,16 +651,10 @@
 		\item \method{public static void addUserToCourseUnit(int userID)}
 		\item \method{public static void removeUserFromCourseUnit(int userID)}
 		\item \method{public static List<CourseUnit> getCourseUnitsOf(int userID)}
-	\end{itemize}
-	
-	
-	\class{GeneralDAO}
-	Die Klasse ist zuständig für das Holen einer im System eindeutigen Identifikationsnummer für einen Benutzer, einen Kurs oder eine Kurseinheit.
-	\begin{itemize}
-		\item \method{public static int getNewUserID()}
-		\item \method{public static int getNewCourseID()}
 		\item \method{public static int getNewCourseUnitID()}
 	\end{itemize}
+	
+	
 	
 	
 	\section{Package system}
@@ -904,7 +876,7 @@
 	
 	\section{Klassendiagramm}
 	\begin{tiny}
-		Diagramm: SeSc und TF\ \ Layout: SeSc\\
+		Diagramm: SeSc und TF\\
 	\end{tiny}\\
 	In der nachfolgenden Abbildung \ref{fig:classdiag} ist das UML-Klassendiagramm des ofCourse-Systems dargestellt.\\
 	Um sich dieses Diagramm genauer ansehen zu können, muss es mit einem PDF-Reader
