@@ -21,7 +21,7 @@ import de.ofCourse.model.SmtpServer;
  */
 @ManagedBean
 @ApplicationScoped
-public class Mail {
+public class MailBean {
 
     /**
      * SMTP-server-object, that is needed to get the settings of the server.

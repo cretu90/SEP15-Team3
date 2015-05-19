@@ -19,7 +19,7 @@ import de.ofCourse.model.UserStatus;
  */
 @ManagedBean
 @SessionScoped
-public class SessionUser {
+public class SessionUserBean {
 
     /**
      * Unique id, which represents an user in the system
@@ -39,7 +39,7 @@ public class SessionUser {
     /**
      * The current language
      */
-    private String Language;
+    private String language;
 
     /**
      * Returns the ID of the current logged in user.
@@ -101,7 +101,7 @@ public class SessionUser {
      * @return the language
      */
     public String getLanguage() {
-	return Language;
+	return language;
     }
 
     /**

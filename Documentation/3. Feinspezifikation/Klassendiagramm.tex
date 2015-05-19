@@ -8,25 +8,23 @@
 	Dieses Kapitel dient der Aufführung der Klassenbeschreibung und der der Darstellung des UML - Klassendiagramms der Anwendung \textbf{ofCourse}.
 	Um eine bessere Übersicht und Strukturierung zu erhalten, wird das ganze Projekt in Packages aufgeteilt.\\
 	Die Packagestruktur ist wie folgt aufgebaut: de.ofCourse.PACKAGENAME.\\
+	\ \\
 	Eine detaillierte Beschreibung der Klassen ist in dem beigefügten Dokument \kursiv{Klassenbeschreibung OfCourse} zu finden.\\
-	Die verwendeten Synchronizations, Injections und Interfaces werden im Folgenden kurz zusammenfassend
-	beschrieben.
+	\ \\
+	Die verwendeten Synchronizations, Injections und Scopes werden im Folgenden kurz zusammenfassend
+	beschrieben.\\
 	\begin{itemize}
 		\item \textbf{Synchronizations}\\
-		Die Anwendung \textbf{ofCourse} kommt, mit einer einzigen Ausnahme ohne den Modifier\kursiv{synchronized} aus. Diese Ausnahme stellt die Klasse DatabaseConnectionManager mit ihren Methoden \kursiv{getConnection()}  und \kursiv{releaseConnection()} dar.
+		Die Anwendung \textbf{ofCourse} kommt, mit einer einzigen Ausnahme ohne den Modifier \kursiv{synchronized} aus. Diese Ausnahme stellt die Klasse \kursiv{DatabaseConnectionManager} mit ihren Methoden \kursiv{getConnection()}  und \kursiv{releaseConnection()} dar.
 		\item \textbf{Injections}\\
-		Alle Klassen des Package \kursiv{action}, außer die Klasse \kursiv{SessionUser}, die Klasse
-		\kursiv{Mail} und die Klasse \kursiv{Footer} enthalten ein \kursiv{private SessionUser sessionUser} Attribut, welches mit \kursiv{@ManagedProperty("\#sessionUser")} gekennzeichnet
-		ist. Somit wird in diese Klassen die \kursiv{SessionUser} Klasse
+		Alle Klassen des Package \kursiv{action}, außer die Klasse \kursiv{SessionUserBean}, die Klasse
+		\kursiv{MailBean}  enthalten ein \kursiv{private SessionUserBean sessionUser} Attribut, welches mit \kursiv{@ManagedProperty("\#sessionUser")} gekennzeichnet
+		ist. Somit wird in diese Klassen die \kursiv{SessionUserBean} Klasse
 		über Injection eingebunden.
-		In der Klasse \kursiv{ContactUsers} wird zusätzlich zu der oben genannten Injection, noch die Klasse \kursiv{Mail}
+		In der Klasse \kursiv{ContactUsersBean} wird zusätzlich zu der oben genannten Injection noch die Klasse \kursiv{MailBean}
 		eingebunden.
-		\item \textbf{Interfaces}
-		\begin{itemize}
-			\item \textbf{PaginationInteraction}
-			\item \textbf{SessionInteraction}
-			\item \textbf{Transaction}
-		\end{itemize}
+		\item \textbf{Scopes}
+		\
 	\end{itemize}
 	
 	

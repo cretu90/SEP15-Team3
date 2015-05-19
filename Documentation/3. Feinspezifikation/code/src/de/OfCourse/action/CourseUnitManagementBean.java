@@ -88,7 +88,7 @@ public class CourseUnitManagementBean implements Pagination {
      * language.
      */
     @ManagedProperty("#{sessionUser}")
-    private SessionUser sessionUser;
+    private SessionUserBean sessionUser;
 
     /**
      * Creates a new course unit with the entered data and returns the link to
@@ -108,7 +108,7 @@ public class CourseUnitManagementBean implements Pagination {
      * Initializes the course unit page with the details of the course unit that
      * is to display.
      */
-    public void init(){}
+    public void initializeCourseUnit(){}
     
     /**
      * Realizes the editing of a course unit that takes place not regularly.<br>
@@ -277,24 +277,30 @@ public class CourseUnitManagementBean implements Pagination {
     }
 
     /**
-     * Returns the number of the actual displayed page.<br>
-     * This method is necessary for the paging.
-     * 
-     * @return the number of the actual displayed page
+     * {@inheritDoc}}
      */
+    @Override
     public int getActualPageNumber() {
 	return 0;
     }
 
     /**
-     * Realizes the display of certain pages, that means only a fixed number of
-     * database entries are presented at once. Furthermore it is responsible for
-     * the navigation between the pages, especially for getting the next page,
-     * the previous page or to jump to a specific page.
+     * {@inheritDoc}}
      */
+    @Override
     public void goToSpecificPage() {
     }
 
+    /**
+     * {@inheritDoc}}
+     */
+    @Override
+    public void sortBySpecificColumn(String columnname) {
+	// TODO Auto-generated method stub
+	
+    }
+
+    
     /**
      * Returns the value of the attribute <code>pagination</code>.
      * 
@@ -319,7 +325,7 @@ public class CourseUnitManagementBean implements Pagination {
      * 
      * @return the session of the user
      */
-    public SessionUser getSessionUser() {
+    public SessionUserBean getSessionUser() {
 	return sessionUser;
     }
 
@@ -329,13 +335,7 @@ public class CourseUnitManagementBean implements Pagination {
      * @param userSession
      *            session of the user
      */
-    public void setSessionUser(SessionUser userSession) {
+    public void setSessionUser(SessionUserBean userSession) {
     }
-
-    @Override
-    public void sortBySpecificColumn(String columnname) {
-	// TODO Auto-generated method stub
-	
-    }
-
+    
 }

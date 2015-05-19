@@ -34,7 +34,7 @@ public class NavigationBean {
      * language.
      */
     @ManagedProperty("#{sessionUser}")
-    private SessionUser sessionUser;
+    private SessionUserBean sessionUser;
 
     /**
      * Redirects the user to the <code>authenticate</code> page.
@@ -61,7 +61,7 @@ public class NavigationBean {
      * 
      * @return the session of the user
      */
-    public SessionUser getSessionUser() {
+    public SessionUserBean getSessionUser() {
 	return sessionUser;
     }
 
@@ -71,6 +71,6 @@ public class NavigationBean {
      * @param userSession
      *            session of the user
      */
-    public void setSessionUser(SessionUser userSession) {
+    public void setSessionUser(SessionUserBean userSession) {
     }
 }

@@ -4,6 +4,7 @@
 package de.ofCourse.action;
 
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.RequestScoped;
 
 /**
@@ -17,6 +18,15 @@ import javax.faces.bean.RequestScoped;
 @ManagedBean
 @RequestScoped
 public class FooterBean {
+    
+    
+    /**
+     * This ManagedProperty represents the actual session of a user. It stores
+     * the id, the userRole, the userStatus of the user and the selected
+     * language.
+     */
+    @ManagedProperty("#{sessionUser}")
+    private SessionUserBean sessionUser;
 
     /**
      * Redirects to the imprint page.
@@ -43,6 +53,24 @@ public class FooterBean {
      */
     public String loadHelpPage() {
 	return null;
+    }
+    
+    /**
+     * Returns the ManagedProperty <code>SessionUser</code>.
+     * 
+     * @return the session of the user
+     */
+    public SessionUserBean getSessionUser() {
+	return sessionUser;
+    }
+
+    /**
+     * Sets the ManagedProperty <code>SessionUser</code>.
+     * 
+     * @param userSession
+     *            session of the user
+     */
+    public void setSessionUser(SessionUserBean userSession) {
     }
 
 }

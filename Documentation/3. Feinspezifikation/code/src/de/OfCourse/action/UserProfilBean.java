@@ -33,10 +33,6 @@ import de.ofCourse.model.UserStatus;
  * @author Tobias Fuchs
  *
  */
-/**
- * @author Fuchs
- *
- */
 @ManagedBean
 @ViewScoped
 public class UserProfilBean implements Pagination {
@@ -65,7 +61,7 @@ public class UserProfilBean implements Pagination {
      * language.
      */
     @ManagedProperty("#{sessionUser}")
-    private SessionUser sessionUser;
+    private SessionUserBean sessionUser;
 
     /**
      * Returns the user profile page in its editable state.
@@ -92,7 +88,7 @@ public class UserProfilBean implements Pagination {
      * Initializes the profile page page of the user with the details of the
      * user.
      */
-    public void init() {
+    public void initialzeUserProfile() {
     }
 
     /**
@@ -153,28 +149,20 @@ public class UserProfilBean implements Pagination {
     }
 
     /**
-     * Returns the number of the actual displayed page.<br>
-     * This method is necessary for the paging.
-     * 
-     * @return the number of the actual displayed page
+     * {@inheritDoc}}
      */
     public int getActualPageNumber() {
 	return 0;
     }
 
     /**
-     * Realizes the display of certain pages, that means only a fixed number of
-     * database entries are presented at once. Furthermore it is responsible for
-     * the navigation between the pages, especially for getting the next page,
-     * the previous page or to jump to a specific page.
+     * {@inheritDoc}}
      */
     public void goToSpecificPage() {
     }
 
     /**
-     * Returns the value of the attribute <code>pagination</code>.
-     * 
-     * @return the pagination object, that stores the information for pagination
+     * {@inheritDoc}}
      */
     public PaginationData getPagination() {
 	return pagination;
@@ -195,7 +183,7 @@ public class UserProfilBean implements Pagination {
      * 
      * @return the session of the user
      */
-    public SessionUser getSessionUser() {
+    public SessionUserBean getSessionUser() {
 	return sessionUser;
     }
 
@@ -205,7 +193,7 @@ public class UserProfilBean implements Pagination {
      * @param userSession
      *            session of the user
      */
-    public void setSessionUser(SessionUser userSession) {
+    public void setSessionUser(SessionUserBean userSession) {
     }
 
     @Override

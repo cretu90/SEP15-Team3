@@ -48,7 +48,7 @@ public class MyCoursesBean implements Pagination {
      * language.
      */
     @ManagedProperty("#{sessionUser}")
-    private SessionUser sessionUser;
+    private SessionUserBean sessionUser;
 
     /**
      * Returns a list of courses that the user attends
@@ -59,12 +59,6 @@ public class MyCoursesBean implements Pagination {
 	return registeredCourses;
     }
 
-    /**
-     * Initializes the <code>myCourses</code> page with the courses that the
-     * user attends.
-     */
-    public void init() {
-    }
 
     /**
      * Sets the value of the attribute <code>registeredCourses</code>.
@@ -86,25 +80,29 @@ public class MyCoursesBean implements Pagination {
     }
 
     /**
-     * Returns the number of the actual displayed page.<br>
-     * This method is necessary for the paging.
-     * 
-     * @return the number of the actual displayed page
+     * {@inheritDoc}}
      */
+    @Override
     public int getActualPageNumber() {
 	return 0;
     }
 
     /**
-     * Realizes the display of certain pages, that means only a fixed number of
-     * database entries are presented at once. Furthermore it is responsible for
-     * the navigation between the pages, especially for getting the next page,
-     * the previous page or to jump to a specific page.
-     * 
+     * {@inheritDoc}}
      */
+    @Override
     public void goToSpecificPage() {
     }
 
+    /**
+     * {@inheritDoc}}
+     */
+    @Override
+    public void sortBySpecificColumn(String columnname) {
+	// TODO Auto-generated method stub
+
+    }
+    
     /**
      * Returns the value of the attribute <code>pagination</code>.
      * 
@@ -129,7 +127,7 @@ public class MyCoursesBean implements Pagination {
      * 
      * @return the session of the user
      */
-    public SessionUser getSessionUser() {
+    public SessionUserBean getSessionUser() {
 	return sessionUser;
     }
 
@@ -139,13 +137,9 @@ public class MyCoursesBean implements Pagination {
      * @param userSession
      *            session of the user
      */
-    public void setSessionUser(SessionUser userSession) {
+    public void setSessionUser(SessionUserBean userSession) {
     }
 
-    @Override
-    public void sortBySpecificColumn(String columnname) {
-	// TODO Auto-generated method stub
-
-    }
+   
 
 }

@@ -45,7 +45,7 @@ public class PaymentOfflineBean {
      * language.
      */
     @ManagedProperty("#{sessionUser}")
-    private SessionUser sessionUser;
+    private SessionUserBean sessionUser;
 
     /**
      * Tops up an user account in the system with a certain amount of money and
@@ -115,7 +115,7 @@ public class PaymentOfflineBean {
      * 
      * @return the session of the user
      */
-    public SessionUser getSessionUser() {
+    public SessionUserBean getSessionUser() {
 	return sessionUser;
     }
 
@@ -125,7 +125,7 @@ public class PaymentOfflineBean {
      * @param userSession
      *            session of the user
      */
-    public void setSessionUser(SessionUser userSession) {
+    public void setSessionUser(SessionUserBean userSession) {
     }
 
 }

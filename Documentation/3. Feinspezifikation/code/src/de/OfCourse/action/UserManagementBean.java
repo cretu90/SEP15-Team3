@@ -36,7 +36,7 @@ public class UserManagementBean {
      * language.
      */
     @ManagedProperty("#{sessionUser}")
-    private SessionUser sessionUser;
+    private SessionUserBean sessionUser;
 
     /**
      * Creates a new user with the entered data and returns the profile page of
@@ -69,10 +69,6 @@ public class UserManagementBean {
 	return null;
     }
 
-    /**
-     * Does some initializing work.
-     */
-    public void init(){}
     
     /**
      * Returns the value of the attribute <code>user</code>.
@@ -97,7 +93,7 @@ public class UserManagementBean {
      * 
      * @return the session of the user
      */
-    public SessionUser getSessionUser() {
+    public SessionUserBean getSessionUser() {
 	return sessionUser;
     }
 
@@ -107,7 +103,7 @@ public class UserManagementBean {
      * @param userSession
      *            session of the user
      */
-    public void setSessionUser(SessionUser userSession) {
+    public void setSessionUser(SessionUserBean userSession) {
     }
 
 }

@@ -48,7 +48,7 @@ public class SystemConfigurationBean {
      * the id, the userRole, the userStatus of the user an the selected
      * language.
      */
-    private SessionUser sessionUser;
+    private SessionUserBean sessionUser;
 
     /**
      * Determines the type of account activation, that means it updates the
@@ -165,7 +165,7 @@ public class SystemConfigurationBean {
      * 
      * @return the session of the user
      */
-    public SessionUser getSessionUser() {
+    public SessionUserBean getSessionUser() {
 	return sessionUser;
     }
 
@@ -175,7 +175,7 @@ public class SystemConfigurationBean {
      * @param userSession
      *            session of the user
      */
-    public void setSessionUser(SessionUser userSession) {
+    public void setSessionUser(SessionUserBean userSession) {
     }
 
 }

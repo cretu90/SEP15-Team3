@@ -46,7 +46,7 @@ public class LostPasswordBean {
      * language.
      */
     @ManagedProperty("#{sessionUser}")
-    private SessionUser sessionUser;
+    private SessionUserBean sessionUser;
 
     /**
      * Resets the password of the user who forgot his password and sends a new
@@ -102,7 +102,7 @@ public class LostPasswordBean {
      * 
      * @return the session of the user
      */
-    public SessionUser getSessionUser() {
+    public SessionUserBean getSessionUser() {
 	return sessionUser;
     }
 
@@ -112,7 +112,7 @@ public class LostPasswordBean {
      * @param userSession
      *            session of the user
      */
-    public void setSessionUser(SessionUser userSession) {
+    public void setSessionUser(SessionUserBean userSession) {
     }
 
 }

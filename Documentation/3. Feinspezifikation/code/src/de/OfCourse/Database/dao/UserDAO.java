@@ -39,8 +39,8 @@ public class UserDAO {
      * @return
      * @throws InvalidDBTransferException
      */
-    public static List<User> getUsers(PaginationData pagination, String searchString)
-	    throws InvalidDBTransferException {
+    public static List<User> getUsers(PaginationData pagination,
+	    String searchString) throws InvalidDBTransferException {
 	return null;
     }
 
@@ -101,4 +101,8 @@ public class UserDAO {
 	return null;
     }
 
+    public static int getNewUserID() throws InvalidDBTransferException {
+	return 0;
+
+    }
 }

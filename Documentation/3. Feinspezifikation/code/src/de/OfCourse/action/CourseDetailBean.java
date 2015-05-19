@@ -78,7 +78,7 @@ public class CourseDetailBean implements Pagination {
      * language.
      */
     @ManagedProperty("#{sessionUser}")
-    private SessionUser sessionUser;
+    private SessionUserBean sessionUser;
 
     /**
      * Returns the course details page in its editable state.
@@ -105,7 +105,7 @@ public class CourseDetailBean implements Pagination {
      * Initializes the course details page with the details of the course that
      * is to display.
      */
-    public void init() {
+    public void initializeCourseDetails() {
     }
 
     /**
@@ -356,7 +356,7 @@ public class CourseDetailBean implements Pagination {
      * 
      * @return the session of the user
      */
-    public SessionUser getSessionUser() {
+    public SessionUserBean getSessionUser() {
 	return sessionUser;
     }
 
@@ -366,7 +366,7 @@ public class CourseDetailBean implements Pagination {
      * @param userSession
      *            session of the user
      */
-    public void setSessionUser(SessionUser userSession) {
+    public void setSessionUser(SessionUserBean userSession) {
     }
 
 }

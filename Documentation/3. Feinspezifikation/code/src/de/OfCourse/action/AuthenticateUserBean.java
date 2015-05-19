@@ -39,7 +39,7 @@ public class AuthenticateUserBean {
      * language.
      */
     @ManagedProperty("#{sessionUser}")
-    private SessionUser sessionUser;
+    private SessionUserBean sessionUser;
 
     /**
      * Returns the link to the <code>myCourses</code> page if the entered
@@ -80,7 +80,7 @@ public class AuthenticateUserBean {
      * 
      * @return the session of the user
      */
-    public SessionUser getSessionUser() {
+    public SessionUserBean getSessionUser() {
 	return sessionUser;
     }
 
@@ -90,7 +90,7 @@ public class AuthenticateUserBean {
      * @param userSession
      *            session of the user
      */
-    public void setSessionUser(SessionUser userSession) {
+    public void setSessionUser(SessionUserBean userSession) {
     }
 
 }

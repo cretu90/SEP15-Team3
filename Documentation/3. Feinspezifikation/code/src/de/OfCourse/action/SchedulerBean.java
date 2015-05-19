@@ -31,7 +31,7 @@ public class SchedulerBean {
      * language.
      */
     @ManagedProperty("#{sessionUser}")
-    private SessionUser sessionUser;
+    private SessionUserBean sessionUser;
 
     /**
      * Swaps the actual displayed week in the scheduler to the following week.
@@ -49,20 +49,13 @@ public class SchedulerBean {
     public void displayPreviousWeek() {
     }
 
-    /**
-     * Initializes the scheduler of the logged in user with the course units the
-     * user registered for.
-     */
-    public void init() {
-
-    }
 
     /**
      * Returns the ManagedProperty <code>SessionUser</code>.
      * 
      * @return the session of the user
      */
-    public SessionUser getSessionUser() {
+    public SessionUserBean getSessionUser() {
 	return sessionUser;
     }
 
@@ -72,7 +65,7 @@ public class SchedulerBean {
      * @param userSession
      *            session of the user
      */
-    public void setSessionUser(SessionUser userSession) {
+    public void setSessionUser(SessionUserBean userSession) {
     }
 
 }

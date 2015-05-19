@@ -59,7 +59,7 @@ public class SearchUserBean implements Pagination {
      * language.
      */
     @ManagedProperty("#{sessionUser}")
-    private SessionUser sessionUser;
+    private SessionUserBean sessionUser;
 
     /**
      * Searches for users in the system according to the selected search
@@ -79,12 +79,6 @@ public class SearchUserBean implements Pagination {
      */
     public List<User> getSearchResult() {
 	return searchResult;
-    }
-
-    /**
-     * Initializes the list users page with the users of the system.
-     */
-    public void init() {
     }
 
     /**
@@ -147,31 +141,20 @@ public class SearchUserBean implements Pagination {
     }
 
     /**
-     * Realizes the sorting of certain pages(that means the entries fetched from
-     * the database). This method is necessary for the paging.
-     * 
-     * @param columnname
-     *            parameter by which the page is sorted
-     * 
+     * {@inheritDoc}}
      */
     public void sortBySpecificColumn(String columnname) {
     }
 
     /**
-     * Returns the number of the actual displayed page.<br>
-     * This method is necessary for the paging.
-     * 
-     * @return the number of the actual displayed page
+     * {@inheritDoc}}
      */
     public int getActualPageNumber() {
 	return 0;
     }
 
     /**
-     * Realizes the display of certain pages, that means only a fixed number of
-     * database entries are presented at once. Furthermore it is responsible for
-     * the navigation between the pages, especially for getting the next page,
-     * the previous page or to jump to a specific page.
+     * {@inheritDoc}}
      */
     public void goToSpecificPage() {
     }
@@ -200,7 +183,7 @@ public class SearchUserBean implements Pagination {
      * 
      * @return the session of the user
      */
-    public SessionUser getSessionUser() {
+    public SessionUserBean getSessionUser() {
 	return sessionUser;
     }
 
@@ -210,7 +193,7 @@ public class SearchUserBean implements Pagination {
      * @param userSession
      *            session of the user
      */
-    public void setSessionUser(SessionUser userSession) {
+    public void setSessionUser(SessionUserBean userSession) {
     }
 
 }

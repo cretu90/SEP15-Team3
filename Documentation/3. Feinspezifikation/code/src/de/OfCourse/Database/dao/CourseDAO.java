@@ -74,5 +74,9 @@ public class CourseDAO {
     public static void removeLeaderFromCourse(int userID)
 	    throws InvalidDBTransferException {
     }
+    
+    public static int getNewCourseID() throws InvalidDBTransferException {
+	return 0;
+    }
 
 }

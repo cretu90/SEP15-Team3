@@ -44,7 +44,7 @@ public class CourseManagementBean {
      * language.
      */
     @ManagedProperty("#{sessionUser}")
-    private SessionUser sessionUser;
+    private SessionUserBean sessionUser;
 
     /**
      * Stores the entered or displayed data of the course.
@@ -97,10 +97,6 @@ public class CourseManagementBean {
     public void addCourseLeader() {
     }
 
-    /**
-     * Does some initializing work.
-     */
-    public void init(){}
     
     /**
      * Returns the value of the attribute <code>leaderToAdd</code>.
@@ -170,7 +166,7 @@ public class CourseManagementBean {
      * 
      * @return the session of the user
      */
-    public SessionUser getSessionUser() {
+    public SessionUserBean getSessionUser() {
 	return sessionUser;
     }
 
@@ -180,6 +176,6 @@ public class CourseManagementBean {
      * @param userSession
      *            session of the user
      */
-    public void setSessionUser(SessionUser userSession) {
+    public void setSessionUser(SessionUserBean userSession) {
     }
 }

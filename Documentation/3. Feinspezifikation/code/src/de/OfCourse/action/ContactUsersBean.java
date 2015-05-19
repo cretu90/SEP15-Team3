@@ -32,7 +32,7 @@ public class ContactUsersBean {
      * necessary information for establishing a connection to the SMTP - server.
      */
     @ManagedProperty("#{mail}")
-    private Mail mail;
+    private MailBean mail;
 
     /**
      * The subject of the message that was entered by the user
@@ -55,7 +55,7 @@ public class ContactUsersBean {
      * language.
      */
     @ManagedProperty("#{sessionUser}")
-    private SessionUser sessionUser;
+    private SessionUserBean sessionUser;
 
     /**
      * Sends messages from the course leader to the participants of one of his
@@ -75,7 +75,7 @@ public class ContactUsersBean {
      * 
      * @return the mail object
      */
-    public Mail getMail() {
+    public MailBean getMail() {
 	return mail;
     }
 
@@ -86,7 +86,7 @@ public class ContactUsersBean {
      *            the new mail object that contains the new necessary
      *            information for establishing a connection to the SMTP - server
      */
-    public void setMail(Mail mail) {
+    public void setMail(MailBean mail) {
     }
 
     /**
@@ -148,7 +148,7 @@ public class ContactUsersBean {
      * 
      * @return the session of the user
      */
-    public SessionUser getSessionUser() {
+    public SessionUserBean getSessionUser() {
 	return sessionUser;
     }
 
@@ -158,6 +158,6 @@ public class ContactUsersBean {
      * @param userSession
      *            session of the user
      */
-    public void setSessionUser(SessionUser userSession) {
+    public void setSessionUser(SessionUserBean userSession) {
     }
 }
