@@ -17,6 +17,10 @@ import javax.faces.validator.ValidatorException;
 public class DateOfBirthValidator implements Validator {
 
    
+    /* (non-Javadoc)
+     * @see javax.faces.validator.Validator#validate(javax.faces.context.FacesContext, 
+     * javax.faces.component.UIComponent, java.lang.Object)
+     */
     @Override
     public void validate(FacesContext arg0, UIComponent arg1, Object arg2)
 	    throws ValidatorException {
