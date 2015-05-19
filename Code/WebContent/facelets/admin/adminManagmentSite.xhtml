@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html">
+<ui:composition template="/WEB-INF/template/layout.xhtml">
+	<ui:define name="title">Adminverwaltung</ui:define>
+	<ui:define name="content">
+		<body>
+			<h1>Adminverwaltung</h1>
+			<div class="row" style="padding-top: 20px;">
+				<div class="col-lg-6">
+					<div class="panel panel-info">
+						<div class="panel-heading">
+							<h3 class="panel-title">Allgemein</h3>
+						</div>
+						<div class="panel-body">
+							<h:form>
+								<h4>Benutzer</h4>
+								<h:commandButton id="createNewUser" class="btn btn-info"
+									style="width:200px;" value="Neuen Benutzer anlegen" />
+									&nbsp;
+									&nbsp;
+									&nbsp;
+                                    &nbsp;
+									<h:commandButton id="manageUsers" class="btn btn-info"
+									style="width:200px;" value="Benutzer verwalten" />
+							</h:form>
+							<br /> <br />
+							<h:form>
+								<h4>Kurse</h4>
+								<h:commandButton id="createNewCourse" class="btn btn-info"
+									style="width:200px;" value="Neuen Kurs erstellen" />
+                                    &nbsp;
+                                    &nbsp;
+                                    &nbsp;
+                                    &nbsp;
+                                <h:commandButton id="manageCourses"
+									class="btn btn-info" style="width:200px;"
+									value="Kurse verwalten" />
+							</h:form>
+						</div>
+					</div>
+					<div class="panel panel-info">
+						<div class="panel-heading">
+							<h3 class="panel-title">Oberfläche</h3>
+						</div>
+						<div class="panel-body">
+							<h:form>
+								<h4>Logo</h4>
+								<div class="input-group">
+									<h:inputText class="form-control" id="logoImage"></h:inputText>
+									<span class="input-group-btn"><button
+											class="btn btn-default" type="button">Logo auswählen</button>
+									</span>
+								</div>
+								<div>
+									<br />
+									<h:commandButton id="saveLogo" class="btn btn-info pull-right"
+										style="width:135px;" value="Logo ändern" />
+								</div>
+							</h:form>
+							<br />
+							<br />
+							<br />
+							<h:form>
+								<h4>Oberfläche anpassen</h4>
+								<p style="font-size: 14px;">Hier können Sie ihre
+									'customStyle.css' - Datei hochladen:</p>
+								<div class="input-group">
+									<h:inputText class="form-control" id="cssUserInterface"></h:inputText>
+									<span class="input-group-btn">
+										<button class="btn btn-default" type="button">CSS-Datei
+											auswählen</button>
+									</span>
+								</div>
+								<div>
+									<br />
+									<h:commandButton id="saveCssUserInterface" class="btn btn-info pull-right"
+										style="width:135px;" value="Oberfläche ändern" />
+								</div>
+							</h:form>
+							<br />
+							<br />
+							<h:form>
+								<h4>Impressum</h4>
+								<h:commandButton id="editImpressum" class="btn btn-info"
+									style="width:250px;" value="Impressum bearbeiten" />
+							</h:form>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-6">
+					<div class="panel panel-info">
+						<div class="panel-heading">
+							<h3 class="panel-title">Bezahlung</h3>
+						</div>
+						<div class="panel-body">
+							<h:form class="form-horizontal" id="formToUpAccount">
+								<h4>Benutzerkonto aufladen</h4>
+								<div class="input-group" style="padding-top: 5px;">
+									<span class="input-group-addon"
+										style="width: 160px; text-align: right;">ID des
+										Benutzers:</span>
+									<h:inputText class="form-control" style="width:340px;"
+										id="userIDToTopUp"></h:inputText>
+								</div>
+								<div class="input-group" style="padding-top: 5px;">
+									<span class="input-group-addon"
+										style="width: 160px; text-align: right;">Name:</span>
+									<h:inputText class="form-control" style="width:340px;"
+										id="usernameToTopUp"></h:inputText>
+								</div>
+								<div class="input-group" style="padding-top: 5px;">
+									<span class="input-group-addon"
+										style="width: 160px; text-align: right;">Betrag:</span>
+									<h:inputText class="form-control" style="width:340px;"
+										id="ammountToTopUp"></h:inputText>
+								</div>
+								<div>
+									<br />
+									<h:commandButton id="spendMoney"
+										class="btn btn-success pull-right" style="width:135px;"
+										value="Konto aufladen" />
+								</div>
+							</h:form>
+							<br /> <br />
+							<h:form class="form-horizontal" id="formGiveCredit">
+								<h4>Überziehungskredit festlegen</h4>
+								<div class="input-group" style="padding-top: 5px;">
+									<span class="input-group-addon"
+										style="width: 160px; text-align: right;"> Gewährter
+										Kredit:</span>
+									<h:inputText class="form-control" value="0,00"
+										style="width:340px;" id="ammountGivenCredit"></h:inputText>
+								</div>
+								<div>
+									<br />
+									<h:commandButton id="giveCredit"
+										class="btn btn-success pull-right" style="width:135px;"
+										value="Speichern" />
+								</div>
+							</h:form>
+							<br /> <br /> <br />
+							<h:form class="form-horizontal" id="formStatistics">
+								<h4>Statistiken</h4>
+								<div>
+									<h:commandButton id="showStatistics" class="btn btn-info "
+										style="width:250px;" value="Einnahmestatistiken anzeigen" />
+								</div>
+							</h:form>
+						</div>
+					</div>
+					<div class="panel panel-info">
+						<div class="panel-heading">
+							<h3 class="panel-title">Account</h3>
+						</div>
+						<div class="panel-body">
+							<h:form>
+								<h4>Art der Accountaktivierung festlegen</h4>
+								<div class="input-group">
+									<span class="input-group-addon"
+										style="width: 160px; text-align: right;">Accountaktivierung
+										durch:</span>
+									<div>
+										<h:selectOneMenu class="form-control"
+											value="E-Mailverifikation" id="accountActivationSelection">
+											<f:selectItem itemValue="E-Mailverifikation"
+												itemLabel="E-Mailverifikation" />
+											<f:selectItem
+												itemValue="E-Mailverifikation und Aktivierung durch Kursleiter"
+												itemLabel="E-Mailverifikation und Aktivierung durch Kursleiter" />
+											<f:selectItem
+												itemValue="E-Mailverifikation und Aktivierung durch Administrator"
+												itemLabel="E-Mailverifikation und Aktivierung durch Administrator" />
+											<f:selectItem
+												itemValue="E-Mailverifikation und Aktivierung durch Kursleiter oder Administrator"
+												itemLabel="E-Mailverifikation und Aktivierung durch Kursleiter oder Administrator" />
+										</h:selectOneMenu>
+									</div>
+								</div>
+								<div>
+									<br />
+									<h:commandButton id="saveAccountActivation"
+										class="btn btn-success pull-right" style="width:135px;"
+										value="Speichern" />
+								</div>
+							</h:form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</body>
+	</ui:define>
+</ui:composition>
+</html>

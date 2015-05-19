@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html">
+	<ui:composition template="/WEB-INF/template/layout.xhtml">
+		<ui:define name="title">Kursangebot</ui:define>
+		<ui:define name="content">
+			<body>
+				<h1>Kursdetails</h1>
+				<div class="row">
+					<div class="col-lg-12">
+						<p style="font-size:16px;">Hier werden Ihnen alle verfügbaren Details zu einem Kurs angezeigt.</p>
+					</div>
+				</div>
+				<div class="row" style="padding-top:20px;">
+					<div class="col-lg-5">
+						<div class="panel panel-info">
+							<div class="panel-heading"><strong>Details</strong></div>
+							<div class="panel-body">
+								<div class="input-group">
+									<span class="input-group-addon" style="width:160px; text-align:right;"><strong>Kurs-ID:</strong></span>
+									<h:inputText class="form-control" style="width:260px;" id="idCourse" readonly="true" value="1432"></h:inputText>
+								</div>
+								<div class="input-group" style="padding-top:5px;">
+									<span class="input-group-addon" style="width:160px; text-align:right;"><strong>Min. Teilnehmer:</strong></span>
+									<h:inputText class="form-control" style="width:260px;" id="minPersonsCourse" readonly="true"></h:inputText>
+								</div>
+								<div class="input-group" style="padding-top:5px;">
+									<span class="input-group-addon" style="width:160px; text-align:right;"><strong>Startdatum:</strong></span>
+									<h:inputText class="form-control" style="width:260px;" id="startDateCourse" readonly="true"></h:inputText>
+								</div>
+								<div class="input-group" style="padding-top:5px;">
+									<span class="input-group-addon" style="width:160px; text-align:right;"><strong>Enddatum:</strong></span>
+									<h:inputText class="form-control" style="width:260px;" id="endDateCourse" readonly="true"></h:inputText>
+								</div>
+							</div>
+						</div>
+						<div class="panel panel-info">
+							<div class="panel-heading"><strong>Kursleiter</strong></div>
+							<div class="panel-body">
+								<div class="row" style="font-weight:bold;">
+									<div class="col-lg-6"><a href="#">Name</a></div>
+									<div class="col-lg-6"><a href="#">E-Mail</a></div>
+								</div>								
+								<div class="row" style="padding-top:10px;">
+									<div class="col-lg-6">Johann Göthe</div>
+									<div class="col-lg-6">goethe@literatur.de</div>
+								</div>								
+								<div class="row" style="padding-top:5px;">
+									<div class="col-lg-6">Arnold Schwarzenegger</div>
+									<div class="col-lg-6">arnold@wheyshake.com</div>
+								</div>								
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-7">
+						<div class="panel panel-info">
+							<div class="panel-heading"><strong>Beschreibung</strong></div>
+							<div class="panel-body">
+								<div class="row" style="text-align:center;"><img src="#{request.contextPath}/resources/img/userdata/zumba.jpg" width="350px" alt="logo" title="Kursbild"></img></div>
+								<div class="row" style="padding-top:12px;">
+									<div class="col-lg-12">Hier folgt die Beschreibung des Kurses...</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="panel panel-info">
+					<div class="panel-heading"><strong>Kurseinheiten</strong></div>
+					<div class="panel-body">
+						<div class="row" style="font-weight:bold;">
+							<div class="col-lg-2"><a href="#">Termin</a></div>
+							<div class="col-lg-4"><a href="#">Beschreibung</a></div>
+							<div class="col-lg-2"><a href="#">Status</a></div>
+							<div class="col-lg-2"><a href="#">Ort</a></div>
+							<div class="col-lg-2"><a href="#">Preis</a></div>
+						</div>
+						<div class="row" style="padding-top:10px;">
+							<div class="col-lg-2">24.04.2015 - 17:30 Uhr</div>
+							<div class="col-lg-4">Einführung und Grundlegendes</div>
+							<div class="col-lg-2"><span class="badge">7/16</span></div>
+							<div class="col-lg-2">CleverFit Vilshofen</div>
+							<div class="col-lg-2"><span class="badge">5,00€</span></div>
+						</div>
+						<div class="row" style="padding-top:10px;">
+							<div class="col-lg-2">25.04.2015 - 17:30 Uhr</div>
+							<div class="col-lg-4">Vollstoff Hardcore-Training für Nicht-Noobs</div>
+							<div class="col-lg-2"><span class="badge">3/16</span></div>
+							<div class="col-lg-2">CleverFit Vilshofen</div>
+							<div class="col-lg-2"><span class="badge">5,00€</span></div>
+						</div>
+						<div class="row" style="padding-top:10px;">
+							<div class="col-lg-2">26.04.2015 - 17:30 Uhr</div>
+							<div class="col-lg-4">Ausklingen und gemütliches Brotzeitmachen</div>
+							<div class="col-lg-2"><span class="badge">15/16</span></div>
+							<div class="col-lg-2">CleverFit Vilshofen</div>
+							<div class="col-lg-2"><span class="badge">0,00€</span></div>
+						</div>
+					</div>
+				</div>
+			</body>
+		</ui:define>
+	</ui:composition>
+</html>
