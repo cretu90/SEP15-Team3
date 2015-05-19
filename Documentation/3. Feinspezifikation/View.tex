@@ -515,14 +515,14 @@
 			
 					\textit{Anmelden (B)} & signUpForCourse() & - \\ \hline
 					\textit{Abmelden (B)} &  signOffFromCourse() & - \\ \hline
-					\textit{Benutzer anzeigen (B)} & loadParticipantsPage() & - \\ \hline
+					\textit{Teilnehmer anzeigen (B)} & loadParticipantsPage() & courseid \\ \hline
 					\textit{Alle auswählen (B)} & selectAllCourseUnits() & - \\ \hline
-					\textit{Speichern (B)} & signUpForCourseUnits() & - \\ \hline
+					\textit{Speichern (B)} & signUpForCourseUnits() & courseids \\ \hline
 					\textit{Bearbeiten (A)} & editCourse() & - \\ \hline
 					\textit{Speichern (A)} & saveCourse() & - \\ \hline
 					\textit{Hinzufügen (A)} & addCourseLeader() & - \\ \hline
-					\textit{Kurseinheit anlegen (K)} & loadCreateCourseUnitPage() & - \\ \hline
-					\textit{Kurseinheit bearbeiten (K)} & loadEditCourseUnitPage() & - \\ \hline
+					\textit{Kurseinheit anlegen (K)} & loadCreateCourseUnitPage() & courseid \\ \hline
+					\textit{Kurseinheit bearbeiten (K)} & loadEditCourseUnitPage() & courseunitid \\ \hline
 					\textit{Kurs löschen (A)} & deleteCourse() & - \\ \hline
 				\end{longtable}
 			\end{center}
@@ -534,28 +534,42 @@
 				\item Kursleiter Name (Administrator): Eingabefeld für den Namen eines neuen Kursleiters.
 				\item Kursleiter E-Mail (Administrator): Eingabefeld für die E-Mail Adresse eines neuen Kursleiters.
 				\item Kursbeschreibung (Administrator): Eingabefeld für die Kursbeschreibung.
-				\item Minimale Teilnehmerzahl (Administrator): Eingabefeld für die minimale Teilnehmerzahl des Kurses.
 				\item Maximale Teilnehmerzahl (Administrator): Eingabefeld für die maximale Teilnehmerzahl des Kurses.
 				\item Startdatum (Administrator): Eingabefeld für das Startdatum des Kurses.
 				\item Enddatum (Administrator): Eingabefeld für das Enddatum des Kurses.
 			\end{itemize}
 				\begin{center}
-					\begin{longtable}{|p{3cm} |p{4cm} | p{4cm}|p{3cm} |p{2cm}|}
+					\begin{longtable}{|p{3cm} |p{9cm} |}
 						
-						\hline \multicolumn{1}{|c|}{\textbf{Feld}} & \multicolumn{1}{|c|}{\textbf{Backing-Bean-Attribute}} & \multicolumn{1}{|c|}{\textbf{Validatoren}}  &  \multicolumn{1}{|c|}{\textbf{Konverter}} &  \multicolumn{1}{|c|}{\textbf{ID}} \\ \hline
+						\hline \multicolumn{1}{|c|}{\textbf{Feld}} & \multicolumn{1}{|c|}{\textbf{Backing-Bean-Attribute}}\\ \hline
 						\endfirsthead
 						\hline
 						\endlastfoot
-						\textit{Kursnews erhalten} & ... & - & - & getcnews\\ \hline
-						\textit{Kurseinheit auswählen} & ... & - & - & selectcunit\\ \hline
-						\textit{Kursleiter auswählen (A)} & ... & - & - & selectcleader\\ \hline
-						\textit{Kursleiter Name (A)} & ... & InputTextValidator, validateRequired, validateLength (min = 1, max = 200) & - & cleadername\\ \hline
-						\textit{Kursleiter E-Mail (A)} & ... & EMailValidator, validateRequired, validateLength (min = 5, max = 319) & - & cleadermail\\ \hline
-						\textit{Kursbeschreibung (A)} & ... & InputTextValidator, validateLength (min = 0, max = 1000) & - & cdetails\\ \hline
-						\textit{Minimale Teilnehmerzahl (A)} & ... & - & convertNumber & minparticipants\\ \hline
-						\textit{Maximale Teilnehmerzahl (A)} & ... & - & convertNumber & maxparticipants\\ \hline
-						\textit{Startdatum (A)} & ... & DateValidator, validateRequired & convertDateTime & begin\\ \hline
-						\textit{Enddatum (A)} & ... & DateValidator, validateRequired & convertDateTime & end\\ \hline
+						\textit{Kursnews erhalten} & CourseDetailBean.registeredForCourseNews\\ \hline
+						\textit{Kurseinheit auswählen} & CourseDetailBean.selectedCourseUnits\\ \hline
+						\textit{Kursleiter auswählen (A)} & CourseDetailBean.leadersOfCourse\\ \hline
+						\textit{Kursleiter Name (A)} & CourseDetailBean.leadersOfCourse.User.lastname\\ \hline
+						\textit{Kursleiter E-Mail (A)} & CourseDetailBean.leadersOfCourse.User.email\\ \hline
+						\textit{Kursbeschreibung (A)} & CourseDetailBean.Course.description\\ \hline
+						\textit{Maximale Teilnehmerzahl (A)} & CourseDetailBean.Course.maxUsers\\ \hline
+						\textit{Startdatum (A)} & CourseDetailBean.Course.startdate\\ \hline
+						\textit{Enddatum (A)} & CourseDetailBean.Course.enddate\\ \hline
+					\end{longtable}
+					\begin{longtable}{|p{3cm} |p{4cm} | p{4cm}|p{3cm} ||}
+						
+						\hline \multicolumn{1}{|c|}{\textbf{Feld}} & \multicolumn{1}{|c|}{\textbf{Validatoren}}  &  \multicolumn{1}{|c|}{\textbf{Konverter}} &  \multicolumn{1}{|c|}{\textbf{ID}} \\ \hline
+						\endfirsthead
+						\hline
+						\endlastfoot
+						\textit{Kursnews erhalten} & - & - & getcnews\\ \hline
+						\textit{Kurseinheit auswählen} & - & - & selectcunit\\ \hline
+						\textit{Kursleiter auswählen (A)} & - & - & selectcleader\\ \hline
+						\textit{Kursleiter Name (A)} & - & - & cleadername\\ \hline
+						\textit{Kursleiter E-Mail (A)} & - & - & cleadermail\\ \hline
+						\textit{Kursbeschreibung (A)} & - & - & cdetails\\ \hline
+						\textit{Maximale Teilnehmerzahl (A)} & - & convertNumber & maxparticipants\\ \hline
+						\textit{Startdatum (A)} & DateValidator & convertDateTime & begin\\ \hline
+						\textit{Enddatum (A)} & DateValidator & convertDateTime & end\\ \hline
 					\end{longtable}
 				\end{center}
 			\item \textbf{Outputs:}
@@ -564,7 +578,6 @@
 				\item Tabelle Kurseinheiten: Tabelle mit allen Kurseinheiten des Kurses und zugehörigen Informationen wie Ort, Preis oder Datum.
 				\item Kurs-ID: Zeigt die zum Kurs zugehörige ID an.
 				\item Kursbeschreibung: Zeigt die Beschreibung zum Kurs an.
-				\item Minimale Teilnehmerzahl: Zeigt die für den Kurs minimale Teilnehmerzahl an.
 				\item Maximale Teilnehmerzahl: Zeigt die für den Kurs maximale Teilnehmerzahl an.
 				\item Fehlermeldung zu den einzelnen Eingabefeldern, bei falscher Eingabe.
 			\end{itemize}
@@ -592,8 +605,8 @@
 					\end{center}
 			\item \textbf{BackingBean:}
 			\begin{itemize}
-				\item CourseDetail.java
-				\item CourseManagement.java
+				\item CourseDetailBean.java
+				\item CourseManagementBean.java
 			\end{itemize}
 		\end{itemize}
 		
@@ -823,13 +836,13 @@
 				\begin{center}
 					\begin{longtable}{|p{3cm} |p{10cm} |}
 						
-						\hline \multicolumn{1}{|c|}{\textbf{Link}} & \multicolumn{1}{|c|}{\textbf{\"{U}bergabeparameter}} \\ \hline
+						\hline \multicolumn{1}{|c|}{\textbf{Link}} & \multicolumn{1}{|c|}{\textbf{Methode}} \\ \hline
 						\endfirsthead
 						\hline
 						\endlastfoot
 						
-						\textit{Wochenansicht vorwärts} & - \\ \hline
-						\textit{Wochenansicht rückwärts} & - \\ \hline
+						\textit{Wochenansicht vorwärts} & displayNextWeek \\ \hline
+						\textit{Wochenansicht rückwärts} & displayPreviousWeek \\ \hline
 					\end{longtable}
 				\end{center}
 			\item \textbf{Buttons:} -
@@ -850,7 +863,7 @@
 				\end{center}
 			\item \textbf{BackingBean:}
 			\begin{itemize}
-				\item Scheduler.java
+				\item SchedulerBean.java
 			\end{itemize}
 		\end{itemize}
 		
