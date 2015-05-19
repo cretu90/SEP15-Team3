@@ -11,6 +11,7 @@ import javax.faces.bean.ViewScoped;
 
 import de.ofCourse.model.Course;
 import de.ofCourse.model.PaginationData;
+import de.ofCourse.system.Transaction;
 
 /**
  * Displays the courses that are attended by a certain user and offers the user
@@ -29,6 +30,11 @@ import de.ofCourse.model.PaginationData;
 @ManagedBean
 @ViewScoped
 public class MyCoursesBean implements Pagination {
+    
+    /**
+     * 
+     */
+    private Transaction trans;
 
     /**
      * List of courses that the user attends

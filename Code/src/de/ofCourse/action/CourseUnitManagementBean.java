@@ -13,6 +13,7 @@ import de.ofCourse.model.CourseUnit;
 import de.ofCourse.model.Cycle;
 import de.ofCourse.model.PaginationData;
 import de.ofCourse.model.User;
+import de.ofCourse.system.Transaction;
 
 /**
  * Provides functionality for course leaders to create, edit and delete course
@@ -42,6 +43,11 @@ import de.ofCourse.model.User;
 @ManagedBean
 @ViewScoped
 public class CourseUnitManagementBean implements Pagination {
+    
+    /**
+     * 
+     */
+    private Transaction trans;
 
     /**
      * Stores an user that is to be added to the course unit.

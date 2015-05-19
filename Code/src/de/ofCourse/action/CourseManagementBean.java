@@ -11,6 +11,7 @@ import javax.faces.bean.RequestScoped;
 
 import de.ofCourse.model.Course;
 import de.ofCourse.model.User;
+import de.ofCourse.system.Transaction;
 
 /**
  * Provides functionality for administrators to create and delete courses and to
@@ -32,6 +33,11 @@ import de.ofCourse.model.User;
 @ManagedBean
 @RequestScoped
 public class CourseManagementBean {
+    
+    /**
+     * 
+     */
+    private Transaction trans;
 
     /**
      * Stores an leader that is to be added to the course.

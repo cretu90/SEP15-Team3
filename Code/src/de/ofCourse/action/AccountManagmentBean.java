@@ -11,6 +11,7 @@ import javax.faces.bean.ViewScoped;
 
 import de.ofCourse.model.PaginationData;
 import de.ofCourse.model.User;
+import de.ofCourse.system.Transaction;
 
 /**
  * Provides functionality for course leaders and administrators to activate user
@@ -31,6 +32,11 @@ import de.ofCourse.model.User;
 @ManagedBean
 @ViewScoped
 public class AccountManagmentBean implements Pagination {
+    
+    /**
+     * 
+     */
+    private Transaction trans;
 
     /**
      * The users that are selected by the user and shall be activated.

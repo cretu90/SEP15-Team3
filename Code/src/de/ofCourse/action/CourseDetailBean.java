@@ -14,6 +14,7 @@ import de.ofCourse.model.Course;
 import de.ofCourse.model.CourseUnit;
 import de.ofCourse.model.PaginationData;
 import de.ofCourse.model.User;
+import de.ofCourse.system.Transaction;
 
 /**
  * Displays the details of a course and its course units and provides the
@@ -39,6 +40,11 @@ import de.ofCourse.model.User;
 @ManagedBean
 @ViewScoped
 public class CourseDetailBean implements Pagination {
+    
+    /**
+     * 
+     */
+    private Transaction trans;
 
     /**
      * Stores the displayed or entered data of the course.

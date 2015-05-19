@@ -11,6 +11,7 @@ import javax.faces.bean.ViewScoped;
 
 import de.ofCourse.model.PaginationData;
 import de.ofCourse.model.User;
+import de.ofCourse.system.Transaction;
 
 /**
  * Provides the service of searching for users in the system.<br>
@@ -29,6 +30,11 @@ import de.ofCourse.model.User;
 @ManagedBean
 @ViewScoped
 public class SearchUserBean implements Pagination {
+    
+    /**
+     * 
+     */
+    private Transaction trans;
 
     /**
      * Stores the the search result that is displayed on the page. In this case

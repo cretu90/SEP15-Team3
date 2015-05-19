@@ -6,6 +6,7 @@ package de.ofCourse.action;
 import javax.faces.bean.ManagedProperty;
 
 import de.ofCourse.model.User;
+import de.ofCourse.system.Transaction;
 
 /**
  * Provides functionality for administrators to create and delete users.
@@ -23,6 +24,11 @@ import de.ofCourse.model.User;
  *
  */
 public class UserManagementBean {
+    
+    /**
+     * 
+     */
+    private Transaction trans;
 
     /**
      * 

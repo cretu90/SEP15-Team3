@@ -11,6 +11,7 @@ import javax.faces.bean.ViewScoped;
 
 import de.ofCourse.model.Course;
 import de.ofCourse.model.PaginationData;
+import de.ofCourse.system.Transaction;
 
 /**
  * Provides the service of displaying the course offer of the system and the
@@ -31,6 +32,11 @@ import de.ofCourse.model.PaginationData;
 @ManagedBean
 @ViewScoped
 public class SearchCourseBean implements Pagination {
+    
+    /**
+     * 
+     */
+    private Transaction trans;
 
     /**
      * Stores the display period that was selected by the user. With the display

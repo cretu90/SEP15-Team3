@@ -9,6 +9,7 @@ import de.ofCourse.exception.InvalidDBTransferException;
 import de.ofCourse.model.Course;
 import de.ofCourse.model.PaginationData;
 import de.ofCourse.model.User;
+import de.ofCourse.system.Transaction;
 
 /**
  * @author
@@ -16,66 +17,66 @@ import de.ofCourse.model.User;
  */
 public class CourseDAO {
 
-    public static void createCourse(Course course)
+    public static void createCourse(Transaction trans, Course course)
 	    throws InvalidDBTransferException {
     }
 
-    public static List<Course> getCourses(PaginationData pagination)
+    public static List<Course> getCourses(Transaction trans, PaginationData pagination)
 	    throws InvalidDBTransferException {
 	return null;
     }
 
-    public static List<Course> getCourses(PaginationData pagination,
+    public static List<Course> getCourses(Transaction trans, PaginationData pagination,
 	    String searchString) throws InvalidDBTransferException {
 	return null;
     }
 
-    public static List<Course> getCoursesOrdered(PaginationData pagination,
+    public static List<Course> getCoursesOrdered(Transaction trans, PaginationData pagination,
 	    String searchString, String orderParam)
 	    throws InvalidDBTransferException {
 	return null;
     }
 
-    public static List<User> getLeaders(int courseID)
+    public static List<User> getLeaders(Transaction trans, int courseID)
 	    throws InvalidDBTransferException {
 	return null;
     }
 
-    public static Course getCourse(int courseID)
+    public static Course getCourse(Transaction trans, int courseID)
 	    throws InvalidDBTransferException {
 	return null;
     }
 
-    public static List<Course> getCoursesOf(int UserID)
+    public static List<Course> getCoursesOf(Transaction trans, int UserID)
 	    throws InvalidDBTransferException {
 	return null;
     }
 
-    public static void updateCourse(Course course)
+    public static void updateCourse(Transaction trans, Course course)
 	    throws InvalidDBTransferException {
     }
 
-    public static void deleteCourse(int courseID)
+    public static void deleteCourse(Transaction trans, int courseID)
 	    throws InvalidDBTransferException {
     }
 
-    public static void addUserToCourse(int userID)
+    public static void addUserToCourse(Transaction trans, int userID)
 	    throws InvalidDBTransferException {
     }
 
-    public static void removeUserFromCourse(int userID)
+    public static void removeUserFromCourse(Transaction trans, int userID)
 	    throws InvalidDBTransferException {
     }
 
-    public static void addLeaderToCourse(int userID)
+    public static void addLeaderToCourse(Transaction trans, int userID)
 	    throws InvalidDBTransferException {
     }
 
-    public static void removeLeaderFromCourse(int userID)
+    public static void removeLeaderFromCourse(Transaction trans, int userID)
 	    throws InvalidDBTransferException {
     }
     
-    public static int getNewCourseID() throws InvalidDBTransferException {
+    public static int getNewCourseID(Transaction trans) throws InvalidDBTransferException {
 	return 0;
     }
 
