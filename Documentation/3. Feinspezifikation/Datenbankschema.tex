@@ -32,6 +32,8 @@ CREATE TABLE users (
     profile_image          BYTEA,
     user_role              ROLE            NOT NULL,
 )
+
+ALTER SEQUENCE users_id_seq RESTART WITH 10000
 \end{verbatim}
 
 \subsection{courses}
@@ -46,6 +48,8 @@ CREATE TABLE courses (
     end_date               DATE       NOT NULL,
     image                  BYTEA,
 )
+
+ALTER SEQUENCE courses_id_seq RESTART WITH 10000
 \end{verbatim}
 
 \subsection{course\_units}
@@ -64,6 +68,8 @@ CREATE TABLE course_units (
     end_time            TIMESTAMP    NOT NULL,
     description         TEXT(1000)
 )
+
+ALTER SEQUENCE course_units_id_seq RESTART WITH 10000
 \end{verbatim}
 
 \subsection{addresses}
@@ -71,12 +77,12 @@ Die Tabelle \texttt{addresses} enthält alle Adressen der registrierten Nutzer s
 
 \begin{verbatim}
 CREATE TABLE addresses (
-    id             SERIAL       PRIMARY KEY,
+    id             SERIAL          PRIMARY KEY,
     user           REFERENCES users(id)           UNIQUE    ON DELETE CASCADE,
     course_unit    REFERENCES course_units(id)    UNIQUE    ON DELETE CASCADE,
-    country        VARCHAR(100)  NOT NULL,
-    city           VARCHAR(100)  NOT NULL,
-    zip_code       INTEGER      NOT NULL,
+    country        VARCHAR(100)    NOT NULL,
+    city           VARCHAR(100)    NOT NULL,
+    zip_code       VARCHAR(10)     NOT NULL,
     street         VARCHAR(100),
     house_nr       INTEGER
 )
@@ -143,7 +149,7 @@ Die Tabelle \texttt{system\_attributes} enthält von den Systemadministratoren f
 
 \begin{verbatim}
 CREATE TABLE system_attributes (
-    lock                 CHAR(1)         PRIMARY KEY    									 DEFAULT 'X'     UNIQUE
+    lock                 CHAR(1)         PRIMARY KEY    									 DEFAULT 'X'
                                          CHECK (lock = 'X'),
     activation_type      ACTIVATION      NOT NULL,
     withdrawal_hours     INTEGER         NOT NULL,
@@ -158,22 +164,10 @@ Die Tabelle \texttt{customization\_data} enthält keys und values zu Daten, die 
 
 \begin{verbatim}
 CREATE TABLE customization_data (
-    lock     CHAR(1)        PRIMARY KEY    DEFAULT 'X'    UNIQUE
+    lock     CHAR(1)        PRIMARY KEY    DEFAULT 'X'
                             CHECK (lock = 'X'),
     css      VARCHAR(30)    NOT NULL,
     title    VARCHAR(30)    NOT NULL
-)
-\end{verbatim}
-
-\subsection{monetary\_statistics}
-Die Tabelle \texttt{monetary\_statistics} beschreibt die Geldstatistik des Systems. Eine Zeile dieser Tabelle enthält die Information des Geldbetrages, welches ein bestimmter Nutzer an einem bestimmten Datum innerhalb eines Kurses gezahlt hat. Dabei muss der Betrag größer als Null sein. Die Nutzer und Kurse werden in den Spalten \texttt{user} bzw. \texttt{course} referenziert.
-
-\begin{verbatim}
-CREATE TABLE monetary_statistics (
-    user      REFERENCES users(id)         ON DELETE CASCADE,
-    course    REFERENCES courses(id)       ON DELETE CASCADE,
-    amount    DECIMAL(6, 2)    NOT NULL    CHECK (amount > 0),
-    date      DATE             NOT NULL
 )
 \end{verbatim}
 
@@ -181,7 +175,10 @@ CREATE TABLE monetary_statistics (
 Das Sicherstellen der Integrität der Datenbanktabellen erfolgt durch die nachfolgenden constraints:
 
 \begin{itemize}
-\item Mit Ausnahme von \texttt{course\_instructors}, \texttt{course\_participants}, \texttt{system\_attributes}, \texttt{customization\_data} und \texttt{monetary\_statistics} dient die Spalte \texttt{id} jeder Tabelle als Primärschlüssel und wird per \texttt{auto\_increment} generiert. Dies geschieht PostgreSQL-spezifisch durch Angabe des Typs \texttt{SERIAL}.
+\item Beim Aufsetzen der Datenbank wird durch den Befehl \texttt{initdb} der default Zeichensatz auf UTF-8 festgelegt.
+
+\item Mit Ausnahme von \texttt{course\_instructors}, \texttt{course\_participants}, \texttt{system\_attributes} und \texttt{customization\_data} dient die Spalte \texttt{id} jeder Tabelle als Primärschlüssel und wird per \texttt{auto\_increment} generiert. Dies geschieht PostgreSQL-spezifisch durch Angabe des Typs \texttt{SERIAL}. Dabei beginnt die Nummerierung standardmäßig bei 1. Um vor den Nutzern die Information zu verbergen, wie viele Nutzer, Kurse und Kurseinheiten im System gespeichert sind wird der Startwert der Nummerierung der IDs von \texttt{users}, \texttt{courses} und \texttt{course\_units} manuell jeweils auf 10000 gesetzt. Dies wird durch den Befehl \texttt{ALTER SEQUENZ RESTART WITH} umgesetzt.
+
 \item Aufgrund der Wichtigkeit einiger Spalten bezüglich der Funktionalität des Systems dürfen diese nicht leer stehen. Zu diesem Zweck wird das Schlüsselwort \texttt{NOT NULL} verwendet.
 \item Das Löschen eines Tupels aus den Tabellen \texttt{users}, \texttt{courses} oder \texttt{course\_units} führt zum kaskadierenden Löschen der Datensätze, die über foreign key constraints verbundenen sind. Durch Verwendung des SQL-Befehls ON DELETE CASCADE bei den Attributen \texttt{users(id)}, \texttt{courses(id)} und \texttt{course\_units(id)}, wirkt sich dies wie folgt aus:
 
@@ -200,6 +197,7 @@ Das Sicherstellen der Integrität der Datenbanktabellen erfolgt durch die nachfo
 \item Der constraint \texttt{CHECK} wird, aufgrund der individuellen Bedeutung für die jeweilige Tabelle, in deren Beschreibung genauer erklärt.
 
 \item Die Tabellen \texttt{system\_attributes} und \texttt{customization\_data} enthalten jeweils das Attribut \texttt{lock}. Dadurch soll sichergestellt werden, dass diese beiden Tabellen, welche ausschließlich system- und konfigurations-spezifische Daten beinhalten, jeweils nur eine Zeile enthalten.
+
 \end{itemize}
 
 \section{Enums}
