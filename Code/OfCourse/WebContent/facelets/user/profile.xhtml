@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html">
+	<ui:composition template="/WEB-INF/template/layout.xhtml">
+		<ui:define name="title">Benutzerprofil</ui:define>
+		<ui:define name="content">
+			<body>
+				<h1>Benutzerprofil</h1>
+				<div class="row">
+					<div class="col-lg-12">
+						<p style="font-size:16px;">Hier haben Sie die Möglichkeit Ihre persönlichen Daten einzusehen und zu ändern.</p>
+					</div>
+				</div>
+				<div class="row" style="padding-top:20px;">
+					<div class="col-lg-6">
+						<div class="panel panel-info">
+							<div class="panel-heading">
+								<strong>Benutzerdaten</strong>
+							</div>
+							<div class="panel-body">
+								<h:form class="form-horizontal" id="formRegister">
+									<div class="input-group" style="padding-top:5px;">
+										<span class="input-group-addon" style="width:160px; text-align:right;"><strong>Benutzer-ID:</strong></span>
+										<h:inputText class="form-control" style="width:340px;" id="idRegister" readonly="true" value="1432"></h:inputText>
+									</div>
+									<div class="input-group" style="padding-top:5px;">
+										<span class="input-group-addon" style="width:160px; text-align:right;">Vorname:</span>
+										<h:inputText class="form-control" style="width:340px;" id="firstnameRegister"></h:inputText>
+									</div>
+									<div class="input-group" style="padding-top:5px;">
+										<span class="input-group-addon" style="width:160px; text-align:right;">Name:</span>
+										<h:inputText class="form-control" style="width:340px;" id="lastnameRegister"></h:inputText>
+									</div>
+									<div class="input-group" style="padding-top:5px;">
+										<span class="input-group-addon" style="width:160px; text-align:right;">Geburtstag:</span>
+										<h:inputText class="form-control" style="width:340px;" id="birthdateRegister"></h:inputText>
+									</div>
+									<div class="input-group" style="padding-top:5px;">
+										<span class="input-group-addon" style="width:160px; text-align:right;">Straße/Hausnummer:</span>
+										<h:inputText class="form-control" style="width:340px;" id="streetRegister"></h:inputText>
+									</div>
+									<div class="input-group" style="padding-top:5px;">
+										<span class="input-group-addon" style="width:160px; text-align:right;">Ort:</span>
+										<h:inputText class="form-control" style="width:340px;" id="locationRegister"></h:inputText>
+									</div>
+									<div class="input-group" style="padding-top:5px;">
+										<span class="input-group-addon" style="width:160px; text-align:right;">Postleitzahl:</span>
+										<h:inputText class="form-control" style="width:340px;" id="zipcodeRegister"></h:inputText>
+									</div>
+									<div class="input-group" style="padding-top:5px;">
+										<span class="input-group-addon" style="width:160px; text-align:right;">E-Mail-Adresse:</span>
+										<h:inputText class="form-control" style="width:340px;" id="emailRegister"></h:inputText>
+									</div>
+									<div class="input-group" style="padding-top:25px;">
+										<span class="input-group-addon" style="width:160px; text-align:right;">Benutzername:</span>
+										<h:inputText class="form-control" style="width:340px;" id="usernameRegister"></h:inputText>
+									</div>
+									<div class="input-group" style="padding-top:5px;">
+										<span class="input-group-addon" style="width:160px; text-align:right;">Passwort:</span>
+										<h:inputSecret class="form-control" style="width:340px;" id="passwordRegister"></h:inputSecret>
+									</div>
+									<div class="input-group" style="padding-top:5px;">
+										<span class="input-group-addon" style="width:160px; text-align:right;">Passwort bestätigen:</span>
+										<h:inputSecret class="form-control" style="width:340px;" id="passwordConfirmRegister"></h:inputSecret>
+									</div>
+									<br />
+									<h:commandButton id="editUserdata" class="btn btn-info" value="Benutzerdaten ändern" />
+								</h:form><br />	
+								Sie befinden Sich in der Rolle eines <input type="text" width="200" disabled="disabled" value="Kursleiters"></input>.
+							</div>
+						</div>					
+					</div>
+					<div class="col-lg-6">
+						<div class="row">
+							<div class="col-lg-12">
+								<div class="panel panel-info">
+									<div class="panel-heading">
+										<strong>Profilbild</strong>
+									</div>
+									<div class="panel-body">
+										<div class="input-group">
+									        <h:inputText class="form-control" id="profileImage"></h:inputText>
+									        <span class="input-group-btn"><button class="btn btn-default" type="button">Bild auswählen</button>
+									      </span>
+									    </div>
+									    <div class="row" style="padding-top:10px;">
+									    	<div class="col-lg-8">
+												<img src="#{request.contextPath}/resources/img/userdata/userphoto.jpg" width="200" alt="Profilbild"></img>									    	
+									    	</div>
+									    	<div class="col-lg-4" style="text-align:right;">
+									    		<h:commandButton id="editProfilePicture" class="btn btn-info" value="Profilbild ändern" />
+									    	</div>
+									    </div>
+									</div>
+								</div>												
+							</div>
+							<div class="col-lg-12">
+								<div class="panel panel-info">
+									<div class="panel-heading">
+										<strong>Kontostand</strong>
+									</div>
+									<div class="panel-body">
+										Ihr aktueller Kontostand beträgt <input type="text" width="50" disabled="disabled" value="13,56€"></input>.<br />
+										<h:commandButton id="spendMoney" class="btn btn-success" value="Konto aufladen" />
+									</div>
+								</div>										
+							</div>
+						</div>			
+					</div>
+				</div>
+			</body>
+		</ui:define>
+	</ui:composition>
+</html>

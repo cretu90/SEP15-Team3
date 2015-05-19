@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html">
+	<ui:composition template="/WEB-INF/template/layout.xhtml">
+		<ui:define name="title">Anmeldung</ui:define>
+		<ui:define name="content">
+			<body>
+				<h1>Anmeldung</h1>
+				<div class="row">
+					<div class="col-lg-12">
+						<p style="font-size:16px;">Herzlich Willkommen bei <strong>OfCourse</strong>. <br />
+						Hier können Sie Sich gleich im System anmelden oder ein neues Benutzerkonto generieren, falls Sie noch nicht registriert sind. <br />
+						Für weitere Informationen besuchen Sie bitte die Hilfe-Seite.</p>
+					</div>
+				</div>
+				<div class="row" style="padding-top:20px;">
+					<div class="col-lg-7">
+						<div class="panel panel-info">
+							<div class="panel-heading">
+								<strong>Registrierung</strong>
+							</div>
+							<div class="panel-body">
+								<h:form class="form-horizontal" id="formRegister">
+									<div class="input-group">
+										<span class="input-group-addon" style="width:160px; text-align:right;">Anrede:</span>
+										<h:selectOneMenu class="form-control" value="Herr" id="titleRegister">
+										   	<f:selectItem itemValue="Herr" itemLabel="Herr" />
+										   	<f:selectItem itemValue="Frau" itemLabel="Frau" />
+										</h:selectOneMenu>
+									</div>
+									<div class="input-group" style="padding-top:5px;">
+										<span class="input-group-addon" style="width:160px; text-align:right;">Vorname:</span>
+										<h:inputText class="form-control" style="width:300px;" id="firstnameRegister"></h:inputText>
+									</div>
+									<div class="input-group" style="padding-top:5px;">
+										<span class="input-group-addon" style="width:160px; text-align:right;">Name:</span>
+										<h:inputText class="form-control" style="width:300px;" id="lastnameRegister"></h:inputText>
+									</div>
+									<div class="input-group" style="padding-top:5px;">
+										<span class="input-group-addon" style="width:160px; text-align:right;">Benutzername:</span>
+										<h:inputText class="form-control" style="width:300px;" id="usernameRegister"></h:inputText>
+									</div>
+									<div class="input-group" style="padding-top:5px;">
+										<span class="input-group-addon" style="width:160px; text-align:right;">Passwort:</span>
+										<h:inputSecret class="form-control" style="width:300px;" id="passwordRegister"></h:inputSecret>
+									</div>
+									<div class="input-group" style="padding-top:5px;">
+										<span class="input-group-addon" style="width:160px; text-align:right;">Passwort bestätigen:</span>
+										<h:inputSecret class="form-control" style="width:300px;" id="passwordConfirmRegister"></h:inputSecret>
+									</div>
+									<div class="input-group" style="padding-top:5px;">
+										<span class="input-group-addon" style="width:160px; text-align:right;">Geburtstag:</span>
+										<h:inputText class="form-control" style="width:300px;" id="birthdateRegister"></h:inputText>
+									</div>
+									<div class="input-group" style="padding-top:5px;">
+										<span class="input-group-addon" style="width:160px; text-align:right;">Straße/Hausnummer:</span>
+										<h:inputText class="form-control" style="width:300px;" id="streetRegister"></h:inputText>
+									</div>
+									<div class="input-group" style="padding-top:5px;">
+										<span class="input-group-addon" style="width:160px; text-align:right;">Ort:</span>
+										<h:inputText class="form-control" style="width:300px;" id="locationRegister"></h:inputText>
+									</div>
+									<div class="input-group" style="padding-top:5px;">
+										<span class="input-group-addon" style="width:160px; text-align:right;">Postleitzahl:</span>
+										<h:inputText class="form-control" style="width:300px;" id="zipcodeRegister"></h:inputText>
+									</div>
+									<div class="input-group" style="padding-top:5px;">
+										<span class="input-group-addon" style="width:160px; text-align:right;">E-Mail-Adresse:</span>
+										<h:inputText class="form-control" style="width:300px;" id="emailRegister"></h:inputText>
+									</div>
+									<br />
+									<div>
+										<h:selectBooleanCheckbox value="" /> Ich habe die AGBs gelesen und stimme zu.
+									</div>
+									<br />
+									<h:commandButton id="login" class="btn btn-info" value="Registrieren" />
+								</h:form>	
+							</div>
+						</div>					
+					</div>
+					<div class="col-lg-5">
+						<div class="panel panel-info">
+							<div class="panel-heading">
+								<strong>Anmeldung</strong>
+							</div>
+							<div class="panel-body">
+								<h:form class="form-horizontal" id="formLogin">
+									<div class="input-group">
+										<span class="input-group-addon" style="width:140px; text-align:right;">Benutzername:</span>
+										<h:inputText class="form-control" id="usernameLogin" style="width:250px;"></h:inputText>
+									</div>
+									<div class="input-group" style="padding-top:5px;">
+										<span class="input-group-addon" style="width:140px; text-align:right;">Passwort:</span>
+										<h:inputSecret class="form-control" id="passwordLogin" style="width:250px;"></h:inputSecret>
+									</div>
+									<br />
+									<h:commandButton id="login" class="btn btn-info" value="Anmelden" />
+								</h:form>								
+							</div>
+						</div>								
+						<div class="panel panel-info">
+							<div class="panel-heading">
+								<strong>Passwort vergessen</strong>
+							</div>
+							<div class="panel-body">
+								<h:form class="form-horizontal" id="formForgotPassword">
+									<div class="input-group">
+										<span class="input-group-addon" style="width:140px; text-align:right;">E-Mail-Adresse:</span>
+										<h:inputText class="form-control" id="passwordEMail" style="width:250px;"></h:inputText>
+									</div>
+									<br />
+									<h:commandButton id="newPassword" class="btn btn-info" value="Neues Passwort anfordern" />
+								</h:form>								
+							</div>
+						</div>								
+					</div>
+				</div>
+			</body>
+		</ui:define>
+	</ui:composition>
+</html>
