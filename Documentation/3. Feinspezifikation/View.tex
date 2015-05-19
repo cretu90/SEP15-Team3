@@ -608,6 +608,7 @@
 			\item \textbf{Links:}
 				\begin{itemize}
 					\item Kurstitel: Über die Kurstitel gelangt der Benutzer auf die jeweilige Kursdetailseite. (\hyperlink{courseDetails}{courseDetails.xhtml})
+					\item Details: Über den Link Details hinter dem jeweiligen Kurs gelangt der Benutzer auf die jeweilige Kursdetailseite. (\hyperlink{courseDetails}{courseDetails.xhtml})
 				\end{itemize}
 				
 				\begin{center}
@@ -619,24 +620,9 @@
 						\endlastfoot
 						
 						\textit{Kurstitel } & courseId (Id des ausgewählten Kurses wird übergeben)\\ \hline
+						\textit{Details } & courseId (Id des ausgewählten Kurses wird übergeben)\\ \hline
 					\end{longtable}
 				\end{center}
-				
-			\item \textbf{Buttons:} 
-				\begin{itemize}
-					\item Details: Über den Detailsbutton hinter dem jeweiligen Kurs gelangt der Benutzer auf die gewünschte Kursdetailseite. (\hyperlink{courseDetails}{courseDetails.xhtml})
-				\end{itemize}
-					 \begin{center}
-					 	\begin{longtable}{|p{4cm} |p{6cm} | p{4cm}|}
-					 		
-					 		\hline \multicolumn{1}{|c|}{\textbf{Button}} & \multicolumn{1}{|c|}{\textbf{Methode}} & \multicolumn{1}{|c|}{\textbf{\"{U}bergabeparameter}} \\ \hline
-					 		\endfirsthead
-					 		\hline
-					 		\endlastfoot
-					 		
-					 		\textit{Details} & loadCourseDetailsPageOf SelectedCourse() &  courseId (Id des ausgewählten Kurses wird übergeben) \\ \hline
-					 	\end{longtable}
-					 \end{center}
 				
 				
 			\item \textbf{Outputs:}
@@ -1056,11 +1042,11 @@
 						\textit{Mindesteil- nehmerzahl} & validateRequired & convertNumber \\ \hline
 						\textit{Maximale Teilnehmerzahl} & validateRequired & convertNumber \\ \hline
 						\textit{Teilnehmer markieren} & - & - \\ \hline
-						\textit{Benutzer-ID} & validateLength (min = , max = ), validateRequired & convertNumber \\ \hline
+						\textit{Benutzer-ID} & validateLength (min = 0, max = 2147483647 ) & convertNumber \\ \hline
 						\textit{Name (Teilnehmer)} & validateLength (min = 0, max = 100 ) & - \\ \hline
 						\textit{Vorname (Teilnehmer)} & validateLength (min = 0, max = 100) & - \\ \hline
 						\textit{Checkbox regelmäßig} & - & - \\ \hline
-						\textit{Einheitenanzahl} & ??? & convertNumber \\ \hline
+						\textit{Einheitenanzahl} & - & convertNumber \\ \hline
 					\end{longtable}
 				\end{center}
 				
@@ -1123,7 +1109,6 @@
 		KH\\
 		\begin{itemize}
 			\item \textbf{Beschreibung:} Hier werden alle im System noch nicht aktivierten Benutzer angezeigt. Diese können nun vom Kursleiter oder Administrator aktiviert werden. 
-			\item \textbf{Links:} -
 			\item \textbf{Buttons:}
 				\begin{itemize}
 					\item Benutzer aktivieren: Durch Klicken dieses Buttons wird der Account des markierten Benutzers aktiviert. \\ Zugehörige Methode: activateAccounts()
@@ -1153,7 +1138,7 @@
 						\endfirsthead
 						\hline
 						\endlastfoot
-						\textit{Benutzer aktivieren} & AccountManagement. User.userStatus & selectBooleanCheckbox & nutzeraktiv \\ \hline
+						\textit{Benutzer aktivieren} & AccountManagementBean. User.userStatus & selectBooleanCheckbox & nutzeraktiv \\ \hline
 					\end{longtable}
 				\end{center}
 				
@@ -1186,7 +1171,7 @@
 				
 			\item \textbf{BackingBean:}
 				\begin{itemize}
-					\item AccountManagement.java
+					\item AccountManagementBean.java
 				\end{itemize}
 		\end{itemize}
 		
@@ -1275,7 +1260,6 @@
 		KH\\
 		\begin{itemize}
 			\item \textbf{Beschreibung:} Hier werden alle im System registrierten Benutzer angezeigt. Einzelne Benutzer können vom Administrator nach verschiedenen Kriterien gefiltert werden. 
-			\item \textbf{Links:} -
 			\item \textbf{Buttons:}
 				\begin{itemize}
 					\item Suchen: Durch Drücken dieses Buttons werden die Benutzer nach den eingegebenen Kriterien durchsucht und in der Liste angezeigt. \\ Zugehörige Methode: search()
@@ -1344,7 +1328,7 @@
 				
 			\item \textbf{BackingBean:}
 				\begin{itemize}
-					\item SearchUser.java
+					\item SearchUserBean
 				\end{itemize}
 		\end{itemize}
 		
@@ -1568,6 +1552,6 @@
 				
 			\item \textbf{BackingBean:}
 				\begin{itemize}
-					\item CourseManagement.java
+					\item CourseManagementBean
 				\end{itemize}
 		\end{itemize}
