@@ -9,14 +9,19 @@ import javax.faces.validator.Validator;
 import javax.faces.validator.ValidatorException;
 
 /**
- * This class checks wether the two inserted passwords are equal.
+ * Checks wether the two inserted passwords are equal.
  * 
- * @author Kathi
+ * @author Katharina Hölzl
  *
  */
 public class ConfirmPasswordValidator implements Validator {
 
-    
+    /**
+     * This validation method gets called when you want to register or change 
+     * your password when you’re already registered. Therefore you have to insert 
+     * your password twice due to security issues. This method checks if the two 
+     * passwords are equal.
+     */
     @Override
     public void validate(FacesContext arg0, UIComponent arg1, Object arg2)
 	    throws ValidatorException {
