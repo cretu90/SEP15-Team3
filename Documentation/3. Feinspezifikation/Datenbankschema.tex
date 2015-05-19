@@ -183,9 +183,9 @@ Das Sicherstellen der Integrität der Datenbanktabellen erfolgt durch die nachfo
 \item Das Löschen eines Tupels aus den Tabellen \texttt{users}, \texttt{courses} oder \texttt{course\_units} führt zum kaskadierenden Löschen der Datensätze, die über foreign key constraints verbundenen sind. Durch Verwendung des SQL-Befehls ON DELETE CASCADE bei den Attributen \texttt{users(id)}, \texttt{courses(id)} und \texttt{course\_units(id)}, wirkt sich dies wie folgt aus:
 
 \begin{itemize}
-\item Wird ein Tupel aus der Tabelle \texttt{users} gelöscht, werden alle Tupel aus \texttt{courses}, \texttt{addresses}, \texttt{course\_instructors}, \texttt{course\_participants}, \texttt{course\_unit\_participants} und \texttt{monetary\_statistics} entfernt, bei denen das referenzierte Attribut der \texttt{id} des gelöschten Tupels aus der Tabelle \texttt{users} gleicht.
+\item Wird ein Tupel aus der Tabelle \texttt{users} gelöscht, werden alle Tupel aus \texttt{courses}, \texttt{addresses}, \texttt{course\_instructors}, \texttt{course\_participants} und\\ \texttt{course\_unit\_participants} entfernt, bei denen das referenzierte Attribut der \texttt{id} des gelöschten Tupels aus der Tabelle \texttt{users} gleicht.
 
-\item Wird ein Tupel aus der Tabelle \texttt{courses} gelöscht, werden alle Tupel aus \texttt{course\_units}, \texttt{cycles}, \texttt{course\_instructors}, \texttt{course\_participants} und \texttt{monetary\_statistics} entfernt, bei denen das referenzierte Attribut der \texttt{id} des gelöschten Tupels aus der Tabelle \texttt{courses} gleicht.
+\item Wird ein Tupel aus der Tabelle \texttt{courses} gelöscht, werden alle Tupel aus \texttt{course\_units}, \texttt{cycles}, \texttt{course\_instructors} und \texttt{course\_participants} entfernt, bei denen das referenzierte Attribut der \texttt{id} des gelöschten Tupels aus der Tabelle \texttt{courses} gleicht.
 
 \item Wird ein Tupel aus der Tabelle \texttt{course\_units} gelöscht, werden alle Tupel aus \texttt{addresses} und \texttt{course\_unit\_participants} entfernt, bei denen das referenzierte Attribut der \texttt{id} des gelöschten Tupels aus der Tabelle \texttt{course\_units} gleicht.
 \end{itemize}
