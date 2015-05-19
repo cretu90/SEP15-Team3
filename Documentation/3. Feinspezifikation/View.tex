@@ -303,7 +303,7 @@
 						\endfirsthead
 						\hline
 						\endlastfoot
-						\textit{Anrede (Registrierg)} & validateRequired & -  \\ \hline
+						\textit{Anrede (Registrierg)} & - & -  \\ \hline
 						\textit{Vorname (Registrierg)} & validateLength (min = 0, max = 100) & - \\ \hline
 						\textit{Name (Registrierg)} & validateLength (min = 0, max =100) & -  \\ \hline
 						\textit{Benutzername (Registrierg)} & UserNameValidator, validateLength (min = 5 , max =100), validateRegex (pattern =""), validateRequired  & - \\ \hline
@@ -634,7 +634,7 @@
 					 		\hline
 					 		\endlastfoot
 					 		
-					 		\textit{Details} & loadCourseDetailsPageOfSelectedCourse() &  courseId (Id des ausgewählten Kurses wird übergeben) \\ \hline
+					 		\textit{Details} & loadCourseDetailsPageOf SelectedCourse() &  courseId (Id des ausgewählten Kurses wird übergeben) \\ \hline
 					 	\end{longtable}
 					 \end{center}
 				
@@ -665,7 +665,6 @@
 		KH\\
 		\begin{itemize}
 			\item \textbf{Beschreibung:} Auf dieser Seite werden die persönlichen Daten und der Kontostand des Benutzers angezeigt. Erstere kann er hier ändern. Der Kursleiter kann hier den Benutzer aktivieren, und der Administrator den Benutzer löschen.
-			\item \textbf{Links:} -
 			\item \textbf{Buttons:}
 				\begin{itemize}
 					\item Bearbeiten: Nach Klicken auf diesen Button können die persönlichen Daten geändert werden. Der Button trägt nun die Aufschrift 'Speichern' und ist mit dessen dazugehöriger Methode hinterlegt. \\ Zugehörige Methode: editUserData()
@@ -710,26 +709,26 @@
 				\end{itemize}
 				
 				\begin{center}
-					\begin{longtable}{|p{3cm} |p{5cm} | p{4cm}|p{3cm}|}
+					\begin{longtable}{|p{3cm} |p{6cm} | p{4cm}|p{3cm}|}
 						
 						\hline \multicolumn{1}{|c|}{\textbf{Eingabefeld}} & \multicolumn{1}{|c|}{\textbf{Backing-Bean-Attribute}} & \multicolumn{1}{|c|}{\textbf{Typ}}  &  \multicolumn{1}{|c|}{\textbf{ID}} \\ \hline
 						\endfirsthead
 						\hline
 						\endlastfoot
-						\textit{Anrede} & UserProfil.User.salutation & selectOneMenu & anrede \\ \hline
-						\textit{Vorname} & UserProfil.User.fistname & inputText & vorname \\ \hline
-						\textit{Name} & UserProfil.User.lastname & inputText & name \\ \hline
-						\textit{Geburtstag } & UserProfil.User.dateOfBirth & inputText & geburtstag \\ \hline
-						\textit{Straße/ Hausnummer} & UserProfil.Address.street, UserProfil.Address.houseNumber  & inputText & straße\\ \hline
-						\textit{Stadt} & UserProfil.Address.city & inputText & stadt \\ \hline
-						\textit{Postleitzahl} & UserProfil.Address.zipCode & inputText & postleitzahl \\ \hline
-						\textit{Land} & UserProfil.Address.country & inputText & land \\ \hline
-						\textit{E-Mail-Adresse} & UserProfil.User.email & inputText & mail\\ \hline
-						\textit{Benutzername} & UserProfil.User.username & inputText & benutzername \\ \hline
-						\textit{Passwort} & UserProfil.User.password  & inputSecret & passwort \\ \hline
-						\textit{Passwort bestätigen} & UserProfil.User.password & inputSecret & bestätigungs- passwort \\ \hline
-						\textit{Benutzerrolle} & UserProfil.User.userRole & inputText & rolle \\ \hline
-						\textit{Profilbild Pfad} & UserProfil.User.profilImage & inputText & bildpfad \\ \hline
+						\textit{Anrede} & UserProfilBean.User.salutation & selectOneMenu & anrede \\ \hline
+						\textit{Vorname} & UserProfilBean.User.fistname & inputText & vorname \\ \hline
+						\textit{Name} & UserProfilBean.User.lastname & inputText & name \\ \hline
+						\textit{Geburtstag } & UserProfilBean.User.dateOfBirth & inputText & geburtstag \\ \hline
+						\textit{Straße/ Hausnummer} & UserProfilBean.Address.street, UserProfil.Address.houseNumber  & inputText & straße\\ \hline
+						\textit{Stadt} & UserProfilBean.Address.city & inputText & stadt \\ \hline
+						\textit{Postleitzahl} & UserProfilBean.Address.zipCode & inputText & postleitzahl \\ \hline
+						\textit{Land} & UserProfilBean.Address.country & inputText & land \\ \hline
+						\textit{E-Mail-Adresse} & UserProfilBean.User.email & inputText & mail\\ \hline
+						\textit{Benutzername} & UserProfilBean.User.username & inputText & benutzername \\ \hline
+						\textit{Passwort} & UserProfilBean.User.password  & inputSecret & passwort \\ \hline
+						\textit{Passwort bestätigen} & UserProfilBean.User.password & inputSecret & bestätigungs- passwort \\ \hline
+						\textit{Benutzerrolle} & UserProfilBean.User.userRole & inputText & rolle \\ \hline
+						\textit{Profilbild Pfad} & UserProfilBean.User.profilImage & inputFile & bildpfad \\ \hline
 					\end{longtable}
 				\end{center}
 				
@@ -740,17 +739,17 @@
 						\endfirsthead
 						\hline
 						\endlastfoot
-						\textit{Anrede} & validateRequired & - \\ \hline
-						\textit{Vorname} & validateLength (minimum ="", maximum =""), validateRequired & - \\ \hline
-						\textit{Name} & validateLength (minimum ="", maximum =""), validateRequired & -  \\ \hline
-						\textit{Geburtstag} & DateOfBirthValidator, validateRequired & convertDateTime  \\ \hline
-						\textit{Straße/ Hausnummer} & validateLength (minimum ="", maximum =""), validateRequired & - \\ \hline
-						\textit{Stadt} & validateLength (minimum ="", maximum =""), validateRequired & -  \\ \hline
-						\textit{Postleitzahl} & validateLength (minimum ="", maximum =""), validateRequired & - \\ \hline
-						\textit{Land} & validateLength (minimum ="", maximum =""), validateRequired & -  \\ \hline
-						\textit{E-Mail-Adresse} & EMailValidator, validateLength (minimum ="", maximum =""), validateRequired & - \\ \hline
-						\textit{Benutzername} & UserNameValidator, validateLength (minimum ="", maximum =""), validateRegex (pattern =""), validateRequired  & - \\ \hline
-						\textit{Passwort} & PasswordValidator, validateRequired & -  \\ \hline
+						\textit{Anrede} & - & - \\ \hline
+						\textit{Vorname} & validateLength (min =0, max = 100) & - \\ \hline
+						\textit{Name} & validateLength (min = 0, max = 100) & -  \\ \hline
+						\textit{Geburtstag} & DateOfBirthValidator & convertDateTime  \\ \hline
+						\textit{Straße/ Hausnummer} & validateLength (min = 0, max = 100) & - \\ \hline
+						\textit{Stadt} & validateLength (min = 1, max = 100), validateRequired & -  \\ \hline
+						\textit{Postleitzahl} & validateLength (min = 1, max = ???), validateRequired & - \\ \hline
+						\textit{Land} & validateLength (min = 1, max = 100), validateRequired & -  \\ \hline
+						\textit{E-Mail-Adresse} & EMailValidator, validateLength (min = 1, max = 390), validateRequired & - \\ \hline
+						\textit{Benutzername} & UserNameValidator, validateLength (min = 5, max = 100), validateRegex (pattern =""), validateRequired  & - \\ \hline
+						\textit{Passwort} & PasswordValidator (mindestens 8 Zeichen, mind. 1 Sonderzeichen, mind. 1 Ziffer, Groß- und Kleinbuchstaben, keine Umlaute, kein 'ß'), validateRequired & -  \\ \hline
 						\textit{Passwort bestätigen} & ConfirmPasswordValidator, validateRequired & - \\ \hline
 						\textit{Benutzerrolle} & validateRequired & - \\ \hline
 						\textit{Profilbild Pfad} & UserImageValidator & - \\ \hline
@@ -806,8 +805,8 @@
 				
 			\item \textbf{BackingBean:}
 				\begin{itemize}
-					\item UserProfile.java
-					\item UserManagement.java				
+					\item UserProfileBean.java
+					\item UserManagementBean.java				
 				\end{itemize}
 		\end{itemize}
 		
@@ -858,9 +857,6 @@
 		KH\\
 		\begin{itemize}
 			\item \textbf{Beschreibung:} Auf dieser Seite werden die Daten des Kursleiters, mit Ausnahme von sensiblen Daten wie Passwort oder Kontostand, und die von ihm geleiteten Kurse angezeigt.
-			\item \textbf{Links:} -
-			\item \textbf{Buttons:} -
-			\item \textbf{Inputs:} -
 			\item \textbf{Outputs:} 
 			\begin{itemize}
 				\item Tabelle Auflistung Kursleiterdaten: Hier werden die Daten des Kursleiters und die von ihm geleiteten Kurse angezeigt.
@@ -879,7 +875,7 @@
 			
 			\item \textbf{BackingBean:}
 			\begin{itemize}
-				\item UserProfile.java			
+				\item UserProfileBean.java			
 			\end{itemize}
 		\end{itemize}
 		
@@ -887,7 +883,6 @@
 		KH\\
 		\begin{itemize}
 			\item \textbf{Beschreibung:} Hier kann der registrierte Benutzer die Teilnehmer eines Kurses mit Benutzername und Profilbild ansehen. Dem Kursleiter werden zusätzlich die E-Mail-Adresse und die Information über den Erhalt von Kursnews angezeigt. Außerdem kann er einen Teilnehmer aus dem Kurs entfernen.
-			\item \textbf{Links:} -
 			\item \textbf{Buttons:}
 			\begin{itemize}
 				\item Löschen: Durch Drücken dieses Buttons kann der Kursleiter den entsprechenden Benutzer aus dem Kurs entfernen. \\ Zugehörige Methode: deleteUserFromCourse()
@@ -951,7 +946,7 @@
 			
 			\item \textbf{BackingBean:}
 			\begin{itemize}
-				\item ListParticipants.java
+				\item ListParticipantsBean.java
 			\end{itemize}
 		\end{itemize}
 		
@@ -1018,23 +1013,24 @@
 						\endfirsthead
 						\hline
 						\endlastfoot
-						\textit{Termin} & CourseUnitManagement. CourseUnit.date & inputText & termin \\ \hline
-						\textit{Startzeit} & CourseUnitManagement. CourseUnit.starttime & inputText & startzeit \\ \hline
-						\textit{Endzeit} & CourseUnitManagement. CourseUnit.endtime & inputText & endzeit \\ \hline
-						\textit{Straße/ Hausnummer} & CourseUnitManagement. Address.street, CourseUnitManagement. Address.houseNumber & inputText & straße\\ \hline
-						\textit{Postleitzahl} & CourseUnitManagement. Address.zipCode & inputText & postleitzahl \\ \hline
-						\textit{Stadt} & CourseUnitManagement. Address.city & inputText & stadt \\ \hline
-						\textit{Ort} & CourseUnitManagement. CourseUnit.location & inputText & ort \\ \hline
-						\textit{Beschreibung} & CourseUnitManagement. CourseUnit.description & inputText & beschreibung\\ \hline
-						\textit{Preis} & CourseUnitManagement. CourseUnit.price & inputText & preis \\ \hline
-						\textit{Kursleiter} & CourseUnitManagement. CourseUnit.courseAdmin & inputText & kursleiter \\ \hline
-						\textit{Mindestteil- nehmerzahl} & CourseUnitManagement. CourseUnit.minUsers & inputText & minteilnehmer \\ \hline
-						\textit{Maximale Teilnehmerzahl} & CourseUnitManagement. CourseUnit.maxUsers & inputText & maxteilnehmer \\ \hline
+						\textit{Titel} & CourseUnitManagementBean. CourseUnit.title & inputText & termin \\ \hline
+						\textit{Termin} & CourseUnitManagementBean. CourseUnit.date & inputText & termin \\ \hline
+						\textit{Startzeit} & CourseUnitManagementBean. CourseUnit.starttime & inputText & startzeit \\ \hline
+						\textit{Endzeit} & CourseUnitManagementBean. CourseUnit.endtime & inputText & endzeit \\ \hline
+						\textit{Straße/ Hausnummer} & CourseUnitManagementBean. Address.street, CourseUnitManagement. Address.houseNumber & inputText & straße\\ \hline
+						\textit{Postleitzahl} & CourseUnitManagementBean. Address.zipCode & inputText & postleitzahl \\ \hline
+						\textit{Stadt} & CourseUnitManagementBean. Address.city & inputText & stadt \\ \hline
+						\textit{Ort} & CourseUnitManagementBean. CourseUnit.location & inputText & ort \\ \hline
+						\textit{Beschreibung} & CourseUnitManagementBean. CourseUnit.description & inputText & beschreibung\\ \hline
+						\textit{Preis} & CourseUnitManagementBean. CourseUnit.price & inputText & preis \\ \hline
+						\textit{Kursleiter} & CourseUnitManagementBean. CourseUnit.courseAdmin & inputText & kursleiter \\ \hline
+						\textit{Mindestteil- nehmerzahl} & CourseUnitManagementBean. CourseUnit.minUsers & inputText & minteilnehmer \\ \hline
+						\textit{Maximale Teilnehmerzahl} & CourseUnitManagementBean. CourseUnit.maxUsers & inputText & maxteilnehmer \\ \hline
 						\textit{Teilnehmer markieren} & - & selectBooleanCheckbox & markteilnehmer \\ \hline
 						\textit{Benutzer-ID} & - & inputText & idnutzer \\ \hline
 						\textit{Name Teilnehmer} & - & inputText & nameteilnehmer \\ \hline
 						\textit{Vorname Teilnehmer} & - & inputText & vornameteilnehmer \\ \hline
-						\textit{Checkbox regelmäßig} & CourseUnitManagement. CourseUnit.cycle & selectBooleanCheckbox & regelmäßig \\ \hline
+						\textit{Checkbox regelmäßig} & CourseUnitManagementBean. CourseUnit.cycle & selectBooleanCheckbox & regelmäßig \\ \hline
 						\textit{Einheitenanzahl} & - & inputText & einheiten \\ \hline
 					\end{longtable}
 				\end{center}
@@ -1046,22 +1042,23 @@
 						\endfirsthead
 						\hline
 						\endlastfoot
+						\textit{Titel} & validateLength (min = 0, max = 150) & - \\ \hline 
 						\textit{Termin} & DateValidator , validateRequired & convertDateTime \\ \hline
-						\textit{Startzeit} & ??? , validateRequired & convertDateTime \\ \hline
-						\textit{Endzeit} & ??? , validateRequired & convertDateTime \\ \hline
-						\textit{Straße/ Hausnummer} & validateLength (minimum ="", maximum =""), validateRequired & - \\ \hline
-						\textit{Postleitzahl} & validateLength (minimum ="", maximum =""), validateRequired & - \\ \hline
-						\textit{Stadt} & validateLength (minimum ="", maximum =""), validateRequired & -  \\ \hline
-						\textit{Ort} & validateLength (minimum ="", maximum =""), validateRequired & -  \\ \hline
-						\textit{Beschreibung} & validateLength (minimum ="", maximum =""), validateRequired & - \\ \hline
-						\textit{Preis} & PriceValidator, validateRequired  & convertNumber \\ \hline
-						\textit{Kursleiter} & validateLength (minimum ="", maximum =""), validateRequired & -  \\ \hline
+						\textit{Startzeit} & validateRequired & convertDateTime \\ \hline
+						\textit{Endzeit} & validateRequired & convertDateTime \\ \hline
+						\textit{Straße/ Hausnummer} & validateLength (min = 0, max = 100) & - \\ \hline
+						\textit{Postleitzahl} & validateLength (min = 1, max = ???), validateRequired & - \\ \hline
+						\textit{Stadt} & validateLength (min = 1, max = 100), validateRequired & -  \\ \hline
+						\textit{Ort} & validateLength (min = 0, max = 100) & -  \\ \hline
+						\textit{Beschreibung} & validateLength (min = 0, max = 1000) & - \\ \hline
+						\textit{Preis} & PriceValidator  & convertNumber \\ \hline
+						\textit{Kursleiter} & validateLength (min = ???, max = ???), validateRequired & -  \\ \hline
 						\textit{Mindesteil- nehmerzahl} & ???, validateRequired & convertNumber \\ \hline
 						\textit{Maximale Teilnehmerzahl} & ???, validateRequired & convertNumber \\ \hline
 						\textit{Teilnehmer markieren} & - & - \\ \hline
-						\textit{Benutzer-ID} & validateLength (minimum ="", maximum =""), validateRequired & convertNumber \\ \hline
-						\textit{Name (Teilnehmer)} & validateLength (minimum ="", maximum =""), validateRequired & - \\ \hline
-						\textit{Vorname (Teilnehmer)} & validateLength (minimum ="", maximum =""), validateRequired & - \\ \hline
+						\textit{Benutzer-ID} & validateLength (min = , max = ), validateRequired & convertNumber \\ \hline
+						\textit{Name (Teilnehmer)} & validateLength (min = , max = ), validateRequired & - \\ \hline
+						\textit{Vorname (Teilnehmer)} & validateLength (min = , max = ), validateRequired & - \\ \hline
 						\textit{Checkbox regelmäßig} & - & - \\ \hline
 						\textit{Einheitenanzahl} & ??? & convertNumber \\ \hline
 					\end{longtable}
@@ -1069,6 +1066,7 @@
 				
 			\item \textbf{Outputs:}
 				\begin{itemize}
+					\item Titel (Fehlermeldung): Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
 					\item Termin (Fehlermeldung): Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
 					\item Startzeit (Fehlermeldung): Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
 					\item Endzeit (Fehlermeldung): Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
@@ -1117,7 +1115,7 @@
 				
 			\item \textbf{BackingBean:}
 				\begin{itemize}
-					\item CourseUnitManagement.java
+					\item CourseUnitManagementBean
 				\end{itemize}
 		\end{itemize}
 		
