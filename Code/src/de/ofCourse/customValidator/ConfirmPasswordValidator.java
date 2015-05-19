@@ -9,7 +9,7 @@ import javax.faces.validator.Validator;
 import javax.faces.validator.ValidatorException;
 
 /**
- * Checks whether the two inserted passwords are equal.
+ * Checks whether the two inserted passwords are equal or not.
  * 
  * @author Katharina Hölzl
  *

@@ -1052,13 +1052,13 @@
 						\textit{Ort} & validateLength (min = 0, max = 100) & -  \\ \hline
 						\textit{Beschreibung} & validateLength (min = 0, max = 1000) & - \\ \hline
 						\textit{Preis} & PriceValidator  & convertNumber \\ \hline
-						\textit{Kursleiter} & validateLength (min = ???, max = ???), validateRequired & -  \\ \hline
-						\textit{Mindesteil- nehmerzahl} & ???, validateRequired & convertNumber \\ \hline
-						\textit{Maximale Teilnehmerzahl} & ???, validateRequired & convertNumber \\ \hline
+						\textit{Kursleiter} & validateRequired & -  \\ \hline
+						\textit{Mindesteil- nehmerzahl} & validateRequired & convertNumber \\ \hline
+						\textit{Maximale Teilnehmerzahl} & validateRequired & convertNumber \\ \hline
 						\textit{Teilnehmer markieren} & - & - \\ \hline
 						\textit{Benutzer-ID} & validateLength (min = , max = ), validateRequired & convertNumber \\ \hline
-						\textit{Name (Teilnehmer)} & validateLength (min = , max = ), validateRequired & - \\ \hline
-						\textit{Vorname (Teilnehmer)} & validateLength (min = , max = ), validateRequired & - \\ \hline
+						\textit{Name (Teilnehmer)} & validateLength (min = 0, max = 100 ) & - \\ \hline
+						\textit{Vorname (Teilnehmer)} & validateLength (min = 0, max = 100) & - \\ \hline
 						\textit{Checkbox regelmäßig} & - & - \\ \hline
 						\textit{Einheitenanzahl} & ??? & convertNumber \\ \hline
 					\end{longtable}
