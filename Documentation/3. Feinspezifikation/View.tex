@@ -1,6 +1,12 @@
 \chapter{View}
 	
-		Dieses Kapitel enthält alle benötigten Facelets, welche die View der Webanwendung darstellen. Jedes Facelet wird in unterschiedliche  Bereiche aufgeteilt:
+		Dieses Kapitel enthält alle benötigten Facelets, welche die View der Webanwendung darstellen. Zur besseren Übersichtlichkeit werden folgende Abkürzungen verwendet:
+		\begin{itemize}
+			\item A: Administrator
+			\item K: Kursleiter
+			\item R: Registrierter Benutzer
+		\end{itemize}		
+		Jedes Facelet wird in unterschiedliche Bereiche aufgeteilt:
 		\begin{itemize}
 			\item \textbf{Beschreibung} Kurzbeschreibung der Funktion/-en des jeweiligen Facelets.
 			\item \textbf{Links} enthält alle Links des Facelets, die zu einem anderen Facelet führen.
@@ -9,7 +15,7 @@
 			\item \textbf{Outputs} enthält eine Liste aller Ausgabefelder auf der Seite.
 			\item \textbf{Backing Beans} enthält eine Liste aller, mit dem jeweiligen Facelet verbundenen, Beans.
 		\end{itemize}
-		Für jedes Facelet werden folgende Tag-Libraries verwendet:
+		Für jedes Facelet werden außerdem folgende Tag-Libraries verwendet:
 			\begin{center}
 				\begin{longtable}{|p{6cm} | p{8cm}| p{2cm}|}
 					
@@ -58,8 +64,8 @@
 					\endlastfoot
 
 					\textit{Suche} & -\\ \hline
-					\textit{Sprache Deutsch} & language = ger\\ \hline
-					\textit{Sprache Englisch} & language = eng\\ \hline
+					\textit{Sprache Deutsch} & language\\ \hline
+					\textit{Sprache Englisch} & language\\ \hline
 					\textit{Profil (B)} & -\\ \hline
 					\textit{Meine Kurse (B)} & -\\ \hline
 					\textit{Terminplaner (B)} & -\\ \hline
@@ -76,13 +82,13 @@
 				\begin{center}
 					\begin{longtable}{|p{4cm} |p{4cm} | p{4cm}|}
 					
-						\hline \multicolumn{1}{|c|}{\textbf{Button}} & \multicolumn{1}{|c|}{\textbf{Methode}} & \multicolumn{1}{|c|}{\textbf{\"{U}bergabeparameter}} \\ \hline
+						\hline \multicolumn{1}{|c|}{\textbf{Button}} & \multicolumn{1}{|c|}{\textbf{Methode}} \\ \hline
 						\endfirsthead
 						\hline
 						\endlastfoot
 					
-							\textit{Logout (B)} & logout() & - \\ \hline
-							\textit{Anmelden} & login() & - \\ \hline
+							\textit{Logout (B)} & logout()\\ \hline
+							\textit{Anmelden} & login()\\ \hline
 					\end{longtable}
 				\end{center}
 			\item \textbf{Inputs:} -
@@ -120,14 +126,13 @@
 			\begin{center}
 				\begin{longtable}{|p{4cm} |p{4cm} | p{4cm}|}
 					
-					\hline \multicolumn{1}{|c|}{\textbf{Button}} & \multicolumn{1}{|c|}{\textbf{Methode}} & \multicolumn{1}{|c|}{\textbf{\"{U}bergabeparameter}} \\ \hline
+					\hline \multicolumn{1}{|c|}{\textbf{Button}} & \multicolumn{1}{|c|}{\textbf{Methode}}\\ \hline
 					\endfirsthead
 					\hline
 					\endlastfoot
-
-						\textit{AGB} & loadAGBPage() & - \\ \hline
-						\textit{Impressum} & loadImprintPage() & - \\ \hline
-						\textit{Hilfe} & loadHelpPage() & - \\ \hline
+						\textit{AGB} & loadAGBPage()\\ \hline
+						\textit{Impressum} & loadImprintPage()\\ \hline
+						\textit{Hilfe} & loadHelpPage()\\ \hline
 				\end{longtable}
 			\end{center}
 			\item \textbf{Inputs:} -
@@ -152,12 +157,12 @@
 			\begin{center}
 				\begin{longtable}{|p{3cm} |p{5cm} | p{4cm}|p{3cm}|}
 						
-					\hline \multicolumn{1}{|c|}{\textbf{Eingabefeld}} & \multicolumn{1}{|c|}{\textbf{Backing-Bean-Attribute}} & \multicolumn{1}{|c|}{\textbf{Typ}}  &  \multicolumn{1}{|c|}{\textbf{ID}} \\ \hline
+					\hline \multicolumn{1}{|c|}{\textbf{Eingabefeld}} & \multicolumn{1}{|c|}{\textbf{Typ}}  &  \multicolumn{1}{|c|}{\textbf{ID}} \\ \hline
 					\endfirsthead
 					\hline
 					\endlastfoot
-					\textit{Navigation} & - & xhtml & header \\ \hline
-					\textit{Footer} & - & xhtml & footer \\ \hline
+					\textit{Navigation} & xhtml & header \\ \hline
+					\textit{Footer} & xhtml & footer \\ \hline
 				\end{longtable}
 			\end{center}
 			\item \textbf{Outputs:} -
@@ -201,17 +206,6 @@
 			\begin{itemize}
 				\item Gesamtes Kursangebot, \hyperlink{search}{search.xhtml}
 			\end{itemize}
-				\begin{center}
-					\begin{longtable}{|p{4cm} |p{6cm} |}
-						
-						\hline \multicolumn{1}{|c|}{\textbf{Link}} & \multicolumn{1}{|c|}{\textbf{\"{U}bergabeparameter}} \\ \hline
-						\endfirsthead
-						\hline
-						\endlastfoot
-						
-						\textit{Gesamtes Kursangebot} & -\\ \hline
-					\end{longtable}
-				\end{center}
 			\item \textbf{Buttons:} -
 			\item \textbf{Inputs:} -
 			\item \textbf{Outputs:}
@@ -445,13 +439,13 @@
 			\begin{center}
 				\begin{longtable}{|p{4cm} |p{6cm} | p{4cm}|}
 						
-					\hline \multicolumn{1}{|c|}{\textbf{Button}} & \multicolumn{1}{|c|}{\textbf{Methode}} & \multicolumn{1}{|c|}{\textbf{\"{U}bergabeparameter}} \\ \hline
+					\hline \multicolumn{1}{|c|}{\textbf{Button}} & \multicolumn{1}{|c|}{\textbf{Methode}} & \multicolumn{1}{|c|}{\textbf{\"{U}bergabeparameter}}\\ \hline
 					\endfirsthead
 					\hline
 					\endlastfoot
 			
-					\textit{Anzeigen} & displayCoursesInSpecificPeriod() & - \\ \hline
-					\textit{Suchen} &  search() & - \\ \hline
+					\textit{Anzeigen} & displayCoursesInSpecificPeriod() & timespan\\ \hline
+					\textit{Suchen} &  search() & searched\\ \hline
 				\end{longtable}
 			\end{center}
 			\item \textbf{Inputs:}
@@ -462,12 +456,12 @@
 				\begin{center}
 					\begin{longtable}{|p{3cm} |p{4cm} | p{4cm}|p{3cm} |p{2cm}|}
 						
-						\hline \multicolumn{1}{|c|}{\textbf{Feld}} & \multicolumn{1}{|c|}{\textbf{Action}} & \multicolumn{1}{|c|}{\textbf{Validatoren}}  &  \multicolumn{1}{|c|}{\textbf{Konverter}} &  \multicolumn{1}{|c|}{\textbf{ID}} \\ \hline
+						\hline \multicolumn{1}{|c|}{\textbf{Feld}} & \multicolumn{1}{|c|}{\textbf{Action}} & \multicolumn{1}{|c|}{\textbf{Validatoren}}  &  \multicolumn{1}{|c|}{\textbf{ID}} \\ \hline
 						\endfirsthead
 						\hline
 						\endlastfoot
-						\textit{Angebots-zeitraum} & setDisplayPeriod() & validateRequired & - & time\\ \hline
-						\textit{Suchobjekt} & setSearchParam() & validateRequired & - & searchparam\\ \hline
+						\textit{Angebots-zeitraum} & setDisplayPeriod() & validateRequired & time\\ \hline
+						\textit{Suchobjekt} & setSearchParam() & validateRequired & searchparam\\ \hline
 					\end{longtable}
 				\end{center}
 			\item \textbf{Outputs:}
