@@ -9,17 +9,17 @@ import javax.faces.validator.Validator;
 import javax.faces.validator.ValidatorException;
 
 /**
- * Checks whether the entered user name already exists in the system.
+ * Checks whether the entered name of the course instructor exists in the system.
  * 
  * @author Katharina Hölzl
  *
  */
-public class UserNameValidator implements Validator {
+public class CourseInstructorValidator implements Validator {
 
     /**
-     * This validation method gets called when you want to register or change 
-     * your user name when you’re already registered. The method checks if the 
-     * entered user name already exists in the system.
+     * This validation method gets called when you want to add a course 
+     * instructor to a course unit or to a course. The method checks if the 
+     * entered name of the course instructor exists in the system.
      */
     @Override
     public void validate(FacesContext arg0, UIComponent arg1, Object arg2)
