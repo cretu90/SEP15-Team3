@@ -9,17 +9,18 @@ import javax.faces.validator.Validator;
 import javax.faces.validator.ValidatorException;
 
 /**
- * This class checks wether the inserted date is in the futur or more than 150 years in the past.
+ * Checks wether the inserted date is in the futur or more than 150 years in the past.
  * 
- * @author Kathi
+ * @author Katharina Hölzl
  *
  */
 public class DateOfBirthValidator implements Validator {
 
    
-    /* (non-Javadoc)
-     * @see javax.faces.validator.Validator#validate(javax.faces.context.FacesContext, 
-     * javax.faces.component.UIComponent, java.lang.Object)
+    /**
+     * This validation method gets called when you want to register or change 
+     * your date of birth when you’re already registered. This method checks if the 
+     * entered date is in the futur or more than 150 years in the past.
      */
     @Override
     public void validate(FacesContext arg0, UIComponent arg1, Object arg2)

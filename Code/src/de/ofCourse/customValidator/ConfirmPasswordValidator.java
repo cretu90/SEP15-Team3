@@ -22,6 +22,7 @@ public class ConfirmPasswordValidator implements Validator {
      * your password twice due to security issues. This method checks if the two 
      * passwords are equal.
      */
+    
     @Override
     public void validate(FacesContext arg0, UIComponent arg1, Object arg2)
 	    throws ValidatorException {

@@ -9,15 +9,24 @@ import javax.faces.validator.Validator;
 import javax.faces.validator.ValidatorException;
 
 /**
- * This class checks wether the image file has the right file extension, in this case .jpg. Furthermore it checks, wether the
- * conditions of the maximum file and permitted resolution of the image (logo or image of a course) are kept.
+ * Checks whether the image file has the right file extension and whether some 
+ * other conditions like maximum file and permitted resolution of the image 
+ * (logo or image of a course) are kept.
  * 
- * @author Kathi
+ * @author Katharina Hölzl
  *
  */
 public class ImageValidator implements Validator {
 
   
+    /**
+     * This validation method gets called when you want to change 
+     * the logo or the image of a course. The method checks if the 
+     * image file has the right file extension, in this case .jpg. Furthermore 
+     * it checks, if the conditions of the maximum file and permitted 
+     * resolution of the image are kept.
+     *  
+     */
     @Override
     public void validate(FacesContext arg0, UIComponent arg1, Object arg2)
 	    throws ValidatorException {

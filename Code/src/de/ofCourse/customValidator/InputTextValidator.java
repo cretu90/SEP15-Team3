@@ -9,14 +9,18 @@ import javax.faces.validator.Validator;
 import javax.faces.validator.ValidatorException;
 
 /**
- * This class checks wether the inserted text has a correct character encoding.
+ * Checks whether the inserted text has a correct character encoding.
  * 
- * @author Kathi
+ * @author Katharina Hölzl
  *
  */
 public class InputTextValidator implements Validator {
 
     
+    /**
+     * This validation method gets called when make a request and it checks, 
+     * if your entered text hast a correct character encoding.
+     */
     @Override
     public void validate(FacesContext arg0, UIComponent arg1, Object arg2)
 	    throws ValidatorException {

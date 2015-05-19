@@ -9,18 +9,20 @@ import javax.faces.validator.Validator;
 import javax.faces.validator.ValidatorException;
 
 /**
- * This class checks wether the input has a valid mail format (e.g. one and only one @ sign) 
- * and wether it is already existing in da database.
+ * Checks whether the inserted mail is already existing in the database and whether 
+ * the input has an valid mail format.
  * 
- * @author Kathi 
+ * @author Katharina Hölzl
  *
  */
 public class EMailValidator implements Validator {
 
   
-    /* (non-Javadoc)
-     * @see javax.faces.validator.Validator#validate(javax.faces.context.FacesContext, 
-     * javax.faces.component.UIComponent, java.lang.Object)
+    /**
+     * This validation method gets called when you want to register or change 
+     * your mail address when you’re already registered. The method checks if the 
+     * entered mail has an valid format (e.g. one and only one @ sign) 
+     * and whether it is already existing in the database.
      */
     @Override
     public void validate(FacesContext arg0, UIComponent arg1, Object arg2)

@@ -9,14 +9,18 @@ import javax.faces.validator.Validator;
 import javax.faces.validator.ValidatorException;
 
 /**
- * This class checks wether the inserted price has a valid format (not negativ, with 2 decimal places).
+ * Checks whether the inserted price has a valid format.
  * 
- * @author Kathi
+ * @author Katharina Hölzl
  *
  */
 public class PriceValidator implements Validator {
 
-    
+    /**
+     * This validation method gets called when you want to set the price of a 
+     * course unit. The method checks if the entered price has a valid format,
+     * for example it has to be not negative and it needs 2 decimal places.
+     */
     @Override
     public void validate(FacesContext arg0, UIComponent arg1, Object arg2)
 	    throws ValidatorException {

@@ -9,14 +9,18 @@ import javax.faces.validator.Validator;
 import javax.faces.validator.ValidatorException;
 
 /**
- * This class checks wether the entered username already exists in the system.
+ * Checks whether the entered user name already exists in the system.
  * 
  * @author Kathi
  *
  */
 public class UserNameValidator implements Validator {
 
-  
+    /**
+     * This validation method gets called when you want to register or change 
+     * your user name when you’re already registered. The method checks if the 
+     * entered user name already exists in the system.
+     */
     @Override
     public void validate(FacesContext arg0, UIComponent arg1, Object arg2)
 	    throws ValidatorException {
