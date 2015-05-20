@@ -11,6 +11,7 @@ import javax.faces.bean.ViewScoped;
 
 import de.ofCourse.model.PaginationData;
 import de.ofCourse.model.User;
+import de.ofCourse.system.Transaction;
 
 /**
  * Displays the participants that attend a certain course and offers the course
@@ -29,6 +30,11 @@ import de.ofCourse.model.User;
 @ManagedBean
 @ViewScoped
 public class ListParticipentsBean implements Pagination {
+    
+    /**
+     * Stores the transaction that is used for database interaction.
+     */
+    private Transaction transaction;
 
     /**
      * Stores the the list of participants that is displayed on the page.
@@ -161,6 +167,8 @@ public class ListParticipentsBean implements Pagination {
      */
     public void setPagination(PaginationData pagination) {
     }
+    
+   
 
     /**
      * Returns the ManagedProperty <code>SessionUser</code>.

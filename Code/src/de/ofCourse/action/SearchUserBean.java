@@ -32,9 +32,9 @@ import de.ofCourse.system.Transaction;
 public class SearchUserBean implements Pagination {
     
     /**
-     * 
+     * Stores the transaction that is used for database interaction.
      */
-    private Transaction trans;
+    private Transaction transaction;
 
     /**
      * Stores the the search result that is displayed on the page. In this case

@@ -32,11 +32,12 @@ import de.ofCourse.system.Transaction;
 @ManagedBean
 @ViewScoped
 public class AccountManagmentBean implements Pagination {
-    
+
     /**
-     * 
+     * Stores the transaction that is used for database interaction.
      */
-    private Transaction trans;
+    private Transaction transaction;
+
 
     /**
      * The users that are selected by the user and shall be activated.
@@ -76,7 +77,6 @@ public class AccountManagmentBean implements Pagination {
     public void activateAccounts() {
     }
 
-
     /**
      * Returns the value of the attribute <code>usersToActivate</code>.
      * 
@@ -114,7 +114,7 @@ public class AccountManagmentBean implements Pagination {
     }
 
     /**
-     * {@inheritDoc}}
+     * {@inheritDoc}
      */
     @Override
     public int getActualPageNumber() {
@@ -122,22 +122,22 @@ public class AccountManagmentBean implements Pagination {
     }
 
     /**
-     * {@inheritDoc}}
+     * {@inheritDoc}
      */
     @Override
     public void goToSpecificPage() {
     }
 
     /**
-     * {@inheritDoc}}
+     * {@inheritDoc}
      */
     @Override
     public void sortBySpecificColumn(String columnname) {
 	// TODO Auto-generated method stub
-	
-    }
 
-    
+    }
+   
+
     /**
      * Returns the value of the attribute <code>pagination</code>.
      * 
@@ -174,7 +174,5 @@ public class AccountManagmentBean implements Pagination {
      */
     public void setSessionUser(SessionUserBean userSession) {
     }
-
-   
 
 }

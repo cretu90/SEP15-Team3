@@ -34,9 +34,9 @@ import de.ofCourse.system.Transaction;
 public class SearchCourseBean implements Pagination {
     
     /**
-     * 
+     * Stores the transaction that is used for database interaction.
      */
-    private Transaction trans;
+    private Transaction transaction;
 
     /**
      * Stores the display period that was selected by the user. With the display
@@ -246,6 +246,8 @@ public class SearchCourseBean implements Pagination {
     public void setPagination(PaginationData pagination) {
     }
 
+    
+    
     /**
      * Returns the ManagedProperty <code>SessionUser</code>.
      * 

@@ -32,9 +32,9 @@ import de.ofCourse.system.Transaction;
 public class MyCoursesBean implements Pagination {
     
     /**
-     * 
+     * Stores the transaction that is used for database interaction.
      */
-    private Transaction trans;
+    private Transaction transaction;
 
     /**
      * List of courses that the user attends
@@ -128,6 +128,9 @@ public class MyCoursesBean implements Pagination {
     public void setPagination(PaginationData pagination) {
     }
 
+    
+    
+    
     /**
      * Returns the ManagedProperty <code>SessionUser</code>.
      * 

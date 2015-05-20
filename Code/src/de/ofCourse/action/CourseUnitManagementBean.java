@@ -43,11 +43,11 @@ import de.ofCourse.system.Transaction;
 @ManagedBean
 @ViewScoped
 public class CourseUnitManagementBean implements Pagination {
-    
+
     /**
-     * 
+     * Stores the transaction that is used for database interaction.
      */
-    private Transaction trans;
+    private Transaction transaction;
 
     /**
      * Stores an user that is to be added to the course unit.
@@ -114,8 +114,9 @@ public class CourseUnitManagementBean implements Pagination {
      * Initializes the course unit page with the details of the course unit that
      * is to display.
      */
-    public void initializeCourseUnit(){}
-    
+    public void initializeCourseUnit() {
+    }
+
     /**
      * Realizes the editing of a course unit that takes place not regularly.<br>
      * Editing the course unit means that the database entry of the course unit
@@ -283,7 +284,7 @@ public class CourseUnitManagementBean implements Pagination {
     }
 
     /**
-     * {@inheritDoc}}
+     * {@inheritDoc}
      */
     @Override
     public int getActualPageNumber() {
@@ -291,22 +292,21 @@ public class CourseUnitManagementBean implements Pagination {
     }
 
     /**
-     * {@inheritDoc}}
+     * {@inheritDoc}
      */
     @Override
     public void goToSpecificPage() {
     }
 
     /**
-     * {@inheritDoc}}
+     * {@inheritDoc}
      */
     @Override
     public void sortBySpecificColumn(String columnname) {
 	// TODO Auto-generated method stub
-	
+
     }
 
-    
     /**
      * Returns the value of the attribute <code>pagination</code>.
      * 
@@ -326,6 +326,7 @@ public class CourseUnitManagementBean implements Pagination {
     public void setPagination(PaginationData pagination) {
     }
 
+   
     /**
      * Returns the ManagedProperty <code>SessionUser</code>.
      * 
@@ -343,5 +344,5 @@ public class CourseUnitManagementBean implements Pagination {
      */
     public void setSessionUser(SessionUserBean userSession) {
     }
-    
+
 }

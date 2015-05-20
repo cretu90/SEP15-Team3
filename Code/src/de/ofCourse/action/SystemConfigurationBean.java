@@ -6,6 +6,8 @@ package de.ofCourse.action;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
 
+import de.ofCourse.system.Transaction;
+
 /**
  * Provides the functionalities for the administrator relating to the system,
  * like registration management or payment settings.
@@ -25,6 +27,12 @@ import javax.faces.bean.RequestScoped;
 @ManagedBean
 @RequestScoped
 public class SystemConfigurationBean {
+    
+    
+    /**
+     * Stores the transaction that is used for database interaction.
+     */
+    private Transaction transaction;
 
     /**
      * Stores the type of account activation that was selected by the
@@ -37,11 +45,7 @@ public class SystemConfigurationBean {
      */
     private float overdraftCredit;
 
-    /**
-     * This system object stores system information and files that belong to the
-     * system
-     */
-    private System system;
+   
 
     /**
      * This ManagedProperty represents the actual session of a user. It stores
@@ -142,23 +146,7 @@ public class SystemConfigurationBean {
 	return null;
     }
 
-    /**
-     * Returns the value of the attribute <code>system</code>.
-     * 
-     * @return the system object
-     */
-    public System getSystem() {
-	return system;
-    }
-
-    /**
-     * Sets the value of the attribute <code>system</code>.
-     * 
-     * @param system
-     *            the new system object.
-     */
-    public void setSystem(System system) {
-    }
+    
 
     /**
      * Returns the ManagedProperty <code>SessionUser</code>.

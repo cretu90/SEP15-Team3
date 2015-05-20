@@ -51,7 +51,7 @@ public class CourseUnitDAO {
 	return null;
     }
 
-    public static int getNewCourseUnitID(Transaction trans,) throws InvalidDBTransferException {
+    public static int getNewCourseUnitID(Transaction trans) throws InvalidDBTransferException {
 	return 0;
     }
 }

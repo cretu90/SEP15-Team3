@@ -8,6 +8,7 @@ import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.RequestScoped;
 
 import de.ofCourse.model.User;
+import de.ofCourse.system.Transaction;
 
 /**
  * Provides the function that a user can log in the system by entering his
@@ -32,6 +33,11 @@ public class AuthenticateUserBean {
      * password, which are needed to log in.
      */
     private User loginUser;
+    
+    /**
+     * Stores the transaction that is used for database interaction.
+     */
+    private Transaction transaction;
 
     /**
      * This ManagedProperty represents the actual session of a user. It stores
@@ -74,6 +80,8 @@ public class AuthenticateUserBean {
      */
     public void setLoginUser(User userToLogIn) {
     }
+    
+    
 
     /**
      * Returns the ManagedProperty <code>SessionUser</code>.

@@ -8,6 +8,7 @@ import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.RequestScoped;
 
 import de.ofCourse.model.User;
+import de.ofCourse.system.Transaction;
 
 /**
  * Provides the functionality to register in the the system by entering the
@@ -30,6 +31,11 @@ import de.ofCourse.model.User;
 @RequestScoped
 public class RegisterUserBean {
 
+    /**
+     * Stores the transaction that is used for database interaction.
+     */
+    private Transaction transaction;
+    
     /**
      * Represents a user object. It stores the data which is entered by the user
      * who wants to register.
@@ -74,6 +80,8 @@ public class RegisterUserBean {
     public void setUserToRegistrate(User userToRegistrate) {
     }
 
+    
+    
     /**
      * Returns the ManagedProperty <code>SessionUser</code>.
      * 

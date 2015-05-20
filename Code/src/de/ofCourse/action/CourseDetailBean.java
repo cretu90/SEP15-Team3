@@ -42,9 +42,9 @@ import de.ofCourse.system.Transaction;
 public class CourseDetailBean implements Pagination {
     
     /**
-     * 
+     * Stores the transaction that is used for database interaction.
      */
-    private Transaction trans;
+    private Transaction transaction;
 
     /**
      * Stores the displayed or entered data of the course.
@@ -336,6 +336,8 @@ public class CourseDetailBean implements Pagination {
     public void sortBySpecificColumn(String columnname) {
 	// TODO Auto-generated method stub
     }
+    
+    
 
     /**
      * Returns the value of the attribute <code>paginationData</code>.

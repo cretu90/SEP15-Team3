@@ -48,4 +48,17 @@ public class PropertyManager {
     public String getProperty(String key) {
 	return null;
     }
+
+    /**
+     * Sets the value of the property to a given key.
+     * 
+     * @param key
+     *            the key to determine the property value
+     * @param value
+     *            the new value
+     */
+    public void setProperty(String key, String value) {
+
+    }
+
 }

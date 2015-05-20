@@ -128,7 +128,7 @@ public class ContactUsersBean {
     /**
      * Returns the value of the attribute <code>mailRecipients</code>.
      * 
-     * @return the reciepients of the message
+     * @return the recipients of the message
      */
     public List<String> getMailRecipients() {
 	return mailRecipients;

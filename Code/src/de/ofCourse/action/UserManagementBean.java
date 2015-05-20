@@ -26,9 +26,9 @@ import de.ofCourse.system.Transaction;
 public class UserManagementBean {
     
     /**
-     * 
+     * Stores the transaction that is used for database interaction.
      */
-    private Transaction trans;
+    private Transaction transaction;
 
     /**
      * 

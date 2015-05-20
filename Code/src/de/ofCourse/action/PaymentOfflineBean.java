@@ -9,12 +9,13 @@ import javax.faces.bean.RequestScoped;
 
 import de.ofCourse.exception.BankAccountException;
 import de.ofCourse.model.User;
+import de.ofCourse.system.Transaction;
 
 /**
  * Provides the functionality of toping up the account balance of a user by the
  * administrator.<br>
- * To do this the administrator has to enter the amount to deposit and the name and
- * id of the user on which the money is to be deposited.<br>
+ * To do this the administrator has to enter the amount to deposit and the name
+ * and id of the user on which the money is to be deposited.<br>
  * So it is possible to pass money that was paid to the administrator to the
  * users account.
  * 
@@ -27,6 +28,11 @@ import de.ofCourse.model.User;
 @ManagedBean
 @RequestScoped
 public class PaymentOfflineBean {
+
+    /**
+     * Stores the transaction that is used for database interaction.
+     */
+    private Transaction transaction;
 
     /**
      * Stores the data of the user who gets the money on his account
@@ -109,6 +115,8 @@ public class PaymentOfflineBean {
      */
     public void setAmountToDeposit(float amountToDeposit) {
     }
+
+   
 
     /**
      * Returns the ManagedProperty <code>SessionUser</code>.

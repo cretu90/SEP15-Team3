@@ -13,6 +13,7 @@ import de.ofCourse.model.Course;
 import de.ofCourse.model.PaginationData;
 import de.ofCourse.model.User;
 import de.ofCourse.model.UserStatus;
+import de.ofCourse.system.Transaction;
 
 /**
  * Displays the profile of a user and provides the functionality to edit the data
@@ -36,6 +37,11 @@ import de.ofCourse.model.UserStatus;
 @ManagedBean
 @ViewScoped
 public class UserProfilBean implements Pagination {
+    
+    /**
+     * Stores the transaction that is used for database interaction.
+     */
+    private Transaction transaction;
 
     /**
      * Stores the displayed or entered data of the user

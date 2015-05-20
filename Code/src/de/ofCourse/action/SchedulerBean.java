@@ -7,6 +7,8 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.RequestScoped;
 
+import de.ofCourse.system.Transaction;
+
 /**
  * Displays the personal scheduler of an user.<br>
  * In this scheduler the course units of a user are displayed in a graphical
@@ -25,6 +27,12 @@ import javax.faces.bean.RequestScoped;
 @RequestScoped
 public class SchedulerBean {
 
+    
+    /**
+     * Stores the transaction that is used for database interaction.
+     */
+    private Transaction transaction;
+    
     /**
      * This ManagedProperty represents the actual session of a user. It stores
      * the id, the userRole, the userStatus of the user and the selected
@@ -49,6 +57,7 @@ public class SchedulerBean {
     public void displayPreviousWeek() {
     }
 
+    
 
     /**
      * Returns the ManagedProperty <code>SessionUser</code>.

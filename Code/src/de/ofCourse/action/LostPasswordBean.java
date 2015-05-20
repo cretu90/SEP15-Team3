@@ -8,6 +8,7 @@ import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.RequestScoped;
 
 import de.ofCourse.model.User;
+import de.ofCourse.system.Transaction;
 
 /**
  * Provides the functionality to reset a lost password by entering a e-mail
@@ -36,6 +37,11 @@ public class LostPasswordBean {
      * sent
      */
     private String emailAddressToResetPassword;
+    
+    /**
+     * Stores the transaction that is used for database interaction.
+     */
+    private Transaction transaction;
 
     /** User who requests a new password */
     private User user;
@@ -97,6 +103,8 @@ public class LostPasswordBean {
     public void setUser(User user) {
     }
 
+    
+    
     /**
      * Returns the ManagedProperty <code>SessionUser</code>.
      * 

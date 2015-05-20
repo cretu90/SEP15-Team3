@@ -24,8 +24,8 @@ import de.ofCourse.system.Transaction;
  * to do so he has the possibility to add a new leader to a course by entering
  * the data of the leader.<br>
  * For deleting a leader from a course the administrator has to selected the
- * leader to delete. He has the possibility to remove more than one leader from a
- * course at once.
+ * leader to delete. He has the possibility to remove more than one leader from
+ * a course at once.
  * 
  * @author Tobias Fuchs
  *
@@ -33,11 +33,11 @@ import de.ofCourse.system.Transaction;
 @ManagedBean
 @RequestScoped
 public class CourseManagementBean {
-    
+
     /**
-     * 
+     * Stores the transaction that is used for database interaction.
      */
-    private Transaction trans;
+    private Transaction transaction;
 
     /**
      * Stores an leader that is to be added to the course.
@@ -103,7 +103,6 @@ public class CourseManagementBean {
     public void addCourseLeader() {
     }
 
-    
     /**
      * Returns the value of the attribute <code>leaderToAdd</code>.
      * 
@@ -166,6 +165,8 @@ public class CourseManagementBean {
      */
     public void setCourse(Course course) {
     }
+
+    
 
     /**
      * Returns the ManagedProperty <code>SessionUser</code>.

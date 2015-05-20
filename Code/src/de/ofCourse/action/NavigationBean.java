@@ -7,6 +7,8 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.RequestScoped;
 
+import de.ofCourse.system.Transaction;
+
 /**
  * Provides the services of directing to the login page, selecting the displayed
  * language and to perform the logout action.
@@ -36,6 +38,12 @@ public class NavigationBean {
     @ManagedProperty("#{sessionUser}")
     private SessionUserBean sessionUser;
 
+    
+    /**
+     * Stores the transaction that is used for database interaction.
+     */
+    private Transaction transaction;
+    
     /**
      * Redirects the user to the <code>authenticate</code> page.
      * 
@@ -56,6 +64,8 @@ public class NavigationBean {
 	return null;
     }
 
+    
+    
     /**
      * Returns the ManagedProperty <code>SessionUser</code>.
      * 
