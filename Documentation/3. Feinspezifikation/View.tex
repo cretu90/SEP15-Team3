@@ -108,7 +108,7 @@
 				\end{center}
 			\item \textbf{BackingBean:}
 				\begin{itemize}
-					\item Navigation.java
+					\item NavigationBean
 				\end{itemize}
 		\end{itemize}
 		
@@ -139,7 +139,7 @@
 			\item \textbf{Outputs:} -
 			\item \textbf{BackingBean:}
 			\begin{itemize}
-				\item Footer.java
+				\item FooterBean
 			\end{itemize}
 		\end{itemize}
 		
@@ -155,7 +155,7 @@
 				\item Footer: Bindet \hyperlink{footer}{footer.xhtml} in den Footer ein.
 			\end{itemize}
 			\begin{center}
-				\begin{longtable}{|p{3cm} |p{5cm} | p{4cm}|p{3cm}|}
+				\begin{longtable}{|p{3cm} |p{5cm} | p{4cm}|}
 						
 					\hline \multicolumn{1}{|c|}{\textbf{Eingabefeld}} & \multicolumn{1}{|c|}{\textbf{Typ}}  &  \multicolumn{1}{|c|}{\textbf{ID}} \\ \hline
 					\endfirsthead
@@ -440,9 +440,11 @@
 			\begin{itemize}
 				\item Anzeigen: Zeigt die Angebote im ausgewählten Zeitraum an. \\ Zugehörige Methode: displayCoursesInSpecificPeriod()
 				\item Suchen: Durchsucht die Website nach dem eingegebenen Suchbegriff mittels gewählten Suchobjekt. \\ Zugehörige Methode: search()
+				\item Details: Navigiert den Nutzer zur jeweiligen Kursdetailseite. (\hyperlink{courseDetails}{courseDetails.xhtml}) \\
+				Zugehörige Methode: loadCourseDetailsPageOfSelectedCourse()
 			\end{itemize}
 			\begin{center}
-				\begin{longtable}{|p{4cm} |p{6cm} | p{4cm}|}
+				\begin{longtable}{|p{2cm} |p{9cm} | p{4cm}|}
 						
 					\hline \multicolumn{1}{|c|}{\textbf{Button}} & \multicolumn{1}{|c|}{\textbf{Methode}} & \multicolumn{1}{|c|}{\textbf{\"{U}bergabeparameter}}\\ \hline
 					\endfirsthead
@@ -451,6 +453,7 @@
 			
 					\textit{Anzeigen} & displayCoursesInSpecificPeriod() & timespan\\ \hline
 					\textit{Suchen} &  search() & searched\\ \hline
+					\textit{Details} & loadCourseDetailsPageOfSelectedCourse() & courseid\\ \hline
 				\end{longtable}
 			\end{center}
 			\item \textbf{Inputs:}
@@ -487,7 +490,7 @@
 					\end{center}
 			\item \textbf{BackingBean:}
 			\begin{itemize}
-				\item SearchCourse.java
+				\item SearchCourseBean
 			\end{itemize}
 		\end{itemize}
 		
@@ -610,8 +613,8 @@
 					\end{center}
 			\item \textbf{BackingBean:}
 			\begin{itemize}
-				\item CourseDetailBean.java
-				\item CourseManagementBean.java
+				\item CourseDetailBean
+				\item CourseManagementBean
 			\end{itemize}
 		\end{itemize}
 		
@@ -842,15 +845,15 @@
 				\item Wochenansicht rückwärts: Zeigt die Termine der letzten Woche an.
 			\end{itemize}
 				\begin{center}
-					\begin{longtable}{|p{3cm} |p{10cm} |}
+					\begin{longtable}{|p{3cm} |p{5cm} |}
 						
 						\hline \multicolumn{1}{|c|}{\textbf{Link}} & \multicolumn{1}{|c|}{\textbf{Methode}} \\ \hline
 						\endfirsthead
 						\hline
 						\endlastfoot
 						
-						\textit{Wochenansicht vorwärts} & displayNextWeek \\ \hline
-						\textit{Wochenansicht rückwärts} & displayPreviousWeek \\ \hline
+						\textit{Wochenansicht vorwärts} & displayNextWeek() \\ \hline
+						\textit{Wochenansicht rückwärts} & displayPreviousWeek() \\ \hline
 					\end{longtable}
 				\end{center}
 			\item \textbf{Buttons:} -
@@ -860,7 +863,7 @@
 				\item Wochentabelle: Zeigt von Montag bis Sonntag alle belegten Kurseinheiten an. Orientiert sich am klassischen Stundenplan, also mit stündlicher Ansicht.
 			\end{itemize}
 				\begin{center}
-					\begin{longtable}{|p{5cm} | p{4cm}|p{5cm}|}
+					\begin{longtable}{|p{4cm} | p{3cm}|p{3cm}|}
 						
 						\hline \multicolumn{1}{|c|}{\textbf{Ausgabefeld}} & \multicolumn{1}{|c|}{\textbf{Typ}}  &  \multicolumn{1}{|c|}{\textbf{ID}} \\ \hline
 						\endfirsthead
@@ -871,7 +874,7 @@
 				\end{center}
 			\item \textbf{BackingBean:}
 			\begin{itemize}
-				\item SchedulerBean.java
+				\item SchedulerBean
 			\end{itemize}
 		\end{itemize}
 		
@@ -1307,8 +1310,8 @@
 					\end{center}
 			\item \textbf{BackingBean:}
 			\begin{itemize}
-				\item SystemConfigurationBean.java
-				\item PaymentOfflineBean.java
+				\item SystemConfigurationBean
+				\item PaymentOfflineBean
 			\end{itemize}
 		\end{itemize}
 		
@@ -1395,21 +1398,19 @@
 			\item \textbf{Links:} -
 			\item \textbf{Buttons:}
 			\begin{itemize}
-				\item Durchsuchen: Öffnet ein Fenster um auf dem Computer nach einem Profilbild zu suchen. 
 				\item Hochladen: Lädt das ausgewählte Profilbild hoch.\\ Zugehörige Methode: uploadprofilePic()
 				\item Benutzer anlegen: Legt den Benutzer an. \\ Zugehörige Methode: createUser()
 			\end{itemize}
 			\begin{center}
-				\begin{longtable}{|p{4cm} |p{6cm} | p{4cm}|}
+				\begin{longtable}{|p{4cm} |p{6cm}|}
 						
-					\hline \multicolumn{1}{|c|}{\textbf{Button}} & \multicolumn{1}{|c|}{\textbf{Methode}} & \multicolumn{1}{|c|}{\textbf{\"{U}bergabeparameter}} \\ \hline
+					\hline \multicolumn{1}{|c|}{\textbf{Button}} & \multicolumn{1}{|c|}{\textbf{Methode}}\\ \hline
 					\endfirsthead
 					\hline
 					\endlastfoot
-			
-					\textit{Durchsuchen} & - & ... \\ \hline
-					\textit{Hochladen} &  uploadprofilePic() & ... \\ \hline
-					\textit{Benutzer anlegen} & createUser() & ... \\ \hline
+
+					\textit{Hochladen} &  uploadprofilePic()\\ \hline
+					\textit{Benutzer anlegen} & createUser()\\ \hline
 				\end{longtable}
 			\end{center}
 			\item \textbf{Inputs:}
@@ -1426,27 +1427,49 @@
 				\item Passwort wiederholen: Passwortfeld um Passwort sicherzustellen.
 				\item E-Mail: E-Mail Adresse des neuen Benutzers.
 				\item Benutzerrolle: Benutzerrolle des neuen Benutzers, Administrator, Kursleiter oder normaler Benutzer.
+				\item Durchsuchen: Öffnet ein Fenster um auf dem Computer nach einem Profilbild zu suchen. 
 				\end{itemize}
 				
 				\begin{center}
-					\begin{longtable}{|p{3cm} |p{4cm} | p{4cm}|p{3cm} |p{2cm}|}
+					\begin{longtable}{|p{3cm} |p{8cm}| p{3cm}|}
 						
-						\hline \multicolumn{1}{|c|}{\textbf{Feld}} & \multicolumn{1}{|c|}{\textbf{Action}} & \multicolumn{1}{|c|}{\textbf{Validatoren}}  &  \multicolumn{1}{|c|}{\textbf{Konverter}} &  \multicolumn{1}{|c|}{\textbf{ID}} \\ \hline
+						\hline \multicolumn{1}{|c|}{\textbf{Feld}} & \multicolumn{1}{|c|}{\textbf{Backing-Bean-Attribute}} & \multicolumn{1}{|c|}{\textbf{ID}} \\ \hline
 						\endfirsthead
 						\hline
 						\endlastfoot
-						\textit{Anrede} & ... & - & ... & ..\\ \hline
-						\textit{Vorname} & ... & InputTextValidator & ... & ..\\ \hline
-						\textit{Nachname} & ... & InputTextValidator & ... & ..\\ \hline
-						\textit{Geburtsdatum} & ... & DateOfBirthValidator & ... & ..\\ \hline
-						\textit{Straße} & ... & InputTextValidator & ... & ..\\ \hline
-						\textit{Postleitzahl} & ... & InputTextValidator & ... & ..\\ \hline	
-						\textit{Stadt} & ... & InputTextValidator & ... & ..\\ \hline
-						\textit{Benutzername} & ... & UserNameValidator & ... & ..\\ \hline	
-						\textit{Passwort} & ... & PasswordValidator & ... & ..\\ \hline	
-						\textit{Passwort wiederholen} & ... & ConfirmPassword-Validator & ... & ..\\ \hline
-						\textit{E-Mail} & ... & EMailValidator & ... & ..\\ \hline
-						\textit{Benutzerrolle} & ... & - & ... & ..\\ \hline
+						\textit{Anrede} & .. & salutation\\ \hline
+						\textit{Vorname} & ... & prename\\ \hline
+						\textit{Nachname} & ... & name\\ \hline
+						\textit{Geburtsdatum} & ... & birthday\\ \hline
+						\textit{Straße} & ... & street\\ \hline
+						\textit{Postleitzahl} & ... & plz\\ \hline	
+						\textit{Stadt} & ... & town\\ \hline
+						\textit{Benutzername} & ... & username\\ \hline	
+						\textit{Passwort} & ... & password\\ \hline	
+						\textit{Passwort wiederholen} & ... & passwordrepeat\\ \hline
+						\textit{E-Mail} & ... & mail\\ \hline
+						\textit{Benutzerrolle} & ... & role\\ \hline
+						\textit{Durchsuchen} & ... & search\\ \hline
+					\end{longtable}
+					\begin{longtable}{|p{3cm} | p{4cm} | p{3cm} |p{3cm}|}
+						
+						\hline \multicolumn{1}{|c|}{\textbf{Feld}} & \multicolumn{1}{|c|}{\textbf{Validatoren}}  &  \multicolumn{1}{|c|}{\textbf{Konverter}} &  \multicolumn{1}{|c|}{\textbf{Typ}} \\ \hline
+						\endfirsthead
+						\hline
+						\endlastfoot
+						\textit{Anrede} & validateRequired & - & selectOneMenu\\ \hline
+						\textit{Vorname} & InputTextValidator, validateRequired & - & inputText\\ \hline
+						\textit{Nachname} & InputTextValidator, validateRequired & - & inputText\\ \hline
+						\textit{Geburtsdatum} & DateOfBirthValidator, validateRequired & convertDateTime & inputText\\ \hline
+						\textit{Straße} & InputTextValidator, validateRequired & - & inputText\\ \hline
+						\textit{Postleitzahl} & InputTextValidator, validateRequired & convertNumber & inputText\\ \hline	
+						\textit{Stadt} & InputTextValidator, validateRequired & - & inputText\\ \hline
+						\textit{Benutzername} & UserNameValidator, validateRequired & - & inputText\\ \hline	
+						\textit{Passwort} & PasswordValidator, validateRequired & - & inputSecret\\ \hline	
+						\textit{Passwort wiederholen} & ConfirmPassword-Validator, validateRequired & - & inputSecret\\ \hline
+						\textit{E-Mail} & EMailValidator, validateRequired & - & inputText\\ \hline
+						\textit{Benutzerrolle} & validateRequired & - & selectOneMenu\\ \hline
+						\textit{Durchsuchen} & UserImageValidator & - & inputFile\\ \hline
 					\end{longtable}
 				\end{center}
 			\item \textbf{Outputs:}
@@ -1478,7 +1501,7 @@
 					\end{center}
 			\item \textbf{BackingBean:}
 			\begin{itemize}
-				\item UserManagement.java
+				\item UserManagementBean
 			\end{itemize}
 		\end{itemize}
 		
