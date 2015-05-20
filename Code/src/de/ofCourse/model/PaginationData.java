@@ -4,13 +4,15 @@
 package de.ofCourse.model;
 
 /**
- * @author
+ * contains all information for the pagination progress
+ * 
+ * @author Sebastian
  *
  */
 public class PaginationData {
 
     /**
-     * 
+     * stores the number of items shown on one page.
      */
     private int itemsPerPage;
     /**

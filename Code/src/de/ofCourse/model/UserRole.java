@@ -1,12 +1,12 @@
 /**
- * 
+ * This package represents all the models which are used
  */
 package de.ofCourse.model;
 
 /**
- * This class repressents the different roles a User can have in the System
+ * repressents the different roles a User can have in the System
  * 
- * @author
+ * @author Sebastian
  *
  */
 public enum UserRole {

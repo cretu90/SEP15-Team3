@@ -1,39 +1,39 @@
 /**
- * 
+ * This package represents all the models which are used
  */
 package de.ofCourse.model;
 
 /**
- * The class contains all information about the address of Users and Courses
+ * contains all information about the address of Users and Courses
  * 
  * @author Sebastian
  *
  */
 public class Address {
 
-    private String location;
+    
     
     /**
-     * country, the Country where the User lives or where the Course will be
+     * stores the country where the user lives or where the course will be
      * hold
      */
     private String country;
     /**
-     * city, the city where the User lives or where the Course will be hold
+     * stores the city where the user lives or where the course will be hold
      */
     private String city;
     /**
      * 
-     * street, the street where the User lives or where the Course will be hold
+     * stores the street where the user lives or where the course will be hold
      */
     private String street;
     /**
-     * houseNumber, the houseNumber where the User lives or where the Course
+     * stores the houseNumber where the user lives or where the course
      * will be hold
      */
     private int houseNumber;
     /**
-     * zipCode, the zipdCode where the User lives or where the Course will be
+     * stores the zipdCode where the user lives or where the course will be
      * hold
      */
     private int zipCode;
@@ -48,87 +48,99 @@ public class Address {
     }
 
     /**
-     * @return
+     * Returns the value of the attribute <code>country</code>.
+     * 
+     * @return the country where the user lives or course will be hold
      */
     public String getCountry() {
 	return this.country;
     }
 
     /**
-     * @return
+     * Returns the value of the attribute <code>city</code>.
+     * 
+     * @return the city where the user lives or the course will be hold
      */
     public String getCity() {
 	return this.city;
     }
 
     /**
-     * @return
+     * Returns the value of the attribute <code>street</code>.
+     * 
+     * @return the street where the user lives or the course will be hold
      */
     public String getStreet() {
 	return this.street;
     }
 
     /**
-     * @return
+     * Returns the value of the attribute <code>houseNumber</code>.
+     * 
+     * @return the houseNumber where the user lives or the course will be hold
      */
     public int getHouseNumber() {
 	return this.houseNumber;
     }
 
     /**
-     * @return
+     * Returns the value of the attribute <code>zipCode</code>.
+     * 
+     * @return the zipCode where the user lives or the course will be hold
      */
     public int getZipCode() {
 	return this.zipCode;
     }
 
     /**
+     * Sets the value of the attribute <code>country</code>.
+     * 
      * @param country
+     *          new country to set
      */
     public void setCountry(String country) {
 	this.country = country;
     }
 
     /**
+     * Sets the value of the attribute <code>city</code>.
+     * 
      * @param city
+     *          the new city to set
      */
     public void setCity(String city) {
 	this.city = city;
     }
 
     /**
+     * Sets the value of the attribute <code>street</code>.
+     * 
      * @param street
+     *          the new street to set
      */
     public void setStreet(String street) {
 	this.street = street;
     }
 
     /**
+     * Sets the value of the attribute <code>houseNumber</code>.
+     * 
      * @param houseNumber
+     *          the new houseNumber to set
      */
     public void setHouseNumber(int houseNumber) {
 	this.houseNumber = houseNumber;
     }
 
     /**
+     * Sets the value of the attribute <code>zipCode</code>.
+     * 
      * @param zipCode
+     *          the new zipCode to set
      */
     public void setZipCode(int zipCode) {
 	this.zipCode = zipCode;
     }
 
-    /**
-     * @return the location
-     */
-    public String getLocation() {
-	return location;
-    }
-
-    /**
-     * @param location the location to set
-     */
-    public void setLocation(String location) {
-	this.location = location;
-    }
-
+   
 }

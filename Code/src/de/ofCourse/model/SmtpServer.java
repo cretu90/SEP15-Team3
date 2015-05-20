@@ -1,10 +1,10 @@
 /**
- * 
+ * This package represents all the models which are used
  */
 package de.ofCourse.model;
 
 /**
- * This class contains all Information for the SMTP Server which is needed for
+ * contains all Information for the SMTP Server which is needed for
  * the E-Mail dispatch
  * 
  * @author Sebastian
@@ -13,12 +13,12 @@ package de.ofCourse.model;
 public class SmtpServer {
 
     /**
-     * hostaddr, the URL address to the E-Mail Server
+     * stores the URL address to the E-Mail Server
      * 
      */
     private String hostaddr;
     /**
-     * password, the password for the Login on the E-Mail Server
+     * stores the password for the Login on the E-Mail Server
      * 
      */
     private String password;
@@ -29,7 +29,7 @@ public class SmtpServer {
      */
     private int port;
     /**
-     * username, the username for the Login on the E-Mail Server
+     *  stores the username for the Login on the E-Mail Server
      * 
      */
     private String username;
@@ -44,6 +44,7 @@ public class SmtpServer {
     private boolean tls;
 
     /**
+     * 
      * @return the hostaddr
      */
     public String getHostaddr() {
@@ -51,6 +52,8 @@ public class SmtpServer {
     }
 
     /**
+     * Sets the value of the attribute <code>hostaddr</code>.
+     * 
      * @param hostaddr
      *            the hostaddr to set
      */
@@ -66,6 +69,8 @@ public class SmtpServer {
     }
 
     /**
+     * Sets the value of the attribute <code>password</code>.
+     * 
      * @param password
      *            the password to set
      */
@@ -81,6 +86,8 @@ public class SmtpServer {
     }
 
     /**
+     * Sets the value of the attribute <code>port</code>.
+     * 
      * @param port
      *            the port to set
      */
@@ -96,6 +103,8 @@ public class SmtpServer {
     }
 
     /**
+     * Sets the value of the attribute <code>username</code>.
+     * 
      * @param username
      *            the username to set
      */

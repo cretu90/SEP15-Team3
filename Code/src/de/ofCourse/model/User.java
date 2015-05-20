@@ -1,12 +1,12 @@
 /**
- * 
+ * This package represents all the models which are used
  */
 package de.ofCourse.model;
 
 import java.util.Date;
 
 /**
- * This class contains all Information about a User
+ * contains all Information about a User
  * 
  * @author
  *
@@ -14,60 +14,62 @@ import java.util.Date;
 public class User {
 
     /**
-     * address, the address where the user lives
+     *stores the address where the user lives
      */
     private Address address;
     /**
-     * email, the E-Mailaddress of the user
+     *stores the E-Mailaddress of the user
      */
     private String email;
     /**
-     * salutation, the gender of the user
+     *stores the gender of the user
      */
     private String salutation;
     /**
-     * firstname, the firstname of the user
+     * stores the firstname of the user
      */
     private String firstname;
     /**
-     * lastname, the lastname of the user
+     * stores the lastname of the user
      */
     private String lastname;
     /**
-     * username, the username which the user needs for the login
+     * stores the username which the user needs for the login
      */
     private String username;
     /**
-     * password, the password which the user needs for the login
+     * stores the password which the user needs for the login
      */
     private String password;
     /**
-     * dateOfBirth, the date of Birth of the the User
+     * stores the date of Birth of the the User
      */
     private Date dateOfBirth;
     /**
-     * prfilImage, the profil image of the user
+     * stores the profil image of the user
      */
     private String profilImage;
     /**
-     * userRole, the role which the user has in the System
+     * stores the role which the user has in the System
      */
     private UserRole userRole;
     /**
-     * userSatus, the status which the user has at the moment
+     * stores the status which the user has at the moment
      */
     private UserStatus userStatus;
     /**
-     * accountBalance, the amount of money the user has on his profil
+     * stores the amount of money the user has on his profil
      */
     private float accountBalance;
     /**
-     * userID, the id with which the user can be identify
+     * stores the id with which the user can be identify
      */
     private int userID;
 
     /**
-     * @return
+     * Returns the value of the attribute <code>address</code>.
+     * 
+     * @return the address where the users lives
      */
     public Address getAddress() {
 	return this.address;
@@ -83,84 +85,108 @@ public class User {
     }
 
     /**
-     * @return
+     * Returns the value of the attribute <code>email</code>.
+     * 
+     * @return the email address of the user
      */
     public String getEmail() {
 	return this.email;
     }
 
     /**
-     * @return
+     * Returns the value of the attribute <code>salutation</code>.
+     * 
+     * @return the gender of the user
      */
     public String getSalutation() {
 	return this.salutation;
     }
 
     /**
-     * @return
+     * Returns the value of the attribute <code>firstname</code>.
+     * 
+     * @return the firstname of the user
      */
     public String getFristname() {
 	return this.firstname;
     }
 
     /**
-     * @return
+     * Returns the value of the attribute <code>lastname</code>.
+     * 
+     * @return the lastname of the user
      */
     public String getLastname() {
 	return this.lastname;
     }
 
     /**
-     * @return
+     * Returns the value of the attribute <code>username</code>.
+     * 
+     * @return the username of the user
      */
     public String getUsername() {
 	return this.username;
     }
 
     /**
-     * @return
+     * Returns the value of the attribute <code>password</code>.
+     * 
+     * @return the password of the user
      */
     public String getPassword() {
 	return this.password;
     }
 
     /**
-     * @return
+     * Returns the value of the attribute <code>dateOfBirth</code>.
+     * 
+     * @return the dateOfBirth of the user
      */
     public Date getDateOfBirth() {
 	return this.dateOfBirth;
     }
 
     /**
-     * @return
+     * Returns the value of the attribute <code>profilImage</code>.
+     * 
+     * @return the profilImage of the user
      */
     public String getProfilImage() {
 	return this.profilImage;
     }
 
     /**
-     * @return
+     * Returns the value of the attribute <code>userRole</code>.
+     * 
+     * @return the role of the User in the system
      */
     public UserRole getUserRole() {
 	return this.userRole;
     }
 
     /**
-     * @return
+     * Returns the value of the attribute <code>userStatus</code>.
+     * 
+     * @return the status of the user
      */
     public UserStatus getUserStatus() {
 	return this.userStatus;
     }
 
     /**
-     * @return
+     * Returns the value of the attribute <code>accountBalance</code>.
+     * 
+     * @return the amount of money the users has on his account
      */
     public float getAccountBalance() {
 	return this.accountBalance;
     }
 
     /**
-     * @return
+     * Returns the value of the attribute <code>userID</code>.
+     * 
+     * @return the ID of the user
      */
     public int getUserID() {
 	return this.userID;
@@ -176,91 +202,130 @@ public class User {
     }
 
     /**
+     * Sets the value of the attribute <code>address</code>.
+     * 
      * @param address
+     *          new address to set
      */
     public void setAddress(Address address) {
 	this.address = address;
     }
 
     /**
+     * Sets the value of the attribute <code>email</code>.
+     * 
      * @param email
+     *          new email to set
      */
     public void setEmail(String email) {
 	this.email = email;
     }
 
     /**
+     * Sets the value of the attribute <code>salutation</code>.
+     * 
      * @param sal
+     *          new salutation to set
      */
     public void setSalutation(String sal) {
 	this.salutation = sal;
     }
 
     /**
+     * Sets the value of the attribute <code>firstname</code>.
+     * 
      * @param firstname
+     *          new firstname to set
      */
     public void setFirstname(String firstname) {
 	this.firstname = firstname;
     }
 
     /**
+     * Sets the value of the attribute <code>lastname</code>.
+     * 
      * @param lastname
+     *          new lastname to set
      */
     public void setLastname(String lastname) {
 	this.lastname = lastname;
     }
 
     /**
+     * Sets the value of the attribute <code>password</code>.
+     * 
      * @param password
+     *          new password to set
      */
     public void setPassword(String password) {
 	this.password = password;
     }
 
     /**
+     * Sets the value of the attribute <code>userRole</code>.
+     * 
      * @param role
+     *          new userRole to set
      */
     public void setUserRole(UserRole role) {
 	this.userRole = role;
     }
 
     /**
+     * Sets the value of the attribute <code>userID</code>.
+     * 
      * @param id
+     *          new ID to set
      */
     public void setUserId(int id) {
 	this.userID = id;
     }
 
     /**
+     * Sets the value of the attribute <code>username</code>.
+     * 
      * @param username
+     *          new username to set
      */
     public void setUsername(String username) {
 	this.username = username;
     }
 
     /**
+     * Sets the value of the attribute <code>dateOfBirth</code>.
+     * 
      * @param dateOfBirth
+     *          new date of Birth to set
      */
     public void setDateOfBirth(Date dateOfBirth) {
 	this.dateOfBirth = dateOfBirth;
     }
 
     /**
+     * Sets the value of the attribute <code>profilImage</code>.
+     * 
      * @param profilImage
+     *          new profil Image to set
      */
     public void setProfilImage(String profilImage) {
 	this.profilImage = profilImage;
     }
 
     /**
+     * Sets the value of the attribute <code>userSatus</code>.
+     * 
      * @param status
+     *          new status of the User to set
      */
     public void setUserStatus(UserStatus status) {
 	this.userStatus = status;
     }
 
     /**
+     * Sets the value of the attribute <code>balance</code>.
+     * 
      * @param balance
+     *          new account balance to set
      */
     public void setAccountBalance(float balance) {
 	this.accountBalance = balance;

@@ -1,10 +1,10 @@
 /**
- * 
+ * This package represents all the models which are used
  */
 package de.ofCourse.model;
 
 /**
- * This class represents the different statuses which the user can have
+ * represents the different statuses which the user can have
  * 
  * @author Sebastian
  *
