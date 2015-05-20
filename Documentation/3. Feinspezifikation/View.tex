@@ -1206,20 +1206,20 @@
 				\item Überziehungswert speichern: Speichert den Wert der möglichen Kontoüberziehung. \\ Zugehörige Methode: determineOverdraftCredit()
 			\end{itemize}
 			\begin{center}
-				\begin{longtable}{|p{4cm} |p{6cm} | p{4cm}|}
+				\begin{longtable}{|p{4cm} |p{7cm} |}
 						
-					\hline \multicolumn{1}{|c|}{\textbf{Button}} & \multicolumn{1}{|c|}{\textbf{Methode}} & \multicolumn{1}{|c|}{\textbf{\"{U}bergabeparameter}} \\ \hline
+					\hline \multicolumn{1}{|c|}{\textbf{Button}} & \multicolumn{1}{|c|}{\textbf{Methode}} \\ \hline
 					\endfirsthead
 					\hline
 					\endlastfoot
 			
-					\textit{Benutzer verwalten} & loadManageUserPage() & - \\ \hline
-					\textit{Benutzer anlegen} &  loadCreateNewUserPage() & - \\ \hline
-					\textit{Kurse verwalten} & loadManageCoursesPage() & - \\ \hline
-					\textit{Kurs anlegen} & loadCreateNewCoursePage() & - \\ \hline
-					\textit{Aktivierungsmodalität speichern} & determineAccountActivationType() & - \\ \hline
-					\textit{Guthaben aufladen} & depositAmountOnUserAccount() & - \\ \hline
-					\textit{Überziehungswert speichern} & determineOverdraftCredit() & - \\ \hline
+					\textit{Benutzer verwalten} & loadManageUserPage()\\ \hline
+					\textit{Benutzer anlegen} &  loadCreateNewUserPage()\\ \hline
+					\textit{Kurse verwalten} & loadManageCoursesPage()\\ \hline
+					\textit{Kurs anlegen} & loadCreateNewCoursePage()\\ \hline
+					\textit{Aktivierungsmodalität speichern} & determineAccountActivationType()\\ \hline
+					\textit{Guthaben aufladen} & depositAmountOnUserAccount()\\ \hline
+					\textit{Überziehungswert speichern} & determineOverdraftCredit()\\ \hline
 				\end{longtable}
 			\end{center}
 			\item \textbf{Inputs:}
@@ -1230,18 +1230,31 @@
 				\item Betrag: Betrag, welcher dem Nutzer gutgeschrieben werden soll.
 				\item Überziehungswert: Betrag, welcher im ganzen System zur Überziehung des Kontos akzeptiert wird.
 			\end{itemize}
+
 				\begin{center}
-					\begin{longtable}{|p{3cm} |p{4cm} | p{4cm}|p{3cm} |p{2cm}|}
+					\begin{longtable}{|p{3cm} |p{9,5cm}|}
 						
-						\hline \multicolumn{1}{|c|}{\textbf{Feld}} & \multicolumn{1}{|c|}{\textbf{Backing-Bean-Attribute}} & \multicolumn{1}{|c|}{\textbf{Validatoren}}  &  \multicolumn{1}{|c|}{\textbf{Konverter}} &  \multicolumn{1}{|c|}{\textbf{ID}} \\ \hline
+						\hline \multicolumn{1}{|c|}{\textbf{Feld}} & \multicolumn{1}{|c|}{\textbf{Backing-Bean-Attribute}}\\ \hline
 						\endfirsthead
 						\hline
 						\endlastfoot
-						\textit{Account-Aktivierung} & ... & - & - & accactivation\\ \hline
-						\textit{Benutzer-ID} & ... & validateRequired & convertNumber & userid\\ \hline
-						\textit{Benutzername} & ... & validateRequired & - & username\\ \hline
-						\textit{Betrag} & ... & validateRequired & convertNumber & amount \\ \hline
-						\textit{Überziehungswert} & ... & validateRequired & convertNumber & overdraft\\ \hline
+						\textit{Account-Aktivierung} & SystemConfigurationBean.accountActivationType\\ \hline
+						\textit{Benutzer-ID} & PaymentOfflineBean.user.userID\\ \hline
+						\textit{Benutzername} & PaymentOfflineBean.user.username\\ \hline
+						\textit{Betrag} & PaymentOfflineBean.amountToDeposit\\ \hline
+						\textit{Überziehungswert} & SystemConfigurationBean.overdraftCredit\\ \hline
+					\end{longtable}
+					\begin{longtable}{|p{3cm}| p{4cm}|p{3cm} |p{3cm}|}
+						
+						\hline \multicolumn{1}{|c|}{\textbf{Feld}} & \multicolumn{1}{|c|}{\textbf{Validatoren}}  &  \multicolumn{1}{|c|}{\textbf{Konverter}} &  \multicolumn{1}{|c|}{\textbf{ID}} \\ \hline
+						\endfirsthead
+						\hline
+						\endlastfoot
+						\textit{Account-Aktivierung} & - & - & accactivation\\ \hline
+						\textit{Benutzer-ID} & validateRequired & convertNumber & userid\\ \hline
+						\textit{Benutzername} & validateRequired & - & username\\ \hline
+						\textit{Betrag} & validateRequired & convertNumber & amount \\ \hline
+						\textit{Überziehungswert} & validateRequired & convertNumber & overdraft\\ \hline
 					\end{longtable}
 				\end{center}
 			\item \textbf{Outputs:}
@@ -1264,8 +1277,8 @@
 					\end{center}
 			\item \textbf{BackingBean:}
 			\begin{itemize}
-				\item SystemConfiguration.java
-				\item PaymentOffline.java
+				\item SystemConfigurationBean.java
+				\item PaymentOfflineBean.java
 			\end{itemize}
 		\end{itemize}
 		
