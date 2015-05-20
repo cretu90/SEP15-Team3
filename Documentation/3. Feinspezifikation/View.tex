@@ -260,7 +260,8 @@
 				\item Passwort (Registrierung): Hier trägt der Benutzer ein Passwort ein.
 				\item Passwort bestätigen (Registrierung): Hier gibt der Benutzer das gleiche Passwort erneut ein zur Bestätigung.
 				\item Geburtstag (Registrierung): Hier gibt der Benutzer sein Geburtsdatum ein.
-				\item Straße/Hausnummer (Registrierung): Hier gibt der Benutzer seine Straße und seine Hausnummer ein.
+				\item Straße (Registrierung): Hier gibt der Benutzer seine Straße ein.
+				\item Hausnummer (Registrierung): Hier gibt der Benutzer seine Hausnummer ein.
 				\item Stadt (Registrierung): Hier trägt der Benutzer seine Stadt ein.
 				\item Postleitzahl (Registrierung): Hier trägt der Benutzer seine Postleitzahl ein.
 				\item Land (Registrierung): Hier trägt der Benutzer sein Heimatland ein.
@@ -284,7 +285,8 @@
 							\textit{Passwort (Registrierg)} & - & inputSecret & passwort \\ \hline
 							\textit{Passwort bestätigen (Registrierg)} &- & inputSecret & bestätigungs- passwort\\ \hline
 							\textit{Geburtstag (Registrierg)} & - & inputText & geburtstag \\ \hline
-							\textit{Straße/ Hausnummer (Registrierg)} & - & inputText & straße\\ \hline
+							\textit{Straße (Registrierg)} & - & inputText & straße\\ \hline
+							\textit{Hausnummer (Registrierg)} & - & inputText & hausnummer\\ \hline
 							\textit{Stadt (Registrierg)} & - & inputText & stadt \\ \hline
 							\textit{Postleitzahl (Registrierg)} & - & inputText & postleitzahl \\ \hline
 							\textit{Land (Registrierg)} & - & inputText & land \\ \hline
@@ -306,13 +308,14 @@
 						\textit{Anrede (Registrierg)} & - & -  \\ \hline
 						\textit{Vorname (Registrierg)} & validateLength (min = 0, max = 100) & - \\ \hline
 						\textit{Name (Registrierg)} & validateLength (min = 0, max =100) & -  \\ \hline
-						\textit{Benutzername (Registrierg)} & UserNameValidator, validateLength (min = 5 , max =100), validateRegex (pattern =""), validateRequired  & - \\ \hline
+						\textit{Benutzername (Registrierg)} & UserNameValidator, validateLength (min = 5 , max =100), validateRequired  & - \\ \hline
 						\textit{Passwort (Registrierg)} & PasswordValidator (mindestens 8 Zeichen, mind. 1 Sonderzeichen, mind. 1 Ziffer, Groß- und Kleinbuchstaben, keine Umlaute, kein 'ß'), validateRequired & -  \\ \hline
 						\textit{Passwort bestätigen (Registrierg)} & confirmPasswordValidator, validateRequired & - \\ \hline
 						\textit{Geburtstag (Registrierg)} & DateOfBirthValidator & convertDateTime  \\ \hline
-						\textit{Straße/ Hausnummer (Registrierg)} & validateLength (min = 0, max = 100) & - \\ \hline
+						\textit{Straße (Registrierg)} & validateLength (min = 0, max = 100) & - \\ \hline
+						\textit{Hausnummer (Registrierg)} & validateLength (min = 0, max = 2147483647) & - \\ \hline
 						\textit{Stadt (Registrierg)} & validateLength (min = 1, max = 100), validateRequired & -  \\ \hline
-						\textit{Postleitzahl (Registrierg)} & validateLength (min = 1, max = ????), validateRequired & - \\ \hline
+						\textit{Postleitzahl (Registrierg)} & validateLength (min = 1, max = 10), validateRequired & - \\ \hline
 						\textit{Land (Registrierg)} & validateLength (min = 1, max = 100), validateRequired & -  \\ \hline
 						\textit{E-Mail-Adresse (Registrierg)} & EMailValidator, validateLength (min = 1, max = 319), validateRequired & - \\ \hline
 						\textit{AGBs bestätigen (Registrierg)} & - & -  \\ \hline
@@ -333,7 +336,8 @@
 				\item Passwort Fehlermeldung (Registrierung): Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
 				\item Passwort bestätigen Fehlermeldung (Registrierung): Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
 				\item Geburtstag Fehlermeldung (Registrierung): Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
-				\item Straße/Hausnummer Fehlermeldung (Registrierung): Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
+				\item Straße Fehlermeldung (Registrierung): Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
+				\item Hausnummer Fehlermeldung (Registrierung): Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
 				\item Stadt Fehlermeldung (Registrierung): Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
 				\item Postleitzahl Fehlermeldung (Registrierung): Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
 				\item Land Fehlermeldung (Registrierung): Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
@@ -358,7 +362,8 @@
 						\textit{Passwort Fehlermeldung (R)}& outputText & passwortfehler\\ \hline
 						\textit{Passwort bestätigen Fehlermeldung (R)}& outputText & bestätigungspwfehler\\ \hline
 						\textit{Geburtstag  Fehlermeldung(R)} & outputText & geburtstagsfehler \\ \hline
-						\textit{Straße/ Hausnummer Fehlermeldung (R)}& outputText & straßenfehler\\ \hline
+						\textit{Straße Fehlermeldung (R)}& outputText & straßenfehler\\ \hline
+						\textit{Hausnummer Fehlermeldung (R)}& outputText & hausnrfehler\\ \hline
 						\textit{Stadt Fehlermeldung (R)}& outputText & stadtfehler \\ \hline
 						\textit{Postleitzahl Fehlermeldung (R)} & outputText & postleitzahlfehler \\ \hline
 						\textit{Land Fehlermeldung (R)} & outputText & landfehler \\ \hline
@@ -372,9 +377,9 @@
 			
 			\item \textbf{BackingBean:}
 				\begin{itemize}
-					\item AuthenticateUserBean.java
-					\item RegisterUserBean.java
-					\item LostPasswordBean.java
+					\item AuthenticateUserBean
+					\item RegisterUserBean
+					\item LostPasswordBean
 				\end{itemize}
 		\end{itemize}
 		
@@ -656,7 +661,7 @@
 				
 			\item \textbf{BackingBean:}
 				\begin{itemize}
-					\item MyCoursesBean.java
+					\item MyCoursesBean
 				\end{itemize}
 		\end{itemize}
 		
@@ -669,8 +674,8 @@
 					\item Bearbeiten: Nach Klicken auf diesen Button können die persönlichen Daten geändert werden. Der Button trägt nun die Aufschrift 'Speichern' und ist mit dessen dazugehöriger Methode hinterlegt. \\ Zugehörige Methode: editUserData()
 					\item Speichern: Durch Drücken dieses Buttons werden die vorgenommenen Änderungen gespeichert, sofern alle Daten korrekt eingegeben wurden. Bei Änderung der E-Mail-Adresse wird außerdem eine Bestätigungsmail mit einem Verifizierungslink verschickt. Bei erfolgreicher Speicherung erscheint der Button 'Bearbeiten' anstelle des Button 'Speichern'. \\ Zugehörige Methode: saveUserData()
 					\item Durchsuchen: Durch Drücken dieses Buttons kann das eigene Dateiverzeichnis nach einem Bild durchsucht werden.
-					\item Hochladen: Durch Drücken dieses Buttons wird das ausgewählte Profilbild hochgeladen. \\ Zugehörige Methode: uploadProfilPic()  weitergeleitet. \\
-					\item Benutzer löschen: Durch Drücken dieses Buttons entfernt der Administrator diesen Benutzer aus dem System, oder der Benutzer kann sich selbst auf inaktiv setzen. \\ Zugehörige Methoden: deleteUser(), setUserInactive() 
+					\item Hochladen: Durch Drücken dieses Buttons wird das ausgewählte Profilbild hochgeladen. \\ Zugehörige Methode: uploadProfilPic()  weitergeleitet.
+					\item Benutzer löschen: Durch Drücken dieses Buttons entfernt der Administrator diesen Benutzer aus dem System, oder der Benutzer kann sich selbst auf inaktiv setzen. Setzt sich der Benutzer selbst auf inaktiv, so wird er auf die Startseite weitergeleitet. (\hyperlink{index}{index.xhtml})  \\ Zugehörige Methoden: deleteUser(), setUserInactive() 
 				\end{itemize}
 				
 					\begin{center}
@@ -695,7 +700,8 @@
 					\item Vorname: Hier kann der Benutzer seinen Vornamen ändern.
 					\item Name: Hier kann der Benutzer seinen Namen ändern.
 					\item Geburtstag: Hier kann der Benutzer sein Geburtsdatum ändern.
-					\item Straße/Hausnummer: Hier kann der Benutzer seine Straße und Hausnummer ändern.
+					\item Straße: Hier kann der Benutzer seine Straße ändern.
+					\item Hausnummer: Hier kann der Benutzer seine Hausnummer ändern.
 					\item Stadt: Hier kann der Benutzer seine Stadt ändern.
 					\item Postleitzahl: Hier kann der Benutzer seine Postleitzahl ändern.
 					\item Land: Hier kann der Benutzer seine Land ändern.
@@ -704,7 +710,7 @@
 					\item Passwort: Hier kann der Benutzer sein Passwort ändern.
 					\item Passwort bestätigen: Hier muss der Benutzer sein geändertes Passwort bestätigen.
 					\item Benutzerrolle: Hier kann der Administrator die Benutzerrolle eines Nutzers ändern.
-					\item Profilbild Pfad: Hier kann der Benutzer sein Profilbild ändern.
+					\item Profilbild: Hier kann der Benutzer sein Profilbild ändern.
 				\end{itemize}
 				
 				\begin{center}
@@ -718,7 +724,8 @@
 						\textit{Vorname} & UserProfilBean.User.fistname & inputText & vorname \\ \hline
 						\textit{Name} & UserProfilBean.User.lastname & inputText & name \\ \hline
 						\textit{Geburtstag } & UserProfilBean.User.dateOfBirth & inputText & geburtstag \\ \hline
-						\textit{Straße/ Hausnummer} & UserProfilBean.Address.street, UserProfil.Address.houseNumber  & inputText & straße\\ \hline
+						\textit{Straße} & UserProfilBean.Address.street & inputText & straße\\ \hline
+						\textit{Hausnummer} & UserProfil.Address.houseNumber  & inputText & hausnummer\\ \hline
 						\textit{Stadt} & UserProfilBean.Address.city & inputText & stadt \\ \hline
 						\textit{Postleitzahl} & UserProfilBean.Address.zipCode & inputText & postleitzahl \\ \hline
 						\textit{Land} & UserProfilBean.Address.country & inputText & land \\ \hline
@@ -727,7 +734,7 @@
 						\textit{Passwort} & UserProfilBean.User.password  & inputSecret & passwort \\ \hline
 						\textit{Passwort bestätigen} & UserProfilBean.User.password & inputSecret & bestätigungs- passwort \\ \hline
 						\textit{Benutzerrolle} & UserProfilBean.User.userRole & inputText & rolle \\ \hline
-						\textit{Profilbild Pfad} & UserProfilBean.User.profilImage & inputFile & bildpfad \\ \hline
+						\textit{Profilbild} & UserProfilBean.User.profilImage & inputFile & bildpfad \\ \hline
 					\end{longtable}
 				\end{center}
 				
@@ -742,16 +749,17 @@
 						\textit{Vorname} & validateLength (min =0, max = 100) & - \\ \hline
 						\textit{Name} & validateLength (min = 0, max = 100) & -  \\ \hline
 						\textit{Geburtstag} & DateOfBirthValidator & convertDateTime  \\ \hline
-						\textit{Straße/ Hausnummer} & validateLength (min = 0, max = 100) & - \\ \hline
+						\textit{Straße} & validateLength (min = 0, max = 100) & - \\ \hline
+						\textit{Hausnummer} & validateLength (min = 0, max = 2147483647) & - \\ \hline
 						\textit{Stadt} & validateLength (min = 1, max = 100), validateRequired & -  \\ \hline
-						\textit{Postleitzahl} & validateLength (min = 1, max = ???), validateRequired & - \\ \hline
+						\textit{Postleitzahl} & validateLength (min = 1, max = 10), validateRequired & - \\ \hline
 						\textit{Land} & validateLength (min = 1, max = 100), validateRequired & -  \\ \hline
 						\textit{E-Mail-Adresse} & EMailValidator, validateLength (min = 1, max = 390), validateRequired & - \\ \hline
-						\textit{Benutzername} & UserNameValidator, validateLength (min = 5, max = 100), validateRegex (pattern =""), validateRequired  & - \\ \hline
+						\textit{Benutzername} & UserNameValidator, validateLength (min = 5, max = 100), validateRequired  & - \\ \hline
 						\textit{Passwort} & PasswordValidator (mindestens 8 Zeichen, mind. 1 Sonderzeichen, mind. 1 Ziffer, Groß- und Kleinbuchstaben, keine Umlaute, kein 'ß'), validateRequired & -  \\ \hline
 						\textit{Passwort bestätigen} & ConfirmPasswordValidator, validateRequired & - \\ \hline
 						\textit{Benutzerrolle} & validateRequired & - \\ \hline
-						\textit{Profilbild Pfad} & UserImageValidator & - \\ \hline
+						\textit{Profilbild} & UserImageValidator & - \\ \hline
 					\end{longtable}
 				\end{center}
 				
@@ -762,7 +770,8 @@
 					\item Vorname Fehlermeldung: Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
 					\item Name Fehlermeldung: Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
 					\item Geburtstag Fehlermeldung: Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
-					\item Straße/Hausnummer Fehlermeldung: Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
+					\item Straße Fehlermeldung: Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
+					\item Hausnummer Fehlermeldung: Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
 					\item Stadt Fehlermeldung: Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
 					\item Postleitzahl Fehlermeldung: Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
 					\item Land Fehlermeldung: Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
@@ -787,7 +796,8 @@
 						\textit{Vorname Fehlermeldung }  & outputText & vornamefehler \\ \hline
 						\textit{Name Fehlermeldung } & outputText & namefehler \\ \hline
 						\textit{Geburtstag  Fehlermeldung} & outputText & geburtstagsfehler \\ \hline
-						\textit{Straße/ Hausnummer Fehlermeldung }& outputText & straßefehler\\ \hline
+						\textit{Straße Fehlermeldung }& outputText & straßefehler\\ \hline
+						\textit{Hausnummer Fehlermeldung }& outputText & hausnrfehler\\ \hline
 						\textit{Stadt Fehlermeldung }& outputText & stadtfehler \\ \hline
 						\textit{Postleitzahl Fehlermeldung } & outputText & postleitzahlfehler \\ \hline
 						\textit{Land Fehlermeldung } & outputText & landfehler \\ \hline
@@ -804,8 +814,8 @@
 				
 			\item \textbf{BackingBean:}
 				\begin{itemize}
-					\item UserProfileBean.java
-					\item UserManagementBean.java				
+					\item UserProfileBean
+					\item UserManagementBean				
 				\end{itemize}
 		\end{itemize}
 		
@@ -874,7 +884,7 @@
 			
 			\item \textbf{BackingBean:}
 			\begin{itemize}
-				\item UserProfileBean.java			
+				\item UserProfileBean			
 			\end{itemize}
 		\end{itemize}
 		
@@ -945,7 +955,7 @@
 			
 			\item \textbf{BackingBean:}
 			\begin{itemize}
-				\item ListParticipantsBean.java
+				\item ListParticipantsBean
 			\end{itemize}
 		\end{itemize}
 		
@@ -960,7 +970,7 @@
 				\begin{itemize}
 					\item Bearbeiten (Kurseinheit): Nach Klicken auf diesen Button können die Daten der Kurseinheit geändert beziehungsweise eingetragen werden. Der Button trägt nun die Aufschrift 'Speichern' und ist mit dessen dazugehöriger Methode hinterlegt. \\ Zugehörige Methode: editCourseUnit()
 					\item Speichern (Kurseinheit): Durch Drücken dieses Buttons werden die vorgenommenen Änderungen gespeichert, sofern alle Daten korrekt eingegeben wurden. Bei erfolgreicher Speicherung erscheint der Button 'Bearbeiten' anstelle des Button 'Speichern'. \\ Zugehörige Methode: saveCourseUnit()
-					\item Löschen (Kurseinheit): Durch Drücken des Button 'Löschen' wird die Kurseinheit entfernt. \\ Zugehörige Methode: deleteCourseUnit()
+					\item Löschen (Kurseinheit): Durch Drücken des Button 'Löschen' wird die Kurseinheit entfernt und der Kursleiter wird auf die Kursdetails Seite weitergeleitet. (\hyperlink{courseDetails}{courseDetails.xhtml}) \\ Zugehörige Methode: deleteCourseUnit()
 					\item Löschen (Teilnehmer): Durch Drücken dieses Buttons wird der markierte Teilnehmer aus der Kurseinheit entfernt. \\ Zugehörige Methode: deleteUserFromCourseUnit()
 					\item Hinzufügen (Teilnehmer): Durch Drücken dieses Buttons wird der angegebene Teilnehmer zu dieser Kurseinheit hinzugefügt, sofern der Benutzername im System existiert und die Daten korrekt eingegeben wurden. \\ Zugehörige Methode: addUserToCourseUnit()
 				\end{itemize}
@@ -987,7 +997,8 @@
 					\item Termin: Hier gibt der Kursleiter den Termin der Kurseinheit ein.
 					\item Startzeit: Hier gibt der Kursleiter die Startzeit der Kurseinheit ein.
 					\item Endzeit: Hier gibt der Kursleiter die Endzeit der Kurseinheit ein.
-					\item Straße/ Hausnummer: Hier gibt der Kursleiter Straße und Hausnummer ein.
+					\item Straße: Hier gibt der Kursleiter die Straße ein.
+					\item Hausnummer: Hier gibt der Kursleiter die Hausnummer ein.
 					\item Postleitzahl: Hier gibt der Kursleiter die entsprechende Postleitzahl ein.
 					\item Stadt: Hier gibt der Kursleiter die Stadt ein, in der die Kurseinheit stattfindet.
 					\item Ort: Hier gibt der Kursleiter den Ort (Raumnummer, Turnhalle,..) ein, in dem die Kurseinheit stattfindet.
@@ -1006,7 +1017,7 @@
 				\end{itemize}
 				
 				\begin{center}
-					\begin{longtable}{|p{3cm} |p{5cm} | p{4cm}|p{3cm}|}
+					\begin{longtable}{|p{3cm} |p{6cm} | p{4cm}|p{3cm}|}
 						
 						\hline \multicolumn{1}{|c|}{\textbf{Eingabefeld}} & \multicolumn{1}{|c|}{\textbf{Backing-Bean-Attribute}} & \multicolumn{1}{|c|}{\textbf{Typ}}  &  \multicolumn{1}{|c|}{\textbf{ID}} \\ \hline
 						\endfirsthead
@@ -1016,7 +1027,8 @@
 						\textit{Termin} & CourseUnitManagementBean. CourseUnit.date & inputText & termin \\ \hline
 						\textit{Startzeit} & CourseUnitManagementBean. CourseUnit.starttime & inputText & startzeit \\ \hline
 						\textit{Endzeit} & CourseUnitManagementBean. CourseUnit.endtime & inputText & endzeit \\ \hline
-						\textit{Straße/ Hausnummer} & CourseUnitManagementBean. Address.street, CourseUnitManagement. Address.houseNumber & inputText & straße\\ \hline
+						\textit{Straße} & CourseUnitManagementBean. Address.street & inputText & straße\\ \hline
+						\textit{Hausnummer} & CourseUnitManagement.Address. houseNumber & inputText & straße\\ \hline
 						\textit{Postleitzahl} & CourseUnitManagementBean. Address.zipCode & inputText & postleitzahl \\ \hline
 						\textit{Stadt} & CourseUnitManagementBean. Address.city & inputText & stadt \\ \hline
 						\textit{Ort} & CourseUnitManagementBean. CourseUnit.location & inputText & ort \\ \hline
@@ -1045,8 +1057,9 @@
 						\textit{Termin} & DateValidator , validateRequired & convertDateTime \\ \hline
 						\textit{Startzeit} & validateRequired & convertDateTime \\ \hline
 						\textit{Endzeit} & validateRequired & convertDateTime \\ \hline
-						\textit{Straße/ Hausnummer} & validateLength (min = 0, max = 100) & - \\ \hline
-						\textit{Postleitzahl} & validateLength (min = 1, max = ???), validateRequired & - \\ \hline
+						\textit{Straße} & validateLength (min = 0, max = 100) & - \\ \hline
+						\textit{Hausnummer} & validateLength (min = 0, max = 10) & - \\ \hline
+						\textit{Postleitzahl} & validateLength (min = 1, max = 2147483647), validateRequired & - \\ \hline
 						\textit{Stadt} & validateLength (min = 1, max = 100), validateRequired & -  \\ \hline
 						\textit{Ort} & validateLength (min = 0, max = 100) & -  \\ \hline
 						\textit{Beschreibung} & validateLength (min = 0, max = 1000) & - \\ \hline
@@ -1069,7 +1082,8 @@
 					\item Termin (Fehlermeldung): Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
 					\item Startzeit (Fehlermeldung): Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
 					\item Endzeit (Fehlermeldung): Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
-					\item Straße/ Hausnummer (Fehlermeldung): Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
+					\item Straße (Fehlermeldung): Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
+					\item Hausnummer (Fehlermeldung): Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
 					\item Postleitzahl (Fehlermeldung): Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
 					\item Stadt (Fehlermeldung): Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
 					\item Raum (Fehlermeldung): Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
@@ -1095,7 +1109,8 @@
 						\textit{Termin (Fehlermeldung)}  & outputText & terminfehler \\ \hline
 						\textit{Startzeit (Fehlermeldung)}  & outputText & startzeitfehler \\ \hline
 						\textit{Endzeit (Fehlermeldung)}  & outputText & endzeitfehler \\ \hline
-						\textit{Straße/ Hausnummer (Fehlermeldung) }  & outputText & straßenfehler \\ \hline
+						\textit{Straße (Fehlermeldung) }  & outputText & straßenfehler \\ \hline
+						\textit{Hausnummer (Fehlermeldung) }  & outputText & hausnrfehler \\ \hline
 						\textit{Postleitzahl (Fehlermeldung)} & outputText & postleitzahlfehler \\ \hline
 						\textit{Stadt (Fehlermeldung)} & outputText & stadtfehler \\ \hline
 						\textit{Raum (Fehlermeldung)}& outputText & raumfehler\\ \hline
@@ -1184,7 +1199,7 @@
 				
 			\item \textbf{BackingBean:}
 				\begin{itemize}
-					\item AccountManagementBean.java
+					\item AccountManagementBean
 				\end{itemize}
 		\end{itemize}
 		
@@ -1330,7 +1345,7 @@
 						\hline
 						\endlastfoot
 						\textit{Kriterienauswahl} & - & - \\ \hline
-						\textit{Suchbegriff} & validateLength (minimum ="", maximum ="") & - \\ \hline
+						\textit{Suchbegriff} & validateLength (min =0, max = 100) & - \\ \hline
 					\end{longtable}
 				\end{center}
 				
@@ -1485,7 +1500,7 @@
 				
 			\item \textbf{Inputs:}
 				\begin{itemize}
-					\item Kursname: Hier gibt der Administrator den Kursnamen ein.
+					\item titel: Hier gibt der Administrator den Kursnamen ein.
 					\item Beschreibung: Hier gibt der Administrator die Beschreibung des Kurses ein.
 					\item Maximale Teilnehmerzahl: Hier gibt der Administrator die maximale Teilnehmerzahl des Kurses an.
 					\item Startdatum: Hier trägt der Administrator das Startdatum des Kurses ein.
@@ -1494,7 +1509,7 @@
 					\item E-Mail-Adresse (Kursleiter): Hier gibt der Administrator die entsprechende E-Mail-Adresse des Kursleiters ein.
 					\item Kursleiter-ID: Hier gibt der Administrator die entsprechende ID ein.
 					\item Löschen (Kursleiter): Hier kann der Administrator durch Setzen des Häkchens den Kursleiter markieren, um ihn anschließend über den Button 'Löschen' zu entfernen.
-					\item Profilbild Pfad: Hier wird der Pfad des ausgewählten Profilbildes angezeigt.
+					\item Profilbild: Hier wird der Pfad des ausgewählten Profilbildes angezeigt.
 					
 				\end{itemize}
 				
@@ -1505,16 +1520,16 @@
 						\endfirsthead
 						\hline
 						\endlastfoot
-						\textit{Kursname} & CourseManagement. Course.title & inputText & kursname \\ \hline
-						\textit{Beschreibung} & CourseManagement. Course.description & inputText & beschreibung \\ \hline
-						\textit{Maximale Teilnehmerzahl} & CourseManagement. Course.maxUsers & inputText & maxteilnehmer \\ \hline
-						\textit{Startdatum} & CourseManagement. Course.startdate & inputText & startdatum \\ \hline
-						\textit{Enddatum} & CourseManagement. Course.enddate & inputText & enddatum \\ \hline
+						\textit{titel} & CourseManagementBean. Course.title & inputText & titel \\ \hline
+						\textit{Beschreibung} & CourseManagementBean. Course.description & inputText & beschreibung \\ \hline
+						\textit{Maximale Teilnehmerzahl} & CourseManagementBean. Course.maxUsers & inputText & maxteilnehmer \\ \hline
+						\textit{Startdatum} & CourseManagementBean. Course.startdate & inputText & startdatum \\ \hline
+						\textit{Enddatum} & CourseManagementBean. Course.enddate & inputText & enddatum \\ \hline
 						\textit{Name (Kursleiter)} & - & inputText & name \\ \hline
 						\textit{E-Mail-Adresse (Kursleiter)} & - & inputText & mailkursleiter \\ \hline
 						\textit{Kursleiter-ID} & - & inputText & idkursleiter \\ \hline
 						\textit{Löschen (Kursleiter)} & - & selectBooleanCheckbox & löschenkursleiter \\ \hline
-						\textit{Profilbild Pfad} & CoursManagement. Course.courseImage & inputText & bildpfad \\ \hline
+						\textit{Profilbild} & CourseManagementBean. Course.courseImage & inputFile & bildpfad \\ \hline
 					\end{longtable}
 				\end{center}
 				
@@ -1525,16 +1540,16 @@
 						\endfirsthead
 						\hline
 						\endlastfoot
-						\textit{Kursname} & validateLength (minimum ="", maximum =""), validateRequired & - \\ \hline
-						\textit{Beschreibung} & validateLength (minimum ="", maximum =""), validateRequired & - \\ \hline
-						\textit{Maximale Teilnehmerzahl} & ???, validateRequired & - \\ \hline
-						\textit{Startdatum} & DateValidator, validateRequired & covertDateTime \\ \hline
-						\textit{Enddatum} & DateValidator, validateRequired & converDateTime \\ \hline
-						\textit{Name (Kursleiter)} & validateLength (minimum ="", maximum =""), validateRequired & - \\ \hline
-						\textit{E-Mail-Adresse (Kursleiter)} & validateRequired, EMailValidator & - \\ \hline
-						\textit{Kursleiter-ID} & validateRequired, ??? & convertNumber \\ \hline
+						\textit{Titel} & validateLength (min = 0, max = 150) & - \\ \hline
+						\textit{Beschreibung} & validateLength (min = 0, max = 1000) & - \\ \hline
+						\textit{Maximale Teilnehmerzahl} & validateLength (min = 0, max = 2147483647) & convertNumber \\ \hline
+						\textit{Startdatum} & validateRequired & covertDateTime \\ \hline
+						\textit{Enddatum} & validateRequired & converDateTime \\ \hline
+						\textit{Name (Kursleiter)} & validateLength (min = 1, max = 100), validateRequired & - \\ \hline
+						\textit{E-Mail-Adresse (Kursleiter)} & validateLength (min = 1, max = 319) validateRequired, EMailValidator & - \\ \hline
+						\textit{Kursleiter-ID} & validateRequired, validateLength (min = 0, max = 2147483647) & convertNumber \\ \hline
 						\textit{Löschen (Kursleiter)} & - & - \\ \hline
-						\textit{Profilbild Pfad} & ImageValidator & - \\ \hline
+						\textit{Profilbild} & ImageValidator & - \\ \hline
 					\end{longtable}
 				\end{center}
 				
