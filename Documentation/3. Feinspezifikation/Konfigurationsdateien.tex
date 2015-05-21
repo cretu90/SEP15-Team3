@@ -95,8 +95,10 @@ Nach der Erstinstallation wird die Konfigurationsdatei \textbf{(...).cfg} erstel
 \end{itemize}
 
 \subsubsection{Log4jspezifische Angaben(Log Levels):}
-Der Ausgabe-Umfang steigt mit der zugewiesenen Wichtigkeitsstufe und umfasst alle Nachrichten der Stufe selbst, sowie aller noch dringenderen Stufen
+Der Ausgabe-Umfang steigt mit der zugewiesenen Wichtigkeitsstufe und umfasst alle Nachrichten der Stufe selbst, sowie aller noch dringenderen Stufen 
 \begin{itemize}
+	\item \emph{OFF:}\\
+	Logging ist deaktiviert.
 	\item \emph{FATAL:}\\
 	Ein kritischer Fehler ist aufgetreten und das System kann nicht mehr weiter ausgeführt werden.
 	\item \emph{ERROR:}\\
@@ -111,10 +113,34 @@ Der Ausgabe-Umfang steigt mit der zugewiesenen Wichtigkeitsstufe und umfasst all
 	ausführliches Debugging mit Kommentaren.
 	\item \emph{ALL:}\\
 	Alle Meldungen werden ungefiltert ausgegeben.
-	\item \emph{OFF:}\\
-	Logging ist deaktiviert.
 \end{itemize}
 
 \section{Systemeinstellungen}
+\subsection{Allgemein}
+Nach dem Systemstart können Administratoren in der Webanwendung folgende Systemeinstellungen per Drop-Down und Eingabe ändern:
+
+\subsection{Parameter}
+\begin{center}
+	\begin{longtable}{|p{4cm} | p{7cm} | p{2cm} |}
+		\hline
+		\multicolumn{1}{|c|}{\textbf{Parameter}} & \multicolumn{1}{c|}{\textbf{Details}} & \multicolumn{1}{c|}{\textbf{Eingabetyp}}
+		\\ \hline
+		Überziehungskredit & Die Einstellung legt fest, wieweit der Benutzer sein Konto überziehen darf (in Euro, Defaultwert: 0) & Integer \\ \hline
+		Art der Registrierung & Die Einstellung legt den Art der Registrierungsbestätigung fest (Defaultwert: E-Mail) & Drop-Down \\ \hline
+		
+		
+	\end{longtable}
+\end{center}
+\subsection{E-Mailspezifische Angaben(Wertebereich)}
+
+\begin{itemize}
+	\item \emph{Überziehungskredit:}\\
+	Eingabe muss eine positive ganzzahlige natürliche Zahl sein. (maximal 5 Stellen)
+	\item \emph{Art der Registrierung:}\\
+	\textbf{E-Mail:} Der Benutzer bekommt eine E-Mail mit einem Bestätigungslink zur Account Freigabe.\\
+	\textbf{Admin:} Der Account des Benutzers wird durch einen Administrator freigegeben.\\
+	\textbf{Beides:} Der Account wird erst freigegeben, wenn beide obenstehenden Angaben durchgeführt worden sind
+\end{itemize}
+
 
 
