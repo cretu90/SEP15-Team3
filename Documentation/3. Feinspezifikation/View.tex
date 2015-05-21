@@ -184,17 +184,7 @@
 						\item Startseite: Über diesen Link gelangt der Benutzer zurück zur Startseite. (\hyperlink{index}{index.xhtml})
 					\end{itemize}
 					
-					\begin{center}
-						\begin{longtable}{|p{4cm} |p{6cm} |}
-							
-							\hline \multicolumn{1}{|c|}{\textbf{Link}} & \multicolumn{1}{|c|}{\textbf{\"{U}bergabeparameter}} \\ \hline
-							\endfirsthead
-							\hline
-							\endlastfoot
-							
-							\textit{Startseite } & - \\ \hline
-						\end{longtable}
-					\end{center}
+				
 						
 			\end{itemize}
 		
@@ -278,23 +268,23 @@
 						\endfirsthead
 						\hline
 						\endlastfoot
-							\textit{Anrede (Registrierg)} & - & selectOneMenu & anrede \\ \hline
-							\textit{Vorname (Registrierg)} & - & inputText & vorname \\ \hline
-							\textit{Name (Registrierg)} & - & inputText & name \\ \hline
-							\textit{Benutzername (Registrierg)} & - & inputText & benutzername\\ \hline
-							\textit{Passwort (Registrierg)} & - & inputSecret & passwort \\ \hline
-							\textit{Passwort bestätigen (Registrierg)} &- & inputSecret & bestätigungs- passwort\\ \hline
-							\textit{Geburtstag (Registrierg)} & - & inputText & geburtstag \\ \hline
-							\textit{Straße (Registrierg)} & - & inputText & straße\\ \hline
-							\textit{Hausnummer (Registrierg)} & - & inputText & hausnummer\\ \hline
-							\textit{Stadt (Registrierg)} & - & inputText & stadt \\ \hline
-							\textit{Postleitzahl (Registrierg)} & - & inputText & postleitzahl \\ \hline
-							\textit{Land (Registrierg)} & - & inputText & land \\ \hline
-							\textit{E-Mail-Adresse (Registrierg)} & - & inputText & mail\\ \hline
+							\textit{Anrede (Registrierg)} & RegisterUserBean. userToRegistrate.salutation & selectOneMenu & anrede \\ \hline
+							\textit{Vorname (Registrierg)} & RegisterUserBean. userToRegistrate.firstname & inputText & vorname \\ \hline
+							\textit{Name (Registrierg)} & RegisterUserBean. userToRegistrate.lastname & inputText & name \\ \hline
+							\textit{Benutzername (Registrierg)} & RegisterUserBean. userToRegistrate.username & inputText & benutzername\\ \hline
+							\textit{Passwort (Registrierg)} & RegisterUserBean. userToRegistrate.password & inputSecret & passwort \\ \hline
+							\textit{Passwort bestätigen (Registrierg)} & RegisterUserBean. userToRegistrate.password & inputSecret & bestätigungs- passwort\\ \hline
+							\textit{Geburtstag (Registrierg)} & RegisterUserBean. userToRegistrate.dateOfBirth & inputText & geburtstag \\ \hline
+							\textit{Straße (Registrierg)} & RegisterUserBean. userToRegistrate.address.street & inputText & straße\\ \hline
+							\textit{Hausnummer (Registrierg)} & RegisterUserBean. userToRegistrate.address.houseNumber & inputText & hausnummer\\ \hline
+							\textit{Stadt (Registrierg)} & RegisterUserBean. userToRegistrate.address.city & inputText & stadt \\ \hline
+							\textit{Postleitzahl (Registrierg)} & RegisterUserBean. userToRegistrate.address.zipCode & inputText & postleitzahl \\ \hline
+							\textit{Land (Registrierg)} & RegisterUserBean. userToRegistrate.address.country & inputText & land \\ \hline
+							\textit{E-Mail-Adresse (Registrierg)} & RegisterUserBean. userToRegistrate.email & inputText & mail\\ \hline
 							\textit{AGBs bestätigen (Registrierg)} & - & selectBooleanCheckbox & agb \\ \hline
-							\textit{Benutzername (Anmeldung)} & - & inputText & anmeldungs- benutzername \\ \hline
-							\textit{Passwort (Anmeldung)} & - & inputSecret & anmeldungs- passwort \\ \hline
-							\textit{E-Mail-Adresse (Passwort vergessen)} & - & inputText & Passwortmail \\ \hline
+							\textit{Benutzername (Anmeldung)} & AuthenticateUserBean. loginUser.username & inputText & anmeldungs- benutzername \\ \hline
+							\textit{Passwort (Anmeldung)} & AuthenticateUserBean. loginUser.password & inputSecret & anmeldungs- passwort \\ \hline
+							\textit{E-Mail-Adresse (Passwort vergessen)} & LostPasswordBean. emailAddressToResetPassword & inputText & Passwortmail \\ \hline
 					\end{longtable}
 				\end{center}
 				
@@ -736,21 +726,21 @@
 						\endfirsthead
 						\hline
 						\endlastfoot
-						\textit{Anrede} & UserProfilBean.User.salutation & selectOneMenu & anrede \\ \hline
-						\textit{Vorname} & UserProfilBean.User.fistname & inputText & vorname \\ \hline
-						\textit{Name} & UserProfilBean.User.lastname & inputText & name \\ \hline
-						\textit{Geburtstag } & UserProfilBean.User.dateOfBirth & inputText & geburtstag \\ \hline
-						\textit{Straße} & UserProfilBean.Address.street & inputText & straße\\ \hline
-						\textit{Hausnummer} & UserProfil.Address.houseNumber  & inputText & hausnummer\\ \hline
-						\textit{Stadt} & UserProfilBean.Address.city & inputText & stadt \\ \hline
-						\textit{Postleitzahl} & UserProfilBean.Address.zipCode & inputText & postleitzahl \\ \hline
-						\textit{Land} & UserProfilBean.Address.country & inputText & land \\ \hline
-						\textit{E-Mail-Adresse} & UserProfilBean.User.email & inputText & mail\\ \hline
-						\textit{Benutzername} & UserProfilBean.User.username & inputText & benutzername \\ \hline
-						\textit{Passwort} & UserProfilBean.User.password  & inputSecret & passwort \\ \hline
-						\textit{Passwort bestätigen} & UserProfilBean.User.password & inputSecret & bestätigungs- passwort \\ \hline
-						\textit{Benutzerrolle} & UserProfilBean.User.userRole & inputText & rolle \\ \hline
-						\textit{Profilbild Pfad} & UserProfilBean.User.profilImage & inputFile & bildpfad \\ \hline
+						\textit{Anrede} & UserProfilBean.user.salutation & selectOneMenu & anrede \\ \hline
+						\textit{Vorname} & UserProfilBean.user.fistname & inputText & vorname \\ \hline
+						\textit{Name} & UserProfilBean.user.lastname & inputText & name \\ \hline
+						\textit{Geburtstag } & UserProfilBean.user.dateOfBirth & inputText & geburtstag \\ \hline
+						\textit{Straße} & UserProfilBean.user.address.street & inputText & straße\\ \hline
+						\textit{Hausnummer} & UserProfil.user.address. houseNumber  & inputText & hausnummer\\ \hline
+						\textit{Stadt} & UserProfilBean.user.address.city & inputText & stadt \\ \hline
+						\textit{Postleitzahl} & UserProfilBean.user.address. zipCode & inputText & postleitzahl \\ \hline
+						\textit{Land} & UserProfilBean.user.address. country & inputText & land \\ \hline
+						\textit{E-Mail-Adresse} & UserProfilBean.user.email & inputText & mail\\ \hline
+						\textit{Benutzername} & UserProfilBean.user.username & inputText & benutzername \\ \hline
+						\textit{Passwort} & UserProfilBean.user.password  & inputSecret & passwort \\ \hline
+						\textit{Passwort bestätigen} & UserProfilBean.user.password & inputSecret & bestätigungs- passwort \\ \hline
+						\textit{Benutzerrolle} & UserProfilBean.user.userRole & inputText & rolle \\ \hline
+						\textit{Profilbild Pfad} & UserProfilBean.user.profilImage & inputFile & bildpfad \\ \hline
 					\end{longtable}
 				\end{center}
 				
@@ -1041,26 +1031,26 @@
 						\endfirsthead
 						\hline
 						\endlastfoot
-						\textit{Titel} & CourseUnitManagementBean. CourseUnit.title & inputText & termin \\ \hline
-						\textit{Termin} & CourseUnitManagementBean. CourseUnit.date & inputText & termin \\ \hline
-						\textit{Startzeit} & CourseUnitManagementBean. CourseUnit.starttime & inputText & startzeit \\ \hline
-						\textit{Endzeit} & CourseUnitManagementBean. CourseUnit.endtime & inputText & endzeit \\ \hline
-						\textit{Straße} & CourseUnitManagementBean. Address.street & inputText & straße\\ \hline
-						\textit{Hausnummer} & CourseUnitManagement.Address. houseNumber & inputText & straße\\ \hline
-						\textit{Postleitzahl} & CourseUnitManagementBean. Address.zipCode & inputText & postleitzahl \\ \hline
-						\textit{Stadt} & CourseUnitManagementBean. Address.city & inputText & stadt \\ \hline
-						\textit{Ort} & CourseUnitManagementBean. CourseUnit.location & inputText & ort \\ \hline
-						\textit{Beschreibung} & CourseUnitManagementBean. CourseUnit.description & inputText & beschreibung\\ \hline
-						\textit{Preis} & CourseUnitManagementBean. CourseUnit.price & inputText & preis \\ \hline
-						\textit{Kursleiter} & CourseUnitManagementBean. CourseUnit.courseAdmin & inputText & kursleiter \\ \hline
+						\textit{Titel} & CourseUnitManagementBean. courseUnit.title & inputText & termin \\ \hline
+						\textit{Termin} & CourseUnitManagementBean. courseUnit.date & inputText & termin \\ \hline
+						\textit{Startzeit} & CourseUnitManagementBean. courseUnit.starttime & inputText & startzeit \\ \hline
+						\textit{Endzeit} & CourseUnitManagementBean. courseUnit.endtime & inputText & endzeit \\ \hline
+						\textit{Straße} & CourseUnitManagementBean. courseUnit.address.street & inputText & straße\\ \hline
+						\textit{Hausnummer} & CourseUnitManagement. courseUnit.address.houseNumber & inputText & straße\\ \hline
+						\textit{Postleitzahl} & CourseUnitManagementBean. courseUnit.address.zipCode & inputText & postleitzahl \\ \hline
+						\textit{Stadt} & CourseUnitManagementBean. courseUnit.address.city & inputText & stadt \\ \hline
+						\textit{Ort} & CourseUnitManagementBean. courseUnit.location & inputText & ort \\ \hline
+						\textit{Beschreibung} & CourseUnitManagementBean. courseUnit.description & inputText & beschreibung\\ \hline
+						\textit{Preis} & CourseUnitManagementBean. courseUnit.price & inputText & preis \\ \hline
+						\textit{Kursleiter} & CourseUnitManagementBean. courseUnit.courseAdmin & inputText & kursleiter \\ \hline
 						\textit{Mindestteil- nehmerzahl} & CourseUnitManagementBean. CourseUnit.minUsers & inputText & minteilnehmer \\ \hline
 						\textit{Maximale Teilnehmerzahl} & CourseUnitManagementBean. CourseUnit.maxUsers & inputText & maxteilnehmer \\ \hline
 						\textit{Teilnehmer markieren} & - & selectBooleanCheckbox & markteilnehmer \\ \hline
-						\textit{Benutzer-ID} & - & inputText & idnutzer \\ \hline
-						\textit{Name Teilnehmer} & - & inputText & nameteilnehmer \\ \hline
-						\textit{Vorname Teilnehmer} & - & inputText & vornameteilnehmer \\ \hline
-						\textit{Checkbox regelmäßig} & CourseUnitManagementBean. CourseUnit.cycle & selectBooleanCheckbox & regelmäßig \\ \hline
-						\textit{Einheitenanzahl} & - & inputText & einheiten \\ \hline
+						\textit{Benutzer-ID} & CourseUnitManagementBean. userToAdd.userID & inputText & idnutzer \\ \hline
+						\textit{Name Teilnehmer} & CourseUnitManagementBean. userToAdd.lastname & inputText & nameteilnehmer \\ \hline
+						\textit{Vorname Teilnehmer} & CourseUnitManagementBean. userToAdd.firstname & inputText & vornameteilnehmer \\ \hline
+						\textit{Checkbox regelmäßig} & CourseUnitManagementBean. isRegularCourseUnit & selectBooleanCheckbox & regelmäßig \\ \hline
+						\textit{Einheitenanzahl} & CourseUnitManagementBean. cycleOfCourseUnit.NumberOfUnits & inputText & einheiten \\ \hline
 					\end{longtable}
 				\end{center}
 				
