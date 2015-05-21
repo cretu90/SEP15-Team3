@@ -313,7 +313,7 @@
 						\textit{Passwort bestätigen (Registrierg)} & confirmPasswordValidator, validateRequired & - \\ \hline
 						\textit{Geburtstag (Registrierg)} & DateOfBirthValidator & convertDateTime  \\ \hline
 						\textit{Straße (Registrierg)} & validateLength (min = 0, max = 100) & - \\ \hline
-						\textit{Hausnummer (Registrierg)} & validateLength (min = 0, max = 2147483647) & - \\ \hline
+						\textit{Hausnummer (Registrierg)} & validateLength (min = 0, max = 9) & - \\ \hline
 						\textit{Stadt (Registrierg)} & validateLength (min = 1, max = 100), validateRequired & -  \\ \hline
 						\textit{Postleitzahl (Registrierg)} & validateLength (min = 1, max = 10), validateRequired & - \\ \hline
 						\textit{Land (Registrierg)} & validateLength (min = 1, max = 100), validateRequired & -  \\ \hline
@@ -726,7 +726,7 @@
 					\item Passwort: Hier kann der Benutzer sein Passwort ändern.
 					\item Passwort bestätigen: Hier muss der Benutzer sein geändertes Passwort bestätigen.
 					\item Benutzerrolle: Hier kann der Administrator die Benutzerrolle eines Nutzers ändern.
-					\item Profilbild: Hier kann der Benutzer sein Profilbild ändern.
+					\item Profilbild Pfad: Hier kann der Benutzer sein Profilbild ändern.
 				\end{itemize}
 				
 				\begin{center}
@@ -750,7 +750,7 @@
 						\textit{Passwort} & UserProfilBean.User.password  & inputSecret & passwort \\ \hline
 						\textit{Passwort bestätigen} & UserProfilBean.User.password & inputSecret & bestätigungs- passwort \\ \hline
 						\textit{Benutzerrolle} & UserProfilBean.User.userRole & inputText & rolle \\ \hline
-						\textit{Profilbild} & UserProfilBean.User.profilImage & inputFile & bildpfad \\ \hline
+						\textit{Profilbild Pfad} & UserProfilBean.User.profilImage & inputFile & bildpfad \\ \hline
 					\end{longtable}
 				\end{center}
 				
@@ -766,7 +766,7 @@
 						\textit{Name} & validateLength (min = 0, max = 100) & -  \\ \hline
 						\textit{Geburtstag} & DateOfBirthValidator & convertDateTime  \\ \hline
 						\textit{Straße} & validateLength (min = 0, max = 100) & - \\ \hline
-						\textit{Hausnummer} & validateLength (min = 0, max = 2147483647) & - \\ \hline
+						\textit{Hausnummer} & validateLength (min = 0, max = 9) & - \\ \hline
 						\textit{Stadt} & validateLength (min = 1, max = 100), validateRequired & -  \\ \hline
 						\textit{Postleitzahl} & validateLength (min = 1, max = 10), validateRequired & - \\ \hline
 						\textit{Land} & validateLength (min = 1, max = 100), validateRequired & -  \\ \hline
@@ -775,7 +775,7 @@
 						\textit{Passwort} & PasswordValidator (mindestens 8 Zeichen, mind. 1 Sonderzeichen, mind. 1 Ziffer, Groß- und Kleinbuchstaben, keine Umlaute, kein 'ß'), validateRequired & -  \\ \hline
 						\textit{Passwort bestätigen} & ConfirmPasswordValidator, validateRequired & - \\ \hline
 						\textit{Benutzerrolle} & validateRequired & - \\ \hline
-						\textit{Profilbild} & UserImageValidator & - \\ \hline
+						\textit{Profilbild Pfad} & UserImageValidator & - \\ \hline
 					\end{longtable}
 				\end{center}
 				
@@ -1077,7 +1077,7 @@
 						\textit{Endzeit} & validateRequired & convertDateTime \\ \hline
 						\textit{Straße} & validateLength (min = 0, max = 100) & - \\ \hline
 						\textit{Hausnummer} & validateLength (min = 0, max = 10) & - \\ \hline
-						\textit{Postleitzahl} & validateLength (min = 1, max = 2147483647), validateRequired & - \\ \hline
+						\textit{Postleitzahl} & validateLength (min = 1, max = 9), validateRequired & - \\ \hline
 						\textit{Stadt} & validateLength (min = 1, max = 100), validateRequired & -  \\ \hline
 						\textit{Ort} & validateLength (min = 0, max = 100) & -  \\ \hline
 						\textit{Beschreibung} & validateLength (min = 0, max = 1000) & - \\ \hline
@@ -1086,7 +1086,7 @@
 						\textit{Mindesteil- nehmerzahl} & validateRequired & convertNumber \\ \hline
 						\textit{Maximale Teilnehmerzahl} & validateRequired & convertNumber \\ \hline
 						\textit{Teilnehmer markieren} & - & - \\ \hline
-						\textit{Benutzer-ID} & validateLength (min = 0, max = 2147483647 ) & convertNumber \\ \hline
+						\textit{Benutzer-ID} & validateLength (min = 0, max = 9 ) & convertNumber \\ \hline
 						\textit{Name (Teilnehmer)} & validateLength (min = 0, max = 100 ) & - \\ \hline
 						\textit{Vorname (Teilnehmer)} & validateLength (min = 0, max = 100) & - \\ \hline
 						\textit{Checkbox regelmäßig} & - & - \\ \hline
@@ -1547,7 +1547,7 @@
 					\item E-Mail-Adresse (Kursleiter): Hier gibt der Administrator die entsprechende E-Mail-Adresse des Kursleiters ein.
 					\item Kursleiter-ID: Hier gibt der Administrator die entsprechende ID ein.
 					\item Löschen (Kursleiter): Hier kann der Administrator durch Setzen des Häkchens den Kursleiter markieren, um ihn anschließend über den Button 'Löschen' zu entfernen.
-					\item Profilbild: Hier wird der Pfad des ausgewählten Profilbildes angezeigt.
+					\item Profilbild Pfad: Hier wird der Pfad des ausgewählten Profilbildes angezeigt.
 					
 				\end{itemize}
 				
@@ -1567,7 +1567,7 @@
 						\textit{E-Mail-Adresse (Kursleiter)} & - & inputText & mailkursleiter \\ \hline
 						\textit{Kursleiter-ID} & - & inputText & idkursleiter \\ \hline
 						\textit{Löschen (Kursleiter)} & - & selectBooleanCheckbox & löschenkursleiter \\ \hline
-						\textit{Profilbild} & CourseManagementBean. Course.courseImage & inputFile & bildpfad \\ \hline
+						\textit{Profilbild Pfad} & CourseManagementBean. Course.courseImage & inputFile & bildpfad \\ \hline
 					\end{longtable}
 				\end{center}
 				
@@ -1580,14 +1580,14 @@
 						\endlastfoot
 						\textit{Titel} & validateLength (min = 0, max = 150) & - \\ \hline
 						\textit{Beschreibung} & validateLength (min = 0, max = 1000) & - \\ \hline
-						\textit{Maximale Teilnehmerzahl} & validateLength (min = 0, max = 2147483647) & convertNumber \\ \hline
+						\textit{Maximale Teilnehmerzahl} & validateLength (min = 0, max = 9) & convertNumber \\ \hline
 						\textit{Startdatum} & validateRequired & covertDateTime \\ \hline
 						\textit{Enddatum} & validateRequired & converDateTime \\ \hline
 						\textit{Name (Kursleiter)} & validateLength (min = 1, max = 100), validateRequired & - \\ \hline
 						\textit{E-Mail-Adresse (Kursleiter)} & validateLength (min = 1, max = 319) validateRequired, EMailValidator & - \\ \hline
-						\textit{Kursleiter-ID} & validateRequired, validateLength (min = 0, max = 2147483647) & convertNumber \\ \hline
+						\textit{Kursleiter-ID} & validateRequired, validateLength (min = 0, max = 9) & convertNumber \\ \hline
 						\textit{Löschen (Kursleiter)} & - & - \\ \hline
-						\textit{Profilbild} & ImageValidator & - \\ \hline
+						\textit{Profilbild Pfad} & ImageValidator & - \\ \hline
 					\end{longtable}
 				\end{center}
 				
