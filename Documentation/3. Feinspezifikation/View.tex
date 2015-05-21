@@ -596,13 +596,12 @@
 							\textit{Kursbeschreibung}  & outputText & beschr \\ \hline
 							\textit{Minimale Teilnehmerzahl}  & outputText & minteilnehmer \\ \hline
 							\textit{Maximale Teilnehmerzahl}  & outputText & maxteilnehmer \\ \hline
-							\textit{Kursleiter Name Fehlermeldung}  & outputText & knamefehler \\ \hline
-							\textit{Kursleiter E-Mail Fehlermeldung}  & outputText & kmailfehler \\ \hline
-							\textit{Kursbeschreibung Fehlermeldung}  & outputText & beschrfehler \\ \hline
-							\textit{Minimale Teilnehmerzahl Fehlermeldung}  & outputText & minteilnfehler \\ \hline
-							\textit{Maximale Teilnehmerzahl Fehlermeldung}  & outputText & maxteilnfehler \\ \hline
-							\textit{Startdatum Fehlermeldung}  & outputText & startdatumfehler \\ \hline
-							\textit{Enddatum Fehlermeldung}  & outputText & enddatumfehler \\ \hline
+							\textit{Kursleiter Name Fehlermeldung}  & message & knamefehler \\ \hline
+							\textit{Kursleiter E-Mail Fehlermeldung}  & message & kmailfehler \\ \hline
+							\textit{Kursbeschreibung Fehlermeldung}  & message & beschrfehler \\ \hline
+							\textit{Maximale Teilnehmerzahl Fehlermeldung}  & messages globalOnly & maxteilnfehler \\ \hline
+							\textit{Startdatum Fehlermeldung}  & message & startdatumfehler \\ \hline
+							\textit{Enddatum Fehlermeldung}  & message & enddatumfehler \\ \hline
 						\end{longtable}
 					\end{center}
 			\item \textbf{BackingBean:}
@@ -1278,11 +1277,11 @@
 							\endfirsthead
 							\hline
 							\endlastfoot
-							\textit{Benutzer-ID Fehlermeldung}  & outputText & useridfehlermeldung \\ \hline
-							\textit{Benutzername Fehlermeldung}  & outputText & usernamefehlermeldung \\ \hline
-							\textit{Betrag Fehlermeldung} & outputText & amountfehlermeldung\\ \hline
-							\textit{Überziehungswert Fehlermeldung} & outputText & overdraftfehlermeldung\\ \hline
-							\textit{Kontoaufladen Message} & facesMessage & success\\ \hline
+							\textit{Benutzer-ID Fehlermeldung}  & message & useridfehlermeldung \\ \hline
+							\textit{Benutzername Fehlermeldung}  & message & usernamefehlermeldung \\ \hline
+							\textit{Betrag Fehlermeldung} & message & amountfehlermeldung\\ \hline
+							\textit{Überziehungswert Fehlermeldung} & message & overdraftfehlermeldung\\ \hline
+							\textit{Kontoaufladen Message} & messages globalOnly & success\\ \hline
 						\end{longtable}
 					\end{center}
 			\item \textbf{BackingBean:}
@@ -1468,17 +1467,17 @@
 							\endlastfoot
 							\textit{Benutzer-ID}  & outputText & benutzerid \\ \hline
 							\textit{Profilbild}  & graphicImage & profilbild \\ \hline
-							\textit{Vorname Fehlermeldung}  & outputText & vnamefehler \\ \hline
-							\textit{Nachname Fehlermeldung}  & outputText & nnamefehler \\ \hline
-							\textit{Geburtsdatum Fehlermeldung}  & outputText & gebdatfehler \\ \hline
-							\textit{Straße Fehlermeldung}  & outputText & strassefehler \\ \hline
-							\textit{Postleitzahl Fehlermeldung}  & outputText & plzfehler \\ \hline
-							\textit{Stadt Fehlermeldung}  & outputText & stadtfehler \\ \hline
-							\textit{Benutzername Fehlermeldung}  & outputText & benutzername-fehler \\ \hline
-							\textit{Passwort Fehlermeldung}  & outputText & passwortfehler \\ \hline
-							\textit{Passwort wiederholen Fehlermeldung}  & outputText & passwortwhfehler \\ \hline
-							\textit{E-Mail Fehlermeldung}  & outputText & mailfehler \\ \hline
-							\textit{Benutzer anlegen Benachrichtigung} & facesMessage & success\\ \hline
+							\textit{Vorname Fehlermeldung}  & message & vnamefehler \\ \hline
+							\textit{Nachname Fehlermeldung}  & message & nnamefehler \\ \hline
+							\textit{Geburtsdatum Fehlermeldung}  & message & gebdatfehler \\ \hline
+							\textit{Straße Fehlermeldung}  & message & strassefehler \\ \hline
+							\textit{Postleitzahl Fehlermeldung}  & message & plzfehler \\ \hline
+							\textit{Stadt Fehlermeldung}  & message & stadtfehler \\ \hline
+							\textit{Benutzername Fehlermeldung}  & message & benutzername-fehler \\ \hline
+							\textit{Passwort Fehlermeldung}  & message & passwortfehler \\ \hline
+							\textit{Passwort wiederholen Fehlermeldung}  & message & passwortwhfehler \\ \hline
+							\textit{E-Mail Fehlermeldung}  & message & mailfehler \\ \hline
+							\textit{Benutzer anlegen Benachrichtigung} & messages globalOnly & success\\ \hline
 						\end{longtable}
 					\end{center}
 			\item \textbf{BackingBean:}
