@@ -3,7 +3,7 @@
 	SeSc
 \end{tiny}
 
-Das System \textbf{OfCourse} benötigt drei Konfigurationsdateien um erfolgreich laufen zu können. In der ersten Datei werden relevante Einstellungen des Systems (Datenbankverbindung, Anzahl der Verbindungen, Überziehungskredit usw) gespeichert. Die zweite Konfigurationsdatei enthält alle nötigen Informationen des E-Mailaccounts(...) über den die Systemnachrichten an die User geschickt werden. Die letzte Datei wird von \textbf{log4j} benötigt, um das Logging Level und den Pfad zum anlegen der Log-Datei zu speichern. Alle Dateien liegen auf dem Server und dürfen deswegen nur vom Systemadministrator geändert werden. Im folgenden wird nun genauer auf alle drei Konfigurationsdateien eingegangen:
+Das System \textbf{OfCourse} benötigt drei Konfigurationsdateien um erfolgreich gestartet werden zu können. In der ersten Datei werden relevante Einstellungen des Systems (Datenbankverbindung, Anzahl der Verbindungen, Überziehungskredit usw) gespeichert. Die zweite Konfigurationsdatei enthält alle nötigen Informationen des E-Mailaccounts(...) über den die Systemnachrichten an die User geschickt werden. Die letzte Datei wird von \textbf{log4j} benötigt, um das Logging Level und den Pfad zum anlegen der Log-Datei zu speichern. Alle Dateien liegen auf dem Server und dürfen deswegen nur vom Systemadministrator geändert werden. Außerdem gibt es noch Systemeinstellungen die von Administratoren in der Web-Anwendung des Systems geändert werden können.  Im folgenden wird nun genauer auf alle drei Konfigurationsdateien und den Systemeinstellungen eingegangen:
 
 \section{Konfiguationsdatei des Systems}
 \subsection{Allgemein}
@@ -51,7 +51,7 @@ Bei der Ersteinrichtung der Applikation wird die Konfigurationsdatei \textbf{(..
 		E-Mailadresse & \textbf{mailaddress} & E-Mailadresse mit der das System Nachrichten verschickt & String \\ \hline
 		E-Mail SMTP Server & \textbf{smtphost} & Der Postausgangsserver für den Nachrichtenversand. Angabe als URL (z.B. smtp.1und1.de) & String \\ \hline
 		E-Mail SMTP Port & \textbf{smtpport} & Portnummer des Postausgangsservers & Integer \\ \hline
-		E-Mail SMTP Authentifizierung & \textbf{smtpAuth} & SMTP Authentifizierungsart & String  \\ \hline
+		E-Mail SMTP SSL Authentifizierung & \textbf{smtpAuth} & Gibt an ob die Verbindung zum E-mailserver per SSL gesichert ist. & Boolean  \\ \hline
 		E-Mail Username & \textbf{mailusername} & Benutzername für den Login am SMTP Server & String \\ \hline
 		E-Mail Passwort & \textbf{mailpassword} & Passwort für den Login am SMTP Server & String \\ \hline
 		
@@ -63,24 +63,9 @@ Bei der Ersteinrichtung der Applikation wird die Konfigurationsdatei \textbf{(..
 	\item \emph{smtpport:}\\
 	Angabe muss zwischen 0 und 65535 liegen.
 	\item \emph{smtpAuth:}\\
-	Angabe muss einer existierenden Authentifizierungsart entsprechen. Siehe unten
+	Angabe kann entweder true oder false sein.
 \end{itemize}
 
-\subsubsection{E-Mailspezifische Angaben(Authentifizierungsarten)}
-Die Authentifizierungsart wird von der Serverseite des E-Mail Client zur Verfügung gestellt. Man unterscheidet hier von:
-
-\begin{itemize}
-	\item \emph{PLAIN:}\\
-	Es wird der Benutzername (zur Autorisierung), der Benutzername (zur Authentifizierung) und das Passwort in einem Schritt unverschlüsselt übertragen.
-	\item \emph{LOGIN:}\\
-	Die Login Daten werden wie bei PLAIN unverschlüsselt übertragen aber in zwei Schritten.
-	\item \emph{CRAM-MD5:}\\
-	Hier wird die Kommunikation zwischen Server und Client mit einem Zeitstempel versehen. Mit diesem Zeitstempel werden Daten verschlüsselt und so vor Angriffen geschützt.
-	\item \emph{SCRAM-SHA-1:}\\
-	
-	\item \emph{NTLM:}\\
-	Der Client schickt dem Server den Benutzernamen und bekommt eine zufällige Zahl zurück. Mit dieser Zufallszahl wird das Passwort des Clients gehasht und kann nur vom Server entschlüsselt werden.
-\end{itemize}
 
 \section{Konfiguartionsdatei von Log4j}	
 
@@ -110,7 +95,7 @@ Nach der Erstinstallation wird die Konfigurationsdatei \textbf{(...).cfg} erstel
 \end{itemize}
 
 \subsubsection{Log4jspezifische Angaben(Log Levels):}
-
+Der Ausgabe-Umfang steigt mit der zugewiesenen Wichtigkeitsstufe und umfasst alle Nachrichten der Stufe selbst, sowie aller noch dringenderen Stufen
 \begin{itemize}
 	\item \emph{FATAL:}\\
 	Ein kritischer Fehler ist aufgetreten und das System kann nicht mehr weiter ausgeführt werden.
@@ -129,5 +114,7 @@ Nach der Erstinstallation wird die Konfigurationsdatei \textbf{(...).cfg} erstel
 	\item \emph{OFF:}\\
 	Logging ist deaktiviert.
 \end{itemize}
+
+\section{Systemeinstellungen}
 
 
