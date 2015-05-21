@@ -1293,6 +1293,7 @@
 			\item \textbf{Outputs:}
 			\begin{itemize}
 				\item Fehlermeldung zu den einzelnen Eingabefeldern, bei falscher Eingabe oder fehlerhaften Uploads.
+				\item Kontoaufladen Message: Positive oder negative Rückmeldung bei Kontoaufladung
 			\end{itemize}
 
 					\begin{center}
@@ -1306,6 +1307,7 @@
 							\textit{Benutzername Fehlermeldung}  & outputText & usernamefehlermeldung \\ \hline
 							\textit{Betrag Fehlermeldung} & outputText & amountfehlermeldung\\ \hline
 							\textit{Überziehungswert Fehlermeldung} & outputText & overdraftfehlermeldung\\ \hline
+							\textit{Kontoaufladen Message} & facesMessage & success\\ \hline
 						\end{longtable}
 					\end{center}
 			\item \textbf{BackingBean:}
@@ -1437,19 +1439,19 @@
 						\endfirsthead
 						\hline
 						\endlastfoot
-						\textit{Anrede} & .. & salutation\\ \hline
-						\textit{Vorname} & ... & prename\\ \hline
-						\textit{Nachname} & ... & name\\ \hline
-						\textit{Geburtsdatum} & ... & birthday\\ \hline
-						\textit{Straße} & ... & street\\ \hline
-						\textit{Postleitzahl} & ... & plz\\ \hline	
-						\textit{Stadt} & ... & town\\ \hline
-						\textit{Benutzername} & ... & username\\ \hline	
-						\textit{Passwort} & ... & password\\ \hline	
-						\textit{Passwort wiederholen} & ... & passwordrepeat\\ \hline
-						\textit{E-Mail} & ... & mail\\ \hline
-						\textit{Benutzerrolle} & ... & role\\ \hline
-						\textit{Durchsuchen} & ... & search\\ \hline
+						\textit{Anrede} & UserManagementBean.user.salutation & salutation\\ \hline
+						\textit{Vorname} & UserManagementBean.user.firstname & prename\\ \hline
+						\textit{Nachname} & UserManagementBean.user.lastname & name\\ \hline
+						\textit{Geburtsdatum} & UserManagementBean.user.dateOfBirth & birthday\\ \hline
+						\textit{Straße} & UserManagementBean.user.address.street & street\\ \hline
+						\textit{Postleitzahl} & UserManagementBean.user.address.zipCode & plz\\ \hline	
+						\textit{Stadt} & UserManagementBean.user.street.city & town\\ \hline
+						\textit{Benutzername} & UserManagementBean.user.username & username\\ \hline	
+						\textit{Passwort} & UserManagementBean.user.password & password\\ \hline	
+						\textit{Passwort wiederholen} & - & passwordrepeat\\ \hline
+						\textit{E-Mail} & UserManagementBean.user.email & mail\\ \hline
+						\textit{Benutzerrolle} & UserManagementBean.user.userRole & role\\ \hline
+						\textit{Durchsuchen} & UserManagementBean.user.profilImage & search\\ \hline
 					\end{longtable}
 					\begin{longtable}{|p{3cm} | p{4cm} | p{3cm} |p{3cm}|}
 						
@@ -1477,6 +1479,7 @@
 				\item Fehlermeldung zu den einzelnen Eingabefeldern, bei falscher Eingabe.
 				\item Benutzer-ID: ID des neuen Benutzers.
 				\item Profilbild: Dummy-Profilbild des neuen Benutzers.
+				\item Benutzer anlegen Benachrichtigung: Positive oder negative Rückmeldung zur Benutzererstellung.
 			\end{itemize}
 					\begin{center}
 						\begin{longtable}{|p{5cm} | p{4cm}|p{3cm}|}
@@ -1497,6 +1500,7 @@
 							\textit{Passwort Fehlermeldung}  & outputText & passwortfehler \\ \hline
 							\textit{Passwort wiederholen Fehlermeldung}  & outputText & passwortwhfehler \\ \hline
 							\textit{E-Mail Fehlermeldung}  & outputText & mailfehler \\ \hline
+							\textit{Benutzer anlegen Benachrichtigung} & facesMessage & success\\ \hline
 						\end{longtable}
 					\end{center}
 			\item \textbf{BackingBean:}
