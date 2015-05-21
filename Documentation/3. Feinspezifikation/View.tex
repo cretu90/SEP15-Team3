@@ -801,19 +801,19 @@
 						\hline
 						\endlastfoot
 						\textit{Benutzer-ID}  & outputText & nutzerid \\ \hline
-						\textit{Vorname Fehlermeldung }  & outputText & vornamefehler \\ \hline
-						\textit{Name Fehlermeldung } & outputText & namefehler \\ \hline
-						\textit{Geburtstag  Fehlermeldung} & outputText & geburtstagsfehler \\ \hline
-						\textit{Straße Fehlermeldung }& outputText & straßefehler\\ \hline
-						\textit{Hausnummer Fehlermeldung }& outputText & hausnrfehler\\ \hline
-						\textit{Stadt Fehlermeldung }& outputText & stadtfehler \\ \hline
-						\textit{Postleitzahl Fehlermeldung } & outputText & postleitzahlfehler \\ \hline
-						\textit{Land Fehlermeldung } & outputText & landfehler \\ \hline
-						\textit{E-Mail-Adresse Fehlermeldung} & outputText & mailfehler\\ \hline
-						\textit{Benutzername Fehlermeldung }& outputText & nutzernamefehler \\ \hline
-						\textit{Passwort Fehlermeldung} &  outputText & passwortfehler \\ \hline
-						\textit{Passwort bestätigen Fehlermeldung}  & outputText & bestätigungspwfehler \\ \hline
-						\textit{Profilbild Fehlermeldung} &  outputText & bildfehler \\ \hline
+						\textit{Vorname Fehlermeldung }  & message & vornamefehler \\ \hline
+						\textit{Name Fehlermeldung } & message & namefehler \\ \hline
+						\textit{Geburtstag  Fehlermeldung} & message & geburtstagsfehler \\ \hline
+						\textit{Straße Fehlermeldung }& message & straßefehler\\ \hline
+						\textit{Hausnummer Fehlermeldung }& message & hausnrfehler\\ \hline
+						\textit{Stadt Fehlermeldung }& message & stadtfehler \\ \hline
+						\textit{Postleitzahl Fehlermeldung } & message & postleitzahlfehler \\ \hline
+						\textit{Land Fehlermeldung } & message & landfehler \\ \hline
+						\textit{E-Mail-Adresse Fehlermeldung} & message & mailfehler\\ \hline
+						\textit{Benutzername Fehlermeldung }& message & nutzernamefehler \\ \hline
+						\textit{Passwort Fehlermeldung} &  message & passwortfehler \\ \hline
+						\textit{Passwort bestätigen Fehlermeldung}  & message & bestätigungspwfehler \\ \hline
+						\textit{Profilbild Fehlermeldung} &  message & bildfehler \\ \hline
 						\textit{Kontostand} &  outputText & kontostand \\ \hline
 						\textit{Tabelle Trainingskurse} &  dataTable & trainingskurse \\ \hline
 						\textit{Profilbild} &  graphicImage & bild \\ \hline
@@ -968,7 +968,7 @@
 			\item \textbf{Buttons:}
 				\begin{itemize}
 					\item Bearbeiten (Kurseinheit): Nach Klicken auf diesen Button können die Daten der Kurseinheit geändert beziehungsweise eingetragen werden. Der Button trägt nun die Aufschrift 'Speichern' und ist mit dessen dazugehöriger Methode hinterlegt. \\ Zugehörige Methode: editCourseUnit()
-					\item Speichern (Kurseinheit): Durch Drücken dieses Buttons werden die vorgenommenen Änderungen gespeichert, sofern alle Daten korrekt eingegeben wurden. Bei erfolgreicher Speicherung erscheint der Button 'Bearbeiten' anstelle des Button 'Speichern'. \\ Zugehörige Methode: saveCourseUnit()
+					\item Speichern (Kurseinheit): Durch Drücken dieses Buttons werden die vorgenommenen Änderungen gespeichert, sofern alle Daten korrekt eingegeben wurden. Bei erfolgreicher Speicherung erscheint der Button 'Bearbeiten' anstelle des Button 'Speichern' und es wird eine Erfolgsmeldung ausgegeben. \\ Zugehörige Methode: saveCourseUnit()
 					\item Löschen (Kurseinheit): Durch Drücken des Button 'Löschen' wird die Kurseinheit entfernt und der Kursleiter wird auf die Kursdetails Seite weitergeleitet. (\hyperlink{courseDetails}{courseDetails.xhtml}) \\ Zugehörige Methode: deleteCourseUnit()
 					\item Löschen (Teilnehmer): Durch Drücken dieses Buttons wird der markierte Teilnehmer aus der Kurseinheit entfernt. \\ Zugehörige Methode: deleteUserFromCourseUnit()
 					\item Hinzufügen (Teilnehmer): Durch Drücken dieses Buttons wird der angegebene Teilnehmer zu dieser Kurseinheit hinzugefügt, sofern der Benutzername im System existiert und die Daten korrekt eingegeben wurden. \\ Zugehörige Methode: addUserToCourseUnit()
@@ -1095,7 +1095,8 @@
 					\item Benutzer-ID (Fehlermeldung): Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
 					\item Name (Teilnehmer (Fehlermeldung)): Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
 					\item Vorname (Teilnehmer (Fehlermeldung)): Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
-					\item Einheitenanzahl: Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
+					\item Einheitenanzahl (Fehlermeldung): Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
+					\item FacesMessage 'Speichern erfolgreich'
 				\end{itemize}
 				
 				\begin{center}
@@ -1105,24 +1106,25 @@
 						\endfirsthead
 						\hline
 						\endlastfoot
-						\textit{Termin (Fehlermeldung)}  & outputText & terminfehler \\ \hline
-						\textit{Startzeit (Fehlermeldung)}  & outputText & startzeitfehler \\ \hline
-						\textit{Endzeit (Fehlermeldung)}  & outputText & endzeitfehler \\ \hline
-						\textit{Straße (Fehlermeldung) }  & outputText & straßenfehler \\ \hline
-						\textit{Hausnummer (Fehlermeldung) }  & outputText & hausnrfehler \\ \hline
-						\textit{Postleitzahl (Fehlermeldung)} & outputText & postleitzahlfehler \\ \hline
-						\textit{Stadt (Fehlermeldung)} & outputText & stadtfehler \\ \hline
-						\textit{Raum (Fehlermeldung)}& outputText & raumfehler\\ \hline
-						\textit{Beschreibung (Fehlermeldung)}& outputText & beschreibungsfehler\\ \hline
-						\textit{Preis (Fehlermeldung) } & outputText & preisfehler \\ \hline
-						\textit{Kursleiter (Fehlermeldung) } & outputText & kursleiter- fehler \\ \hline
-						\textit{Mindestteilnehmerzahl (Fehlermeldung)} & outputText & minteilnehmerfehler\\ \hline
-						\textit{Maximale Teilnehmerzahl (Fehlermeldung) }& outputText & maxteilnehmerfehler \\ \hline
-						\textit{Status} &  outputText & statusfehler \\ \hline
-						\textit{Benutzer-ID (Fehlermeldung)}  & outputText & nutzeridfehler \\ \hline
-						\textit{Name (Teilnehmer (Fehlermeldung))} &  outputText & namefehler \\ \hline
-						\textit{Vorname (Teilnehmer (Fehlermeldung))} &  outputText & vornamefehler \\ \hline
-						\textit{Einheitenanzahl} &  outputText & einheitenfehler \\ \hline
+						\textit{Termin (Fehlermeldung)}  & message & terminfehler \\ \hline
+						\textit{Startzeit (Fehlermeldung)}  & message & startzeitfehler \\ \hline
+						\textit{Endzeit (Fehlermeldung)}  & message & endzeitfehler \\ \hline
+						\textit{Straße (Fehlermeldung) }  & message & straßenfehler \\ \hline
+						\textit{Hausnummer (Fehlermeldung) }  & message & hausnrfehler \\ \hline
+						\textit{Postleitzahl (Fehlermeldung)} & message & postleitzahlfehler \\ \hline
+						\textit{Stadt (Fehlermeldung)} & message & stadtfehler \\ \hline
+						\textit{Raum (Fehlermeldung)}& message & raumfehler\\ \hline
+						\textit{Beschreibung (Fehlermeldung)}& message & beschreibungsfehler\\ \hline
+						\textit{Preis (Fehlermeldung) } & message & preisfehler \\ \hline
+						\textit{Kursleiter (Fehlermeldung) } & message & kursleiter- fehler \\ \hline
+						\textit{Mindestteilnehmerzahl (Fehlermeldung)} & message & minteilnehmerfehler\\ \hline
+						\textit{Maximale Teilnehmerzahl (Fehlermeldung) }& message & maxteilnehmerfehler \\ \hline
+						\textit{Status} &  message & statusfehler \\ \hline
+						\textit{Benutzer-ID (Fehlermeldung)}  & message & nutzeridfehler \\ \hline
+						\textit{Name (Teilnehmer (Fehlermeldung))} &  message & namefehler \\ \hline
+						\textit{Vorname (Teilnehmer (Fehlermeldung))} &  message & vornamefehler \\ \hline
+						\textit{Einheitenanzahl (Fehlermeldung)} &  message & einheitenfehler \\ \hline
+						\textit{FacesMessage Speichern} &  messages globalOnly & speichern \\ \hline
 					\end{longtable}
 				\end{center}
 				
@@ -1354,7 +1356,7 @@
 							\hline
 							\endlastfoot
 							\textit{Benutzerdaten Tabelle}  & dataTable & nutzerdaten \\ \hline
-							\textit{Suchbegriff Fehlermeldung}  & outputText & suchefehler \\ \hline
+							\textit{Suchbegriff Fehlermeldung}  & message & suchefehler \\ \hline
 						\end{longtable}
 					\end{center}
 				
@@ -1490,7 +1492,7 @@
 			\item \textbf{Links:} -
 			\item \textbf{Buttons:}
 				\begin{itemize}
-					\item Kurs anlegen:  Durch Drücken dieses Buttons wird der Kurs angelegt, sofern alle Daten korrekt eingegeben wurden. \\ Zugehörige Methode: createCourse()
+					\item Kurs anlegen:  Durch Drücken dieses Buttons wird der Kurs angelegt, sofern alle Daten korrekt eingegeben wurden. Es erfolgt eine Weiterleitung auf die entsprechende Kursdetailseite. (\hyperlink{courseDetails}{courseDetails.xhtml}) \\ Zugehörige Methode: createCourse()
 					\item Löschen (Kursleiter): Durch Drücken dieses Buttons löscht der Administrator den ausgewählten Kursleiter aus diesem Kurs. \\ Zugehörige Methode: removeCourseLeader()
 					\item Hinzufügen (Kursleiter): Durch Drücken dieses Buttons wird der angegebene Kursleiter zum Kurs hinzugefügt, sofern alle Eingabe korrekt waren.	\\ Zugehörige Methode: addCourseLeader()
 					\item Durchsuchen: Durch Drücken dieses Buttons kann der Administrator ein Kursbild aus seinem Dateiverzeichnis auswählen.
@@ -1593,14 +1595,14 @@
 						\hline
 						\endlastfoot
 						\textit{Kurs-ID}  & outputText & idkurs \\ \hline
-						\textit{Beschreibung Fehlermeldung}  & outputText & beschreibungs- fehler \\ \hline
-						\textit{Maximale Teilnehmerzahl Fehlermeldung}  & outputText & maxteilnehmerfehler \\ \hline
-						\textit{Startdatum Fehlermeldung}  & outputText & startdatumsfehler \\ \hline
-						\textit{Enddatum Fehlermeldung}  & outputText & enddatumsfehler \\ \hline
-						\textit{Benutzerame Kursleiter Fehlermeldung}  & outputText & namefehler \\ \hline
-						\textit{E-Mail-Adresse Kursleiter Fehlermeldung}  & outputText & mailfehler\\ \hline
-						\textit{Kursleiter-ID Fehlermeldung}  & outputText & idkursleiterfehler \\ \hline
-						\textit{Löschen Kursleiter Fehlermeldung}  & outputText & leiterlöschenfehler \\ \hline
+						\textit{Beschreibung Fehlermeldung}  & message & beschreibungs- fehler \\ \hline
+						\textit{Maximale Teilnehmerzahl Fehlermeldung}  & message & maxteilnehmerfehler \\ \hline
+						\textit{Startdatum Fehlermeldung}  & message & startdatumsfehler \\ \hline
+						\textit{Enddatum Fehlermeldung}  & message & enddatumsfehler \\ \hline
+						\textit{Benutzerame Kursleiter Fehlermeldung}  & message & namefehler \\ \hline
+						\textit{E-Mail-Adresse Kursleiter Fehlermeldung}  & message & mailfehler\\ \hline
+						\textit{Kursleiter-ID Fehlermeldung}  & message & idkursleiterfehler \\ \hline
+						\textit{Löschen Kursleiter Fehlermeldung}  & message & leiterlöschenfehler \\ \hline
 						\textit{Kursleiter Tabelle}  & dataTable & kursleiter \\ \hline
 						\textit{Kurseinheiten Tabelle}  & dataTable & kurseinheiten \\ \hline
 						\textit{Kursbild}  & graphicImage & bild \\ \hline
