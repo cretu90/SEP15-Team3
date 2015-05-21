@@ -3,13 +3,13 @@
 	SeSc
 \end{tiny}
 
-Das System \textbf{OfCourse} benötigt drei Konfigurationsdateien um erfolgreich laufen zu können. In der ersten Datei werden relevante Einstellungen des Systems(Datenbankverbindung, Anzahl der Verbindungen, Überziehungskredit usw) gespeichert. Die zweite Konfigurationsdatei enthält alle nötigen Informationen des E-Mailaccounts(...) über den die Systemnachrichten an die User geschickt werden. Die letzte Datei wird von \textbf{log4j} benötigt, um das Logging Level und den Pfad zum anlegen der Log-Datei zu speichern. Im folgenden wird nun genauer auf alle drei Konfigurationsdateien eingegangen:
+Das System \textbf{OfCourse} benötigt drei Konfigurationsdateien um erfolgreich laufen zu können. In der ersten Datei werden relevante Einstellungen des Systems (Datenbankverbindung, Anzahl der Verbindungen, Überziehungskredit usw) gespeichert. Die zweite Konfigurationsdatei enthält alle nötigen Informationen des E-Mailaccounts(...) über den die Systemnachrichten an die User geschickt werden. Die letzte Datei wird von \textbf{log4j} benötigt, um das Logging Level und den Pfad zum anlegen der Log-Datei zu speichern. Alle Dateien liegen auf dem Server und dürfen deswegen nur vom Systemadministrator geändert werden. Im folgenden wird nun genauer auf alle drei Konfigurationsdateien eingegangen:
 
 \section{Konfiguationsdatei des Systems}
 \subsection{Allgemein}
 
-Bei Ersteinrichtung des Systems wird die Datei \textbf{(...).cfg} erstellt und muss vom Systemadministrator bearbeitet werden bevor er den Server startet. Die Datei kann mit einem beliebigen TextEditor geöffnet und editiert werden. Wenn diese Datei im laufendem Serverbetrieb geändert wird, braucht es einen Serverneustart um die Änderungen zu übernehmen.
-(Vielleicht noch Risiken beschreiben?)
+Bei Ersteinrichtung des Systems wird die Datei \textbf{(...).cfg} erstellt und muss vom Systemadministrator bearbeitet werden bevor er den Server startet (enthält keine Default Werte). Die Datei kann mit einem beliebigen TextEditor geöffnet und editiert werden. Wenn diese Datei im laufendem Serverbetrieb geändert wird, braucht es einen Serverneustart um die Änderungen zu übernehmen. Dies is nötig da das System eine dauerhafte Verbindung zur Datenbank unterstützt und Änderungen während der Laufzeit des Servers deswegen zu Komplikationen führen könnten.
+
 
 \subsection{Parameter}
 
@@ -18,13 +18,13 @@ Bei Ersteinrichtung des Systems wird die Datei \textbf{(...).cfg} erstellt und m
 		\hline
 		\multicolumn{1}{|c|}{\textbf{Parameter}} & \multicolumn{1}{c|}{\textbf{Name}} & \multicolumn{1}{c|}{\textbf{Details}} & \multicolumn{1}{c|}{\textbf{Eingabetyp}}
 		 \\ \hline
-		Datenbankname & \textbf{dbname} & Name der Datenbank fuer das System & String \\ \hline
-		Datenbankhost & \textbf{dbhost} & Die Adresse zur Datenbank. Angabe als URL & String \\ \hline
-		Datenbankport & \textbf{dbport} & Portnummer ueber den die Verbindung zur Datenbank aufgebaut werden kann & Integer \\ \hline
-		Datenbankusername & \textbf{dbuser} & Benutzername fuer den Login an der Datenbank & String  \\ \hline
-		Datenbankpasswort & \textbf{dbpassword} & Passwort fuer den Login an der Datenbank & String \\ \hline
+		Datenbankname & \textbf{dbname} & Name der Datenbank für das System & String \\ \hline
+		Datenbankhost & \textbf{dbhost} & Die Hostadresse zur Datenbank. Angabe als URL-Adresse (z.B bender.fim.uni-passau.de)  & String \\ \hline
+		Datenbankport & \textbf{dbport} & Portnummer des Hosts über den die Verbindung zur Datenbank aufgebaut werden kann & Integer \\ \hline
+		Datenbankusername & \textbf{dbuser} & Benutzername für den Login an der Datenbank (Muss Administratorrechte auf der Datenbank besitzen) & String  \\ \hline
+		Datenbankpasswort & \textbf{dbpassword} & Passwort für den Login an der Datenbank & String \\ \hline
 		Anzahl der Datenbankverbindungen & \textbf{dbconnections} & Legt fest wie viele Verbindungen zur Datenbank zur Verfügung stehen & Integer \\ \hline
-		Überziehungskredit & \textbf{bankOverdraft} & Legt den erlaubten Ueberziehungskredit fest & Integer \\ \hline
+		Überziehungskredit & \textbf{bankOverdraft} & Legt den erlaubten Überziehungskredit fest & Integer \\ \hline
 	\end{longtable}
 	
 
@@ -35,12 +35,12 @@ Bei Ersteinrichtung des Systems wird die Datei \textbf{(...).cfg} erstellt und m
 	\item \emph{dbport:}\\
 		Angabe muss zwischen 0 und 65535 liegen.
 	\item \emph{dbconnections:}\\
-		Angabe muss zwischen 0 und 100 liegen. (Erklaeren warum?)
+		Angabe muss zwischen 1 und 100 liegen. (Die Anzahl der Connections die das System zu Verfügung stellt wird eingeschränkt, da es sonst zur Überlastung der Datenbank führen kann).
 \end{itemize}
 
 \section{Konfigurationsdatei des E-Mailaccounts}
 \subsection{Allgemein}
-Bei der Ersteinrichtung der Applikation wird die Konfigurationsdatei \textbf{(...).cfg} erstellt und muss vor dem Serverstart vom Systemadministrator mithilfe eines beliebigen TextEditors bearbeitet und ausgefüllt werden. Wird im Laufendem Serverbetrieb die Datei geändert so muss ein Serverneustart erfolgen um die Änderungen im System zu uebernehmen
+Bei der Ersteinrichtung der Applikation wird die Konfigurationsdatei \textbf{(...).cfg} erstellt und muss vor dem Serverstart vom Systemadministrator mithilfe eines beliebigen TextEditors bearbeitet und ausgefüllt werden (enthält keine Default Werte). Diese Datei kann während der Systemlaufzeit geändert werden.
 
 \subsection{Parameter}
 \begin{center}
@@ -49,11 +49,11 @@ Bei der Ersteinrichtung der Applikation wird die Konfigurationsdatei \textbf{(..
 		\multicolumn{1}{|c|}{\textbf{Parameter}} & \multicolumn{1}{c|}{\textbf{Name}} & \multicolumn{1}{c|}{\textbf{Details}} & \multicolumn{1}{c|}{\textbf{Eingabetyp}}
 		\\ \hline
 		E-Mailadresse & \textbf{mailaddress} & E-Mailadresse mit der das System Nachrichten verschickt & String \\ \hline
-		E-Mail SMTP Server & \textbf{smtphost} & Der Postausgangsserver fuer den Nachrichtenversand. Angabe als URL & String \\ \hline
+		E-Mail SMTP Server & \textbf{smtphost} & Der Postausgangsserver für den Nachrichtenversand. Angabe als URL (z.B. smtp.1und1.de) & String \\ \hline
 		E-Mail SMTP Port & \textbf{smtpport} & Portnummer des Postausgangsservers & Integer \\ \hline
-		E-Mail SMTP Authentifizierung & \textbf{smtpAuth} & SMTP Authentifizierungsart (PLAIN, LOGIN, CRAM-MD5,	DIGEST-MD5 und NTLM) & String  \\ \hline
-		E-Mail Username & \textbf{mailusername} & Benutzername fuer den Login am SMTP Server & String \\ \hline
-		E-Mail Passwort & \textbf{mailpassword} & Passwort fuer den Login am SMTP Server & String \\ \hline
+		E-Mail SMTP Authentifizierung & \textbf{smtpAuth} & SMTP Authentifizierungsart & String  \\ \hline
+		E-Mail Username & \textbf{mailusername} & Benutzername für den Login am SMTP Server & String \\ \hline
+		E-Mail Passwort & \textbf{mailpassword} & Passwort für den Login am SMTP Server & String \\ \hline
 		
 	\end{longtable}
 \end{center}
@@ -67,26 +67,26 @@ Bei der Ersteinrichtung der Applikation wird die Konfigurationsdatei \textbf{(..
 \end{itemize}
 
 \subsubsection{E-Mailspezifische Angaben(Authentifizierungsarten)}
-Die Authentifizierungsart wird von der Serverseite des E-Mail Client zur Verfuegung gestellt. Man unterscheidet hier von:
+Die Authentifizierungsart wird von der Serverseite des E-Mail Client zur Verfügung gestellt. Man unterscheidet hier von:
 
 \begin{itemize}
 	\item \emph{PLAIN:}\\
-	...
+	Es wird der Benutzername (zur Autorisierung), der Benutzername (zur Authentifizierung) und das Passwort in einem Schritt unverschlüsselt übertragen.
 	\item \emph{LOGIN:}\\
-	...
+	Die Login Daten werden wie bei PLAIN unverschlüsselt übertragen aber in zwei Schritten.
 	\item \emph{CRAM-MD5:}\\
-	...
+	Hier wird die Kommunikation zwischen Server und Client mit einem Zeitstempel versehen. Mit diesem Zeitstempel werden Daten verschlüsselt und so vor Angriffen geschützt.
 	\item \emph{SCRAM-SHA-1:}\\
-	...
+	
 	\item \emph{NTLM:}\\
-	...
+	Der Client schickt dem Server den Benutzernamen und bekommt eine zufällige Zahl zurück. Mit dieser Zufallszahl wird das Passwort des Clients gehasht und kann nur vom Server entschlüsselt werden.
 \end{itemize}
 
 \section{Konfiguartionsdatei von Log4j}	
 
 \subsection{Allgemein}
 
-Nach der Erstinstallation wird die Konfigurationsdatei \textbf{(...).cfg} erstellt und ist mit Default Einstellungen bereits Laufzeitfaehig. Diese Datei kann wiederum vom Systemadministrator mit einem TextEditor angepasst werden. Änderungen im Laufendem Betrieb brauchen wiederum ein Systemneustart um übernommen zu werden.
+Nach der Erstinstallation wird die Konfigurationsdatei \textbf{(...).cfg} erstellt und ist mit Default Einstellungen bereits Laufzeitfaehig. Diese Datei kann wiederum vom Systemadministrator mit einem TextEditor angepasst werden. Diese Datei kann während der Systemlaufzeit geändert werden. Zugriff auf das erstellte Logfile besitzt nur der Systemadministrator.
 
 \subsection{Parameter}
 
@@ -96,7 +96,7 @@ Nach der Erstinstallation wird die Konfigurationsdatei \textbf{(...).cfg} erstel
 	\multicolumn{1}{|c|}{\textbf{Parameter}} & \multicolumn{1}{c|}{\textbf{Name}} & \multicolumn{1}{c|}{\textbf{Details}} & \multicolumn{1}{c|}{\textbf{Eingabetyp}}
 	\\ \hline
 	Logging Level & loglvl & Setzt das Logging Level ab welcher Stufe gelogt werden soll (Default: All) & String \\ \hline
-	Dateipfad & logfilepath & Dateiname und Pfad in der die Logdatei auf dem Server angelegt werden soll & String \\ \hline
+	Dateipfad & logfilepath & Dateiname und Pfad in der die Logdatei auf dem Server angelegt werden soll (Default: ) & String \\ \hline
 	
 \end{longtable}
 
