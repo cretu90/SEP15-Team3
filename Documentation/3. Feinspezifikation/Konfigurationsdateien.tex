@@ -3,12 +3,12 @@
 	SeSc
 \end{tiny}
 
-Das System \textbf{OfCourse} benötigt drei Konfigurationsdateien um erfolgreich gestartet werden zu können. In der ersten Datei werden relevante Einstellungen des Systems (Datenbankverbindung, Anzahl der Verbindungen, Überziehungskredit usw) gespeichert. Die zweite Konfigurationsdatei enthält alle nötigen Informationen des E-Mailaccounts(...) über den die Systemnachrichten an die User geschickt werden. Die letzte Datei wird von \textbf{log4j} benötigt, um das Logging Level und den Pfad zum anlegen der Log-Datei zu speichern. Alle Dateien liegen auf dem Server und dürfen deswegen nur vom Systemadministrator geändert werden. Außerdem gibt es noch Systemeinstellungen die von Administratoren in der Web-Anwendung des Systems geändert werden können.  Im folgenden wird nun genauer auf alle drei Konfigurationsdateien und den Systemeinstellungen eingegangen:
+Das System \textbf{OfCourse} benötigt drei Konfigurationsdateien, um erfolgreich gestartet werden zu können. In der ersten Datei werden relevante Einstellungen des Systems (Datenbankverbindung, Anzahl der Verbindungen, Überziehungskredit usw) gespeichert. Die zweite Konfigurationsdatei enthält alle nötigen Informationen des E-Mailaccounts(...), über den die Systemnachrichten an die User geschickt werden. Die letzte Datei wird von \textbf{log4j} benötigt, um das Logging Level und den Pfad zum Anlegen der Log-Datei zu speichern. Alle Dateien liegen auf dem Server und dürfen deswegen nur vom Systemadministrator geändert werden. Außerdem gibt es noch Systemeinstellungen, die von Administratoren in der Web-Anwendung des Systems geändert werden können. Im Folgenden wird nun genauer auf alle drei Konfigurationsdateien und die Systemeinstellungen eingegangen:
 
 \section{Konfiguationsdatei des Systems}
 \subsection{Allgemein}
 
-Bei Ersteinrichtung des Systems wird die Datei \textbf{(...).cfg} erstellt und muss vom Systemadministrator bearbeitet werden bevor er den Server startet (enthält keine Default Werte). Die Datei kann mit einem beliebigen TextEditor geöffnet und editiert werden. Wenn diese Datei im laufendem Serverbetrieb geändert wird, braucht es einen Serverneustart um die Änderungen zu übernehmen. Dies is nötig da das System eine dauerhafte Verbindung zur Datenbank unterstützt und Änderungen während der Laufzeit des Servers deswegen zu Komplikationen führen könnten.
+Bei Ersteinrichtung des Systems wird die Datei \textbf{ofCourse.properties} erstellt und muss vom Systemadministrator bearbeitet werden, bevor er den Server startet (enthält keine Default Werte). Die Datei kann mit einem beliebigen TextEditor geöffnet und editiert werden. Wenn diese Datei im laufendem Serverbetrieb geändert wird, braucht es einen Serverneustart um die Änderungen zu übernehmen. Dies ist nötig, da das System eine dauerhafte Verbindung zur Datenbank unterstützt und Änderungen während der Laufzeit des Servers deswegen zu Komplikationen führen könnten.
 
 
 \subsection{Parameter}
@@ -40,7 +40,7 @@ Bei Ersteinrichtung des Systems wird die Datei \textbf{(...).cfg} erstellt und m
 
 \section{Konfigurationsdatei des E-Mailaccounts}
 \subsection{Allgemein}
-Bei der Ersteinrichtung der Applikation wird die Konfigurationsdatei \textbf{(...).cfg} erstellt und muss vor dem Serverstart vom Systemadministrator mithilfe eines beliebigen TextEditors bearbeitet und ausgefüllt werden (enthält keine Default Werte). Diese Datei kann während der Systemlaufzeit geändert werden.
+Bei der Ersteinrichtung der Applikation wird die Konfigurationsdatei \textbf{ofCourse.mailproperties} erstellt und muss vor dem Serverstart vom Systemadministrator mithilfe eines beliebigen TextEditors bearbeitet und ausgefüllt werden (enthält keine Default Werte). Diese Datei kann während der Systemlaufzeit geändert werden.
 
 \subsection{Parameter}
 \begin{center}
@@ -71,7 +71,7 @@ Bei der Ersteinrichtung der Applikation wird die Konfigurationsdatei \textbf{(..
 
 \subsection{Allgemein}
 
-Nach der Erstinstallation wird die Konfigurationsdatei \textbf{(...).cfg} erstellt und ist mit Default Einstellungen bereits Laufzeitfaehig. Diese Datei kann wiederum vom Systemadministrator mit einem TextEditor angepasst werden. Diese Datei kann während der Systemlaufzeit geändert werden. Zugriff auf das erstellte Logfile besitzt nur der Systemadministrator.
+Nach der Erstinstallation wird die Konfigurationsdatei \textbf{ofCourse.log4jproperties} erstellt und ist mit Default- Einstellungen bereits laufzeitfähig. Diese Datei kann vom Systemadministrator mit einem TextEditor angepasst und auch während der Systemlaufzeit geändert werden. Zugriff auf das erstellte Logfile besitzt nur der Systemadministrator.
 
 \subsection{Parameter}
 
@@ -80,8 +80,8 @@ Nach der Erstinstallation wird die Konfigurationsdatei \textbf{(...).cfg} erstel
 	\hline
 	\multicolumn{1}{|c|}{\textbf{Parameter}} & \multicolumn{1}{c|}{\textbf{Name}} & \multicolumn{1}{c|}{\textbf{Details}} & \multicolumn{1}{c|}{\textbf{Eingabetyp}}
 	\\ \hline
-	Logging Level & loglvl & Setzt das Logging Level ab welcher Stufe gelogt werden soll (Default: All) & String \\ \hline
-	Dateipfad & logfilepath & Dateiname und Pfad in der die Logdatei auf dem Server angelegt werden soll (Default: ) & String \\ \hline
+	Logging Level & loglvl & Setzt das Logging Level: ab dieser Stufe soll gelogt werden (Default: All) & String \\ \hline
+	Dateipfad & logfilepath & Dateiname und Pfad, in der die Logdatei auf dem Server angelegt werden soll (Default:/WEB-INF/Log/ ) & String \\ \hline
 	
 \end{longtable}
 
