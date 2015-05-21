@@ -18,8 +18,8 @@ public class InputTextValidator implements Validator {
 
     
     /**
-     * This validation method gets called when make a request and it checks, 
-     * if your entered text hast a correct character encoding.
+     * Gets called when make a request and it checks, if your entered text has 
+     * a correct character encoding.
      */
     @Override
     public void validate(FacesContext arg0, UIComponent arg1, Object arg2)

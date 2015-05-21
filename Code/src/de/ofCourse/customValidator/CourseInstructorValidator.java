@@ -17,9 +17,9 @@ import javax.faces.validator.ValidatorException;
 public class CourseInstructorValidator implements Validator {
 
     /**
-     * This validation method gets called when you want to add a course 
-     * instructor to a course unit or to a course. The method checks if the 
-     * entered name of the course instructor exists in the system.
+     * TGets called when you want to add a course instructor to a course unit 
+     * or to a course. The method checks if the entered name of the course 
+     * instructor exists in the system.
      */
     @Override
     public void validate(FacesContext arg0, UIComponent arg1, Object arg2)

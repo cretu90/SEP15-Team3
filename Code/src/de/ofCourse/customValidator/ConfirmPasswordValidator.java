@@ -17,9 +17,9 @@ import javax.faces.validator.ValidatorException;
 public class ConfirmPasswordValidator implements Validator {
 
     /**
-     * This validation method gets called when you want to register or change 
-     * your password when you’re already registered. Therefore you have to insert 
-     * your password twice due to security issues. This method checks if the two 
+     * Gets called when you want to register or change your password when 
+     * you’re already registered. Therefore you have to insert your password 
+     * twice due to security issues. This method checks if the two 
      * passwords are equal.
      */
     

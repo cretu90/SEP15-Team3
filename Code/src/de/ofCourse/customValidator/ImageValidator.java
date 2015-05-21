@@ -20,11 +20,10 @@ public class ImageValidator implements Validator {
 
   
     /**
-     * This validation method gets called when you want to change 
-     * the logo or the image of a course. The method checks if the 
-     * image file has the right file extension, in this case .jpg. Furthermore 
-     * it checks, if the conditions of the maximum file and permitted 
-     * resolution of the image are kept.
+     * Gets called when you want to change the logo or the image of a course. 
+     * The method checks if the image file has the right file extension, in 
+     * this case .jpg. Furthermore it checks, if the conditions of the maximum 
+     * file and permitted resolution of the image are kept.
      *  
      */
     @Override

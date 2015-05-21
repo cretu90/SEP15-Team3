@@ -19,10 +19,10 @@ public class EMailValidator implements Validator {
 
   
     /**
-     * This validation method gets called when you want to register or change 
-     * your mail address when you’re already registered. The method checks if the 
-     * entered mail has an valid format (e.g. one and only one @ sign) 
-     * and whether it is already existing in the database.
+     * Gets called when you want to register or change your mail address when 
+     * you’re already registered. The method checks if the entered mail has a 
+     * valid format (e.g. one and only one @ sign) and whether it is already 
+     * existing in the database.
      */
     @Override
     public void validate(FacesContext arg0, UIComponent arg1, Object arg2)
