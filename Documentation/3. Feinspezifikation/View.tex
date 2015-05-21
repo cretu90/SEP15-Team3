@@ -932,17 +932,6 @@
 					\end{longtable}
 				\end{center}
 				
-				\begin{center}
-					\begin{longtable}{|p{3cm} |p{8cm} | p{5cm}|}
-						
-						\hline \multicolumn{1}{|c|}{\textbf{Eingabefeld}} & \multicolumn{1}{|c|}{\textbf{Validator}} & \multicolumn{1}{|c|}{\textbf{Konverter}} \\ \hline
-						\endfirsthead
-						\hline
-						\endlastfoot
-						\textit{Entfernen} & - & - \\ \hline
-					\end{longtable}
-				\end{center}
-				
 			\end{itemize}
 			\item \textbf{Outputs:} 
 			\begin{itemize}
@@ -1070,7 +1059,7 @@
 						\textit{Postleitzahl} & validateLength (min = 1, max = 9), validateRequired & - \\ \hline
 						\textit{Stadt} & validateLength (min = 1, max = 100), validateRequired & -  \\ \hline
 						\textit{Ort} & validateLength (min = 0, max = 100) & -  \\ \hline
-						\textit{Beschreibung} & validateLength (min = 0, max = 1000) & - \\ \hline
+						\textit{Beschreibung} & inputTextValidator, validateLength (min = 0, max = 1000) & - \\ \hline
 						\textit{Preis} & PriceValidator  & convertNumber \\ \hline
 						\textit{Kursleiter} & validateRequired & -  \\ \hline
 						\textit{Mindesteil- nehmerzahl} & validateRequired & convertNumber \\ \hline
@@ -1174,20 +1163,10 @@
 						\endfirsthead
 						\hline
 						\endlastfoot
-						\textit{Benutzer aktivieren} & AccountManagementBean. User.userStatus & selectBooleanCheckbox & nutzeraktiv \\ \hline
+						\textit{Benutzer aktivieren} & AccountManagementBean. usersToActivate & selectBooleanCheckbox & nutzeraktiv \\ \hline
 					\end{longtable}
 				\end{center}
 				
-				\begin{center}
-					\begin{longtable}{|p{3cm} |p{8cm} | p{5cm}|}
-						
-						\hline \multicolumn{1}{|c|}{\textbf{Eingabefeld}} & \multicolumn{1}{|c|}{\textbf{Validator}} & \multicolumn{1}{|c|}{\textbf{Konverter}} \\ \hline
-						\endfirsthead
-						\hline
-						\endlastfoot
-						\textit{Benutzer aktivieren} & - & - \\ \hline
-					\end{longtable}
-				\end{center}
 				
 			\item \textbf{Outputs:}
 				\begin{itemize}
