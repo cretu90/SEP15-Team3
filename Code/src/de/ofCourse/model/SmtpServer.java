@@ -4,7 +4,7 @@
 package de.ofCourse.model;
 
 /**
- * contains all Information for the SMTP Server which is needed for
+ * Contains all Information for the SMTP Server which is needed for
  * the E-Mail dispatch
  * 
  * @author Sebastian
@@ -13,39 +13,55 @@ package de.ofCourse.model;
 public class SmtpServer {
 
     /**
-     * stores the URL address to the E-Mail Server
+     * Stores the Hostaddress to the E-Mail Server
      * 
      */
     private String hostaddr;
     /**
-     * stores the password for the Login on the E-Mail Server
+     * Stores the password for the Login on the E-Mail Server
      * 
      */
     private String password;
     /**
-     * port, the portnumber which is needed for the connection with the E-Mail
+     * Stores the portnumber which is needed for the connection with the E-Mail
      * Server
      * 
      */
     private int port;
     /**
-     *  stores the username for the Login on the E-Mail Server
+     *  Stores the username for the Login on the E-Mail Server
      * 
      */
     private String username;
+    
     /**
-     * 
-     * 
+     *  Stores whether the connection to the server runs with ssl protection or not
      */
-    private boolean authenticated;
-    /**
-     * 
-     */
-    private boolean tls;
+    private boolean ssl;
 
     /**
+     * Returns the value of the attribute <code>ssl</code>.
      * 
-     * @return the hostaddr
+     * @return if the connection runs with ssl protection
+     */
+    public boolean isSsl() {
+        return ssl;
+    }
+
+    /**
+     * Sets the value of the attribute <code>ssl</code>.
+     * 
+     * @param ssl 
+     *          new boolean to set
+     */
+    public void setSsl(boolean ssl) {
+        this.ssl = ssl;
+    }
+
+    /**
+     * Returns the value of the attribute <code>hostaddr</code>.
+     * 
+     * @return the address of the E-mailhost
      */
     public String getHostaddr() {
 	return hostaddr;
@@ -62,7 +78,9 @@ public class SmtpServer {
     }
 
     /**
-     * @return the password
+     * Returns the value of the attribute <code>password</code>.
+     * 
+     * @return the password of the user
      */
     public String getPassword() {
 	return password;
@@ -79,7 +97,9 @@ public class SmtpServer {
     }
 
     /**
-     * @return the port
+     * Returns the value of the attribute <code>address</code>.
+     * 
+     * @return the port from the E-mailhost.
      */
     public int getPort() {
 	return port;
@@ -96,6 +116,8 @@ public class SmtpServer {
     }
 
     /**
+     * Returns the value of the attribute <code>username</code>.
+     * 
      * @return the username
      */
     public String getUsername() {
@@ -110,36 +132,6 @@ public class SmtpServer {
      */
     public void setUsername(String username) {
 	this.username = username;
-    }
-
-    /**
-     * @return the authenticated
-     */
-    public boolean isAuthenticated() {
-	return authenticated;
-    }
-
-    /**
-     * @param authenticated
-     *            the authenticated to set
-     */
-    public void setAuthenticated(boolean authenticated) {
-	this.authenticated = authenticated;
-    }
-
-    /**
-     * @return the tls
-     */
-    public boolean isTls() {
-	return tls;
-    }
-
-    /**
-     * @param tls
-     *            the tls to set
-     */
-    public void setTls(boolean tls) {
-	this.tls = tls;
     }
 
 }

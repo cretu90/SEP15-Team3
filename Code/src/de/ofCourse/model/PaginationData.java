@@ -29,60 +29,76 @@ public class PaginationData {
     private boolean sortAsc;
 
     /**
-     * @return the itemsPerPage
+     * Returns the value of the attribute <code>itemsPerPage</code>.
+     * 
+     * @return the number of items shown on one page
      */
     public int getItemsPerPage() {
 	return itemsPerPage;
     }
 
     /**
+     * Sets the value of the attribute <code>itemsPerPage</code>.
+     * 
      * @param itemsPerPage
-     *            the itemsPerPage to set
+     *            new amount of items which are shown on the page
      */
     public void setItemsPerPage(int itemsPerPage) {
 	this.itemsPerPage = itemsPerPage;
     }
 
     /**
-     * @return the shownPageNum
+     * Returns the value of the attribute <code>shownPageNum</code>.
+     * 
+     * @return the page number currently displayed
      */
     public int getShownPageNum() {
 	return shownPageNum;
     }
 
     /**
+     * Sets the value of the attribute <code>shownPageNum</code>.
+     * 
      * @param shownPageNum
-     *            the shownPageNum to set
+     *            new Page Number which is shown
      */
     public void setShownPageNum(int shownPageNum) {
 	this.shownPageNum = shownPageNum;
     }
 
     /**
-     * @return the sortColumn
+     * Returns the value of the attribute <code>sortColum</code>.
+     * 
+     * @return the displayed column name the page is sorted
      */
     public String getSortColumn() {
 	return sortColumn;
     }
 
     /**
+     * Sets the value of the attribute <code>sortColum</code>.
+     * 
      * @param sortColumn
-     *            the sortColumn to set
+     *            new column name the page should sort
      */
     public void setSortColumn(String sortColumn) {
 	this.sortColumn = sortColumn;
     }
 
     /**
-     * @return the sortAsc
+     * Returns the value of the attribute <code>sortAsc</code>.
+     * 
+     * @return whether the displayed data in ascending order or not
      */
     public boolean isSortAsc() {
 	return sortAsc;
     }
 
     /**
+     * Sets the value of the attribute <code>sortAsc</code>.
+     * 
      * @param sortAsc
-     *            the sortAsc to set
+     *            whether the data is sorted ascending or not
      */
     public void setSortAsc(boolean sortAsc) {
 	this.sortAsc = sortAsc;
