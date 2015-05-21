@@ -91,7 +91,6 @@
 							\textit{Anmelden} & login()\\ \hline
 					\end{longtable}
 				\end{center}
-			\item \textbf{Inputs:} -
 			\item \textbf{Outputs:}
 				\begin{itemize}
 					\item Logo: Zeigt verkleinertes, vom Administrator definiertes Logo der Website. Beim klick gelangt der Nutzer zur Startseite \hyperlink{index}{index.xhtml}.
@@ -116,7 +115,6 @@
 		RS\\
 		\begin{itemize}
 			\item \textbf{Beschreibung:} Dieses Facelet dient der Darstellung des Footers.
-			\item \textbf{Links:} -
 			\item \textbf{Buttons:}
 			\begin{itemize}
 				\item AGB: Navigiert zum Facelet mit den Allgemeinen Geschäftsbedingungen, also \hyperlink{agb}{agb.xhtml}. Zugehörige Methode: loadAGBPage()
@@ -135,8 +133,6 @@
 						\textit{Hilfe} & loadHelpPage()\\ \hline
 				\end{longtable}
 			\end{center}
-			\item \textbf{Inputs:} -
-			\item \textbf{Outputs:} -
 			\item \textbf{BackingBean:}
 			\begin{itemize}
 				\item FooterBean
@@ -147,8 +143,6 @@
 		RS\\
 		\begin{itemize}
 			\item \textbf{Beschreibung:} Dieses Facelet dient der einheitlichen Darstellung und Struktur aller Facelets im System. Letztere ist in Abbildung 5.1 genauer dargestellt.
-			\item \textbf{Links:} -
-			\item \textbf{Buttons:} -
 			\item \textbf{Inputs:}
 			\begin{itemize}
 				\item Navigation: Bindet \hyperlink{navigation}{navigation.xhtml} in den Header ein.
@@ -165,8 +159,6 @@
 					\textit{Footer} & xhtml & footer \\ \hline
 				\end{longtable}
 			\end{center}
-			\item \textbf{Outputs:} -
-			\item \textbf{BackingBean:} -
 		\end{itemize}
 		
 		\section{Facelets}
@@ -196,8 +188,6 @@
 			\begin{itemize}
 				\item Gesamtes Kursangebot, \hyperlink{search}{search.xhtml}
 			\end{itemize}
-			\item \textbf{Buttons:} -
-			\item \textbf{Inputs:} -
 			\item \textbf{Outputs:}
 			\begin{itemize}
 				\item Logo der Website
@@ -214,7 +204,6 @@
 							\textit{Logout-Benachrichtigung} & message & logoutmsg\\ \hline
 						\end{longtable}
 					\end{center}
-			\item \textbf{BackingBean:} -
 		\end{itemize}
 		
 		\paragraph{authenticate.xhtml} \hypertarget{authenticate}
@@ -402,9 +391,6 @@
 		RS\\
 		\begin{itemize}
 			\item \textbf{Beschreibung:} Dieses Facelet dient der Anzeige der Allgemeinen Geschäftsbedingungen.
-			\item \textbf{Links:} -
-			\item \textbf{Buttons:} -
-			\item \textbf{Inputs:} -
 			\item \textbf{Outputs:}
 			\begin{itemize}
 				\item von Betreibern festgelegte Allgemeine Geschäftsbedingungen.
@@ -419,7 +405,6 @@
 						\textit{AGB}  & outputText & agbzeigen \\ \hline
 					\end{longtable}
 				\end{center}
-			\item \textbf{BackingBean:} -
 		\end{itemize}
 		
 		
@@ -429,7 +414,6 @@
 		RS\\
 		\begin{itemize}
 			\item \textbf{Beschreibung:} Hier können alle Kurse angezeigt und durchsucht werden.
-			\item \textbf{Links:} -
 			\item \textbf{Buttons:}
 			\begin{itemize}
 				\item Anzeigen: Zeigt die Angebote im ausgewählten Zeitraum an. \\ Zugehörige Methode: displayCoursesInSpecificPeriod()
@@ -492,7 +476,6 @@
 		RS\\
 		\begin{itemize}
 			\item \textbf{Beschreibung:} Zur genaueren Betrachtung eines einzelnen Kurses wird dieses Facelet benötigt.
-			\item \textbf{Links:} -
 			\item \textbf{Buttons:}
 			\begin{itemize}
 				\item Anmelden (Benutzer, noch nicht angemeldet): Meldet den Benutzer zum Kurs an. \\ Zugehörige Methode: signUpForCourse()
@@ -849,8 +832,6 @@
 						\textit{Wochenansicht rückwärts} & displayPreviousWeek() \\ \hline
 					\end{longtable}
 				\end{center}
-			\item \textbf{Buttons:} -
-			\item \textbf{Inputs:} -
 			\item \textbf{Outputs:}
 			\begin{itemize}
 				\item Wochentabelle: Zeigt von Montag bis Sonntag alle belegten Kurseinheiten an. Orientiert sich am klassischen Stundenplan, also mit stündlicher Ansicht.
@@ -1200,7 +1181,6 @@
 		RS\\
 		\begin{itemize}
 			\item \textbf{Beschreibung:} Dieses Facelet stellt die zentrale Systemverwaltung für den Administrator dar. Hier kann er Kurse und Benutzer jeweils anlegen und verwalten, das Konto eines Nutzers aufladen, den Überziehungskredit für Nutzer festlegen und das System optisch anpassen.
-			\item \textbf{Links:} -
 			\item \textbf{Buttons:}
 			\begin{itemize}
 				\item Benutzer verwalten: Navigiert zu Benutzer verwalten Seite. \hyperlink{listUsers}{listUsers.xhtml} \\ Zugehörige Methode: loadManageUserPage()
@@ -1370,7 +1350,6 @@
 		RS\\
 		\begin{itemize}
 			\item \textbf{Beschreibung:} Hier kann der Systemadministrator einen neuen Benutzer mit festgelegter Benutzerrolle anlegen.
-			\item \textbf{Links:} -
 			\item \textbf{Buttons:}
 			\begin{itemize}
 				\item Hochladen: Lädt das ausgewählte Profilbild hoch.\\ Zugehörige Methode: uploadprofilePic()
