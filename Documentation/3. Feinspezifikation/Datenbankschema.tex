@@ -25,12 +25,13 @@ CREATE TABLE users (
     email                  VARCHAR(319)    NOT NULL UNIQUE,
     pw_hash                VARCHAR(256)    NOT NULL,
     date_of_birth          DATE,
-    gender                 GENDER,
+    form_of_address        FORM_OF_ADDRESS,
     credit_balance         BOOLEAN         NOT NULL,
     email_verification     BOOLEAN         NOT NULL,
     admin_verfication      BOOLEAN         NOT NULL,
     profile_image          BYTEA,
-    user_role              ROLE            NOT NULL,
+    role                   ROLE            NOT NULL,
+    status                 STATUS          NOT NULL
 )
 
 ALTER SEQUENCE users_id_seq RESTART WITH 10000
@@ -46,7 +47,8 @@ CREATE TABLE courses (
     max_participants       INTEGER    CHECK (max_participants > 0),
     start_date             DATE       NOT NULL,
     end_date               DATE       NOT NULL,
-    image                  BYTEA,
+    description            TEXT(1000),
+    image                  BYTEA
 )
 
 ALTER SEQUENCE courses_id_seq RESTART WITH 10000
@@ -203,11 +205,11 @@ Das Sicherstellen der Integrität der Datenbanktabellen erfolgt durch die nachfo
 \section{Enums}
 Folgende Attribute können, innerhalb des Systems, nur ausgewählte, vordefinierte Werte annehmen. Zu diesem Zweck wird, spezifisch für PostgreSQL, jeweils ein Enum erstellt.
 
-\subsection{\texttt{users(gender)}}
+\subsection{\texttt{users(form\_of\_address)}}
 
 \begin{verbatim}
-CREATE TYPE gender AS ENUM (
-    'male', 'female'
+CREATE TYPE form_of_address AS ENUM (
+    'mr.', 'ms.'
 )
 \end{verbatim}
 
@@ -215,7 +217,15 @@ CREATE TYPE gender AS ENUM (
 
 \begin{verbatim}
 CREATE TYPE role AS ENUM (
-    'registered_user', 'course_instructor', 'administrator', 'inactive'
+    'registered_user', 'course_instructor', 'administrator'
+)
+\end{verbatim}
+
+\subsection{\texttt{users(status)}}
+
+\begin{verbatim}
+CREATE TYPE status AS ENUM (
+    'anonymous', 'not_activated', 'registered', 'inactive'
 )
 \end{verbatim}
 
