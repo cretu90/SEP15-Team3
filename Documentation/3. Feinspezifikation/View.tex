@@ -308,7 +308,7 @@
 						\textit{Postleitzahl (Registrierg)} & validateLength (min = 1, max = 10), validateRequired & - \\ \hline
 						\textit{Land (Registrierg)} & validateLength (min = 1, max = 100), validateRequired & -  \\ \hline
 						\textit{E-Mail-Adresse (Registrierg)} & EMailValidator, validateLength (min = 1, max = 319), validateRequired & - \\ \hline
-						\textit{AGBs bestätigen (Registrierg)} & - & -  \\ \hline
+						\textit{AGBs bestätigen (Registrierg)} & validateRequired & -  \\ \hline
 						\textit{Benutzername (Anmeldung)} & validateRequired & - \\ \hline
 						\textit{Passwort (Anmeldung)} & validateRequired & -  \\ \hline
 						\textit{E-Mail-Adresse (Passwort vergessen)} & validateRequired & - \\ \hline
@@ -336,6 +336,7 @@
 				\item Benutzername Fehlermeldung (Anmeldung): Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
 				\item Passwort Fehlermeldung (Anmeldung): Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
 				\item E-Mail-Adresse Fehlermeldung (Passwort vergessen): Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
+				\item FacesMessage: 'Loginfehler! Bitte überprüfen Sie Benutzername und Passwort.'
 			\end{itemize}
 			
 				\begin{center}
@@ -345,23 +346,24 @@
 						\endfirsthead
 						\hline
 						\endlastfoot
-						\textit{Anrede Fehlermeldung (R)}  & outputText & anredefehler \\ \hline
-						\textit{Vorname Fehlermeldung (R)}  & outputText & vornamenfehler \\ \hline
-						\textit{Name Fehlermeldung (R)} & outputText & namenfehler \\ \hline
-						\textit{Benutzername Fehlermeldung (R)}& outputText & nutzernamenfehler\\ \hline
-						\textit{Passwort Fehlermeldung (R)}& outputText & passwortfehler\\ \hline
-						\textit{Passwort bestätigen Fehlermeldung (R)}& outputText & bestätigungspwfehler\\ \hline
-						\textit{Geburtstag  Fehlermeldung(R)} & outputText & geburtstagsfehler \\ \hline
-						\textit{Straße Fehlermeldung (R)}& outputText & straßenfehler\\ \hline
-						\textit{Hausnummer Fehlermeldung (R)}& outputText & hausnrfehler\\ \hline
-						\textit{Stadt Fehlermeldung (R)}& outputText & stadtfehler \\ \hline
-						\textit{Postleitzahl Fehlermeldung (R)} & outputText & postleitzahlfehler \\ \hline
-						\textit{Land Fehlermeldung (R)} & outputText & landfehler \\ \hline
-						\textit{E-Mail-Adresse Fehlermeldung (R)} & outputText & mailfehler\\ \hline
-						\textit{AGBs bestätigen Fehlermeldung (R)} & outputText & agbfehler \\ \hline
-						\textit{Benutzername Fehlermeldung (A)}& outputText & anmeldenamefehler \\ \hline
-						\textit{Passwort Fehlermeldung (A)} &  outputText & anmeldepwfehler \\ \hline
-						\textit{E-Mail-Adresse Fehlermeldung (Passwort vergessen)}  & outputText & mailpw \\ \hline
+						\textit{Anrede Fehlermeldung (R)}  & message & anredefehler \\ \hline
+						\textit{Vorname Fehlermeldung (R)}  & message & vornamenfehler \\ \hline
+						\textit{Name Fehlermeldung (R)} & message & namenfehler \\ \hline
+						\textit{Benutzername Fehlermeldung (R)}& message & nutzernamenfehler\\ \hline
+						\textit{Passwort Fehlermeldung (R)}& message & passwortfehler\\ \hline
+						\textit{Passwort bestätigen Fehlermeldung (R)}& message & bestätigungspwfehler\\ \hline
+						\textit{Geburtstag  Fehlermeldung(R)} & message & geburtstagsfehler \\ \hline
+						\textit{Straße Fehlermeldung (R)}& message & straßenfehler\\ \hline
+						\textit{Hausnummer Fehlermeldung (R)}& message & hausnrfehler\\ \hline
+						\textit{Stadt Fehlermeldung (R)}& message & stadtfehler \\ \hline
+						\textit{Postleitzahl Fehlermeldung (R)} & message & postleitzahlfehler \\ \hline
+						\textit{Land Fehlermeldung (R)} & message & landfehler \\ \hline
+						\textit{E-Mail-Adresse Fehlermeldung (R)} & message & mailfehler\\ \hline
+						\textit{AGBs bestätigen Fehlermeldung (R)} & message & agbfehler \\ \hline
+						\textit{Benutzername Fehlermeldung (A)}& message & anmeldenamefehler \\ \hline
+						\textit{Passwort Fehlermeldung (A)} &  message & anmeldepwfehler \\ \hline
+						\textit{E-Mail-Adresse Fehlermeldung (Passwort vergessen)}  & message & mailpw \\ \hline
+						\textit{FacesMessage (Loginfehler)}  & messages globalOnly & loginfehler \\ \hline
 					\end{longtable}
 				\end{center}
 			
@@ -928,7 +930,7 @@
 						\endfirsthead
 						\hline
 						\endlastfoot
-						\textit{Entfernen} & - & selectBooleanCheckbox & entfernen \\ \hline
+						\textit{Entfernen} & ListParticipantsBean. usersToDelete & selectBooleanCheckbox & entfernen \\ \hline
 					\end{longtable}
 				\end{center}
 				
@@ -1315,14 +1317,14 @@
 				\end{itemize}
 				
 				\begin{center}
-					\begin{longtable}{|p{3cm} |p{5cm} | p{4cm}|p{3cm}|}
+					\begin{longtable}{|p{3cm} |p{6cm} | p{4cm}|p{3cm}|}
 						
 						\hline \multicolumn{1}{|c|}{\textbf{Eingabefeld}} & \multicolumn{1}{|c|}{\textbf{Backing-Bean-Attribute}} & \multicolumn{1}{|c|}{\textbf{Typ}}  &  \multicolumn{1}{|c|}{\textbf{ID}} \\ \hline
 						\endfirsthead
 						\hline
 						\endlastfoot
-						\textit{Kriterienauswahl} & - & selectOneMenu & kriterien \\ \hline
-						\textit{Suchbegriff} & - & inputText & suchen \\ \hline
+						\textit{Kriterienauswahl} & SearchUserBean.searchParam & selectOneMenu & kriterien \\ \hline
+						\textit{Suchbegriff} & SearchUserBean.searchTerm & inputText & suchen \\ \hline
 					\end{longtable}
 				\end{center}
 				
@@ -1519,7 +1521,7 @@
 					\item Maximale Teilnehmerzahl: Hier gibt der Administrator die maximale Teilnehmerzahl des Kurses an.
 					\item Startdatum: Hier trägt der Administrator das Startdatum des Kurses ein.
 					\item Enddatum: Hier trägt der Administrator das Enddatum des Kurses ein.
-					\item Name (Kursleiter): Hier gibt der Administrator den Namen des Kursleiters ein, den er zum Kurs hinzufügen will.
+					\item Benutzername (Kursleiter): Hier gibt der Administrator den Benutzernamen des Kursleiters ein, den er zum Kurs hinzufügen will.
 					\item E-Mail-Adresse (Kursleiter): Hier gibt der Administrator die entsprechende E-Mail-Adresse des Kursleiters ein.
 					\item Kursleiter-ID: Hier gibt der Administrator die entsprechende ID ein.
 					\item Löschen (Kursleiter): Hier kann der Administrator durch Setzen des Häkchens den Kursleiter markieren, um ihn anschließend über den Button 'Löschen' zu entfernen.
@@ -1534,16 +1536,16 @@
 						\endfirsthead
 						\hline
 						\endlastfoot
-						\textit{titel} & CourseManagementBean. Course.title & inputText & titel \\ \hline
-						\textit{Beschreibung} & CourseManagementBean. Course.description & inputText & beschreibung \\ \hline
-						\textit{Maximale Teilnehmerzahl} & CourseManagementBean. Course.maxUsers & inputText & maxteilnehmer \\ \hline
-						\textit{Startdatum} & CourseManagementBean. Course.startdate & inputText & startdatum \\ \hline
-						\textit{Enddatum} & CourseManagementBean. Course.enddate & inputText & enddatum \\ \hline
-						\textit{Name (Kursleiter)} & - & inputText & name \\ \hline
-						\textit{E-Mail-Adresse (Kursleiter)} & - & inputText & mailkursleiter \\ \hline
-						\textit{Kursleiter-ID} & - & inputText & idkursleiter \\ \hline
-						\textit{Löschen (Kursleiter)} & - & selectBooleanCheckbox & löschenkursleiter \\ \hline
-						\textit{Profilbild Pfad} & CourseManagementBean. Course.courseImage & inputFile & bildpfad \\ \hline
+						\textit{titel} & CourseManagementBean. course.title & inputText & titel \\ \hline
+						\textit{Beschreibung} & CourseManagementBean. course.description & inputText & beschreibung \\ \hline
+						\textit{Maximale Teilnehmerzahl} & CourseManagementBean. course.maxUsers & inputText & maxteilnehmer \\ \hline
+						\textit{Startdatum} & CourseManagementBean. course.startdate & inputText & startdatum \\ \hline
+						\textit{Enddatum} & CourseManagementBean. course.enddate & inputText & enddatum \\ \hline
+						\textit{Benutzername (Kursleiter)} & CourseManagementBean. leaderToAdd.username & inputText & benutzername \\ \hline
+						\textit{E-Mail-Adresse (Kursleiter)} & CourseManagementBean. leaderToAdd.email & inputText & mailkursleiter \\ \hline
+						\textit{Kursleiter-ID} & CourseManagementBean. leaderToAdd.userID & inputText & idkursleiter \\ \hline
+						\textit{Löschen (Kursleiter)} & CourseManagementBean. leadersToDelete & selectBooleanCheckbox & löschenkursleiter \\ \hline
+						\textit{Profilbild Pfad} & CourseManagementBean. course.courseImage & inputFile & bildpfad \\ \hline
 					\end{longtable}
 				\end{center}
 				
@@ -1555,11 +1557,11 @@
 						\hline
 						\endlastfoot
 						\textit{Titel} & validateLength (min = 0, max = 150) & - \\ \hline
-						\textit{Beschreibung} & validateLength (min = 0, max = 1000) & - \\ \hline
+						\textit{Beschreibung} & inputTextValidator, validateLength (min = 0, max = 1000) & - \\ \hline
 						\textit{Maximale Teilnehmerzahl} & validateLength (min = 0, max = 9) & convertNumber \\ \hline
 						\textit{Startdatum} & validateRequired & covertDateTime \\ \hline
 						\textit{Enddatum} & validateRequired & converDateTime \\ \hline
-						\textit{Name (Kursleiter)} & validateLength (min = 1, max = 100), validateRequired & - \\ \hline
+						\textit{Benutzername (Kursleiter)} & validateLength (min = 1, max = 100), validateRequired & - \\ \hline
 						\textit{E-Mail-Adresse (Kursleiter)} & validateLength (min = 1, max = 319) validateRequired, EMailValidator & - \\ \hline
 						\textit{Kursleiter-ID} & validateRequired, validateLength (min = 0, max = 9) & convertNumber \\ \hline
 						\textit{Löschen (Kursleiter)} & - & - \\ \hline
@@ -1574,7 +1576,7 @@
 					\item Maximale Teilnehmerzahl (Fehlermeldung): Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
 					\item Startdatum (Fehlermeldung): Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
 					\item Enddatum (Fehlermeldung): Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
-					\item Name (Kursleiter (Fehlermeldung)): Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
+					\item Benutzerame (Kursleiter (Fehlermeldung)): Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
 					\item E-Mail-Adresse (Kursleiter (Fehlermeldung)): Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
 					\item Kursleiter-ID (Fehlermeldung): Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
 					\item Löschen (Kursleiter (Fehlermeldung)): Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
@@ -1595,7 +1597,7 @@
 						\textit{Maximale Teilnehmerzahl Fehlermeldung}  & outputText & maxteilnehmerfehler \\ \hline
 						\textit{Startdatum Fehlermeldung}  & outputText & startdatumsfehler \\ \hline
 						\textit{Enddatum Fehlermeldung}  & outputText & enddatumsfehler \\ \hline
-						\textit{Name Kursleiter Fehlermeldung}  & outputText & namefehler \\ \hline
+						\textit{Benutzerame Kursleiter Fehlermeldung}  & outputText & namefehler \\ \hline
 						\textit{E-Mail-Adresse Kursleiter Fehlermeldung}  & outputText & mailfehler\\ \hline
 						\textit{Kursleiter-ID Fehlermeldung}  & outputText & idkursleiterfehler \\ \hline
 						\textit{Löschen Kursleiter Fehlermeldung}  & outputText & leiterlöschenfehler \\ \hline
