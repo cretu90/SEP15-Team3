@@ -1,10 +1,10 @@
 /**
- * 
+ * This package represents all the models which are used
  */
 package de.ofCourse.model;
 
 /**
- * contains all information for the pagination progress
+ * Contains all information for the pagination progress
  * 
  * @author Sebastian
  *
@@ -12,19 +12,19 @@ package de.ofCourse.model;
 public class PaginationData {
 
     /**
-     * stores the number of items shown on one page.
+     * Stores the number of items shown on one page.
      */
     private int itemsPerPage;
     /**
-     * 
+     * Stores the current displayed page.
      */
     private int shownPageNum;
     /**
-     * 
+     * Stores the displayed column name the page is sorted
      */
     private String sortColumn;
     /**
-     * 
+     * Stores whether the displayed data in ascending order or not
      */
     private boolean sortAsc;
 
