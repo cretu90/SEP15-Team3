@@ -1,5 +1,5 @@
 /**
- * 
+ * This package represents the Data Access Objects of the ofCourse system.
  */
 package de.ofCourse.Database.dao;
 
@@ -12,22 +12,37 @@ import de.ofCourse.model.User;
 import de.ofCourse.system.Transaction;
 
 /**
- * @author
+ * @author Patrick Cretu
  *
  */
 public class UserDAO {
 
     /**
+     * Adds a new user to the list of users in the database.
+     * 
+     * @param trans
+     *            the Transaction object which contains the connection to the
+	 *            database
      * @param user
-     * @throws InvalidDBTransferException
+     *            the user to be added
+     * @throws InvalidDBTransferException if any error occurred during the
+     * execution of the method
      */
     public static void createUser(Transaction trans, User user) throws InvalidDBTransferException {
     }
 
     /**
+     * Returns a list containing all users stored in the database.
+     * 
+     * @param trans
+     *            the Transaction object which contains the connection to the
+	 *            database
      * @param pagination
-     * @return
-     * @throws InvalidDBTransferException
+     *            the Pagination object which contains the amount of elements
+     *            which are to be retrieved
+     * @return the list of users, or null if no users were retrieved
+     * @throws InvalidDBTransferException if any error occurred during the
+     * execution of the method
      */
     public static List<User> getUsers(Transaction trans, PaginationData pagination)
 	    throws InvalidDBTransferException {
@@ -35,10 +50,20 @@ public class UserDAO {
     }
 
     /**
+     * Returns a list of users which names contain the search term the user has
+     * entered.
+     * 
+     * @param trans
+     *            the Transaction object which contains the connection to the
+	 *            database
      * @param pagination
+     *            the Pagination object which contains the amount of elements
+     *            which are to be retrieved
      * @param searchString
-     * @return
-     * @throws InvalidDBTransferException
+     *            the user's search term
+     * @return the list of users, or null if no users were retrieved
+     * @throws InvalidDBTransferException if any error occurred during the
+     * execution of the method
      */
     public static List<User> getUsers(Transaction trans, PaginationData pagination,
 	    String searchString) throws InvalidDBTransferException {
@@ -46,11 +71,23 @@ public class UserDAO {
     }
 
     /**
+     * Returns a list of users which titles contain the search term the user
+     * has entered. The list is ordered by the passed parameter.
+     * 
+     * @param trans
+     *            the Transaction object which contains the connection to the
+	 *            database
      * @param pagination
+     *            the Pagination object which contains the amount of elements
+     *            which are to be retrieved
      * @param searchString
+     *            the user's search term
      * @param orderParam
-     * @return
-     * @throws InvalidDBTransferException
+     *            the parameter the list is to be ordered by
+     * @return the list of users ordered by the passed parameter, or null if no
+     * users were retrieved
+     * @throws InvalidDBTransferException if any error occurred during the
+     * execution of the method
      */
     public static List<User> getUsersOrdered(Transaction trans, PaginationData pagination,
 	    String searchString, String orderParam)
@@ -59,18 +96,33 @@ public class UserDAO {
     }
 
     /**
+     * Returns a user assigned to the specified ID.
+     * 
+     * @param trans
+     *            the Transaction object which contains the connection to the
+	 *            database
      * @param userID
-     * @return
-     * @throws InvalidDBTransferException
+     *            the user's ID
+     * @return the user assigned to the user ID, or null if no such user was
+     * found
+     * @throws InvalidDBTransferException if any error occurred during the
+     * execution of the method
      */
     public static User getUser(Transaction trans, int userID) throws InvalidDBTransferException {
 	return null;
     }
 
     /**
+     * Returns the ID of a user assigned to the passed user name.
+     * 
+     * @param trans
+     *            the Transaction object which contains the connection to the
+	 *            database
      * @param username
-     * @return
-     * @throws InvalidDBTransferException
+     *            the user's name
+     * @return the user's ID
+     * @throws InvalidDBTransferException if any error occurred during the
+     * execution of the method
      */
     public static int getUserID(Transaction trans, String username)
 	    throws InvalidDBTransferException {
@@ -78,30 +130,66 @@ public class UserDAO {
     }
 
     /**
+     * Updates a user stored in the database. The user's attributes are replaced
+     * by the ones of the passed user.
+     * 
+     * @param trans
+     *            the Transaction object which contains the connection to the
+	 *            database
      * @param user
-     * @throws InvalidDBTransferException
+     *            the user to be updated
+     * @throws InvalidDBTransferException if any error occurred during the
+     * execution of the method
      */
     public static void updateUser(Transaction trans, User user) throws InvalidDBTransferException {
     }
 
     /**
+     * Deletes a user which is assigned to the passed ID.
+     * 
+     * @param trans
+     *            the Transaction object which contains the connection to the
+	 *            database
      * @param userID
-     * @throws InvalidDBTransferException
+     *            the ID of the user to be deleted
+     * @throws InvalidDBTransferException if any error occurred during the
+     * execution of the method
      */
     public static void deleteUser(Transaction trans, int userID) throws InvalidDBTransferException {
     }
 
     /**
+     * Returns a list of courses of which the user assigned to the passed ID is
+     * leader of.
+     * 
+     * @param trans
+     *            the Transaction object which contains the connection to the
+	 *            database
      * @param userID
+     *            the course leader's ID
      * @param pagination
-     * @return
-     * @throws InvalidDBTransferException
+     *            the Pagination object which contains the amount of elements
+     *            which are to be retrieved
+     * @return the list of courses which the user is leader of, or null if
+     * the user isn't leader of any course
+     * @throws InvalidDBTransferException if any error occurred during the
+     * execution of the method
      */
     public static List<Course> getCoursesLeadedBy(Transaction trans, int userID,
 	    PaginationData pagination) throws InvalidDBTransferException {
 	return null;
     }
 
+    /**
+     * Returns an ID assigned to the user which has been added last to the database.
+     * 
+     * @param trans
+     *            the Transaction object which contains the connection to the
+	 *            database
+     * @return the user's ID
+     * @throws InvalidDBTransferException if any error occurred during the
+     * execution of the method
+     */
     public static int getNewUserID(Transaction trans) throws InvalidDBTransferException {
 	return 0;
 
