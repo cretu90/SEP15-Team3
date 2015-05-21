@@ -558,10 +558,10 @@
 						\textit{Kursleiter auswählen (A)} & CourseDetailBean.leadersOfCourse\\ \hline
 						\textit{Kursleiter Name (A)} & CourseDetailBean.leadersOfCourse.User.lastname\\ \hline
 						\textit{Kursleiter E-Mail (A)} & CourseDetailBean.leadersOfCourse.User.email\\ \hline
-						\textit{Kursbeschreibung (A)} & CourseDetailBean.Course.description\\ \hline
-						\textit{Maximale Teilnehmerzahl (A)} & CourseDetailBean.Course.maxUsers\\ \hline
-						\textit{Startdatum (A)} & CourseDetailBean.Course.startdate\\ \hline
-						\textit{Enddatum (A)} & CourseDetailBean.Course.enddate\\ \hline
+						\textit{Kursbeschreibung (A)} & CourseDetailBean.course.description\\ \hline
+						\textit{Maximale Teilnehmerzahl (A)} & CourseDetailBean.course.maxUsers\\ \hline
+						\textit{Startdatum (A)} & CourseDetailBean.course.startdate\\ \hline
+						\textit{Enddatum (A)} & CourseDetailBean.course.enddate\\ \hline
 					\end{longtable}
 					\begin{longtable}{|p{3cm} |p{4cm} | p{4cm}|p{3cm} ||}
 						
@@ -572,9 +572,9 @@
 						\textit{Kursnews erhalten} & - & - & getcnews\\ \hline
 						\textit{Kurseinheit auswählen} & - & - & selectcunit\\ \hline
 						\textit{Kursleiter auswählen (A)} & - & - & selectcleader\\ \hline
-						\textit{Kursleiter Name (A)} & - & - & cleadername\\ \hline
-						\textit{Kursleiter E-Mail (A)} & - & - & cleadermail\\ \hline
-						\textit{Kursbeschreibung (A)} & - & - & cdetails\\ \hline
+						\textit{Kursleiter Name (A)} & validateRequired, validateLength (min = 1, max = 100) & - & cleadername\\ \hline
+						\textit{Kursleiter E-Mail (A)} & validateRequired, validateLength (min = 5, max = 319) & - & cleadermail\\ \hline
+						\textit{Kursbeschreibung (A)} & InputTextValidator, validateLength (min = 0, max = 1000) & - & cdetails\\ \hline
 						\textit{Maximale Teilnehmerzahl (A)} & - & convertNumber & maxparticipants\\ \hline
 						\textit{Startdatum (A)} & DateValidator & convertDateTime & begin\\ \hline
 						\textit{Enddatum (A)} & DateValidator & convertDateTime & end\\ \hline
@@ -1285,7 +1285,7 @@
 						\endlastfoot
 						\textit{Account-Aktivierung} & - & - & accactivation\\ \hline
 						\textit{Benutzer-ID} & validateRequired & convertNumber & userid\\ \hline
-						\textit{Benutzername} & validateRequired & - & username\\ \hline
+						\textit{Benutzername} & validateRequired, validateLength (min = 1, max = 100) & - & username\\ \hline
 						\textit{Betrag} & validateRequired & convertNumber & amount \\ \hline
 						\textit{Überziehungswert} & validateRequired & convertNumber & overdraft\\ \hline
 					\end{longtable}
@@ -1422,6 +1422,7 @@
 				\item Nachname: Nachname des neuen Benutzers.
 				\item Geburtsdatum: Geburtsdatum des neuen Benutzers.
 				\item Straße: Straße des neuen Benutzers.
+				\item Hausnummer: Hausnummer des neuen Benutzers.
 				\item Postleitzahl: Postleitzahl des neuen Benutzers.
 				\item Stadt: Stadt des neuen Benutzers.
 				\item Benutzername: Benutzername des neuen Benutzers.
@@ -1444,6 +1445,7 @@
 						\textit{Nachname} & UserManagementBean.user.lastname & name\\ \hline
 						\textit{Geburtsdatum} & UserManagementBean.user.dateOfBirth & birthday\\ \hline
 						\textit{Straße} & UserManagementBean.user.address.street & street\\ \hline
+						\textit{Hausnummer} & UserManagementBean.user.address.houseNumber & hnumber\\ \hline
 						\textit{Postleitzahl} & UserManagementBean.user.address.zipCode & plz\\ \hline	
 						\textit{Stadt} & UserManagementBean.user.street.city & town\\ \hline
 						\textit{Benutzername} & UserManagementBean.user.username & username\\ \hline	
@@ -1460,16 +1462,17 @@
 						\hline
 						\endlastfoot
 						\textit{Anrede} & validateRequired & - & selectOneMenu\\ \hline
-						\textit{Vorname} & InputTextValidator, validateRequired & - & inputText\\ \hline
-						\textit{Nachname} & InputTextValidator, validateRequired & - & inputText\\ \hline
+						\textit{Vorname} & InputTextValidator, validateRequired, validateLength (min = 1, max = 100) & - & inputText\\ \hline
+						\textit{Nachname} & InputTextValidator, validateRequired, validateLength (min = 1, max = 100) & - & inputText\\ \hline
 						\textit{Geburtsdatum} & DateOfBirthValidator, validateRequired & convertDateTime & inputText\\ \hline
-						\textit{Straße} & InputTextValidator, validateRequired & - & inputText\\ \hline
-						\textit{Postleitzahl} & InputTextValidator, validateRequired & convertNumber & inputText\\ \hline	
-						\textit{Stadt} & InputTextValidator, validateRequired & - & inputText\\ \hline
-						\textit{Benutzername} & UserNameValidator, validateRequired & - & inputText\\ \hline	
-						\textit{Passwort} & PasswordValidator, validateRequired & - & inputSecret\\ \hline	
-						\textit{Passwort wiederholen} & ConfirmPassword-Validator, validateRequired & - & inputSecret\\ \hline
-						\textit{E-Mail} & EMailValidator, validateRequired & - & inputText\\ \hline
+						\textit{Straße} & InputTextValidator, validateRequired, validateLength (min = 1, max = 100) & - & inputText\\ \hline
+						\textit{Hausnummer} & validateRequired & convertNumber & inputText\\ \hline
+						\textit{Postleitzahl} & InputTextValidator, validateRequired, validateLength (min = 1, max = 10) & convertNumber & inputText\\ \hline	
+						\textit{Stadt} & InputTextValidator, validateRequired, validateLength (min = 1, max = 100) & - & inputText\\ \hline
+						\textit{Benutzername} & UserNameValidator, validateRequired, validateLength (min = 1, max = 100) & - & inputText\\ \hline	
+						\textit{Passwort} & PasswordValidator, validateRequired, validateLength (min = 8) & - & inputSecret\\ \hline	
+						\textit{Passwort wiederholen} & ConfirmPassword-Validator, validateRequired, validateLength (min = 8) & - & inputSecret\\ \hline
+						\textit{E-Mail} & EMailValidator, validateRequired, validateLength (min = 5, max = 319) & - & inputText\\ \hline
 						\textit{Benutzerrolle} & validateRequired & - & selectOneMenu\\ \hline
 						\textit{Durchsuchen} & UserImageValidator & - & inputFile\\ \hline
 					\end{longtable}
