@@ -11,7 +11,9 @@ import de.ofCourse.exception.InvalidDBTransferException;
  * the database.
  * 
  * <p>
- * This class is only required in the class <code>system.LaunchSystem</code>.
+ * This class is only required in the class
+ * <code>de.ofCourse.system.LaunchSystem</code>.
+ * </p>
  * 
  * @author Patrick Cretu
  *

@@ -10,7 +10,9 @@ import de.ofCourse.exception.InvalidDBTransferException;
  * initialized. If not, the tables are created and initialized.
  * 
  * <p>
- * This class is only required in the class <code>system.LaunchSystem</code>.
+ * This class is only required in the class
+ * <code>de.ofCourse.system.LaunchSystem</code>.
+ * </p>
  * 
  * @author Patrick Cretu
  *

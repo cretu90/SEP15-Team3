@@ -12,6 +12,21 @@ import de.ofCourse.model.User;
 import de.ofCourse.system.Transaction;
 
 /**
+ * Provides methods for transactions with the users stored in the database such
+ * as creating, retrieving, updating or deleting users. Also retrieves a course
+ * leader's list of courses.
+ * 
+ * <p>
+ * Each method has a Transaction parameter, which contains the SQL connection
+ * to the database, in order to assure that multiple, consecutive method calls
+ * within a certain method use the same connection.
+ * </p>
+ * 
+ * <p>
+ * This class is required in the business logic of the system, more precisely
+ * in the ManagedBeans of the package <code>de.ofCourse.action</code>.
+ * </p>
+ * 
  * @author Patrick Cretu
  *
  */
@@ -28,7 +43,8 @@ public class UserDAO {
      * @throws InvalidDBTransferException if any error occurred during the
      * execution of the method
      */
-    public static void createUser(Transaction trans, User user) throws InvalidDBTransferException {
+    public static void createUser(Transaction trans, User user)
+    		throws InvalidDBTransferException {
     }
 
     /**
@@ -44,8 +60,8 @@ public class UserDAO {
      * @throws InvalidDBTransferException if any error occurred during the
      * execution of the method
      */
-    public static List<User> getUsers(Transaction trans, PaginationData pagination)
-	    throws InvalidDBTransferException {
+    public static List<User> getUsers(Transaction trans,
+    		PaginationData pagination) throws InvalidDBTransferException {
 	return null;
     }
 
@@ -65,8 +81,9 @@ public class UserDAO {
      * @throws InvalidDBTransferException if any error occurred during the
      * execution of the method
      */
-    public static List<User> getUsers(Transaction trans, PaginationData pagination,
-	    String searchString) throws InvalidDBTransferException {
+    public static List<User> getUsers(Transaction trans,
+    		PaginationData pagination, String searchString)
+    				throws InvalidDBTransferException {
 	return null;
     }
 
@@ -89,8 +106,8 @@ public class UserDAO {
      * @throws InvalidDBTransferException if any error occurred during the
      * execution of the method
      */
-    public static List<User> getUsersOrdered(Transaction trans, PaginationData pagination,
-	    String searchString, String orderParam)
+    public static List<User> getUsersOrdered(Transaction trans,
+    		PaginationData pagination, String searchString, String orderParam)
 	    throws InvalidDBTransferException {
 	return null;
     }
@@ -108,7 +125,8 @@ public class UserDAO {
      * @throws InvalidDBTransferException if any error occurred during the
      * execution of the method
      */
-    public static User getUser(Transaction trans, int userID) throws InvalidDBTransferException {
+    public static User getUser(Transaction trans, int userID)
+    		throws InvalidDBTransferException {
 	return null;
     }
 
@@ -141,7 +159,8 @@ public class UserDAO {
      * @throws InvalidDBTransferException if any error occurred during the
      * execution of the method
      */
-    public static void updateUser(Transaction trans, User user) throws InvalidDBTransferException {
+    public static void updateUser(Transaction trans, User user)
+    		throws InvalidDBTransferException {
     }
 
     /**
@@ -155,7 +174,8 @@ public class UserDAO {
      * @throws InvalidDBTransferException if any error occurred during the
      * execution of the method
      */
-    public static void deleteUser(Transaction trans, int userID) throws InvalidDBTransferException {
+    public static void deleteUser(Transaction trans, int userID)
+    		throws InvalidDBTransferException {
     }
 
     /**
@@ -181,7 +201,8 @@ public class UserDAO {
     }
 
     /**
-     * Returns an ID assigned to the user which has been added last to the database.
+     * Returns an ID assigned to the user which has been added last to the
+     * database.
      * 
      * @param trans
      *            the Transaction object which contains the connection to the
@@ -190,7 +211,8 @@ public class UserDAO {
      * @throws InvalidDBTransferException if any error occurred during the
      * execution of the method
      */
-    public static int getNewUserID(Transaction trans) throws InvalidDBTransferException {
+    public static int getNewUserID(Transaction trans)
+    		throws InvalidDBTransferException {
 	return 0;
 
     }

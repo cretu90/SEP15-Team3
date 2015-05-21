@@ -19,6 +19,12 @@ import de.ofCourse.system.Transaction;
  * Each method has a Transaction parameter, which contains the SQL connection
  * to the database, in order to assure that multiple, consecutive method calls
  * within a certain method use the same connection.
+ * </p>
+ * 
+ * <p>
+ * This class is required in the business logic of the system, more precisely
+ * in the ManagedBeans of the package <code>de.ofCourse.action</code>.
+ * </p>
  * 
  * @author Patrick Cretu
  *
@@ -39,8 +45,9 @@ public class CourseUnitDAO {
 	 * @throws InvalidDBTransferException if any error occurred during the
      * execution of the method
 	 */
-    public static void createCourseUnit(Transaction trans, CourseUnit courseUnit, int courseID)
-	    throws InvalidDBTransferException {
+    public static void createCourseUnit(Transaction trans,
+    		CourseUnit courseUnit, int courseID)
+    				throws InvalidDBTransferException {
     }
 
     /**
@@ -77,8 +84,9 @@ public class CourseUnitDAO {
      * @throws InvalidDBTransferException if any error occurred during the
      * execution of the method
      */
-    public static List<CourseUnit> getCourseUnitsFromCourse(Transaction trans, int courseID,
-	    PaginationData pagination) throws InvalidDBTransferException {
+    public static List<CourseUnit> getCourseUnitsFromCourse(Transaction trans,
+    		int courseID, PaginationData pagination)
+    				throws InvalidDBTransferException {
 	return null;
     }
 
@@ -94,8 +102,8 @@ public class CourseUnitDAO {
      * @throws InvalidDBTransferException if any error occurred during the
      * execution of the method
      */
-    public static void updateCourseUnit(Transaction trans, CourseUnit courseUnit)
-	    throws InvalidDBTransferException {
+    public static void updateCourseUnit(Transaction trans,
+    		CourseUnit courseUnit) throws InvalidDBTransferException {
     }
 
     /**
@@ -118,6 +126,7 @@ public class CourseUnitDAO {
      * <p>
      * A tuple of the user's ID and the course unit's ID is added to the table
      * containing course unit participants in the database.
+     * </p>
      * 
      * @param trans
      *            the Transaction object which contains the connection to the
@@ -129,8 +138,8 @@ public class CourseUnitDAO {
      * @throws InvalidDBTransferException if any error occurred during the
      * execution of the method
      */
-    public static void addUserToCourseUnit(Transaction trans, int userID, int courseUnitID)
-	    throws InvalidDBTransferException {
+    public static void addUserToCourseUnit(Transaction trans, int userID,
+    		int courseUnitID) throws InvalidDBTransferException {
     }
 
     /**
@@ -138,6 +147,7 @@ public class CourseUnitDAO {
      * <p>
      * The tuple of the user's ID and the course unit's ID is removed from the
      * table of course unit participants in the database.
+     * </p>
      * 
      * @param trans
      *            the Transaction object which contains the connection to the
@@ -149,8 +159,8 @@ public class CourseUnitDAO {
      * @throws InvalidDBTransferException if any error occurred during the
      * execution of the method
      */
-    public static void removeUserFromCourseUnit(Transaction trans, int userID, int courseUnitID)
-	    throws InvalidDBTransferException {
+    public static void removeUserFromCourseUnit(Transaction trans, int userID,
+    		int courseUnitID) throws InvalidDBTransferException {
     }
 
     /**
@@ -167,13 +177,14 @@ public class CourseUnitDAO {
      * @throws InvalidDBTransferException if any error occurred during the
      * execution of the method
      */
-    public static List<CourseUnit> getCourseUnitsOf(Transaction trans, int userID)
-	    throws InvalidDBTransferException {
+    public static List<CourseUnit> getCourseUnitsOf(Transaction trans,
+    		int userID) throws InvalidDBTransferException {
 	return null;
     }
 
     /**
-     * Returns an ID assigned to the course unit which has been added last to the database.
+     * Returns an ID assigned to the course unit which has been added last to
+     * the database.
      * 
      * @param trans
      *            the Transaction object which contains the connection to the
@@ -182,7 +193,8 @@ public class CourseUnitDAO {
      * @throws InvalidDBTransferException if any error occurred during the
      * execution of the method
      */
-    public static int getNewCourseUnitID(Transaction trans) throws InvalidDBTransferException {
+    public static int getNewCourseUnitID(Transaction trans)
+    		throws InvalidDBTransferException {
 	return 0;
     }
 }
