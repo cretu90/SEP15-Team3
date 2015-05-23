@@ -1,0 +1,434 @@
+\documentclass[12pt,a4paper]{scrreprt}
+\usepackage[utf8x]{inputenc}
+\usepackage{ucs}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage[left=2.00cm, right=2.50cm]{geometry}
+
+\newcommand{\Arbeitspaket}[5]{	\begin{tabular}{|p{4cm}|p{3cm}|p{3cm}|p{3cm}|p{3cm}|}
+		\hline \textbf{Paketname} & \textbf{Geplanter Startzeitpunkt} & \textbf{Geplanter Endzeitpunkt} & \textbf{Geplanter Aufwand in h} & \textbf{Implementierer} \\ 
+		\hline #1 & #2  & #3 & #4 & #5 \\ 
+		\hline 
+	\end{tabular} \ \\
+	\ \\}
+
+
+\begin{document}
+	\paragraph{Vorbemerkung:}\ \\
+	 \ \\
+	{\it Dies ist lediglich ein Entwurfsdokument!!! \\ \\
+		Die einzelnen Arbeitspakte sind, abgesehen von den Paketen die Basisfunktionen darstellen(z.b. DatabaseConnectionManager) nach Features gegliedert.\\
+		Die Unterpunkte von Arbeitspaketen stellen die zu realisierenden Komponenten dar, welche nötig sind, damit das entsprechende Feature des Systems funktioniert. Die Unterpunkte sind, wenn möglich, \textbf{vertikal} orientiert.\ \\
+		Die Reihenfolge der Arbeitspakete sollte in etwa die zu implementierende Reihenfolge darstellen um  Wartezeiten durch Abhängigkeiten zu minimieren(deshalb Basisfunktionalität zu Beginn).\ \\
+		\ \\
+		Die durchzuführenden Tests sind noch \textbf{nicht} aufgeführt. 
+		 }
+	\chapter*{Milestone 1}
+	\Arbeitspaket{SessionUserBean.java}{b}{arg3}{arg4}{}
+	
+	
+	\ \\
+	\ \\
+	\Arbeitspaket{Enumerationsklassen}{arg2}{arg3}{arg4}{arg5}
+	\textbf{Unterpunkte:}
+	\begin{itemize}
+		\item UserStatus.java\\
+			\begin{tabular}{|p{4cm}|p{4cm}|p{4cm}|}
+				\hline Startzeitpunkt & Endzeitpunkt & Aufwand in h \\ 
+				\hline &      &  \\ 
+				\hline 
+				\end{tabular}
+		\item UserRole.java	\\
+		\begin{tabular}{|p{4cm}|p{4cm}|p{4cm}|}
+			\hline Startzeitpunkt & Endzeitpunkt & Aufwand in h \\ 
+			\hline &      &  \\ 
+			\hline 
+		\end{tabular}
+	\end{itemize}
+	
+	
+	\ \\
+	\ \\
+	\Arbeitspaket{PropertyManager}{arg2}{arg3}{arg4}{arg5}
+	\textbf{Unterpunkte:}
+	\begin{itemize}
+		\item PropertyManager.java\\
+		\begin{tabular}{|p{4cm}|p{4cm}|p{4cm}|}
+			\hline Startzeitpunkt & Endzeitpunkt & Aufwand in h \\ 
+			\hline &      &  \\ 
+			\hline 
+		\end{tabular}
+		\item ofCourse.properties\\
+		\begin{tabular}{|p{4cm}|p{4cm}|p{4cm}|}
+			\hline Startzeitpunkt & Endzeitpunkt & Aufwand in h \\ 
+			\hline &      &  \\ 
+			\hline 
+		\end{tabular}	
+	\end{itemize}
+	
+	
+	\ \\
+	\ \\
+	\Arbeitspaket{EncodingFilter.java}{arg2}{arg3}{arg4}{arg5}
+		
+	
+	
+	\ \\
+	\ \\
+	\Arbeitspaket{DatabaseConnection- Manager.java}{arg2}{arg3}{arg4}{Tobias Fuchs}
+	
+	
+	\ \\
+	\ \\
+	\Arbeitspaket{CheckPhase.java}{arg2}{arg3}{arg4}{Tobias Fuchs}
+	
+	\ \\
+	\ \\
+	\Arbeitspaket{Logging}{arg2}{arg3}{arg4}{}
+	
+	\ \\
+	\ \\
+	\Arbeitspaket{Mailversand}{arg2}{arg3}{arg4}{}
+	\textbf{Unterpunkte:}
+	\begin{itemize}
+		\item MailBean.java\\
+		\begin{tabular}{|p{4cm}|p{4cm}|p{4cm}|}
+			\hline Startzeitpunkt & Endzeitpunkt & Aufwand in h \\ 
+			\hline &      &  \\ 
+			\hline 
+		\end{tabular}
+		\item MailingException.java	\\
+		\begin{tabular}{|p{4cm}|p{4cm}|p{4cm}|}
+			\hline Startzeitpunkt & Endzeitpunkt & Aufwand in h \\ 
+			\hline &      &  \\ 
+			\hline 
+		\end{tabular}
+		\item mail.properties\\
+		\begin{tabular}{|p{4cm}|p{4cm}|p{4cm}|}
+			\hline Startzeitpunkt & Endzeitpunkt & Aufwand in h \\ 
+			\hline &      &  \\ 
+			\hline 
+		\end{tabular}
+	\end{itemize}
+		
+	\ \\
+	\ \\
+	\Arbeitspaket{Datenbank Setup}{arg2}{arg3}{arg4}{arg5}
+	\textbf{Unterpunkte:}
+	\begin{itemize}
+		\item DatabaseTableCreator.java\\
+		\begin{tabular}{|p{4cm}|p{4cm}|p{4cm}|}
+			\hline Startzeitpunkt & Endzeitpunkt & Aufwand in h \\ 
+			\hline &      &  \\ 
+			\hline 
+		\end{tabular}
+		\item SetupAdmin.java\\
+		\begin{tabular}{|p{4cm}|p{4cm}|p{4cm}|}
+			\hline Startzeitpunkt & Endzeitpunkt & Aufwand in h \\ 
+			\hline &      &  \\ 
+			\hline 
+		\end{tabular}
+		\item InvalidDBTransferException.java\\
+		\begin{tabular}{|p{4cm}|p{4cm}|p{4cm}|}
+			\hline Startzeitpunkt & Endzeitpunkt & Aufwand in h \\ 
+			\hline &      &  \\ 
+			\hline 
+		\end{tabular}
+	\end{itemize}
+		
+	\ \\
+	\ \\
+	\Arbeitspaket{Transaktion}{arg2}{arg3}{arg4}{}
+	\textbf{Unterpunkte:}
+		\begin{itemize}
+			\item Transaction.java\\
+			\begin{tabular}{|p{4cm}|p{4cm}|p{4cm}|}
+				\hline Startzeitpunkt & Endzeitpunkt & Aufwand in h \\ 
+				\hline &      &  \\ 
+				\hline 
+			\end{tabular}
+			\item Connection.java	\\
+			\begin{tabular}{|p{4cm}|p{4cm}|p{4cm}|}
+				\hline Startzeitpunkt & Endzeitpunkt & Aufwand in h \\ 
+				\hline &      &  \\ 
+				\hline 
+			\end{tabular}
+		\end{itemize}
+	
+	\ \\
+	\ \\
+	\Arbeitspaket{DTO anlegen}{arg2}{arg3}{arg4}{a}
+	\textbf{Unterpunkte:}
+		\begin{itemize}
+			\item User.java\\
+			\begin{tabular}{|p{4cm}|p{4cm}|p{4cm}|}
+				\hline Startzeitpunkt & Endzeitpunkt & Aufwand in h \\ 
+				\hline &      &  \\ 
+				\hline 
+			\end{tabular}
+			\item Course.java\\
+			\begin{tabular}{|p{4cm}|p{4cm}|p{4cm}|}
+				\hline Startzeitpunkt & Endzeitpunkt & Aufwand in h \\ 
+				\hline &      &  \\ 
+				\hline 
+			\end{tabular}
+			\item CourseUnit.java\\
+			\begin{tabular}{|p{4cm}|p{4cm}|p{4cm}|}
+				\hline Startzeitpunkt & Endzeitpunkt & Aufwand in h \\ 
+				\hline &      &  \\ 
+				\hline 
+			\end{tabular}
+			\item Address.java\\
+			\begin{tabular}{|p{4cm}|p{4cm}|p{4cm}|}
+				\hline Startzeitpunkt & Endzeitpunkt & Aufwand in h \\ 
+				\hline &      &  \\ 
+				\hline 
+			\end{tabular}
+			\item PaginationData.java\\
+			\begin{tabular}{|p{4cm}|p{4cm}|p{4cm}|}
+				\hline Startzeitpunkt & Endzeitpunkt & Aufwand in h \\ 
+				\hline &      &  \\ 
+				\hline 
+			\end{tabular}
+			\item SmtpServer.java\\
+			\begin{tabular}{|p{4cm}|p{4cm}|p{4cm}|}
+				\hline Startzeitpunkt & Endzeitpunkt & Aufwand in h \\ 
+				\hline &      &  \\ 
+				\hline 
+			\end{tabular}
+			\item Cycle.java\\
+			\begin{tabular}{|p{4cm}|p{4cm}|p{4cm}|}
+				\hline Startzeitpunkt & Endzeitpunkt & Aufwand in h \\ 
+				\hline &      &  \\ 
+				\hline 
+			\end{tabular}
+		\end{itemize}
+	\ \\
+	\ \\
+	\Arbeitspaket{Footer}{arg2}{arg3}{arg4}{arg5}
+	\textbf{Unterpunkte:}
+	\begin{itemize}
+		\item footer.xhtml\\
+		\begin{tabular}{|p{4cm}|p{4cm}|p{4cm}|}
+			\hline Startzeitpunkt & Endzeitpunkt & Aufwand in h \\ 
+			\hline &      &  \\ 
+			\hline 
+		\end{tabular}
+		\item FooterBean.java\\
+		\begin{tabular}{|p{4cm}|p{4cm}|p{4cm}|}
+			\hline Startzeitpunkt & Endzeitpunkt & Aufwand in h \\ 
+			\hline &      &  \\ 
+			\hline 
+		\end{tabular}
+	\end{itemize}
+	
+	\ \\
+	\ \\
+	\Arbeitspaket{Navigation}{arg2}{arg3}{arg4}{arg5}
+	\textbf{Unterpunkte:}
+	\begin{itemize}
+		\item naviagtion.xhtml\\
+		\begin{tabular}{|p{4cm}|p{4cm}|p{4cm}|}
+			\hline Startzeitpunkt & Endzeitpunkt & Aufwand in h \\ 
+			\hline &      &  \\ 
+			\hline 
+		\end{tabular}
+		\item NavigationBean.java\\
+		\begin{tabular}{|p{4cm}|p{4cm}|p{4cm}|}
+			\hline Startzeitpunkt & Endzeitpunkt & Aufwand in h \\ 
+			\hline &      &  \\ 
+			\hline 
+		\end{tabular}
+	\end{itemize}
+	
+	
+	\ \\
+	\ \\
+	\Arbeitspaket{LaunchSystem.java}{arg2}{arg3}{arg4}{a}
+
+
+	\ \\
+	\ \\
+	\Arbeitspaket{PasswordHash.java}{arg2}{arg3}{arg4}{arg5}
+	
+	\ \\
+	\ \\
+	\Arbeitspaket{Anmeldung}{arg2}{arg3}{arg4}{Tobias Fuchs}
+	\textbf{Unterpunkte:}
+	\begin{itemize}
+		\item authenticate.xhtml\\
+		\begin{tabular}{|p{4cm}|p{4cm}|p{4cm}|}
+			\hline Startzeitpunkt & Endzeitpunkt & Aufwand in h \\ 
+			\hline &      &  \\ 
+			\hline 
+		\end{tabular}
+		\item AuthenticateUserBean.java	\\
+		\begin{tabular}{|p{4cm}|p{4cm}|p{4cm}|}
+			\hline Startzeitpunkt & Endzeitpunkt & Aufwand in h \\ 
+			\hline &      &  \\ 
+			\hline 
+		\end{tabular}
+		\item UserDAO.getUser(Transaction trans, String name)\\
+		\begin{tabular}{|p{4cm}|p{4cm}|p{4cm}|}
+			\hline Startzeitpunkt & Endzeitpunkt & Aufwand in h \\ 
+			\hline &      &  \\ 
+			\hline 
+		\end{tabular}
+	\end{itemize}
+	
+	\ \\
+	\ \\
+	\Arbeitspaket{Registrierung}{arg2}{arg3}{arg4}{a}
+	\textbf{Unterpunkte:}
+	\begin{itemize}
+		\item RegisterUserBean.java	\\
+		\begin{tabular}{|p{4cm}|p{4cm}|p{4cm}|}
+			\hline Startzeitpunkt & Endzeitpunkt & Aufwand in h \\ 
+			\hline &      &  \\ 
+			\hline 
+		\end{tabular}
+		\item UserDAO.createUser(Transaction trans, User user)\\
+		\begin{tabular}{|p{4cm}|p{4cm}|p{4cm}|}
+			\hline Startzeitpunkt & Endzeitpunkt & Aufwand in h \\ 
+			\hline &      &  \\ 
+			\hline 
+		\end{tabular}
+		\item UserNameValidator.java\\
+		\begin{tabular}{|p{4cm}|p{4cm}|p{4cm}|}
+			\hline Startzeitpunkt & Endzeitpunkt & Aufwand in h \\ 
+			\hline &      &  \\ 
+			\hline 
+		\end{tabular}
+		\item ConfirmPasswordValidator.java\\
+		\begin{tabular}{|p{4cm}|p{4cm}|p{4cm}|}
+			\hline Startzeitpunkt & Endzeitpunkt & Aufwand in h \\ 
+			\hline &      &  \\ 
+			\hline 
+		\end{tabular}
+		\item DateOfBirthValidator.java\\
+		\begin{tabular}{|p{4cm}|p{4cm}|p{4cm}|}
+			\hline Startzeitpunkt & Endzeitpunkt & Aufwand in h \\ 
+			\hline &      &  \\ 
+			\hline 
+		\end{tabular}
+	\end{itemize}
+	
+	
+	\ \\	
+	\ \\
+	\Arbeitspaket{Passwort vergessen}{arg2}{arg3}{arg4}{a}
+	\textbf{Unterpunkte:}
+	\begin{itemize}
+		\item LostPasswordBean.java	\\
+		\begin{tabular}{|p{4cm}|p{4cm}|p{4cm}|}
+			\hline Startzeitpunkt & Endzeitpunkt & Aufwand in h \\ 
+			\hline &      &  \\ 
+			\hline 
+		\end{tabular}
+		\item EMailValidator.java\\
+		\begin{tabular}{|p{4cm}|p{4cm}|p{4cm}|}
+			\hline Startzeitpunkt & Endzeitpunkt & Aufwand in h \\ 
+			\hline &      &  \\ 
+			\hline 
+		\end{tabular}
+		\item UserDAO.updateUser(Transaction trans, User user)\\
+		\begin{tabular}{|p{4cm}|p{4cm}|p{4cm}|}
+			\hline Startzeitpunkt & Endzeitpunkt & Aufwand in h \\ 
+			\hline &      &  \\ 
+			\hline 
+		\end{tabular}
+	\end{itemize}
+		
+		
+   	\ \\
+   	\ \\
+   	\Arbeitspaket{Meine Kurse}{arg2}{arg3}{arg4}{Tobias Fuchs}
+   	\textbf{Unterpunkte:}
+	   	\begin{itemize}
+    		\item myCourses.xhtml\\
+    		\begin{tabular}{|p{4cm}|p{4cm}|p{4cm}|}
+    			\hline Startzeitpunkt & Endzeitpunkt & Aufwand in h \\ 
+    			\hline &      &  \\ 
+    			\hline 
+    		\end{tabular}	
+    		\item MyCoursesBean.java\\
+    		\begin{tabular}{|p{4cm}|p{4cm}|p{4cm}|}
+    			\hline Startzeitpunkt & Endzeitpunkt & Aufwand in h \\ 
+    			\hline &      &  \\ 
+    			\hline 
+    		\end{tabular}
+    		\item CourseDAO.getCoursesOf(Transaction trans, int userID)\\
+    		\begin{tabular}{|p{4cm}|p{4cm}|p{4cm}|}
+    			\hline Startzeitpunkt & Endzeitpunkt & Aufwand in h \\ 
+    			\hline &      &  \\ 
+    			\hline 
+    		\end{tabular}
+    	\end{itemize}
+	
+	\ \\
+	\ \\
+	\Arbeitspaket{Kurssuche}{arg2}{arg3}{arg4}{a}
+	\textbf{Unterpunkte:}
+	\begin{itemize}
+		\item search.xhtml\\
+		\begin{tabular}{|p{4cm}|p{4cm}|p{4cm}|}
+			\hline Startzeitpunkt & Endzeitpunkt & Aufwand in h \\ 
+			\hline &      &  \\ 
+			\hline 
+		\end{tabular}	
+		\item SearchCourseBean.java\\
+		\begin{tabular}{|p{4cm}|p{4cm}|p{4cm}|}
+			\hline Startzeitpunkt & Endzeitpunkt & Aufwand in h \\ 
+			\hline &      &  \\ 
+			\hline 
+		\end{tabular}
+		\item CourseDAO.getCourses(Transaction trans, PaginationData pagination)\\
+		\begin{tabular}{|p{4cm}|p{4cm}|p{4cm}|}
+			\hline Startzeitpunkt & Endzeitpunkt & Aufwand in h \\ 
+			\hline &      &  \\ 
+			\hline 
+		\end{tabular}
+		\item CourseDAO.getCourses(Transaction trans,PaginationData pagination, String searchString)\\
+		\begin{tabular}{|p{4cm}|p{4cm}|p{4cm}|}
+			\hline Startzeitpunkt & Endzeitpunkt & Aufwand in h \\ 
+			\hline &      &  \\ 
+			\hline 
+		\end{tabular}
+		\item CourseDAO.getCoursesOrdered(Transaction trans, PaginationData pagination, String searchString, String orderParam)\\
+		\begin{tabular}{|p{4cm}|p{4cm}|p{4cm}|}
+			\hline Startzeitpunkt & Endzeitpunkt & Aufwand in h \\ 
+			\hline &      &  \\ 
+			\hline 
+		\end{tabular}
+	\end{itemize}
+	
+	\Arbeitspaket{Benutzerprofil anzeigen}{arg2}{arg3}{arg4}{arg5}
+	\textbf{Unterpunkte:}
+	\begin{itemize}
+		\item profile.xhtml\\
+		\begin{tabular}{|p{4cm}|p{4cm}|p{4cm}|}
+			\hline Startzeitpunkt & Endzeitpunkt & Aufwand in h \\ 
+			\hline &      &  \\ 
+			\hline 
+		\end{tabular}
+		\item UserProfileBean.java\\
+		\begin{tabular}{|p{4cm}|p{4cm}|p{4cm}|}
+			\hline Startzeitpunkt & Endzeitpunkt & Aufwand in h \\ 
+			\hline &      &  \\ 
+			\hline 
+		\end{tabular}
+		\item UserDAO.getUser(Transaction trans, int userID)\\
+		\begin{tabular}{|p{4cm}|p{4cm}|p{4cm}|}
+			\hline Startzeitpunkt & Endzeitpunkt & Aufwand in h \\ 
+			\hline &      &  \\ 
+			\hline 
+		\end{tabular}
+	\end{itemize}
+
+	\chapter*{Milestone 2}
+	
+	\chapter*{Milestone 3}
+	
+\end{document}}{Nenner}
