@@ -1,0 +1,317 @@
+\chapter{Arbeitspakete}
+\begin{landscape}
+\section{Milestone 1}
+
+\subsection{Grundfunktionen}
+\begin{tabular}{|p{6cm} |p{6cm}|p{3cm}|p{3cm}|p{2cm}|p{3cm}|}
+	\hline \textbf{Paketname} & \textbf{Arbeitspaket} & \textbf{Startzeitpunkt} & \textbf{Endzeitpunkt} & \textbf{Aufwand in h} & \textbf{Implementierer} \\ 
+	\hline  Enumerationsklassen  & UserRole.java                            &                            &                             &                     &\\ 
+	& UserStatus.java                          &                            &                             &                     &\\ 
+	\hline  SessionUser          & SessionUserBean.java                     &                            &                             &                     &\\ 
+	\hline  PropertyManager      & PropertyManager.java                     &                            &                             &                     &\\ 
+	& ofCourse.properties                      &                            &                             &                     &\\
+	\hline  EncodingFilter       & EncodingFilter.java                      &                            &                             &                     &\\ 
+	\hline  DatabaseConnectionManager       &  DatabaseConnectionManager.java                      &                            &                             &              & Tobias Fuchs\\   
+	\hline  CheckPhase           & CheckPhase.java                            &                            &                             &                     & Tobias Fuchs\\
+	\hline  Interface Pagination & Pagination.java                            &                            &                             &                     & Tobias Fuchs\\
+	\hline  Logging              &                                            &                            &                             &                     &\\ 
+	\hline  Mailversand          & MailBean.java                              &                            &                             &                     &\\ 	
+	& MailingException.java                      &                            &                             &                     &\\
+	& mail.properties                            &                            &                             &                     &\\
+	\hline Datenbanksetup        & DatabaseTableCreator. java                 &                            &                             &                     &\\
+	& SetupAdmin.java                            &                            &                             &                     &\\
+	& InvalidDBTransferException.java            &                            &                             &                     &\\
+	\hline Transaktionen         & Transaction.java                           &                            &                             &                     &\\  
+	& Connection.java                            &                            &                             &                     &\\  
+	\hline Systemstart           & LaunchSystem.java                          &                            &                             &                     &\\
+	\hline Passwort hashen       & PasswordHash.java                          &                            &                             &                     &\\       	   
+	\hline 
+\end{tabular} \ \\
+\ \\
+
+\subsection{Anlegen der DTO}
+\begin{tabular}{|p{10cm}|p{4cm}|p{3cm}|p{3cm}|p{3cm}|}
+	\hline  \textbf{Arbeitspaket} & \textbf{Startzeitpunkt} & \textbf{Endzeitpunkt} & \textbf{Aufwand in h} & \textbf{Implementierer} \\ 
+	\hline   User.java                        &                            &                             &                     &\\ 
+	\hline   Course.java                      &                            &                             &                     &\\ 
+	\hline   CourseUnit.java                  &                            &                             &                     &\\ 
+	\hline   Address.java                     &                            &                             &                     &\\ 
+	\hline   PaginationData.java              &                            &                             &                     &\\ 
+	\hline   SmtpServer.java                  &                            &                             &                     &\\  
+	\hline   Cycle.java                       &                            &                             &                     &\\   
+	\hline 
+\end{tabular} \ \\
+\ \\
+
+\subsection{Struktur der View}
+\begin{tabular}{|p{10cm}|p{4cm}|p{3cm}|p{3cm}|p{3cm}|}
+	\hline  \textbf{Arbeitspaket} & \textbf{Startzeitpunkt} & \textbf{Endzeitpunkt} & \textbf{Aufwand in h} & \textbf{Implementierer} \\ 
+	\hline   template.xhtml                   &                            &                             &                     &\\
+	\hline   index.xhtml                      &                            &                             &                     &\\
+	\hline   footer.xhtml                     &                            &                             &                     &\\ 
+	\hline   FooterBean.java                  &                            &                             &                     &\\ 
+	\hline   navigation.xhtml                 &                            &                             &                     &\\ 
+	\hline   NavigationBean.java              &                            &                             &                     &\\ 
+	\hline 
+\end{tabular} \ \\
+\ \\
+
+\subsection{Anmeldung}
+\begin{tabular}{|p{10cm}|p{4cm}|p{3cm}|p{3cm}|p{3cm}|}
+	\hline  \textbf{Arbeitspaket} & \textbf{Startzeitpunkt} & \textbf{Endzeitpunkt} & \textbf{Aufwand in h} & \textbf{Implementierer} \\ 
+	\hline   authenticate.xhtml                                   &                            &                             &                     &\\
+	\hline   AuthenticateUserBean.java                            &                            &                             &                     &\\ 
+	\hline   UserDAO.getUser(Transaction trans, String name)      &                            &                             &                     &\\ 
+	\hline   UserDAO.getUserID(Transaction trans, String username)&                            &                             &                     &\\ 
+	\hline 
+\end{tabular} \ \\
+\ \\
+
+\subsection{Registrierung}
+\begin{tabular}{|p{10cm}|p{4cm}|p{3cm}|p{3cm}|p{3cm}|}
+	\hline  \textbf{Arbeitspaket} & \textbf{Startzeitpunkt} & \textbf{Endzeitpunkt} & \textbf{Aufwand in h} & \textbf{Implementierer} \\ 
+	\hline   RegisterUserBean.java                                &                            &                             &                     &\\
+	\hline   UserNameValidator.java                               &                            &                             &                     &\\ 
+	\hline   PasswordValidator.java                               &                            &                             &                     &\\ 
+	\hline   ConfirmPasswordValidator.java                        &                            &                             &                     &\\
+	\hline   DateOfBirthValidator.java                            &                            &                             &                     &\\
+	\hline   UserDAO.createUser(Transaction trans, User user)     &                            &                             &                     &\\ 
+	\hline   SystemDAO.getActivationType(Transaction trans)       &                            &                             &                     &\\ 
+	\hline 
+\end{tabular} \ \\
+\ \\
+
+\subsection{Passwort vergessen}
+\begin{tabular}{|p{10cm}|p{4cm}|p{3cm}|p{3cm}|p{3cm}|}
+	\hline  \textbf{Arbeitspaket} & \textbf{Startzeitpunkt} & \textbf{Endzeitpunkt} & \textbf{Aufwand in h} & \textbf{Implementierer} \\ 
+	\hline   LostPasswordBean.java                                &                            &                             &                     &\\
+	\hline   EMailValidator.java                                  &                            &                             &                     &\\ 
+	\hline   UserDAO.updateUser(Transaction trans, User user)     &                            &                             &                     &\\ 
+	\hline 
+\end{tabular} \ \\
+\ \\
+
+\subsection{Meine Kurse}
+\begin{tabular}{|p{10cm}|p{4cm}|p{3cm}|p{3cm}|p{3cm}|}
+	\hline  \textbf{Arbeitspaket} & \textbf{Startzeitpunkt} & \textbf{Endzeitpunkt} & \textbf{Aufwand in h} & \textbf{Implementierer} \\ 
+	\hline   myCourses.xhtml                                      &                            &                             &                     &\\
+	\hline   MyCoursesBean.java                                   &                            &                             &                     &\\ 
+	\hline   Pagination.java                                      &                            &                             &                     &\\ 
+	\hline   CourseDAO.getCoursesOf(Transaction trans, int userID)&                            &                             &                     &\\ 
+	\hline 
+\end{tabular} \ \\
+\ \\
+
+\subsection{Kurssuche}
+\begin{tabular}{|p{10cm}|p{4cm}|p{3cm}|p{3cm}|p{3cm}|}
+	\hline  \textbf{Arbeitspaket} & \textbf{Startzeitpunkt} & \textbf{Endzeitpunkt} & \textbf{Aufwand in h} & \textbf{Implementierer} \\ 
+	\hline   search.xhtml                                         &                            &                             &                     &\\
+	\hline   SearchCourseBean.java                                &                            &                             &                     &\\ 
+	\hline   CourseDAO.getCourses(Transaction trans, PaginationData pagination)                                      &                            &                             &                     &\\ 
+	\hline  CourseDAO.getCourses(Transaction trans,PaginationData pagination, String searchString, String searchParam)&                            &                             &                     &\\
+	\hline  CourseDAO.getCoursesOrdered(Transaction trans, PaginationData pagination, String searchString, String searchParam, String orderParam)&                            &                             &                     &\\ 
+	\hline 
+\end{tabular} \ \\
+\ \\
+
+\end{landscape}
+
+
+
+\begin{landscape}
+	\section{Milestone 2}
+	
+	\subsection{Benutzerprofil}
+	\begin{tabular}{|p{10cm}|p{4cm}|p{3cm}|p{3cm}|p{3cm}|}
+		\hline  \textbf{Arbeitspaket} & \textbf{Startzeitpunkt} & \textbf{Endzeitpunkt} & \textbf{Aufwand in h} & \textbf{Implementierer} \\ 
+		\hline   profile.xhtml                                         &                            &                             &                     &\\
+		\hline   UserProfileBean.java                                  &                            &                             &                     &\\
+		\hline   UserImageValidator.java                               &                            &                             &                     &\\ 
+		\hline   UserDAO.getUser(Transaction trans, int userID)        &                            &                             &                     &\\ 
+		\hline   UserDAO.updateUser(Transaction trans, User user)      &                            &                             &                     &\\ 
+		\hline 
+	\end{tabular} \ \\
+	\ \\
+	
+	\subsection{Benutzer anlegen/löschen}
+	\begin{tabular}{|p{10cm}|p{4cm}|p{3cm}|p{3cm}|p{3cm}|}
+		\hline  \textbf{Arbeitspaket} & \textbf{Startzeitpunkt} & \textbf{Endzeitpunkt} & \textbf{Aufwand in h} & \textbf{Implementierer} \\ 
+		\hline   createUser.xhtml                                      &                            &                             &                     &\\
+		\hline   UserManagementBean.java                               &                            &                             &                     &\\
+		\hline   UserDAO.deleteUser(Transaction trans, int userID)     &                            &                             &                     &\\
+		\hline 
+	\end{tabular} \ \\
+	\ \\
+	
+	\subsection{Kursdetails, Kursbearbeiten}
+	\begin{tabular}{|p{10cm}|p{4cm}|p{3cm}|p{3cm}|p{3cm}|}
+		\hline  \textbf{Arbeitspaket} & \textbf{Startzeitpunkt} & \textbf{Endzeitpunkt} & \textbf{Aufwand in h} & \textbf{Implementierer} \\ 
+		\hline   courseDetails.xhtml                                         &                            &                             &                     &\\
+		\hline   CourseDetailsBean.editCourse()                              &                            &                             &                     &\\
+		\hline   CourseDetailsBean.saveCourse()                              &                            &                             &                     &\\
+		\hline   CourseDetailsBean.initializeCourseDetails()                 &                            &                             &                     &\\
+		\hline   CourseDetailsBean.selectAllCourseUnits()                    &                            &                             &                     &\\
+		\hline   Getter/Setter CourseDetailsBean                             &                            &                             &                     &\\
+		\hline   Pagination für CourseUnits                                  &                            &                             &                     &\\
+		\hline   InputTextValidator.java                                     &                            &                             &                     &\\ 
+		\hline   CourseDAO.getCourse(Transaction trans, int courseID)        &                            &                             &                     &\\ 
+		\hline   CourseDAO.updateCourse(Transaction trans, Course course)    &                            &                             &                     &\\
+		\hline   CourseUnitDAO.getCourseUnitsFromCourse(Transaction trans, int courseID, PaginationData pagination) &                            &                             &                     &\\
+		\hline   CourseUnitDAOgetLeaders(Transaction trans, int courseID)    &                            &                             &                     &\\
+		\hline 
+	\end{tabular} \ \\
+	\ \\
+	
+	\subsection{Anmeldung, Abmeldung zu Kursen/Kurseinheiten}
+	\begin{tabular}{|p{10cm}|p{4cm}|p{3cm}|p{3cm}|p{3cm}|}
+		\hline  \textbf{Arbeitspaket} & \textbf{Startzeitpunkt} & \textbf{Endzeitpunkt} & \textbf{Aufwand in h} & \textbf{Implementierer} \\ 
+		\hline   CourseDetailsBean.signUpForCourse()                          &                            &                             &                     &\\
+		\hline   CourseDetailsBean.signOffFromCourse()                        &                            &                             &                     &\\
+		\hline   CourseDetailsBean.signUpForCourseUnit()                      &                            &                             &                     &\\
+		\hline   CourseDetailsBean.signOffFromCourseUnit()                    &                            &                             &                     &\\
+		\hline   CourseRegistrationException.java                             &                            &                             &                     &\\
+		\hline   CourseDAO.addUserToCourse(Transaction trans, int userID, int courseID)            &                        &                         &                     &\\
+		\hline   CourseDAO.removeUserFromCourse(Transaction trans, int userID, int courseID)       &                        &                         &                     &\\
+		\hline   CourseUnitDAO.addUserToCourseUnit(Transaction trans, int userID, int courseUnitID)&                        &                         &                     &\\ 
+		\hline   CourseUnitDAO.removeUserFromCourseUnit(Transaction trans, int userID, int courseUnitID) &                            &                             &                     &\\
+		\hline   SystemDAO.getSignOffLimit(Transaction trans)                 &                            &                             &                     &\\ 
+		\hline   SystemDAO.getOverdraftCredit(Transaction trans)              &                            &                             &                     &\\ 
+		\hline 
+	\end{tabular} \ \\
+	\ \\
+	
+	
+	
+	\subsection{Kurs anlegen/löschen}
+	\begin{tabular}{|p{10cm}|p{4cm}|p{3cm}|p{3cm}|p{3cm}|}
+		\hline  \textbf{Arbeitspaket} & \textbf{Startzeitpunkt} & \textbf{Endzeitpunkt} & \textbf{Aufwand in h} & \textbf{Implementierer} \\ 
+		\hline   createCourse.xhtml                                    &                            &                             &                     &\\
+		\hline   CourseManagementBean.java                             &                            &                             &                     &\\
+		\hline   CourseInstructorValidator.java                        &                            &                             &                     &\\
+		\hline   PriceValidator.java                             &                            &                             &                     &\\
+		\hline   ImageValidator.java                             &                            &                             &                     &\\
+		\hline   CourseDAO.createCourse(Transaction trans, Course course)    &                            &                             &                     &\\
+		\hline   CourseDAO.deleteCourse(Transaction trans, int courseID)     &                            &                             &                     &\\
+		\hline   CourseDAO.addLeaderToCourse(Transaction trans, int userID, int courseID)    &                            &                             &                     &\\
+		\hline   CourseDAO.removeLeaderFromCourse(Transaction trans, int userID, int course) &                            &                             &                     &\\
+		\hline 
+	\end{tabular} \ \\
+	\ \\
+	
+	\subsection{Kurseinheiten anlegen, editieren}
+	\begin{tabular}{|p{10cm}|p{4cm}|p{3cm}|p{3cm}|p{3cm}|}
+		\hline  \textbf{Arbeitspaket} & \textbf{Startzeitpunkt} & \textbf{Endzeitpunkt} & \textbf{Aufwand in h} & \textbf{Implementierer} \\ 
+		\hline   editCourseUnit.xhtml                                       &                            &                            &                     &\\
+		\hline   CourseUnitManagementBean.java                              &                            &                            &                     &\\
+		\hline   CourseUnitDAO.createCourseUnit(Transaction trans, CourseUnit courseUnit, int courseID)  &                            &                             &                     &\\ 
+		\hline   CourseUnitDAO.getCourseUnit(Transaction trans, int courseUnitID)                        &                            &                             &                     &\\ 
+		\hline   CourseUnitDAO.updateCourseUnit(Transaction trans, CourseUnit courseUnit)                &                            &                             &                     &\\ 
+		\hline   CourseUnitDAO.deleteCourseUnit(Transaction trans, int courseUnitID)                     &                            &                             &                     &\\ 
+		\hline   UserDAO.getParticipiantsOfCourseUnit(Transaction trans, PaginationData pagination, int courseUnitId)&                            &                             &                     &\\ 
+		\hline 
+	\end{tabular} \ \\
+	\ \\
+	
+\end{landscape}
+
+
+
+\begin{landscape}
+	\section{Milestone 3}	
+	
+	\subsection{Benutzer durchsuchen}
+	\begin{tabular}{|p{10cm}|p{4cm}|p{3cm}|p{3cm}|p{3cm}|}
+		\hline  \textbf{Arbeitspaket} & \textbf{Startzeitpunkt} & \textbf{Endzeitpunkt} & \textbf{Aufwand in h} & \textbf{Implementierer} \\ 
+		\hline   listUsers.xhtml                                              &                            &                             &                     &\\
+		\hline   SearchUserBean.java                                          &                            &                             &                     &\\
+		\hline   UserDAO.getUsers(Transaction trans,PaginationData pagination)&                            &                             &                     &\\
+		\hline   UserDAO.getUsers(Transaction trans, PaginationData pagination, String searchString, String searchParam)&                            &                             &                     &\\ 
+		\hline   UserDAO.getUsersOrdered(Transaction trans, PaginationData pagination, String searchString, String searchParam, String orderParam)   &                            &                             &                     &\\                                 
+		\hline 
+	\end{tabular} \ \\
+	\ \\
+	
+	\subsection{Exception Handling}
+	\begin{tabular}{|p{10cm}|p{4cm}|p{3cm}|p{3cm}|p{3cm}|}
+		\hline  \textbf{Arbeitspaket} & \textbf{Startzeitpunkt} & \textbf{Endzeitpunkt} & \textbf{Aufwand in h} & \textbf{Implementierer} \\ 
+		\hline   errorPage.xhtml                                       &                            &                             &                     &\\
+		\hline   CustomExceptionHandler.java                           &                            &                             &                     &\\
+		\hline   CustomExceptionHandlerFactory.java                    &                            &                             &                     &\\
+		\hline 
+	\end{tabular} \ \\
+	\ \\	
+	
+	\subsection{Mehrsprachigkeit}
+	\begin{tabular}{|p{10cm}|p{4cm}|p{3cm}|p{3cm}|p{3cm}|}
+		\hline  \textbf{Arbeitspaket} & \textbf{Startzeitpunkt} & \textbf{Endzeitpunkt} & \textbf{Aufwand in h} & \textbf{Implementierer} \\ 
+		\hline   LanguageManager.xhtml                                 &                            &                             &                     &\\
+		\hline   language\_de.properties                               &                            &                             &                     &\\
+		\hline   language\_en.properties                               &                            &                             &                     &\\
+		\hline 
+	\end{tabular} \ \\
+	\ \\
+	
+	\subsection{Teilnehmerliste}
+	\begin{tabular}{|p{10cm}|p{4cm}|p{3cm}|p{3cm}|p{3cm}|}
+		\hline  \textbf{Arbeitspaket} & \textbf{Startzeitpunkt} & \textbf{Endzeitpunkt} & \textbf{Aufwand in h} & \textbf{Implementierer} \\ 
+		\hline   listParticipients.xhtml                                     &                            &                             &                     &\\
+		\hline   ListParticipantsBean.java                                   &                            &                             &                     &\\
+		\hline   UserDAO.getParticipiantsOfCourse(Transaction trans,PaginationData pagination, int courseID)  &                            &                             &                     &\\
+		\hline 
+	\end{tabular} \ \\
+	\ \\
+	
+	\subsection{Trainerprofil anzeigen}	
+	\begin{tabular}{|p{10cm}|p{4cm}|p{3cm}|p{3cm}|p{3cm}|}
+		\hline  \textbf{Arbeitspaket} & \textbf{Startzeitpunkt} & \textbf{Endzeitpunkt} & \textbf{Aufwand in h} & \textbf{Implementierer} \\ 
+		\hline   leaderProfile.xhtml                      &                            &                             &                     &\\
+		\hline   UserProfileBean.initializeLeaderProfile()&                            &                             &                     &\\
+		\hline   UserDAO.getCoursesLeadedBy(Transaction trans, int userID, PaginationData pagination)  &                            &                             &                     &\\
+		\hline 
+	\end{tabular} \ \\
+	\ \\
+	
+	\subsection{Terminplaner}
+	\begin{tabular}{|p{10cm}|p{4cm}|p{3cm}|p{3cm}|p{3cm}|}
+		\hline  \textbf{Arbeitspaket} & \textbf{Startzeitpunkt} & \textbf{Endzeitpunkt} & \textbf{Aufwand in h} & \textbf{Implementierer} \\ 
+		\hline   scheduler.xhtml                                 &                            &                             &                     &\\
+		\hline   SchedulerBean.java                              &                            &                             &                     &\\
+		\hline   CourseUnitDAO.getCourseUnitsOf(Transaction trans, int userID)  &                            &                             &                     &\\
+		\hline 
+	\end{tabular} \ \\
+	\ \\
+	
+	\subsection{Benutzer aktivieren}
+	\begin{tabular}{|p{10cm}|p{4cm}|p{3cm}|p{3cm}|p{3cm}|}
+		\hline  \textbf{Arbeitspaket} & \textbf{Startzeitpunkt} & \textbf{Endzeitpunkt} & \textbf{Aufwand in h} & \textbf{Implementierer} \\ 
+		\hline   activateUsers.xhtml                                 &                            &                             &                     &\\
+		\hline   AccountManagementBean.java                              &                            &                             &                     &\\
+		\hline 
+	\end{tabular} \ \\
+	\ \\
+	
+	\subsection{Administratoreinstellungen}
+	\begin{tabular}{|p{10cm}|p{4cm}|p{3cm}|p{3cm}|p{3cm}|}
+		\hline  \textbf{Arbeitspaket} & \textbf{Startzeitpunkt} & \textbf{Endzeitpunkt} & \textbf{Aufwand in h} & \textbf{Implementierer} \\ 
+		\hline   adminManagement.xhtml                                 &                            &                             &                     & Tobias Fuchs\\
+		\hline   SystemConfigurationBean.java                          &                            &                             &                     & Tobias Fuchs\\
+		\hline   PaymentOfflineBean.java                               &                            &                             &                     & Tobias Fuchs \\
+		\hline   OfflineTransactionValidator.java                      &                            &                             &                     & Tobias Fuchs\\
+		\hline   BankAccountException.java                             &                            &                             &                     & Tobias Fuchs\\
+		\hline   SystemDAO.setOverdraftCredit(Transaction trans, int credit)                  &                            &                             &                     & Tobias Fuchs\\
+		\hline   SystemDAO.setActivationType(Transaction trans, String type)                  &                            &                             &                     & Tobias Fuchs\\
+		\hline   SystemDAO.setSignOffLimit(Transaction trans, int limit)                      &                            &                             &                     & Tobias Fuchs\\
+		\hline 
+	\end{tabular} \ \\
+	\ \\
+	
+	\subsection{AGB, Impressum,...}
+	\begin{tabular}{|p{10cm}|p{4cm}|p{3cm}|p{3cm}|p{3cm}|}
+		\hline  \textbf{Arbeitspaket} & \textbf{Startzeitpunkt} & \textbf{Endzeitpunkt} & \textbf{Aufwand in h} & \textbf{Implementierer} \\ 
+		\hline   agb.xhtml                                 &                            &                             &                     &\\
+		\hline   imprint.xhtml                              &                            &                             &                     &\\
+		\hline   help.xhtml        &                            &                             &                     &\\
+		\hline 
+	\end{tabular} \ \\
+	\ \\			
+\end{landscape}
