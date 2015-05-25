@@ -17,14 +17,14 @@ import de.ofCourse.system.Transaction;
  * removes users and course leaders to a course.
  * 
  * <p>
- * Each method has a Transaction parameter, which contains the SQL connection
- * to the database, in order to assure that multiple, consecutive method calls
+ * Each method has a Transaction parameter, which contains the SQL connection to
+ * the database, in order to assure that multiple, consecutive method calls
  * within a certain method use the same connection.
  * </p>
  * 
  * <p>
- * This class is required in the business logic of the system, more precisely
- * in the ManagedBeans of the package <code>de.ofCourse.action</code>.
+ * This class is required in the business logic of the system, more precisely in
+ * the ManagedBeans of the package <code>de.ofCourse.action</code>.
  * </p>
  * 
  * @author Patrick Cretu
@@ -32,17 +32,17 @@ import de.ofCourse.system.Transaction;
  */
 public class CourseDAO {
 
-	/**
-	 * Adds a new course to the list of courses in the database.
-	 * 
-	 * @param trans
-	 *            the Transaction object which contains the connection to the
-	 *            database
-	 * @param course
-	 *            the course to be added
-	 * @throws InvalidDBTransferException if any error occurred during the
-     * execution of the method
-	 */
+    /**
+     * Adds a new course to the list of courses in the database.
+     * 
+     * @param trans
+     *            the Transaction object which contains the connection to the
+     *            database
+     * @param course
+     *            the course to be added
+     * @throws InvalidDBTransferException
+     *             if any error occurred during the execution of the method
+     */
     public static void createCourse(Transaction trans, Course course)
 	    throws InvalidDBTransferException {
     }
@@ -52,16 +52,16 @@ public class CourseDAO {
      * 
      * @param trans
      *            the Transaction object which contains the connection to the
-	 *            database
+     *            database
      * @param pagination
      *            the Pagination object which contains the amount of elements
      *            which are to be retrieved
      * @return the list of courses, or null if no courses were retrieved
-     * @throws InvalidDBTransferException if any error occurred during the
-     * execution of the method
+     * @throws InvalidDBTransferException
+     *             if any error occurred during the execution of the method
      */
     public static List<Course> getCourses(Transaction trans,
-    		PaginationData pagination) throws InvalidDBTransferException {
+	    PaginationData pagination) throws InvalidDBTransferException {
 	return null;
     }
 
@@ -71,19 +71,19 @@ public class CourseDAO {
      * 
      * @param trans
      *            the Transaction object which contains the connection to the
-	 *            database
+     *            database
      * @param pagination
      *            the Pagination object which contains the amount of elements
      *            which are to be retrieved
      * @param searchString
      *            the user's search term
      * @return the list of courses, or null if no courses were retrieved
-     * @throws InvalidDBTransferException if any error occurred during the
-     * execution of the method
+     * @throws InvalidDBTransferException
+     *             if any error occurred during the execution of the method
      */
     public static List<Course> getCourses(Transaction trans,
-    		PaginationData pagination, String searchString)
-    				throws InvalidDBTransferException {
+	    PaginationData pagination, String searchParam, String searchString)
+	    throws InvalidDBTransferException {
 	return null;
     }
 
@@ -93,7 +93,7 @@ public class CourseDAO {
      * 
      * @param trans
      *            the Transaction object which contains the connection to the
-	 *            database
+     *            database
      * @param pagination
      *            the Pagination object which contains the amount of elements
      *            which are to be retrieved
@@ -102,29 +102,29 @@ public class CourseDAO {
      * @param orderParam
      *            the parameter the list is to be ordered by
      * @return the list of courses ordered by the passed parameter, or null if
-     * no courses were retrieved
-     * @throws InvalidDBTransferException if any error occurred during the
-     * execution of the method
+     *         no courses were retrieved
+     * @throws InvalidDBTransferException
+     *             if any error occurred during the execution of the method
      */
     public static List<Course> getCoursesOrdered(Transaction trans,
-    		PaginationData pagination, String searchString, String orderParam)
-	    throws InvalidDBTransferException {
+	    PaginationData pagination, String searchString, String searchParam,
+	    String orderParam) throws InvalidDBTransferException {
 	return null;
     }
 
     /**
-     * Returns a list of users which are leaders of the course with the
-     * passed course ID.
+     * Returns a list of users which are leaders of the course with the passed
+     * course ID.
      * 
      * @param trans
      *            the Transaction object which contains the connection to the
-	 *            database
+     *            database
      * @param courseID
      *            the course's ID
      * @return the list of users containing the course's leaders, or null if the
-     * course has no course leaders
-     * @throws InvalidDBTransferException if any error occurred during the
-     * execution of the method
+     *         course has no course leaders
+     * @throws InvalidDBTransferException
+     *             if any error occurred during the execution of the method
      */
     public static List<User> getLeaders(Transaction trans, int courseID)
 	    throws InvalidDBTransferException {
@@ -136,13 +136,13 @@ public class CourseDAO {
      * 
      * @param trans
      *            the Transaction object which contains the connection to the
-	 *            database
+     *            database
      * @param courseID
      *            the course's ID
      * @return the course assigned to the course ID, or null if no such course
-     * was found
-     * @throws InvalidDBTransferException if any error occurred during the
-     * execution of the method
+     *         was found
+     * @throws InvalidDBTransferException
+     *             if any error occurred during the execution of the method
      */
     public static Course getCourse(Transaction trans, int courseID)
 	    throws InvalidDBTransferException {
@@ -155,14 +155,14 @@ public class CourseDAO {
      * 
      * @param trans
      *            the Transaction object which contains the connection to the
-	 *            database
+     *            database
      * @param userID
      *            the user's ID
      * @return the list of courses which the user participates in, or null if
-     * the user doesn't participate in any course
+     *         the user doesn't participate in any course
      * 
-     * @throws InvalidDBTransferException if any error occurred during the
-     * execution of the method
+     * @throws InvalidDBTransferException
+     *             if any error occurred during the execution of the method
      */
     public static List<Course> getCoursesOf(Transaction trans, int userID)
 	    throws InvalidDBTransferException {
@@ -175,11 +175,11 @@ public class CourseDAO {
      * 
      * @param trans
      *            the Transaction object which contains the connection to the
-	 *            database
+     *            database
      * @param course
      *            the course to be updated
-     * @throws InvalidDBTransferException if any error occurred during the
-     * execution of the method
+     * @throws InvalidDBTransferException
+     *             if any error occurred during the execution of the method
      */
     public static void updateCourse(Transaction trans, Course course)
 	    throws InvalidDBTransferException {
@@ -190,11 +190,11 @@ public class CourseDAO {
      * 
      * @param trans
      *            the Transaction object which contains the connection to the
-	 *            database
+     *            database
      * @param courseID
      *            the ID of the course to be deleted
-     * @throws InvalidDBTransferException if any error occurred during the
-     * execution of the method
+     * @throws InvalidDBTransferException
+     *             if any error occurred during the execution of the method
      */
     public static void deleteCourse(Transaction trans, int courseID)
 	    throws InvalidDBTransferException {
@@ -209,16 +209,16 @@ public class CourseDAO {
      * 
      * @param trans
      *            the Transaction object which contains the connection to the
-	 *            database
+     *            database
      * @param userID
      *            the user's ID
      * @param courseID
      *            the course's ID
-     * @throws InvalidDBTransferException if any error occurred during the
-     * execution of the method
+     * @throws InvalidDBTransferException
+     *             if any error occurred during the execution of the method
      */
     public static void addUserToCourse(Transaction trans, int userID,
-    		int courseID) throws InvalidDBTransferException {
+	    int courseID) throws InvalidDBTransferException {
     }
 
     /**
@@ -230,16 +230,16 @@ public class CourseDAO {
      * 
      * @param trans
      *            the Transaction object which contains the connection to the
-	 *            database
+     *            database
      * @param userID
      *            the user's ID
      * @param courseID
      *            the course's ID
-     * @throws InvalidDBTransferException if any error occurred during the
-     * execution of the method
+     * @throws InvalidDBTransferException
+     *             if any error occurred during the execution of the method
      */
     public static void removeUserFromCourse(Transaction trans, int userID,
-    		int courseID) throws InvalidDBTransferException {
+	    int courseID) throws InvalidDBTransferException {
     }
 
     /**
@@ -251,16 +251,16 @@ public class CourseDAO {
      * 
      * @param trans
      *            the Transaction object which contains the connection to the
-	 *            database
+     *            database
      * @param userID
      *            the user's ID
      * @param courseID
      *            the course's ID
-     * @throws InvalidDBTransferException if any error occurred during the
-     * execution of the method
+     * @throws InvalidDBTransferException
+     *             if any error occurred during the execution of the method
      */
     public static void addLeaderToCourse(Transaction trans, int userID,
-    		int courseID) throws InvalidDBTransferException {
+	    int courseID) throws InvalidDBTransferException {
     }
 
     /**
@@ -272,31 +272,31 @@ public class CourseDAO {
      * 
      * @param trans
      *            the Transaction object which contains the connection to the
-	 *            database
+     *            database
      * @param userID
      *            the course leader's ID
      * @param courseID
      *            the course's ID
-     * @throws InvalidDBTransferException if any error occurred during the
-     * execution of the method
+     * @throws InvalidDBTransferException
+     *             if any error occurred during the execution of the method
      */
     public static void removeLeaderFromCourse(Transaction trans, int userID,
-    		int course) throws InvalidDBTransferException {
+	    int course) throws InvalidDBTransferException {
     }
-    
+
     /**
      * Returns an ID assigned to the course which has been added last to the
      * database.
      * 
      * @param trans
      *            the Transaction object which contains the connection to the
-	 *            database
+     *            database
      * @return the course's ID
-     * @throws InvalidDBTransferException if any error occurred during the
-     * execution of the method
+     * @throws InvalidDBTransferException
+     *             if any error occurred during the execution of the method
      */
     public static int getNewCourseID(Transaction trans)
-    		throws InvalidDBTransferException {
+	    throws InvalidDBTransferException {
 	return 0;
     }
 

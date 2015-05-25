@@ -308,21 +308,17 @@ public class CourseUnitManagementBean implements Pagination {
     }
 
     /**
-     * Returns the value of the attribute <code>pagination</code>.
-     * 
-     * @return the pagination object, that stores the information for pagination
+     * {@inheritDoc}
      */
+    @Override
     public PaginationData getPagination() {
 	return pagination;
     }
 
     /**
-     * Sets the value of the attribute <code>pagination</code>.
-     * 
-     * @param pagination
-     *            the new pagination object, that stores the information for
-     *            pagination
+     * {@inheritDoc}
      */
+    @Override
     public void setPagination(PaginationData pagination) {
     }
 

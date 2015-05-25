@@ -155,32 +155,32 @@ public class UserProfilBean implements Pagination {
     }
 
     /**
-     * {@inheritDoc}}
+     * {@inheritDoc}
      */
+    @Override
     public int getActualPageNumber() {
 	return 0;
     }
 
     /**
-     * {@inheritDoc}}
+     * {@inheritDoc}
      */
+    @Override
     public void goToSpecificPage() {
     }
 
     /**
-     * {@inheritDoc}}
+     * {@inheritDoc}
      */
+    @Override
     public PaginationData getPagination() {
 	return pagination;
     }
 
     /**
-     * Sets the value of the attribute <code>pagination</code>.
-     * 
-     * @param pagination
-     *            the new pagination object, that stores the information for
-     *            pagination
+     * {@inheritDoc}
      */
+    @Override
     public void setPagination(PaginationData pagination) {
     }
 
@@ -201,7 +201,10 @@ public class UserProfilBean implements Pagination {
      */
     public void setSessionUser(SessionUserBean userSession) {
     }
-
+    
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void sortBySpecificColumn(String columnname) {
 	// TODO Auto-generated method stub

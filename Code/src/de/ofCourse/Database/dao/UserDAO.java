@@ -82,7 +82,7 @@ public class UserDAO {
      * execution of the method
      */
     public static List<User> getUsers(Transaction trans,
-    		PaginationData pagination, String searchString)
+    		PaginationData pagination,String searchParam, String searchString)
     				throws InvalidDBTransferException {
 	return null;
     }
@@ -107,7 +107,7 @@ public class UserDAO {
      * execution of the method
      */
     public static List<User> getUsersOrdered(Transaction trans,
-    		PaginationData pagination, String searchString, String orderParam)
+    		PaginationData pagination,String searchParam, String searchString, String orderParam)
 	    throws InvalidDBTransferException {
 	return null;
     }
@@ -130,6 +130,12 @@ public class UserDAO {
 	return null;
     }
 
+    public static User getUser(Transaction trans, String username)
+		throws InvalidDBTransferException {
+	return null;
+}
+    
+    
     /**
      * Returns the ID of a user assigned to the passed user name.
      * 
@@ -199,6 +205,20 @@ public class UserDAO {
 	    PaginationData pagination) throws InvalidDBTransferException {
 	return null;
     }
+    
+    
+    public static List<User> getParticipiantsOfCourse(Transaction trans,
+		PaginationData pagination, int courseID)
+	    throws InvalidDBTransferException {
+	return null;
+}
+    
+    public static List<User> getParticipiantsOfCourseUnit(Transaction trans,
+		PaginationData pagination, int courseUnitId)
+	    throws InvalidDBTransferException {
+	return null;
+}
+    
 
     /**
      * Returns an ID assigned to the user which has been added last to the

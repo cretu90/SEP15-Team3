@@ -76,7 +76,7 @@ public class CourseDetailBean implements Pagination {
      * information that is necessary for pagination, e.g. the number of elements
      * per page.
      */
-    private PaginationData paginationData;
+    private PaginationData pagination;
 
     /**
      * This ManagedProperty represents the actual session of a user. It stores
@@ -340,23 +340,18 @@ public class CourseDetailBean implements Pagination {
     
 
     /**
-     * Returns the value of the attribute <code>paginationData</code>.
-     * 
-     * @return the pagination data object, that stores the information for
-     *         pagination
+     * {@inheritDoc}
      */
-    public PaginationData getPaginationData() {
-	return paginationData;
+    @Override
+    public PaginationData getPagination() {
+	return pagination;
     }
 
     /**
-     * Sets the value of the attribute <code>paginationData</code>.
-     * 
-     * @param pagination
-     *            the new pagination data object, that stores the information
-     *            for pagination
+     * {@inheritDoc}
      */
-    public void setPaginationData(PaginationData pagination) {
+    @Override
+    public void setPagination(PaginationData pagination) {
     }
 
     /**
