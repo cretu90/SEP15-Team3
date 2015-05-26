@@ -18,28 +18,28 @@ Als Konvention gilt hier, dass Tests immer das Wort
 \section{Milestone 1}
 
 \subsection{Grundfunktionen}
-\begin{tabular}{|p{6cm} |p{6cm}|p{3cm}|p{3cm}|p{2cm}|p{3cm}|}
+\begin{tabular}{|p{6cm} |p{6cm}|p{3cm}|p{3cm}|p{2cm}|p{3.5cm}|}
 	\hline \textbf{Paketname} & \textbf{Arbeitspaket} & \textbf{Startzeitpunkt} & \textbf{Endzeitpunkt} & \textbf{Aufwand in h} & \textbf{Implementierer} \\ 
-	\hline  Enumerationsklassen  & UserRole.java                            &                            &                             &                     &\\ 
+	\hline  Enumerationsklassen  & UserRole.java                            &                             &                             &                     &\\ 
 	& UserStatus.java                          &                            &                             &                     &\\ 
-	\hline  SessionUser          & SessionUserBean.java                     &                            &                             &                     &\\ 
-	\hline  PropertyManager      & PropertyManager.java                     &                            &                             &                     &\\ 
-	& ofCourse.properties                      &                            &                             &                     &\\
-	\hline  EncodingFilter       & EncodingFilter.java                      &                            &                             &                     &\\ 
-	\hline  DatabaseConnectionManager       &  DatabaseConnectionManager.java                      &                            &                             &              & Tobias Fuchs\\   
-	\hline  CheckPhase           & CheckPhase.java                            &                            &                             &                     & Tobias Fuchs\\
-	\hline  Interface Pagination & Pagination.java                            &                            &                             &                     & Tobias Fuchs\\
-	\hline  Logging              &                                            &                            &                             &                     &\\ 
-	\hline  Mailversand          & MailBean.java                              &                            &                             &                     &\\ 	
-	& MailingException.java                      &                            &                             &                     &\\
-	& mail.properties                            &                            &                             &                     &\\
-	\hline Datenbanksetup        & DatabaseTableCreator. java                 &                            &                             &                     &\\
-	& SetupAdmin.java                            &                            &                             &                     &\\
-	& InvalidDBTransferException.java            &                            &                             &                     &\\
-	\hline Transaktionen         & Transaction.java                           &                            &                             &                     &\\  
-	& Connection.java                            &                            &                             &                     &\\  
-	\hline Systemstart           & LaunchSystem.java                          &                            &                             &                     &\\
-	\hline Passwort hashen       & PasswordHash.java                          &                            &                             &                     &\\       	   
+	\hline  SessionUser          & SessionUserBean.java                     &                             & 1.6.2015                    &                     &\\ 
+	\hline  PropertyManager      & PropertyManager.java                     & 1.6.2015 \ \ \ 19:00        & 1.6.2015 \ \ \ 21:00        &  2h                 & Tobias Fuchs\\ 
+	& ofCourse.properties                      &                            &                              &                                                  &\\
+	\hline  EncodingFilter       & EncodingFilter.java                      &                              &                             &                    &\\ 
+	\hline  DatabaseConnectionManager       &  DatabaseConnectionManager.java & 1.6.2015 \ \ \ 14:00       & 1.6.2015  \ \ \  19:00      &  5h                & Tobias Fuchs\\   
+	\hline  CheckPhase           & CheckPhase.java                            & 2.6.2015 \ \ \ 8:00        & 2.6.2015  \ \ \  12:00      &  4h                & Tobias Fuchs\\
+	\hline  Interface Pagination & Pagination.java                            & 2.6.2015 \ \ \ 13:00       & 2.6.2015  \ \ \  13:30      &  0.5h              & Tobias Fuchs\\
+	\hline  Logging              &                                            &                            &                             &                    &\\ 
+	\hline  Mailversand          & MailBean.java                              & 2.6.2015 \ \ \ 9:00        & 2.6.2015 \ \ \ 15:00        & 6h                 & Sebastian Schwarz\\ 	
+	& MailingException.java                      &                            &                            &                                                  &\\
+	& mail.properties                            &                            &                            &                                                  &\\
+	\hline Datenbanksetup        & DatabaseTableCreator. java                 &                            &                             &                    &\\
+	& SetupAdmin.java                            &                            &                            &                                                  &\\
+	& InvalidDBTransferException.java            &                            &                            &                                                  &\\
+	\hline Transaktionen         & Transaction.java                           & 1.6.2015 \ \ \  14:00      & 1.6.2015\ \ \ 16:00 & 2h                         & Sebastian Schwarz\\  
+	& Connection.java                            &                            &                            &                                                  &\\  
+	\hline Systemstart           & LaunchSystem.java                          & 2.6.2015 \ \ \             &                             & 4h                 & Sebastian Schwarz\\
+	\hline Passwort hashen       & PasswordHash.java                          &                            &                             &                    &\\       	   
 	\hline 
 \end{tabular} \ \\
 \ \\
@@ -48,12 +48,11 @@ Als Konvention gilt hier, dass Tests immer das Wort
 \begin{tabular}{|p{10cm}|p{4cm}|p{3cm}|p{3cm}|p{3cm}|}
 	\hline  \textbf{Arbeitspaket} & \textbf{Startzeitpunkt} & \textbf{Endzeitpunkt} & \textbf{Aufwand in h} & \textbf{Implementierer} \\ 
 	\hline   User.java                        &                            &                             &                     &\\ 
-	\hline   Course.java                      &                            &                             &                     &\\ 
-	\hline   CourseUnit.java                  &                            &                             &                     &\\ 
-	\hline   Address.java                     &                            &                             &                     &\\ 
-	\hline   PaginationData.java              &                            &                             &                     &\\ 
-	\hline   SmtpServer.java                  &                            &                             &                     &\\  
-	\hline   Cycle.java                       &                            &                             &                     &\\   
+	   Course.java                      &                            &                             &                     &\\ 
+	   CourseUnit.java                  &                            &                             &                     &\\ 
+	   Address.java                     &                            &                             &                     &\\ 
+	   SmtpServer.java                  &                            &                             &                     &\\  
+	   Cycle.java                       &                            &                             &                     &\\   
 	\hline 
 \end{tabular} \ \\
 \ \\
@@ -91,6 +90,7 @@ Als Konvention gilt hier, dass Tests immer das Wort
 	\hline   ConfirmPasswordValidator.java                        &                            &                             &                     &\\
 	\hline   DateOfBirthValidator.java                            &                            &                             &                     &\\
 	\hline   UserDAO.createUser(Transaction trans, User user)     &                            &                             &                     &\\ 
+	\hline   UserDAO.getNewUserID(Transaction trans)              &                            &                             &                     &\\
 	\hline   SystemDAO.getActivationType(Transaction trans)       &                            &                             &                     &\\ 
 	\hline 
 \end{tabular} \ \\
@@ -109,10 +109,10 @@ Als Konvention gilt hier, dass Tests immer das Wort
 \subsection{Meine Kurse}
 \begin{tabular}{|p{10cm}|p{4cm}|p{3cm}|p{3cm}|p{3cm}|}
 	\hline  \textbf{Arbeitspaket} & \textbf{Startzeitpunkt} & \textbf{Endzeitpunkt} & \textbf{Aufwand in h} & \textbf{Implementierer} \\ 
-	\hline   myCourses.xhtml                                      &                            &                             &                     &\\
-	\hline   MyCoursesBean.java                                   &                            &                             &                     &\\ 
-	\hline   Pagination.java                                      &                            &                             &                     &\\ 
-	\hline   CourseDAO.getCoursesOf(Transaction trans, int userID)&                            &                             &                     &\\ 
+	\hline   myCourses.xhtml                                       &                            &                             &                     & Tobias Fuchs\\
+	\hline   MyCoursesBean.java(Prototyp Pagination)               &                            &                             &                     & Tobias Fuchs\\ 
+	\hline   PaginationData.java                                   &                            &                             &                     & Tobias Fuchs\\ 
+	\hline   CourseDAO.getCoursesOf(Transaction trans, int userID) &                            &                             &                     & Tobias Fuchs\\ 
 	\hline 
 \end{tabular} \ \\
 \ \\
@@ -157,7 +157,7 @@ Als Konvention gilt hier, dass Tests immer das Wort
 	\end{tabular} \ \\
 	\ \\
 	
-	\subsection{Kursdetails, Kursbearbeiten}
+	\subsection{Kursdetails, Kurs bearbeiten}
 	\begin{tabular}{|p{10cm}|p{4cm}|p{3cm}|p{3cm}|p{3cm}|}
 		\hline  \textbf{Arbeitspaket} & \textbf{Startzeitpunkt} & \textbf{Endzeitpunkt} & \textbf{Aufwand in h} & \textbf{Implementierer} \\ 
 		\hline   courseDetails.xhtml                                         &                            &                             &                     &\\
@@ -205,6 +205,7 @@ Als Konvention gilt hier, dass Tests immer das Wort
 		\hline   PriceValidator.java                             &                            &                             &                     &\\
 		\hline   ImageValidator.java                             &                            &                             &                     &\\
 		\hline   CourseDAO.createCourse(Transaction trans, Course course)    &                            &                             &                     &\\
+		\hline   CourseDAO.getNewCourseID(Transaction trans)                 &                            &                             &                     &\\
 		\hline   CourseDAO.deleteCourse(Transaction trans, int courseID)     &                            &                             &                     &\\
 		\hline   CourseDAO.addLeaderToCourse(Transaction trans, int userID, int courseID)    &                            &                             &                     &\\
 		\hline   CourseDAO.removeLeaderFromCourse(Transaction trans, int userID, int course) &                            &                             &                     &\\
@@ -221,6 +222,7 @@ Als Konvention gilt hier, dass Tests immer das Wort
 		\hline   CourseUnitDAO.getCourseUnit(Transaction trans, int courseUnitID)                        &                            &                             &                     &\\ 
 		\hline   CourseUnitDAO.updateCourseUnit(Transaction trans, CourseUnit courseUnit)                &                            &                             &                     &\\ 
 		\hline   CourseUnitDAO.deleteCourseUnit(Transaction trans, int courseUnitID)                     &                            &                             &                     &\\ 
+		\hline   CourseUnitDAO.getNewCourseUnitID(Transaction trans)        &                            &                            &                     &\\ 
 		\hline   UserDAO.getParticipiantsOfCourseUnit(Transaction trans, PaginationData pagination, int courseUnitId)&                            &                             &                     &\\ 
 		\hline 
 	\end{tabular} \ \\
@@ -328,5 +330,12 @@ Als Konvention gilt hier, dass Tests immer das Wort
 		\hline   help.xhtml        &                            &                             &                     &\\
 		\hline 
 	\end{tabular} \ \\
-	\ \\			
+	\ \\	
+	
+	\subsection{Wartung}
+	\begin{tabular}{|p{10cm}|p{4cm}|p{3cm}|p{3cm}|p{3cm}|}
+		\hline  \textbf{Arbeitspaket} & \textbf{Startzeitpunkt} & \textbf{Endzeitpunkt} & \textbf{Aufwand in h} & \textbf{Implementierer} \\ 
+		\hline   Maintenance.java                           &                            &                             &                     &\\
+		\hline
+	\end{tabular}				
 \end{landscape}
