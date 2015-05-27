@@ -18,36 +18,37 @@ Als Konvention gilt hier, dass Tests immer das Wort
 \section{Milestone 1}
 
 \subsection{Grundfunktionen}
-\begin{tabular}{|p{6cm} |p{6cm}|p{3cm}|p{3cm}|p{2cm}|p{3.5cm}|}
-	\hline \textbf{Paketname} & \textbf{Arbeitspaket} & \textbf{Startzeitpunkt} & \textbf{Endzeitpunkt} & \textbf{Aufwand in h} & \textbf{Implementierer} \\ 
-	\hline  Enumerationsklassen  & UserRole.java                            &                             &                             &                     &\\ 
+\begin{tabular}{|p{6cm} |p{6cm}|p{3.2cm}|p{3.2cm}|p{2cm}|p{3.5cm}|}
+	\hline \textbf{Paketname} & \textbf{Arbeitspaket} & \textbf{Startzeitpunkt} & \textbf{Endzeitpunkt} & \textbf{Aufwand in h} & \textbf{Verantwortlicher} \\ 
+	\hline  Enumerationsklassen  & UserRole.java                            & 02.06.2015 \ \ 13:00        & 02.06.2015 \ \  14:00       &  1h                 & Ricky Strohmeier\\ 
 	& UserStatus.java                          &                            &                             &                     &\\ 
-	\hline  SessionUser          & SessionUserBean.java                     &                             & 1.6.2015                    &                     &\\ 
-	\hline  PropertyManager      & PropertyManager.java                     & 1.6.2015 \ \ \ 19:00        & 1.6.2015 \ \ \ 21:00        &  2h                 & Tobias Fuchs\\ 
+	\hline  SessionUser          & SessionUserBean.java                     & 01.06.2015 \ \ 17:00        & 01.06.2015 \ \ 18:00        &  1h                 & Patrick Cretu\\ 
+	\hline  PropertyManager      & PropertyManager.java                     & 01.06.2015 \ \ 16:00        & 01.06.2015 \ \ 20:00        &  4h                 & Tobias Fuchs\\ 
 	& ofCourse.properties                      &                            &                              &                                                  &\\
-	\hline  EncodingFilter       & EncodingFilter.java                      &                              &                             &                    &\\ 
-	\hline  DatabaseConnectionManager       &  DatabaseConnectionManager.java & 1.6.2015 \ \ \ 14:00       & 1.6.2015  \ \ \  19:00      &  5h                & Tobias Fuchs\\   
-	\hline  CheckPhase           & CheckPhase.java                            & 2.6.2015 \ \ \ 8:00        & 2.6.2015  \ \ \  12:00      &  4h                & Tobias Fuchs\\
-	\hline  Interface Pagination & Pagination.java                            & 2.6.2015 \ \ \ 13:00       & 2.6.2015  \ \ \  13:30      &  0.5h              & Tobias Fuchs\\
-	\hline  Logging              &                                            &                            &                             &                    &\\ 
-	\hline  Mailversand          & MailBean.java                              & 2.6.2015 \ \ \ 9:00        & 2.6.2015 \ \ \ 15:00        & 6h                 & Sebastian Schwarz\\ 	
+	\hline  EncodingFilter       & EncodingFilter.java                      & 01.06.2015 \ \ 14:00         & 01.06.2015  \ \  16:00      &  2h                & Kathi Hölzl\\ 
+	\hline  DatabaseConnectionManager       &  DatabaseConnectionManager.java & 01.06.2015 \ \ 08:00       & 01.06.2015  \ \  16:00      &  5h                & Tobias Fuchs\\   
+	\hline  CheckPhase           & CheckPhase.java                            & 02.06.2015 \ \ 08:00       & 02.06.2015  \ \  12:00      &  4h                & Tobias Fuchs\\
+	\hline  Interface Pagination & Pagination.java                            & 02.06.2015 \ \ 13:00       & 02.06.2015  \ \  13:30      &  0.5h              & Tobias Fuchs\\
+	\hline  Logging              &                                            & 01.06.2015 \ \ 14:00       & 01.06.2015  \ \  18:00      &  4h                & Sebastian Schwarz\\ 
+	\hline  Mailversand          & MailBean.java                              & 02.06.2015 \ \ 13:00       & 03.06.2015  \ \  10:00      &  7h                & Sebastian Schwarz\\ 	
 	& MailingException.java                      &                            &                            &                                                  &\\
 	& mail.properties                            &                            &                            &                                                  &\\
-	\hline Datenbanksetup        & DatabaseTableCreator. java                 &                            &                             &                    &\\
+	\hline Datenbanksetup        & DatabaseTableCreator. java                 & 01.06.2015 \ \ 08:00       & 01.06.2015  \ \  17:00      &  6h                & Patrick Cretu\\
 	& SetupAdmin.java                            &                            &                            &                                                  &\\
+    & DatabaseTableDetroyer.java                 &                            &                            &                                                  &\\
 	& InvalidDBTransferException.java            &                            &                            &                                                  &\\
-	\hline Transaktionen         & Transaction.java                           & 1.6.2015 \ \ \  14:00      & 1.6.2015\ \ \ 16:00 & 2h                         & Sebastian Schwarz\\  
+	\hline Transaktionen         & Transaction.java                           & 01.06.2015 \ \ 08:00       & 01.06.2015 \ \ 10:00        & 2h                 & Sebastian Schwarz\\  
 	& Connection.java                            &                            &                            &                                                  &\\  
-	\hline Systemstart           & LaunchSystem.java                          & 2.6.2015 \ \ \             &                             & 4h                 & Sebastian Schwarz\\
-	\hline Passwort hashen       & PasswordHash.java                          &                            &                             &                    &\\       	   
+	\hline Systemstart           & LaunchSystem.java                          & 02.06.2015 \ \ 08:00       & 02.06.2015 \ \ 12:00        & 4h                 & Sebastian Schwarz\\
+	\hline Passwort hashen       & PasswordHash.java                          & 02.06.2015 \ \ 08:00       & 02.06.2015 \ \ 10:00        & 2h                 & Patrick Cretu\\       	   
 	\hline 
 \end{tabular} \ \\
 \ \\
 
 \subsection{Anlegen der DTO}
-\begin{tabular}{|p{10cm}|p{4cm}|p{3cm}|p{3cm}|p{3cm}|}
-	\hline  \textbf{Arbeitspaket} & \textbf{Startzeitpunkt} & \textbf{Endzeitpunkt} & \textbf{Aufwand in h} & \textbf{Implementierer} \\ 
-	\hline   User.java                        &                            &                             &                     &\\ 
+\begin{tabular}{|p{10cm}|p{3.2cm}|p{3.2cm}|c|p{3.5cm}|}
+	\hline  \textbf{Arbeitspaket} & \textbf{Startzeitpunkt} & \textbf{Endzeitpunkt} & \textbf{Aufwand in h} & \textbf{Verantwortlicher} \\ 
+	\hline   User.java                  & 01.06.2015 \ \ 13:00       & 01.06.2015 \ \ 14:00        & 1h                  & Sebastian Schwarz\\ 
 	   Course.java                      &                            &                             &                     &\\ 
 	   CourseUnit.java                  &                            &                             &                     &\\ 
 	   Address.java                     &                            &                             &                     &\\ 
@@ -58,77 +59,76 @@ Als Konvention gilt hier, dass Tests immer das Wort
 \ \\
 
 \subsection{Struktur der View}
-\begin{tabular}{|p{10cm}|p{4cm}|p{3cm}|p{3cm}|p{3cm}|}
-	\hline  \textbf{Arbeitspaket} & \textbf{Startzeitpunkt} & \textbf{Endzeitpunkt} & \textbf{Aufwand in h} & \textbf{Implementierer} \\ 
-	\hline   template.xhtml                   &                            &                             &                     &\\
-	\hline   index.xhtml                      &                            &                             &                     &\\
-	\hline   footer.xhtml                     &                            &                             &                     &\\ 
-	\hline   FooterBean.java                  &                            &                             &                     &\\ 
-	\hline   navigation.xhtml                 &                            &                             &                     &\\ 
-	\hline   NavigationBean.java              &                            &                             &                     &\\ 
+\begin{tabular}{|p{10cm}|p{3.2cm}|p{3.2cm}|c|p{3.5cm}|}
+	\hline  \textbf{Arbeitspaket} & \textbf{Startzeitpunkt} & \textbf{Endzeitpunkt} & \textbf{Aufwand in h} & \textbf{Verantwortlicher} \\ 
+	\hline   template.xhtml                   & 01.06.2015 \ \ 08:00     & 01.06.2015 \ \ 10:00     &      2h               & Ricky Strohmeier\\
+	\hline   index.xhtml                      & 01.06.2015 \ \ 13:00     & 01.06.2015 \ \ 14:00     &      1h               & Ricky Strohmeier\\
+	\hline   footer.xhtml                     & 02.06.2015 \ \ 08:00     & 02.06.2015 \ \ 09:00     &      1h               & Ricky Strohmeier\\ 
+	\hline   FooterBean.java                  & 02.06.2015 \ \ 09:00     & 02.06.2015 \ \ 10:00     &      1h               & Ricky Strohmeier\\ 
+	\hline   navigation.xhtml                 & 01.06.2015 \ \ 14:00     & 01.06.2015 \ \ 15:30     &      1,5h             & Ricky Strohmeier\\ 
+	\hline   NavigationBean.java              & 01.06.2015 \ \ 15:30     & 01.06.2015 \ \ 18:00     &      2,5h             & Ricky Strohmeier\\ 
 	\hline 
 \end{tabular} \ \\
 \ \\
 
 \subsection{Anmeldung}
-\begin{tabular}{|p{10cm}|p{4cm}|p{3cm}|p{3cm}|p{3cm}|}
-	\hline  \textbf{Arbeitspaket} & \textbf{Startzeitpunkt} & \textbf{Endzeitpunkt} & \textbf{Aufwand in h} & \textbf{Implementierer} \\ 
-	\hline   authenticate.xhtml                                   &                            &                             &                     &\\
-	\hline   AuthenticateUserBean.java                            &                            &                             &                     &\\ 
-	\hline   UserDAO.getUser(Transaction trans, String name)      &                            &                             &                     &\\ 
-	\hline   UserDAO.getUserID(Transaction trans, String username)&                            &                             &                     &\\ 
+\begin{tabular}{|p{10.3cm}|p{3.2cm}|p{3.2cm}|c|p{3.5cm}|}
+	\hline  \textbf{Arbeitspaket} & \textbf{Startzeitpunkt} & \textbf{Endzeitpunkt} & \textbf{Aufwand in h} & \textbf{Verantwortlicher} \\ 
+	\hline   authenticate.xhtml                                   & 02.06.2015 \ \ 12:00     & 02.06.2015 \ \ 14:00     &      2h               & Kathi Hölzl\\
+	\hline   AuthenticateUserBean.java                            & 02.06.2015 \ \ 08:00     & 02.06.2015 \ \ 11:00     &      3h               & Kathi Hölzl\\
+	\hline   UserDAO.getUser(Transaction trans, String name)      & 01.06.2015 \ \ 18:00     & 01.06.2015 \ \ 19:00     &      1h               & Kathi Hölzl\\
+	\hline   UserDAO.getUserID(Transaction trans, String username)& 01.06.2015 \ \ 17:00     & 01.06.2015 \ \ 18:00     &      1h               & Kathi Hölzl\\
 	\hline 
 \end{tabular} \ \\
 \ \\
 
 \subsection{Registrierung}
-\begin{tabular}{|p{10cm}|p{4cm}|p{3cm}|p{3cm}|p{3cm}|}
-	\hline  \textbf{Arbeitspaket} & \textbf{Startzeitpunkt} & \textbf{Endzeitpunkt} & \textbf{Aufwand in h} & \textbf{Implementierer} \\ 
-	\hline   RegisterUserBean.java                                &                            &                             &                     &\\
-	\hline   UserNameValidator.java                               &                            &                             &                     &\\ 
-	\hline   PasswordValidator.java                               &                            &                             &                     &\\ 
-	\hline   ConfirmPasswordValidator.java                        &                            &                             &                     &\\
-	\hline   DateOfBirthValidator.java                            &                            &                             &                     &\\
-	\hline   UserDAO.createUser(Transaction trans, User user)     &                            &                             &                     &\\ 
-	\hline   UserDAO.getNewUserID(Transaction trans)              &                            &                             &                     &\\
-	\hline   SystemDAO.getActivationType(Transaction trans)       &                            &                             &                     &\\ 
+\begin{tabular}{|p{10.3cm}|p{3.2cm}|p{3.2cm}|c|p{3.5cm}|}
+	\hline  \textbf{Arbeitspaket} & \textbf{Startzeitpunkt} & \textbf{Endzeitpunkt} & \textbf{Aufwand in h} & \textbf{Verantwortlicher} \\ 
+	\hline   RegisterUserBean.java                                & 03.06.2015 \ \ 10:00     & 03.06.2015 \ \ 13:00     &      3h               & Kathi Hölzl\\
+	\hline   UserNameValidator.java                               & 03.06.2015 \ \ 08:00     & 03.06.2015 \ \ 09:00     &      1h               & Kathi Hölzl\\
+	\hline   PasswordValidator.java                               & 01.06.2015 \ \ 08:00     & 01.06.2015 \ \ 09:00     &      1h               & Kathi Hölzl\\
+	\hline   ConfirmPasswordValidator.java                        & 01.06.2015 \ \ 09:00     & 01.06.2015 \ \ 10:00     &      1h               & Kathi Hölzl\\
+	\hline   DateOfBirthValidator.java                            & 02.06.2015 \ \ 15:00     & 02.06.2015 \ \ 16:00     &      1h               & Kathi Hölzl\\
+	\hline   UserDAO.createUser(Transaction trans, User user)     & 03.06.2015 \ \ 10:30     & 03.06.2015 \ \ 12:30     &      2h               & Patrick Cretu\\
+	\hline   UserDAO.getNewUserID(Transaction trans)              & 02.06.2015 \ \ 16:00     & 02.06.2015 \ \ 16:30     &      0.5h             & Kathi Hölzl\\
+	\hline   SystemDAO.getActivationType(Transaction trans)       & 02.06.2015 \ \ 14:00     & 02.06.2015 \ \ 15:00     &      1h               & Kathi Hölzl\\
 	\hline 
 \end{tabular} \ \\
 \ \\
 
 \subsection{Passwort vergessen}
-\begin{tabular}{|p{10cm}|p{4cm}|p{3cm}|p{3cm}|p{3cm}|}
-	\hline  \textbf{Arbeitspaket} & \textbf{Startzeitpunkt} & \textbf{Endzeitpunkt} & \textbf{Aufwand in h} & \textbf{Implementierer} \\ 
-	\hline   LostPasswordBean.java                                &                            &                             &                     &\\
-	\hline   EMailValidator.java                                  &                            &                             &                     &\\ 
-	\hline   UserDAO.updateUser(Transaction trans, User user)     &                            &                             &                     &\\ 
+\begin{tabular}{|p{10.3cm}|p{3.2cm}|p{3.2cm}|c|p{3.5cm}|}
+	\hline  \textbf{Arbeitspaket} & \textbf{Startzeitpunkt} & \textbf{Endzeitpunkt} & \textbf{Aufwand in h} & \textbf{Verantwortlicher} \\ 
+	\hline   LostPasswordBean.java                                & 03.06.2015 \ \ 13:00     & 03.06.2015 \ \ 17:00     &      4h             & Ricky Strohmeier\\ 
+	\hline   EMailValidator.java                                  & 03.06.2015 \ \ 10:00     & 03.06.2015 \ \ 11:00     &      1h             & Ricky Strohmeier\\ 
+	\hline   UserDAO.updateUser(Transaction trans, User user)     & 03.06.2015 \ \ 09:00     & 03.06.2015 \ \ 10:00     &      1h             & Ricky Strohmeier\\ 
 	\hline 
 \end{tabular} \ \\
 \ \\
 
 \subsection{Meine Kurse}
-\begin{tabular}{|p{10cm}|p{4cm}|p{3cm}|p{3cm}|p{3cm}|}
-	\hline  \textbf{Arbeitspaket} & \textbf{Startzeitpunkt} & \textbf{Endzeitpunkt} & \textbf{Aufwand in h} & \textbf{Implementierer} \\ 
-	\hline   myCourses.xhtml                                       &                            &                             &                     & Tobias Fuchs\\
-	\hline   MyCoursesBean.java(Prototyp Pagination)               &                            &                             &                     & Tobias Fuchs\\ 
-	\hline   PaginationData.java                                   &                            &                             &                     & Tobias Fuchs\\ 
-	\hline   CourseDAO.getCoursesOf(Transaction trans, int userID) &                            &                             &                     & Tobias Fuchs\\ 
+\begin{tabular}{|p{10.3cm}|p{3.2cm}|p{3.2cm}|c|p{3.5cm}|}
+	\hline  \textbf{Arbeitspaket} & \textbf{Startzeitpunkt} & \textbf{Endzeitpunkt} & \textbf{Aufwand in h} & \textbf{Verantwortlicher} \\ 
+	\hline   myCourses.xhtml                                       & 03.06.2015 \ \ 08:00       & 03.06.2015  \ \  10:00      &  2h              & Tobias Fuchs\\
+	\hline   MyCoursesBean.java(Prototyp Pagination)               & 02.06.2015 \ \ 14:00       & 02.06.2015  \ \  18:00      &  4h              & Tobias Fuchs\\
+	\hline   PaginationData.java                                   & 02.06.2015 \ \ 18:00       & 02.06.2015  \ \  20:00      &  2h              & Tobias Fuchs\\
+	\hline   CourseDAO.getCoursesOf(Transaction trans, int userID) & 02.06.2015 \ \ 15:00       & 02.06.2015  \ \  17:00      &  2h              & Ricky Strohmeier\\
 	\hline 
 \end{tabular} \ \\
 \ \\
 
 \subsection{Kurssuche}
-\begin{tabular}{|p{10cm}|p{4cm}|p{3cm}|p{3cm}|p{3cm}|}
-	\hline  \textbf{Arbeitspaket} & \textbf{Startzeitpunkt} & \textbf{Endzeitpunkt} & \textbf{Aufwand in h} & \textbf{Implementierer} \\ 
-	\hline   search.xhtml                                         &                            &                             &                     &\\
-	\hline   SearchCourseBean.java                                &                            &                             &                     &\\ 
-	\hline   CourseDAO.getCourses(Transaction trans, PaginationData pagination)                                      &                            &                             &                     &\\ 
-	\hline  CourseDAO.getCourses(Transaction trans,PaginationData pagination, String searchString, String searchParam)&                            &                             &                     &\\
-	\hline  CourseDAO.getCoursesOrdered(Transaction trans, PaginationData pagination, String searchString, String searchParam, String orderParam)&                            &                             &                     &\\ 
+\begin{tabular}{|p{10.3cm}|p{3.2cm}|p{3.2cm}|c|p{3.5cm}|}
+	\hline  \textbf{Arbeitspaket} & \textbf{Startzeitpunkt} & \textbf{Endzeitpunkt} & \textbf{Aufwand in h} & \textbf{Verantwortlicher} \\ 
+	\hline   search.xhtml                                         & 03.06.2015 \ \ 08:00        & 03.06.2015 \ \ 10:30        &  2,5h                 & Patrick Cretu\\ 
+	\hline   SearchCourseBean.java                                & 02.06.2015 \ \ 14:30        & 02.06.2015 \ \ 16:30        &  2h                 & Patrick Cretu\\ 
+	\hline   CourseDAO.getCourses(Transaction trans, PaginationData pagination)                                      & 03.06.2015 \ \ 08:00        & 03.06.2015 \ \ 09:00        &  1h                 & Ricky Strohmeier\\ 
+	\hline  CourseDAO.getCourses(Transaction trans,PaginationData pagination, String searchString, String searchParam)& 02.06.2015 \ \ 10:00        & 02.06.2015 \ \ 11:30        &  1,5h                 & Patrick Cretu\\ 
+	\hline  CourseDAO.getCoursesOrdered(Transaction trans, PaginationData pagination, String searchString, String searchParam, String orderParam)& 02.06.2015 \ \ 13:00        & 02.06.2015 \ \ 14:30        &  1,5h                 & Patrick Cretu\\ 
 	\hline 
 \end{tabular} \ \\
 \ \\
-
 \end{landscape}
 
 
@@ -138,7 +138,7 @@ Als Konvention gilt hier, dass Tests immer das Wort
 	
 	\subsection{Benutzerprofil}
 	\begin{tabular}{|p{10cm}|p{4cm}|p{3cm}|p{3cm}|p{3cm}|}
-		\hline  \textbf{Arbeitspaket} & \textbf{Startzeitpunkt} & \textbf{Endzeitpunkt} & \textbf{Aufwand in h} & \textbf{Implementierer} \\ 
+		\hline  \textbf{Arbeitspaket} & \textbf{Startzeitpunkt} & \textbf{Endzeitpunkt} & \textbf{Aufwand in h} & \textbf{Verantwortlicher} \\ 
 		\hline   profile.xhtml                                         &                            &                             &                     &\\
 		\hline   UserProfileBean.java                                  &                            &                             &                     &\\
 		\hline   UserImageValidator.java                               &                            &                             &                     &\\ 
@@ -149,7 +149,7 @@ Als Konvention gilt hier, dass Tests immer das Wort
 	
 	\subsection{Benutzer anlegen/löschen}
 	\begin{tabular}{|p{10cm}|p{4cm}|p{3cm}|p{3cm}|p{3cm}|}
-		\hline  \textbf{Arbeitspaket} & \textbf{Startzeitpunkt} & \textbf{Endzeitpunkt} & \textbf{Aufwand in h} & \textbf{Implementierer} \\ 
+		\hline  \textbf{Arbeitspaket} & \textbf{Startzeitpunkt} & \textbf{Endzeitpunkt} & \textbf{Aufwand in h} & \textbf{Verantwortlicher} \\ 
 		\hline   createUser.xhtml                                      &                            &                             &                     &\\
 		\hline   UserManagementBean.java                               &                            &                             &                     &\\
 		\hline   UserDAO.deleteUser(Transaction trans, int userID)     &                            &                             &                     &\\
@@ -159,7 +159,7 @@ Als Konvention gilt hier, dass Tests immer das Wort
 	
 	\subsection{Kursdetails, Kurs bearbeiten}
 	\begin{tabular}{|p{10cm}|p{4cm}|p{3cm}|p{3cm}|p{3cm}|}
-		\hline  \textbf{Arbeitspaket} & \textbf{Startzeitpunkt} & \textbf{Endzeitpunkt} & \textbf{Aufwand in h} & \textbf{Implementierer} \\ 
+		\hline  \textbf{Arbeitspaket} & \textbf{Startzeitpunkt} & \textbf{Endzeitpunkt} & \textbf{Aufwand in h} & \textbf{Verantwortlicher} \\ 
 		\hline   courseDetails.xhtml                                         &                            &                             &                     &\\
 		\hline   CourseDetailsBean.editCourse()                              &                            &                             &                     &\\
 		\hline   CourseDetailsBean.saveCourse()                              &                            &                             &                     &\\
@@ -178,7 +178,7 @@ Als Konvention gilt hier, dass Tests immer das Wort
 	
 	\subsection{Anmeldung, Abmeldung zu Kursen/Kurseinheiten}
 	\begin{tabular}{|p{10cm}|p{4cm}|p{3cm}|p{3cm}|p{3cm}|}
-		\hline  \textbf{Arbeitspaket} & \textbf{Startzeitpunkt} & \textbf{Endzeitpunkt} & \textbf{Aufwand in h} & \textbf{Implementierer} \\ 
+		\hline  \textbf{Arbeitspaket} & \textbf{Startzeitpunkt} & \textbf{Endzeitpunkt} & \textbf{Aufwand in h} & \textbf{Verantwortlicher} \\ 
 		\hline   CourseDetailsBean.signUpForCourse()                          &                            &                             &                     &\\
 		\hline   CourseDetailsBean.signOffFromCourse()                        &                            &                             &                     &\\
 		\hline   CourseDetailsBean.signUpForCourseUnit()                      &                            &                             &                     &\\
@@ -198,7 +198,7 @@ Als Konvention gilt hier, dass Tests immer das Wort
 	
 	\subsection{Kurs anlegen/löschen}
 	\begin{tabular}{|p{10cm}|p{4cm}|p{3cm}|p{3cm}|p{3cm}|}
-		\hline  \textbf{Arbeitspaket} & \textbf{Startzeitpunkt} & \textbf{Endzeitpunkt} & \textbf{Aufwand in h} & \textbf{Implementierer} \\ 
+		\hline  \textbf{Arbeitspaket} & \textbf{Startzeitpunkt} & \textbf{Endzeitpunkt} & \textbf{Aufwand in h} & \textbf{Verantwortlicher} \\ 
 		\hline   createCourse.xhtml                                    &                            &                             &                     &\\
 		\hline   CourseManagementBean.java                             &                            &                             &                     &\\
 		\hline   CourseInstructorValidator.java                        &                            &                             &                     &\\
@@ -215,7 +215,7 @@ Als Konvention gilt hier, dass Tests immer das Wort
 	
 	\subsection{Kurseinheiten anlegen, editieren}
 	\begin{tabular}{|p{10cm}|p{4cm}|p{3cm}|p{3cm}|p{3cm}|}
-		\hline  \textbf{Arbeitspaket} & \textbf{Startzeitpunkt} & \textbf{Endzeitpunkt} & \textbf{Aufwand in h} & \textbf{Implementierer} \\ 
+		\hline  \textbf{Arbeitspaket} & \textbf{Startzeitpunkt} & \textbf{Endzeitpunkt} & \textbf{Aufwand in h} & \textbf{Verantwortlicher} \\ 
 		\hline   editCourseUnit.xhtml                                       &                            &                            &                     &\\
 		\hline   CourseUnitManagementBean.java                              &                            &                            &                     &\\
 		\hline   CourseUnitDAO.createCourseUnit(Transaction trans, CourseUnit courseUnit, int courseID)  &                            &                             &                     &\\ 
@@ -238,7 +238,7 @@ Als Konvention gilt hier, dass Tests immer das Wort
 	
 	\subsection{Benutzer durchsuchen}
 	\begin{tabular}{|p{10cm}|p{4cm}|p{3cm}|p{3cm}|p{3cm}|}
-		\hline  \textbf{Arbeitspaket} & \textbf{Startzeitpunkt} & \textbf{Endzeitpunkt} & \textbf{Aufwand in h} & \textbf{Implementierer} \\ 
+		\hline  \textbf{Arbeitspaket} & \textbf{Startzeitpunkt} & \textbf{Endzeitpunkt} & \textbf{Aufwand in h} & \textbf{Verantwortlicher} \\ 
 		\hline   listUsers.xhtml                                              &                            &                             &                     &\\
 		\hline   SearchUserBean.java                                          &                            &                             &                     &\\
 		\hline   UserDAO.getUsers(Transaction trans,PaginationData pagination)&                            &                             &                     &\\
@@ -250,7 +250,7 @@ Als Konvention gilt hier, dass Tests immer das Wort
 	
 	\subsection{Exception Handling}
 	\begin{tabular}{|p{10cm}|p{4cm}|p{3cm}|p{3cm}|p{3cm}|}
-		\hline  \textbf{Arbeitspaket} & \textbf{Startzeitpunkt} & \textbf{Endzeitpunkt} & \textbf{Aufwand in h} & \textbf{Implementierer} \\ 
+		\hline  \textbf{Arbeitspaket} & \textbf{Startzeitpunkt} & \textbf{Endzeitpunkt} & \textbf{Aufwand in h} & \textbf{Verantwortlicher} \\ 
 		\hline   errorPage.xhtml                                       &                            &                             &                     &\\
 		\hline   CustomExceptionHandler.java                           &                            &                             &                     &\\
 		\hline   CustomExceptionHandlerFactory.java                    &                            &                             &                     &\\
@@ -260,7 +260,7 @@ Als Konvention gilt hier, dass Tests immer das Wort
 	
 	\subsection{Mehrsprachigkeit}
 	\begin{tabular}{|p{10cm}|p{4cm}|p{3cm}|p{3cm}|p{3cm}|}
-		\hline  \textbf{Arbeitspaket} & \textbf{Startzeitpunkt} & \textbf{Endzeitpunkt} & \textbf{Aufwand in h} & \textbf{Implementierer} \\ 
+		\hline  \textbf{Arbeitspaket} & \textbf{Startzeitpunkt} & \textbf{Endzeitpunkt} & \textbf{Aufwand in h} & \textbf{Verantwortlicher} \\ 
 		\hline   LanguageManager.xhtml                                 &                            &                             &                     &\\
 		\hline   language\_de.properties                               &                            &                             &                     &\\
 		\hline   language\_en.properties                               &                            &                             &                     &\\
@@ -270,7 +270,7 @@ Als Konvention gilt hier, dass Tests immer das Wort
 	
 	\subsection{Teilnehmerliste}
 	\begin{tabular}{|p{10cm}|p{4cm}|p{3cm}|p{3cm}|p{3cm}|}
-		\hline  \textbf{Arbeitspaket} & \textbf{Startzeitpunkt} & \textbf{Endzeitpunkt} & \textbf{Aufwand in h} & \textbf{Implementierer} \\ 
+		\hline  \textbf{Arbeitspaket} & \textbf{Startzeitpunkt} & \textbf{Endzeitpunkt} & \textbf{Aufwand in h} & \textbf{Verantwortlicher} \\ 
 		\hline   listParticipients.xhtml                                     &                            &                             &                     &\\
 		\hline   ListParticipantsBean.java                                   &                            &                             &                     &\\
 		\hline   UserDAO.getParticipiantsOfCourse(Transaction trans,PaginationData pagination, int courseID)  &                            &                             &                     &\\
@@ -280,7 +280,7 @@ Als Konvention gilt hier, dass Tests immer das Wort
 	
 	\subsection{Trainerprofil anzeigen}	
 	\begin{tabular}{|p{10cm}|p{4cm}|p{3cm}|p{3cm}|p{3cm}|}
-		\hline  \textbf{Arbeitspaket} & \textbf{Startzeitpunkt} & \textbf{Endzeitpunkt} & \textbf{Aufwand in h} & \textbf{Implementierer} \\ 
+		\hline  \textbf{Arbeitspaket} & \textbf{Startzeitpunkt} & \textbf{Endzeitpunkt} & \textbf{Aufwand in h} & \textbf{Verantwortlicher} \\ 
 		\hline   leaderProfile.xhtml                      &                            &                             &                     &\\
 		\hline   UserProfileBean.initializeLeaderProfile()&                            &                             &                     &\\
 		\hline   UserDAO.getCoursesLeadedBy(Transaction trans, int userID, PaginationData pagination)  &                            &                             &                     &\\
@@ -290,7 +290,7 @@ Als Konvention gilt hier, dass Tests immer das Wort
 	
 	\subsection{Terminplaner}
 	\begin{tabular}{|p{10cm}|p{4cm}|p{3cm}|p{3cm}|p{3cm}|}
-		\hline  \textbf{Arbeitspaket} & \textbf{Startzeitpunkt} & \textbf{Endzeitpunkt} & \textbf{Aufwand in h} & \textbf{Implementierer} \\ 
+		\hline  \textbf{Arbeitspaket} & \textbf{Startzeitpunkt} & \textbf{Endzeitpunkt} & \textbf{Aufwand in h} & \textbf{Verantwortlicher} \\ 
 		\hline   scheduler.xhtml                                 &                            &                             &                     &\\
 		\hline   SchedulerBean.java                              &                            &                             &                     &\\
 		\hline   CourseUnitDAO.getCourseUnitsOf(Transaction trans, int userID)  &                            &                             &                     &\\
@@ -300,7 +300,7 @@ Als Konvention gilt hier, dass Tests immer das Wort
 	
 	\subsection{Benutzer aktivieren}
 	\begin{tabular}{|p{10cm}|p{4cm}|p{3cm}|p{3cm}|p{3cm}|}
-		\hline  \textbf{Arbeitspaket} & \textbf{Startzeitpunkt} & \textbf{Endzeitpunkt} & \textbf{Aufwand in h} & \textbf{Implementierer} \\ 
+		\hline  \textbf{Arbeitspaket} & \textbf{Startzeitpunkt} & \textbf{Endzeitpunkt} & \textbf{Aufwand in h} & \textbf{Verantwortlicher} \\ 
 		\hline   activateUsers.xhtml                                 &                            &                             &                     &\\
 		\hline   AccountManagementBean.java                              &                            &                             &                     &\\
 		\hline 
@@ -309,7 +309,7 @@ Als Konvention gilt hier, dass Tests immer das Wort
 	
 	\subsection{Administratoreinstellungen}
 	\begin{tabular}{|p{10cm}|p{4cm}|p{3cm}|p{3cm}|p{3cm}|}
-		\hline  \textbf{Arbeitspaket} & \textbf{Startzeitpunkt} & \textbf{Endzeitpunkt} & \textbf{Aufwand in h} & \textbf{Implementierer} \\ 
+		\hline  \textbf{Arbeitspaket} & \textbf{Startzeitpunkt} & \textbf{Endzeitpunkt} & \textbf{Aufwand in h} & \textbf{Verantwortlicher} \\ 
 		\hline   adminManagement.xhtml                                 &                            &                             &                     & Tobias Fuchs\\
 		\hline   SystemConfigurationBean.java                          &                            &                             &                     & Tobias Fuchs\\
 		\hline   PaymentOfflineBean.java                               &                            &                             &                     & Tobias Fuchs \\
@@ -324,7 +324,7 @@ Als Konvention gilt hier, dass Tests immer das Wort
 	
 	\subsection{AGB, Impressum,...}
 	\begin{tabular}{|p{10cm}|p{4cm}|p{3cm}|p{3cm}|p{3cm}|}
-		\hline  \textbf{Arbeitspaket} & \textbf{Startzeitpunkt} & \textbf{Endzeitpunkt} & \textbf{Aufwand in h} & \textbf{Implementierer} \\ 
+		\hline  \textbf{Arbeitspaket} & \textbf{Startzeitpunkt} & \textbf{Endzeitpunkt} & \textbf{Aufwand in h} & \textbf{Verantwortlicher} \\ 
 		\hline   agb.xhtml                                 &                            &                             &                     &\\
 		\hline   imprint.xhtml                              &                            &                             &                     &\\
 		\hline   help.xhtml        &                            &                             &                     &\\
@@ -334,7 +334,7 @@ Als Konvention gilt hier, dass Tests immer das Wort
 	
 	\subsection{Wartung}
 	\begin{tabular}{|p{10cm}|p{4cm}|p{3cm}|p{3cm}|p{3cm}|}
-		\hline  \textbf{Arbeitspaket} & \textbf{Startzeitpunkt} & \textbf{Endzeitpunkt} & \textbf{Aufwand in h} & \textbf{Implementierer} \\ 
+		\hline  \textbf{Arbeitspaket} & \textbf{Startzeitpunkt} & \textbf{Endzeitpunkt} & \textbf{Aufwand in h} & \textbf{Verantwortlicher} \\ 
 		\hline   Maintenance.java                           &                            &                             &                     &\\
 		\hline
 	\end{tabular}				
