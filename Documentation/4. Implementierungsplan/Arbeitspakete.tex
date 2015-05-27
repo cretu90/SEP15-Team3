@@ -110,9 +110,9 @@ Als Konvention gilt hier, dass Tests immer das Wort
 \subsection{Meine Kurse}
 \begin{tabular}{|p{10.3cm}|p{3.2cm}|p{3.2cm}|c|p{3.5cm}|}
 	\hline  \textbf{Arbeitspaket} & \textbf{Startzeitpunkt} & \textbf{Endzeitpunkt} & \textbf{Aufwand in h} & \textbf{Verantwortlicher} \\ 
-	\hline   myCourses.xhtml                                       & 03.06.2015 \ \ 08:00       & 03.06.2015  \ \  10:00      &  2h              & Tobias Fuchs\\
+	\hline   myCourses.xhtml                                       & 03.06.2015 \ \ 10:00       & 03.06.2015  \ \  12:00      &  2h              & Tobias Fuchs\\
 	\hline   MyCoursesBean.java(Prototyp Pagination)               & 02.06.2015 \ \ 14:00       & 02.06.2015  \ \  18:00      &  4h              & Tobias Fuchs\\
-	\hline   PaginationData.java                                   & 02.06.2015 \ \ 18:00       & 02.06.2015  \ \  20:00      &  2h              & Tobias Fuchs\\
+	\hline   PaginationData.java                                   & 03.06.2015 \ \ 08:00       & 03.06.2015  \ \  10:00      &  2h              & Tobias Fuchs\\
 	\hline   CourseDAO.getCoursesOf(Transaction trans, int userID) & 02.06.2015 \ \ 15:00       & 02.06.2015  \ \  17:00      &  2h              & Ricky Strohmeier\\
 	\hline 
 \end{tabular} \ \\
@@ -249,11 +249,11 @@ Als Konvention gilt hier, dass Tests immer das Wort
 	\subsection{Benutzer durchsuchen}
 	\begin{tabular}{|p{10.3cm}|p{3.2cm}|p{3.2cm}|c|p{3.5cm}|}
 		\hline  \textbf{Arbeitspaket} & \textbf{Startzeitpunkt} & \textbf{Endzeitpunkt} & \textbf{Aufwand in h} & \textbf{Verantwortlicher} \\ 
-		\hline   listUsers.xhtml                                              &                            &                             &                     &\\
-		\hline   SearchUserBean.java                                          &                            &                             &                     &\\
-		\hline   UserDAO.getUsers(Transaction trans,PaginationData pagination)&                            &                             &                     &\\
-		\hline   UserDAO.getUsers(Transaction trans, PaginationData pagination, String searchString, String searchParam)&                            &                             &                     &\\ 
-		\hline   UserDAO.getUsersOrdered(Transaction trans, PaginationData pagination, String searchString, String searchParam, String orderParam)   &                            &                             &                     &\\                                 
+		\hline   listUsers.xhtml                                               & 15.06.2015 \ \ 16:00       & 15.06.2015 \ \ 18:00        & 2h                 & Sebastian Schwarz\\  
+		\hline   SearchUserBean.java                                           & 15.06.2015 \ \ 13:00       & 15.06.2015 \ \ 16:00        & 3h                 & Sebastian Schwarz\\  
+		\hline   UserDAO.getUsers(Transaction trans,PaginationData pagination) & 16.06.2015 \ \ 08:00       & 16.06.2015 \ \ 09:00        & 1h                 & Sebastian Schwarz\\  
+		\hline   UserDAO.getUsers(Transaction trans, PaginationData pagination, String searchString, String searchParam) & 15.06.2015 \ \ 08:00       & 15.06.2015 \ \ 09:30        & 1,5h                 & Sebastian Schwarz\\  
+		\hline   UserDAO.getUsersOrdered(Transaction trans, PaginationData pagination, String searchString, String searchParam, String orderParam)    & 16.06.2015 \ \ 09:00       & 16.06.2015 \ \ 10:30        & 1,5h                 & Sebastian Schwarz\\  
 		\hline 
 	\end{tabular} \ \\
 	\ \\
@@ -261,9 +261,9 @@ Als Konvention gilt hier, dass Tests immer das Wort
 	\subsection{Exception Handling}
 	\begin{tabular}{|p{10.3cm}|p{3.2cm}|p{3.2cm}|c|p{3.5cm}|}
 		\hline  \textbf{Arbeitspaket} & \textbf{Startzeitpunkt} & \textbf{Endzeitpunkt} & \textbf{Aufwand in h} & \textbf{Verantwortlicher} \\ 
-		\hline   errorPage.xhtml                                       &                            &                             &                     &\\
-		\hline   CustomExceptionHandler.java                           &                            &                             &                     &\\
-		\hline   CustomExceptionHandlerFactory.java                    &                            &                             &                     &\\
+		\hline   errorPage.xhtml                                        & 16.06.2015 \ \ 11:00       & 16.06.2015 \ \ 12:00        & 1h                 & Sebastian Schwarz\\  
+		\hline   CustomExceptionHandler.java                            & 16.06.2015 \ \ 14:00       & 16.06.2015 \ \ 15:00        & 1h                 & Sebastian Schwarz\\  
+		\hline   CustomExceptionHandlerFactory.java                     & 16.06.2015 \ \ 15:00       & 16.06.2015 \ \ 16:00        & 1h                 & Sebastian Schwarz\\  
 		\hline 
 	\end{tabular} \ \\
 	\ \\	
@@ -271,9 +271,9 @@ Als Konvention gilt hier, dass Tests immer das Wort
 	\subsection{Mehrsprachigkeit}
 	\begin{tabular}{|p{10.3cm}|p{3.2cm}|p{3.2cm}|c|p{3.5cm}|}
 		\hline  \textbf{Arbeitspaket} & \textbf{Startzeitpunkt} & \textbf{Endzeitpunkt} & \textbf{Aufwand in h} & \textbf{Verantwortlicher} \\ 
-		\hline   LanguageManager.xhtml                                 &                            &                             &                     &\\
-		\hline   language\_de.properties                               &                            &                             &                     &\\
-		\hline   language\_en.properties                               &                            &                             &                     &\\
+		\hline   LanguageManager.java                                  & 16.06.2015 \ \ 14:00        & 16.06.2015 \ \ 16:00        &  2h                 & Patrick Cretu\\ 
+		\hline   language\_de.properties                               & 16.06.2015 \ \ 09:00        & 16.06.2015 \ \ 12:00        &  3h                 & Ricky Strohmeier\\
+		\hline   language\_en.properties                               & 17.06.2015 \ \ 09:00        & 17.06.2015 \ \ 12:00        &  3h                 & Patrick Cretu\\ 
 		\hline 
 	\end{tabular} \ \\
 	\ \\
@@ -281,9 +281,9 @@ Als Konvention gilt hier, dass Tests immer das Wort
 	\subsection{Teilnehmerliste}
 	\begin{tabular}{|p{10.3cm}|p{3.2cm}|p{3.2cm}|c|p{3.5cm}|}
 		\hline  \textbf{Arbeitspaket} & \textbf{Startzeitpunkt} & \textbf{Endzeitpunkt} & \textbf{Aufwand in h} & \textbf{Verantwortlicher} \\ 
-		\hline   listParticipients.xhtml                                     &                            &                             &                     &\\
-		\hline   ListParticipantsBean.java                                   &                            &                             &                     &\\
-		\hline   UserDAO.getParticipiantsOfCourse(Transaction trans,PaginationData pagination, int courseID)  &                            &                             &                     &\\
+		\hline   listParticipients.xhtml                                    & 15.06.2015 \ \ 13:00     & 15.06.2015 \ \ 15:00     &      2h               & Kathi Hölzl\\
+		\hline   ListParticipantsBean.java                                  & 15.06.2015 \ \ 15:00     & 15.06.2015 \ \ 18:00     &      3h               & Kathi Hölzl\\
+		\hline   UserDAO.getParticipiantsOfCourse(Transaction trans,PaginationData pagination, int courseID)  & 15.06.2015 \ \ 08:00     & 15.06.2015 \ \ 09:30     &      1,5h               & Kathi Hölzl\\
 		\hline 
 	\end{tabular} \ \\
 	\ \\
@@ -291,9 +291,9 @@ Als Konvention gilt hier, dass Tests immer das Wort
 	\subsection{Trainerprofil anzeigen}	
 	\begin{tabular}{|p{10.3cm}|p{3.2cm}|p{3.2cm}|c|p{3.5cm}|}
 		\hline  \textbf{Arbeitspaket} & \textbf{Startzeitpunkt} & \textbf{Endzeitpunkt} & \textbf{Aufwand in h} & \textbf{Verantwortlicher} \\ 
-		\hline   leaderProfile.xhtml                      &                            &                             &                     &\\
-		\hline   UserProfileBean.initializeLeaderProfile()&                            &                             &                     &\\
-		\hline   UserDAO.getCoursesLeadedBy(Transaction trans, int userID, PaginationData pagination)  &                            &                             &                     &\\
+		\hline   leaderProfile.xhtml                      & 15.06.2015 \ \ 08:00        & 15.06.2015 \ \ 10:00        &  2h                 & Ricky Strohmeier\\
+		\hline   UserProfileBean.initializeLeaderProfile()& 15.06.2015 \ \ 13:00        & 15.06.2015 \ \ 14:30        &  1,5h                 & Ricky Strohmeier\\
+		\hline   UserDAO.getCoursesLeadedBy(Transaction trans, int userID, PaginationData pagination)  & 15.06.2015 \ \ 14:30        & 15.06.2015 \ \ 16:00        &  1,5h                 & Ricky Strohmeier\\
 		\hline 
 	\end{tabular} \ \\
 	\ \\
@@ -301,9 +301,9 @@ Als Konvention gilt hier, dass Tests immer das Wort
 	\subsection{Terminplaner}
 	\begin{tabular}{|p{10.3cm}|p{3.2cm}|p{3.2cm}|c|p{3.5cm}|}
 		\hline  \textbf{Arbeitspaket} & \textbf{Startzeitpunkt} & \textbf{Endzeitpunkt} & \textbf{Aufwand in h} & \textbf{Verantwortlicher} \\ 
-		\hline   scheduler.xhtml                                 &                            &                             &                     &\\
-		\hline   SchedulerBean.java                              &                            &                             &                     &\\
-		\hline   CourseUnitDAO.getCourseUnitsOf(Transaction trans, int userID)  &                            &                             &                     &\\
+		\hline   scheduler.xhtml                                 & 16.06.2015 \ \ 09:00        & 16.06.2015 \ \ 13:00        &  4h                 & Patrick Cretu\\ 
+		\hline   SchedulerBean.java                              & 15.06.2015 \ \ 13:00        & 15.06.2015 \ \ 18:00        &  5h                 & Patrick Cretu\\ 
+		\hline   CourseUnitDAO.getCourseUnitsOf(Transaction trans, int userID)  & 15.06.2015 \ \ 08:00        & 15.06.2015 \ \ 10:00        &  2h  & Patrick Cretu\\ 
 		\hline 
 	\end{tabular} \ \\
 	\ \\
@@ -311,8 +311,8 @@ Als Konvention gilt hier, dass Tests immer das Wort
 	\subsection{Benutzer aktivieren}
 	\begin{tabular}{|p{10.3cm}|p{3.2cm}|p{3.2cm}|c|p{3.5cm}|}
 		\hline  \textbf{Arbeitspaket} & \textbf{Startzeitpunkt} & \textbf{Endzeitpunkt} & \textbf{Aufwand in h} & \textbf{Verantwortlicher} \\ 
-		\hline   activateUsers.xhtml                                 &                            &                             &                     &\\
-		\hline   AccountManagementBean.java                              &                            &                             &                     &\\
+		\hline   activateUsers.xhtml                                 & 16.06.2015 \ \ 13:00     & 16.06.2015 \ \ 15:00     &      2h               & Kathi Hölzl\\
+		\hline   AccountManagementBean.java                          & 16.06.2015 \ \ 09:00     & 16.06.2015 \ \ 12:00     &      3h               & Kathi Hölzl\\
 		\hline 
 	\end{tabular} \ \\
 	\ \\
@@ -320,14 +320,14 @@ Als Konvention gilt hier, dass Tests immer das Wort
 	\subsection{Administratoreinstellungen}
 	\begin{tabular}{|p{10.3cm}|p{3.2cm}|p{3.2cm}|c|p{3.5cm}|}
 		\hline  \textbf{Arbeitspaket} & \textbf{Startzeitpunkt} & \textbf{Endzeitpunkt} & \textbf{Aufwand in h} & \textbf{Verantwortlicher} \\ 
-		\hline   adminManagement.xhtml                                 &                            &                             &                     & Tobias Fuchs\\
-		\hline   SystemConfigurationBean.java                          &                            &                             &                     & Tobias Fuchs\\
-		\hline   PaymentOfflineBean.java                               &                            &                             &                     & Tobias Fuchs \\
-		\hline   OfflineTransactionValidator.java                      &                            &                             &                     & Tobias Fuchs\\
-		\hline   BankAccountException.java                             &                            &                             &                     & Tobias Fuchs\\
-		\hline   SystemDAO.setOverdraftCredit(Transaction trans, int credit)                  &                            &                             &                     & Tobias Fuchs\\
-		\hline   SystemDAO.setActivationType(Transaction trans, String type)                  &                            &                             &                     & Tobias Fuchs\\
-		\hline   SystemDAO.setSignOffLimit(Transaction trans, int limit)                      &                            &                             &                     & Tobias Fuchs\\
+		\hline   adminManagement.xhtml                                 & 15.06.2015 \ \ 16:00       & 15.06.2015  \ \  18:00      &  2h                & Tobias Fuchs\\
+		\hline   SystemConfigurationBean.java                          & 15.06.2015 \ \ 13:00       & 15.06.2015  \ \  16:00      &  3h                & Tobias Fuchs\\
+		\hline   PaymentOfflineBean.java                               & 15.06.2015 \ \ 08:00       & 15.06.2015  \ \  09:00      &  1h                & Tobias Fuchs\\
+		\hline   OfflineTransactionValidator.java                      & 15.06.2015 \ \ 09:00       & 15.06.2015  \ \  10:00      &  1h                & Tobias Fuchs\\
+		\hline   BankAccountException.java                             & 16.06.2015 \ \ 08:00       & 16.06.2015  \ \  09:00      &  1h                & Tobias Fuchs\\
+		\hline   SystemDAO.setOverdraftCredit(Transaction trans, int credit)  & 16.06.2015 \ \ 09:00       & 16.06.2015  \ \  10:00      &  1h                & Tobias Fuchs\\
+		\hline   SystemDAO.setActivationType(Transaction trans, String type)  & 16.06.2015 \ \ 10:00       & 16.06.2015  \ \  11:00      &  1h                & Tobias Fuchs\\
+		\hline   SystemDAO.setSignOffLimit(Transaction trans, int limit)      & 16.06.2015 \ \ 11:00       & 16.06.2015  \ \  12:00      &  1h                & Tobias Fuchs\\
 		\hline 
 	\end{tabular} \ \\
 	\ \\
@@ -335,9 +335,9 @@ Als Konvention gilt hier, dass Tests immer das Wort
 	\subsection{AGB, Impressum, Hilfe}
 	\begin{tabular}{|p{10.3cm}|p{3.2cm}|p{3.2cm}|c|p{3.5cm}|}
 		\hline  \textbf{Arbeitspaket} & \textbf{Startzeitpunkt} & \textbf{Endzeitpunkt} & \textbf{Aufwand in h} & \textbf{Verantwortlicher} \\ 
-		\hline   agb.xhtml                                 &                            &                             &                     &\\
-		\hline   imprint.xhtml                              &                            &                             &                     &\\
-		\hline   help.xhtml        &                            &                             &                     &\\
+		\hline   agb.xhtml          & 16.06.2015 \ \ 13:00        & 16.06.2015 \ \ 15:00        &  2h                 & Ricky Strohmeier\\
+		\hline   imprint.xhtml      & 16.06.2015 \ \ 15:00        & 16.06.2015 \ \ 16:00        &  1h                 & Ricky Strohmeier\\
+		\hline   help.xhtml         & 16.06.2015 \ \ 16:00        & 16.06.2015 \ \ 18:00        &  2h                 & Ricky Strohmeier\\
 		\hline 
 	\end{tabular} \ \\
 	\ \\	
@@ -345,7 +345,7 @@ Als Konvention gilt hier, dass Tests immer das Wort
 	\subsection{Wartung}
 	\begin{tabular}{|p{10.3cm}|p{3.2cm}|p{3.2cm}|c|p{3.5cm}|}
 		\hline  \textbf{Arbeitspaket} & \textbf{Startzeitpunkt} & \textbf{Endzeitpunkt} & \textbf{Aufwand in h} & \textbf{Verantwortlicher} \\ 
-		\hline   Maintenance.java                           &                            &                             &                     &\\
+		\hline   Maintenance.java         & 16.06.2015 \ \ 14:00       & 16.06.2015  \ \  17:00      &  3h                & Tobias Fuchs\\
 		\hline
 	\end{tabular}				
 \end{landscape}
