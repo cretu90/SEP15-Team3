@@ -23,7 +23,7 @@ Als Konvention gilt hier, dass Tests immer das Wort
 	\hline  SessionUser          & SessionUserBean.java                     & 02.06.2015 \ \ 08:00        & 02.06.2015 \ \ 09:00        &  1h                 & Sebastian Schwarz\\ 
 	\hline  PropertyManager      & PropertyManager.java                     & 01.06.2015 \ \ 16:00        & 01.06.2015 \ \ 20:00        &  4h                 & Tobias Fuchs\\ 
 	& ofCourse.properties                      &                            &                              &                                                  &\\
-	\hline  EncodingFilter       & EncodingFilter.java                      & 02.06.2015 \ \ 08:00         & 02.06.2015  \ \  10:00      &  2h                & Patrick Cretu\\ 
+	\hline  EncodingFilter       & EncodingFilter.java                      & 02.06.2015 \ \ 09:00         & 02.06.2015  \ \  11:00      &  2h                & Sebastian Schwarz\\ 
 	\hline  DatabaseConnectionManager       &  DatabaseConnectionManager.java & 01.06.2015 \ \ 08:00       & 01.06.2015  \ \  16:00      &  5h                & Tobias Fuchs\\   
 	&  DatabaseConnectionManagerTest.java & 04.06.2015 \ \ 08:00       & 04.06.2015  \ \  10:00      &  2h                & Tobias Fuchs\\   
 	\hline  CheckPhase           & CheckPhase.java                            & 02.06.2015 \ \ 08:00       & 02.06.2015  \ \  12:00      &  4h                & Tobias Fuchs\\
@@ -34,8 +34,9 @@ Als Konvention gilt hier, dass Tests immer das Wort
 	& mail.properties                            &                            &                            &                                                  &\\
 	\hline Transaktionen         & Transaction.java                           & 01.06.2015 \ \ 08:00       & 01.06.2015 \ \ 10:00        & 2h                 & Sebastian Schwarz\\  
 	& Connection.java                            &                            &                            &                                                  &\\  
+	& TransactionTest.java                       &  04.06.2015 \ \ 08:00      & 04.06.2015 \ \ 10:00       &   2h                       & Sebastian Schwarz \\                  
 	\hline Systemstart           & LaunchSystem.java                          & 02.06.2015 \ \ 17:00       & 02.06.2015 \ \ 13:00        & 4h                 & Sebastian Schwarz\\
-	\hline Passwort hashen       & PasswordHash.java                          & 02.06.2015 \ \ 09:00       & 02.06.2015 \ \ 11:00        & 2h                 & Sebastian Schwarz\\       	   
+	\hline Passwort hashen       & PasswordHash.java                          & 01.06.2015 \ \ 17:00       & 01.06.2015 \ \ 19:00        & 2h                 & Patrick Cretu\\       	   
 	\hline 
 \end{tabular} \ \\
 \ \\
@@ -76,6 +77,7 @@ Als Konvention gilt hier, dass Tests immer das Wort
 	\hline   FooterBean.java                  & 02.06.2015 \ \ 13:00     & 02.06.2015 \ \ 14:00     &      1h               & Ricky Strohmeier\\ 
 	\hline   navigation.xhtml                 & 01.06.2015 \ \ 14:00     & 01.06.2015 \ \ 15:30     &      1,5h             & Ricky Strohmeier\\ 
 	\hline   NavigationBean.java              & 02.06.2015 \ \ 08:00     & 02.06.2015 \ \ 10:30     &      2,5h             & Ricky Strohmeier\\ 
+	\hline   NavigationTest.java              & 04.06.2015 \ \ 08:00     & 04.06.2015 \ \ 10:00     &      2h               & Ricky Strohmeier\\ 
 	\hline 
 \end{tabular} \ \\
 \ \\
@@ -85,7 +87,7 @@ Als Konvention gilt hier, dass Tests immer das Wort
 	\hline  \textbf{Arbeitspaket} & \textbf{Startzeitpunkt} & \textbf{Endzeitpunkt} & \textbf{Aufwand in h} & \textbf{Verantwortlicher} \\ 
 	\hline   authenticate.xhtml                                   & 02.06.2015 \ \ 12:00     & 02.06.2015 \ \ 14:00     &      2h               & Kathi Hölzl\\
 	\hline   AuthenticateUserBean.java                            & 02.06.2015 \ \ 08:00     & 02.06.2015 \ \ 11:00     &      3h               & Kathi Hölzl\\
-	\hline   UserDAO.getUser(Transaction trans, String name)      & 01.06.2015 \ \ 18:00     & 01.06.2015 \ \ 19:00     &      1h               & Kathi Hölzl\\
+	\hline   UserDAO.getUser(Transaction trans, String username)  & 01.06.2015 \ \ 18:00     & 01.06.2015 \ \ 19:00     &      1h               & Kathi Hölzl\\
 	\hline   UserDAO.getUserID(Transaction trans, String username)& 01.06.2015 \ \ 17:00     & 01.06.2015 \ \ 18:00     &      1h               & Kathi Hölzl\\
 	\hline 
 \end{tabular} \ \\
@@ -100,7 +102,7 @@ Als Konvention gilt hier, dass Tests immer das Wort
 	\hline   ConfirmPasswordValidator.java                        & 01.06.2015 \ \ 09:00     & 01.06.2015 \ \ 10:00     &      1h               & Kathi Hölzl\\
 	\hline   DateOfBirthValidator.java                            & 01.06.2015 \ \ 16:00     & 01.06.2015 \ \ 17:00     &      1h               & Kathi Hölzl\\
 	\hline   UserDAO.createUser(Transaction trans, User user)     & 03.06.2015 \ \ 08:00     & 03.06.2015 \ \ 10:00     &      2h               & Kathi Hölzl\\
-	\hline   UserDAO.getNewUserID(Transaction trans)              & 02.06.2015 \ \ 16:00     & 02.06.2015 \ \ 16:30     &      0.5h             & Kathi Hölzl\\
+	\hline   UserDAO.getNewUserID(Transaction trans)              & 02.06.2015 \ \ 16:00     & 02.06.2015 \ \ 17:00     &      1h              & Kathi Hölzl\\
 	\hline   SystemDAO.getActivationType(Transaction trans)       & 02.06.2015 \ \ 14:00     & 02.06.2015 \ \ 15:00     &      1h               & Kathi Hölzl\\
 	\hline   RegistrationTest.java                                & 04.06.2015 \ \ 08:00     & 04.06.2015 \ \ 10:00     &      2h               & Kathi Hölzl\\
 	\hline 
@@ -136,6 +138,7 @@ Als Konvention gilt hier, dass Tests immer das Wort
 	\hline   CourseDAO.getCourses(Transaction trans, PaginationData pagination)    & 02.06.2015 \ \ 10:00        & 02.06.2015 \ \ 11:00        &  1h                 & Patrick Cretu\\ 
 	\hline  CourseDAO.getCourses(Transaction trans,PaginationData pagination, String searchString, String searchParam)& 02.06.2015 \ \ 13:00        & 02.06.2015 \ \ 14:30        &  1,5h                 & Patrick Cretu\\ 
 	\hline  CourseDAO.getCoursesOrdered(Transaction trans, PaginationData pagination, String searchString, String searchParam, String orderParam)& 02.06.2015 \ \ 14:30        & 02.06.2015 \ \ 16:00        &  1,5h                 & Patrick Cretu\\ 
+	\hline SearchCourseTest.java & 03.06.2015  \ \ 13:30 & 03.06.2015 \ \ 15:30 & 2h & Patrick Cretu\\
 	\hline 
 \end{tabular} \ \\
 \ \\
@@ -152,7 +155,8 @@ Als Konvention gilt hier, dass Tests immer das Wort
 		\hline   profile.xhtml                                         & 09.06.2015 \ \ 14:00        & 09.06.2015 \ \ 17:00        &  3h                 & Patrick Cretu\\ 
 		\hline   UserProfileBean.java                                  & 09.06.2015 \ \ 09:00        & 09.06.2015 \ \ 13:00        &  4h                 & Patrick Cretu\\ 
 		\hline   UserImageValidator.java                               & 10.06.2015 \ \ 09:00        & 10.06.2015 \ \ 10:00        &  1h                 & Patrick Cretu\\ 
-		\hline   UserDAO.getUser(Transaction trans, int userID)        & 09.06.2015 \ \ 17:00        & 09.06.2015 \ \ 18:00        &  1h                 & Patrick Cretu\\ 
+		\hline   UserDAO.getUser(Transaction trans, int userID)        & 09.06.2015 \ \ 17:00        & 09.06.2015 \ \ 18:00        &  1h                 & Patrick Cretu\\  
+		\hline UserImageUploadTest.java & 10.06.2015 \ \ 10:00 & 10.06.2015 \ \ 12:00 & 2h & Patrick Cretu\\
 		\hline 
 	\end{tabular} \ \\
 	\ \\
@@ -163,6 +167,7 @@ Als Konvention gilt hier, dass Tests immer das Wort
 		\hline   createUser.xhtml                                      & 08.06.2015 \ \ 16:30        & 08.06.2015 \ \ 18:30        &  2h                 & Patrick Cretu\\ 
 		\hline   UserManagementBean.java                               & 08.06.2015 \ \ 13:00        & 08.06.2015 \ \ 16:30        &  3,5h               & Patrick Cretu\\ 
 		\hline   UserDAO.deleteUser(Transaction trans, int userID)     & 08.06.2015 \ \ 08:00        & 08.06.2015 \ \ 09:30        &  1,5h               & Patrick Cretu\\ 
+		\hline CreateUserTest.java & 10.06.2015 \ \ 13:00 & 10.06.2015 \ \ 15:00 & 2h & Patrick Cretu\\
 		\hline 
 	\end{tabular} \ \\
 	\ \\
@@ -183,6 +188,7 @@ Als Konvention gilt hier, dass Tests immer das Wort
 		\hline   CourseDAO.updateCourse(Transaction trans, Course course)   & 08.06.2015 \ \ 15:00       & 08.06.2015  \ \  16:00      &  1h              & Ricky Strohmeier\\
 		\hline   CourseUnitDAO.getCourseUnitsFromCourse(Transaction trans, int courseID, PaginationData pagination) & 08.06.2015 \ \ 16:00       & 08.06.2015  \ \  17:30      &  1,5h              & Ricky Strohmeier\\
 		\hline   CourseDAO.getLeaders(Transaction trans, int courseID)    & 08.06.2015 \ \ 13:30       & 08.06.2015  \ \  15:00      &  1,5h              & Ricky Strohmeier\\
+		\hline   EditCourseTest.java              & 11.06.2015 \ \ 08:00     & 11.06.2015 \ \ 10:00     &      2h               & Ricky Strohmeier\\ 
 		\hline 
 	\end{tabular} \ \\
 	\ \\
@@ -202,6 +208,7 @@ Als Konvention gilt hier, dass Tests immer das Wort
 		\hline   CourseUnitDAO.removeUserFromCourseUnit(Transaction trans, int userID, int courseUnitID) & 10.06.2015 \ \ 10:30       & 10.06.2015 \ \ 12:00        & 1,5h                 & Sebastian Schwarz\\
 		\hline   SystemDAO.getSignOffLimit(Transaction trans)                 & 08.06.2015 \ \ 16:30       & 08.06.2015 \ \ 17:00        & 0,5h                 & Sebastian Schwarz\\
 		\hline   SystemDAO.getOverdraftCredit(Transaction trans)              & 08.06.2015 \ \ 17:00       & 08.06.2015 \ \ 17:30        & 0,5h                 & Sebastian Schwarz\\
+		\hline EditCourseAndCourseUnitTest.java &  11.06.2015 \ \ 08:00       & 11.06.2015 \ \ 10:00       & 2h                 & Sebastian Schwarz\\
 		\hline 
 	\end{tabular} \ \\
 	\ \\
@@ -223,12 +230,12 @@ Als Konvention gilt hier, dass Tests immer das Wort
 		\hline   CourseManagementBean.java                             & 08.06.2015 \ \ 13:00     & 08.06.2015 \ \ 18:00     &      5h               & Kathi Hölzl\\
 		\hline   CourseInstructorValidator.java                        & 08.06.2015 \ \ 08:00     & 08.06.2015 \ \ 09:00     &      1h               & Kathi Hölzl\\
 		\hline   PriceValidator.java                                   & 08.06.2015 \ \ 09:00     & 08.06.2015 \ \ 10:00     &      1h               & Kathi Hölzl\\
-		\hline   ImageValidator.java                                   & 09.06.2015 \ \ 11:00     & 09.06.2015 \ \ 12:00     &      1h               & Kathi Hölzl\\
+		\hline   ImageValidator.java                                   & 09.06.2015 \ \ 08:00     & 09.06.2015 \ \ 09:00     &      1h               & Kathi Hölzl\\
 		\hline   CourseDAO.createCourse(Transaction trans, Course course)    & 09.06.2015 \ \ 13:00     & 09.06.2015 \ \ 14:00     &      1h               & Kathi Hölzl\\
 		\hline   CourseDAO.getNewCourseID(Transaction trans)                 & 10.06.2015 \ \ 10:00     & 10.06.2015 \ \ 10:30     &      0,5h             & Kathi Hölzl\\
 		\hline   CourseDAO.deleteCourse(Transaction trans, int courseID)     & 09.06.2015 \ \ 14:00     & 09.06.2015 \ \ 16:00     &      2h               & Kathi Hölzl\\
-		\hline   CourseDAO.addLeaderToCourse(Transaction trans, int userID, int courseID)    & 10.06.2015 \ \ 09:00     & 10.06.2015 \ \ 10:00     &   1h  & Kathi Hölzl\\
-		\hline   CourseDAO.removeLeaderFromCourse(Transaction trans, int userID, int course) & 09.06.2015 \ \ 16:00     & 09.06.2015 \ \ 18:00     &   2h  & Kathi Hölzl\\
+		\hline   CourseDAO.addLeaderToCourse(Transaction trans, int userID, int courseID)    & 10.06.2015 \ \ 09:00     & 10.06.2015 \ \ 10:00     &   1,5h  & Kathi Hölzl\\
+		\hline   CourseDAO.removeLeaderFromCourse(Transaction trans, int userID, int course) & 09.06.2015 \ \ 16:00     & 09.06.2015 \ \ 18:00     &   1,5h  & Kathi Hölzl\\
 		\hline   CreateCourseTest.java                                & 11.06.2015 \ \ 08:00     & 11.06.2015 \ \ 10:00     &      2h               & Kathi Hölzl\\
 		\hline 
 	\end{tabular} \ \\
@@ -245,7 +252,7 @@ Als Konvention gilt hier, dass Tests immer das Wort
 		\hline   CourseUnitDAO.deleteCourseUnit(Transaction trans, int courseUnitID)                     & 10.06.2015 \ \ 12:00       & 10.06.2015  \ \  13:30      &   1,5h                & Tobias Fuchs\\
 		\hline   CourseUnitDAO.getNewCourseUnitID(Transaction trans)        & 10.06.2015 \ \ 16:00       & 10.06.2015  \ \ 16:30      &  0,5h              & Tobias Fuchs\\
 		\hline   UserDAO.getParticipiantsOfCourseUnit(Transaction trans, PaginationData pagination, int courseUnitId)& 10.06.2015 \ \ 14:30       & 10.06.2015  \ \  16:00      &   1,5h                & Tobias Fuchs\\
-		\hline   CourseUnitTest& 11.06.2015 \ \ 08:00       & 11.06.2015  \ \  10:00      &   2h                & Tobias Fuchs\\
+		\hline   CourseUnitTest.java& 11.06.2015 \ \ 08:00       & 11.06.2015  \ \  10:00      &   2h                & Tobias Fuchs\\
 		\hline 
 	\end{tabular} \ \\
 	\ \\
@@ -266,6 +273,7 @@ Als Konvention gilt hier, dass Tests immer das Wort
 		\hline   UserDAO.getUsers(Transaction trans,PaginationData pagination) & 16.06.2015 \ \ 08:00       & 16.06.2015 \ \ 09:00        & 1h                 & Sebastian Schwarz\\  
 		\hline   UserDAO.getUsers(Transaction trans, PaginationData pagination, String searchString, String searchParam) & 15.06.2015 \ \ 08:00       & 15.06.2015 \ \ 09:30        & 1,5h                 & Sebastian Schwarz\\  
 		\hline   UserDAO.getUsersOrdered(Transaction trans, PaginationData pagination, String searchString, String searchParam, String orderParam)    & 16.06.2015 \ \ 09:00       & 16.06.2015 \ \ 10:30        & 1,5h                 & Sebastian Schwarz\\  
+		\hline SearchUserTest.java      &   17.06.2015 \ \ 08:00         &  17.06.2015 \ \ 10:00          &        2h           & Sebastian Schwarz \\
 		\hline 
 	\end{tabular} \ \\
 	\ \\
@@ -306,6 +314,7 @@ Als Konvention gilt hier, dass Tests immer das Wort
 		\hline   leaderProfile.xhtml                      & 15.06.2015 \ \ 08:00        & 15.06.2015 \ \ 10:00        &  2h                 & Ricky Strohmeier\\
 		\hline   UserProfileBean.initializeLeaderProfile()& 15.06.2015 \ \ 13:00        & 15.06.2015 \ \ 14:30        &  1,5h                 & Ricky Strohmeier\\
 		\hline   UserDAO.getCoursesLeadedBy(Transaction trans, int userID, PaginationData pagination)  & 15.06.2015 \ \ 14:30        & 15.06.2015 \ \ 16:00        &  1,5h                 & Ricky Strohmeier\\
+		\hline   TrainerProfileTest.java  & 17.06.2015 \ \ 08:00        & 17.06.2015 \ \ 10:00        &  2h                 & Ricky Strohmeier\\
 		\hline 
 	\end{tabular} \ \\
 	\ \\
@@ -316,6 +325,7 @@ Als Konvention gilt hier, dass Tests immer das Wort
 		\hline   scheduler.xhtml                                 & 16.06.2015 \ \ 09:00        & 16.06.2015 \ \ 13:00        &  4h                 & Patrick Cretu\\ 
 		\hline   SchedulerBean.java                              & 15.06.2015 \ \ 13:00        & 15.06.2015 \ \ 18:00        &  5h                 & Patrick Cretu\\ 
 		\hline   CourseUnitDAO.getCourseUnitsOf(Transaction trans, int userID)  & 15.06.2015 \ \ 08:00        & 15.06.2015 \ \ 10:00        &  2h  & Patrick Cretu\\ 
+		\hline ViewSchedulerTest.java & 17.06.2015 \ \ 13:00 & 17.06.2015 \ \ 15:00 & 2h & Patrick Cretu\\
 		\hline 
 	\end{tabular} \ \\
 	\ \\
@@ -325,7 +335,7 @@ Als Konvention gilt hier, dass Tests immer das Wort
 		\hline  \textbf{Arbeitspaket} & \textbf{Startzeitpunkt} & \textbf{Endzeitpunkt} & \textbf{Aufwand in h} & \textbf{Verantwortlicher} \\ 
 		\hline   activateUsers.xhtml                                 & 16.06.2015 \ \ 13:00     & 16.06.2015 \ \ 15:00     &      2h               & Kathi Hölzl\\
 		\hline   AccountManagementBean.java                          & 16.06.2015 \ \ 09:00     & 16.06.2015 \ \ 12:00     &      3h               & Kathi Hölzl\\
-		\hline   ActivateUsersTest.java                                & 18.06.2015 \ \ 08:00     & 18.06.2015 \ \ 10:00     &      2h               & Kathi Hölzl\\
+		\hline   ActivateUsersTest.java                                & 16.06.2015 \ \ 14:00     & 16.06.2015 \ \ 16:00     &      2h               & Kathi Hölzl\\
 		\hline 
 	\end{tabular} \ \\
 	\ \\
@@ -341,7 +351,7 @@ Als Konvention gilt hier, dass Tests immer das Wort
 		\hline   SystemDAO.setOverdraftCredit(Transaction trans, int credit)  & 16.06.2015 \ \ 09:00       & 16.06.2015  \ \  10:00      &  1h                & Tobias Fuchs\\
 		\hline   SystemDAO.setActivationType(Transaction trans, String type)  & 16.06.2015 \ \ 10:00       & 16.06.2015  \ \  11:00      &  1h                & Tobias Fuchs\\
 		\hline   SystemDAO.setSignOffLimit(Transaction trans, int limit)      & 16.06.2015 \ \ 11:00       & 16.06.2015  \ \  12:00      &  1h                & Tobias Fuchs\\
-		\hline  AdministratorSettingsTest     & 18.06.2015 \ \ 08:00       & 18.06.2015  \ \  10:00      &  2h                & Tobias Fuchs\\
+		\hline  AdministratorSettingsTest.java     & 16.06.2015 \ \ 15:00       & 16.06.2015  \ \  17:00      &  2h                & Tobias Fuchs\\
 		\hline 
 	\end{tabular} \ \\
 	\ \\
@@ -359,7 +369,7 @@ Als Konvention gilt hier, dass Tests immer das Wort
 	\subsection{Wartung}
 	\begin{tabular}{|p{10.3cm}|p{3.2cm}|p{3.2cm}|c|p{3.5cm}|}
 		\hline  \textbf{Arbeitspaket} & \textbf{Startzeitpunkt} & \textbf{Endzeitpunkt} & \textbf{Aufwand in h} & \textbf{Verantwortlicher} \\ 
-		\hline   Maintenance.java         & 16.06.2015 \ \ 14:00       & 16.06.2015  \ \  17:00      &  3h                & Tobias Fuchs\\
+		\hline   Maintenance.java         & 17.06.2015 \ \ 09:00       & 17.06.2015  \ \  12:00      &  3h                & Kathi Hölzl\\
 		\hline
 	\end{tabular}				
 \end{landscape}
