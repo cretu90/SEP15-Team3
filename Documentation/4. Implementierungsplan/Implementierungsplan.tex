@@ -2,7 +2,7 @@
 \chapter{Implementierungsplan}
 Die Milestones sind so geplant, dass sie jeweils eine zeitliche Dauer von 5 Tagen haben. Die Arbeitspakete werden
 je nach Dringlichkeit in diese drei Milestones eingeteilt. Die einzelnen Implementierer werden jeweils
-mit einer Gesamtstundenanzahl von maximal 30 Stunden pro Milestone eingeplant. Die Aufgabenpakete wurden, soweit dies möglich war, vertikal zusammengestellt.
+mit einer Gesamtstundenanzahl von maximal 25 Stunden pro Milestone eingeplant. Die Aufgabenpakete wurden, soweit dies möglich war, vertikal zusammengestellt.
 Dies bedeutet, dass beispielsweise ein Bearbeiter das Facelet, die dazu
 gehörige Businesslogik und die benötigten DAOs erstellt.\\
 \ \\
@@ -12,21 +12,21 @@ Sollte dies von Nöten sein, so werden die Wunschkriterien, also der Terminplane
 Grundsätzlich wird aber davon ausgegangen alle Wunschkriterien umzusetzen.
 \section{Milestone 1}
 
-Der Inhalt des ersten Milestones besteht einerseits aus den kritischen Arbeitspakete und zum Anderen aus
+Der Inhalt des ersten Milestones besteht einerseits aus den kritischen Arbeitspaketen und zum Anderen aus
 ersten Grundfunktionalitäten.\\
-Zu den kritischen Arbeitspaketen zählt der \kursiv{DatabaseConnectionManager}. Dieser ist zuständig für das etablieren der Datenbankverbindungen und die Weiterverteilung dieser. Da viele andere Komponenten eine Datenbankverbindung benötigen und somit davon abhängen, muss dieser zu Beginn der Implementierung realisiert werden.\\
-Außerdem wird wird der \kursiv{PropertyManager} implementiert, welcher dafür zuständig ist, die nötigen Parameter aus der Konfigurationsdatei zu laden.
-Eine weitere wichtige Aufgabe, die bereits zum ersten Milestone zugeordnet wird, ist die
+Zu den kritischen Arbeitspaketen zählt der \kursiv{DatabaseConnectionManager}. Dieser ist zuständig für das Etablieren der Datenbankverbindungen und die Weiterverteilung dieser. Da viele andere Komponenten eine Datenbankverbindung benötigen und somit davon abhängen, muss dieser zu Beginn der Implementierung realisiert werden.\\
+Außerdem wird der \kursiv{PropertyManager} implementiert, welcher dafür zuständig ist, die nötigen Parameter aus den Konfigurationsdateien zu laden.
+Eine weitere wichtige Aufgabe, die bereits dem ersten Milestone zugeordnet wird, ist die
 Implementierung des Systemstarts. Dadurch wird sichergestellt, dass bei Systemstart alle
-benötigten Initialisierungen gestartet werden, wie das Einlesen der Propertydateien, die Erstellung der Datenbanktabellen und Initialisierung des \kursiv{DatabaseConnectionManagers}.
+benötigten Initialisierungen durchgeführt werden, wie das Einlesen der Propertydateien, die Erstellung der Datenbanktabellen und Initialisierung des \kursiv{DatabaseConnectionManagers}.
 Des weiteren ist das Aufsetzen der Datenbank, d.h. die Erstellung der benötigten Tabellen, ... und das zur Verfügung stellen des Logging - Mechanismus Teil des ersten Milestones.\\
 Darüber hinaus wird der  UTF-8-Filter implementiert, welcher sicherstellt, dass die Benutzereingaben
 im richtigen Encoding in der Datenbank hinterlegt werden.\\
 Als letzter Punkt der kritischen Grundfunktionalität wird hier die Implementierung der automatischen E-Mail-Generierung vorgenommen, welche für die Versendung von E-Mails, wie etwa die Bestätigungs-E-Mails bei der Registrierung, zuständig ist.\\ 
 Zusätzlich zu den kritischen Komponenten werden im ersten Milestone auch erste Grundfunktionalitäten des Systems implementiert, d.h. die Struktur der View wird implementiert und DTOs werden angelegt.\\
-Der erste Milestone beinhaltet ebenfalls die Implementierung des Anmeldens, der Registrierung und der Passwort vergessen - Funktion.\\
+Der erste Milestone beinhaltet ebenfalls die Implementierung des Anmeldens, der Registrierung und der 'Passwort vergessen' - Funktion.\\
 Außerdem soll die \kursiv{Meine Kurse} - Seite angezeigt werden können und die Suche nach Kursen möglich sein.
-Ebenfalls werden im ersten Milestone erste Tests durchgeführt um Fehler aufzudecken.\\
+Ebenfalls werden im ersten Milestone  bereits erste Tests durchgeführt um Fehler frühzeitig aufzudecken.\\
 
 \section{Milestone 2}
 
