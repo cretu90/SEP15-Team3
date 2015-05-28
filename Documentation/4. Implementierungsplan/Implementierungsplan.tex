@@ -1,60 +1,62 @@
 \newcommand{\kursiv}[1]{{\it #1}}
 \chapter{Implementierungsplan}
-Die Milestones sind so geplant, dass sie jeweils eine zeitliche Dauer von 5 Tagen haben. Die Arbeitspakete werden
-je nach Dringlichkeit in diese drei Milestones eingeteilt. Die einzelnen Implementierer werden jeweils
-mit einer Gesamtstundenanzahl von maximal 25 Stunden pro Milestone eingeplant. Die Aufgabenpakete wurden, soweit dies möglich war, vertikal zusammengestellt.
-Dies bedeutet, dass beispielsweise ein Bearbeiter das Facelet, die dazu
-gehörige Businesslogik und die benötigten DAOs erstellt.\\
-\ \\
+Planmäßig beträgt der zeitliche Umfang der Milestones jeweils fünf Tage. Die Arbeitspakete werden
+je nach Wichtigkeit und Abhängigkeit für darauffolgende Pakete in drei Milestones eingeteilt. Für die einzelnen Verantwortlichen ist jeweils eine Gesamtstundenanzahl von maximal 25 Stunden pro Milestone geplant. Die Pakete wurden, sofern möglich, vertikal zusammengestellt.
+Beispielsweise erstellt ein Bearbeiter zu einer bestimmten View das Facelet, die dazu
+gehörige Businesslogik und die erforderlichen DAOs.\\
 Sollten die geplanten Zeiten aufgrund unerwarteter Ereignisse oder Problemen bei der Implementierung nicht eingehalten werden können, so werden Pakete aus dem
-ersten bzw. zweiten Milstone in den dritten Milestone verschoben. Der dritte Milestone ist deshalb bisher auch mit etwas weniger Umfang geplant.
-Sollte dies von Nöten sein, so werden die Wunschkriterien, also der Terminplaner und die Unterstützung von Mehrsprachigkeit nicht umgesetzt.\\
-Grundsätzlich wird aber davon ausgegangen alle Wunschkriterien umzusetzen.
+ersten bzw. zweiten Milstone in den dritten verschoben. Daher wurde vorerst für den dritten Milestone vergleichsweise weniger Umfang eingeplant.
+Bei Bedarf werden die Wunschkriterien (Terminplaner und die Unterstützung von Mehrsprachigkeit) nicht umgesetzt.\\
+Treten keine Komplikationen ein werden diese wie geplant umgesetzt.
+
+\section{Planungsverlauf}
+Zu Beginn der Planung zur Implementierung wurden die Features des Systems in einzelne Arbeitspakete aufgeteilt, sowie die Start- und Endzeitpunkte, der Aufwand in Stunden und der jeweilige Verantwortliche festgelegt. Diese Punkte wurden gemeinsam bei Team-Treffen besprochen und erarbeitet. Die Berechnung des Aufwands pro Arbeitspaket erfolgte durch \grqq Planning Poker\grqq\. Dabei wurden die Schätzungen jedes Teammitglieds erfasst und so ein Mittelwert erstellt.
+Schriftlich wurde der Implementierungsplan wie folgt aufgeteilt:
+
+\begin{itemize}
+\item Textuelle Beschreibungen: Patrick Cretu, Tobias Fuchs
+\item Tabellen: Tobias Fuchs, Ricky Strohmeier
+\item Diagramme: Katharina Hölzl, Sebastian Schwarz
+\end{itemize}
+
+Um frühzeitig auf Fehler während der Implementierung zu reagieren wird in jedem Milestone zu mindestens einem Arbeitspaket von jedem Verantwortlichen ein Test durchgeführt.
+
 \section{Milestone 1}
 
-Der Inhalt des ersten Milestones besteht einerseits aus den kritischen Arbeitspaketen und zum Anderen aus
-ersten Grundfunktionalitäten.\\
-Zu den kritischen Arbeitspaketen zählt der \kursiv{DatabaseConnectionManager}. Dieser ist zuständig für das Etablieren der Datenbankverbindungen und die Weiterverteilung dieser. Da viele andere Komponenten eine Datenbankverbindung benötigen und somit davon abhängen, muss dieser zu Beginn der Implementierung realisiert werden.\\
-Außerdem wird der \kursiv{PropertyManager} implementiert, welcher dafür zuständig ist, die nötigen Parameter aus den Konfigurationsdateien zu laden.
+Der erste Milestone umfasst technische Grundfunktionen und grundlegende Funktionalitäten der Webanwendung.\\
+Zu den Grundfunktionen zählt der \kursiv{DatabaseConnectionManager}. Dieser ist zuständig für das Erstellen der Datenbankverbindungen und deren Weiterverteilung. Da systemintern viele Komponenten eine Datenbankverbindung benötigen und somit davon abhängig sind, muss dieser zu Beginn der Implementierung erstellt werden.\\
+Außerdem wird der \kursiv{PropertyManager} implementiert, welcher die erforderlichen Parameter aus den Konfigurationsdateien lädt.
 Eine weitere wichtige Aufgabe, die bereits dem ersten Milestone zugeordnet wird, ist die
 Implementierung des Systemstarts. Dadurch wird sichergestellt, dass bei Systemstart alle
-benötigten Initialisierungen durchgeführt werden, wie das Einlesen der Propertydateien, die Erstellung der Datenbanktabellen und Initialisierung des \kursiv{DatabaseConnectionManagers}.
-Des weiteren ist das Aufsetzen der Datenbank, d.h. die Erstellung der benötigten Tabellen, ... und das zur Verfügung stellen des Logging - Mechanismus Teil des ersten Milestones.\\
-Darüber hinaus wird der  UTF-8-Filter implementiert, welcher sicherstellt, dass die Benutzereingaben
+benötigten Initialisierungen durchgeführt werden, wie das Einlesen der Property-Dateien, die Erstellung der Datenbanktabellen und Initialisierung des \kursiv{DatabaseConnectionManagers}.
+Des weiteren ist das Aufsetzen der Datenbank und der Logging - Mechanismus Teil des ersten Milestones.\\
+Darüber hinaus wird der  UTF-8-Filter implementiert, welcher sicherstellt, dass Benutzereingaben
 im richtigen Encoding in der Datenbank hinterlegt werden.\\
-Als letzter Punkt der kritischen Grundfunktionalität wird hier die Implementierung der automatischen E-Mail-Generierung vorgenommen, welche für die Versendung von E-Mails, wie etwa die Bestätigungs-E-Mails bei der Registrierung, zuständig ist.\\ 
-Zusätzlich zu den kritischen Komponenten werden im ersten Milestone auch erste Grundfunktionalitäten des Systems implementiert, d.h. die Struktur der View wird implementiert und DTOs werden angelegt.\\
-Der erste Milestone beinhaltet ebenfalls die Implementierung des Anmeldens, der Registrierung und der 'Passwort vergessen' - Funktion.\\
-Außerdem soll die \kursiv{Meine Kurse} - Seite angezeigt werden können und die Suche nach Kursen möglich sein.
-Ebenfalls werden im ersten Milestone  bereits erste Tests durchgeführt um Fehler frühzeitig aufzudecken.\\
+Als letzter Punkt der technischen Grundfunktionen wird hier die Implementierung der automatischen E-Mail-Generierung vorgenommen, welche für das Versenden von E-Mails zuständig ist.\\ 
+Zusätzlich zu diesen Komponenten werden die Struktur der View  und die DTOs angelegt sowie Funktionen wie die Registrierung, die Anmeldung und die 'Passwort vergessen' - Funktion implementiert.\\
+Außerdem soll die \kursiv{Meine Kurse} - Seite angezeigt werden und die Suche nach Kursen möglich sein.\\
 
 \section{Milestone 2}
 
-Der zweite Milestone beinhaltet die Implementierung des Benutzerprofils, sowie die Edit-
-Funktionalität. Dies beinhaltet, dass das benötigte Facelet und die Logik dazu, sowie die
-benötigten DAO-Methoden implementiert werden.\\
-Außerdem wird die Möglichkeit zur Verfügung gestellt einen Benutzer manuell anzulegen oder
-Benutzer endgültig aus dem System zu löschen.
-Ein weiterer Bestandteil ist die Implementierung der Detailansicht der Kurse sowie deren Edit-Funktionalität.
-Außerdem wird die Anmeldung zu Kursen und zu Kurseinheiten realisiert. Im Zuge dessen natürlich auch die Abmeldefunktion von Kursen bzw. Kurseinheiten.
-Ein weiterer Bestandteil dieses Milestones ist die Funktionalität einen Kurs anlegen zu können bzw. diesen wieder zu löschen. 
-Außerden wird die Erstellung, Bearbeitung und Löschung von Kurseinheiten implementiert. Auch die Bearbeitung von regelmäßigen Kurseinheiten in einem Zug wird realisiert.
-Um Fehler möglichst früh aufzudecken, werden auch hier wieder erste Tests implementiert
-und Codereview durchgeführt.
+Der zweite Milestone beinhaltet die Implementierung des Benutzerprofils, sowie die Editier-
+Funktionalität.\\
+Außerdem wird die Möglichkeit zur Verfügung gestellt einen Benutzer manuell anzulegen oder komplett aus dem System zu löschen.
+Ein weiterer Bestandteil ist die Implementierung der Detailansicht der Kurse sowie deren Editier-Funktionalität.
+Außerdem wird die Anmeldung zu Kursen und zu Kurseinheiten umgesetzt. Im Zuge dessen ebenfalls die Abmeldefunktion von Kursen bzw. Kurseinheiten.
+Ein weiterer Bestandteil ist die Funktionalität einen Kurs anzulegen bzw. diesen wieder zu löschen. 
+Außerden wird die Erstellung, Bearbeitung und Löschung von Kurseinheiten implementiert sowie die Bearbeitung von regelmäßigen Kurseinheiten.
 
 
 \section{Milestone 3}
 
-Der dritte Milestone beinhaltet die Implementierung der noch fehlenden Funktionalitäten und der Wunschkriterien.
-Zur noch fehlenden Funktionalität gehört die Benutzersuche, d.h. im Detail das zugehörige Facelet, dessen Logik und dies entsprechenden DAO - Methoden. \\
-Des weiteren wird die Funktionalität für den Kursleiter oder Administrator Benutzer zu aktivieren implementiert. \\
-Außerdem wird die Anzeige der Teilnehmerliste von Kursen realisiert. Darüber hinaus wird noch das Feature implementiert sich das eingeschränkte Profil des Kursleiters eines Kurses anzeigen zu lassen. \\
-Zusätzlich wird noch die Administratorseite realisiert, welche die  Einstellung bezüglich des Systems, wie etwa die Festlegung des Überziehungskredits für dem Administrator zu Verfügung stellt. 
+Der dritte Milestone umfasst die Implementierung der ausstehenden Funktionalitäten.
+Dazu gehört zum einen die Benutzersuche für Administratoren.\\
+Des Weiteren wird die Funktionalität Benutzer zu aktivieren durch Kursleiter oder Administrator implementiert. \\
+Außerdem wird die Anzeige der Teilnehmerliste von Kursen umgesetzt sowie das Feature sich das eingeschränkte Profil des Kursleiters eines Kurses anzeigen zu lassen. \\
+Zusätzlich wird noch die Administratorseite erstellt, welche die Einstellungen bezüglich des Systems, wie etwa die Festlegung des Überziehungskredits für dem Administrator, zur Verfügung stellt. 
 Ebenfalls werden im dritten Milestone die CustomExceptionHandler.java- und die
 CustomExceptionHandlerFactory.java-Klasse implementiert, sowie die zugehörige Fehlerseite.
 \ \\
-In diesem Milestone werden zusätzlich die Wunschkriterien umgesetzt. Diese beinhalten
-die Mehrsprachigkeit des Systems, sowie den persönlichen Terminplaner des Benutzers in dem alle seine angemeldeten Kurseinheiten aufgeführt werden.
-Außerdem werden hier die Hilfe-, Impressums- und AGB-Seite umgesetzt.
-Es erfolgen außerdem Tests der Systemfunktionalität.
+Zusätzlich werden die Wunschkriterien umgesetzt. Diese beinhalten
+die Mehrsprachigkeit des Systems sowie den persönlichen Terminplaner des Benutzers. Außerdem werden die Hilfe-, Impressums- und AGB-Seite erstellt.
 
