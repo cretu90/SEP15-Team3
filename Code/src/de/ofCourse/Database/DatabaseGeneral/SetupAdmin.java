@@ -4,6 +4,8 @@
 package de.ofCourse.Database.DatabaseGeneral;
 
 import de.ofCourse.exception.InvalidDBTransferException;
+import de.ofCourse.system.Connection;
+import de.ofCourse.system.Transaction;
 
 /**
  * Checks at the launch of the system if an administrator has been initially
@@ -29,5 +31,9 @@ public class SetupAdmin {
      * execution of the method
      */
     public static void createInitialAdmin() throws InvalidDBTransferException {
+    	Transaction trans = new Connection();
+    	trans.start();
+    	String checkTables = "SELECT COUNT(*) FROM information_schema.tables" +
+    			"WHERE table_schema = 'public'";
     }
 }
