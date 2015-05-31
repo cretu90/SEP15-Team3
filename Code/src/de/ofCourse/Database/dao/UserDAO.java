@@ -3,6 +3,10 @@
  */
 package de.ofCourse.Database.dao;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.List;
 
 import de.ofCourse.exception.InvalidDBTransferException;
@@ -132,7 +136,35 @@ public class UserDAO {
 
     public static User getUser(Transaction trans, String username)
 		throws InvalidDBTransferException {
-	return null;
+	User user = new User();
+	
+	PreparedStatement pS = null;
+	Connection con = (Connection) trans.conn;
+	
+	String sql = "SELECT * FROM users WHERE nickname=?";
+	
+	try {
+	    pS = con.prepareStatement(sql);	    
+	    pS.setString(1, username);
+	    
+	    ResultSet res = pS.executeQuery();
+	    
+	    if(res.next()) {
+		user.setUserId(res.getInt("id"));
+        	user.setFirstname(res.getString("first_name"));
+    	    	//TODO Attribute belegen
+	    }
+	    else
+	    {
+		//TODO Fehler, kein Benutzer mit diesem Benutzernamen
+		return null;
+	    }
+
+	} catch (SQLException e) {
+	    throw new InvalidDBTransferException();
+	}	
+	
+	return user;
 }
     
     
