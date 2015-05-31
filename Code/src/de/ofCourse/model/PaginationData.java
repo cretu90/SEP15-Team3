@@ -8,7 +8,7 @@ import java.io.Serializable;
 /**
  * Contains all information for the pagination progress
  * 
- * @author Sebastian
+ * @author Tobias Fuchs
  *
  */
 public class PaginationData implements Serializable {
@@ -26,7 +26,7 @@ public class PaginationData implements Serializable {
      */
     private String sortColumn;
     /**
-     * Stores whether the displayed data in ascending order or not
+     * Stores whether the displayed data in ascending order
      */
     private boolean sortAsc;
 
@@ -34,6 +34,69 @@ public class PaginationData implements Serializable {
      * Number of pages to display
      */
     private int numberOfPages;
+
+    /**
+     * Constructor of the class <code>PaginationData</code>.
+     * 
+     * @param itemsPerPage
+     *            the number of items shown on one page
+     * @param shownPageNum
+     *            the current displayed page
+     * @param sortCoulmn
+     *            the displayed column name the page is sorted
+     * @param sortAsc
+     *            whether the displayed data in ascending order
+     * @param numberOfPages
+     *            the number of pages to display
+     */
+    public PaginationData(int itemsPerPage, int shownPageNum,
+	    String sortCoulmn, boolean sortAsc, int numberOfPages) {
+	this.itemsPerPage = itemsPerPage;
+	this.shownPageNum = shownPageNum;
+	this.sortColumn = sortCoulmn;
+	this.sortAsc = sortAsc;
+	this.numberOfPages = numberOfPages;
+    }
+
+    /**
+     * Empty default constructor.
+     */
+    public PaginationData() {
+    }
+
+    /**
+     * Actualizes the number of the current displayed page.
+     * 
+     * @param page
+     *            the selected page number<br>
+     *            <code>forward</code>, the forward button was selected<br>
+     *            <code>back</code>, the back button was selected
+     */
+    public void actualizeCurrentPageNumber(String page) {
+	switch (page) {
+	case "back":
+	    if (getShownPageNum() > 0) {
+		setShownPageNum(getShownPageNum() - 1);
+	    }
+	    break;
+	case "forward":
+	    if (getShownPageNum() < getNumberOfPages()) {
+		setShownPageNum(getShownPageNum() + 1);
+	    }
+	    break;
+	default:
+	    setShownPageNum(Integer.parseInt(page));
+
+	}
+    }
+
+    /**
+     * Changes the sort direction from ascending order to descending order or
+     * the other way round. That depends on the current sort direction.
+     */
+    public void changeSortDirection() {
+	setSortAsc(!isSortAsc());
+    }
 
     /**
      * Returns the number of pages that are displayed.
