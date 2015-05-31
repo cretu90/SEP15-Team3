@@ -30,9 +30,9 @@ public class DateOfBirthValidator implements Validator {
      * the future or more than 150 years in the past.
      */
     @Override
-    public void validate(FacesContext arg0, UIComponent arg1, Object arg2)
+    public void validate(FacesContext arg0, UIComponent arg1, Object value)
 	    throws ValidatorException {
-	// Date dateOfBirth = (Date) value;
+	 Date dateOfBirth = (Date) value;
 	
 	//SimpleDateFormat formatter = new SimpleDateFormat(
         //        "dd.MM.yyyy");

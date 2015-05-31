@@ -5,6 +5,7 @@ package de.ofCourse.customValidator;
 
 import javax.faces.application.FacesMessage;
 import javax.faces.component.UIComponent;
+import javax.faces.component.UIInput;
 import javax.faces.context.FacesContext;
 import javax.faces.validator.FacesValidator;
 import javax.faces.validator.Validator;
@@ -28,13 +29,21 @@ public class ConfirmPasswordValidator implements Validator {
      */
     
     @Override
-    public void validate(FacesContext arg0, UIComponent arg1, Object arg2)
+    public void validate(FacesContext context, UIComponent component, Object value)
 	    throws ValidatorException {
 
-	//if(){
+	String password = value.toString();
+	
+	UIInput uiInputVerifyPassword = (UIInput) component.getAttributes()
+		.get("passwordRegister");
+        String verifyPassword = uiInputVerifyPassword.getSubmittedValue()
+                .toString();
+
+	
+	if(!password.equals(verifyPassword)){
 	    throw new ValidatorException(new FacesMessage("Die beiden "
 	    	+ "eingegebenen Passwörter stimmen nicht überein."));
-	//}
+	}
 
     }
 
