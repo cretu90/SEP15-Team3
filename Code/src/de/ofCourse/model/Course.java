@@ -3,6 +3,7 @@
  */
 package de.ofCourse.model;
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
@@ -12,7 +13,7 @@ import java.util.List;
  * @author Sebastian
  *
  */
-public class Course {
+public class Course implements Serializable {
     
     /**
      * Stroes the ID the specific course gets
@@ -185,6 +186,7 @@ public class Course {
      *          new course title
      */
     public void setTitle(String title) {
+	this.title = title;
     }
 
     /**
@@ -203,6 +205,7 @@ public class Course {
      *          new nextCourseUnit to set
      */
     public void setNextCourseUnit(CourseUnit nextCourseUnit) {
+	this.nextCourseUnit = nextCourseUnit;
     }
 
     /**
@@ -248,6 +251,7 @@ public class Course {
      *          new list of users who are admins to set
      */
     public void setCourseAdmins(List<User> coursAdmins) {
+	this.courseAdmins = coursAdmins;
     }
 
     /**

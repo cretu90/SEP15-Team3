@@ -150,7 +150,7 @@ public class SearchUserBean implements Pagination {
      * {@inheritDoc}
      */
     @Override
-    public void sortBySpecificColumn(String columnname) {
+    public void sortBySpecificColumn() {
     }
 
     /**

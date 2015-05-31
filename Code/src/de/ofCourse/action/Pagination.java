@@ -52,7 +52,7 @@ public interface Pagination {
      *            parameter by which the page is sorted
      * 
      */
-    public void sortBySpecificColumn(String columnname);
+    public void sortBySpecificColumn();
     
     /**
      * Returns the value of the attribute <code>pagination</code>.

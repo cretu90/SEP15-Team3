@@ -3,13 +3,15 @@
  */
 package de.ofCourse.model;
 
+import java.io.Serializable;
+
 /**
  * Contains all information for the pagination progress
  * 
  * @author Sebastian
  *
  */
-public class PaginationData {
+public class PaginationData implements Serializable {
 
     /**
      * Stores the number of items shown on one page.
@@ -27,6 +29,30 @@ public class PaginationData {
      * Stores whether the displayed data in ascending order or not
      */
     private boolean sortAsc;
+
+    /**
+     * Number of pages to display
+     */
+    private int numberOfPages;
+
+    /**
+     * Returns the number of pages that are displayed.
+     * 
+     * @return the number of pages
+     */
+    public int getNumberOfPages() {
+	return numberOfPages;
+    }
+
+    /**
+     * Sets the number of pages that are displayed.
+     * 
+     * @param numberOfPages
+     *            the number of pages
+     */
+    public void setNumberOfPages(int numberOfPages) {
+	this.numberOfPages = numberOfPages;
+    }
 
     /**
      * Returns the value of the attribute <code>itemsPerPage</code>.

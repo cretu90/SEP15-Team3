@@ -132,7 +132,7 @@ public class AccountManagmentBean implements Pagination {
      * {@inheritDoc}
      */
     @Override
-    public void sortBySpecificColumn(String columnname) {
+    public void sortBySpecificColumn() {
 	// TODO Auto-generated method stub
 
     }

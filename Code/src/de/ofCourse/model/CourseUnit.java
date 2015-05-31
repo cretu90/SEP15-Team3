@@ -3,6 +3,7 @@
  */
 package de.ofCourse.model;
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
@@ -12,7 +13,7 @@ import java.util.List;
  * @author Sebastian
  *
  */
-public class CourseUnit {
+public class CourseUnit implements Serializable {
     
     /**
      * stores the ID of the courseUnit
@@ -221,6 +222,7 @@ public class CourseUnit {
      *          the new startingTime to set
      */
     public void setStarttime(Date startingTime) {
+	this.startime = startingTime;
     }
 
     /**
@@ -311,6 +313,7 @@ public class CourseUnit {
      *          new location to set
      */
     public void setLocation(String location) {
+	this.location = location;
     }
 
     /**

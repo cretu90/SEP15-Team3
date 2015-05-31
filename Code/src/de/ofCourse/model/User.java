@@ -3,6 +3,7 @@
  */
 package de.ofCourse.model;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
@@ -11,7 +12,7 @@ import java.util.Date;
  * @author
  *
  */
-public class User {
+public class User implements Serializable {
 
     /**
      *stores the address where the user lives
