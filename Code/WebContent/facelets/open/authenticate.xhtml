@@ -154,11 +154,10 @@
 										<h:inputText class="form-control" style="width:300px;" id="emailRegister"
 										             value="#{RegisterUserBean.userToRegistrate.email}" 
                                                      required="true"  requiredMessage="Bitte geben Sie Ihre E-MAil-Adresse ein."
-                                                     validatorMessage="Ihre Eingabe muss zwischen 1 und 319 Zeichen lang sein. ">
+                                                     validatorMessage="Ihre Eingabe muss zwischen 1 und 319 Zeichen lang sein und ein gültiges Format haben. ">
                                                      <f:validateLength minimum ="1" maximum="319" />
-										             <f:validator validatorId="emailValidator" />
+                                                     <f:validateRegex pattern="^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@ [A-Za-z0-9-]+(\\.[A-Za-z0-9.-]+)*(\\.[A-Za-z]{2,})$"/>
                                         </h:inputText>
-                                            <h:message for="emailRegister" style="color:red" />
 									</div>
 									
 									<br />
@@ -212,12 +211,14 @@
 									<div class="input-group">
 										<span class="input-group-addon" style="width:140px; text-align:right;">E-Mail-Adresse:</span>
 										<h:inputText class="form-control" id="passwordEMail" style="width:250px;"
-										              value="LostPasswordBean.emailAddressToResetPassword"
+										              value="#{LostPasswordBean.emailAddressToResetPassword}"
 										              required="true" requiredMessage="Bitte geben Sie Ihre E-Mail-Adresse ein." >
-										</h:inputText>
+										              <f:validator validatorId="emailValidator" />
+                                        </h:inputText>
+                                            <h:message for="passwordEMail" style="color:red" />
 									</div>
 									<br />
-									<h:commandButton id="newPassword" class="btn btn-info" value="Neues Passwort anfordern" />
+									<h:commandButton id="newPassword" action ="#{LostPasswordBean.resetPassword}" class="btn btn-info" value="Neues Passwort anfordern" />
 								</h:form>								
 							</div>
 						</div>								
