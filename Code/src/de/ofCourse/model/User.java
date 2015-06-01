@@ -38,10 +38,7 @@ public class User implements Serializable {
      * stores the username which the user needs for the login
      */
     private String username;
-    /**
-     * stores the password which the user needs for the login
-     */
-    private String password;
+   
     /**
      * stores the date of Birth of the the User
      */
@@ -130,14 +127,7 @@ public class User implements Serializable {
 	return this.username;
     }
 
-    /**
-     * Returns the value of the attribute <code>password</code>.
-     * 
-     * @return the password of the user
-     */
-    public String getPassword() {
-	return this.password;
-    }
+   
 
     /**
      * Returns the value of the attribute <code>dateOfBirth</code>.
@@ -252,15 +242,6 @@ public class User implements Serializable {
 	this.lastname = lastname;
     }
 
-    /**
-     * Sets the value of the attribute <code>password</code>.
-     * 
-     * @param password
-     *          new password to set
-     */
-    public void setPassword(String password) {
-	this.password = password;
-    }
 
     /**
      * Sets the value of the attribute <code>userRole</code>.

@@ -181,7 +181,6 @@ public class UserDAO {
         	user.setLastname(res.getString("name"));
         	user.setEmail(res.getString("mail"));
         	user.setDateOfBirth(res.getDate("date_of_bith"));
-        	user.setPassword(res.getString("pw_hash"));
         	user.setSalutation(res.getString("form_of_adress"));
         	user.setProfilImage(res.getString("profile_image"));
     	    	//TODO Attribute belegen
@@ -221,7 +220,7 @@ public class UserDAO {
 	PreparedStatement pS = null;
 	Connection con = (Connection) trans.conn;
 	
-	String sql = "SELECT ID FROM users WHERE nickname=?";
+	String sql = "SELECT id FROM users WHERE nickname=?";
 	
 	try {
 	    pS = con.prepareStatement(sql);	    
