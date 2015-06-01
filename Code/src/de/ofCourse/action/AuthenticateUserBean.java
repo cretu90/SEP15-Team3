@@ -32,7 +32,8 @@ public class AuthenticateUserBean {
      * Represents a user object. It stores the entered username and the entered
      * password, which are needed to log in.
      */
-    private User loginUser;
+    private User loginUser = new User();
+    private String loginPassword;
     
     /**
      * Stores the transaction that is used for database interaction.
@@ -60,6 +61,7 @@ public class AuthenticateUserBean {
      * @return link to the next page 
      */
     public String login() {
+	//loginUser.getUsername();
 	return null;
     }
 
@@ -78,7 +80,8 @@ public class AuthenticateUserBean {
      * @param userToLogIn
      *            the users who wants to log in
      */
-    public void setLoginUser(User userToLogIn) {
+    public void setLoginUser(User loginUser) {
+	this.loginUser= loginUser;
     }
     
     
@@ -98,7 +101,8 @@ public class AuthenticateUserBean {
      * @param userSession
      *            session of the user
      */
-    public void setSessionUser(SessionUserBean userSession) {
+    public void setSessionUser(SessionUserBean sessionUser) {
+	this.sessionUser = sessionUser;
     }
 
 }
