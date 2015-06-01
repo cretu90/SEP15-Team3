@@ -3,6 +3,10 @@
  */
 package de.ofCourse.Database.DatabaseGeneral;
 
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
 import de.ofCourse.exception.InvalidDBTransferException;
 import de.ofCourse.system.Connection;
 import de.ofCourse.system.Transaction;
@@ -33,7 +37,44 @@ public class SetupAdmin {
     public static void createInitialAdmin() throws InvalidDBTransferException {
     	Transaction trans = new Connection();
     	trans.start();
-    	String checkTables = "SELECT COUNT(*) FROM information_schema.tables" +
-    			"WHERE table_schema = 'public'";
+    	String checkAdmin = "SELECT COUNT(*) FROM \"users\"" +
+    			"WHERE role = administrator";
+    	String initAdmin = "INSERT INTO \"users\"(nickname, email, pw_hash," +
+    			"credit_balance, email_verification, admin_verification," +
+    			"role, status) VALUES ('admin1', 'bazinga@gmail.com', " +
+    			"'5ee2d84rf', 0, TRUE, TRUE, 'administrator', 'registered')";
+    	ResultSet rst = null;
+    	PreparedStatement check = null;
+    	PreparedStatement init = null;
+    	
+    	try {
+    		check = trans.getConn().conn.prepareStatement(checkAdmin);
+    		rst = check.executeQuery();
+    		rst.next();
+    		
+    		if ((Long) rst.getObject(1) < 1) {
+    			init = trans.getConn().conn.prepareStatement(initAdmin);
+			init.execute();
+    		}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				rst.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+			try {
+				check.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+			try {
+				init.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+    	
     }
 }
