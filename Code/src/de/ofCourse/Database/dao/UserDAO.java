@@ -13,6 +13,7 @@ import de.ofCourse.exception.InvalidDBTransferException;
 import de.ofCourse.model.Address;
 import de.ofCourse.model.Course;
 import de.ofCourse.model.PaginationData;
+import de.ofCourse.model.Salutation;
 import de.ofCourse.model.User;
 import de.ofCourse.model.UserRole;
 import de.ofCourse.model.UserStatus;
@@ -158,7 +159,18 @@ public class UserDAO {
     }
     
     
-    
+    /**
+     * Returns all attributes of a user assigned to the passed user name.
+     * 
+     * @param trans
+     * 		the Transaction object which contains the connection to the
+     *          database
+     * @param username
+     * 		the user's name
+     * @return the user
+     * @throws InvalidDBTransferException if any error occurred during the
+     * execution of the method
+     */
     
     public static User getUser(Transaction trans, String username)
 		throws InvalidDBTransferException {
@@ -196,9 +208,19 @@ public class UserDAO {
         	user.setLastname(res.getString("name"));
         	user.setEmail(res.getString("mail"));
         	user.setDateOfBirth(res.getDate("date_of_bith"));
-        	user.setSalutation(res.getString("form_of_adress"));
+        	
+        	String salutation =res.getString("form_of_adress");
+                	switch(salutation){
+                	case "mr":
+                	    user.setSalutation(Salutation.MR);
+                	case "ms":
+                	    user.setSalutation(Salutation.MS);
+                	default:
+                	    //TODO Fehlermeldung nötig?
+                	}
         	
         	user.setProfilImage(res.getString("profile_image"));
+        	
         	String userRole = res.getString("role");
         		switch(userRole) {
         		case "registered_user":

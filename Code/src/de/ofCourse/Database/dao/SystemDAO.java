@@ -5,8 +5,12 @@ package de.ofCourse.Database.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 import de.ofCourse.exception.InvalidDBTransferException;
+import de.ofCourse.model.Activation;
+import de.ofCourse.model.Salutation;
 import de.ofCourse.system.Transaction;
 
 /**
@@ -71,20 +75,54 @@ public class SystemDAO {
      * @throws InvalidDBTransferException
      *             if any error occurred during the execution of the method
      */
-    public static String getActivationType(Transaction trans)
+    public static Activation getActivationType(Transaction trans)
 	    throws InvalidDBTransferException {
-	
-	
-	
-		//SQL- Abfrage vorbereiten und Connection zur Datenbank erstellen.
-		PreparedStatement pS = null;
-		Connection con = (Connection) trans.conn;
-		
-		//Datenbankabfrage
-		String sql = "SELECT activation_type FROM systemAttributes WHERE nickname=?";
-	
-	return null;
 
+	Activation activation = null;
+
+	// SQL- Abfrage vorbereiten und Connection zur Datenbank erstellen.
+	PreparedStatement pS = null;
+	Connection con = (Connection) trans.conn;
+
+	// Datenbankabfrage
+	String sql = "SELECT activation_type FROM systemAttributes";
+
+	// mögliche SQL-Injektion abfangen
+	try {
+	    pS = con.prepareStatement(sql);
+
+	    // preparedStatement ausführen, gibt resultSet als Liste zurück
+	    // (hier
+	    // ein Eintrag in der Liste, da Aktivierung einzigartig).
+	    ResultSet res = pS.executeQuery();
+
+	    // Nächten Eintrag aufrufen, gibt true zurück, falls es weiteren
+	    // Eintrag gibt, ansonsten null.
+	    if (res.next()) {
+
+		String activationString = res.getString("activation_type");
+		switch (activationString) {
+		case "email":
+		    activation = Activation.EMAIL;
+		case "admin":
+		    activation = Activation.ADMIN;
+		case "complete":
+		    activation = Activation.COMPLETE;
+		default:
+		    // TODO Fehlermeldung nötig?
+		}
+
+	    } else {
+		// TODO fehlermeldung nötig ??
+		return null;
+	    }
+
+	} catch (SQLException e) {
+	    throw new InvalidDBTransferException();
+	    // TODO Logging message
+	}
+	// gibt die Aktivierungsmethode zurück.
+	return activation;
     }
 
     /**
