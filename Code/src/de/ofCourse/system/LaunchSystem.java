@@ -38,7 +38,7 @@ import de.ofCourse.utilities.PropertyManager;
 @ApplicationScoped
 public class LaunchSystem {
 
-    private static final Logger logger = LogManager.getLogger("OfCourse");
+   
 
     /**
      * Initializes the maintenance thread method of the Maintenance class.<br>
@@ -63,15 +63,5 @@ public class LaunchSystem {
      * 
      * @throws IOException
      */
-    private void logSetup() throws IOException {
-        PatternLayout layout = new PatternLayout("%-5p [%t]: %m%n");
-        DailyRollingFileAppender fileAppender = new DailyRollingFileAppender(
-                layout, PropertyManager.getInstance().getPropertyLogger(
-                        "logfilepath")
-                        + "MyLog", "'.'yyyy-MM-dd_HH-mm");
-        logger.addAppender(fileAppender);
-        //Sets the level input from properties
-        logger.setLevel(Level.toLevel(PropertyManager.getInstance().getPropertyLogger("loglvl")));
-
-    }
+    
 }

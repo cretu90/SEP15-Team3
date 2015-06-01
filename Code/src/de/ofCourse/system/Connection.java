@@ -32,9 +32,9 @@ public class Connection implements Transaction {
             conn.commit();
             releaseConnection();
         } catch (SQLException e) {
-            
             rollback();
             releaseConnection();
+            LogSetup.error("Übertragungsfehler! Rollback ausgeführt");
         }              
     }
 
@@ -44,6 +44,7 @@ public class Connection implements Transaction {
             conn.rollback();
             releaseConnection();
         } catch (SQLException e) {
+            LogSetup.error("Übertragungsfehler! Rollback gescheitert");
             e.printStackTrace();
             releaseConnection();
         }    
