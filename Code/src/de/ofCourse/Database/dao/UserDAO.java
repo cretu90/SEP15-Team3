@@ -194,6 +194,7 @@ public class UserDAO {
 
 	} catch (SQLException e) {
 	    throw new InvalidDBTransferException();
+	    //TODO Logging message
 	}	
 	
 	return user;
@@ -240,6 +241,7 @@ public class UserDAO {
 
 	} catch (SQLException e) {
 	    throw new InvalidDBTransferException();
+	    //TODO Logging message
 	}	
 	
 	return id;
