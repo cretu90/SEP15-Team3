@@ -50,6 +50,15 @@ public class Address {
     }
 
     /**
+     * Returns the value of the attribute <code>id</code>.
+     * 
+     * @return the id of the address
+     */
+    public int getId() {
+	return this.id;
+    }
+    
+    /**
      * Returns the value of the attribute <code>country</code>.
      * 
      * @return the country where the user lives or course will be hold
@@ -94,6 +103,16 @@ public class Address {
 	return this.zipCode;
     }
 
+    /**
+     * Sets the value of the attribute <code>id</code>.
+     * 
+     * @param id
+     *          the new id to set
+     */
+    public void setId(int id) {
+	this.id = id;
+    }
+    
     /**
      * Sets the value of the attribute <code>country</code>.
      * 
