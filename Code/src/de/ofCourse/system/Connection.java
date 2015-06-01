@@ -32,6 +32,7 @@ public class Connection implements Transaction {
             conn.commit();
             releaseConnection();
         } catch (SQLException e) {
+            
             rollback();
             releaseConnection();
         }              

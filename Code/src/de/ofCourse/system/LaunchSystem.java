@@ -3,10 +3,20 @@
  */
 package de.ofCourse.system;
 
+import java.io.IOException;
+
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 import javax.faces.bean.ApplicationScoped;
 import javax.faces.bean.ManagedBean;
+
+import org.apache.log4j.DailyRollingFileAppender;
+import org.apache.log4j.Level;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
+import org.apache.log4j.PatternLayout;
+
+import de.ofCourse.utilities.PropertyManager;
 
 /**
  * Starts the system ofCourse and sets up all necessary services, intitalizes
@@ -14,9 +24,9 @@ import javax.faces.bean.ManagedBean;
  * 
  * <p>
  * It initializes the maintenance thread, the DatabaseConnectionManager that is
- * responsible for setting up and managing the database connections.
- * Furthermore the class sets up the required tables in the database and creates
- * an initial administrator to access the system.<br>
+ * responsible for setting up and managing the database connections. Furthermore
+ * the class sets up the required tables in the database and creates an initial
+ * administrator to access the system.<br>
  * In addition it provides the functionality of a regulated shutdown of the
  * application. That includes stopping the maintenance and and shutting down
  * database connection.
@@ -27,6 +37,8 @@ import javax.faces.bean.ManagedBean;
 @ManagedBean
 @ApplicationScoped
 public class LaunchSystem {
+
+    private static final Logger logger = LogManager.getLogger("OfCourse");
 
     /**
      * Initializes the maintenance thread method of the Maintenance class.<br>
@@ -44,5 +56,22 @@ public class LaunchSystem {
      */
     @PreDestroy
     public void shutdownMaintenance() {
+    }
+
+    /**
+     * Initializes log4j
+     * 
+     * @throws IOException
+     */
+    private void logSetup() throws IOException {
+        PatternLayout layout = new PatternLayout("%-5p [%t]: %m%n");
+        DailyRollingFileAppender fileAppender = new DailyRollingFileAppender(
+                layout, PropertyManager.getInstance().getPropertyLogger(
+                        "logfilepath")
+                        + "MyLog", "'.'yyyy-MM-dd_HH-mm");
+        logger.addAppender(fileAppender);
+        //Sets the level input from properties
+        logger.setLevel(Level.toLevel(PropertyManager.getInstance().getPropertyLogger("loglvl")));
+
     }
 }
