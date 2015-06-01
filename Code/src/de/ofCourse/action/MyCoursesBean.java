@@ -6,15 +6,12 @@ package de.ofCourse.action;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
-
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.ViewScoped;
 import javax.faces.context.FacesContext;
 
-import de.ofCourse.model.Address;
 import de.ofCourse.model.Course;
 import de.ofCourse.model.CourseUnit;
 import de.ofCourse.model.PaginationData;
@@ -121,8 +118,8 @@ public class MyCoursesBean implements Pagination, Serializable {
 	registeredCourses.add(course3);
 
 	this.pagination = new PaginationData();
-	this.getPagination().setShownPageNum(0);
-	System.out.println(pagination.getShownPageNum());
+	this.getPagination().setCurrentPageNumber(0);
+	System.out.println(pagination.getCurrentPageNumber());
 
     }
 
