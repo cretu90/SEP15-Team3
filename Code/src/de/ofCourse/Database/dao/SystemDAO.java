@@ -3,6 +3,9 @@
  */
 package de.ofCourse.Database.dao;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+
 import de.ofCourse.exception.InvalidDBTransferException;
 import de.ofCourse.system.Transaction;
 
@@ -70,6 +73,16 @@ public class SystemDAO {
      */
     public static String getActivationType(Transaction trans)
 	    throws InvalidDBTransferException {
+	
+	
+	
+		//SQL- Abfrage vorbereiten und Connection zur Datenbank erstellen.
+		PreparedStatement pS = null;
+		Connection con = (Connection) trans.conn;
+		
+		//Datenbankabfrage
+		String sql = "SELECT activation_type FROM systemAttributes WHERE nickname=?";
+	
 	return null;
 
     }

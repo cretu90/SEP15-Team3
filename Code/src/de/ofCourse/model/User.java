@@ -25,7 +25,7 @@ public class User implements Serializable {
     /**
      *stores the gender of the user
      */
-    private String salutation;
+    private Salutation salutation;
     /**
      * stores the firstname of the user
      */
@@ -96,7 +96,7 @@ public class User implements Serializable {
      * 
      * @return the gender of the user
      */
-    public String getSalutation() {
+    public Salutation getSalutation() {
 	return this.salutation;
     }
 
@@ -218,7 +218,7 @@ public class User implements Serializable {
      * @param sal
      *          new salutation to set
      */
-    public void setSalutation(String sal) {
+    public void setSalutation(Salutation sal) {
 	this.salutation = sal;
     }
 

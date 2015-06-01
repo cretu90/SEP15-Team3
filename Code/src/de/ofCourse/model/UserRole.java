@@ -4,19 +4,19 @@
 package de.ofCourse.model;
 
 /**
- * repressents the different roles a User can have in the System
+ * represents the different roles a User can have in the System
  * 
  * @author Sebastian
  *
  */
 public enum UserRole {
     /**
-     * The standart Role. A user is only registrated and has no administrative
+     * The standard Role. A user is only registered and has no administrative
      * privileges
      */
     REGISTERED_USER,
     /**
-     * a course_leader has administraive privileges on his course. He can create
+     * a course_leader has administrative privileges on his course. He can create
      * new courseUnits and add or remove users from the course
      */
     COURSE_LEADER,

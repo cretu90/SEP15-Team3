@@ -197,6 +197,7 @@ public class UserDAO {
         	user.setEmail(res.getString("mail"));
         	user.setDateOfBirth(res.getDate("date_of_bith"));
         	user.setSalutation(res.getString("form_of_adress"));
+        	
         	user.setProfilImage(res.getString("profile_image"));
         	String userRole = res.getString("role");
         		switch(userRole) {
