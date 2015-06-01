@@ -214,7 +214,35 @@ public class UserDAO {
      */
     public static int getUserID(Transaction trans, String username)
 	    throws InvalidDBTransferException {
-	return 0;
+	
+	int id =0;
+	
+	PreparedStatement pS = null;
+	Connection con = (Connection) trans.conn;
+	
+	String sql = "SELECT ID FROM users WHERE nickname=?";
+	
+	try {
+	    pS = con.prepareStatement(sql);	    
+	    pS.setString(1, username);
+	    
+	    ResultSet res = pS.executeQuery();
+	    
+	    if(res.next()) {
+		id = res.getInt("id");
+    	    	//TODO Attribute belegen
+	    }
+	    else
+	    {
+		//TODO Fehler, kein Benutzer mit diesem Benutzernamen
+		return 0;
+	    }
+
+	} catch (SQLException e) {
+	    throw new InvalidDBTransferException();
+	}	
+	
+	return id;
     }
 
     /**
