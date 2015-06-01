@@ -118,7 +118,7 @@
 										<li><h:commandButton class="btn btn-default"
 												value="#{myCoursesBean.pagination.currentPageNumber+2}"
 												action="#{myCoursesBean.goToSpecificPage}"
-												rendered="#{myCoursesBean.pagination.currentPageNumber>=myCoursesBean.pagination.currentPageNumber+1}">
+												rendered="#{myCoursesBean.pagination.numberOfPages>=myCoursesBean.pagination.currentPageNumber+1}">
 												<f:param name="page"
 													value="#{myCoursesBean.pagination.currentPageNumber+1}" />
 											</h:commandButton></li>

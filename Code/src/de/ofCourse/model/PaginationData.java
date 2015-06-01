@@ -6,7 +6,7 @@ package de.ofCourse.model;
 import java.io.Serializable;
 
 /**
- * Contains all information for the pagination progress
+ * Contains all information for the pagination.
  * 
  * @author Tobias Fuchs
  *
@@ -92,6 +92,26 @@ public class PaginationData implements Serializable {
 		default:
 			setCurrentPageNumber(Integer.parseInt(page));
 		}
+	}
+
+	/**
+	 * Actualizes the number of pages of the pagination.
+	 * 
+	 * @param numberOfAllItems
+	 *            number of elements that are to display(with pagination)
+	 */
+	private void actualizeNumberOfPages(int numberOfAllItems) {
+		int calculatedNumberOfPages = 0;
+
+		if (numberOfAllItems % this.getElementsPerPage() == 0) {
+			calculatedNumberOfPages = numberOfAllItems
+					/ this.getElementsPerPage();
+		} else {
+			calculatedNumberOfPages = (numberOfAllItems / this
+					.getElementsPerPage()) + 1;
+		}
+		setNumberOfPages(calculatedNumberOfPages);
+
 	}
 
 	/**
