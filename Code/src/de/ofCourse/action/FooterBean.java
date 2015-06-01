@@ -34,7 +34,7 @@ public class FooterBean {
      * @return link to imprint page
      */
     public String loadImprintPage() {
-	return null;
+        return "/facelets/open/imprint.xhtml";
     }
 
     /**
@@ -43,7 +43,7 @@ public class FooterBean {
      * @return link to AGB page
      */
     public String loadAGBPage() {
-	return null;
+        return "/facelets/open/agb.xhtml";
     }
 
     /**
@@ -52,7 +52,7 @@ public class FooterBean {
      * @return link to help page
      */
     public String loadHelpPage() {
-	return null;
+        return "/facelets/open/help.xhtml";
     }
     
     /**
@@ -61,7 +61,7 @@ public class FooterBean {
      * @return the session of the user
      */
     public SessionUserBean getSessionUser() {
-	return sessionUser;
+        return sessionUser;
     }
 
     /**
@@ -71,6 +71,7 @@ public class FooterBean {
      *            session of the user
      */
     public void setSessionUser(SessionUserBean userSession) {
+        this.sessionUser = userSession;
     }
 
 }
