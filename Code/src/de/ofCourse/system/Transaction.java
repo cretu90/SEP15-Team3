@@ -15,7 +15,7 @@ public interface Transaction {
     /**
      * Stores a instance of the wrapper class Connection
      */
-    public Connection conn = new Connection();
+    public Connection getConn();
     
     /**
      * Starts a new transaction and establishes the connection.

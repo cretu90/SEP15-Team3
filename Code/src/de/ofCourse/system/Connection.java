@@ -60,8 +60,14 @@ public class Connection implements Transaction {
      * Release the stored connection back to the DatabaseConnectionManager
      */
     public void releaseConnection(){
-        DatabaseConnectionManager.getInstance().releaseConnection();
+        DatabaseConnectionManager.getInstance().releaseConnection(conn);
         conn = null;
+    }
+
+    @Override
+    public java.sql.Connection getConn() {
+       
+        return conn;
     }
     
 
