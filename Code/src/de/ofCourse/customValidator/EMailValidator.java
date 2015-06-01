@@ -21,8 +21,8 @@ public class EMailValidator implements Validator {
 
   
     /**
-     * Gets called when you want to register or change your mail address when 
-     * you’re already registered. The method checks if the entered mail has a 
+     * Gets called when you have lost your password and you insert your mail 
+     * address to have a new password. The method checks if the entered mail has a 
      * valid format (e.g. one and only one @ sign) and whether it is already 
      * existing in the database.
      */

@@ -163,10 +163,12 @@
 									
 									<br />
 									<div>
-										<h:selectBooleanCheckbox value="" /> Ich habe die AGBs gelesen und stimme zu.
+										<h:selectBooleanCheckbox value="" required="true"  
+										                  requiredMessage="Bitte bestätigen Sie die AGBs."/> 
+										                  Ich habe die AGBs gelesen und stimme zu.
 									</div>
 									<br />
-									<h:commandButton id="login" class="btn btn-info" value="Registrieren" />
+									<h:commandButton id="login" action ="#{RegisterUserBean.registerUser}" class="btn btn-info" value="Registrieren" />
 								</h:form>	
 							</div>
 						</div>					
@@ -209,7 +211,10 @@
 								<h:form class="form-horizontal" id="formForgotPassword">
 									<div class="input-group">
 										<span class="input-group-addon" style="width:140px; text-align:right;">E-Mail-Adresse:</span>
-										<h:inputText class="form-control" id="passwordEMail" style="width:250px;"></h:inputText>
+										<h:inputText class="form-control" id="passwordEMail" style="width:250px;"
+										              value="LostPasswordBean.emailAddressToResetPassword"
+										              required="true" requiredMessage="Bitte geben Sie Ihre E-Mail-Adresse ein." >
+										</h:inputText>
 									</div>
 									<br />
 									<h:commandButton id="newPassword" class="btn btn-info" value="Neues Passwort anfordern" />
