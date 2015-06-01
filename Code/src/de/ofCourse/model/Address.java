@@ -11,8 +11,10 @@ package de.ofCourse.model;
  */
 public class Address {
 
-    
-    
+    /**
+     * stores the id of the address
+     */
+    private int id;
     /**
      * stores the country where the user lives or where the course will be
      * hold
