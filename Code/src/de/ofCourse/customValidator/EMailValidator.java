@@ -5,6 +5,7 @@ package de.ofCourse.customValidator;
 
 import javax.faces.component.UIComponent;
 import javax.faces.context.FacesContext;
+import javax.faces.validator.FacesValidator;
 import javax.faces.validator.Validator;
 import javax.faces.validator.ValidatorException;
 
@@ -15,6 +16,7 @@ import javax.faces.validator.ValidatorException;
  * @author Katharina Hölzl
  *
  */
+@FacesValidator("emailValidator")
 public class EMailValidator implements Validator {
 
   

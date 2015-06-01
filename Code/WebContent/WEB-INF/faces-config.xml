@@ -10,4 +10,25 @@
 		</locale-config>
 	</application>
 
+    <validator>
+        <validator-id> userNameValidator </validator-id>
+        <validator-class> de.ofCourse.customValidator.UserNameValidator </validator-class>
+    </validator>
+    <validator>
+        <validator-id> passwordValidator </validator-id>
+        <validator-class> de.ofCourse.customValidator.PasswordValidator </validator-class>
+    </validator>
+    <validator>
+        <validator-id> confirmPasswordValidator </validator-id>
+        <validator-class> de.ofCourse.customValidator.ConfirmPasswordValidator </validator-class>
+    </validator>
+    <validator>
+        <validator-id> dateOfBirthValidator </validator-id>
+        <validator-class> de.ofCourse.customValidator.DateOfBirthValidator </validator-class>
+    </validator>
+     <validator>
+        <validator-id> emailValidator </validator-id>
+        <validator-class> de.ofCourse.customValidator.EMailValidator </validator-class>
+    </validator>
+
 </faces-config>
