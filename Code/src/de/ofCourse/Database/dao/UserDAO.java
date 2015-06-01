@@ -14,6 +14,8 @@ import de.ofCourse.model.Address;
 import de.ofCourse.model.Course;
 import de.ofCourse.model.PaginationData;
 import de.ofCourse.model.User;
+import de.ofCourse.model.UserRole;
+import de.ofCourse.model.UserStatus;
 import de.ofCourse.system.Transaction;
 
 /**
@@ -196,7 +198,50 @@ public class UserDAO {
         	user.setDateOfBirth(res.getDate("date_of_bith"));
         	user.setSalutation(res.getString("form_of_adress"));
         	user.setProfilImage(res.getString("profile_image"));
-    	    	//TODO Attribute belegen
+        	String userRole = res.getString("role");
+        		switch(userRole) {
+        		case "registered_user":
+        		    user.setUserRole(UserRole.REGISTERED_USER);
+        		case "course_instructor":
+        		    user.setUserRole(UserRole.COURSE_LEADER);
+        		case "administrator":
+        		    user.setUserRole(UserRole.SYSTEM_ADMINISTRATOR);
+        		default:
+        		     //TODO Fehlermeldung nötig ? 
+        		}
+        	
+        	String userStatus =res.getString("status");
+        		switch(userStatus){
+        		case "anonymous":
+        		    user.setUserStatus(UserStatus.ANONYMOUS);
+        		case "not_activated":
+        		    user.setUserStatus(UserStatus.NOT_ACTIVATED);
+        		case "registered":
+        		    user.setUserStatus(UserStatus.REGISTERED);
+        		case "inactive":
+        		    user.setUserStatus(UserStatus.INACTIVE);
+        		default:
+        		    //TODO Fehlermeldung nötig ?
+        		}
+
+        	//neue Datenbankabfrage für die Adresse des Benutzers
+        	sql = "SELECT * FROM addresses WHERE user=?";
+        	pS = con.prepareStatement(sql);	    
+        	pS.setInt(1, user.getUserID()); 
+        	
+        	res = pS.executeQuery();
+        	if(res.next()) {
+        	    address.setId(res.getInt("id"));
+        	    address.setCity(res.getString("city"));
+        	    address.setCountry(res.getString("country"));
+        	    address.setZipCode(res.getInt("zip_code"));
+        	    address.setStreet(res.getString("street"));
+        	    address.setHouseNumber(res.getInt("house_nr"));
+        	} else {
+        	    //Fehler
+        	}
+        	//dem Userobjekt das Adressobjekt zuweisen
+    	    	user.setAddress(address);
 	    }
 	    else
 	    {
