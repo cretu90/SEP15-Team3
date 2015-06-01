@@ -13,7 +13,7 @@ import java.sql.SQLException;
 public interface Transaction {
     
     /**
-     * Stores a instance of the wrapper class Connection
+     * Gives you a connection.
      */
     public Connection getConn();
     

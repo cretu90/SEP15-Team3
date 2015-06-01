@@ -3,6 +3,8 @@
  */
 package de.ofCourse.system;
 
+import LogSetup;
+
 import java.sql.SQLException;
 
 /**
