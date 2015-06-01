@@ -160,22 +160,35 @@ public class UserDAO {
     
     public static User getUser(Transaction trans, String username)
 		throws InvalidDBTransferException {
+	
+	//Neues Userobjekt erstellen und mit dem Benutzernamen füllen.  
+	//Neues Adressobjekt erstellen.
 	User user = new User();
 	user.setUsername(username);
 	Address address = new Address();
 	
+	//SQL- Abfrage vorbereiten und Connection zur Datenbank erstellen.
 	PreparedStatement pS = null;
 	Connection con = (Connection) trans.conn;
 	
+	//Datenbankabfrage
 	String sql = "SELECT * FROM users WHERE nickname=?";
 	
+	
+	//mögliche SQL-Injektion abfangen
 	try {
 	    pS = con.prepareStatement(sql);	    
 	    pS.setString(1, username);
 	    
+	    //preparedStatement ausführen, gibt resultSet als Liste zurück (hier
+	    //ein Eintrag in der Liste, da Benutzername einzigartig).
 	    ResultSet res = pS.executeQuery();
 	    
+	    //Nächten Eintrag aufrufen, gibt true zurück, falls es weiteren 
+	    //Eintrag gibt, ansonsten null.
 	    if(res.next()) {
+		
+		//Userobjekt mit Werten aus der Datenbank befüllen.
 		user.setUserId(res.getInt("id"));
         	user.setFirstname(res.getString("first_name"));
         	user.setLastname(res.getString("name"));
@@ -195,7 +208,7 @@ public class UserDAO {
 	    throw new InvalidDBTransferException();
 	    //TODO Logging message
 	}	
-	
+	// gibt das befüllte Userobjekt zurück.
 	return user;
 }
     
@@ -215,21 +228,31 @@ public class UserDAO {
     public static int getUserID(Transaction trans, String username)
 	    throws InvalidDBTransferException {
 	
+	//Neues Integer id erstellen.
 	int id =0;
 	
+	//SQL- Abfrage vorbereiten und Connection zur Datenbank erstellen.
 	PreparedStatement pS = null;
 	Connection con = (Connection) trans.conn;
 	
+	//Datenbankabfrage
 	String sql = "SELECT id FROM users WHERE nickname=?";
 	
+	//mögliche SQL-Injektion abfangen
 	try {
 	    pS = con.prepareStatement(sql);	    
 	    pS.setString(1, username);
 	    
+	    //preparedStatement ausführen, gibt resultSet als Liste zurück (hier
+	    //ein Eintrag in der Liste, da Benutzername einzigartig).
 	    ResultSet res = pS.executeQuery();
 	    
+	   //Nächten Eintrag aufrufen, gibt true zurück, falls es weiteren 
+	    //Eintrag gibt, ansonsten 0.
 	    if(res.next()) {
+		//id mit zugehörigem Wert aus der Datenbank füllen.
 		id = res.getInt("id");
+		
     	    	//TODO Attribute belegen
 	    }
 	    else
