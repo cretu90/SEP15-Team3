@@ -33,45 +33,55 @@ public class DatabaseTableCreator {
      * @throws InvalidDBTransferException if any error occurred during the
      * execution of the method
      */
-    public static void buildUpDatabase() throws InvalidDBTransferException {
+    public static void buildUpDatabase() throws InvalidDBTransferException{
     	Transaction trans = new Connection();
     	trans.start();
     	String checkTables = "SELECT COUNT(*) FROM information_schema.tables" +
     			"WHERE table_schema = 'public'";
+    	PreparedStatement stmt = null;
+    	PreparedStatement check = null;
+    	ResultSet count = null;
     	try {
-			PreparedStatement stmt = trans.getConn().prepareStatement(checkTables);
-			ResultSet count = stmt.executeQuery();
+			check = trans.getConn().conn.
+					prepareStatement(checkTables);
+			count = check.executeQuery();
 			
 			count.next();
-			Long check = (Long) count.getObject(1);
-			if (check == 0) {
-				trans.getConn().prepareStatement(createFormOfAddress()).
-				execute();
-				trans.getConn().prepareStatement(createRole()).execute();
-				trans.getConn().prepareStatement(createStatus()).execute();
-				trans.getConn().prepareStatement(createPeriod()).execute();
-				trans.getConn().prepareStatement(createActivation()).execute();
-				trans.getConn().prepareStatement(createUsers()).execute();
-				trans.getConn().prepareStatement(createCourses()).execute();
-				trans.getConn().prepareStatement(createCourseUnits()).execute();
-				trans.getConn().prepareStatement(createAddresses()).execute();
-				trans.getConn().prepareStatement(createCycles()).execute();
-				trans.getConn().prepareStatement(createInformUsers()).execute();
-				trans.getConn().prepareStatement(createCourseInstructors()).
-				execute();
-				trans.getConn().prepareStatement(createCourseParticipants()).
-				execute();
-				trans.getConn().
-					prepareStatement(createCourseUnitParticipants()).execute();
-				trans.getConn().prepareStatement(createSystemAttributes()).
-				execute();
-				trans.getConn().prepareStatement(createCustomizationData()).
-				execute();
+			Long numTables = (Long) count.getObject(1);
+			if (numTables == 0) {
+				stmt = trans.getConn().conn.
+						prepareStatement(createFormOfAddress() + createRole() +
+								createStatus() + createPeriod() +
+								createActivation() + createUsers() +
+								createCourses() + createCourseUnits() +
+								createAddresses() + createCycles() +
+								createInformUsers() +
+								createCourseInstructors() +
+								createCourseParticipants() +
+								createCourseUnitParticipants() +
+								createSystemAttributes() +
+								createCustomizationData());
+				stmt.execute();
 			}
-			count.close();
-			stmt.close();
+			
 		} catch (SQLException e) {
 			e.printStackTrace();
+		} finally {
+			try {
+				count.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+			try {
+				check.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+			try {
+				stmt.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
 		}
     }
     
