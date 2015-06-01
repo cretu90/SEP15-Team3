@@ -6,6 +6,7 @@ package de.ofCourse.action;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
+import de.ofCourse.model.Language;
 import de.ofCourse.model.UserRole;
 import de.ofCourse.model.UserStatus;
 
@@ -39,7 +40,7 @@ public class SessionUserBean {
     /**
      * The current language
      */
-    private String language;
+    private Language language;
 
     /**
      * Returns the ID of the current logged in user.
@@ -57,6 +58,7 @@ public class SessionUserBean {
      *            ID of user
      */
     public void setUserID(int userID) {
+	this.userID = userID;
     }
 
     /**
@@ -74,7 +76,8 @@ public class SessionUserBean {
      * @param userStatus
      *            status of user
      */
-    public void setUserStatus(int userStatus) {
+    public void setUserStatus(UserStatus userStatus) {
+	this.userStatus = userStatus;
     }
 
     /**
@@ -92,7 +95,8 @@ public class SessionUserBean {
      * @param userRole
      *            role of user
      */
-    public void setUserRole(String userRole) {
+    public void setUserRole(UserRole userRole) {
+	this.userRole = userRole;
     }
 
     /**
@@ -100,7 +104,7 @@ public class SessionUserBean {
      * 
      * @return the language
      */
-    public String getLanguage() {
+    public Language getLanguage() {
 	return language;
     }
 
@@ -110,6 +114,7 @@ public class SessionUserBean {
      * @param language
      *            the language to set
      */
-    public void setLanguage(String language) {
+    public void setLanguage(Language language) {
+	this.language = language;
     }
 }

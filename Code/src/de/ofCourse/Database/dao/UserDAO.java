@@ -140,6 +140,48 @@ public class UserDAO {
     		throws InvalidDBTransferException {
 	return null;
     }
+    
+    public static UserStatus getUserStatus(Transaction trans, int userID)
+		throws InvalidDBTransferException {
+	
+	UserStatus userStatus = null;
+	
+	//SQL- Abfrage vorbereiten und Connection zur Datenbank erstellen.
+	PreparedStatement pS = null;
+	Connection con = (Connection) trans.getConn();
+	
+	String sql = "SELECT status FROM users WHERE id=?";
+	//mögliche SQL-Injektion abfangen
+	try {
+	    pS = con.prepareStatement(sql);	    
+	    pS.setInt(1, userID);
+	    
+	    //preparedStatement ausführen, gibt resultSet als Liste zurück (hier
+	    //ein Eintrag in der Liste, da Benutzername einzigartig).
+	    ResultSet res = pS.executeQuery();
+	    
+	    //Nächten Eintrag aufrufen, gibt true zurück, falls es weiteren 
+	    //Eintrag gibt, ansonsten null.
+	    if(res.next()) {
+		String pwFromDB = res.getString("pw_hash");
+	    } else {
+		userStatus = null;
+	    }
+
+	} catch (SQLException e) {
+	    throw new InvalidDBTransferException();
+	    //TODO Logging message
+	} finally {
+	    //TODO Connection releasen
+	}
+	return null;
+    }    
+    
+    public static UserRole getUserRole(Transaction trans, int userID)
+    		throws InvalidDBTransferException {
+	
+	return null;
+    }
 
     /**
      * Returns 0, if username or password is wrong or the inserted user does not 
