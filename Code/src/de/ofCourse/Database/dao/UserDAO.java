@@ -10,6 +10,7 @@ import java.sql.SQLException;
 import java.util.List;
 
 import de.ofCourse.exception.InvalidDBTransferException;
+import de.ofCourse.model.Address;
 import de.ofCourse.model.Course;
 import de.ofCourse.model.PaginationData;
 import de.ofCourse.model.User;
@@ -116,6 +117,8 @@ public class UserDAO {
 	return null;
     }
 
+    
+    
     /**
      * Returns a user assigned to the specified ID.
      * 
@@ -134,9 +137,20 @@ public class UserDAO {
 	return null;
     }
 
+    
+    public static int proveLogin(String username, String passwordHash)
+    	throws InvalidDBTransferException{
+	return 0;
+    }
+    
+    
+    
+    
     public static User getUser(Transaction trans, String username)
 		throws InvalidDBTransferException {
 	User user = new User();
+	user.setUsername(username);
+	Address address = new Address();
 	
 	PreparedStatement pS = null;
 	Connection con = (Connection) trans.conn;
@@ -152,6 +166,12 @@ public class UserDAO {
 	    if(res.next()) {
 		user.setUserId(res.getInt("id"));
         	user.setFirstname(res.getString("first_name"));
+        	user.setLastname(res.getString("name"));
+        	user.setEmail(res.getString("mail"));
+        	user.setDateOfBirth(res.getDate("date_of_bith"));
+        	user.setPassword(res.getString("pw_hash"));
+        	user.setSalutation(res.getString("form_of_adress"));
+        	user.setProfilImage(res.getString("profile_image"));
     	    	//TODO Attribute belegen
 	    }
 	    else
