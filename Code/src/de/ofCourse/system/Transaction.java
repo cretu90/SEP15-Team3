@@ -3,6 +3,8 @@
  */
 package de.ofCourse.system;
 
+import java.sql.SQLException;
+
 /**
  * Handles the transaction management to prevent any mistakes with the database communication.
  * 
@@ -13,7 +15,7 @@ public interface Transaction {
     /**
      * Stores a instance of the wrapper class Connection
      */
-    public Connection conn = null;
+    public Connection conn = new Connection();
     
     /**
      * Starts a new transaction and establishes the connection.
@@ -23,8 +25,9 @@ public interface Transaction {
     /**
      * Makes all changes made since the previous commit/rollback permanent and releases any database locks
      * and the connection.
+     * @throws SQLException 
      */
-    public void commit(); 
+    public void commit() throws SQLException; 
     /**
      * Undoes all changes made in the current transaction and releases any database locks and the connection.
      */

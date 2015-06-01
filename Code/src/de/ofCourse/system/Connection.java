@@ -3,6 +3,8 @@
  */
 package de.ofCourse.system;
 
+import java.sql.SQLException;
+
 /**
  * Hides the kind of connection and provides safety. <p>
  * 
@@ -16,24 +18,34 @@ public class Connection implements Transaction {
     /**
      * stores the connection from the DatabaseConnectionManager
      */
-    public java.sql.Connection conn;
+    public java.sql.Connection conn = null;
 
     @Override
     public void start() {
-        // TODO Auto-generated method stub
+        getConnection();
         
     }
 
     @Override
-    public void commit() {
-        // TODO Auto-generated method stub
-        
+    public void commit() throws SQLException {
+        try{
+            conn.commit();
+            releaseConnection();
+        } catch (SQLException e) {
+            rollback();
+            releaseConnection();
+        }              
     }
 
     @Override
     public void rollback() {
-        // TODO Auto-generated method stub
-        
+        try {
+            conn.rollback();
+            releaseConnection();
+        } catch (SQLException e) {
+            e.printStackTrace();
+            releaseConnection();
+        }    
     }
     
     /**
@@ -47,7 +59,8 @@ public class Connection implements Transaction {
      * Release the stored connection back to the DatabaseConnectionManager
      */
     public void releaseConnection(){
-        
+        DatabaseConnectionManager.getInstance().releaseConnection();
+        conn = null;
     }
     
 
