@@ -1,0 +1,8 @@
+@CHARSET "UTF-8";
+
+ul#footermenu a{
+	min-width:110px;
+}
+.btn-minsize {
+	min-width:110px;
+}
