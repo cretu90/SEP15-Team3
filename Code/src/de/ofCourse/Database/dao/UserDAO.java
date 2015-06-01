@@ -137,7 +137,19 @@ public class UserDAO {
 	return null;
     }
 
-    
+    /**
+     * Returns 0, if username or password is wrong or the inserted user does not 
+     * exist in the database. Otherwise returns the id of the user.
+     * 
+     * @param username
+     * 		the username inserted by the user
+     * @param passwordHash
+     * 		the password inserted by the user, which is hashed in the bean
+     * @return the id of the user 
+     * 		<br>or 0 if the username or password is wrong
+     * @throws InvalidDBTransferException if any error occurred during the
+     * execution of the method
+     */
     public static int proveLogin(String username, String passwordHash)
     	throws InvalidDBTransferException{
 	return 0;
