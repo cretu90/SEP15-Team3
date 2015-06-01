@@ -6,7 +6,9 @@ package de.ofCourse.system;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.util.Collections;
 import java.util.LinkedList;
+import java.util.List;
 
 import de.ofCourse.utilities.PropertyManager;
 
@@ -34,173 +36,166 @@ import de.ofCourse.utilities.PropertyManager;
  */
 public class DatabaseConnectionManager {
 
-    /**
-     * List of free connections
-     */
-    private static LinkedList<Connection> freeConnections;
+	/**
+	 * List of free connections
+	 */
+	private final List<Connection> freeConnections;
 
-    /**
-     * List of used connections
-     */
-    private static LinkedList<Connection> usedConnections;
+	/**
+	 * Stores the number of connections that are currently in use
+	 */
+	private int numberOfConnectionsInUse = 0;
 
-    /**
-     * Singleton-object of the DatabaseConnectionManager class
-     */
-    private static DatabaseConnectionManager databaseConnectionManager;
+	/**
+	 * Singleton-object of the DatabaseConnectionManager class
+	 */
+	private static DatabaseConnectionManager databaseConnectionManager;
 
-    /**
-     * JDBC-Driver
-     */
-    public static final String dbDriver = "org.postgresql.Driver";
+	/**
+	 * JDBC-Driver
+	 */
+	public static final String dbDriver = "org.postgresql.Driver";
 
-    /**
-     * Number of allowed connections
-     */
-    private static final String NUMBER_OF_CONNECTIONS = PropertyManager
-	    .getInstance().getPropertyConfig("dbconnections");
+	/**
+	 * Number of allowed connections
+	 */
+	private static final String NUMBER_OF_CONNECTIONS = PropertyManager
+			.getInstance().getPropertyConfig("dbconnections");
 
-    /**
-     * Default constructor
-     */
-    private DatabaseConnectionManager() {
-    }
+	private DatabaseConnectionManager() {
+		freeConnections = Collections
+				.synchronizedList(new LinkedList<Connection>());
+		loadDBDriver();
+	}
 
-    /**
-     * Returns the connection you need for database access.
-     * 
-     * @return connection for database access
-     */
-    public synchronized Connection getConnection() {
+	/**
+	 * Returns the connection you need for database access.
+	 * 
+	 * @return connection for database access
+	 */
+	public synchronized Connection getConnection() {
 
-	// If there are not the number of connections active as determined in
-	// the configuration file
-	int numberOfConnections = Integer.parseInt(NUMBER_OF_CONNECTIONS);
-	int difference = numberOfConnections
-		- (freeConnections.size() + usedConnections.size());
-	
-	if (difference > 0) {
-	    for (int i = 0; i < difference; ++i) {
+		// If there are not the number of connections active as determined in
+		// the configuration file
+
+		int numberOfConnections = Integer.parseInt(NUMBER_OF_CONNECTIONS);
+		int difference = numberOfConnections
+				- (freeConnections.size() + numberOfConnectionsInUse);
+		if (difference > 0) {
+			for (int i = 0; i < difference; ++i) {
+				freeConnections.add(establishConnection());
+			}
+		}
+
+		// As long there's no free connection to the database
+		while (freeConnections.isEmpty()) {
+			try {
+				wait();
+			} catch (InterruptedException e) {
+				// TODO: Logging message
+			}
+		}
+
+		// There's a free connection
+		int indexLastElement = freeConnections.size() - 1;
+		Connection connection = freeConnections.get(indexLastElement);
+		freeConnections.remove(indexLastElement);
+		++numberOfConnectionsInUse;
+
+		return connection;
+	}
+
+	/**
+	 * Releases the connection after it has been used.
+	 */
+	public synchronized void releaseConnection(Connection connection) {
 		try {
-		    freeConnections.add(establishConnection());
+			if (!connection.isClosed() && connection != null) {
+				--numberOfConnectionsInUse;
+				freeConnections.add(connection);
+			}
 		} catch (SQLException e) {
-		    // TODO: Logging message
+			// TODO Logging message
 		}
-	    }
+		// Notifies all waiting threads that there's a free connection
+		notifyAll();
 	}
 
-	// As long there's no free connection to the database
-	while (freeConnections.isEmpty()) {
-	    try {
-		wait();
-	    } catch (InterruptedException e) {
-		// TODO: Logging message
-	    }
+	/**
+	 * Returns an instance of the DatabaseConnectionManager class.
+	 * 
+	 * @return instance of the DatabaseConnectionManager
+	 */
+	public static DatabaseConnectionManager getInstance() {
+
+		if (databaseConnectionManager == null) {
+			databaseConnectionManager = new DatabaseConnectionManager();
+			int numberOfConnections = Integer.parseInt(NUMBER_OF_CONNECTIONS);
+			for (int i = 0; i < numberOfConnections; ++i) {
+				Connection conn = establishConnection();
+				if (conn != null) {
+					databaseConnectionManager.freeConnections.add(conn);
+				}
+			}
+		}
+		return databaseConnectionManager;
 	}
 
-	// There's a free connection
-	Connection connection = freeConnections.getFirst();
-	freeConnections.removeFirst();
-	usedConnections.addLast(connection);
-
-	return connection;
-    }
-
-    /**
-     * Releases the connection after it has been used.
-     */
-    public synchronized void releaseConnection() {
-	if (!usedConnections.isEmpty()) {
-	    Connection connection = usedConnections.getFirst();
-	    usedConnections.removeFirst();
-	    freeConnections.addLast(connection);
-	}
-	// Notifies all waiting threads that there's a free connection
-	notifyAll();
-    }
-
-    /**
-     * Returns an instance of the DatabaseConnectionManager class.
-     * 
-     * @return instance of the DatabaseConnectionManager
-     */
-    public static DatabaseConnectionManager getInstance() {
-	if (databaseConnectionManager == null) {
-	    databaseConnectionManager = new DatabaseConnectionManager();
-	    freeConnections = new LinkedList<Connection>();
-	    usedConnections = new LinkedList<Connection>();
-	    int numberOfConnections = Integer.parseInt(NUMBER_OF_CONNECTIONS);
-
-	    try {
-		Class.forName(dbDriver);
-	    } catch (ClassNotFoundException e) {
-		// TODO: Logging message
-	    }
-
-	    for (int i = 0; i < numberOfConnections; ++i) {
+	/**
+	 * Returns a established connection to the database.
+	 * 
+	 * @return if the connection was established correctly, the connection to
+	 *         the database
+	 * @throws SQLException
+	 *             if an exception occurs during establishing the database
+	 *             connection
+	 */
+	private static Connection establishConnection() {
+		Connection connection = null;
 		try {
-		    freeConnections.add(establishConnection());
+			connection = DriverManager.getConnection(
+					"jdbc:postgresql://"
+							+ PropertyManager.getInstance().getPropertyConfig(
+									"dbhost")
+							+ ":"
+							+ PropertyManager.getInstance().getPropertyConfig(
+									"dbport")
+							+ "/"
+							+ PropertyManager.getInstance().getPropertyConfig(
+									"dbname"), PropertyManager.getInstance()
+							.getPropertyConfig("dbuser"), PropertyManager
+							.getInstance().getPropertyConfig("dbpassword"));
+			connection.setAutoCommit(false);
 		} catch (SQLException e) {
-		    // TODO: Logging message
+			// TODO: Logging message
 		}
-	    }
+		return connection;
 	}
 
-	return databaseConnectionManager;
-    }
-
-    /**
-     * Returns a established connection to the database.
-     * 
-     * @return if the connection was established correctly, the connection to
-     *         the database
-     * @throws SQLException
-     *             if an exception occurs during establishing the database
-     *             connection
-     */
-    private static Connection establishConnection() throws SQLException {
-	Connection connection = DriverManager.getConnection(
-		"jdbc:postgresql://"
-			+ PropertyManager.getInstance().getPropertyConfig(
-				"dbhost")
-			+ ":"
-			+ PropertyManager.getInstance().getPropertyConfig(
-				"dbport")
-			+ "/"
-			+ PropertyManager.getInstance().getPropertyConfig(
-				"dbname"), PropertyManager.getInstance()
-			.getPropertyConfig("dbuser"), PropertyManager
-			.getInstance().getPropertyConfig("dbpassword"));
-	connection.setAutoCommit(false);
-
-	return connection;
-    }
-
-    /**
-     * If the JVM will crash, this method executes last statements and closes
-     * all connections.
-     */
-    public void shutDown() {
-	for (Connection connection : freeConnections) {
-	    try {
-		if (!connection.isClosed()) {
-		    connection.close();
-		    freeConnections.removeFirst();
+	/**
+	 * If the JVM will crash, this method executes last statements and closes
+	 * all connections.
+	 */
+	public void shutDown() {
+		for (Connection connection : this.freeConnections) {
+			if (connection != null) {
+				try {
+					connection.close();
+				} catch (SQLException e) {
+                 //TODO: Logging message
+				}
+			}
 		}
-	    } catch (SQLException e) {
-		// TODO: Logging message
-	    }
 	}
-	for (Connection connection : usedConnections) {
-	    try {
-		if (!connection.isClosed()) {
-		    connection.close();
-		    usedConnections.removeFirst();
-		}
-	    } catch (SQLException e) {
-		// TODO: Logging message
-	    }
-	}
-    }
 
+	/**
+	 * Loads the database driver.
+	 */
+	private static void loadDBDriver() {
+		try {
+			Class.forName(dbDriver);
+		} catch (ClassNotFoundException e) {
+			// TODO: Logging message
+		}
+	}
 }

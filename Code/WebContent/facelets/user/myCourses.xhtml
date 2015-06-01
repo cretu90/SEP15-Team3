@@ -77,7 +77,7 @@
 								<f:facet name="header">
 									<h:commandLink action="#{myCoursesBean.sortBySpecificColumn}"
 										id="sortByAdmin">
-										<f:param name="sortCol" value="admin" />
+										<f:param name="sortCol" value="courseLeader" />
                                                Kursleiter
                             </h:commandLink>
 								</f:facet>
@@ -100,27 +100,27 @@
 											</h:commandButton></li>
 
 										<li><h:commandButton class="btn btn-default"
-												value="#{myCoursesBean.pagination.shownPageNum}"
+												value="#{myCoursesBean.pagination.currentPageNumber}"
 												action="#{myCoursesBean.goToSpecificPage}"
-												rendered="#{myCoursesBean.pagination.shownPageNum>=1}">
+												rendered="#{myCoursesBean.pagination.currentPageNumber>=1}">
 												<f:param name="page"
-													value="#{myCoursesBean.pagination.shownPageNum-1}" />
+													value="#{myCoursesBean.pagination.currentPageNumber-1}" />
 											</h:commandButton></li>
 
 										<li><h:commandButton style="font-weight:bold;"
 												class="btn btn-primary" id="currentDisplayedPage"
-												value="#{myCoursesBean.pagination.shownPageNum +1}"
+												value="#{myCoursesBean.pagination.currentPageNumber +1}"
 												action="#{myCoursesBean.goToSpecificPage}">
 												<f:param name="page"
-													value="#{myCoursesBean.pagination.shownPageNum}" />
+													value="#{myCoursesBean.pagination.currentPageNumber}" />
 											</h:commandButton></li>
 
 										<li><h:commandButton class="btn btn-default"
-												value="#{myCoursesBean.pagination.shownPageNum+2}"
+												value="#{myCoursesBean.pagination.currentPageNumber+2}"
 												action="#{myCoursesBean.goToSpecificPage}"
-												rendered="#{myCoursesBean.pagination.shownPageNum>=myCoursesBean.pagination.shownPageNum+1}">
+												rendered="#{myCoursesBean.pagination.numberOfPages>=myCoursesBean.pagination.currentPageNumber+1}">
 												<f:param name="page"
-													value="#{myCoursesBean.pagination.shownPageNum+1}" />
+													value="#{myCoursesBean.pagination.currentPageNumber+1}" />
 											</h:commandButton></li>
 
 										<li><h:commandButton class="btn btn-info" value="Weiter"
