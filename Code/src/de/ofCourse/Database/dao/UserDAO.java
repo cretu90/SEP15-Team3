@@ -138,6 +138,7 @@ public class UserDAO {
      */
     public static User getUser(Transaction trans, int userID)
     		throws InvalidDBTransferException {
+	
 	return null;
     }
     
@@ -163,7 +164,18 @@ public class UserDAO {
 	    //Nächten Eintrag aufrufen, gibt true zurück, falls es weiteren 
 	    //Eintrag gibt, ansonsten null.
 	    if(res.next()) {
-		String pwFromDB = res.getString("pw_hash");
+		String userStatusString = res.getString("status");
+		switch(userStatusString) {
+		case "anonymous":
+		    userStatus = UserStatus.ANONYMOUS;
+		case "not_activated":
+		    userStatus = UserStatus.NOT_ACTIVATED;
+		case "registered":
+		    userStatus = UserStatus.REGISTERED;
+		case "inactive":
+		    userStatus = UserStatus.INACTIVE;
+		default:
+		}
 	    } else {
 		userStatus = null;
 	    }
@@ -174,13 +186,51 @@ public class UserDAO {
 	} finally {
 	    //TODO Connection releasen
 	}
-	return null;
+	return userStatus;
     }    
     
     public static UserRole getUserRole(Transaction trans, int userID)
     		throws InvalidDBTransferException {
+	UserRole userRole = null;
 	
-	return null;
+	//SQL- Abfrage vorbereiten und Connection zur Datenbank erstellen.
+	PreparedStatement pS = null;
+	Connection con = (Connection) trans.getConn();
+	
+	String sql = "SELECT role FROM users WHERE id=?";
+	//mögliche SQL-Injektion abfangen
+	try {
+	    pS = con.prepareStatement(sql);	    
+	    pS.setInt(1, userID);
+	    
+	    //preparedStatement ausführen, gibt resultSet als Liste zurück (hier
+	    //ein Eintrag in der Liste, da Benutzername einzigartig).
+	    ResultSet res = pS.executeQuery();
+	    
+	    //Nächten Eintrag aufrufen, gibt true zurück, falls es weiteren 
+	    //Eintrag gibt, ansonsten null.
+	    if(res.next()) {
+		String userRoleString = res.getString("role");
+		switch(userRoleString) {
+		case "registered_user":
+		    userRole = UserRole.REGISTERED_USER;
+		case "course_instructor":
+		    userRole = UserRole.COURSE_LEADER;
+		case "administrator":
+		    userRole = UserRole.SYSTEM_ADMINISTRATOR;
+		default:
+		}
+	    } else {
+		userRole = null;
+	    }
+
+	} catch (SQLException e) {
+	    throw new InvalidDBTransferException();
+	    //TODO Logging message
+	} finally {
+	    //TODO Connection releasen
+	}
+	return userRole;
     }
 
     /**
@@ -208,7 +258,7 @@ public class UserDAO {
 	PreparedStatement pS = null;
 	Connection con = (Connection) trans.getConn();
 	
-	String sql = "SELECT id, nickname, pw_hash FROM users WHERE nickname=?";
+	String sql = "SELECT id, nickname, pw_hash, status FROM users WHERE nickname=?";
 	//mögliche SQL-Injektion abfangen
 	try {
 	    pS = con.prepareStatement(sql);	    
@@ -224,7 +274,11 @@ public class UserDAO {
 		String pwFromDB = res.getString("pw_hash");
 		//TODO Passwörter vergleichen
 		if(PasswordHash.compare(passwordHash, pwFromDB)) {
-		    id = res.getInt("id");
+		    if(res.getString("status").equals(UserStatus.REGISTERED.toString())){
+			id = res.getInt("id");
+		    } else {
+			id = -2;
+		    }
 		} else {
 		    id = -1;
 		}

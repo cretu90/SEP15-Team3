@@ -3,12 +3,20 @@
  */
 package de.ofCourse.action;
 
+import javax.annotation.PostConstruct;
+import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.RequestScoped;
+import javax.faces.context.FacesContext;
+import javax.servlet.http.HttpSession;
 
+import de.ofCourse.Database.dao.UserDAO;
+import de.ofCourse.model.Language;
 import de.ofCourse.model.User;
+import de.ofCourse.system.Connection;
 import de.ofCourse.system.Transaction;
+import de.ofCourse.utilities.PasswordHash;
 
 /**
  * Provides the function that a user can log in the system by entering his
@@ -33,6 +41,11 @@ public class AuthenticateUserBean {
      * password, which are needed to log in.
      */
     private User loginUser = new User();
+    
+    
+    /**
+     * The password which was inserted by the user.
+     */
     private String loginPassword;
     
     /**
@@ -48,6 +61,12 @@ public class AuthenticateUserBean {
     @ManagedProperty("#{sessionUser}")
     private SessionUserBean sessionUser;
 
+    @PostConstruct
+    private void init(){
+	this.transaction = new Connection();
+	this.sessionUser = new SessionUserBean();
+    }
+    
     /**
      * Returns the link to the <code>myCourses</code> page if the entered
      * username and the respective password are valid.<p>
@@ -61,7 +80,45 @@ public class AuthenticateUserBean {
      * @return link to the next page 
      */
     public String login() {
-	//loginUser.getUsername();
+	
+	String passwordHash = PasswordHash.hashPW(this.loginPassword);
+	
+	int id = UserDAO.proveLogin(this.transaction, this.getLoginUser().getUsername(), passwordHash);
+	
+	//HTTP Session
+	//userID
+	//userRole
+	
+	if(id == -1) {
+            FacesContext facesContext = FacesContext.getCurrentInstance();
+            FacesMessage msg = new FacesMessage("Benutzername oder Passwort falsch!");
+            msg.setSeverity(FacesMessage.SEVERITY_INFO);
+            facesContext.addMessage(null, msg);
+            facesContext.renderResponse();
+
+            return "/facelets/open/authenticate.xhtml?faces-redirect=false";
+	} else if(id == -2) {
+            FacesContext facesContext = FacesContext.getCurrentInstance();
+            FacesMessage msg = new FacesMessage("Benutzerkonto nicht aktiv!");
+            msg.setSeverity(FacesMessage.SEVERITY_INFO);
+            facesContext.addMessage(null, msg);
+            facesContext.renderResponse();
+
+            return "/facelets/open/authenticate.xhtml?faces-redirect=false";
+	} else {
+	    sessionUser.setLanguage(Language.de);
+	    sessionUser.setUserID(id);
+	    sessionUser.setUserRole(UserDAO.getUserRole(this.transaction, id));
+	    sessionUser.setUserStatus(UserDAO.getUserStatus(this.transaction, id));
+
+            HttpSession session = (HttpSession) FacesContext.getCurrentInstance().
+        	    getExternalContext().getSession(true);
+            session.setAttribute("userID", id);
+            session.setAttribute("userRole", sessionUser.getUserRole());
+            
+            return "/facelets/user/registeredUser/myCourses.xhtml?faces-redirect=true";
+	}
+	
 	return null;
     }
 
