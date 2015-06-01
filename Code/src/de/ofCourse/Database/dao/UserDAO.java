@@ -18,6 +18,7 @@ import de.ofCourse.model.User;
 import de.ofCourse.model.UserRole;
 import de.ofCourse.model.UserStatus;
 import de.ofCourse.system.Transaction;
+import de.ofCourse.utilities.PasswordHash;
 
 /**
  * Provides methods for transactions with the users stored in the database such
@@ -144,6 +145,9 @@ public class UserDAO {
      * Returns 0, if username or password is wrong or the inserted user does not 
      * exist in the database. Otherwise returns the id of the user.
      * 
+     * 
+     * @param trans
+     * 		transaction object
      * @param username
      * 		the username inserted by the user
      * @param passwordHash
@@ -153,9 +157,46 @@ public class UserDAO {
      * @throws InvalidDBTransferException if any error occurred during the
      * execution of the method
      */
-    public static int proveLogin(String username, String passwordHash)
-    	throws InvalidDBTransferException{
-	return 0;
+    public static int proveLogin(Transaction trans, String username, 
+	    String passwordHash) throws InvalidDBTransferException{
+	
+	int id = -1;
+	
+	//SQL- Abfrage vorbereiten und Connection zur Datenbank erstellen.
+	PreparedStatement pS = null;
+	Connection con = (Connection) trans.getConn();
+	
+	String sql = "SELECT id, nickname, pw_hash FROM users WHERE nickname=?";
+	//mögliche SQL-Injektion abfangen
+	try {
+	    pS = con.prepareStatement(sql);	    
+	    pS.setString(1, username);
+	    
+	    //preparedStatement ausführen, gibt resultSet als Liste zurück (hier
+	    //ein Eintrag in der Liste, da Benutzername einzigartig).
+	    ResultSet res = pS.executeQuery();
+	    
+	    //Nächten Eintrag aufrufen, gibt true zurück, falls es weiteren 
+	    //Eintrag gibt, ansonsten null.
+	    if(res.next()) {
+		String pwFromDB = res.getString("pw_hash");
+		//TODO Passwörter vergleichen
+		if(PasswordHash.compare(passwordHash, pwFromDB)) {
+		    id = res.getInt("id");
+		} else {
+		    id = -1;
+		}
+	    } else {
+		id = -1;
+	    }
+
+	} catch (SQLException e) {
+	    throw new InvalidDBTransferException();
+	    //TODO Logging message
+	} finally {
+	    //TODO Connection releasen
+	}
+	return id;
     }
     
     
@@ -183,7 +224,7 @@ public class UserDAO {
 	
 	//SQL- Abfrage vorbereiten und Connection zur Datenbank erstellen.
 	PreparedStatement pS = null;
-	Connection con = (Connection) trans.conn;
+	Connection con = (Connection) trans.getConn();
 	
 	//Datenbankabfrage
 	String sql = "SELECT * FROM users WHERE nickname=?";
@@ -269,13 +310,15 @@ public class UserDAO {
 	    else
 	    {
 		//TODO Fehler, kein Benutzer mit diesem Benutzernamen
-		return null;
+		user = null;
 	    }
 
 	} catch (SQLException e) {
 	    throw new InvalidDBTransferException();
 	    //TODO Logging message
-	}	
+	} finally {
+	    //TODO Connection releasen
+	}
 	// gibt das befüllte Userobjekt zurück.
 	return user;
 }
@@ -297,11 +340,11 @@ public class UserDAO {
 	    throws InvalidDBTransferException {
 	
 	//Neues Integer id erstellen.
-	int id =0;
+	int id = -1;
 	
 	//SQL- Abfrage vorbereiten und Connection zur Datenbank erstellen.
 	PreparedStatement pS = null;
-	Connection con = (Connection) trans.conn;
+	Connection con = (Connection) trans.getConn();
 	
 	//Datenbankabfrage
 	String sql = "SELECT id FROM users WHERE nickname=?";
@@ -326,13 +369,15 @@ public class UserDAO {
 	    else
 	    {
 		//TODO Fehler, kein Benutzer mit diesem Benutzernamen
-		return 0;
+		id = -1;
 	    }
 
 	} catch (SQLException e) {
 	    throw new InvalidDBTransferException();
 	    //TODO Logging message
-	}	
+	} finally {
+	    //TODO Connection releasen
+	}
 	
 	return id;
     }

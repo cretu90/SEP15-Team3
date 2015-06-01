@@ -34,7 +34,6 @@ public class DateOfBirthValidator implements Validator {
     public void validate(FacesContext arg0, UIComponent arg1, Object value)
 	    throws ValidatorException {
 	Date dateToday = new Date();
-	// Date dateOfBirth = new Date();
 	String dateOfBirthString = value.toString();
 
 	try {
