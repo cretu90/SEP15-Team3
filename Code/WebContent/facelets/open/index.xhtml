@@ -7,50 +7,16 @@
 	xmlns:f="http://xmlns.jcp.org/jsf/core"
 	xmlns:h="http://xmlns.jcp.org/jsf/html">
 	<ui:composition template="/WEB-INF/template.xhtml">
-		<ui:define name="title">Start</ui:define>
+		<ui:define name="title">OfCourse</ui:define>
 		<body>
 			<ui:define name="content">
-				<h1>Start</h1>
-				<div class="row">
-					<div class="col-lg-12">
-						<p style="font-size:16px;">Herzlich Willkommen bei <strong>OfCourse</strong>. <br />
-						Sie sehen einen kleinen Auszug der neusten Kurse. Zur Teilnahme an den Kursen oder für eine komplette Kursübersicht melden Sie Sich bitte im System an oder registrieren Sie ein neues Benutzerkonto.</p>
-					</div>
-				</div>
-				<div class="row" style="padding-top:20px;">
-					<div class="col-lg-4">
-						<div class="panel panel-info">
-							<div class="panel-heading" style="font-size:18px; text-align:center;"><strong>Yoga für Einsteiger</strong></div>
-							<div class="panel-body">
-								<img class="img-responsive" src="#{request.contextPath}/resources/img/userdata/yoga.jpg" width="315px" alt="Yoga"></img>
-								<p style="padding-top:5px;">Yoga ist eine indische philosophische Lehre, die eine Reihe geistiger und körperlicher Übungen wie Yama, Meditation und Askese umfasst.</p>					
-								<h:commandButton id="Details1" class="btn btn-info" value="Kursdetails aufrufen" />
-							</div>
-							<div class="panel-footer"><strong>nächster Kurs am 23.04.2015, 18:00-20:00 Uhr</strong></div>
-						</div>
-					</div>
-					<div class="col-lg-4">
-						<div class="panel panel-info">
-							<div class="panel-heading" style="font-size:18px; text-align:center;"><strong>Zumba, Fortgeschritten</strong></div>
-							<div class="panel-body">
-								<img src="#{request.contextPath}/resources/img/userdata/zumba.jpg" width="315px" alt="Yoga"></img>
-								<p style="padding-top:5px;">Zumba kombiniert Aerobic mit lateinamerikanischen sowie internationalen Tänzen. Der Name Zumba ist ein weltweit registriertes Warenzeichen der Zumba Fitness, LLC.</p>					
-								<h:commandButton id="Details2" class="btn btn-info" value="Kursdetails aufrufen" />
-							</div>
-							<div class="panel-footer"><strong>nächster Kurs am 25.04.2015, 16:30-18:00 Uhr</strong></div>
-						</div>
-					</div>
-					<div class="col-lg-4">
-						<div class="panel panel-info">
-							<div class="panel-heading" style="font-size:18px; text-align:center;"><strong>CrossFit Extreme</strong></div>
-							<div class="panel-body">
-								<img src="#{request.contextPath}/resources/img/userdata/crossfit.jpg" width="315px" alt="CrossFit"></img>
-								<p style="padding-top:5px;">CrossFit ist eine Fitnesstrainingsmethode, die von der gleichnamigen US-amerikanischen Unternehmung vertrieben wird und Gewichtheben, Sprinten, Eigengewichtsübungen sowie Turnen miteinander verbindet.</p>					
-								<h:commandButton id="Details3" class="btn btn-info" value="Kursdetails aufrufen" />
-							</div>
-							<div class="panel-footer"><strong>nächster Kurs am 24.04.2015, 17:00-18:30 Uhr</strong></div>
-						</div>
-					</div>
+				<div class="container" align="center">
+					<h1>Herzlich Willkommen bei</h1>
+					<h:link outcome="/facelets/open/authenticate.xhtml">
+					<h:graphicImage class="img-responsive" url="/resources/img/logo.png"/>
+					</h:link>
+					<br/>
+					<h:outputText value="Melden Sie sich im System an um auf unser Kursangebot zugreifen zu können." />
 				</div>
 			</ui:define>
 		</body>
