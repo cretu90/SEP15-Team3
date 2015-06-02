@@ -258,97 +258,149 @@ public class DatabaseTableCreator {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
-			try {
-				count.close();
-			} catch (SQLException e1) {
-				e1.printStackTrace();
-			}
-			try {
-				check.close();
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}
-			try {
-				formOfAddress.close();
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}
-			try {
-				role.close();
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}
-			try {
-				status.close();
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}
-			try {
-				period.close();
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}
-			try {
-				activation.close();
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}
-			try {
-				users.close();
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}
-			try {
-				courses.close();
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}
-			try {
-				courseUnits.close();
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}
-			try {
-				addresses.close();
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}
-			try {
-				cycles.close();
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}
-			try {
-				informUsers.close();
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}
-			try {
-				courseInstructors.close();
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}
-			try {
-				courseParticipants.close();
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}
-			try {
-				courseUnitParticipants.close();
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}
-			try {
-				systemAttributes.close();
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}
-			try {
-				customizationData.close();
-			} catch (SQLException e) {
-				e.printStackTrace();
+			if (count != null) {
+				try {
+					count.close();
+				} catch (SQLException e1) {
+					e1.printStackTrace();
+				}
 			}
 			
+			if (check != null) {
+				try {
+					check.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}	
+			}
+			
+			if (formOfAddress != null) {
+				try {
+					formOfAddress.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+			
+			if (role != null) {
+				try {
+					role.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+			
+			if (status != null) {
+				try {
+					status.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+			
+			if (period != null) {
+				try {
+					period.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+			
+			if (activation != null) {
+				try {
+					activation.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+			
+			if (users != null) {
+				try {
+					users.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+			
+			if (courses != null) {
+				try {
+					courses.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+			
+			if (courseUnits != null) {
+				try {
+					courseUnits.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+			
+			if (addresses != null) {
+				try {
+					addresses.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+			
+			if (cycles != null) {
+				try {
+					cycles.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+			
+			if (informUsers != null) {
+				try {
+					informUsers.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+			
+			if (courseInstructors != null) {
+				try {
+					courseInstructors.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+			
+			if (courseParticipants != null) {
+				try {
+					courseParticipants.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+			
+			if (courseUnitParticipants != null) {
+				try {
+					courseUnitParticipants.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+			
+			if (systemAttributes != null) {
+				try {
+					systemAttributes.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+			
+			if (customizationData != null) {
+				try {
+					customizationData.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
 		}
     } 
     
