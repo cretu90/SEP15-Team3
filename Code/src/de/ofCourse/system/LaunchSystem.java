@@ -16,6 +16,7 @@ import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.apache.log4j.PatternLayout;
 
+import de.ofCourse.Database.DatabaseGeneral.DatabaseTableCreator;
 import de.ofCourse.utilities.PropertyManager;
 
 /**
@@ -49,8 +50,12 @@ public class LaunchSystem {
      */
     @PostConstruct
     public void startSystem() {
+        //Initialisiert zum ersten mal alle benötigten Singeltion Instanzen
         PropertyManager.getInstance();
         DatabaseConnectionManager.getInstance();
+        LogHandler.getInstance();
+        //Erstellt die Datenbank
+        DatabaseTableCreator.buildUpDatabase();
     }
 
     /**
