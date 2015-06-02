@@ -154,6 +154,7 @@ public class DatabaseConnectionManager {
      */
     private static Connection establishConnection() {
 	Connection connection = null;
+	System.out.println("counter");
 	try {
 	    connection = DriverManager.getConnection(
 		    "jdbc:postgresql://"
@@ -170,6 +171,7 @@ public class DatabaseConnectionManager {
 	    connection.setAutoCommit(false);
 	} catch (SQLException e) {
 	    // TODO: Logging message
+		System.out.println("SQLEXCEPTION");
 	}
 	return connection;
     }
