@@ -49,6 +49,8 @@ public class LaunchSystem {
      */
     @PostConstruct
     public void startSystem() {
+        PropertyManager.getInstance();
+        DatabaseConnectionManager.getInstance();
     }
 
     /**

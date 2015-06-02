@@ -3,8 +3,6 @@
  */
 package de.ofCourse.system;
 
-import LogSetup;
-
 import java.sql.SQLException;
 
 /**
@@ -36,7 +34,7 @@ public class Connection implements Transaction {
         } catch (SQLException e) {
             rollback();
             releaseConnection();
-            LogSetup.error("Übertragungsfehler! Rollback ausgeführt");
+            LogHandler.getInstance().error("Übertragungsfehler! Rollback ausgeführt");
         }              
     }
 
@@ -46,7 +44,7 @@ public class Connection implements Transaction {
             conn.rollback();
             releaseConnection();
         } catch (SQLException e) {
-            LogSetup.error("Übertragungsfehler! Rollback gescheitert");
+            LogHandler.getInstance().error("Übertragungsfehler! Rollback gescheitert");
             e.printStackTrace();
             releaseConnection();
         }    
@@ -68,9 +66,9 @@ public class Connection implements Transaction {
     }
 
     @Override
-    public java.sql.Connection getConn() {
+    public Connection getConn() {
        
-        return conn;
+        return (Connection) conn;
     }
     
 
