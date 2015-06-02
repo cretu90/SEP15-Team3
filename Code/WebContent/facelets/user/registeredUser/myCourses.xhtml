@@ -29,31 +29,19 @@
 							cellspacing="0" width="100%">
 							<h:column>
 								<f:facet name="header">
-									<h:commandLink action="#{myCoursesBean.sortBySpecificColumn}"
-										id="sortByTitle">
-										<f:param name="sortCol" value="title" />
 								               Titel
-			                </h:commandLink>
 								</f:facet>
 								<h:outputText value="#{course.title}" />
 							</h:column>
 							<h:column>
 								<f:facet name="header">
-									<h:commandLink action="#{myCoursesBean.sortBySpecificColumn}"
-										id="sortByLocation">
-										<f:param name="sortCol" value="location" />
                                                Ort
-                           </h:commandLink>
 								</f:facet>
 								<h:outputText value="#{course.nextCourseUnit.location}" />
 							</h:column>
 							<h:column>
 								<f:facet name="header">
-									<h:commandLink action="#{myCoursesBean.sortBySpecificColumn}"
-										id="sortByStartTime">
-										<f:param name="sortCol" value="startTime" />
                                                Beginn
-                            </h:commandLink>
 								</f:facet>
 								<h:outputText class="nowrap"
 									value="#{course.nextCourseUnit.starttime}">
@@ -62,11 +50,7 @@
 							</h:column>
 							<h:column>
 								<f:facet name="header">
-									<h:commandLink action="#{myCoursesBean.sortBySpecificColumn}"
-										id="sortByStartDate">
-										<f:param name="sortCol" value="startDate" />
                                                Datum
-                            </h:commandLink>
 								</f:facet>
 								<h:outputText class="nowrap"
 									value="#{course.nextCourseUnit.starttime}">
@@ -75,11 +59,7 @@
 							</h:column>
 							<h:column>
 								<f:facet name="header">
-									<h:commandLink action="#{myCoursesBean.sortBySpecificColumn}"
-										id="sortByAdmin">
-										<f:param name="sortCol" value="courseLeader" />
                                                Kursleiter
-                            </h:commandLink>
 								</f:facet>
 								<h:outputText value="#{course.courseAdmins.get(0).username}" />
 							</h:column>

@@ -128,16 +128,90 @@ public class MyCoursesBean implements Pagination, Serializable {
 	ordered.add(course2);
 	ordered.add(course3);
 	ordered.add(course1);
-	
-	
-
     }
+    
 
+    @PostConstruct
     private void init() {
-    transaction = new Connection();
+    this.registeredCourses = new ArrayList<Course>();
    
     pagination = new PaginationData();
+    this.pagination.setSortAsc(true);
+    this.pagination.setElementsPerPage(10);
+    this.pagination.setSortColumn("title");
+    this.pagination.setCurrentPageNumber(0);
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    /////////////////////////////////////////////
+    registeredCourses = new ArrayList<Course>();
+	ordered = new ArrayList<Course>();
 
+	course1 = new Course();
+	course1.setTitle("Yoga");
+	course1.setCourseID(111);
+
+	CourseUnit unit = new CourseUnit();
+	unit.setLocation("hier");
+	unit.setStarttime(new Date(100, 0, 20, 12, 0));
+	course1.setNextCourseUnit(unit);
+
+	User admin1 = new User();
+	admin1.setUsername("Hans");
+	User admin2 = new User();
+	admin2.setUsername("Detlef");
+
+	ArrayList<User> admins = new ArrayList<User>();
+	admins.add(admin1);
+	admins.add(admin2);
+	course1.setCourseAdmins(admins);
+
+	course2 = new Course();
+	course2.setTitle("Boxen");
+	course2.setCourseID(222);
+	CourseUnit unit1 = new CourseUnit();
+	unit1.setLocation("dort");
+	unit1.setStarttime(new Date(101, 0, 21, 22, 0));
+	course2.setNextCourseUnit(unit1);
+	course2.setCourseAdmins(admins);
+
+	course3 = new Course();
+	course3.setTitle("CrossFit");
+	course3.setCourseID(333);
+	CourseUnit unit2 = new CourseUnit();
+	unit2.setLocation("dorthier");
+	unit2.setStarttime(new Date(110, 0, 11, 22, 0));
+	course3.setNextCourseUnit(unit2);
+	course3.setCourseAdmins(admins);
+
+	registeredCourses.add(course1);
+	registeredCourses.add(course2);
+	registeredCourses.add(course3);
+
+	this.pagination = new PaginationData();
+	this.getPagination().setCurrentPageNumber(0);
+	System.out.println(pagination.getCurrentPageNumber());
+	
+	ordered.add(course2);
+	ordered.add(course3);
+	ordered.add(course1);
+    
     }
 
     // _________________________________________________________________
@@ -196,15 +270,6 @@ public class MyCoursesBean implements Pagination, Serializable {
     @Override
     public void sortBySpecificColumn() {
 
-    	if(FacesContext.getCurrentInstance()
-    			.getExternalContext().getRequestParameterMap().get("sortCol").equals("title")){
-    		this.registeredCourses = this.ordered;
-    	}
-    	
-	// TESTING
-	System.out.println(FacesContext.getCurrentInstance()
-		.getExternalContext().getRequestParameterMap().get("sortCol"));
-
     }
 
     /**
@@ -220,6 +285,7 @@ public class MyCoursesBean implements Pagination, Serializable {
      */
     @Override
     public void setPagination(PaginationData pagination) {
+    	this.pagination = pagination;
     }
 
     /**
