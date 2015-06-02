@@ -6,6 +6,7 @@ package de.ofCourse.Database.DatabaseGeneral;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 
 import de.ofCourse.exception.InvalidDBTransferException;
 import de.ofCourse.system.Connection;
@@ -25,101 +26,35 @@ import de.ofCourse.system.Transaction;
  */
 public class DatabaseTableCreator {
 	
-    /**
-     * Checks whether or not the required tables in the database have been
-     * initialized. If not, the necessary SQL statements are executed in order
-     * to create and initialize the tables in the database.
-     * 
-     * @throws InvalidDBTransferException if any error occurred during the
-     * execution of the method
-     */
-    public static void buildUpDatabase() throws InvalidDBTransferException{
-    	Transaction trans = new Connection();
-    	trans.start();
-    	String checkTables = "SELECT COUNT(*) FROM information_schema.tables" +
-    			"WHERE table_schema = 'public'";
-    	PreparedStatement stmt = null;
-    	PreparedStatement check = null;
-    	ResultSet count = null;
-    	try {
-			check = trans.getConn().conn.
-					prepareStatement(checkTables);
-			count = check.executeQuery();
-			
-			count.next();
-			Long numTables = (Long) count.getObject(1);
-			if (numTables == 0) {
-				stmt = trans.getConn().conn.
-						prepareStatement(createFormOfAddress() + createRole() +
-								createStatus() + createPeriod() +
-								createActivation() + createUsers() +
-								createCourses() + createCourseUnits() +
-								createAddresses() + createCycles() +
-								createInformUsers() +
-								createCourseInstructors() +
-								createCourseParticipants() +
-								createCourseUnitParticipants() +
-								createSystemAttributes() +
-								createCustomizationData());
-				stmt.execute();
-				System.out.println("Erstellen der Datenbank fertig");
-			}
-			
-		} catch (SQLException e) {
-			e.printStackTrace();
-		} finally {
-			try {
-				count.close();
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}
-			try {
-				check.close();
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}
-			try {
-				stmt.close();
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}
-		}
-    }
+	private static final String CREATE_FORM_OF_ADDRESS =
+			"CREATE TYPE form_of_address AS ENUM (" +
+					"’mr.’, ’ms.’" +
+    		")";
     
-    private static String createFormOfAddress() {
-    	return "CREATE TYPE form_of_address AS ENUM (" +
-    				"’mr.’, ’ms.’" +
-    			")";
-    }
+    private static final String CREATE_ROLE =
+    		"CREATE TYPE role AS ENUM (" +
+    			"’registered_user’, ’course_instructor’, ’administrator’" +
+    		")";
     
-    private static String createRole() {
-    	return "CREATE TYPE role AS ENUM (" +
-    				"’registered_user’, ’course_instructor’, ’administrator’" +
-    			")";
-    }
+    private static final String CREATE_STATUS =
+    		"CREATE TYPE status AS ENUM (" +
+    			"’anonymous’, ’not_activated’, ’registered’, ’inactive’" +
+    		")";
     
-    private static String createStatus() {
-    	return "CREATE TYPE status AS ENUM (" +
-    		       "’anonymous’, ’not_activated’, ’registered’, ’inactive’" +
-    		   ")";
-    }
+    private static final String CREATE_PERIOD =
+    		"CREATE TYPE period AS ENUM (" +
+    			"’months’, ’weeks’, ’days’, ’hours’" +
+    		")";
     
-    private static String createPeriod() {
-    	return "CREATE TYPE period AS ENUM (" +
-    		       "’months’, ’weeks’, ’days’, ’hours’" +
-    		   ")";
-    }
+    private static final String CREATE_ACTIVATION =
+    		"CREATE TYPE activation AS ENUM (" +
+    			"’email’, ’admin’, ’complete’" +
+    		")";
     
-    private static String createActivation() {
-    	return "CREATE TYPE activation AS ENUM (" +
-    		       "’email’, ’admin’, ’complete’" +
-    		   ")";
-    }
-    
-    private static String createUsers() {
-    	return "CREATE TABLE users (" +
-					"id SERIAL PRIMARY KEY," +
-					"first_name VARCHAR(100)," +
+    private static final String CREATE_USERS =
+    		"CREATE TABLE users (" +
+				"id SERIAL PRIMARY KEY," +
+				"first_name VARCHAR(100)," +
 					"name VARCHAR(100)," +
 					"nickname VARCHAR(100) NOT NULL UNIQUE," +
 					"email VARCHAR(319) NOT NULL UNIQUE," +
@@ -134,7 +69,6 @@ public class DatabaseTableCreator {
 					"status STATUS NOT NULL" +
 				");" +
 				"ALTER SEQUENCE users_id_seq RESTART WITH 10000";
-    }
     
     private static String createCourses() {
     	return "CREATE TABLE courses (" +
@@ -238,5 +172,68 @@ public class DatabaseTableCreator {
     				"title VARCHAR(30) NOT NULL" +
     			")";
     }
+	
+    /**
+     * Checks whether or not the required tables in the database have been
+     * initialized. If not, the necessary SQL statements are executed in order
+     * to create and initialize the tables in the database.
+     * 
+     * @throws InvalidDBTransferException if any error occurred during the
+     * execution of the method
+     */
+    public static void buildUpDatabase() throws InvalidDBTransferException{
+    	Transaction trans = new Connection();
+    	trans.start();
+    	String checkTables = "SELECT COUNT(*) FROM information_schema.tables" +
+    			"WHERE table_schema = 'public'";
+    	Statement stmt = null;
+    	Statement check = null;
+    	ResultSet count = null;
+    	try {
+			check = trans.getConn().conn.
+					prepareStatement(checkTables);
+			check = trans.getConn().conn.createStatement();
+			check.execute(CREATE_FORM_OF_ADDRESS);
+			count = check.executeQuery();
+			
+			count.next();
+			Long numTables = (Long) count.getObject(1);
+			if (numTables == 0) {
+				stmt = trans.getConn().conn.
+						prepareStatement(createFormOfAddress() + createRole() +
+								createStatus() + createPeriod() +
+								createActivation() + createUsers() +
+								createCourses() + createCourseUnits() +
+								createAddresses() + createCycles() +
+								createInformUsers() +
+								createCourseInstructors() +
+								createCourseParticipants() +
+								createCourseUnitParticipants() +
+								createSystemAttributes() +
+								createCustomizationData());
+				stmt.execute();
+				System.out.println("Erstellen der Datenbank fertig");
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				count.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+			try {
+				check.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+			try {
+				stmt.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+    } 
     
 }
