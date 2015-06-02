@@ -3,18 +3,14 @@
  */
 package de.ofCourse.system;
 
-import java.io.IOException;
+
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 import javax.faces.bean.ApplicationScoped;
 import javax.faces.bean.ManagedBean;
 
-import org.apache.log4j.DailyRollingFileAppender;
-import org.apache.log4j.Level;
-import org.apache.log4j.LogManager;
-import org.apache.log4j.Logger;
-import org.apache.log4j.PatternLayout;
+
 
 import de.ofCourse.Database.DatabaseGeneral.DatabaseTableCreator;
 import de.ofCourse.utilities.PropertyManager;
@@ -35,7 +31,7 @@ import de.ofCourse.utilities.PropertyManager;
  * @author Tobias Fuchs
  *
  */
-@ManagedBean
+@ManagedBean(eager = true)
 @ApplicationScoped
 public class LaunchSystem {
 
@@ -51,9 +47,11 @@ public class LaunchSystem {
     @PostConstruct
     public void startSystem() {
         //Initialisiert zum ersten mal alle benötigten Singeltion Instanzen
+        System.out.println("Initialsierung startet");
         PropertyManager.getInstance();
         DatabaseConnectionManager.getInstance();
         LogHandler.getInstance();
+        System.out.println("Initialsierung abgeschlossen");
         //Erstellt die Datenbank
         DatabaseTableCreator.buildUpDatabase();
     }

@@ -103,7 +103,7 @@ public class DatabaseConnectionManager {
 	Connection connection = freeConnections.get(indexLastElement);
 	freeConnections.remove(indexLastElement);
 	++numberOfConnectionsInUse;
-
+	System.out.println("Connection ausgegeben");
 	return connection;
     }
 

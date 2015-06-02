@@ -62,6 +62,7 @@ public class DatabaseTableCreator {
 								createSystemAttributes() +
 								createCustomizationData());
 				stmt.execute();
+				System.out.println("Erstellen der Datenbank fertig");
 			}
 			
 		} catch (SQLException e) {
