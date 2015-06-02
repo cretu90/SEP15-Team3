@@ -175,6 +175,10 @@ public class DatabaseTableCreator {
     	trans.start();
     	String checkTables = "SELECT COUNT(*) FROM information_schema.tables" +
     			"WHERE table_schema = 'public'";
+    	
+    	Connection connection = (Connection) trans;
+    	java.sql.Connection conn = (java.sql.Connection) connection.getConn();
+    	
     	Statement formOfAddress = null;
     	Statement role = null;
     	Statement status = null;
@@ -194,7 +198,7 @@ public class DatabaseTableCreator {
     	Statement check = null;
     	ResultSet count = null;
     	try {
-			check = trans.getConn().conn.createStatement();
+			check = conn.createStatement();
 			count = check.executeQuery(checkTables);
 			
 			count.next();
