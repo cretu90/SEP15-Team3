@@ -1,41 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-	xmlns:f="http://xmlns.jcp.org/jsf/core"
-	xmlns:h="http://xmlns.jcp.org/jsf/html">
-	<h:head>
-		<title>Header</title>
-	</h:head>
+	  xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://xmlns.jcp.org/jsf/passthrough"
+	  xmlns:f="http://java.sun.com/jsf/core">
 	<h:body>
 		<ui:composition>
-			<h:form>
-				<div class="container-fluid" role="navigation">
+			<nav class="navbar navbar-default">
+				<div class="container-fluid">
 					<div class="navbar-header">
-						<a class="navbar-brand" href="#{request.contextPath}/facelets/open/index.xhtml">
-							<img src="#{request.contextPath}/resources/img/logo.png" width="200" alt="Logo" title="OfCourse"></img>
+	    				<button type="button" class="collapsed navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+   				        	<span class="sr-only">Toggle navigation</span>
+					        <span class="icon-bar"></span>
+					        <span class="icon-bar"></span>
+					        <span class="icon-bar"></span>
+	    				</button>
+						<a class="navbar-brand" href="#{request.contextPath}">
+							<h:graphicImage value="/resources/img/logo.png" alt="Logo" title="OfCourse" width="170"/>
 						</a>
-					</div>
-					<div class="collapse navbar-collapse" style="padding-top:10px;" id="navbar">
-						<ul class="nav navbar-nav" width ="1600px" background-color = "red">
-							<li class="active"><a href="#{request.contextPath}/facelets/open/authenticate.xhtml">Anmeldung</a></li>
-							<li><a href="#{request.contextPath}/facelets/open/allCourses.xhtml">Suche</a></li>
-							<li><a href="#{request.contextPath}/facelets/user/profile.xhtml">Profil</a></li>
-							<li><a href="#{request.contextPath}/facelets/user/myCourses.xhtml">Meine Kurse</a></li>
-							<li><a href="#">Terminplaner</a></li>
-							<li style="padding-top:5px; padding-left:15px;"><button class="btn btn-primary" type="button">Logout</button></li>
-							<li style="padding-top:13px; padding-left:15px;">Eingeloggt als <strong>Kathi Hölzl</strong></li>	
-							<li style="padding-left:15px;">
-								<a href="#"><img src="#{request.contextPath}/resources/img/germanFlag.gif" width="30" alt="Deutsche Version" title="Deutsche Version"></img></a>
-							</li>					
-							<li>
-								<a href="#"><img src="#{request.contextPath}/resources/img/englishFlag.gif" width="30" alt="Englische Version" title="Englische Version"></img></a>
-							</li>
-						</ul>
-					</div>
+	    			</div>
+	    			<div class="navbar-collapse collapse navbar-right">
+	    				<h:form>
+	    					<h:commandButton class="btn btn-danger navbar-btn btn-minsize" value="Logout" action="#{navigationBean.logout}" rendered="true" />
+	    					<h:commandButton class="btn btn-success btn-minsize form-group" value="Registrieren/Login" action="/facelets/open/authenticate.xhtml" rendered="true" />
+	    					<h:commandLink action="#{navigationBean.sessionUser.setLanguage(de)}">
+	    						<h:graphicImage url="/resources/img/germanFlag.gif" alt="DE" title="Deutsche Version" width="50ox;"/>
+	    					</h:commandLink>
+	    					<h:commandLink action="#{navigationBean.sessionUser.setLanguage(de)}">
+	    						<h:graphicImage url="/resources/img/englishFlag.gif" alt="EN" title="English Version" width="50px;"/>
+    						</h:commandLink>
+	    				</h:form>
+	    			</div>
+	    			<ul class="nav navbar-nav collapse navbar-collapse">
+	    				<li><h:outputLink value="#{request.contextPath}/facelets/open/allCourses.xhtml">Suche</h:outputLink></li>
+	    				<li><h:outputLink value="#{request.contextPath}/facelets/user/profile.xhtml" rendered="true">Profil</h:outputLink></li>
+	    				<li><h:outputLink value="#{request.contextPath}/facelets/user/myCourses.xhtml" rendered="true">Meine Kurse</h:outputLink></li>
+	    				<li><h:outputLink value="#" rendered="true">Terminplaner</h:outputLink></li>
+	    				<li><h:outputLink value="#" rendered="true">Administration</h:outputLink></li>
+	    			</ul>
 				</div>
-			</h:form>
+			</nav>
 		</ui:composition>
 	</h:body>
 </html>

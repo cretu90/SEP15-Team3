@@ -6,6 +6,7 @@ package de.ofCourse.action;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.RequestScoped;
+import javax.faces.context.FacesContext;
 
 import de.ofCourse.system.Transaction;
 
@@ -37,7 +38,6 @@ public class NavigationBean {
      */
     @ManagedProperty("#{sessionUser}")
     private SessionUserBean sessionUser;
-
     
     /**
      * Stores the transaction that is used for database interaction.
@@ -50,7 +50,7 @@ public class NavigationBean {
      * @return link to the <code>authenticate</code> page
      */
     public String login() {
-	return null;
+        return "/facelets/user/myCourses.xhtml";
     }
 
     /**
@@ -61,10 +61,9 @@ public class NavigationBean {
      * @return the link to the welcome page
      */
     public String logout() {
-	return null;
+        FacesContext.getCurrentInstance().getExternalContext().invalidateSession();
+        return "/facelets/open/index.xhtml?faces-redirect=true";
     }
-
-    
     
     /**
      * Returns the ManagedProperty <code>SessionUser</code>.
@@ -72,7 +71,7 @@ public class NavigationBean {
      * @return the session of the user
      */
     public SessionUserBean getSessionUser() {
-	return sessionUser;
+        return sessionUser;
     }
 
     /**
@@ -82,5 +81,6 @@ public class NavigationBean {
      *            session of the user
      */
     public void setSessionUser(SessionUserBean userSession) {
+        this.sessionUser = userSession;
     }
 }

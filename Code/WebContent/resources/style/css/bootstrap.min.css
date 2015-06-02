@@ -4773,7 +4773,7 @@ border-bottom-right-radius
 .navbar-brand {
 	float: left;
 	height: 50px;
-	padding: 15px 15px;
+	padding: 7px 15px;
 	font-size: 18px;
 	line-height: 20px
 }
@@ -5015,8 +5015,8 @@ border-bottom-right-radius
 }
 
 .navbar-default {
-	background-color: #f8f8f8;
-	border-color: #e7e7e7
+	background-color: #FFFFFF;
+	border-color: #FFFFFF
 }
 
 .navbar-default .navbar-brand {
