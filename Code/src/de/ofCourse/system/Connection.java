@@ -18,7 +18,14 @@ public class Connection implements Transaction {
     /**
      * stores the connection from the DatabaseConnectionManager
      */
-    public java.sql.Connection conn = null;
+    public Connection conn = null;
+
+    /**
+     * @return the conn
+     */
+    public Connection getConn() {
+        return conn;
+    }
 
     @Override
     public void start() {
@@ -27,49 +34,48 @@ public class Connection implements Transaction {
     }
 
     @Override
-    public void commit() throws SQLException {
-        try{
-            conn.commit();
-            releaseConnection();
+    public void commit() {
+        java.sql.Connection sqlConn = (java.sql.Connection) conn;
+        try {
+            sqlConn.commit();
         } catch (SQLException e) {
-            rollback();
-            releaseConnection();
-            LogHandler.getInstance().error("Übertragungsfehler! Rollback ausgeführt");
-        }              
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+            releaseConnection(); 
+        }
+        releaseConnection();              
     }
 
     @Override
     public void rollback() {
+        java.sql.Connection sqlConn = (java.sql.Connection) conn;
         try {
-            conn.rollback();
-            releaseConnection();
+            sqlConn.rollback();
         } catch (SQLException e) {
-            LogHandler.getInstance().error("Übertragungsfehler! Rollback gescheitert");
+            // TODO Auto-generated catch block
             e.printStackTrace();
-            releaseConnection();
-        }    
+            releaseConnection(); 
+        }
+        releaseConnection();    
     }
     
     /**
      * Gets a connection from the DatabaseConnectionManager and stores it.
      */
     public void getConnection(){
-        conn  = DatabaseConnectionManager.getInstance().getConnection();
+        conn  = (Connection) DatabaseConnectionManager.getInstance().getConnection();
     }
     
     /**
      * Release the stored connection back to the DatabaseConnectionManager
      */
     public void releaseConnection(){
-        DatabaseConnectionManager.getInstance().releaseConnection(conn);
+        java.sql.Connection sqlConn = (java.sql.Connection) conn;
+        DatabaseConnectionManager.getInstance().releaseConnection(sqlConn);
         conn = null;
     }
 
-    @Override
-    public Connection getConn() {
-       
-        return (Connection) conn;
-    }
+  
     
 
 }

@@ -12,11 +12,7 @@ import java.sql.SQLException;
  */
 public interface Transaction {
     
-    /**
-     * Gives you a connection.
-     */
-    public Connection getConn();
-    
+      
     /**
      * Starts a new transaction and establishes the connection.
      */
@@ -27,7 +23,7 @@ public interface Transaction {
      * and the connection.
      * @throws SQLException 
      */
-    public void commit() throws SQLException; 
+    public void commit() ; 
     /**
      * Undoes all changes made in the current transaction and releases any database locks and the connection.
      */

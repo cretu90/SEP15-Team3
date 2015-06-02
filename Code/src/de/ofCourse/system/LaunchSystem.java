@@ -52,8 +52,10 @@ public class LaunchSystem {
         DatabaseConnectionManager.getInstance();
         LogHandler.getInstance();
         System.out.println("Initialsierung abgeschlossen");
+        LogHandler.getInstance().error("finished");
         //Erstellt die Datenbank
         DatabaseTableCreator.buildUpDatabase();
+        LogHandler.getInstance().error("finished");
     }
 
     /**
