@@ -42,6 +42,42 @@ import de.ofCourse.utilities.PasswordHash;
  */
 public class UserDAO {
 
+    public static boolean emailExists(Transaction trans, String email)
+		throws InvalidDBTransferException {
+	boolean exists = false;
+	
+	//SQL- Abfrage vorbereiten und Connection zur Datenbank erstellen.
+	PreparedStatement pS = null;
+	Connection connection = (Connection) trans;
+	java.sql.Connection conn = connection.getConn();
+	
+	String sql = "SELECT id FROM users WHERE email=?";
+	//mögliche SQL-Injektion abfangen
+	try {
+	    pS = conn.prepareStatement(sql);	    
+	    pS.setString(1, email);
+	    
+	    //preparedStatement ausführen, gibt resultSet als Liste zurück (hier
+	    //ein Eintrag in der Liste, da Benutzername einzigartig).
+	    ResultSet res = pS.executeQuery();
+	    
+	    //Nächten Eintrag aufrufen, gibt true zurück, falls es weiteren 
+	    //Eintrag gibt, ansonsten null.
+	    if(res.next()) {
+		exists = true;
+	    } else {
+		exists = false;
+	    }
+
+	} catch (SQLException e) {
+	    throw new InvalidDBTransferException();
+	    //TODO Logging message
+	} finally {
+	    //TODO Connection releasen
+	}
+	return exists;
+    }
+    
     /**
      * Adds a new user to the list of users in the database.
      * 

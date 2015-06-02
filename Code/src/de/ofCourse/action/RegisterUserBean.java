@@ -75,9 +75,15 @@ public class RegisterUserBean {
 	this.transaction = new Connection();
 	transaction.start();
 	
-	//TODO Überprüfen ob email existiert
-	
-	UserDAO.createUser(this.transaction, this.getUserToRegistrate(), passwordHash);
+	if(UserDAO.emailExists(transaction, this.getUserToRegistrate().getEmail())) {
+            FacesContext facesContext = FacesContext.getCurrentInstance();
+            FacesMessage msg = new FacesMessage("E-Mail existiert bereits!");
+            msg.setSeverity(FacesMessage.SEVERITY_INFO);
+            facesContext.addMessage(null, msg);
+            facesContext.renderResponse();
+	} else {	
+	    UserDAO.createUser(this.transaction, this.getUserToRegistrate(), passwordHash);
+	}
 	
 	//TODO Erfolgsmeldung ausgeben
 	
