@@ -27,33 +27,6 @@ public class FooterBean {
      */
     @ManagedProperty("#{sessionUser}")
     private SessionUserBean sessionUser;
-
-    /**
-     * Redirects to the imprint page.
-     * 
-     * @return link to imprint page
-     */
-    public String loadImprintPage() {
-        return "/facelets/open/imprint.xhtml";
-    }
-
-    /**
-     * Redirects to the AGB page.
-     * 
-     * @return link to AGB page
-     */
-    public String loadAGBPage() {
-        return "/facelets/open/agb.xhtml";
-    }
-
-    /**
-     * Redirects to the help page.
-     * 
-     * @return link to help page
-     */
-    public String loadHelpPage() {
-        return "/facelets/open/help.xhtml";
-    }
     
     /**
      * Returns the ManagedProperty <code>SessionUser</code>.

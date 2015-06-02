@@ -8,6 +8,7 @@ import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.RequestScoped;
 import javax.faces.context.FacesContext;
 
+import de.ofCourse.model.UserStatus;
 import de.ofCourse.system.Transaction;
 
 /**
@@ -43,15 +44,6 @@ public class NavigationBean {
      * Stores the transaction that is used for database interaction.
      */
     private Transaction transaction;
-    
-    /**
-     * Redirects the user to the <code>authenticate</code> page.
-     * 
-     * @return link to the <code>authenticate</code> page
-     */
-    public String login() {
-        return "/facelets/user/myCourses.xhtml";
-    }
 
     /**
      * Performs the logout action.<br> By pressing the <code>logout</code>
@@ -61,6 +53,7 @@ public class NavigationBean {
      * @return the link to the welcome page
      */
     public String logout() {
+        sessionUser.setUserStatus(UserStatus.ANONYMOUS);
         FacesContext.getCurrentInstance().getExternalContext().invalidateSession();
         return "/facelets/open/index.xhtml?faces-redirect=true";
     }
