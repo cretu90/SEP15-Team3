@@ -6,16 +6,21 @@ package de.ofCourse.action;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
+
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.ViewScoped;
 import javax.faces.context.FacesContext;
 
+import de.ofCourse.Database.dao.CourseDAO;
+import de.ofCourse.exception.InvalidDBTransferException;
 import de.ofCourse.model.Course;
 import de.ofCourse.model.CourseUnit;
 import de.ofCourse.model.PaginationData;
 import de.ofCourse.model.User;
+import de.ofCourse.model.UserRole;
+import de.ofCourse.model.UserStatus;
 import de.ofCourse.system.Connection;
 import de.ofCourse.system.Transaction;
 
@@ -72,11 +77,33 @@ public class MyCoursesBean implements Pagination, Serializable {
     private Course course3;
 
     private ArrayList<Course> ordered;
-    
-    
-   // @PostConstruct
-    private void initTest() {
 
+    /**
+     * 
+     */
+    @PostConstruct
+    private void init() {
+
+	// Prüfen ob ich das brauche
+	this.registeredCourses = new ArrayList<Course>();
+
+	// _____________________________________________________
+	// Methoden um weiterhin die Seite testen zu können ohne login
+	this.sessionUser = new SessionUserBean();
+	this.sessionUser.setUserStatus(UserStatus.REGISTERED);
+	// _____________________________________________________
+
+	pagination = new PaginationData();
+	this.pagination.setSortAsc(true);
+	this.pagination.setElementsPerPage(10);
+	this.pagination.setSortColumn("title");
+	this.pagination.setCurrentPageNumber(0);
+
+	Transaction transaction = new Connection();
+
+	this.actualizeDisplayData();
+
+	// ///////////////////////////////////////////
 	registeredCourses = new ArrayList<Course>();
 	ordered = new ArrayList<Course>();
 
@@ -121,100 +148,112 @@ public class MyCoursesBean implements Pagination, Serializable {
 	registeredCourses.add(course2);
 	registeredCourses.add(course3);
 
-	this.pagination = new PaginationData();
-	this.getPagination().setCurrentPageNumber(0);
-	System.out.println(pagination.getCurrentPageNumber());
-	
 	ordered.add(course2);
 	ordered.add(course3);
 	ordered.add(course1);
-    }
-    
 
-    @PostConstruct
-    private void init() {
-    this.registeredCourses = new ArrayList<Course>();
-   
-    pagination = new PaginationData();
-    this.pagination.setSortAsc(true);
-    this.pagination.setElementsPerPage(10);
-    this.pagination.setSortColumn("title");
-    this.pagination.setCurrentPageNumber(0);
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    /////////////////////////////////////////////
-    registeredCourses = new ArrayList<Course>();
-	ordered = new ArrayList<Course>();
-
-	course1 = new Course();
-	course1.setTitle("Yoga");
-	course1.setCourseID(111);
-
-	CourseUnit unit = new CourseUnit();
-	unit.setLocation("hier");
-	unit.setStarttime(new Date(100, 0, 20, 12, 0));
-	course1.setNextCourseUnit(unit);
-
-	User admin1 = new User();
-	admin1.setUsername("Hans");
-	User admin2 = new User();
-	admin2.setUsername("Detlef");
-
-	ArrayList<User> admins = new ArrayList<User>();
-	admins.add(admin1);
-	admins.add(admin2);
-	course1.setCourseAdmins(admins);
-
-	course2 = new Course();
-	course2.setTitle("Boxen");
-	course2.setCourseID(222);
-	CourseUnit unit1 = new CourseUnit();
-	unit1.setLocation("dort");
-	unit1.setStarttime(new Date(101, 0, 21, 22, 0));
-	course2.setNextCourseUnit(unit1);
-	course2.setCourseAdmins(admins);
-
-	course3 = new Course();
-	course3.setTitle("CrossFit");
-	course3.setCourseID(333);
-	CourseUnit unit2 = new CourseUnit();
-	unit2.setLocation("dorthier");
-	unit2.setStarttime(new Date(110, 0, 11, 22, 0));
-	course3.setNextCourseUnit(unit2);
-	course3.setCourseAdmins(admins);
-
-	registeredCourses.add(course1);
-	registeredCourses.add(course2);
-	registeredCourses.add(course3);
-
-	this.pagination = new PaginationData();
-	this.getPagination().setCurrentPageNumber(0);
-	System.out.println(pagination.getCurrentPageNumber());
-	
-	ordered.add(course2);
-	ordered.add(course3);
-	ordered.add(course1);
-    
     }
 
     // _________________________________________________________________
+
+    
+    
+    
+    /**
+     * 
+     */
+    private void actualizeDisplayData() {
+
+	// ______________________________________________________
+	// Kann für Test auskommentiert werden
+	// ______________________________________________________
+	transaction.start();
+	// ________________________________________________________
+
+	try {
+	    // TODO: DAO - Methode fürs zählen
+
+	    // ______________________________________________________
+	    // Kann für Test auskommentiert werden
+	    // ______________________________________________________
+	    this.pagination.actualizeNumberOfPages(numberOfMyCourses);
+
+	    this.registeredCourses = (ArrayList<Course>) CourseDAO
+		    .getCoursesOf(transaction, this.sessionUser.getUserID());
+	    // ___________________________________________________________
+	} catch (InvalidDBTransferException e) {
+	    // TODO: Logging message
+	}
+    }
+
+    /**
+     * Redirects the user to the <code>courseDetail</code> page of the selected
+     * course.
+     * 
+     * @return link to the <code>courseDetail</code> page
+     */
+    public String loadCourseDetailsPageOfSelectedCourse() {
+	return "/facelets/open/courses/courseDetail.xhtml?faces-redirect=true";
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public int getActualPageNumber() {
+	return 0;
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public void goToSpecificPage() {
+
+	this.pagination.actualizeCurrentPageNumber(FacesContext
+		.getCurrentInstance().getExternalContext()
+		.getRequestParameterMap().get("page"));
+
+	// ______________________________________________________
+	// Kann für Test auskommentiert werden
+	// ______________________________________________________
+	transaction.start();
+	// ________________________________________________________
+
+	try {
+
+	    this.registeredCourses = (ArrayList<Course>) CourseDAO
+		    .getCoursesOf(transaction, this.sessionUser.getUserID());
+
+	} catch (InvalidDBTransferException e) {
+	    // TODO: Logging message
+
+	}
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public void sortBySpecificColumn() {
+	// Not needed in MyCoursesBean
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public PaginationData getPagination() {
+	return pagination;
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public void setPagination(PaginationData pagination) {
+	this.pagination = pagination;
+    }
 
     /**
      * Returns a list of courses that the user attends
@@ -233,59 +272,6 @@ public class MyCoursesBean implements Pagination, Serializable {
      */
     public void setRegisteredCourses(ArrayList<Course> registeredCourses) {
 	this.registeredCourses = registeredCourses;
-    }
-
-    /**
-     * Redirects the user to the <code>courseDetail</code> page of the selected
-     * course.
-     * 
-     * @return link to the <code>courseDetail</code> page
-     */
-    public String loadCourseDetailsPageOfSelectedCourse() {
-
-	// TESTING
-	System.out.println(FacesContext.getCurrentInstance()
-		.getExternalContext().getRequestParameterMap().get("courseID"));
-	return null;
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    @Override
-    public int getActualPageNumber() {
-	return 0;
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    @Override
-    public void goToSpecificPage() {
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    @Override
-    public void sortBySpecificColumn() {
-
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    @Override
-    public PaginationData getPagination() {
-	return pagination;
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    @Override
-    public void setPagination(PaginationData pagination) {
-    	this.pagination = pagination;
     }
 
     /**

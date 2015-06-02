@@ -100,7 +100,7 @@ public class PaginationData implements Serializable {
 	 * @param numberOfAllItems
 	 *            number of elements that are to display(with pagination)
 	 */
-	private void actualizeNumberOfPages(int numberOfAllItems) {
+	public void actualizeNumberOfPages(int numberOfAllItems) {
 		int calculatedNumberOfPages = 0;
 
 		if (numberOfAllItems % this.getElementsPerPage() == 0) {
