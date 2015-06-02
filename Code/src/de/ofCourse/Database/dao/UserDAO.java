@@ -592,8 +592,57 @@ public class UserDAO {
      * @throws InvalidDBTransferException if any error occurred during the
      * execution of the method
      */
-    public static void updateUser(Transaction trans, User user)
+    public static void updateUser(Transaction trans, User user, String pwHash)
     		throws InvalidDBTransferException {
+        PreparedStatement statement = null;
+        Connection connection = (Connection) trans;
+        java.sql.Connection conn = connection.getConn();
+
+        String sql = "UPDATE users "
+                + "SET first_name = ?, name = ?, email = ?, pw_hash = ?, "
+                + "date_of_birth = ?, form_of_address = ?"
+                + "WHERE nickname = ?";
+        
+        try {
+            statement = conn.prepareStatement(sql);
+            if(user.getFirstname() == null || user.getFirstname().length() < 1) {
+                statement.setString(1, null);
+            } else {
+                statement.setString(1, user.getFirstname());
+            }
+            if(user.getLastname() == null || user.getLastname().length() < 1) {
+                statement.setString(2, null);
+            } else {
+                statement.setString(2, user.getLastname());
+            }
+            if(user.getEmail() == null || user.getEmail().length() < 1) {
+                statement.setString(3, null);
+            } else {
+                statement.setString(3, user.getEmail());
+            }
+            statement.setString(4, pwHash);
+            if(user.getDateOfBirth() == null) {
+                statement.setDate(5, null);
+            } else {
+                statement.setDate(5, (Date) user.getDateOfBirth());
+            }
+            if(user.getSalutation() == null) {
+                statement.setString(6, null);
+            } else {
+                statement.setString(6, user.getSalutation().toString());
+            }
+            statement.setString(7, user.getUsername());
+            statement.executeUpdate();
+        } catch (SQLException e) {
+            throw new InvalidDBTransferException();
+            //TODO Logging message
+        } finally {
+            try {
+                conn.close();
+            } catch (SQLException e) {
+                /* ignored */
+            }
+        }
     }
 
     /**
