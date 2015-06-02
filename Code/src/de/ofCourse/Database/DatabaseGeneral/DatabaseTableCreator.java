@@ -55,123 +55,113 @@ public class DatabaseTableCreator {
     		"CREATE TABLE users (" +
 				"id SERIAL PRIMARY KEY," +
 				"first_name VARCHAR(100)," +
-					"name VARCHAR(100)," +
-					"nickname VARCHAR(100) NOT NULL UNIQUE," +
-					"email VARCHAR(319) NOT NULL UNIQUE," +
-					"pw_hash VARCHAR(256) NOT NULL," +
-					"date_of_birth DATE," +
-					"form_of_address FORM_OF_ADDRESS," +
-					"credit_balance BOOLEAN NOT NULL," +
-					"email_verification BOOLEAN NOT NULL," +
-					"admin_verfication BOOLEAN NOT NULL," +
-					"profile_image BYTEA," +
-					"role ROLE NOT NULL," +
-					"status STATUS NOT NULL" +
-				");" +
-				"ALTER SEQUENCE users_id_seq RESTART WITH 10000";
+				"name VARCHAR(100)," +
+				"nickname VARCHAR(100) NOT NULL UNIQUE," +
+				"email VARCHAR(319) NOT NULL UNIQUE," +
+				"pw_hash VARCHAR(256) NOT NULL," +
+				"date_of_birth DATE," +
+				"form_of_address FORM_OF_ADDRESS," +
+				"credit_balance BOOLEAN NOT NULL," +
+				"email_verification BOOLEAN NOT NULL," +
+				"admin_verfication BOOLEAN NOT NULL," +
+				"profile_image BYTEA," +
+				"role ROLE NOT NULL," +
+				"status STATUS NOT NULL" +
+			");" +
+			"ALTER SEQUENCE users_id_seq RESTART WITH 10000";
     
-    private static String createCourses() {
-    	return "CREATE TABLE courses (" +
-    				"id SERIAL PRIMARY KEY," +
-    				"titel TEXT(150)," +
-    				"max_participants INTEGER CHECK (max_participants > 0)," +
-    				"start_date DATE NOT NULL," +
-    				"end_date DATE NOT NULL," +
-    				"description TEXT(1000)," +
-    				"image BYTEA" +
-    			");" +
-    			"ALTER SEQUENCE courses_id_seq RESTART WITH 10000";
-    }
+    private static final String CREATE_COURSES =
+    		"CREATE TABLE courses (" +
+    			"id SERIAL PRIMARY KEY," +
+    			"titel TEXT(150)," +
+    			"max_participants INTEGER CHECK (max_participants > 0)," +
+    			"start_date DATE NOT NULL," +
+    			"end_date DATE NOT NULL," +
+    			"description TEXT(1000)," +
+    			"image BYTEA" +
+    		");" +
+    		"ALTER SEQUENCE courses_id_seq RESTART WITH 10000";
     
-    private static String createCourseUnits() {
-    	return "CREATE TABLE course_units (" +
-    				"id SERIAL PRIMARY KEY," +
-    				"course_id REFERENCES courses(id) ON DELETE CASCADE," +
-    				"max_participants INTEGER NOT NULL" +
-    				"CHECK (max_participants > 0)," +
-    				"titel TEXT(150)," +
-    				"min_participants INTEGER CHECK (min_participants > 0)," +
-    				"fee DECIMAL(6,2) CHECK (fee >= 0)," +
-    				"location TEXT(100)," +
-    				"start_time TIMESTAMP NOT NULL," +
-    				"end_time TIMESTAMP NOT NULL," +
-    				"description TEXT(1000)" +
-    			")" +
-    			"ALTER SEQUENCE course_units_id_seq RESTART WITH 10000";
-    }
+    private static final String CREATE_COURSE_UNITS =
+    		"CREATE TABLE course_units (" +
+    			"id SERIAL PRIMARY KEY," +
+    			"course_id REFERENCES courses(id) ON DELETE CASCADE," +
+    			"max_participants INTEGER NOT NULL" +
+    			"CHECK (max_participants > 0)," +
+    			"titel TEXT(150)," +
+    			"min_participants INTEGER CHECK (min_participants > 0)," +
+    			"fee DECIMAL(6,2) CHECK (fee >= 0)," +
+    			"location TEXT(100)," +
+    			"start_time TIMESTAMP NOT NULL," +
+    			"end_time TIMESTAMP NOT NULL," +
+    			"description TEXT(1000)" +
+    		")" +
+    		"ALTER SEQUENCE course_units_id_seq RESTART WITH 10000";
     
-    private static String createAddresses() {
-    	return "CREATE TABLE addresses (" +
-    				"id SERIAL PRIMARY KEY," +
-    				"user REFERENCES users(id) UNIQUE ON DELETE CASCADE," +
-    				"course_unit REFERENCES course_units(id) UNIQUE" +
-    				"ON DELETE CASCADE," +
-    				"country VARCHAR(100) NOT NULL," +
-    				"city VARCHAR(100) NOT NULL," +
-    				"zip_code VARCHAR(10) NOT NULL," +
-    				"street VARCHAR(100), house_nr INTEGER" +
-    			")";
-    }
+    private static final String CREATE_ADDRESSES =
+    		"CREATE TABLE addresses (" +
+    			"id SERIAL PRIMARY KEY," +
+    			"user REFERENCES users(id) UNIQUE ON DELETE CASCADE," +
+    			"course_unit REFERENCES course_units(id) UNIQUE" +
+    			"ON DELETE CASCADE," +
+    			"country VARCHAR(100) NOT NULL," +
+    			"city VARCHAR(100) NOT NULL," +
+    			"zip_code VARCHAR(10) NOT NULL," +
+    			"street VARCHAR(100), house_nr INTEGER" +
+    		")";
 
-    private static String createCycles() {
-    	return "CREATE TABLE cycles (" +
-    				"id SERIAL PRIMARY KEY," +
-    				"course REFERENCES courses(id) UNIQUE ON DELETE CASCADE," +
-    				"period PERIOD," +
-    				"cycle_end INTEGER NOT NULL" +
-    			")";
-    }
+    private static final String CREATE_CYCLES =
+    		"CREATE TABLE cycles (" +
+    			"id SERIAL PRIMARY KEY," +
+    			"course REFERENCES courses(id) UNIQUE ON DELETE CASCADE," +
+    			"period PERIOD," +
+    			"cycle_end INTEGER NOT NULL" +
+    		")";
 
-    private static String createInformUsers() {
-    	return "CREATE TABLE inform_users (" +
-    				"user REFERENCES users(id) ON DELETE CASCADE," +
-    				"course REFERENCES courses(id) ON DELETE CASCADE," +
-    				"PRIMARY KEY (user, course)" +
-    			")";
-    }
+    private static final String CREATE_INFORM_USERS =
+    		"CREATE TABLE inform_users (" +
+    			"user REFERENCES users(id) ON DELETE CASCADE," +
+    			"course REFERENCES courses(id) ON DELETE CASCADE," +
+    			"PRIMARY KEY (user, course)" +
+    		")";
 
-    private static String createCourseInstructors() {
-    	return "CREATE TABLE course_instructors (" +
-    				"course_instructor REFERENCES users(id) ON DELETE CASCADE," +
-    				"course REFERENCES courses(id) ON DELETE CASCADE," +
-    				"PRIMARY KEY (course_instructor, course)" +
-    			")";
-    }
+    private static final String CREATE_COURSE_INSTRUCTORS =
+    		"CREATE TABLE course_instructors (" +
+    			"course_instructor REFERENCES users(id) ON DELETE CASCADE," +
+    			"course REFERENCES courses(id) ON DELETE CASCADE," +
+    			"PRIMARY KEY (course_instructor, course)" +
+    		")";
 
-    private static String createCourseParticipants() {
-    	return "CREATE TABLE course_participants (" +
-    		       "participant REFERENCES users(id) ON DELETE CASCADE," +
-    		       "course REFERENCES courses(id) ON DELETE CASCADE," +
-    		       "PRIMARY KEY (participant, course)" +
-    		   ")";
-    }
+    private static final String CREATE_COURSE_PARTICIPANTS =
+    		"CREATE TABLE course_participants (" +
+    			"participant REFERENCES users(id) ON DELETE CASCADE," +
+    			"course REFERENCES courses(id) ON DELETE CASCADE," +
+    			"PRIMARY KEY (participant, course)" +
+    		")";
 
-    private static String createCourseUnitParticipants() {
-    	return "CREATE TABLE course_unit_participants (" +
-    				"participant REFERENCES users(id) ON DELETE CASCADE," +
-    				"course_unit REFERENCES course_units(id) ON DELETE CASCADE," +
-    				"PRIMARY KEY (participant, course_unit)" +
-    			")";
-    }
+    private static final String CREATE_COURSE_UNIT_PARTICIPANTS =
+    		"CREATE TABLE course_unit_participants (" +
+    			"participant REFERENCES users(id) ON DELETE CASCADE," +
+    			"course_unit REFERENCES course_units(id) ON DELETE CASCADE," +
+    			"PRIMARY KEY (participant, course_unit)" +
+    		")";
 
-    private static String createSystemAttributes() {
-    	return "CREATE TABLE system_attributes (" +
-    				"lock CHAR(1) PRIMARY KEY DEFAULT ’X’ CHECK (lock = ’X’)," +
-    				"activation_type ACTIVATION NOT NULL," +
-    				"withdrawal_hours INTEGER NOT NULL," +
-    				"application_hours INTEGER NOT NULL," +
-    				"verifiation_key VARCHAR(100) NOT NULL," +
-    				"storage_interval INTEGER NOT NULL" +
-    			")";
-    }
+    private static final String CREATE_SYSTEM_ATTRIBUTES =
+    		"CREATE TABLE system_attributes (" +
+    			"lock CHAR(1) PRIMARY KEY DEFAULT ’X’ CHECK (lock = ’X’)," +
+    			"activation_type ACTIVATION NOT NULL," +
+    			"withdrawal_hours INTEGER NOT NULL," +
+    			"application_hours INTEGER NOT NULL," +
+    			"verifiation_key VARCHAR(100) NOT NULL," +
+    			"storage_interval INTEGER NOT NULL" +
+    		")";
 
-    private static String createCustomizationData() {
-    	return "CREATE TABLE customization_data (" +
-    				"lock CHAR(1) PRIMARY KEY DEFAULT ’X’ CHECK (lock = ’X’)," +
-    				"css VARCHAR(30) NOT NULL," +
-    				"title VARCHAR(30) NOT NULL" +
-    			")";
-    }
+    private static final String CREATE_CUSTOMIZATION_DATA =
+    		"CREATE TABLE customization_data (" +
+    			"lock CHAR(1) PRIMARY KEY DEFAULT ’X’ CHECK (lock = ’X’)," +
+    			"css VARCHAR(30) NOT NULL," +
+    			"title VARCHAR(30) NOT NULL" +
+    		")";
 	
     /**
      * Checks whether or not the required tables in the database have been
@@ -186,32 +176,80 @@ public class DatabaseTableCreator {
     	trans.start();
     	String checkTables = "SELECT COUNT(*) FROM information_schema.tables" +
     			"WHERE table_schema = 'public'";
-    	Statement stmt = null;
+    	Statement formOfAddress = null;
+    	Statement role = null;
+    	Statement status = null;
+    	Statement period = null;
+    	Statement activation = null;
+    	Statement users = null;
+    	Statement courses = null;
+    	Statement courseUnits = null;
+    	Statement addresses = null;
+    	Statement cycles = null;
+    	Statement informUsers = null;
+    	Statement courseInstructors = null;
+    	Statement courseParticipants = null;
+    	Statement courseUnitParticipants = null;
+    	Statement systemAttributes = null;
+    	Statement customizationData = null;
     	Statement check = null;
     	ResultSet count = null;
     	try {
-			check = trans.getConn().conn.
-					prepareStatement(checkTables);
 			check = trans.getConn().conn.createStatement();
-			check.execute(CREATE_FORM_OF_ADDRESS);
-			count = check.executeQuery();
+			count = check.executeQuery(checkTables);
 			
 			count.next();
 			Long numTables = (Long) count.getObject(1);
 			if (numTables == 0) {
-				stmt = trans.getConn().conn.
-						prepareStatement(createFormOfAddress() + createRole() +
-								createStatus() + createPeriod() +
-								createActivation() + createUsers() +
-								createCourses() + createCourseUnits() +
-								createAddresses() + createCycles() +
-								createInformUsers() +
-								createCourseInstructors() +
-								createCourseParticipants() +
-								createCourseUnitParticipants() +
-								createSystemAttributes() +
-								createCustomizationData());
-				stmt.execute();
+				formOfAddress = trans.getConn().conn.createStatement();
+				formOfAddress.execute(CREATE_FORM_OF_ADDRESS);
+				
+				role = trans.getConn().conn.createStatement();
+				role.execute(CREATE_ROLE);
+				
+				status = trans.getConn().conn.createStatement();
+				status.execute(CREATE_STATUS);
+				
+				period = trans.getConn().conn.createStatement();
+				period.execute(CREATE_PERIOD);
+				
+				activation = trans.getConn().conn.createStatement();
+				activation.execute(CREATE_ACTIVATION);
+				
+				users = trans.getConn().conn.createStatement();
+				users.execute(CREATE_USERS);
+				
+				courses = trans.getConn().conn.createStatement();
+				courses.execute(CREATE_COURSES);
+				
+				courseUnits = trans.getConn().conn.createStatement();
+				courseUnits.execute(CREATE_COURSE_UNITS);
+
+				addresses = trans.getConn().conn.createStatement();
+				addresses.execute(CREATE_ADDRESSES);
+				
+				cycles = trans.getConn().conn.createStatement();
+				cycles.execute(CREATE_CYCLES);
+				
+				informUsers = trans.getConn().conn.createStatement();
+				informUsers.execute(CREATE_INFORM_USERS);
+				
+				courseInstructors = trans.getConn().conn.createStatement();
+				courseInstructors.execute(CREATE_COURSE_INSTRUCTORS);
+				
+				courseParticipants = trans.getConn().conn.createStatement();
+				courseParticipants.execute(CREATE_COURSE_PARTICIPANTS);
+				
+				courseUnitParticipants = trans.getConn().conn.createStatement();
+				courseUnitParticipants.
+					execute(CREATE_COURSE_UNIT_PARTICIPANTS);
+				
+				systemAttributes = trans.getConn().conn.createStatement();
+				systemAttributes.execute(CREATE_SYSTEM_ATTRIBUTES);
+
+				customizationData = trans.getConn().conn.createStatement();
+				customizationData.execute(CREATE_CUSTOMIZATION_DATA);
+				
 				System.out.println("Erstellen der Datenbank fertig");
 			}
 			
@@ -220,8 +258,8 @@ public class DatabaseTableCreator {
 		} finally {
 			try {
 				count.close();
-			} catch (SQLException e) {
-				e.printStackTrace();
+			} catch (SQLException e1) {
+				e1.printStackTrace();
 			}
 			try {
 				check.close();
@@ -229,10 +267,86 @@ public class DatabaseTableCreator {
 				e.printStackTrace();
 			}
 			try {
-				stmt.close();
+				formOfAddress.close();
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}
+			try {
+				role.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+			try {
+				status.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+			try {
+				period.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+			try {
+				activation.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+			try {
+				users.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+			try {
+				courses.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+			try {
+				courseUnits.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+			try {
+				addresses.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+			try {
+				cycles.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+			try {
+				informUsers.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+			try {
+				courseInstructors.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+			try {
+				courseParticipants.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+			try {
+				courseUnitParticipants.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+			try {
+				systemAttributes.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+			try {
+				customizationData.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+			
 		}
     } 
     
