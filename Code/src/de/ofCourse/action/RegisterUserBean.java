@@ -70,18 +70,28 @@ public class RegisterUserBean {
      * username is already in use, a error message is displayed.
      */
     public String registerUser() {
+	
+	// Eingegebenes Passwort hashen
+	// TODO salt
 	String passwordHash = PasswordHash.hashPW(this.getRegisterPassword(), );
 	
+	// Datenbankverbindung initialisieren
 	this.transaction = new Connection();
 	transaction.start();
 	
+	// Überprüfen, ob die eingegebene E-Mail-Adresse im System bereits existiert.
 	if(UserDAO.emailExists(transaction, this.getUserToRegistrate().getEmail())) {
+	    
+	    // Fehlermeldung in den FacesContext werfen, wenn die Mail schon existiert.
             FacesContext facesContext = FacesContext.getCurrentInstance();
             FacesMessage msg = new FacesMessage("E-Mail existiert bereits!");
             msg.setSeverity(FacesMessage.SEVERITY_INFO);
             facesContext.addMessage(null, msg);
             facesContext.renderResponse();
 	} else {	
+	    
+	    // Gibt es die angegebene E-Mail-Adresse noch nicht, erstelle einen
+	    // neuen Benutzer.
 	    UserDAO.createUser(this.transaction, this.getUserToRegistrate(), passwordHash);
 	}
 	

@@ -105,6 +105,9 @@ public class UserDAO {
 		+ "values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 	//mögliche SQL-Injektion abfangen
 	try {
+	    // PreparedStatement befüllen, bei optionalen Feldern überprüfen,
+	    // ob der Benutzer die Daten angegeben hat oder ob in die 
+	    // Datenbank null-Werte geschrieben werden müssen.
 	    pS = conn.prepareStatement(sql);	    
 	    if(user.getFirstname() == null || user.getFirstname().length() < 1) {
 		pS.setString(1, null);
@@ -365,8 +368,13 @@ public class UserDAO {
 	    //Nächten Eintrag aufrufen, gibt true zurück, falls es weiteren 
 	    //Eintrag gibt, ansonsten null.
 	    if(res.next()) {
+		// Passwort aus dem Resultset abrufen
 		String pwHashFromDB = res.getString("pw_hash");
+		
+		// Gespeichertes Passwort mit dem eingegebenen Passwort vergleichen
 		if(passwordHash.equals(pwHashFromDB)) {
+		    
+		    // Überprüfen, ob der Benutzer aktiviert ist.
 		    if(res.getString("status").equals(UserStatus.REGISTERED.toString())){
 			id = res.getInt("id");
 		    } else {
