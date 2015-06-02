@@ -18,12 +18,12 @@ public class Connection implements Transaction {
     /**
      * stores the connection from the DatabaseConnectionManager
      */
-    private Object conn = null;
+    private java.sql.Connection conn = null;
 
     /**
      * @return the conn
      */
-    public Object getConn() {
+    public java.sql.Connection getConn() {
         return conn;
     }
 
@@ -63,8 +63,8 @@ public class Connection implements Transaction {
      * Gets a connection from the DatabaseConnectionManager and stores it.
      */
     public void getConnection(){
-        java.sql.Connection sqlConn  = DatabaseConnectionManager.getInstance().getConnection();
-        conn = (Object) sqlConn;
+        conn  = DatabaseConnectionManager.getInstance().getConnection();
+        
     }
     
     /**
