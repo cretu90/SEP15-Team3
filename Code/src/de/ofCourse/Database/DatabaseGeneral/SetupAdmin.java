@@ -3,9 +3,9 @@
  */
 package de.ofCourse.Database.DatabaseGeneral;
 
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 
 import de.ofCourse.exception.InvalidDBTransferException;
 import de.ofCourse.system.Connection;
@@ -26,6 +26,14 @@ import de.ofCourse.system.Transaction;
  */
 public class SetupAdmin {
 	
+	private static final String CHECK_ADMIN =
+			"SELECT COUNT(*) FROM \"users\" WHERE role = administrator";
+	private static final String INIT_ADMIN =
+			"INSERT INTO \"users\"(nickname, email, pw_hash, credit_balance," +
+			"email_verification, admin_verification, role, status)" +
+			"VALUES ('admin1', 'bazinga@gmail.com', '5ee2d84rf', 0, TRUE," +
+			"TRUE, 'administrator', 'registered')";
+	
     /**
      * Checks whether or not the table of users in the database contains an
      * administrator. If not, a new administrator is created and added to the
@@ -37,24 +45,19 @@ public class SetupAdmin {
     public static void createInitialAdmin() throws InvalidDBTransferException {
     	Transaction trans = new Connection();
     	trans.start();
-    	String checkAdmin = "SELECT COUNT(*) FROM \"users\"" +
-    			"WHERE role = administrator";
-    	String initAdmin = "INSERT INTO \"users\"(nickname, email, pw_hash," +
-    			"credit_balance, email_verification, admin_verification," +
-    			"role, status) VALUES ('admin1', 'bazinga@gmail.com', " +
-    			"'5ee2d84rf', 0, TRUE, TRUE, 'administrator', 'registered')";
+    	
     	ResultSet rst = null;
-    	PreparedStatement check = null;
-    	PreparedStatement init = null;
+    	Statement check = null;
+    	Statement init = null;
     	
     	try {
-    		check = trans.getConn().conn.prepareStatement(checkAdmin);
-    		rst = check.executeQuery();
+    		check = trans.getConn().conn.createStatement();
+    		rst = check.executeQuery(CHECK_ADMIN);
     		rst.next();
     		
     		if ((Long) rst.getObject(1) < 1) {
-    			init = trans.getConn().conn.prepareStatement(initAdmin);
-			init.execute();
+    			init = trans.getConn().conn.createStatement();
+    			init.execute(INIT_ADMIN);
     		}
 		} catch (SQLException e) {
 			e.printStackTrace();
