@@ -84,7 +84,7 @@ public class DatabaseTableCreator {
     private static final String CREATE_COURSE_UNITS =
     		"CREATE TABLE course_units (" +
     			"id SERIAL PRIMARY KEY," +
-    			"course_id REFERENCES courses(id) ON DELETE CASCADE," +
+    			"course_id INTEGER REFERENCES \"courses\"(id) ON DELETE CASCADE," +
     			"max_participants INTEGER NOT NULL" +
     			"CHECK (max_participants > 0)," +
     			"titel TEXT(150)," +
@@ -100,9 +100,9 @@ public class DatabaseTableCreator {
     private static final String CREATE_ADDRESSES =
     		"CREATE TABLE addresses (" +
     			"id SERIAL PRIMARY KEY," +
-    			"user REFERENCES users(id) UNIQUE ON DELETE CASCADE," +
-    			"course_unit REFERENCES course_units(id) UNIQUE" +
-    			"ON DELETE CASCADE," +
+    			"user_id INTEGER REFERENCES \"users\"(id) ON DELETE CASCADE UNIQUE," +
+    			"course_unit_id INTEGER REFERENCES \"course_units\"(id) " +
+    			"ON DELETE CASCADE UNIQUE," +
     			"country VARCHAR(100) NOT NULL," +
     			"city VARCHAR(100) NOT NULL," +
     			"zip_code VARCHAR(10) NOT NULL," +
@@ -112,36 +112,36 @@ public class DatabaseTableCreator {
     private static final String CREATE_CYCLES =
     		"CREATE TABLE cycles (" +
     			"id SERIAL PRIMARY KEY," +
-    			"course REFERENCES courses(id) UNIQUE ON DELETE CASCADE," +
+    			"course_id INTEGER REFERENCES \"courses\"(id) ON DELETE CASCADE UNIQUE," +
     			"period PERIOD," +
     			"cycle_end INTEGER NOT NULL" +
     		")";
 
     private static final String CREATE_INFORM_USERS =
     		"CREATE TABLE inform_users (" +
-    			"user REFERENCES users(id) ON DELETE CASCADE," +
-    			"course REFERENCES courses(id) ON DELETE CASCADE," +
+    			"user_id INTEGER REFERENCES \"users\"(id) ON DELETE CASCADE," +
+    			"course_id INTEGER REFERENCES \"courses\"(id) ON DELETE CASCADE," +
     			"PRIMARY KEY (user, course)" +
     		")";
 
     private static final String CREATE_COURSE_INSTRUCTORS =
     		"CREATE TABLE course_instructors (" +
-    			"course_instructor REFERENCES users(id) ON DELETE CASCADE," +
-    			"course REFERENCES courses(id) ON DELETE CASCADE," +
+    			"course_instructor_id INTEGER REFERENCES \"users\"(id) ON DELETE CASCADE," +
+    			"course_id INTEGER REFERENCES \"courses\"(id) ON DELETE CASCADE," +
     			"PRIMARY KEY (course_instructor, course)" +
     		")";
 
     private static final String CREATE_COURSE_PARTICIPANTS =
     		"CREATE TABLE course_participants (" +
-    			"participant REFERENCES users(id) ON DELETE CASCADE," +
-    			"course REFERENCES courses(id) ON DELETE CASCADE," +
+    			"participant_id INTEGER REFERENCES \"users\"(id) ON DELETE CASCADE," +
+    			"course_id INTEGER REFERENCES \"courses\"(id) ON DELETE CASCADE," +
     			"PRIMARY KEY (participant, course)" +
     		")";
 
     private static final String CREATE_COURSE_UNIT_PARTICIPANTS =
     		"CREATE TABLE course_unit_participants (" +
-    			"participant REFERENCES users(id) ON DELETE CASCADE," +
-    			"course_unit REFERENCES course_units(id) ON DELETE CASCADE," +
+    			"participant_id INTEGER REFERENCES \"users\"(id) ON DELETE CASCADE," +
+    			"course_unit_id INTEGER REFERENCES \"course_units\"(id) ON DELETE CASCADE," +
     			"PRIMARY KEY (participant, course_unit)" +
     		")";
 
@@ -171,13 +171,12 @@ public class DatabaseTableCreator {
      * execution of the method
      */
     public static void buildUpDatabase() throws InvalidDBTransferException{
-    	Transaction trans = new Connection();
-    	trans.start();
     	String checkTables = "SELECT COUNT(*) FROM information_schema.tables" +
     			"WHERE table_schema = 'public'";
-    	
+    	Transaction trans = new Connection();
+    	trans.start();
     	Connection connection = (Connection) trans;
-    	java.sql.Connection conn = (java.sql.Connection) connection.getConn();
+    	java.sql.Connection conn = connection.getConn();
     	
     	Statement formOfAddress = null;
     	Statement role = null;
@@ -204,53 +203,53 @@ public class DatabaseTableCreator {
 			count.next();
 			Long numTables = (Long) count.getObject(1);
 			if (numTables == 0) {
-				formOfAddress = trans.getConn().conn.createStatement();
+				formOfAddress = conn.createStatement();
 				formOfAddress.execute(CREATE_FORM_OF_ADDRESS);
 				
-				role = trans.getConn().conn.createStatement();
+				role = conn.createStatement();
 				role.execute(CREATE_ROLE);
 				
-				status = trans.getConn().conn.createStatement();
+				status = conn.createStatement();
 				status.execute(CREATE_STATUS);
 				
-				period = trans.getConn().conn.createStatement();
+				period = conn.createStatement();
 				period.execute(CREATE_PERIOD);
 				
-				activation = trans.getConn().conn.createStatement();
+				activation = conn.createStatement();
 				activation.execute(CREATE_ACTIVATION);
 				
-				users = trans.getConn().conn.createStatement();
+				users = conn.createStatement();
 				users.execute(CREATE_USERS);
 				
-				courses = trans.getConn().conn.createStatement();
+				courses = conn.createStatement();
 				courses.execute(CREATE_COURSES);
 				
-				courseUnits = trans.getConn().conn.createStatement();
+				courseUnits = conn.createStatement();
 				courseUnits.execute(CREATE_COURSE_UNITS);
 
-				addresses = trans.getConn().conn.createStatement();
+				addresses = conn.createStatement();
 				addresses.execute(CREATE_ADDRESSES);
 				
-				cycles = trans.getConn().conn.createStatement();
+				cycles = conn.createStatement();
 				cycles.execute(CREATE_CYCLES);
 				
-				informUsers = trans.getConn().conn.createStatement();
+				informUsers = conn.createStatement();
 				informUsers.execute(CREATE_INFORM_USERS);
 				
-				courseInstructors = trans.getConn().conn.createStatement();
+				courseInstructors = conn.createStatement();
 				courseInstructors.execute(CREATE_COURSE_INSTRUCTORS);
 				
-				courseParticipants = trans.getConn().conn.createStatement();
+				courseParticipants = conn.createStatement();
 				courseParticipants.execute(CREATE_COURSE_PARTICIPANTS);
 				
-				courseUnitParticipants = trans.getConn().conn.createStatement();
+				courseUnitParticipants = conn.createStatement();
 				courseUnitParticipants.
 					execute(CREATE_COURSE_UNIT_PARTICIPANTS);
 				
-				systemAttributes = trans.getConn().conn.createStatement();
+				systemAttributes = conn.createStatement();
 				systemAttributes.execute(CREATE_SYSTEM_ATTRIBUTES);
 
-				customizationData = trans.getConn().conn.createStatement();
+				customizationData = conn.createStatement();
 				customizationData.execute(CREATE_CUSTOMIZATION_DATA);
 				
 				System.out.println("Erstellen der Datenbank fertig");

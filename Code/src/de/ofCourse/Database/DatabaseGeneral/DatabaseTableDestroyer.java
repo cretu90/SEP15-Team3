@@ -29,6 +29,9 @@ public class DatabaseTableDestroyer {
 	public static void dropTables() throws InvalidDBTransferException {
 		Transaction trans = new Connection();
     	trans.start();
+    	Connection connection = (Connection) trans;
+    	java.sql.Connection conn = connection.getConn();
+    	
     	Statement users = null;
     	Statement courses = null;
     	Statement courseUnits = null;
@@ -42,37 +45,37 @@ public class DatabaseTableDestroyer {
     	Statement customizationData = null;
     	
     	try {
-			users = trans.getConn().conn.createStatement();
+			users = conn.createStatement();
 			users.execute(DROP_USERS);
 			
-			courses = trans.getConn().conn.createStatement();
+			courses = conn.createStatement();
 			courses.execute(DROP_COURSES);
 			
-			courseUnits = trans.getConn().conn.createStatement();
+			courseUnits = conn.createStatement();
 			courseUnits.execute(DROP_COURSE_UNITS);
 			
-			addresses = trans.getConn().conn.createStatement();
+			addresses = conn.createStatement();
 			addresses.execute(DROP_ADDRESSES);
 			
-			cycles = trans.getConn().conn.createStatement();
+			cycles = conn.createStatement();
 			cycles.execute(DROP_CYCLES);
 			
-			informUsers = trans.getConn().conn.createStatement();
+			informUsers = conn.createStatement();
 			informUsers.execute(DROP_INFORM_USERS);
 			
-			courseInstructors = trans.getConn().conn.createStatement();
+			courseInstructors = conn.createStatement();
 			courseInstructors.execute(DROP_COURSE_INSTRUCTORS);
 			
-			courseParticipants = trans.getConn().conn.createStatement();
+			courseParticipants = conn.createStatement();
 			courseParticipants.execute(DROP_COURSE_PARTICIPANTS);
 			
-			courseUnitParticipants = trans.getConn().conn.createStatement();
+			courseUnitParticipants = conn.createStatement();
 			courseUnitParticipants.execute(DROP_COURSE_UNIT_PARTICIPANTS);
 			
-			systemAttributes = trans.getConn().conn.createStatement();
+			systemAttributes = conn.createStatement();
 			systemAttributes.execute(DROP_SYSTEM_ATTRIBUTES);
 			
-			customizationData = trans.getConn().conn.createStatement();
+			customizationData = conn.createStatement();
 			customizationData.execute(DROP_CUSTOMIZATION_DATA);
 		} catch (SQLException e) {
 			e.printStackTrace();

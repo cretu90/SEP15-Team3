@@ -45,18 +45,20 @@ public class SetupAdmin {
     public static void createInitialAdmin() throws InvalidDBTransferException {
     	Transaction trans = new Connection();
     	trans.start();
+    	Connection connection = (Connection) trans;
+    	java.sql.Connection conn = connection.getConn();
     	
     	ResultSet rst = null;
     	Statement check = null;
     	Statement init = null;
     	
     	try {
-    		check = trans.getConn().conn.createStatement();
+    		check = conn.createStatement();
     		rst = check.executeQuery(CHECK_ADMIN);
     		rst.next();
     		
     		if ((Long) rst.getObject(1) < 1) {
-    			init = trans.getConn().conn.createStatement();
+    			init = conn.createStatement();
     			init.execute(INIT_ADMIN);
     		}
 		} catch (SQLException e) {
