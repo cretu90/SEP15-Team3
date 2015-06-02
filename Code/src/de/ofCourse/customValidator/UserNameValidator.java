@@ -10,6 +10,10 @@ import javax.faces.validator.FacesValidator;
 import javax.faces.validator.Validator;
 import javax.faces.validator.ValidatorException;
 
+import de.ofCourse.Database.dao.UserDAO;
+import de.ofCourse.system.Connection;
+import de.ofCourse.system.Transaction;
+
 /**
  * Checks whether the entered user name already exists in the system.
  * 
@@ -26,13 +30,19 @@ public class UserNameValidator implements Validator {
      * already exists in the system.
      */
     @Override
-    public void validate(FacesContext arg0, UIComponent arg1, Object arg2)
+    public void validate(FacesContext arg0, UIComponent arg1, Object value)
 	    throws ValidatorException {
 	
-	//if(){
+	String username = value.toString();
+	
+	Transaction transaction = new Connection();
+	transaction.start();
+	int id = UserDAO.getUserID(transaction, username);
+	
+	if(id != -1){
 	    throw new ValidatorException(new FacesMessage("Dieser Benutzername "
 	    	+ "ist bereits vergeben."));
-	//}
+	}
 
     }
 

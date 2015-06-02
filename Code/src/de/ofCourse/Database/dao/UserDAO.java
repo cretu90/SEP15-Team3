@@ -3,7 +3,7 @@
  */
 package de.ofCourse.Database.dao;
 
-import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -17,6 +17,7 @@ import de.ofCourse.model.Salutation;
 import de.ofCourse.model.User;
 import de.ofCourse.model.UserRole;
 import de.ofCourse.model.UserStatus;
+import de.ofCourse.system.Connection;
 import de.ofCourse.system.Transaction;
 import de.ofCourse.utilities.PasswordHash;
 
@@ -49,11 +50,65 @@ public class UserDAO {
 	 *            database
      * @param user
      *            the user to be added
+     * @param pwHash
+     * 		  the hashed password
      * @throws InvalidDBTransferException if any error occurred during the
      * execution of the method
      */
-    public static void createUser(Transaction trans, User user)
+    public static void createUser(Transaction trans, User user, String pwHash)
     		throws InvalidDBTransferException {
+	
+	//SQL- INSERT vorbereiten und Connection zur Datenbank erstellen.
+	PreparedStatement pS = null;
+	Connection connection = (Connection) trans;
+	java.sql.Connection conn = connection.getConn();
+	
+	String sql = "Insert into users (first_name, name, nickname, email, "
+		+ "pw_hash, date_of_birth, form_of_address, credit_balance, "
+		+ "email_verification, admin_verfication, role, status)"
+		+ "values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+	//mögliche SQL-Injektion abfangen
+	try {
+	    pS = conn.prepareStatement(sql);	    
+	    if(user.getFirstname() == null || user.getFirstname().length() < 1) {
+		pS.setString(1, null);
+	    } else {
+		pS.setString(1, user.getFirstname());
+	    }
+	    if(user.getLastname() == null || user.getLastname().length() < 1) {
+		pS.setString(2, null);
+	    } else {
+		pS.setString(2, user.getLastname());
+	    }
+	    pS.setString(3, user.getUsername());
+	    pS.setString(4, user.getEmail());
+	    pS.setString(5, pwHash);
+	    if(user.getDateOfBirth() == null) {
+		pS.setDate(6, null);
+	    } else {
+		pS.setDate(6, (Date) user.getDateOfBirth());
+	    }
+	    if(user.getSalutation() == null) {
+		pS.setString(7, null);
+	    } else {
+		pS.setString(7, user.getSalutation().toString());
+	    }
+	    pS.setBoolean(8, false); //TODO nachfragen
+	    pS.setBoolean(9, false);
+	    pS.setBoolean(10, false);
+	    pS.setString(11, UserRole.REGISTERED_USER.toString());
+	    pS.setString(12, UserStatus.NOT_ACTIVATED.toString());
+	    
+	    
+	    pS.executeUpdate();
+	    
+
+	} catch (SQLException e) {
+	    throw new InvalidDBTransferException();
+	    //TODO Logging message
+	} finally {
+	    //TODO Connection releasen
+	}
     }
 
     /**
@@ -149,12 +204,13 @@ public class UserDAO {
 	
 	//SQL- Abfrage vorbereiten und Connection zur Datenbank erstellen.
 	PreparedStatement pS = null;
-	Connection con = (Connection) trans.getConn();
+	Connection connection = (Connection) trans;
+	java.sql.Connection conn = connection.getConn();
 	
 	String sql = "SELECT status FROM users WHERE id=?";
 	//mögliche SQL-Injektion abfangen
 	try {
-	    pS = con.prepareStatement(sql);	    
+	    pS = conn.prepareStatement(sql);	    
 	    pS.setInt(1, userID);
 	    
 	    //preparedStatement ausführen, gibt resultSet als Liste zurück (hier
@@ -195,12 +251,13 @@ public class UserDAO {
 	
 	//SQL- Abfrage vorbereiten und Connection zur Datenbank erstellen.
 	PreparedStatement pS = null;
-	Connection con = (Connection) trans.getConn();
+	Connection connection = (Connection) trans;
+	java.sql.Connection conn = connection.getConn();
 	
 	String sql = "SELECT role FROM users WHERE id=?";
 	//mögliche SQL-Injektion abfangen
 	try {
-	    pS = con.prepareStatement(sql);	    
+	    pS = conn.prepareStatement(sql);	    
 	    pS.setInt(1, userID);
 	    
 	    //preparedStatement ausführen, gibt resultSet als Liste zurück (hier
@@ -256,12 +313,13 @@ public class UserDAO {
 	
 	//SQL- Abfrage vorbereiten und Connection zur Datenbank erstellen.
 	PreparedStatement pS = null;
-	Connection con = (Connection) trans.getConn();
+	Connection connection = (Connection) trans;
+	java.sql.Connection conn = connection.getConn();
 	
 	String sql = "SELECT id, nickname, pw_hash, status FROM users WHERE nickname=?";
 	//mögliche SQL-Injektion abfangen
 	try {
-	    pS = con.prepareStatement(sql);	    
+	    pS = conn.prepareStatement(sql);	    
 	    pS.setString(1, username);
 	    
 	    //preparedStatement ausführen, gibt resultSet als Liste zurück (hier
@@ -271,9 +329,8 @@ public class UserDAO {
 	    //Nächten Eintrag aufrufen, gibt true zurück, falls es weiteren 
 	    //Eintrag gibt, ansonsten null.
 	    if(res.next()) {
-		String pwFromDB = res.getString("pw_hash");
-		//TODO Passwörter vergleichen
-		if(PasswordHash.compare(passwordHash, pwFromDB)) {
+		String pwHashFromDB = res.getString("pw_hash");
+		if(passwordHash.equals(pwHashFromDB)) {
 		    if(res.getString("status").equals(UserStatus.REGISTERED.toString())){
 			id = res.getInt("id");
 		    } else {
@@ -320,7 +377,8 @@ public class UserDAO {
 	
 	//SQL- Abfrage vorbereiten und Connection zur Datenbank erstellen.
 	PreparedStatement pS = null;
-	Connection con = (Connection) trans.getConn();
+	Connection connection = (Connection) trans;
+	java.sql.Connection conn = connection.getConn();
 	
 	//Datenbankabfrage
 	String sql = "SELECT * FROM users WHERE nickname=?";
@@ -328,7 +386,7 @@ public class UserDAO {
 	
 	//mögliche SQL-Injektion abfangen
 	try {
-	    pS = con.prepareStatement(sql);	    
+	    pS = conn.prepareStatement(sql);	    
 	    pS.setString(1, username);
 	    
 	    //preparedStatement ausführen, gibt resultSet als Liste zurück (hier
@@ -386,7 +444,6 @@ public class UserDAO {
 
         	//neue Datenbankabfrage für die Adresse des Benutzers
         	sql = "SELECT * FROM addresses WHERE user=?";
-        	pS = con.prepareStatement(sql);	    
         	pS.setInt(1, user.getUserID()); 
         	
         	res = pS.executeQuery();
@@ -440,14 +497,15 @@ public class UserDAO {
 	
 	//SQL- Abfrage vorbereiten und Connection zur Datenbank erstellen.
 	PreparedStatement pS = null;
-	Connection con = (Connection) trans.getConn();
+	Connection connection = (Connection) trans;
+	java.sql.Connection conn = connection.getConn();
 	
 	//Datenbankabfrage
 	String sql = "SELECT id FROM users WHERE nickname=?";
 	
 	//mögliche SQL-Injektion abfangen
 	try {
-	    pS = con.prepareStatement(sql);	    
+	    pS = conn.prepareStatement(sql);	    
 	    pS.setString(1, username);
 	    
 	    //preparedStatement ausführen, gibt resultSet als Liste zurück (hier

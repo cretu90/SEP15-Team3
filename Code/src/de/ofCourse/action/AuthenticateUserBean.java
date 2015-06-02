@@ -63,7 +63,6 @@ public class AuthenticateUserBean {
 
     @PostConstruct
     private void init(){
-	this.transaction = new Connection();
 	this.sessionUser = new SessionUserBean();
     }
     
@@ -83,11 +82,9 @@ public class AuthenticateUserBean {
 	
 	String passwordHash = PasswordHash.hashPW(this.loginPassword);
 	
+	this.transaction = new Connection();
+	transaction.start();
 	int id = UserDAO.proveLogin(this.transaction, this.getLoginUser().getUsername(), passwordHash);
-	
-	//HTTP Session
-	//userID
-	//userRole
 	
 	if(id == -1) {
             FacesContext facesContext = FacesContext.getCurrentInstance();

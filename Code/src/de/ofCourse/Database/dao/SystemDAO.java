@@ -3,7 +3,6 @@
  */
 package de.ofCourse.Database.dao;
 
-import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -11,6 +10,7 @@ import java.sql.SQLException;
 import de.ofCourse.exception.InvalidDBTransferException;
 import de.ofCourse.model.Activation;
 import de.ofCourse.model.Salutation;
+import de.ofCourse.system.Connection;
 import de.ofCourse.system.Transaction;
 
 /**
@@ -82,14 +82,15 @@ public class SystemDAO {
 
 	// SQL- Abfrage vorbereiten und Connection zur Datenbank erstellen.
 	PreparedStatement pS = null;
-	Connection con = (Connection) trans.conn;
+	Connection connection = (Connection) trans;
+	java.sql.Connection conn = connection.getConn();
 
 	// Datenbankabfrage
 	String sql = "SELECT activation_type FROM systemAttributes";
 
 	// mögliche SQL-Injektion abfangen
 	try {
-	    pS = con.prepareStatement(sql);
+	    pS = conn.prepareStatement(sql);
 
 	    // preparedStatement ausführen, gibt resultSet als Liste zurück
 	    // (hier
