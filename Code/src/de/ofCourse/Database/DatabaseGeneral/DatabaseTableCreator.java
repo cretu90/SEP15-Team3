@@ -60,7 +60,7 @@ public class DatabaseTableCreator {
 				"pw_hash VARCHAR(256) NOT NULL," +
 				"date_of_birth DATE," +
 				"form_of_address FORM_OF_ADDRESS," +
-				"credit_balance BOOLEAN NOT NULL," +
+				"credit_balance DECIMAL(10, 2) NOT NULL," +
 				"email_verification BOOLEAN NOT NULL," +
 				"admin_verfication BOOLEAN NOT NULL," +
 				"profile_image BYTEA," +
@@ -171,7 +171,7 @@ public class DatabaseTableCreator {
      * execution of the method
      */
     public static void buildUpDatabase() throws InvalidDBTransferException{
-    	String checkTables = "SELECT COUNT(*) FROM information_schema.tables" +
+    	String checkTables = "SELECT COUNT(*) FROM information_schema.tables " +
     			"WHERE table_schema = 'public'";
     	Transaction trans = new Connection();
     	trans.start();
