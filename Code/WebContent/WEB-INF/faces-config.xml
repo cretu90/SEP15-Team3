@@ -26,9 +26,5 @@
         <validator-id> dateOfBirthValidator </validator-id>
         <validator-class> de.ofCourse.customValidator.DateOfBirthValidator </validator-class>
     </validator>
-     <validator>
-        <validator-id> emailValidator </validator-id>
-        <validator-class> de.ofCourse.customValidator.EMailValidator </validator-class>
-    </validator>
-
+   
 </faces-config>

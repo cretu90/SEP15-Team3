@@ -195,6 +195,7 @@
 										              validatorMessage="Ihr Passwort muss zwischen 8 und 1oo Zeichen lang sein."
 										              style="width:250px;">
 										              <f:validateLength minimum="8" maximum="100" />
+										              <f:validateRegex pattern="^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@ [A-Za-z0-9-]+(\\.[A-Za-z0-9.-]+)*(\\.[A-Za-z]{2,})$"/>
 										</h:inputSecret>
 									</div>
 									<br />
@@ -213,7 +214,7 @@
 										<h:inputText class="form-control" id="passwordEMail" style="width:250px;"
 										              value="#{LostPasswordBean.emailAddressToResetPassword}"
 										              required="true" requiredMessage="Bitte geben Sie Ihre E-Mail-Adresse ein." >
-										              <f:validator validatorId="emailValidator" />
+										             
                                         </h:inputText>
                                             <h:message for="passwordEMail" style="color:red" />
 									</div>
