@@ -71,10 +71,14 @@ public class MyCoursesBean implements Pagination, Serializable {
     private Course course2;
     private Course course3;
 
-    @PostConstruct
-    private void init() {
+    private ArrayList<Course> ordered;
+    
+    
+   // @PostConstruct
+    private void initTest() {
 
 	registeredCourses = new ArrayList<Course>();
+	ordered = new ArrayList<Course>();
 
 	course1 = new Course();
 	course1.setTitle("Yoga");
@@ -120,13 +124,19 @@ public class MyCoursesBean implements Pagination, Serializable {
 	this.pagination = new PaginationData();
 	this.getPagination().setCurrentPageNumber(0);
 	System.out.println(pagination.getCurrentPageNumber());
+	
+	ordered.add(course2);
+	ordered.add(course3);
+	ordered.add(course1);
+	
+	
 
     }
 
-    private void testInit() {
-
-	transaction = new Connection();
-	pagination = new PaginationData();
+    private void init() {
+    transaction = new Connection();
+   
+    pagination = new PaginationData();
 
     }
 
@@ -186,6 +196,11 @@ public class MyCoursesBean implements Pagination, Serializable {
     @Override
     public void sortBySpecificColumn() {
 
+    	if(FacesContext.getCurrentInstance()
+    			.getExternalContext().getRequestParameterMap().get("sortCol").equals("title")){
+    		this.registeredCourses = this.ordered;
+    	}
+    	
 	// TESTING
 	System.out.println(FacesContext.getCurrentInstance()
 		.getExternalContext().getRequestParameterMap().get("sortCol"));
