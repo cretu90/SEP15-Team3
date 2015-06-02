@@ -3,12 +3,19 @@
  */
 package de.ofCourse.action;
 
+import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.RequestScoped;
+import javax.faces.context.FacesContext;
+import javax.servlet.http.HttpSession;
 
+import de.ofCourse.Database.dao.UserDAO;
+import de.ofCourse.model.Language;
 import de.ofCourse.model.User;
+import de.ofCourse.system.Connection;
 import de.ofCourse.system.Transaction;
+import de.ofCourse.utilities.PasswordHash;
 
 /**
  * Provides the functionality to register in the the system by entering the
@@ -41,6 +48,10 @@ public class RegisterUserBean {
      * who wants to register.
      */
     private User userToRegistrate;
+    
+    private String registerPassword;
+    
+    private String registerConfirmPassword;
 
     /**
      * This ManagedProperty represents the actual session of a user. It stores
@@ -58,28 +69,20 @@ public class RegisterUserBean {
      * If there goes something wrong during registration, e.g. the chosen
      * username is already in use, a error message is displayed.
      */
-    public void registerUser() {
-
+    public String registerUser() {
+	String passwordHash = PasswordHash.hashPW(this.getRegisterPassword(), );
+	
+	this.transaction = new Connection();
+	transaction.start();
+	
+	//TODO Überprüfen ob email existiert
+	
+	UserDAO.createUser(this.transaction, this.getUserToRegistrate(), passwordHash);
+	
+	//TODO Erfolgsmeldung ausgeben
+	
+	return "/facelets/open/index.xhtml?faces-redirect=false";
     }
-
-    /**
-     * Returns the value of the attribute <code>usersToRegistrate</code>.
-     * 
-     * @return the user to register
-     */
-    public User getUsertoRegistrate() {
-	return userToRegistrate;
-    }
-
-    /**
-     * Sets the value of the attribute <code>usersToRegistrate</code>.
-     * 
-     * @param userToRegistrate
-     *            the user to register
-     */
-    public void setUserToRegistrate(User userToRegistrate) {
-    }
-
     
     
     /**
@@ -98,6 +101,26 @@ public class RegisterUserBean {
      *            session of the user
      */
     public void setSessionUser(SessionUserBean userSession) {
+    }
+
+    public String getRegisterPassword() {
+        return registerPassword;
+    }
+
+    public void setRegisterPassword(String registerPassword) {
+        this.registerPassword = registerPassword;
+    }
+
+    public String getRegisterConfirmPassword() {
+        return registerConfirmPassword;
+    }
+
+    public void setRegisterConfirmPassword(String registerConfirmPassword) {
+        this.registerConfirmPassword = registerConfirmPassword;
+    }
+
+    public User getUserToRegistrate() {
+        return userToRegistrate;
     }
 
 }

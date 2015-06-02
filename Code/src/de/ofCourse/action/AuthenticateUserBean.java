@@ -159,4 +159,12 @@ public class AuthenticateUserBean {
 	this.sessionUser = sessionUser;
     }
 
+    public String getLoginPassword() {
+        return loginPassword;
+    }
+
+    public void setLoginPassword(String loginPassword) {
+        this.loginPassword = loginPassword;
+    }
+
 }

@@ -69,7 +69,7 @@
 									<div class="input-group" style="padding-top:5px;">
 										<span class="input-group-addon" style="width:160px; text-align:right;">Passwort:</span>
 										<h:inputSecret class="form-control" style="width:300px;" id="passwordRegister"
-										               value="#{RegisterUserBean.userToRegistrate.password}"
+										               value="#{RegisterUserBean.registerPassword}"
                                                        required="true"  requiredMessage="Bitte geben Sie ein Passwort ein."
                                                        validatorMessage="Ihr Passwort darf höchstens 100 Zeichen lang sein. ">
                                                      <f:validateLength maximum="100" />
@@ -81,7 +81,7 @@
 									<div class="input-group" style="padding-top:5px;">
 										<span class="input-group-addon" style="width:160px; text-align:right;">Passwort bestätigen:</span>
 										<h:inputSecret class="form-control" style="width:300px;" id="passwordConfirmRegister"
-										               value="#{RegisterUserBean.userToRegistrate.password}"
+										               value="#{RegisterUserBean.registerConfirmPassword}"
                                                        required="true"  requiredMessage="Bitte geben Sie Ihr Passwort zur Bestätigung ein."
                                                        validatorMessage="Ihr Passwort darf höchstens 100 Zeichen lang sein. ">
                                                      <f:validateLength maximum="100" />
