@@ -105,7 +105,7 @@ public class User implements Serializable {
      * 
      * @return the firstname of the user
      */
-    public String getFristname() {
+    public String getFirstname() {
 	return this.firstname;
     }
 
