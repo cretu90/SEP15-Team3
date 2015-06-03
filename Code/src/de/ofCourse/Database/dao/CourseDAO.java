@@ -176,6 +176,7 @@ public class CourseDAO {
 	public static List<Course> getCoursesOf(Transaction trans,
 			PaginationData pagination, int userID)
 			throws InvalidDBTransferException {
+	    System.out.println("Übergebene UserId :" + userID);
 		ArrayList<Course> coursesOf = new ArrayList<Course>();
 		String getCourseQuery = "SELECT id, titel FROM \"courses\" "
 				+ "WHERE courses.id IN (SELECT course_id FROM \"course_participants\" "
@@ -207,22 +208,31 @@ public class CourseDAO {
 			stmt.setInt(4, 0);
 
 			ResultSet fetchedCourses = stmt.executeQuery();
-
+                        System.out.println("Punkt1");
 			// Fills the list coursesOf with courses from the database.
 			// At this time only id an title is set
 			while (fetchedCourses.next()) {
 				Course fetchedCourse = new Course();
 				fetchedCourse.setCourseAdmins((List)new ArrayList<Course>());
 				fetchedCourse.setCourseID(fetchedCourses.getInt("id"));
+				System.out.println("Die ID: "+  fetchedCourse.getCourseID());
 				if (fetchedCourses.getString("titel") != null) {
+				    System.out.println("not null");
 					fetchedCourse.setTitle(fetchedCourses.getString("titel"));
 				} else {
+				    System.out.println("Is null");
 					fetchedCourse.setTitle("No Title");
+					System.out.println(fetchedCourse.getTitle());
 				}
-				fetchedCourse.setTitle(fetchedCourses.getString("titel"));
+				
 				coursesOf.add(fetchedCourse);
 			}
 
+			for(int i = 0; i< coursesOf.size();++i){
+			    System.out.println("Datensatz " + i +" :" +coursesOf.get(i).getCourseID() +"       " + coursesOf.get(i).getTitle());
+			    
+			}
+			
 			// __________________________________________________________________
 			// Step one complete
 			// __________________________________________________________________
@@ -270,6 +280,7 @@ public class CourseDAO {
 		} catch (SQLException e) {
 			LogHandler.getInstance().error(
 					"SQL Exception occoured during executing getCoursesOf()");
+			System.out.println("Fehler");
 			e.printStackTrace();
 			throw new InvalidDBTransferException();
 		}
@@ -319,9 +330,11 @@ public class CourseDAO {
 			LogHandler
 					.getInstance()
 					.error("SQL Exception occoured during executing getNumberOfMyCourse()");
+			System.out.println("Fehler12");
 			e.printStackTrace();
 			throw new InvalidDBTransferException();
 		}
+		System.out.println("Counting: " + numberOfCourses);
 		return numberOfCourses;
 	}
 

@@ -14,7 +14,6 @@ import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.ViewScoped;
 import javax.faces.context.FacesContext;
 
-import org.joda.time.DateTime;
 
 import de.ofCourse.Database.dao.CourseDAO;
 import de.ofCourse.exception.InvalidDBTransferException;
@@ -22,7 +21,6 @@ import de.ofCourse.model.Course;
 import de.ofCourse.model.CourseUnit;
 import de.ofCourse.model.PaginationData;
 import de.ofCourse.model.User;
-import de.ofCourse.model.UserRole;
 import de.ofCourse.model.UserStatus;
 import de.ofCourse.system.Connection;
 import de.ofCourse.system.Transaction;
@@ -126,7 +124,7 @@ public class MyCoursesBean implements Pagination, Serializable {
 		CourseUnit unit = new CourseUnit();
 		unit.setLocation("hier");
 		Timestamp stamp = new Timestamp(2000,10,2,13,25,11,0);
-		System.out.println(stamp.toGMTString());
+		
 		Date date = new Date(stamp.getYear()-1900, stamp.getMonth()-1, stamp.getDay(), stamp.getHours(), stamp.getMinutes());
 		
 		unit.setStarttime(date);
@@ -149,7 +147,7 @@ public class MyCoursesBean implements Pagination, Serializable {
 		unit1.setLocation("dort");
 		
 
-		System.out.println(stamp.getYear() + " " +  stamp.getMonth() + " " +  stamp.getDay() + " " +  stamp.getHours() + " " + stamp.getMinutes());
+		
 		unit1.setStarttime(date);
 		course2.setNextCourseUnit(unit1);
 		course2.setCourseAdmins(admins);

@@ -204,6 +204,7 @@ public class CourseUnit implements Serializable {
      *          the new title to set
      */
     public void setTitle(String title) {
+	this.title = title;
     }
 
     /**
@@ -213,6 +214,7 @@ public class CourseUnit implements Serializable {
      *          the new description to set
      */
     public void setDescription(String discription) {
+	this.description = discription;
     }
 
     /**
@@ -232,6 +234,7 @@ public class CourseUnit implements Serializable {
      *          the new endTime to set
      */
     public void setEndtime(Date endTime) {
+	this.endtime = endTime;
     }
 
     /**
@@ -241,6 +244,7 @@ public class CourseUnit implements Serializable {
      *          the new address to set
      */
     public void setAddress(Address address) {
+	this.address = address;
     }
 
     /**
@@ -250,6 +254,7 @@ public class CourseUnit implements Serializable {
      *          the new price to set
      */
     public void setPrice(float price) {
+	this.price = price;
     }
 
     /**
@@ -259,6 +264,7 @@ public class CourseUnit implements Serializable {
      *          the new cycle to set
      */
     public void setCycle(Cycle cycle) {
+	this.cycle = cycle;
     }
 
     /**
@@ -268,6 +274,7 @@ public class CourseUnit implements Serializable {
      *          the new maxUsers to set
      */
     public void setMaxUsers(int maxUsers) {
+	this.maxUsers = maxUsers;
     }
 
     /**
@@ -277,6 +284,7 @@ public class CourseUnit implements Serializable {
      *          the new minUsers to set
      */
     public void setMinUsers(int minUsers) {
+	this.minUsers = minUsers;
     }
 
     /**
@@ -286,6 +294,7 @@ public class CourseUnit implements Serializable {
      *          the new courseAdmin to set
      */
     public void setCourseAdmin(User courseAdmin) {
+	this.courseAdmin = courseAdmin;
     }
 
     /**
@@ -295,6 +304,7 @@ public class CourseUnit implements Serializable {
      *         new list of users to set
      */
     public void setUsers(List<User> users) {
+	this.users = users;
     }
 
     /**
@@ -304,6 +314,7 @@ public class CourseUnit implements Serializable {
      *          new Logo to set
      */
     public void setCourseImage(String image) {
+	this.courseImage = image;
     }
 
     /**

@@ -196,6 +196,7 @@ public class Course implements Serializable {
      *          new course description to set
      */
     public void setDescription(String description) {
+	this.description = description;
     }
 
     /**
@@ -215,6 +216,7 @@ public class Course implements Serializable {
      *          new startDate to set
      */
     public void setStartdate(Date startDate) {
+	this.startdate = startDate;
     }
 
     /**
@@ -224,6 +226,7 @@ public class Course implements Serializable {
      *          new endDate to set
      */
     public void setEnddate(Date endDate) {
+	this.enddate = endDate;
     }
 
     /**
@@ -233,6 +236,7 @@ public class Course implements Serializable {
      *          new maximum of users the course can handle to set
      */
     public void setMaxUsers(int maxUsers) {
+	this.maxUsers = maxUsers;
     }
 
     /**
@@ -242,6 +246,7 @@ public class Course implements Serializable {
      *          new list of courseUnits to set
      */
     public void setCourseUnits(List<CourseUnit> courseUnits) {
+	this.courseUnits = courseUnits;
     }
 
     /**
@@ -261,6 +266,7 @@ public class Course implements Serializable {
      *          new list of users who take part at the course to set
      */
     public void setUsers(List<User> users) {
+	this.users = users;
     }
 
     /**
@@ -270,6 +276,7 @@ public class Course implements Serializable {
      *          new list of users who want to be informed about changes in the course to set
      */
     public void setUsersToInform(List<User> usersToInform) {
+	this.usersToInform = usersToInform;
     }
 
     /**
@@ -279,6 +286,7 @@ public class Course implements Serializable {
      *          new course logo to set
      */
     public void setCourseImage(String image) {
+	this.courseImage = image;
     }
 
     /**
