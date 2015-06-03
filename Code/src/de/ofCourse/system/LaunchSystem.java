@@ -15,11 +15,9 @@ import javax.faces.bean.ManagedBean;
 
 
 
-import javax.faces.bean.ManagedProperty;
-
 import de.ofCourse.Database.DatabaseGeneral.DatabaseTableCreator;
 import de.ofCourse.Database.DatabaseGeneral.SetupAdmin;
-import de.ofCourse.action.MailBean;
+
 import de.ofCourse.utilities.PropertyManager;
 
 /**
@@ -43,8 +41,7 @@ import de.ofCourse.utilities.PropertyManager;
 public class LaunchSystem {
     
     
-    @ManagedProperty("#{MailBean}")
-    private MailBean MailBean;
+    
    
 
     /**
@@ -67,7 +64,7 @@ public class LaunchSystem {
         DatabaseTableCreator.buildUpDatabase();
         SetupAdmin.createInitialAdmin();
         LogHandler.getInstance().error("finished");
-        mMilBean = new MailBean();
+        
         
     }
 

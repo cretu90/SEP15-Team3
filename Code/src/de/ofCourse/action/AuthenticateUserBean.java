@@ -42,6 +42,8 @@ public class AuthenticateUserBean {
      */
     private User loginUser;
     
+    @ManagedProperty("#{mailBean}")
+    private MailBean mailBean;
     
     /**
      * The password which was inserted by the user.
@@ -83,6 +85,7 @@ public class AuthenticateUserBean {
      */
     public String login() {
 	
+        mailBean.sendMail("sebastian@nrschwarz.de", "ich selbset", "testmail", "ich schreibe eine Mail");
 	// Eingegebenes Passwort hashen
 	// TODO salt hinzufügen    stimmt das so ???
 	String salt = "";

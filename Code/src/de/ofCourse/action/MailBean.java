@@ -35,7 +35,7 @@ import de.ofCourse.utilities.PropertyManager;
  * 
  * @author Tobias Fuchs
  */
-@ManagedBean
+@ManagedBean(eager = true)
 @ApplicationScoped
 public class MailBean {
 
@@ -47,15 +47,15 @@ public class MailBean {
     
     
     @PostConstruct
-    private void setup(){
+    private void init(){
         smtpServer = new SmtpServer();
         
-        smtpServer.setHostaddr(PropertyManager.getInstance().getPropertyMail("smtphhost"));
+        smtpServer.setHostaddr(PropertyManager.getInstance().getPropertyMail("smtphost"));
         smtpServer.setPort(Integer.parseInt(PropertyManager.getInstance().getPropertyMail("smtpport")));
         //TODO fehlt noch
         smtpServer.setSsl(true);
         smtpServer.setUsername(PropertyManager.getInstance().getPropertyMail("mailusername"));
-        smtpServer.setPassword(PropertyManager.getInstance().getPropertyMail("testmail"));
+        smtpServer.setPassword(PropertyManager.getInstance().getPropertyMail("mailpassword"));
         
     }
     
