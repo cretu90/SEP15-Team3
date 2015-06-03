@@ -43,6 +43,19 @@ import de.ofCourse.utilities.PasswordHash;
  */
 public class UserDAO {
 
+    /**
+     * Checks if the inserted mail address already exists in the database.
+     * 
+     * @param trans
+     * 		  the Transaction object which contains the connection to the
+     *            database
+     * @param email
+     * 		  inserted e-mail
+     * @return true if the mail address already exists in the system, else 
+     * 	       return false
+     * @throws InvalidDBTransferException if any error occurred during the
+     * execution of the method
+     */
     public static boolean emailExists(Transaction trans, String email)
 		throws InvalidDBTransferException {
 	boolean exists = false;
@@ -85,7 +98,7 @@ public class UserDAO {
      * 
      * @param trans
      *            the Transaction object which contains the connection to the
-	 *            database
+     *            database
      * @param user
      *            the user to be added
      * @param pwHash
@@ -239,6 +252,18 @@ public class UserDAO {
 	return null;
     }
     
+    /**
+     * Returns the status of the user to a specified ID
+     * 
+     * @param trans 
+     * 		the Transaction object which contains the connection to the
+     *          database
+     * @param userID
+     * 		the user's ID
+     * @return the status of the user
+     * @throws InvalidDBTransferException if any error occurred during the
+     * execution of the method
+     */
     public static UserStatus getUserStatus(Transaction trans, int userID)
 		throws InvalidDBTransferException {
 	
@@ -279,14 +304,27 @@ public class UserDAO {
 	    }
 
 	} catch (SQLException e) {
+	    LogHandler.getInstance().error("SQL Exception occoured during executing getUserStatus(Transaction trans, int userID)");
 	    throw new InvalidDBTransferException();
-	    //TODO Logging message
+	    
 	} finally {
 	    //TODO Connection releasen
 	}
 	return userStatus;
     }    
     
+    /**
+     * Returns the role of the user to a specified ID
+     * 
+     * @param trans
+     * 		the Transaction object which contains the connection to the
+     *          database
+     * @param userID
+     * 		the user's ID
+     * @return the role of the user
+     * @throws InvalidDBTransferException if any error occurred during the
+     * execution of the method
+     */
     public static UserRole getUserRole(Transaction trans, int userID)
     		throws InvalidDBTransferException {
 	UserRole userRole = null;
@@ -324,8 +362,9 @@ public class UserDAO {
 	    }
 
 	} catch (SQLException e) {
+	    LogHandler.getInstance().error("SQL Exception occoured during executing getUserRole(Transaction trans, int userID)");
 	    throw new InvalidDBTransferException();
-	    //TODO Logging message
+	    
 	} finally {
 	    //TODO Connection releasen
 	}

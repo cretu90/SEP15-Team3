@@ -119,22 +119,47 @@ public class RegisterUserBean {
     public void setSessionUser(SessionUserBean userSession) {
     }
 
+    /**
+     * Returns the value of the attribute <code>registerPassword</code>.
+     * 
+     * @return the inserted password
+     */
     public String getRegisterPassword() {
         return registerPassword;
     }
 
+    /**
+     * Sets the value of the attribute <code>registerPassword</code>.
+     * 
+     * @param registerPassword
+     * 			inserted password
+     */
     public void setRegisterPassword(String registerPassword) {
         this.registerPassword = registerPassword;
     }
 
+    /**
+     * Returns the value of the attribute <code>registerCondirmPassword</code>.
+     * 
+     * @return the inserted confim password
+     */
     public String getRegisterConfirmPassword() {
         return registerConfirmPassword;
     }
 
+    /**
+     * Sets the value of the attribute <code>registerConfirmPassword</code>.
+     * @param registerConfirmPassword
+     * 			inserted Password to confirm
+     */
     public void setRegisterConfirmPassword(String registerConfirmPassword) {
         this.registerConfirmPassword = registerConfirmPassword;
     }
 
+    /**
+     * Returns the value of the attribute <code>userToRegistrate</code>.
+     * @return the user to registrate
+     */
     public User getUserToRegistrate() {
         return userToRegistrate;
     }

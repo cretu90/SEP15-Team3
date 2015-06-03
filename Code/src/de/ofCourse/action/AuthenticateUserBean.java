@@ -182,10 +182,21 @@ public class AuthenticateUserBean {
 	this.sessionUser = sessionUser;
     }
 
+    /**
+     * Returns the value of the attribute <code>loginPassword</code>.
+     * 
+     * @return the inserted password
+     */
     public String getLoginPassword() {
         return loginPassword;
     }
 
+    /**
+     * Sets the value of the attribute <code>loginPassword</code>.
+     * 
+     * @param loginPassword
+     * 		inserted Password
+     */
     public void setLoginPassword(String loginPassword) {
         this.loginPassword = loginPassword;
     }
