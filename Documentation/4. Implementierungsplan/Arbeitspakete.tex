@@ -1,0 +1,378 @@
+\chapter{Arbeistpakete}
+In diesem Kapitel wird beschrieben, welche Features den einzelnen Milestones zugeordnet werden und wie diese in Arbeitspakete gegliedert sind. Es
+wird tabellarisch der Name des Pakets, Start- und Endzeit, Dauer und der zuständige
+Programmierer angegeben. Der genannte Programmierer ist auch immer der Verantwortliche
+für den Code des Paketes.\\
+\ \\
+Die folgenden Tabellen sind nicht stur nach der zeitlichen Abfolge der Arbeitspakete sortiert,
+sondern sollen die Arbeitspakete in einen logischen Zusammenhang bringen. Um die
+zeitliche Abfolge und Abhängigkeiten der Arbeitspakete zu sehen, wird auf die PERT-
+Diagramme (siehe Kapitel 3) verwiesen.\\
+\ \\
+Neben umgesetzten Klassen werden auch Tests mit in die Arbeitspakete aufgenommen.
+Als Konvention gilt hier, dass Tests immer das Wort
+\glqq Test\grqq \ im Namen nachgestellt wird.
+
+
+\begin{landscape}
+\section{Milestone 1}
+
+\subsection{Grundfunktionen}
+\begin{tabular}{|p{5.2cm} |p{7cm}|p{3.2cm}|p{3.2cm}|p{2cm}|p{3.5cm}|}
+	\hline \textbf{Paketname} & \textbf{Arbeitspaket} & \textbf{Startzeitpunkt} & \textbf{Endzeitpunkt} & \textbf{Aufwand in h} & \textbf{Verantwortlicher} \\ 
+	\hline  SessionUser          & SessionUserBean.java                     & 02.06.2015 \ \ 08:00        & 02.06.2015 \ \ 09:00        &  1h                 & Sebastian Schwarz\\ 
+	\hline  PropertyManager      & PropertyManager.java                     & 01.06.2015 \ \ 16:00        & 01.06.2015 \ \ 20:00        &  4h                 & Tobias Fuchs\\ 
+	& ofCourse.properties                      &                            &                              &                                                  &\\
+	\hline  EncodingFilter       & EncodingFilter.java                      & 02.06.2015 \ \ 09:00         & 02.06.2015  \ \  11:00      &  2h                & Sebastian Schwarz\\ 
+	\hline  DatabaseConnectionManager       &  DatabaseConnectionManager.java & 01.06.2015 \ \ 08:00       & 01.06.2015  \ \  16:00      &  5h                & Tobias Fuchs\\   
+	&  DatabaseConnectionManagerTest.java & 04.06.2015 \ \ 08:00       & 04.06.2015  \ \  10:00      &  2h                & Tobias Fuchs\\   
+	\hline  CheckPhase           & CheckPhase.java                            & 02.06.2015 \ \ 08:00       & 02.06.2015  \ \  12:00      &  4h                & Tobias Fuchs\\
+	\hline  Interface Pagination & Pagination.java                            & 02.06.2015 \ \ 13:00       & 02.06.2015  \ \  13:30      &  0.5h              & Tobias Fuchs\\
+	\hline  Logging              &                                            & 01.06.2015 \ \ 14:00       & 01.06.2015  \ \  18:00      &  4h                & Sebastian Schwarz\\ 
+	\hline  Mailversand          & MailBean.java                              & 03.06.2015 \ \ 08:00       & 03.06.2015  \ \  16:00      &  7h                & Sebastian Schwarz\\ 	
+	& MailingException.java                      &                            &                            &                                                  &\\
+	& mail.properties                            &                            &                            &                                                  &\\
+	\hline Transaktionen         & Transaction.java                           & 01.06.2015 \ \ 08:00       & 01.06.2015 \ \ 10:00        & 2h                 & Sebastian Schwarz\\  
+	& Connection.java                            &                            &                            &                                                  &\\  
+	& TransactionTest.java                       &  04.06.2015 \ \ 08:00      & 04.06.2015 \ \ 10:00       &   2h                       & Sebastian Schwarz \\                  
+	\hline Systemstart           & LaunchSystem.java                          & 02.06.2015 \ \ 13:00       & 02.06.2015 \ \ 17:00        & 4h                 & Sebastian Schwarz\\
+	\hline Passwort hashen       & PasswordHash.java                          & 01.06.2015 \ \ 17:00       & 01.06.2015 \ \ 19:00        & 2h                 & Patrick Cretu\\       	   
+	\hline 
+\end{tabular} \ \\
+\ \\
+
+\subsection{Datenbanksetup}
+\begin{tabular}{|p{10.3cm}|p{3.2cm}|p{3.2cm}|c|p{3.5cm}|}
+	\hline  \textbf{Arbeitspaket} & \textbf{Startzeitpunkt} & \textbf{Endzeitpunkt} & \textbf{Aufwand in h} & \textbf{Verantwortlicher} \\ 
+       \hline DatabaseTableCreator. java                 & 01.06.2015 \ \ 08:00       & 01.06.2015  \ \  17:00      &  6h                & Patrick Cretu\\
+       SetupAdmin.java                            &                            &                            &                                                  &\\
+       DatabaseTableDetroyer.java                 &                            &                            &                                                  &\\
+       InvalidDBTransferException.java            &                            &                            &                                                  &\\
+	\hline 
+\end{tabular} \ \\
+\ \\
+
+
+\subsection{Anlegen der DTO und Enumerationsklassen}
+\begin{tabular}{|p{10cm}|p{3.2cm}|p{3.2cm}|c|p{3.5cm}|}
+	\hline  \textbf{Arbeitspaket} & \textbf{Startzeitpunkt} & \textbf{Endzeitpunkt} & \textbf{Aufwand in h} & \textbf{Verantwortlicher} \\ 
+	\hline   User.java                  & 01.06.2015 \ \ 15:30       & 01.06.2015 \ \ 16:30        & 1h                  & Ricky Strohmeier\\ 
+	   Course.java                      &                            &                             &                     &\\ 
+	   CourseUnit.java                  &                            &                             &                     &\\ 
+	   Address.java                     &                            &                             &                     &\\ 
+	   SmtpServer.java                  &                            &                             &                     &\\  
+	   Cycle.java                       &                            &                             &                     &\\   
+	 \hline UserRole.java               & 02.06.2015 \ \ 14:00       & 02.06.2015 \ \  15:00       &  1h                 & Ricky Strohmeier\\ 
+	 UserStatus.java                          &                            &                             &                     &\\ 
+	\hline 
+\end{tabular} \ \\
+\ \\
+
+\subsection{Struktur der View}
+\begin{tabular}{|p{10cm}|p{3.2cm}|p{3.2cm}|c|p{3.5cm}|}
+	\hline  \textbf{Arbeitspaket} & \textbf{Startzeitpunkt} & \textbf{Endzeitpunkt} & \textbf{Aufwand in h} & \textbf{Verantwortlicher} \\ 
+	\hline   template.xhtml                   & 01.06.2015 \ \ 08:00     & 01.06.2015 \ \ 10:00     &      2h               & Ricky Strohmeier\\
+	\hline   index.xhtml                      & 01.06.2015 \ \ 13:00     & 01.06.2015 \ \ 14:00     &      1h               & Ricky Strohmeier\\
+	\hline   footer.xhtml                     & 02.06.2015 \ \ 10:30     & 02.06.2015 \ \ 11:30     &      1h               & Ricky Strohmeier\\ 
+	\hline   FooterBean.java                  & 02.06.2015 \ \ 13:00     & 02.06.2015 \ \ 14:00     &      1h               & Ricky Strohmeier\\ 
+	\hline   navigation.xhtml                 & 01.06.2015 \ \ 14:00     & 01.06.2015 \ \ 15:30     &      1,5h             & Ricky Strohmeier\\ 
+	\hline   NavigationBean.java              & 02.06.2015 \ \ 08:00     & 02.06.2015 \ \ 10:30     &      2,5h             & Ricky Strohmeier\\ 
+	\hline   NavigationTest.java              & 04.06.2015 \ \ 08:00     & 04.06.2015 \ \ 10:00     &      2h               & Ricky Strohmeier\\ 
+	\hline 
+\end{tabular} \ \\
+\ \\
+
+\subsection{Anmeldung}
+\begin{tabular}{|p{10.3cm}|p{3.2cm}|p{3.2cm}|c|p{3.5cm}|}
+	\hline  \textbf{Arbeitspaket} & \textbf{Startzeitpunkt} & \textbf{Endzeitpunkt} & \textbf{Aufwand in h} & \textbf{Verantwortlicher} \\ 
+	\hline   authenticate.xhtml                                   & 02.06.2015 \ \ 16:00     & 02.06.2015 \ \ 18:00     &      2h               & Kathi Hölzl\\
+	\hline   AuthenticateUserBean.java                            & 02.06.2015 \ \ 13:00     & 02.06.2015 \ \ 16:00     &      3h               & Kathi Hölzl\\
+	\hline   UserDAO.getUser(Transaction trans, String username)  & 01.06.2015 \ \ 18:00     & 01.06.2015 \ \ 19:00     &      1h               & Kathi Hölzl\\
+	\hline   UserDAO.getUserID(Transaction trans, String username)& 01.06.2015 \ \ 17:00     & 01.06.2015 \ \ 18:00     &      1h               & Kathi Hölzl\\
+	\hline   UserDAO.proveLogin(Transaction trans, String username, String passwordHash)& 02.06.2015 \ \ 10:00     & 02.06.2015 \ \ 11:00     &      1h               & Kathi Hölzl\\
+	\hline   UserDAO.getUserStatus(Transaction trans, int userID)         & 02.06.2015 \ \ 8:00     & 02.06.2015 \ \ 9:00     &      1h               & Kathi Hölzl\\
+	\hline   UserDAO.getUserRole(Transaction trans, int userID)           & 02.06.2015 \ \ 9:00     & 02.06.2015 \ \ 10:00     &      1h               & Kathi Hölzl\\
+	\hline 
+\end{tabular} \ \\
+\ \\
+
+\subsection{Registrierung}
+\begin{tabular}{|p{10.3cm}|p{3.2cm}|p{3.2cm}|c|p{3.5cm}|}
+	\hline  \textbf{Arbeitspaket} & \textbf{Startzeitpunkt} & \textbf{Endzeitpunkt} & \textbf{Aufwand in h} & \textbf{Verantwortlicher} \\ 
+	\hline   RegisterUserBean.java                                & 03.06.2015 \ \ 13:00     & 03.06.2015 \ \ 16:00     &      3h               & Kathi Hölzl\\
+	\hline   UserNameValidator.java                               & 03.06.2015 \ \ 10:00     & 03.06.2015 \ \ 11:00     &      1h               & Kathi Hölzl\\
+	\hline   PasswordValidator.java                               & 01.06.2015 \ \ 08:00     & 01.06.2015 \ \ 09:00     &      1h               & Kathi Hölzl\\
+	\hline   ConfirmPasswordValidator.java                        & 01.06.2015 \ \ 09:00     & 01.06.2015 \ \ 10:00     &      1h               & Kathi Hölzl\\
+	\hline   DateOfBirthValidator.java                            & 01.06.2015 \ \ 16:00     & 01.06.2015 \ \ 17:00     &      1h               & Kathi Hölzl\\
+	\hline   UserDAO.createUser(Transaction trans, User user)     & 03.06.2015 \ \ 08:00     & 03.06.2015 \ \ 10:00     &      2h               & Kathi Hölzl\\
+	\hline   SystemDAO.getActivationType(Transaction trans)       & 02.06.2015 \ \ 12:00     & 02.06.2015 \ \ 13:00     &      1h               & Kathi Hölzl\\
+	\hline   RegistrationTest.java                                & 04.06.2015 \ \ 08:00     & 04.06.2015 \ \ 10:00     &      2h               & Kathi Hölzl\\
+	\hline   UserDAO.emailExists(Transaction trans, String email) & 01.06.2015 \ \ 10:00     & 01.06.2015 \ \ 11:00     &      1h               & Kathi Hölzl\\
+	\hline 
+\end{tabular} \ \\
+\ \\
+
+\subsection{Passwort vergessen}
+\begin{tabular}{|p{10.3cm}|p{3.2cm}|p{3.2cm}|c|p{3.5cm}|}
+	\hline  \textbf{Arbeitspaket} & \textbf{Startzeitpunkt} & \textbf{Endzeitpunkt} & \textbf{Aufwand in h} & \textbf{Verantwortlicher} \\ 
+	\hline   LostPasswordBean.java                                & 03.06.2015 \ \ 13:00     & 03.06.2015 \ \ 17:00     &      4h             & Ricky Strohmeier\\ 
+	\hline   UserDAO.overridePassword                                  & 03.06.2015 \ \ 10:00     & 03.06.2015 \ \ 12:00     &      2h             & Ricky Strohmeier\\ 
+	\hline   UserDAO.updateUser(Transaction trans, User user)     & 03.06.2015 \ \ 09:00     & 03.06.2015 \ \ 10:00     &      1h             & Ricky Strohmeier\\ 
+	\hline 
+\end{tabular} \ \\
+\ \\
+
+\subsection{Meine Kurse}
+\begin{tabular}{|p{10.3cm}|p{3.2cm}|p{3.2cm}|c|p{3.5cm}|}
+	\hline  \textbf{Arbeitspaket} & \textbf{Startzeitpunkt} & \textbf{Endzeitpunkt} & \textbf{Aufwand in h} & \textbf{Verantwortlicher} \\ 
+	\hline   myCourses.xhtml                                       & 03.06.2015 \ \ 10:00       & 03.06.2015  \ \  12:00      &  2h              & Tobias Fuchs\\
+	\hline   MyCoursesBean.java(Prototyp Pagination)               & 02.06.2015 \ \ 14:00       & 02.06.2015  \ \  18:00      &  4h              & Tobias Fuchs\\
+	\hline   PaginationData.java                                   & 03.06.2015 \ \ 08:00       & 03.06.2015  \ \  10:00      &  2h              & Tobias Fuchs\\
+	\hline   CourseDAO.getCoursesOf(Transaction trans, int userID) & 03.06.2015 \ \ 14:00       & 03.06.2015  \ \  15:30      &  1,5h            & Tobias Fuchs\\
+	\hline 
+\end{tabular} \ \\
+\ \\
+
+\subsection{Kurssuche}
+\begin{tabular}{|p{10.3cm}|p{3.2cm}|p{3.2cm}|c|p{3.5cm}|}
+	\hline  \textbf{Arbeitspaket} & \textbf{Startzeitpunkt} & \textbf{Endzeitpunkt} & \textbf{Aufwand in h} & \textbf{Verantwortlicher} \\ 
+	\hline   search.xhtml                                         & 03.06.2015 \ \ 11:00        & 03.06.2015 \ \ 13:30        &  2,5h                 & Patrick Cretu\\ 
+	\hline   SearchCourseBean.java                                & 03.06.2015 \ \ 08:00        & 03.06.2015 \ \ 10:00        &  2h                 & Patrick Cretu\\ 
+	\hline   CourseDAO.getCourses(Transaction trans, PaginationData pagination)    & 02.06.2015 \ \ 10:00        & 02.06.2015 \ \ 11:00        &  1h                 & Patrick Cretu\\ 
+	\hline  CourseDAO.getCourses(Transaction trans,PaginationData pagination, String searchString, String searchParam)& 02.06.2015 \ \ 13:00        & 02.06.2015 \ \ 14:30        &  1,5h                 & Patrick Cretu\\ 
+	\hline  CourseDAO.getCoursesOrdered(Transaction trans, PaginationData pagination, String searchString, String searchParam, String orderParam)& 02.06.2015 \ \ 14:30        & 02.06.2015 \ \ 16:00        &  1,5h                 & Patrick Cretu\\ 
+	\hline SearchCourseTest.java & 03.06.2015  \ \ 14:30 & 03.06.2015 \ \ 16:30 & 2h & Patrick Cretu\\
+	\hline 
+\end{tabular} \ \\
+\ \\
+\end{landscape}
+
+
+
+\begin{landscape}
+	\section{Milestone 2}
+	
+	\subsection{Benutzerprofil}
+	\begin{tabular}{|p{10.3cm}|p{3.2cm}|p{3.2cm}|c|p{3.5cm}|}
+		\hline  \textbf{Arbeitspaket} & \textbf{Startzeitpunkt} & \textbf{Endzeitpunkt} & \textbf{Aufwand in h} & \textbf{Verantwortlicher} \\ 
+		\hline   profile.xhtml                                         & 09.06.2015 \ \ 14:00        & 09.06.2015 \ \ 17:00        &  3h                 & Patrick Cretu\\ 
+		\hline   UserProfileBean.java                                  & 09.06.2015 \ \ 09:00        & 09.06.2015 \ \ 13:00        &  4h                 & Patrick Cretu\\ 
+		\hline   UserImageValidator.java                               & 10.06.2015 \ \ 09:00        & 10.06.2015 \ \ 10:00        &  1h                 & Patrick Cretu\\ 
+		\hline   UserDAO.getUser(Transaction trans, int userID)        & 09.06.2015 \ \ 17:00        & 09.06.2015 \ \ 18:00        &  1h                 & Patrick Cretu\\  
+		\hline   UserImageUploadTest.java & 10.06.2015 \ \ 10:00 & 10.06.2015 \ \ 12:00 & 2h & Patrick Cretu\\
+		\hline 
+	\end{tabular} \ \\
+	\ \\
+	
+	\subsection{Benutzer anlegen/löschen}
+	\begin{tabular}{|p{10.3cm}|p{3.2cm}|p{3.2cm}|c|p{3.5cm}|}
+		\hline  \textbf{Arbeitspaket} & \textbf{Startzeitpunkt} & \textbf{Endzeitpunkt} & \textbf{Aufwand in h} & \textbf{Verantwortlicher} \\ 
+		\hline   createUser.xhtml                                      & 08.06.2015 \ \ 16:30        & 08.06.2015 \ \ 18:30        &  2h                 & Patrick Cretu\\ 
+		\hline   UserManagementBean.java                               & 08.06.2015 \ \ 13:00        & 08.06.2015 \ \ 16:30        &  3,5h               & Patrick Cretu\\ 
+		\hline   UserDAO.deleteUser(Transaction trans, int userID)     & 08.06.2015 \ \ 08:00        & 08.06.2015 \ \ 09:30        &  1,5h               & Patrick Cretu\\ 
+		\hline   CreateUserTest.java & 10.06.2015 \ \ 13:00 & 10.06.2015 \ \ 15:00 & 2h & Patrick Cretu\\
+		\hline 
+	\end{tabular} \ \\
+	\ \\
+	
+	\subsection{Kursdetails, Kurs bearbeiten}
+	\begin{tabular}{|p{10.3cm}|p{3.2cm}|p{3.2cm}|c|p{3.5cm}|}
+		\hline  \textbf{Arbeitspaket} & \textbf{Startzeitpunkt} & \textbf{Endzeitpunkt} & \textbf{Aufwand in h} & \textbf{Verantwortlicher} \\ 
+		\hline   courseDetail.xhtml                                         & 10.06.2015 \ \ 08:00       & 10.06.2015  \ \  13:00      &  5h              & Ricky Strohmeier\\
+		\hline   CourseDetailBean.editCourse()                              & 09.06.2015 \ \ 09:00       & 09.06.2015  \ \  10:00      &  1h              & Ricky Strohmeier\\
+		\hline   CourseDetailBean.saveCourse()                              & 09.06.2015 \ \ 10:00       & 09.06.2015  \ \  11:00      &  1h              & Ricky Strohmeier\\
+		\hline   CourseDetailBean.initializeCourseDetails()                 & 09.06.2015 \ \ 11:00       & 09.06.2015  \ \  12:00      &  1h              & Ricky Strohmeier\\
+		\hline   CourseDetailBean.selectAllCourseUnits()                    & 09.06.2015 \ \ 12:00       & 09.06.2015  \ \  13:00      &  1h              & Ricky Strohmeier\\
+		\hline   Getter/Setter CourseDetailBean                             & 09.06.2015 \ \ 13:00       & 09.06.2015  \ \  13:30      &  0,5h            & Ricky Strohmeier\\
+		\hline   Pagination für CourseUnits                                 & 09.06.2015 \ \ 14:30       & 09.06.2015  \ \  15:30      &  1h              & Ricky Strohmeier\\
+		\hline   ContactUserBean.java                                       & 10.06.2015 \ \ 14:00       & 10.06.2015  \ \  16:00      &  2h              & Ricky Strohmeier\\
+		\hline   InputTextValidator.java                                    & 09.06.2015 \ \ 15:30       & 09.06.2015  \ \  16:30      &  1h              & Ricky Strohmeier\\
+		\hline   CourseDAO.getCourse(Transaction trans, int courseID)       & 09.06.2015 \ \ 16:30       & 09.06.2015  \ \  17:30      &  1h              & Ricky Strohmeier\\
+		\hline   CourseDAO.updateCourse(Transaction trans, Course course)   & 08.06.2015 \ \ 15:00       & 08.06.2015  \ \  16:00      &  1h              & Ricky Strohmeier\\
+		\hline   CourseUnitDAO.getCourseUnitsFromCourse(Transaction trans, int courseID, PaginationData pagination) & 08.06.2015 \ \ 16:00       & 08.06.2015  \ \  17:30      &  1,5h              & Ricky Strohmeier\\
+		\hline   CourseDAO.getLeaders(Transaction trans, int courseID)    & 08.06.2015 \ \ 13:30       & 08.06.2015  \ \  15:00      &  1,5h              & Ricky Strohmeier\\
+		\hline   EditCourseTest.java              & 11.06.2015 \ \ 08:00     & 11.06.2015 \ \ 10:00     &      2h               & Ricky Strohmeier\\ 
+		\hline 
+	\end{tabular} \ \\
+	\ \\
+	
+	\subsection{Anmeldung, Abmeldung zu Kursen/Kurseinheiten}
+	\begin{tabular}{|p{10.3cm}|p{3.2cm}|p{3.2cm}|c|p{3.5cm}|}
+		\hline  \textbf{Arbeitspaket} & \textbf{Startzeitpunkt} & \textbf{Endzeitpunkt} & \textbf{Aufwand in h} & \textbf{Verantwortlicher} \\ 
+		\hline   CourseDetailBean.signUpForCourse()                          & 09.06.2015 \ \ 09:00       & 09.06.2015 \ \ 10:30        & 1,5h                 & Sebastian Schwarz\\
+		\hline   CourseDetailBean.signOffFromCourse()                        & 09.06.2015 \ \ 10:30       & 09.06.2015 \ \ 12:00        & 1,5h                 & Sebastian Schwarz\\
+		\hline   CourseDetailBean.signUpForCourseUnit()                      & 09.06.2015 \ \ 13:00       & 09.06.2015 \ \ 14:30        & 1,5h                 & Sebastian Schwarz\\
+		\hline   CourseDetailBean.signOffFromCourseUnit()                    & 09.06.2015 \ \ 14:30       & 09.06.2015 \ \ 16:00        & 1,5h                 & Sebastian Schwarz\\
+		\hline   Weiterleitungen                                             & 09.06.2015 \ \ 16:00       & 09.06.2015 \ \ 16:30        & 0,5h                 & Sebastian Schwarz\\
+		\hline   CourseRegistrationException.java                            & 09.06.2015 \ \ 16:30       & 09.06.2015 \ \ 17:30        & 1h                 & Sebastian Schwarz\\
+		\hline   CourseDAO.addUserToCourse(Transaction trans, int userID, int courseID)            & 08.06.2015 \ \ 08:00       & 08.06.2015 \ \ 09:30        & 1,5h                 & Sebastian Schwarz\\
+		\hline   CourseDAO.removeUserFromCourse(Transaction trans, int userID, int courseID)       & 10.06.2015 \ \ 13:00       & 10.06.2015 \ \ 14:30        & 1,5h                 & Sebastian Schwarz\\
+		\hline   CourseUnitDAO.addUserToCourseUnit(Transaction trans, int userID, int courseUnitID)& 10.06.2015 \ \ 09:00       & 10.06.2015 \ \ 10:30        & 1,5h                 & Sebastian Schwarz\\
+		\hline   CourseUnitDAO.removeUserFromCourseUnit(Transaction trans, int userID, int courseUnitID) & 10.06.2015 \ \ 10:30       & 10.06.2015 \ \ 12:00        & 1,5h                 & Sebastian Schwarz\\
+		\hline   SystemDAO.getSignOffLimit(Transaction trans)                 & 08.06.2015 \ \ 16:30       & 08.06.2015 \ \ 17:00        & 0,5h                 & Sebastian Schwarz\\
+		\hline   SystemDAO.getOverdraftCredit(Transaction trans)              & 08.06.2015 \ \ 17:00       & 08.06.2015 \ \ 17:30        & 0,5h                 & Sebastian Schwarz\\
+		\hline   CourseRegistrationTest.java &  11.06.2015 \ \ 08:00       & 11.06.2015 \ \ 10:00       & 2h                 & Sebastian Schwarz\\
+		\hline 
+	\end{tabular} \ \\
+	\ \\
+	
+	\subsection{HttpServlet}
+	\begin{tabular}{|p{10.3cm}|p{3.2cm}|p{3.2cm}|c|p{3.5cm}|}
+		\hline  \textbf{Arbeitspaket} & \textbf{Startzeitpunkt} & \textbf{Endzeitpunkt} & \textbf{Aufwand in h} & \textbf{Verantwortlicher} \\ 
+		\hline   HttpServlet.java         & 08.06.2015 \ \ 13:00       & 08.06.2015 \ \ 16:00        & 3h                 & Sebastian Schwarz\\
+		\hline 
+	\end{tabular} \ \\
+	\ \\
+	
+	
+	
+	\subsection{Kurs anlegen/löschen}
+	\begin{tabular}{|p{10.3cm}|p{3.2cm}|p{3.2cm}|c|p{3.5cm}|}
+		\hline  \textbf{Arbeitspaket} & \textbf{Startzeitpunkt} & \textbf{Endzeitpunkt} & \textbf{Aufwand in h} & \textbf{Verantwortlicher} \\ 
+		\hline   createCourse.xhtml                                    & 09.06.2015 \ \ 09:00     & 09.06.2015 \ \ 11:00     &      2h               & Kathi Hölzl\\
+		\hline   CourseManagementBean.java                             & 08.06.2015 \ \ 13:00     & 08.06.2015 \ \ 18:00     &      5h               & Kathi Hölzl\\
+		\hline   CourseInstructorValidator.java                        & 08.06.2015 \ \ 08:00     & 08.06.2015 \ \ 09:00     &      1h               & Kathi Hölzl\\
+		\hline   PriceValidator.java                                   & 08.06.2015 \ \ 09:00     & 08.06.2015 \ \ 10:00     &      1h               & Kathi Hölzl\\
+		\hline   ImageValidator.java                                   & 09.06.2015 \ \ 08:00     & 09.06.2015 \ \ 09:00     &      1h               & Kathi Hölzl\\
+		\hline   CourseDAO.createCourse(Transaction trans, Course course)    & 09.06.2015 \ \ 13:00     & 09.06.2015 \ \ 14:00     &      1h               & Kathi Hölzl\\
+		\hline   CourseDAO.getNewCourseID(Transaction trans)                 & 10.06.2015 \ \ 10:00     & 10.06.2015 \ \ 10:30     &      0,5h             & Kathi Hölzl\\
+		\hline   CourseDAO.deleteCourse(Transaction trans, int courseID)     & 09.06.2015 \ \ 14:00     & 09.06.2015 \ \ 16:00     &      2h               & Kathi Hölzl\\
+		\hline   CourseDAO.addLeaderToCourse(Transaction trans, int userID, int courseID)    & 10.06.2015 \ \ 09:00     & 10.06.2015 \ \ 10:00     &   1,5h  & Kathi Hölzl\\
+		\hline   CourseDAO.removeLeaderFromCourse(Transaction trans, int userID, int course) & 09.06.2015 \ \ 16:00     & 09.06.2015 \ \ 18:00     &   1,5h  & Kathi Hölzl\\
+		\hline   CreateCourseTest.java                                & 11.06.2015 \ \ 08:00     & 11.06.2015 \ \ 10:00     &      2h               & Kathi Hölzl\\
+		\hline 
+	\end{tabular} \ \\
+	\ \\
+	
+	\subsection{Kurseinheiten anlegen, editieren, löschen}
+	\begin{tabular}{|p{10.3cm}|p{3.2cm}|p{3.2cm}|c|p{3.5cm}|}
+		\hline  \textbf{Arbeitspaket} & \textbf{Startzeitpunkt} & \textbf{Endzeitpunkt} & \textbf{Aufwand in h} & \textbf{Verantwortlicher} \\ 
+		\hline   editCourseUnit.xhtml                                       & 09.06.2015 \ \ 15:00       & 09.06.2015  \ \  17:30      &  2,5h                & Tobias Fuchs\\
+		\hline   CourseUnitManagementBean.java                              & 09.06.2015 \ \ 08:00       & 09.06.2015  \ \  14:00      &  6h                & Tobias Fuchs\\
+		\hline   CourseUnitDAO.createCourseUnit(Transaction trans, CourseUnit courseUnit, int courseID)  & 10.06.2015 \ \ 08:00       & 10.06.2015  \ \  09:30      &  1,5h                & Tobias Fuchs\\ 
+		\hline   CourseUnitDAO.getCourseUnit(Transaction trans, int courseUnitID)                        & 10.06.2015 \ \ 09:30       & 10.06.2015  \ \  10:30      &  1h                & Tobias Fuchs\\ 
+		\hline   CourseUnitDAO.updateCourseUnit(Transaction trans, CourseUnit courseUnit)                & 10.06.2015 \ \ 10:30       & 10.06.2015  \ \  12:00      &   1,5h                & Tobias Fuchs\\ 
+		\hline   CourseUnitDAO.deleteCourseUnit(Transaction trans, int courseUnitID)                     & 10.06.2015 \ \ 12:00       & 10.06.2015  \ \  13:30      &   1,5h                & Tobias Fuchs\\
+		\hline   CourseUnitDAO.getNewCourseUnitID(Transaction trans)        & 10.06.2015 \ \ 16:00       & 10.06.2015  \ \ 16:30      &  0,5h              & Tobias Fuchs\\
+		\hline   UserDAO.getParticipiantsOfCourseUnit(Transaction trans, PaginationData pagination, int courseUnitId)& 10.06.2015 \ \ 14:30       & 10.06.2015  \ \  16:00      &   1,5h                & Tobias Fuchs\\
+		\hline   CourseUnitTest.java& 11.06.2015 \ \ 08:00       & 11.06.2015  \ \  10:00      &   2h                & Tobias Fuchs\\
+		\hline 
+	\end{tabular} \ \\
+	\ \\
+	
+\end{landscape}
+
+
+
+
+\begin{landscape}
+	\section{Milestone 3}	
+	
+	\subsection{Benutzer durchsuchen}
+	\begin{tabular}{|p{10.3cm}|p{3.2cm}|p{3.2cm}|c|p{3.5cm}|}
+		\hline  \textbf{Arbeitspaket} & \textbf{Startzeitpunkt} & \textbf{Endzeitpunkt} & \textbf{Aufwand in h} & \textbf{Verantwortlicher} \\ 
+		\hline   listUsers.xhtml                                               & 15.06.2015 \ \ 16:00       & 15.06.2015 \ \ 18:00        & 2h                 & Sebastian Schwarz\\  
+		\hline   SearchUserBean.java                                           & 15.06.2015 \ \ 13:00       & 15.06.2015 \ \ 16:00        & 3h                 & Sebastian Schwarz\\  
+		\hline   UserDAO.getUsers(Transaction trans,PaginationData pagination) & 16.06.2015 \ \ 08:00       & 16.06.2015 \ \ 09:00        & 1h                 & Sebastian Schwarz\\  
+		\hline   UserDAO.getUsers(Transaction trans, PaginationData pagination, String searchString, String searchParam) & 15.06.2015 \ \ 08:00       & 15.06.2015 \ \ 09:30        & 1,5h                 & Sebastian Schwarz\\  
+		\hline   UserDAO.getUsersOrdered(Transaction trans, PaginationData pagination, String searchString, String searchParam, String orderParam)    & 16.06.2015 \ \ 09:00       & 16.06.2015 \ \ 10:30        & 1,5h                 & Sebastian Schwarz\\  
+		\hline SearchUserTest.java      &   17.06.2015 \ \ 08:00         &  17.06.2015 \ \ 10:00          &        2h           & Sebastian Schwarz \\
+		\hline 
+	\end{tabular} \ \\
+	\ \\
+	
+	\subsection{Exception Handling}
+	\begin{tabular}{|p{10.3cm}|p{3.2cm}|p{3.2cm}|c|p{3.5cm}|}
+		\hline  \textbf{Arbeitspaket} & \textbf{Startzeitpunkt} & \textbf{Endzeitpunkt} & \textbf{Aufwand in h} & \textbf{Verantwortlicher} \\ 
+		\hline   errorPage.xhtml                                        & 16.06.2015 \ \ 11:00       & 16.06.2015 \ \ 12:00        & 1h                 & Sebastian Schwarz\\  
+		\hline   CustomExceptionHandler.java                            & 16.06.2015 \ \ 14:00       & 16.06.2015 \ \ 15:00        & 1h                 & Sebastian Schwarz\\  
+		\hline   CustomExceptionHandlerFactory.java                     & 16.06.2015 \ \ 15:00       & 16.06.2015 \ \ 16:00        & 1h                 & Sebastian Schwarz\\  
+		\hline 
+	\end{tabular} \ \\
+	\ \\	
+	
+	\subsection{Mehrsprachigkeit}
+	\begin{tabular}{|p{10.3cm}|p{3.2cm}|p{3.2cm}|c|p{3.5cm}|}
+		\hline  \textbf{Arbeitspaket} & \textbf{Startzeitpunkt} & \textbf{Endzeitpunkt} & \textbf{Aufwand in h} & \textbf{Verantwortlicher} \\ 
+		\hline   LanguageManager.java                                  & 16.06.2015 \ \ 14:00        & 16.06.2015 \ \ 16:00        &  2h                 & Patrick Cretu\\ 
+		\hline   language\_de.properties                               & 16.06.2015 \ \ 09:00        & 16.06.2015 \ \ 12:00        &  3h                 & Ricky Strohmeier\\
+		\hline   language\_en.properties                               & 17.06.2015 \ \ 09:00        & 17.06.2015 \ \ 12:00        &  3h                 & Patrick Cretu\\ 
+		\hline 
+	\end{tabular} \ \\
+	\ \\
+	
+	\subsection{Teilnehmerliste}
+	\begin{tabular}{|p{10.3cm}|p{3.2cm}|p{3.2cm}|c|p{3.5cm}|}
+		\hline  \textbf{Arbeitspaket} & \textbf{Startzeitpunkt} & \textbf{Endzeitpunkt} & \textbf{Aufwand in h} & \textbf{Verantwortlicher} \\ 
+		\hline   listParticipients.xhtml                                    & 15.06.2015 \ \ 13:00     & 15.06.2015 \ \ 15:00     &      2h               & Kathi Hölzl\\
+		\hline   ListParticipantsBean.java                                  & 15.06.2015 \ \ 15:00     & 15.06.2015 \ \ 18:00     &      3h               & Kathi Hölzl\\
+		\hline   UserDAO.getParticipiantsOfCourse(Transaction trans,PaginationData pagination, int courseID)  & 15.06.2015 \ \ 08:00     & 15.06.2015 \ \ 09:30     &      1,5h               & Kathi Hölzl\\
+		\hline 
+	\end{tabular} \ \\
+	\ \\
+	
+	\subsection{Trainerprofil anzeigen}	
+	\begin{tabular}{|p{10.3cm}|p{3.2cm}|p{3.2cm}|c|p{3.5cm}|}
+		\hline  \textbf{Arbeitspaket} & \textbf{Startzeitpunkt} & \textbf{Endzeitpunkt} & \textbf{Aufwand in h} & \textbf{Verantwortlicher} \\ 
+		\hline   leaderProfile.xhtml                      & 15.06.2015 \ \ 08:00        & 15.06.2015 \ \ 10:00        &  2h                 & Ricky Strohmeier\\
+		\hline   UserProfileBean.initializeLeaderProfile()& 15.06.2015 \ \ 13:00        & 15.06.2015 \ \ 14:30        &  1,5h                 & Ricky Strohmeier\\
+		\hline   UserDAO.getCoursesLeadedBy(Transaction trans, int userID, PaginationData pagination)  & 15.06.2015 \ \ 14:30        & 15.06.2015 \ \ 16:00        &  1,5h                 & Ricky Strohmeier\\
+		\hline   TrainerProfileTest.java  & 17.06.2015 \ \ 08:00        & 17.06.2015 \ \ 10:00        &  2h                 & Ricky Strohmeier\\
+		\hline 
+	\end{tabular} \ \\
+	\ \\
+	
+	\subsection{Terminplaner}
+	\begin{tabular}{|p{10.3cm}|p{3.2cm}|p{3.2cm}|c|p{3.5cm}|}
+		\hline  \textbf{Arbeitspaket} & \textbf{Startzeitpunkt} & \textbf{Endzeitpunkt} & \textbf{Aufwand in h} & \textbf{Verantwortlicher} \\ 
+		\hline   scheduler.xhtml                                 & 16.06.2015 \ \ 09:00        & 16.06.2015 \ \ 13:00        &  4h                 & Patrick Cretu\\ 
+		\hline   SchedulerBean.java                              & 15.06.2015 \ \ 13:00        & 15.06.2015 \ \ 18:00        &  5h                 & Patrick Cretu\\ 
+		\hline   CourseUnitDAO.getCourseUnitsOf(Transaction trans, int userID)  & 15.06.2015 \ \ 08:00        & 15.06.2015 \ \ 10:00        &  2h  & Patrick Cretu\\ 
+		\hline ViewSchedulerTest.java & 17.06.2015 \ \ 13:00 & 17.06.2015 \ \ 15:00 & 2h & Patrick Cretu\\
+		\hline 
+	\end{tabular} \ \\
+	\ \\
+	
+	\subsection{Benutzer aktivieren}
+	\begin{tabular}{|p{10.3cm}|p{3.2cm}|p{3.2cm}|c|p{3.5cm}|}
+		\hline  \textbf{Arbeitspaket} & \textbf{Startzeitpunkt} & \textbf{Endzeitpunkt} & \textbf{Aufwand in h} & \textbf{Verantwortlicher} \\ 
+		\hline   activateUsers.xhtml                                 & 16.06.2015 \ \ 13:00     & 16.06.2015 \ \ 15:00     &      2h               & Kathi Hölzl\\
+		\hline   AccountManagementBean.java                          & 16.06.2015 \ \ 09:00     & 16.06.2015 \ \ 12:00     &      3h               & Kathi Hölzl\\
+		\hline   ActivateUsersTest.java                              & 17.06.2015 \ \ 08:00     & 17.06.2015 \ \ 10:00     &      2h               & Kathi Hölzl\\
+		\hline 
+	\end{tabular} \ \\
+	\ \\
+	
+	\subsection{Administratoreinstellungen}
+	\begin{tabular}{|p{10.3cm}|p{3.2cm}|p{3.2cm}|c|p{3.5cm}|}
+		\hline  \textbf{Arbeitspaket} & \textbf{Startzeitpunkt} & \textbf{Endzeitpunkt} & \textbf{Aufwand in h} & \textbf{Verantwortlicher} \\ 
+		\hline   adminManagement.xhtml                                 & 15.06.2015 \ \ 16:00       & 15.06.2015  \ \  18:00      &  2h                & Tobias Fuchs\\
+		\hline   SystemConfigurationBean.java                          & 15.06.2015 \ \ 13:00       & 15.06.2015  \ \  16:00      &  3h                & Tobias Fuchs\\
+		\hline   PaymentOfflineBean.java                               & 15.06.2015 \ \ 08:00       & 15.06.2015  \ \  09:00      &  1h                & Tobias Fuchs\\
+		\hline   OfflineTransactionValidator.java                      & 15.06.2015 \ \ 09:00       & 15.06.2015  \ \  10:00      &  1h                & Tobias Fuchs\\
+		\hline   BankAccountException.java                             & 16.06.2015 \ \ 08:00       & 16.06.2015  \ \  09:00      &  1h                & Tobias Fuchs\\
+		\hline   SystemDAO.setOverdraftCredit(Transaction trans, int credit)  & 16.06.2015 \ \ 09:00       & 16.06.2015  \ \  10:00      &  1h                & Tobias Fuchs\\
+		\hline   SystemDAO.setActivationType(Transaction trans, String type)  & 16.06.2015 \ \ 10:00       & 16.06.2015  \ \  11:00      &  1h                & Tobias Fuchs\\
+		\hline   SystemDAO.setSignOffLimit(Transaction trans, int limit)      & 16.06.2015 \ \ 11:00       & 16.06.2015  \ \  12:00      &  1h                & Tobias Fuchs\\
+		\hline   AdministratorSettingsTest.java     & 17.06.2015 \ \ 08:00       & 17.06.2015  \ \  10:00      &  2h                & Tobias Fuchs\\
+		\hline 
+	\end{tabular} \ \\
+	\ \\
+	
+	\subsection{AGB, Impressum, Hilfe}
+	\begin{tabular}{|p{10.3cm}|p{3.2cm}|p{3.2cm}|c|p{3.5cm}|}
+		\hline  \textbf{Arbeitspaket} & \textbf{Startzeitpunkt} & \textbf{Endzeitpunkt} & \textbf{Aufwand in h} & \textbf{Verantwortlicher} \\ 
+		\hline   agb.xhtml          & 16.06.2015 \ \ 13:00        & 16.06.2015 \ \ 15:00        &  2h                 & Ricky Strohmeier\\
+		\hline   imprint.xhtml      & 16.06.2015 \ \ 15:00        & 16.06.2015 \ \ 16:00        &  1h                 & Ricky Strohmeier\\
+		\hline   help.xhtml         & 16.06.2015 \ \ 16:00        & 16.06.2015 \ \ 18:00        &  2h                 & Ricky Strohmeier\\
+		\hline 
+	\end{tabular} \ \\
+	\ \\	
+	
+	\subsection{Wartung}
+	\begin{tabular}{|p{10.3cm}|p{3.2cm}|p{3.2cm}|c|p{3.5cm}|}
+		\hline  \textbf{Arbeitspaket} & \textbf{Startzeitpunkt} & \textbf{Endzeitpunkt} & \textbf{Aufwand in h} & \textbf{Verantwortlicher} \\ 
+		\hline   Maintenance.java         & 16.06.2015 \ \ 14:00       & 16.06.2015  \ \  17:00      &  3h                & Kathi Hölzl\\
+		\hline
+	\end{tabular}				
+\end{landscape}

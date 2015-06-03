@@ -1,0 +1,92 @@
+\chapter{Systemfunktionen}
+
+\section{Konfigurationsdatei}
+	
+		Die Konfigurationsdatei wird zwingend benötigt, wird bei Erstinstallation vom System angelegt und liegt auf dem Server bereit. Die Datei kann mit einem beliebigen Text-Editor von einem Systemadministrator bearbeitet werden.
+	
+
+\section{Systemstart}
+		Beim Starten des Systems wird die Existenz der Konfigurationsdatei geprüft. Ist diese nicht vorhanden wird von einer Neu- bzw. Erstkonfiguration ausgegangen. Um das System starten zu können müssen folgende Daten bzw. Einstellungen getroffen werden:
+		\begin{itemize}
+			\item \emph{Datenbankeinstellungen:}\\
+			 Datenbankserver, Port, Benutzernamen, Passwort und maximale Anzahl an offenen Verbindungen zur Datenbank
+			\item \emph{E-Maileinstellungen:}\\
+			 Mailserver, Port, Benutzername und Passwort
+			\item \emph{Systemrelevanteneinstellungen:}\\
+			 Überziehungskredit, Standartsprache und Art der Registrierung
+		\end{itemize}
+		Nach dem Lesen der Konfigurationsdatei werden die Verbindungen zur Datenbank aufgebaut(Voraussetzung ist, dass die Konfigurationsdatei existiert). Über einen Datenbank-Kommunikationspool stellt das System eine feste Anzahl an Verbindungen für die Benutzer zur Verfügung, damit auch mehrere Benutzer gleichzeitig Anfragen an den SQL-Server schicken können. Da eine dauerhafte Verbindung zur Datenbank benötigt wird, muss dieser Vorgang in der Initialisierungsphase des Systems geschehen. Das wird durch @postConstruct gewährleistet. 
+	
+\section{Systemlaufzeit}
+		Damit das System startet ist eine Erstkonfiguration nötig. Während der Systemlaufzeit können folgende Fälle auftreten:
+		\begin{itemize}
+			\item \textbf{Kommunikation mit der Datenbank:}\\
+			 Für manche Benutzeraktionen (z.B. \textbf{Aufruf der Kursdetails} oder \textbf{Suche nach Kursen}) wird eine Anfrage an die Datenbank gesendet. Der Datenbankkommunkationspool verwaltet die Anfragen und übergibt den Benutzern Verbindungen zur Datenbank (Anzahl zuvor vom Administrator festgelegt). Es können verschiedene Fälle eintreten:
+			\begin{enumerate}
+				\item \emph{Es gibt eine freie, aktive Verbindung:} \\
+				Die Methode, die eine Verbindung angefragt hat bekommt sie. Die Verbindung wird aus der Liste der freien Verbindungen herausgenommen und steht für die Dauer der Benutzeraktion nicht mehr zur Verfügung. Nach der Benutzung gibt die Methode die Verbindung wieder frei und zurück an den Pool. Dort wird sie wieder in die Liste der zur Verfügung stehenden Verbindungen hinzugefügt.
+				\item \emph{Alle Verbindungen sind aktiv, aber in Benutzung:} \\
+				Die Methode, die nach einer Verbindung angefragt hat, kommt in eine Warteschlange und muss solange warten bis eine Verbindung von einer anderen Methode freigegeben wird. Dann bekommt sie diese zugewiesen (FIFO).
+				\item \emph{Es gibt keine freie, aktive Verbindung, obwohl nicht die maximale Anzahl an Verbindungen erreicht ist:}\\
+				 Wenn eine Verbindung von der Datenbank terminiert wurde (Timeout) muss eine neue Datenbankverbindung erstellt werden.
+				
+			\end{enumerate}
+			
+			Wenn die Benutzeraktion, die eine Datenbankverbindung angefordert hat beendet ist, gibt die ausgeführte Methode die Verbindung wieder dem Datenbankkommunikationspool zurück. Dieser kann die Verbindung nun einer wartenden Methode zuweisen oder falls keine Methode wartet für sich behalten. Wenn eine Verbindung durch ein Timeout von Serverseite geschlossen wird und somit nicht mehr zur Verfügung steht, erstellt der Kommunikationspool erst wieder eine Verbindung wenn sie vom System gebraucht wird(Effizienz). Bei korrekter Ausführung beendet das System keine Verbindungen, sondern behält sie um ein schnellen Datenbanktransfer zu gewährleisten. Folgende Aktionen können auf der Datenbank vom System und Benutzer ausgeführt werden:
+			\begin{enumerate}
+				\item \emph{Abfrage:} \\
+				Es werden Datensätze ausgelesen (z.B. Kurseinheitendetails).
+				\item \emph{Einträge:}\\
+				 Es werden Datensätze geschrieben oder editiert (z.B. Anlegen eines neuen Kurses oder Benutzers).
+				\item \emph{Löschen:} \\
+				Es werden Datensätze gelöscht. Diese Vorgang passiert kaskadenartig auf der Datenbank damit keine fehlerhaften Verlinkungen übrigbleiben (z.B. Beim Löschen einer Kurseinheit).
+				
+			\end{enumerate}
+			
+			\item \textbf{Darstellung der Webseite:} \\
+			Die Seiten basieren auf dem Framework JSF (Java Server Faces), welches auf Servlets basiert. 
+			
+			\item \textbf{E-Mail Benachrichtigungen:}\\
+			 Jeder Benutzer bekommt vom System wichtige Ereignisse per E-Mail mitgeteilt (z.B. Anmeldung). Zusätzlich kann der Benutzer sich noch für andere Ereignisse per E-Mail benachrichtigen lassen (z.B. neue Kurseinheit in einem angemeldet Kurs wurde erstellt). Dies läuft über einen SMTP-Server dessen Daten vom Systemadministrator bei Erstkonfiguration eingegeben wurden.
+			
+			\item \textbf{Fehlerbehandlung:} \\
+			Es kann passieren, dass während das System läuft Fehler auftreten (z.B. keine Verbindung mehr zur Datenbank). Alle Fehler werden in einer Log-Datei festgehalten. Man unterscheidet hier zwischen:
+			\begin{itemize}
+				\item \textbf{RuntimeException:}\\
+				 Nicht behandelbar. Der Benutzer wird über eine allgemeine Fehlermeldung benachrichtigt.
+				\item \textbf{Exception:} \\
+				Behandelbar, der Benutzer bekommt eine spezifische Fehlermeldung, allerdings ohne oder nur mit wenig Strukturinformationen des Systems.
+				\end{itemize}
+			
+			\item \textbf{Wartungsthread:}
+			Für systeminterne Wartungsarbeiten wird ein Thread zur Verfügung gestellt, der in gewissen Abständen gestartet wird. Dieser hat primär die Aufgabe alte und nicht mehr gebrauchte Datensätze zu löschen und somit die Effizienz des Systems zu gewährleisten.
+			
+			\item \textbf{Aktivitätsloging:}\\
+			Das System stellt eine Log-Datei zur Verfügung, die alle Aktivitäten dokumentiert. Dies dient vor allem dem Systemadministrator bei der Fehlersuche, falls nicht vorgesehene Probleme auftreten. Hier wird auf das Framework \textbf{log4j} zurückgegriffen. Die Einträge der Logdatei können vom Administrator gefiltert werden:
+			\begin{itemize}
+				\item \emph{FATAL:}\\
+				Ein kritischer Fehler ist aufgetreten und das System kann nicht mehr weiter ausgeführt werden.
+				\item \emph{ERROR:}\\
+				Exceptions wurden geworfen und behandelt. Das System wird alternativ fortgesetzt.
+				\item \emph{WARN:}\\
+				Auftreten einer unerwarteten Situation. Das System läuft weiter.
+				\item \emph{INFO:}\\
+				Allgemeine Informationen(z.B. Programm gestartet, Programm beendet, Verbindung zur Datenbank aufgebaut).
+				\item \emph{DEBUG:}\\
+				allgemeines Debugging(Fehler können leichter gefunden werden).
+				\item \emph{TRACE:}\\
+				ausführliches Debugging mit Kommentaren.
+				\item \emph{ALL:}\\
+				Alle Meldungen werden ungefiltert ausgegeben.
+				\item \emph{OFF:}\\
+				Logging ist deaktiviert.
+			\end{itemize}
+			
+			Die Log-Datei ist nur für den Systemadministrator einsehbar und wird auf dem Server des Systems gespeichert(nicht in der Datenbank!). Bei auftretenden Fehlern sollte der Administrator diese Log-Datei an das Entwickler Team weiter geben, damit diese den Fehler reproduzieren und beheben können.
+			
+		\end{itemize} 
+	
+\section{Systemshutdown}
+
+	Beim Herunterfahren des System wird die Priorität vor allem auf das korrekte Schließen der Datenbankverbindungen gelegt. Dieser Vorgang wird mit einem Shutdown-Hook umgesetzt. Dieser Shutdown-Hook läuft in einem eigenen Thread und bei Ausführung werden alle freien Datenbankverbindungen geschlossen. Die, die gerade in Benutzung sind werden solange aufrechterhalten bis sie wieder freigegeben werden. Darauf folgt auch deren Schließung. Um sicher zu gehen, dass keine Ressourcen der Datenbank verschwendet werden wird dies mit dem @preDestroy umgesetzt. 
+   

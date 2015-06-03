@@ -1,0 +1,1595 @@
+\chapter{View}
+	
+		Dieses Kapitel enthält alle benötigten Facelets, welche die View der Webanwendung darstellen. Zur besseren Übersichtlichkeit werden folgende Abkürzungen verwendet:
+		\begin{itemize}
+			\item A: Administrator
+			\item K: Kursleiter
+			\item R: Registrierter Benutzer
+		\end{itemize}		
+		Jedes Facelet wird in unterschiedliche Bereiche aufgeteilt:
+		\begin{itemize}
+			\item \textbf{Beschreibung} Kurzbeschreibung der Funktion/-en des jeweiligen Facelets.
+			\item \textbf{Links} enthält alle Links des Facelets, die zu einem anderen Facelet führen.
+			\item \textbf{Buttons} listet die sich auf der Seite befindlichen Buttons mit deren hinterlegten Methoden auf.
+			\item \textbf{Inputs} enthält eine Liste aller Eingabefelder auf der Seite.
+			\item \textbf{Outputs} enthält eine Liste aller Ausgabefelder auf der Seite.
+			\item \textbf{Backing Beans} enthält eine Liste aller, mit dem jeweiligen Facelet verbundenen, Beans.
+		\end{itemize}
+		Für jedes Facelet werden außerdem folgende Tag-Libraries verwendet:
+			\begin{center}
+				\begin{longtable}{|p{6cm} | p{8cm}| p{2cm}|}
+					
+					\hline \multicolumn{1}{|c|}{\textbf{Name}} & \multicolumn{1}{c|}{\textbf{Namensraum}} & \multicolumn{1}{c|}{\textbf{Präfix}} \\ \hline
+					\endfirsthead
+					\hline
+					\endlastfoot
+					\textit{HTML-Custom-Tag-Library} & http://java.sun.com/jsf/html & h\\ \hline
+					\textit{Core-Tag-Library} & http://java.sun.com/jsf/core & f\\ \hline
+					\textit{Facelets-Tag-Library} & http://java.sun.com/jsf/facelets & ui\\ \hline
+					\textit{HTML-Passthrough-Library} & http://xmlns.jcp.org/jsf/passthrough & p\\ \hline
+				\end{longtable}
+			\end{center}
+		
+		\section{Templates}
+		KH, RS
+		Das Standard-Template, an dem sich alle Facelets orientieren ist in Abbildung 4.1 zu sehen. Hier wird in drei Teilbereiche unterschieden. Es gibt den Teilbereich \glqq Header\grqq\, welcher hauptsächlich die von der Benutzerrolle abhängige Navigation (\hyperlink{navigation}{navigation.xhtml}) beinhaltet, den Teilbereich \glqq Content\grqq\, welcher abhängig vom jeweils aufgerufenen Facelet befüllt wird und den Teilbereich \glqq Footer\grqq\, welcher den unteren Bereich der dargestellten Seite befüllt (\hyperlink{footer}{footer.xhtml}).
+		
+		\begin{figure}[h]
+			\centering
+			\includegraphics[width=0.3\textwidth]{Grafiken/Template.png}
+			\caption{Standard-Template für alle Facelets}
+		\end{figure}
+		
+		\paragraph{navigation.xhtml} \hypertarget{navigation}
+		RS\\
+		\begin{itemize}
+			\item \textbf{Beschreibung:} Hier kann, abhängig von der Benutzerrolle, durch die Seite navigiert werden.
+			\item \textbf{Links:}
+			\begin{itemize}
+				\item Suche: Navigiert zur Kurse durchsuchen Seite. \hyperlink{search}{search.xhtml}
+				\item Sprache Deutsch: Ändert die angezeigte Sprache zu Deutsch.
+				\item Sprache Englisch: Ändert die angezeigte Sprache zu Englisch.
+				\item Profil (Benutzer): Navigiert zum eigenen Profil. \hyperlink{profile}{profile.xhtml}
+				\item Meine Kurse (Benutzer): Navigiert zur Anzeige der eigenen Kurse. \hyperlink{myCourses}{myCourses.xhtml}
+				\item Terminplaner (Benutzer): Navigiert zum persönlichen Terminplaner. \hyperlink{scheduler}{scheduler.xhtml}
+				\item Seitenverwaltung (Administrator): Lässt den Seitenadministrator zur Seitenverwaltung navigieren. \hyperlink{adminManagement}{adminManagement.xhtml}
+				\item Benutzer aktivieren: (Kursleiter, Administrator): Navigiert zur Benutzer aktivieren Seite. \hyperlink{activateUsers}{activateUsers.xhtml}
+			\end{itemize}
+			\begin{center}
+				\begin{longtable}{|p{4cm} |p{6cm} |}
+
+					\hline \multicolumn{1}{|c|}{\textbf{Link}} & \multicolumn{1}{|c|}{\textbf{\"{U}bergabeparameter}} \\ \hline
+					\endfirsthead
+					\hline
+					\endlastfoot
+
+					\textit{Suche} & -\\ \hline
+					\textit{Sprache Deutsch} & language\\ \hline
+					\textit{Sprache Englisch} & language\\ \hline
+					\textit{Profil (B)} & -\\ \hline
+					\textit{Meine Kurse (B)} & -\\ \hline
+					\textit{Terminplaner (B)} & -\\ \hline
+					\textit{Seitenverwaltung (A)} & -\\ \hline
+					\textit{Benutzer aktivieren (K, A)} & -\\ \hline
+				\end{longtable}
+			\end{center}
+
+			\item \textbf{Buttons:}
+				\begin{itemize}
+					\item Logout (Benutzer, wenn eingeloggt): Loggt den aktuellen eingeloggten Benutzer aus. \\ Zugehörige Methode: logout()
+					\item Anmelden (Anonym): Navigiert zur Registrierungs- und Anmeldeseite. \hyperlink{authenticate}{authenticate.xhtml} \\ Zugehörige Methode: login()
+				\end{itemize}
+				\begin{center}
+					\begin{longtable}{|p{4cm} |p{4cm} | p{4cm}|}
+					
+						\hline \multicolumn{1}{|c|}{\textbf{Button}} & \multicolumn{1}{|c|}{\textbf{Methode}} \\ \hline
+						\endfirsthead
+						\hline
+						\endlastfoot
+					
+							\textit{Logout (B)} & logout()\\ \hline
+							\textit{Anmelden} & login()\\ \hline
+					\end{longtable}
+				\end{center}
+			\item \textbf{Outputs:}
+				\begin{itemize}
+					\item Logo: Zeigt verkleinertes, vom Administrator definiertes Logo der Website. Beim klick gelangt der Nutzer zur Startseite \hyperlink{index}{index.xhtml}.
+				\end{itemize}
+				\begin{center}
+					\begin{longtable}{|p{5cm} | p{4cm}|p{3cm}|}
+						
+						\hline \multicolumn{1}{|c|}{\textbf{Ausgabefeld}} & \multicolumn{1}{|c|}{\textbf{Typ}}  &  \multicolumn{1}{|c|}{\textbf{ID}} \\ \hline
+						\endfirsthead
+						\hline
+						\endlastfoot
+						\textit{Logo}  & graphicImage & logo \\ \hline
+					\end{longtable}
+				\end{center}
+			\item \textbf{BackingBean:}
+				\begin{itemize}
+					\item NavigationBean
+				\end{itemize}
+		\end{itemize}
+		
+		\paragraph{footer.xhtml} \hypertarget{footer}
+		RS\\
+		\begin{itemize}
+			\item \textbf{Beschreibung:} Dieses Facelet dient der Darstellung des Footers.
+			\item \textbf{Buttons:}
+			\begin{itemize}
+				\item AGB: Navigiert zum Facelet mit den Allgemeinen Geschäftsbedingungen, also \hyperlink{agb}{agb.xhtml}. Zugehörige Methode: loadAGBPage()
+				\item Impressum: Navigiert zum Facelet mit dem Impressum der Webanwendung, also \hyperlink{imprint}{imprint.xhtml}. Zugehörige Methode: loadImprintPage()
+				\item Hilfe: Navigiert zur Hilfeseite, also COMPLETEuserHelp.html. Zugehörige Methode: loadHelpPage()
+			\end{itemize}
+			\begin{center}
+				\begin{longtable}{|p{4cm} |p{4cm} | p{4cm}|}
+					
+					\hline \multicolumn{1}{|c|}{\textbf{Button}} & \multicolumn{1}{|c|}{\textbf{Methode}}\\ \hline
+					\endfirsthead
+					\hline
+					\endlastfoot
+						\textit{AGB} & loadAGBPage()\\ \hline
+						\textit{Impressum} & loadImprintPage()\\ \hline
+						\textit{Hilfe} & loadHelpPage()\\ \hline
+				\end{longtable}
+			\end{center}
+			\item \textbf{BackingBean:}
+			\begin{itemize}
+				\item FooterBean
+			\end{itemize}
+		\end{itemize}
+		
+		\paragraph{template.xhtml} \hypertarget{template}
+		RS\\
+		\begin{itemize}
+			\item \textbf{Beschreibung:} Dieses Facelet dient der einheitlichen Darstellung und Struktur aller Facelets im System. Letztere ist in Abbildung 5.1 genauer dargestellt.
+			\item \textbf{Inputs:}
+			\begin{itemize}
+				\item Navigation: Bindet \hyperlink{navigation}{navigation.xhtml} in den Header ein.
+				\item Footer: Bindet \hyperlink{footer}{footer.xhtml} in den Footer ein.
+			\end{itemize}
+			\begin{center}
+				\begin{longtable}{|p{3cm} |p{5cm} | p{4cm}|}
+						
+					\hline \multicolumn{1}{|c|}{\textbf{Eingabefeld}} & \multicolumn{1}{|c|}{\textbf{Typ}}  &  \multicolumn{1}{|c|}{\textbf{ID}} \\ \hline
+					\endfirsthead
+					\hline
+					\endlastfoot
+					\textit{Navigation} & xhtml & header \\ \hline
+					\textit{Footer} & xhtml & footer \\ \hline
+				\end{longtable}
+			\end{center}
+		\end{itemize}
+		
+		\section{Facelets}
+		
+		\subsection{open}
+		
+		\subsubsection{common}
+		
+		\paragraph{errorPage.xhtml} \hypertarget{errorPage}
+		KH\\
+			\begin{itemize}
+				\item \textbf{Beschreibung:} Der Benutzer wird auf diese Seite weitergeleitet, wenn Exceptions auftreten, auf die der Nutzer keinen Einfluss hat. Die entsprechende Fehlermeldung wird dann angezeigt.
+				\item \textbf{Links:}
+					\begin{itemize}
+						\item Startseite: Über diesen Link gelangt der Benutzer zurück zur Startseite. (\hyperlink{index}{index.xhtml})
+					\end{itemize}
+					
+				
+						
+			\end{itemize}
+		
+		\paragraph{index.xhtml} \hypertarget{index}
+		RS\\
+		\begin{itemize}
+			\item \textbf{Beschreibung:} Dieses Facelet stellt die Startseite des Systems dar.
+			\item \textbf{Links:}
+			\begin{itemize}
+				\item Gesamtes Kursangebot, \hyperlink{search}{search.xhtml}
+			\end{itemize}
+			\item \textbf{Outputs:}
+			\begin{itemize}
+				\item Logo der Website
+				\item Logout-Benachrichtigung: Meldung bei erfolgreichem Logout vom System.
+			\end{itemize}
+					\begin{center}
+						\begin{longtable}{|p{5cm} | p{4cm}|p{3cm}|}
+							
+							\hline \multicolumn{1}{|c|}{\textbf{Ausgabefeld}} & \multicolumn{1}{|c|}{\textbf{Typ}}  &  \multicolumn{1}{|c|}{\textbf{ID}} \\ \hline
+							\endfirsthead
+							\hline
+							\endlastfoot
+							\textit{Logo der Website}  & graphicImage & biglogo \\ \hline
+							\textit{Logout-Benachrichtigung} & message & logoutmsg\\ \hline
+						\end{longtable}
+					\end{center}
+		\end{itemize}
+		
+		\paragraph{authenticate.xhtml} \hypertarget{authenticate}
+		KH\\
+		\begin{itemize}
+			\item \textbf{Beschreibung:}
+			Auf dieser Seite kann man sich im System anmelden, ein neues Benutzerkonto generieren oder ein neues Passwort anfordern.
+			\item \textbf{Buttons:}
+			\begin{itemize}
+				\item Registrieren: Durch Drücken dieses Buttons wird der neue Benutzer mit den eingegebenen Daten im System gespeichert und es wird eine Bestätigungsmail mit dem Verifizierungslink an die angegebene E-Mail-Adresse verschickt, sofern alle Daten korrekt eingegeben wurden. \\ Zugehörige Methode: registerUser()
+				\item Anmelden: Durch Drücken dieses Buttons wird der registrierte Benutzer im System angemeldet und auf die Seite 'Meine Kurse' (\hyperlink{myCourses}{myCourses.xhtml}) weitergeleitet, sofern Benutzername und Passwort korrekt eingegeben wurden. \\ Zugehörige Methode: login()
+				\item Passwort vergessen: Durch Drücken dieses Buttons wird an die angegebene E-Mail-Adresse ein automatisch generiertes Passwort geschickt, sofern die Adresse im System existiert. \\ Zugehörige Methode: resetPassword()
+			\end{itemize}
+			
+			\begin{center}
+				\begin{longtable}{|p{4cm} |p{4cm} | p{4cm}|}
+					
+					\hline \multicolumn{1}{|c|}{\textbf{Button}} & \multicolumn{1}{|c|}{\textbf{Methode}} & \multicolumn{1}{|c|}{\textbf{\"{U}bergabeparameter}} \\ \hline
+					\endfirsthead
+					\hline
+					\endlastfoot
+					
+						\textit{Registrieren } & registerUser() & - \\ \hline
+						\textit{Anmelden } & login() & - \\ \hline
+						\textit{Passwort vergessen } & resetPassword() & - \\ \hline
+				\end{longtable}
+			\end{center}
+			
+			\item \textbf{Inputs:}
+			\begin{itemize}
+				\item Anrede (Registrierung): Hier wählt der Benutzer die Anrede 'Herr' oder 'Frau' aus.
+				\item Vorname (Registrierung): Hier trägt der Benutzer seinen Vornamen ein.
+				\item Name (Registrierung): Hier gibt der Benutzer seinen Namen ein.
+				\item Benutzername (Registrierung): Hier gibt der Benutzer einen Benutzernamen ein.
+				\item Passwort (Registrierung): Hier trägt der Benutzer ein Passwort ein.
+				\item Passwort bestätigen (Registrierung): Hier gibt der Benutzer das gleiche Passwort erneut ein zur Bestätigung.
+				\item Geburtstag (Registrierung): Hier gibt der Benutzer sein Geburtsdatum ein.
+				\item Straße (Registrierung): Hier gibt der Benutzer seine Straße ein.
+				\item Hausnummer (Registrierung): Hier gibt der Benutzer seine Hausnummer ein.
+				\item Stadt (Registrierung): Hier trägt der Benutzer seine Stadt ein.
+				\item Postleitzahl (Registrierung): Hier trägt der Benutzer seine Postleitzahl ein.
+				\item Land (Registrierung): Hier trägt der Benutzer sein Heimatland ein.
+				\item E-Mail-Adresse (Registrierung): Hier gibt der Benutzer seine E-Mail-Adresse ein.
+				\item AGBs bestätigen (Registrierung): Durch Setzten des Häkchens bestätigt der Benutzer die AGBs. 
+				\item Benutzername (Anmeldung): Der Benutzer gibt seinen Benutzernamen ein, mit dem er sich registriert hat.
+				\item Passwort (Anmeldung): Der Benutzer gibt sein Passwort ein, mit dem er sich registriert hat.
+				\item E-Mail-Adresse (Passwort vergessen): Der Benutzer gibt seine im System bereits gespeicherte E-Mailadresse ein.
+				
+				\begin{center}
+					\begin{longtable}{|p{3cm} |p{5cm} | p{4cm}|p{3cm}|}
+						
+						\hline \multicolumn{1}{|c|}{\textbf{Eingabefeld}} & \multicolumn{1}{|c|}{\textbf{Backing-Bean-Attribute}} & \multicolumn{1}{|c|}{\textbf{Typ}}  &  \multicolumn{1}{|c|}{\textbf{ID}} \\ \hline
+						\endfirsthead
+						\hline
+						\endlastfoot
+							\textit{Anrede (Registrierg)} & RegisterUserBean. userToRegistrate.salutation & selectOneMenu & anrede \\ \hline
+							\textit{Vorname (Registrierg)} & RegisterUserBean. userToRegistrate.firstname & inputText & vorname \\ \hline
+							\textit{Name (Registrierg)} & RegisterUserBean. userToRegistrate.lastname & inputText & name \\ \hline
+							\textit{Benutzername (Registrierg)} & RegisterUserBean. userToRegistrate.username & inputText & benutzername\\ \hline
+							\textit{Passwort (Registrierg)} & RegisterUserBean. userToRegistrate.password & inputSecret & passwort \\ \hline
+							\textit{Passwort bestätigen (Registrierg)} & RegisterUserBean. userToRegistrate.password & inputSecret & bestätigungs- passwort\\ \hline
+							\textit{Geburtstag (Registrierg)} & RegisterUserBean. userToRegistrate.dateOfBirth & inputText & geburtstag \\ \hline
+							\textit{Straße (Registrierg)} & RegisterUserBean. userToRegistrate.address.street & inputText & straße\\ \hline
+							\textit{Hausnummer (Registrierg)} & RegisterUserBean. userToRegistrate.address.houseNumber & inputText & hausnummer\\ \hline
+							\textit{Stadt (Registrierg)} & RegisterUserBean. userToRegistrate.address.city & inputText & stadt \\ \hline
+							\textit{Postleitzahl (Registrierg)} & RegisterUserBean. userToRegistrate.address.zipCode & inputText & postleitzahl \\ \hline
+							\textit{Land (Registrierg)} & RegisterUserBean. userToRegistrate.address.country & inputText & land \\ \hline
+							\textit{E-Mail-Adresse (Registrierg)} & RegisterUserBean. userToRegistrate.email & inputText & mail\\ \hline
+							\textit{AGBs bestätigen (Registrierg)} & - & selectBooleanCheckbox & agb \\ \hline
+							\textit{Benutzername (Anmeldung)} & AuthenticateUserBean. loginUser.username & inputText & anmeldungs- benutzername \\ \hline
+							\textit{Passwort (Anmeldung)} & AuthenticateUserBean. loginUser.password & inputSecret & anmeldungs- passwort \\ \hline
+							\textit{E-Mail-Adresse (Passwort vergessen)} & LostPasswordBean. emailAddressToResetPassword & inputText & Passwortmail \\ \hline
+					\end{longtable}
+				\end{center}
+				
+				\begin{center}
+					\begin{longtable}{|p{3cm} |p{8cm} | p{5cm}|}
+						
+						\hline \multicolumn{1}{|c|}{\textbf{Eingabefeld}} & \multicolumn{1}{|c|}{\textbf{Validator}} & \multicolumn{1}{|c|}{\textbf{Konverter}} \\ \hline
+						\endfirsthead
+						\hline
+						\endlastfoot
+						\textit{Anrede (Registrierg)} & - & -  \\ \hline
+						\textit{Vorname (Registrierg)} & validateLength (min = 0, max = 100) & - \\ \hline
+						\textit{Name (Registrierg)} & validateLength (min = 0, max =100) & -  \\ \hline
+						\textit{Benutzername (Registrierg)} & UserNameValidator, validateLength (min = 5 , max =100), validateRequired  & - \\ \hline
+						\textit{Passwort (Registrierg)} & PasswordValidator (mindestens 8 Zeichen, mind. 1 Sonderzeichen, mind. 1 Ziffer, Groß- und Kleinbuchstaben, keine Umlaute, kein 'ß'), validateRequired & -  \\ \hline
+						\textit{Passwort bestätigen (Registrierg)} & confirmPasswordValidator, validateRequired & - \\ \hline
+						\textit{Geburtstag (Registrierg)} & DateOfBirthValidator & convertDateTime  \\ \hline
+						\textit{Straße (Registrierg)} & validateLength (min = 0, max = 100) & - \\ \hline
+						\textit{Hausnummer (Registrierg)} & validateLength (min = 0, max = 9) & - \\ \hline
+						\textit{Stadt (Registrierg)} & validateLength (min = 1, max = 100), validateRequired & -  \\ \hline
+						\textit{Postleitzahl (Registrierg)} & validateLength (min = 1, max = 10), validateRequired & - \\ \hline
+						\textit{Land (Registrierg)} & validateLength (min = 1, max = 100), validateRequired & -  \\ \hline
+						\textit{E-Mail-Adresse (Registrierg)} & EMailValidator, validateLength (min = 1, max = 319), validateRequired & - \\ \hline
+						\textit{AGBs bestätigen (Registrierg)} & validateRequired & -  \\ \hline
+						\textit{Benutzername (Anmeldung)} & validateRequired & - \\ \hline
+						\textit{Passwort (Anmeldung)} & validateRequired & -  \\ \hline
+						\textit{E-Mail-Adresse (Passwort vergessen)} & validateRequired & - \\ \hline
+					\end{longtable}
+				\end{center}
+				
+				
+			\end{itemize}
+			\item \textbf{Outputs:} 
+			\begin{itemize}
+				\item Anrede Fehlermeldung (Registrierung): Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
+				\item Vorname Fehlermeldung (Registrierung): Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
+				\item Name Fehlermeldung (Registrierung): Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
+				\item Benutzername Fehlermeldung (Registrierung): Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
+				\item Passwort Fehlermeldung (Registrierung): Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
+				\item Passwort bestätigen Fehlermeldung (Registrierung): Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
+				\item Geburtstag Fehlermeldung (Registrierung): Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
+				\item Straße Fehlermeldung (Registrierung): Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
+				\item Hausnummer Fehlermeldung (Registrierung): Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
+				\item Stadt Fehlermeldung (Registrierung): Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
+				\item Postleitzahl Fehlermeldung (Registrierung): Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
+				\item Land Fehlermeldung (Registrierung): Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
+				\item E-Mail-Adresse Fehlermeldung (Registrierung): Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
+				\item AGBs bestätigen Fehlermeldung (Registrierung): Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
+				\item Benutzername Fehlermeldung (Anmeldung): Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
+				\item Passwort Fehlermeldung (Anmeldung): Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
+				\item E-Mail-Adresse Fehlermeldung (Passwort vergessen): Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
+				\item FacesMessage: 'Loginfehler! Bitte überprüfen Sie Benutzername und Passwort.'
+			\end{itemize}
+			
+				\begin{center}
+					\begin{longtable}{|p{5cm} | p{4cm}|p{5cm}|}
+						
+						\hline \multicolumn{1}{|c|}{\textbf{Ausgabefeld}} & \multicolumn{1}{|c|}{\textbf{Typ}}  &  \multicolumn{1}{|c|}{\textbf{ID}} \\ \hline
+						\endfirsthead
+						\hline
+						\endlastfoot
+						\textit{Anrede Fehlermeldung (R)}  & message & anredefehler \\ \hline
+						\textit{Vorname Fehlermeldung (R)}  & message & vornamenfehler \\ \hline
+						\textit{Name Fehlermeldung (R)} & message & namenfehler \\ \hline
+						\textit{Benutzername Fehlermeldung (R)}& message & nutzernamenfehler\\ \hline
+						\textit{Passwort Fehlermeldung (R)}& message & passwortfehler\\ \hline
+						\textit{Passwort bestätigen Fehlermeldung (R)}& message & bestätigungspwfehler\\ \hline
+						\textit{Geburtstag  Fehlermeldung(R)} & message & geburtstagsfehler \\ \hline
+						\textit{Straße Fehlermeldung (R)}& message & straßenfehler\\ \hline
+						\textit{Hausnummer Fehlermeldung (R)}& message & hausnrfehler\\ \hline
+						\textit{Stadt Fehlermeldung (R)}& message & stadtfehler \\ \hline
+						\textit{Postleitzahl Fehlermeldung (R)} & message & postleitzahlfehler \\ \hline
+						\textit{Land Fehlermeldung (R)} & message & landfehler \\ \hline
+						\textit{E-Mail-Adresse Fehlermeldung (R)} & message & mailfehler\\ \hline
+						\textit{AGBs bestätigen Fehlermeldung (R)} & message & agbfehler \\ \hline
+						\textit{Benutzername Fehlermeldung (A)}& message & anmeldenamefehler \\ \hline
+						\textit{Passwort Fehlermeldung (A)} &  message & anmeldepwfehler \\ \hline
+						\textit{E-Mail-Adresse Fehlermeldung (Passwort vergessen)}  & message & mailpw \\ \hline
+						\textit{FacesMessage (Loginfehler)}  & messages globalOnly & loginfehler \\ \hline
+					\end{longtable}
+				\end{center}
+			
+			\item \textbf{BackingBean:}
+				\begin{itemize}
+					\item AuthenticateUserBean
+					\item RegisterUserBean
+					\item LostPasswordBean
+				\end{itemize}
+		\end{itemize}
+		
+		\paragraph{imprint.xhtml} \hypertarget{imprint}
+		KH\\
+		\begin{itemize}
+			\item \textbf{Beschreibung:} Auf dieser Seite kann das Impressum angezeigt werden.
+			\item \textbf{Outputs:} 
+				\begin{itemize}
+					\item	Anzeige des Impressums, welches vom Administrator festgelegt wurde.
+				\end{itemize}
+				
+				\begin{center}
+					\begin{longtable}{|p{5cm} | p{4cm}|p{3cm}|}
+						
+						\hline \multicolumn{1}{|c|}{\textbf{Ausgabefeld}} & \multicolumn{1}{|c|}{\textbf{Typ}}  &  \multicolumn{1}{|c|}{\textbf{ID}} \\ \hline
+						\endfirsthead
+						\hline
+						\endlastfoot
+						\textit{Impressum}  & outputText & impressumzeigen \\ \hline
+					\end{longtable}
+				\end{center}
+		\end{itemize}
+		
+		\paragraph{agb.xhtml} \hypertarget{agb}
+		RS\\
+		\begin{itemize}
+			\item \textbf{Beschreibung:} Dieses Facelet dient der Anzeige der Allgemeinen Geschäftsbedingungen.
+			\item \textbf{Outputs:}
+			\begin{itemize}
+				\item von Betreibern festgelegte Allgemeine Geschäftsbedingungen.
+			\end{itemize}
+				\begin{center}
+					\begin{longtable}{|p{5cm} | p{4cm}|p{3cm}|}
+						
+						\hline \multicolumn{1}{|c|}{\textbf{Ausgabefeld}} & \multicolumn{1}{|c|}{\textbf{Typ}}  &  \multicolumn{1}{|c|}{\textbf{ID}} \\ \hline
+						\endfirsthead
+						\hline
+						\endlastfoot
+						\textit{AGB}  & outputText & agbzeigen \\ \hline
+					\end{longtable}
+				\end{center}
+		\end{itemize}
+		
+		
+		\subsubsection{courses}
+		
+		\paragraph{search.xhtml} \hypertarget{search}
+		RS\\
+		\begin{itemize}
+			\item \textbf{Beschreibung:} Hier können alle Kurse angezeigt und durchsucht werden.
+			\item \textbf{Buttons:}
+			\begin{itemize}
+				\item Anzeigen: Zeigt die Angebote im ausgewählten Zeitraum an. \\ Zugehörige Methode: displayCoursesInSpecificPeriod()
+				\item Suchen: Durchsucht die Website nach dem eingegebenen Suchbegriff mittels gewählten Suchobjekt. \\ Zugehörige Methode: search()
+				\item Details: Navigiert den Nutzer zur jeweiligen Kursdetailseite. (\hyperlink{courseDetails}{courseDetails.xhtml}) \\
+				Zugehörige Methode: loadCourseDetailsPageOfSelectedCourse()
+			\end{itemize}
+			\begin{center}
+				\begin{longtable}{|p{2cm} |p{9cm} | p{4cm}|}
+						
+					\hline \multicolumn{1}{|c|}{\textbf{Button}} & \multicolumn{1}{|c|}{\textbf{Methode}} & \multicolumn{1}{|c|}{\textbf{\"{U}bergabeparameter}}\\ \hline
+					\endfirsthead
+					\hline
+					\endlastfoot
+			
+					\textit{Anzeigen} & displayCoursesInSpecificPeriod() & timespan\\ \hline
+					\textit{Suchen} &  search() & searched\\ \hline
+					\textit{Details} & loadCourseDetailsPageOfSelectedCourse() & courseid\\ \hline
+				\end{longtable}
+			\end{center}
+			\item \textbf{Inputs:}
+			\begin{itemize}
+				\item Angebotszeitraum: Ermöglicht eine genauere Anzeige des Kursangebots, entweder Tagesangebot, Wochenangebot oder das gesamte Angebot. Die detaillierteren Suchoptionen sind nur für registrierte Benutzer verfügbar.
+				\item Suchobjekt (abhängig von Benutzerrolle): Ermöglicht eine genauere Suche, beispielsweise nach Kursen, Kursleitern oder Kurs-ID.
+			\end{itemize}
+				\begin{center}
+					\begin{longtable}{|p{3cm} |p{4cm} | p{4cm}|p{3cm} |p{2cm}|}
+						
+						\hline \multicolumn{1}{|c|}{\textbf{Feld}} & \multicolumn{1}{|c|}{\textbf{Action}} & \multicolumn{1}{|c|}{\textbf{Validatoren}}  &  \multicolumn{1}{|c|}{\textbf{ID}} \\ \hline
+						\endfirsthead
+						\hline
+						\endlastfoot
+						\textit{Angebots-zeitraum} & setDisplayPeriod() & validateRequired & time\\ \hline
+						\textit{Suchobjekt} & setSearchParam() & validateRequired & searchparam\\ \hline
+					\end{longtable}
+				\end{center}
+			\item \textbf{Outputs:}
+			\begin{itemize}
+				\item Tabelle mit Ergebnissen der Suche.
+				\item Schaltfläche um zwischen Ergebnissen zu Blättern.
+			\end{itemize}
+					\begin{center}
+						\begin{longtable}{|p{5cm} | p{4cm}|p{3cm}|}
+							
+							\hline \multicolumn{1}{|c|}{\textbf{Ausgabefeld}} & \multicolumn{1}{|c|}{\textbf{Typ}}  &  \multicolumn{1}{|c|}{\textbf{ID}} \\ \hline
+							\endfirsthead
+							\hline
+							\endlastfoot
+							\textit{Suchtabelle}  & dataTable & searchtable \\ \hline
+							\textit{Schaltfläche}  & panelGroup & pagenav \\ \hline
+						\end{longtable}
+					\end{center}
+			\item \textbf{BackingBean:}
+			\begin{itemize}
+				\item SearchCourseBean
+			\end{itemize}
+		\end{itemize}
+		
+		\paragraph{courseDetails.xhtml} \hypertarget{courseDetails}
+		RS\\
+		\begin{itemize}
+			\item \textbf{Beschreibung:} Zur genaueren Betrachtung eines einzelnen Kurses wird dieses Facelet benötigt.
+			\item \textbf{Buttons:}
+			\begin{itemize}
+				\item Anmelden (Benutzer, noch nicht angemeldet): Meldet den Benutzer zum Kurs an. \\ Zugehörige Methode: signUpForCourse()
+				\item Abmelden (Benutzer, wenn angemeldet): Meldet den Benutzer vom Kurs ab. \\ Zugehörige Methode: signOffFromCourse()
+				\item Teilnehmer anzeigen (Benutzer): Zeigt die zum Kurs angemeldeten Benutzer an. \hyperlink{listParticipants}{listParticipants.xhtml} \\ Zugehörige Methode: loadParticipantsPage()
+				\item Alle auswählen (Benutzer, zum Kurs angemeldet): Wählt alle Kurseinheiten des Kurses aus. \\ Zugehörige Methode: selectAllCourseUnits()
+				\item Speichern (Benutzer, zum Kurs angemeldet): Speichert alle ausgewählten Kurseinheiten und meldet den Nutzer dazu an. \\ Zugehörige Methode: signUpForCourseUnits()
+				\item Bearbeiten (Administrator, noch nicht im Bearbeitungsmodus): Ermöglicht die Bearbeitung der einzelnen Kursdetails. \\ Zugehörige Methode: editCourse()
+				\item Speichern (Administrator, im Bearbeitungsmodus): Speichert alle vorgenommenen Kursänderungen. \\ Zugehörige Methode: saveCourse()
+				\item Hinzufügen (Administrator): Fügt einen Kursleiter zum Kurs hinzu. Zugehörige Methode: addCourseLeader()
+				\item Kurseinheit anlegen (Kursleiter): Erstellt eine neue Kurseinheit zum Kurs. \hyperlink{editCourseUnit}{editCourseUnit.xhtml} \\ Zugehörige Methode: loadCreateCourseUnitPage()
+				\item Kurseinheit bearbeiten (Kursleiter): Ermöglicht die Bearbeitung einer einzelnen Kurseinheit. \hyperlink{editCourseUnit}{editCourseUnit.xhtml} \\ Zugehörige Methode: loadEditCourseUnitPage()
+				\item Kurs löschen (Administrator): Löscht den Kurs. \\ Zugehörige Methode: deleteCourse()
+			\end{itemize}
+			\begin{center}
+				\begin{longtable}{|p{4cm} |p{6cm} | p{4cm}|}
+						
+					\hline \multicolumn{1}{|c|}{\textbf{Button}} & \multicolumn{1}{|c|}{\textbf{Methode}} & \multicolumn{1}{|c|}{\textbf{\"{U}bergabeparameter}} \\ \hline
+					\endfirsthead
+					\hline
+					\endlastfoot
+			
+					\textit{Anmelden (B)} & signUpForCourse() & - \\ \hline
+					\textit{Abmelden (B)} &  signOffFromCourse() & - \\ \hline
+					\textit{Teilnehmer anzeigen (B)} & loadParticipantsPage() & courseid \\ \hline
+					\textit{Alle auswählen (B)} & selectAllCourseUnits() & - \\ \hline
+					\textit{Speichern (B)} & signUpForCourseUnits() & courseids \\ \hline
+					\textit{Bearbeiten (A)} & editCourse() & - \\ \hline
+					\textit{Speichern (A)} & saveCourse() & - \\ \hline
+					\textit{Hinzufügen (A)} & addCourseLeader() & - \\ \hline
+					\textit{Kurseinheit anlegen (K)} & loadCreateCourseUnitPage() & courseid \\ \hline
+					\textit{Kurseinheit bearbeiten (K)} & loadEditCourseUnitPage() & courseunitid \\ \hline
+					\textit{Kurs löschen (A)} & deleteCourse() & - \\ \hline
+				\end{longtable}
+			\end{center}
+			\item \textbf{Inputs:}
+			\begin{itemize}
+				\item Kursnews erhalten: Trägt Benutzer bei Anmeldung zum Kurs in die Kursnews ein.
+				\item Kurseinheit auswählen: Wählt Kurseinheit aus, zu der sich der Nutzer anmelden möchte.
+				\item Kursleiter auswählen (Administrator): Wählt Kursleiter aus, welcher gelöscht werden soll.
+				\item Kursleiter Name (Administrator): Eingabefeld für den Namen eines neuen Kursleiters.
+				\item Kursleiter E-Mail (Administrator): Eingabefeld für die E-Mail Adresse eines neuen Kursleiters.
+				\item Kursbeschreibung (Administrator): Eingabefeld für die Kursbeschreibung.
+				\item Maximale Teilnehmerzahl (Administrator): Eingabefeld für die maximale Teilnehmerzahl des Kurses.
+				\item Startdatum (Administrator): Eingabefeld für das Startdatum des Kurses.
+				\item Enddatum (Administrator): Eingabefeld für das Enddatum des Kurses.
+			\end{itemize}
+				\begin{center}
+					\begin{longtable}{|p{3cm} |p{9cm} |}
+						
+						\hline \multicolumn{1}{|c|}{\textbf{Feld}} & \multicolumn{1}{|c|}{\textbf{Backing-Bean-Attribute}}\\ \hline
+						\endfirsthead
+						\hline
+						\endlastfoot
+						\textit{Kursnews erhalten} & CourseDetailBean.registeredForCourseNews\\ \hline
+						\textit{Kurseinheit auswählen} & CourseDetailBean.selectedCourseUnits\\ \hline
+						\textit{Kursleiter auswählen (A)} & CourseDetailBean.leadersOfCourse\\ \hline
+						\textit{Kursleiter Name (A)} & CourseDetailBean.leadersOfCourse.User.lastname\\ \hline
+						\textit{Kursleiter E-Mail (A)} & CourseDetailBean.leadersOfCourse.User.email\\ \hline
+						\textit{Kursbeschreibung (A)} & CourseDetailBean.course.description\\ \hline
+						\textit{Maximale Teilnehmerzahl (A)} & CourseDetailBean.course.maxUsers\\ \hline
+						\textit{Startdatum (A)} & CourseDetailBean.course.startdate\\ \hline
+						\textit{Enddatum (A)} & CourseDetailBean.course.enddate\\ \hline
+					\end{longtable}
+					\begin{longtable}{|p{3cm} |p{4cm} | p{4cm}|p{3cm} ||}
+						
+						\hline \multicolumn{1}{|c|}{\textbf{Feld}} & \multicolumn{1}{|c|}{\textbf{Validatoren}}  &  \multicolumn{1}{|c|}{\textbf{Konverter}} &  \multicolumn{1}{|c|}{\textbf{ID}} \\ \hline
+						\endfirsthead
+						\hline
+						\endlastfoot
+						\textit{Kursnews erhalten} & - & - & getcnews\\ \hline
+						\textit{Kurseinheit auswählen} & - & - & selectcunit\\ \hline
+						\textit{Kursleiter auswählen (A)} & - & - & selectcleader\\ \hline
+						\textit{Kursleiter Name (A)} & validateRequired, validateLength (min = 1, max = 100) & - & cleadername\\ \hline
+						\textit{Kursleiter E-Mail (A)} & validateRequired, validateLength (min = 5, max = 319) & - & cleadermail\\ \hline
+						\textit{Kursbeschreibung (A)} & InputTextValidator, validateLength (min = 0, max = 1000) & - & cdetails\\ \hline
+						\textit{Maximale Teilnehmerzahl (A)} & - & convertNumber & maxparticipants\\ \hline
+						\textit{Startdatum (A)} & DateValidator & convertDateTime & begin\\ \hline
+						\textit{Enddatum (A)} & DateValidator & convertDateTime & end\\ \hline
+					\end{longtable}
+				\end{center}
+			\item \textbf{Outputs:}
+			\begin{itemize}
+				\item Tabelle Kursleiter: Tabelle mit den Kontaktinformationen der/des Kursleiters.
+				\item Tabelle Kurseinheiten: Tabelle mit allen Kurseinheiten des Kurses und zugehörigen Informationen wie Ort, Preis oder Datum.
+				\item Kurs-ID: Zeigt die zum Kurs zugehörige ID an.
+				\item Kursbeschreibung: Zeigt die Beschreibung zum Kurs an.
+				\item Maximale Teilnehmerzahl: Zeigt die für den Kurs maximale Teilnehmerzahl an.
+				\item Fehlermeldung zu den einzelnen Eingabefeldern, bei falscher Eingabe.
+			\end{itemize}
+					\begin{center}
+						\begin{longtable}{|p{5cm} | p{4cm}|p{3cm}|}
+							
+							\hline \multicolumn{1}{|c|}{\textbf{Ausgabefeld}} & \multicolumn{1}{|c|}{\textbf{Typ}}  &  \multicolumn{1}{|c|}{\textbf{ID}} \\ \hline
+							\endfirsthead
+							\hline
+							\endlastfoot
+							\textit{Tabelle Kursleiter}  & dataTable & kursleiter \\ \hline
+							\textit{Tabelle Kurseinheiten}  & dataTable & kurseinheiten \\ \hline
+							\textit{Kurs-ID}  & outputText & id \\ \hline
+							\textit{Kursbeschreibung}  & outputText & beschr \\ \hline
+							\textit{Minimale Teilnehmerzahl}  & outputText & minteilnehmer \\ \hline
+							\textit{Maximale Teilnehmerzahl}  & outputText & maxteilnehmer \\ \hline
+							\textit{Kursleiter Name Fehlermeldung}  & message & knamefehler \\ \hline
+							\textit{Kursleiter E-Mail Fehlermeldung}  & message & kmailfehler \\ \hline
+							\textit{Kursbeschreibung Fehlermeldung}  & message & beschrfehler \\ \hline
+							\textit{Maximale Teilnehmerzahl Fehlermeldung}  & messages globalOnly & maxteilnfehler \\ \hline
+							\textit{Startdatum Fehlermeldung}  & message & startdatumfehler \\ \hline
+							\textit{Enddatum Fehlermeldung}  & message & enddatumfehler \\ \hline
+						\end{longtable}
+					\end{center}
+			\item \textbf{BackingBean:}
+			\begin{itemize}
+				\item CourseDetailBean
+				\item CourseManagementBean
+			\end{itemize}
+		\end{itemize}
+		
+		\subsection{users}
+		
+		\subsubsection{registeredUser}
+		
+		\paragraph{myCourses.xhtml} \hypertarget{myCourses}
+		KH\\
+		\begin{itemize}
+			\item \textbf{Beschreibung:} Auf dieser Seite werden alle Kurse angezeigt, in die der Teilnehmer eingetragen ist.
+			\item \textbf{Links:}
+				\begin{itemize}
+					\item Kurstitel: Über die Kurstitel gelangt der Benutzer auf die jeweilige Kursdetailseite. (\hyperlink{courseDetails}{courseDetails.xhtml})
+				\end{itemize}
+				
+				\begin{center}
+					\begin{longtable}{|p{3cm} |p{10cm} |}
+						
+						\hline \multicolumn{1}{|c|}{\textbf{Link}} & \multicolumn{1}{|c|}{\textbf{\"{U}bergabeparameter}} \\ \hline
+						\endfirsthead
+						\hline
+						\endlastfoot
+						
+						\textit{Kurstitel } & courseId (Id des ausgewählten Kurses wird übergeben)\\ \hline
+					\end{longtable}
+				\end{center}
+			\item \textbf{Button:}	
+				\begin{itemize}
+					\item Details: Über den Button Details hinter dem jeweiligen Kurs gelangt der Benutzer auf die jeweilige Kursdetailseite. (\hyperlink{courseDetails}{courseDetails.xhtml}) \\ zugehörige Methode: loadCourseDetailsPageOfSelectedCourse()
+				\end{itemize}
+				\begin{center}
+					\begin{longtable}{|p{4cm} |p{6cm} | p{4cm}|}
+						
+						\hline \multicolumn{1}{|c|}{\textbf{Button}} & \multicolumn{1}{|c|}{\textbf{Methode}} & \multicolumn{1}{|c|}{\textbf{\"{U}bergabeparameter}} \\ \hline
+						\endfirsthead
+						\hline
+						\endlastfoot
+						
+						\textit{Details} &  loadCourseDetailsPageOfSelected Course()  & courseID (Id des ausgewählten Kurses wird übergeben) \\ \hline
+					\end{longtable}
+				\end{center}
+				
+				
+			\item \textbf{Outputs:}
+				\begin{itemize}
+					\item Tabelle Auflistung aller Kurse: Hier werden dem Benutzer alle seine angemeldeten Kurse angezeigt.
+				\end{itemize}
+				
+				\begin{center}
+					\begin{longtable}{|p{5cm} | p{4cm}|p{3cm}|}
+						
+						\hline \multicolumn{1}{|c|}{\textbf{Ausgabefeld}} & \multicolumn{1}{|c|}{\textbf{Typ}}  &  \multicolumn{1}{|c|}{\textbf{ID}} \\ \hline
+						\endfirsthead
+						\hline
+						\endlastfoot
+						\textit{Kurstabelle}  & dataTable & kurstabelle \\ \hline
+					\end{longtable}
+				\end{center}
+				
+			\item \textbf{BackingBean:}
+				\begin{itemize}
+					\item MyCoursesBean
+				\end{itemize}
+		\end{itemize}
+		
+		\paragraph{profile.xhtml} \hypertarget{profile}
+		KH\\
+		\begin{itemize}
+			\item \textbf{Beschreibung:} Auf dieser Seite werden die persönlichen Daten und der Kontostand des Benutzers angezeigt. Erstere kann er hier ändern. Der Kursleiter kann hier den Benutzer aktivieren, und der Administrator den Benutzer löschen.
+			\item \textbf{Buttons:}
+				\begin{itemize}
+					\item Bearbeiten: Nach Klicken auf diesen Button können die persönlichen Daten geändert werden. Der Button trägt nun die Aufschrift 'Speichern' und ist mit dessen dazugehöriger Methode hinterlegt. \\ Zugehörige Methode: editUserData()
+					\item Speichern: Durch Drücken dieses Buttons werden die vorgenommenen Änderungen gespeichert, sofern alle Daten korrekt eingegeben wurden. Bei Änderung der E-Mail-Adresse wird außerdem eine Bestätigungsmail mit einem Verifizierungslink verschickt. Bei erfolgreicher Speicherung erscheint der Button 'Bearbeiten' anstelle des Button 'Speichern'. \\ Zugehörige Methode: saveUserData()
+					\item Durchsuchen: Durch Drücken dieses Buttons kann das eigene Dateiverzeichnis nach einem Bild durchsucht werden.
+					\item Hochladen: Durch Drücken dieses Buttons wird das ausgewählte Profilbild hochgeladen. \\ Zugehörige Methode: uploadProfilPic()  weitergeleitet.
+					\item Benutzer löschen: Durch Drücken dieses Buttons entfernt der Administrator diesen Benutzer aus dem System, oder der Benutzer kann sich selbst auf inaktiv setzen. Setzt sich der Benutzer selbst auf inaktiv, so wird er auf die Startseite weitergeleitet. (\hyperlink{index}{index.xhtml})  \\ Zugehörige Methoden: deleteUser(), setUserInactive() 
+				\end{itemize}
+				
+					\begin{center}
+						\begin{longtable}{|p{4cm} |p{6cm} | p{4cm}|}
+							
+							\hline \multicolumn{1}{|c|}{\textbf{Button}} & \multicolumn{1}{|c|}{\textbf{Methode}} & \multicolumn{1}{|c|}{\textbf{\"{U}bergabeparameter}} \\ \hline
+							\endfirsthead
+							\hline
+							\endlastfoot
+							
+							\textit{Bearbeiten } & editUserData() & - \\ \hline
+							\textit{Speichern } & saveUserData() & - \\ \hline
+							\textit{Duchsuchen } & - & - \\ \hline
+							\textit{Hochladen } & uploadProfilPic() & - \\ \hline
+							\textit{Benutzer löschen} &  deleteUser(), setUserInactive()  & - \\ \hline
+						\end{longtable}
+					\end{center}
+				
+			\item \textbf{Inputs:}
+				\begin{itemize}
+					\item Anrede: Hier kann der Benutzer seine Anrede ändern.
+					\item Vorname: Hier kann der Benutzer seinen Vornamen ändern.
+					\item Name: Hier kann der Benutzer seinen Namen ändern.
+					\item Geburtstag: Hier kann der Benutzer sein Geburtsdatum ändern.
+					\item Straße: Hier kann der Benutzer seine Straße ändern.
+					\item Hausnummer: Hier kann der Benutzer seine Hausnummer ändern.
+					\item Stadt: Hier kann der Benutzer seine Stadt ändern.
+					\item Postleitzahl: Hier kann der Benutzer seine Postleitzahl ändern.
+					\item Land: Hier kann der Benutzer seine Land ändern.
+					\item E-Mail-Adresse: Hier kann der Benutzer seine E-Mail-Adresse ändern.
+					\item Benutzername: Hier kann der Benutzer seinen Benutzernamen ändern.
+					\item Passwort: Hier kann der Benutzer sein Passwort ändern.
+					\item Passwort bestätigen: Hier muss der Benutzer sein geändertes Passwort bestätigen.
+					\item Benutzerrolle: Hier kann der Administrator die Benutzerrolle eines Nutzers ändern.
+					\item Profilbild Pfad: Hier kann der Benutzer sein Profilbild ändern.
+				\end{itemize}
+				
+				\begin{center}
+					\begin{longtable}{|p{3cm} |p{6cm} | p{4cm}|p{3cm}|}
+						
+						\hline \multicolumn{1}{|c|}{\textbf{Eingabefeld}} & \multicolumn{1}{|c|}{\textbf{Backing-Bean-Attribute}} & \multicolumn{1}{|c|}{\textbf{Typ}}  &  \multicolumn{1}{|c|}{\textbf{ID}} \\ \hline
+						\endfirsthead
+						\hline
+						\endlastfoot
+						\textit{Anrede} & UserProfilBean.user.salutation & selectOneMenu & anrede \\ \hline
+						\textit{Vorname} & UserProfilBean.user.fistname & inputText & vorname \\ \hline
+						\textit{Name} & UserProfilBean.user.lastname & inputText & name \\ \hline
+						\textit{Geburtstag } & UserProfilBean.user.dateOfBirth & inputText & geburtstag \\ \hline
+						\textit{Straße} & UserProfilBean.user.address.street & inputText & straße\\ \hline
+						\textit{Hausnummer} & UserProfil.user.address. houseNumber  & inputText & hausnummer\\ \hline
+						\textit{Stadt} & UserProfilBean.user.address.city & inputText & stadt \\ \hline
+						\textit{Postleitzahl} & UserProfilBean.user.address. zipCode & inputText & postleitzahl \\ \hline
+						\textit{Land} & UserProfilBean.user.address. country & inputText & land \\ \hline
+						\textit{E-Mail-Adresse} & UserProfilBean.user.email & inputText & mail\\ \hline
+						\textit{Benutzername} & UserProfilBean.user.username & inputText & benutzername \\ \hline
+						\textit{Passwort} & UserProfilBean.user.password  & inputSecret & passwort \\ \hline
+						\textit{Passwort bestätigen} & UserProfilBean.user.password & inputSecret & bestätigungs- passwort \\ \hline
+						\textit{Benutzerrolle} & UserProfilBean.user.userRole & inputText & rolle \\ \hline
+						\textit{Profilbild Pfad} & UserProfilBean.user.profilImage & inputFile & bildpfad \\ \hline
+					\end{longtable}
+				\end{center}
+				
+				\begin{center}
+					\begin{longtable}{|p{3cm} |p{8cm} | p{5cm}|}
+						
+						\hline \multicolumn{1}{|c|}{\textbf{Eingabefeld}} & \multicolumn{1}{|c|}{\textbf{Validator}} & \multicolumn{1}{|c|}{\textbf{Konverter}} \\ \hline
+						\endfirsthead
+						\hline
+						\endlastfoot
+						\textit{Anrede} & - & - \\ \hline
+						\textit{Vorname} & validateLength (min =0, max = 100) & - \\ \hline
+						\textit{Name} & validateLength (min = 0, max = 100) & -  \\ \hline
+						\textit{Geburtstag} & DateOfBirthValidator & convertDateTime  \\ \hline
+						\textit{Straße} & validateLength (min = 0, max = 100) & - \\ \hline
+						\textit{Hausnummer} & validateLength (min = 0, max = 9) & - \\ \hline
+						\textit{Stadt} & validateLength (min = 1, max = 100), validateRequired & -  \\ \hline
+						\textit{Postleitzahl} & validateLength (min = 1, max = 10), validateRequired & - \\ \hline
+						\textit{Land} & validateLength (min = 1, max = 100), validateRequired & -  \\ \hline
+						\textit{E-Mail-Adresse} & EMailValidator, validateLength (min = 1, max = 390), validateRequired & - \\ \hline
+						\textit{Benutzername} & UserNameValidator, validateLength (min = 5, max = 100), validateRequired  & - \\ \hline
+						\textit{Passwort} & PasswordValidator (mindestens 8 Zeichen, mind. 1 Sonderzeichen, mind. 1 Ziffer, Groß- und Kleinbuchstaben, keine Umlaute, kein 'ß'), validateRequired & -  \\ \hline
+						\textit{Passwort bestätigen} & ConfirmPasswordValidator, validateRequired & - \\ \hline
+						\textit{Benutzerrolle} & validateRequired & - \\ \hline
+						\textit{Profilbild Pfad} & UserImageValidator & - \\ \hline
+					\end{longtable}
+				\end{center}
+				
+				
+			\item \textbf{Outputs:}
+				\begin{itemize}
+					\item Benutzer-ID: Ausgabe der automatisch generierten ID.
+					\item Vorname Fehlermeldung: Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
+					\item Name Fehlermeldung: Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
+					\item Geburtstag Fehlermeldung: Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
+					\item Straße Fehlermeldung: Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
+					\item Hausnummer Fehlermeldung: Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
+					\item Stadt Fehlermeldung: Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
+					\item Postleitzahl Fehlermeldung: Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
+					\item Land Fehlermeldung: Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
+					\item E-Mail-Adresse Fehlermeldung: Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
+					\item Benutzername Fehlermeldung: Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
+					\item Passwort Fehlermeldung: Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
+					\item Passwort bestätigen Fehlermeldung: Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
+					\item Profilbild Fehlermeldung: Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
+					\item Kontostand: Ausgabe des aktuellen Kontostandes.
+					\item Tabelle Auflistung der Trainingskurse: Hier werden dem Kursleiter alle Kurse aufgelistet, die er leitet.
+					\item Profilbild: Hier wird das Profilbild angezeigt.
+				\end{itemize}
+				
+				\begin{center}
+					\begin{longtable}{|p{5cm} | p{4cm}|p{5cm}|}
+						
+						\hline \multicolumn{1}{|c|}{\textbf{Ausgabefeld}} & \multicolumn{1}{|c|}{\textbf{Typ}}  &  \multicolumn{1}{|c|}{\textbf{ID}} \\ \hline
+						\endfirsthead
+						\hline
+						\endlastfoot
+						\textit{Benutzer-ID}  & outputText & nutzerid \\ \hline
+						\textit{Vorname Fehlermeldung }  & message & vornamefehler \\ \hline
+						\textit{Name Fehlermeldung } & message & namefehler \\ \hline
+						\textit{Geburtstag  Fehlermeldung} & message & geburtstagsfehler \\ \hline
+						\textit{Straße Fehlermeldung }& message & straßefehler\\ \hline
+						\textit{Hausnummer Fehlermeldung }& message & hausnrfehler\\ \hline
+						\textit{Stadt Fehlermeldung }& message & stadtfehler \\ \hline
+						\textit{Postleitzahl Fehlermeldung } & message & postleitzahlfehler \\ \hline
+						\textit{Land Fehlermeldung } & message & landfehler \\ \hline
+						\textit{E-Mail-Adresse Fehlermeldung} & message & mailfehler\\ \hline
+						\textit{Benutzername Fehlermeldung }& message & nutzernamefehler \\ \hline
+						\textit{Passwort Fehlermeldung} &  message & passwortfehler \\ \hline
+						\textit{Passwort bestätigen Fehlermeldung}  & message & bestätigungspwfehler \\ \hline
+						\textit{Profilbild Fehlermeldung} &  message & bildfehler \\ \hline
+						\textit{Kontostand} &  outputText & kontostand \\ \hline
+						\textit{Tabelle Trainingskurse} &  dataTable & trainingskurse \\ \hline
+						\textit{Profilbild} &  graphicImage & bild \\ \hline
+					\end{longtable}
+				\end{center}
+				
+			\item \textbf{BackingBean:}
+				\begin{itemize}
+					\item UserProfileBean
+					\item UserManagementBean				
+				\end{itemize}
+		\end{itemize}
+		
+		\paragraph{scheduler.xhtml} \hypertarget{scheduler}
+		RS\\
+		\begin{itemize}
+			\item \textbf{Beschreibung:} Persönlicher Terminplaner mit anstehenden Kursen.
+			\item \textbf{Links:}
+			\begin{itemize}
+				\item Wochenansicht vorwärts: Zeigt die Termine der nächsten Woche an.
+				\item Wochenansicht rückwärts: Zeigt die Termine der letzten Woche an.
+			\end{itemize}
+				\begin{center}
+					\begin{longtable}{|p{3cm} |p{5cm} |}
+						
+						\hline \multicolumn{1}{|c|}{\textbf{Link}} & \multicolumn{1}{|c|}{\textbf{Methode}} \\ \hline
+						\endfirsthead
+						\hline
+						\endlastfoot
+						
+						\textit{Wochenansicht vorwärts} & displayNextWeek() \\ \hline
+						\textit{Wochenansicht rückwärts} & displayPreviousWeek() \\ \hline
+					\end{longtable}
+				\end{center}
+			\item \textbf{Outputs:}
+			\begin{itemize}
+				\item Wochentabelle: Zeigt von Montag bis Sonntag alle belegten Kurseinheiten an. Orientiert sich am klassischen Stundenplan, also mit stündlicher Ansicht.
+			\end{itemize}
+				\begin{center}
+					\begin{longtable}{|p{4cm} | p{3cm}|p{3cm}|}
+						
+						\hline \multicolumn{1}{|c|}{\textbf{Ausgabefeld}} & \multicolumn{1}{|c|}{\textbf{Typ}}  &  \multicolumn{1}{|c|}{\textbf{ID}} \\ \hline
+						\endfirsthead
+						\hline
+						\endlastfoot
+						\textit{Wochentabelle}  & dataTable & wtable \\ \hline
+					\end{longtable}
+				\end{center}
+			\item \textbf{BackingBean:}
+			\begin{itemize}
+				\item SchedulerBean
+			\end{itemize}
+		\end{itemize}
+		
+		\paragraph{leaderProfile.xhtml} \hypertarget{leaderProfile}
+		KH\\
+		\begin{itemize}
+			\item \textbf{Beschreibung:} Auf dieser Seite werden die Daten des Kursleiters, mit Ausnahme von sensiblen Daten wie Passwort oder Kontostand, und die von ihm geleiteten Kurse angezeigt.
+			\item \textbf{Outputs:} 
+			\begin{itemize}
+				\item Tabelle Auflistung Kursleiterdaten: Hier werden die Daten des Kursleiters und die von ihm geleiteten Kurse angezeigt.
+			\end{itemize}
+			
+			\begin{center}
+				\begin{longtable}{|p{5cm} | p{4cm}|p{3cm}|}
+					
+					\hline \multicolumn{1}{|c|}{\textbf{Ausgabefeld}} & \multicolumn{1}{|c|}{\textbf{Typ}}  &  \multicolumn{1}{|c|}{\textbf{ID}} \\ \hline
+					\endfirsthead
+					\hline
+					\endlastfoot
+					\textit{Tabelle Kursleiterdaten}  & dataTable & kursleiterdaten \\ \hline
+				\end{longtable}
+			\end{center}
+			
+			\item \textbf{BackingBean:}
+			\begin{itemize}
+				\item UserProfileBean			
+			\end{itemize}
+		\end{itemize}
+		
+		\paragraph{listParticipants.xhtml} \hypertarget{listParticipants}
+		KH\\
+		\begin{itemize}
+			\item \textbf{Beschreibung:} Hier kann der registrierte Benutzer die Teilnehmer eines Kurses mit Benutzername und Profilbild ansehen. Dem Kursleiter werden zusätzlich die E-Mail-Adresse und die Information über den Erhalt von Kursnews angezeigt. Außerdem kann er einen Teilnehmer aus dem Kurs entfernen.
+			\item \textbf{Buttons:}
+			\begin{itemize}
+				\item Löschen: Durch Drücken dieses Buttons kann der Kursleiter den entsprechenden Benutzer aus dem Kurs entfernen. \\ Zugehörige Methode: deleteUserFromCourse()
+				\item Zurück: Durch Drücken dieses Buttons kehrt der Benutzer zur entsprechenden Kursdetailseite zurück. (\hyperlink{courseDetails}{courseDetails.xhtml}) \\ Zugehörige Methode: cancel()
+				
+				\begin{center}
+					\begin{longtable}{|p{4cm} |p{6cm} | p{4cm}|}
+						
+						\hline \multicolumn{1}{|c|}{\textbf{Button}} & \multicolumn{1}{|c|}{\textbf{Methode}} & \multicolumn{1}{|c|}{\textbf{\"{U}bergabeparameter}} \\ \hline
+						\endfirsthead
+						\hline
+						\endlastfoot
+						
+						\textit{Löschen } & deleteUserFromCourse() & - \\ \hline
+						\textit{Zurück } & cancel() & courseId (die Id des entsprechenden Kurses wird übergeben) \\ \hline
+					\end{longtable}
+				\end{center}
+				
+			\end{itemize}
+			\item \textbf{Inputs:}
+			\begin{itemize}
+				\item Entfernen: Durch Setzen des Häkchens wählt der Kursleiter diesen Benutzer aus, um ihn anschließend über den Button 'Löschen' zu entfernen.
+				
+				\begin{center}
+					\begin{longtable}{|p{3cm} |p{5cm} | p{4cm}|p{3cm}|}
+						
+						\hline \multicolumn{1}{|c|}{\textbf{Eingabefeld}} & \multicolumn{1}{|c|}{\textbf{Backing-Bean-Attribute}} & \multicolumn{1}{|c|}{\textbf{Typ}}  &  \multicolumn{1}{|c|}{\textbf{ID}} \\ \hline
+						\endfirsthead
+						\hline
+						\endlastfoot
+						\textit{Entfernen} & ListParticipantsBean. usersToDelete & selectBooleanCheckbox & entfernen \\ \hline
+					\end{longtable}
+				\end{center}
+				
+			\end{itemize}
+			\item \textbf{Outputs:} 
+			\begin{itemize}
+				\item Tabelle Auflistung Kursteilnehmer: Hier werden die Teilnehmer des Kurses angezeigt.
+			\end{itemize}
+			
+			\begin{center}
+				\begin{longtable}{|p{5cm} | p{4cm}|p{3cm}|}
+					
+					\hline \multicolumn{1}{|c|}{\textbf{Ausgabefeld}} & \multicolumn{1}{|c|}{\textbf{Typ}}  &  \multicolumn{1}{|c|}{\textbf{ID}} \\ \hline
+					\endfirsthead
+					\hline
+					\endlastfoot
+					\textit{Tabelle Kursteilnehmer}  & dataTable & kursteilnehmer \\ \hline
+				\end{longtable}
+			\end{center}
+			
+			
+			\item \textbf{BackingBean:}
+			\begin{itemize}
+				\item ListParticipantsBean
+			\end{itemize}
+		\end{itemize}
+		
+		\subsubsection{courseLeader}
+		
+		\paragraph{editCourseUnit.xhtml} \hypertarget{editCourseUnit}
+		KH\\
+		\begin{itemize}
+			\item \textbf{Beschreibung:} Auf dieser Seite können Kursleiter beziehungsweise Administratoren Kurseinheiten anlegen und bearbeiten, oder Kursteilnehmer hinzufügen und entfernen
+			\item \textbf{Buttons:}
+				\begin{itemize}
+					\item Bearbeiten (Kurseinheit): Nach Klicken auf diesen Button können die Daten der Kurseinheit geändert beziehungsweise eingetragen werden. Der Button trägt nun die Aufschrift 'Speichern' und ist mit dessen dazugehöriger Methode hinterlegt. \\ Zugehörige Methode: editCourseUnit()
+					\item Speichern (Kurseinheit): Durch Drücken dieses Buttons werden die vorgenommenen Änderungen gespeichert, sofern alle Daten korrekt eingegeben wurden. Bei erfolgreicher Speicherung erscheint der Button 'Bearbeiten' anstelle des Button 'Speichern' und es wird eine Erfolgsmeldung ausgegeben. \\ Zugehörige Methode: saveCourseUnit()
+					\item Löschen (Kurseinheit): Durch Drücken des Button 'Löschen' wird die Kurseinheit entfernt und der Kursleiter wird auf die Kursdetails Seite weitergeleitet. (\hyperlink{courseDetails}{courseDetails.xhtml}) \\ Zugehörige Methode: deleteCourseUnit()
+					\item Löschen (Teilnehmer): Durch Drücken dieses Buttons wird der markierte Teilnehmer aus der Kurseinheit entfernt. \\ Zugehörige Methode: deleteUserFromCourseUnit()
+					\item Hinzufügen (Teilnehmer): Durch Drücken dieses Buttons wird der angegebene Teilnehmer zu dieser Kurseinheit hinzugefügt, sofern der Benutzername im System existiert und die Daten korrekt eingegeben wurden. \\ Zugehörige Methode: addUserToCourseUnit()
+				\end{itemize}
+				
+				\begin{center}
+					\begin{longtable}{|p{4cm} |p{6cm} | p{4cm}|}
+						
+						\hline \multicolumn{1}{|c|}{\textbf{Button}} & \multicolumn{1}{|c|}{\textbf{Methode}} & \multicolumn{1}{|c|}{\textbf{\"{U}bergabeparameter}} \\ \hline
+						\endfirsthead
+						\hline
+						\endlastfoot
+						
+							\textit{Bearbeiten (Kurseinheit) } & editCourseUnit() & - \\ \hline
+							\textit{Speichern (Kurseinheit) } & saveCourseUnit() & - \\ \hline
+							\textit{Löschen (Kurseinheit) } & deleteCourseUnit() & - \\ \hline
+							\textit{Löschen (Teilnehmer) } & deleteUserFromCourseUnit() & - \\ \hline
+							\textit{Hinzufügen (Teilnehmer) } & addUserToCourseUnit() & - \\ \hline
+					\end{longtable}
+				\end{center}
+				
+				
+			\item \textbf{Inputs:}
+				\begin{itemize}
+					\item Termin: Hier gibt der Kursleiter den Termin der Kurseinheit ein.
+					\item Startzeit: Hier gibt der Kursleiter die Startzeit der Kurseinheit ein.
+					\item Endzeit: Hier gibt der Kursleiter die Endzeit der Kurseinheit ein.
+					\item Straße: Hier gibt der Kursleiter die Straße ein.
+					\item Hausnummer: Hier gibt der Kursleiter die Hausnummer ein.
+					\item Postleitzahl: Hier gibt der Kursleiter die entsprechende Postleitzahl ein.
+					\item Stadt: Hier gibt der Kursleiter die Stadt ein, in der die Kurseinheit stattfindet.
+					\item Ort: Hier gibt der Kursleiter den Ort (Raumnummer, Turnhalle,..) ein, in dem die Kurseinheit stattfindet.
+					\item Beschreibung: Hier gibt der Kursleiter die Beschreibung der Kurseinheit ein.
+					\item Preis: Hier gibt der Kursleiter den Preis der Kurseinheit ein.
+					\item Kursleiter: Hier wird der Leiter des Kurses angezeigt.
+					\item Mindestteilnehmerzahl: Hier gibt der Kursleiter die minimale Teilnehmerzahl der Kurseinheit an.
+					\item Maximale Teilnehmerzahl: Hier gibt der Kursleiter die maximale Teilnehmerzahl der Kurseinheit an.
+					\item Teilnehmer markieren: Hier kann der Kursleiter einen Hacken setzen, um den Teilnehmer für das anschließende Löschen zu markieren.
+					\item Benutzer-ID: Hier gibt der Kursleiter die Benutzer-ID des Teilnehmers an, welchen er zu der Kurseinheit hinzufügen will.
+					\item Name (Teilnehmer): Hier gibt der Kursleiter den entsprechenden Namen des Teilnehmers an, welchen er zu der Kurseinheit hinzufügen will.
+					\item Vorname (Teilnehmer): Hier gibt der Kursleiter den entsprechenden Vornamen des Teilnehmers an, welchen er zu der Kurseinheit hinzufügen will.
+					\item Checkbox regelmäßig: Durch Setzen dieses Hackens markiert der Kursleiter den Kurs als regelmäßig.
+					\item Turnus: Hier wählt der Kursleiter aus einem Drop-Down Menü aus, ob der Kurs beispielsweise wöchentlich stattfinden soll.
+					\item Einheitenanzahl: Hier gibt der Kursleiter an, wie viele Einheiten er anlegen will.
+				\end{itemize}
+				
+				\begin{center}
+					\begin{longtable}{|p{3cm} |p{6cm} | p{4cm}|p{3cm}|}
+						
+						\hline \multicolumn{1}{|c|}{\textbf{Eingabefeld}} & \multicolumn{1}{|c|}{\textbf{Backing-Bean-Attribute}} & \multicolumn{1}{|c|}{\textbf{Typ}}  &  \multicolumn{1}{|c|}{\textbf{ID}} \\ \hline
+						\endfirsthead
+						\hline
+						\endlastfoot
+						\textit{Titel} & CourseUnitManagementBean. courseUnit.title & inputText & termin \\ \hline
+						\textit{Termin} & CourseUnitManagementBean. courseUnit.date & inputText & termin \\ \hline
+						\textit{Startzeit} & CourseUnitManagementBean. courseUnit.starttime & inputText & startzeit \\ \hline
+						\textit{Endzeit} & CourseUnitManagementBean. courseUnit.endtime & inputText & endzeit \\ \hline
+						\textit{Straße} & CourseUnitManagementBean. courseUnit.address.street & inputText & straße\\ \hline
+						\textit{Hausnummer} & CourseUnitManagement. courseUnit.address.houseNumber & inputText & straße\\ \hline
+						\textit{Postleitzahl} & CourseUnitManagementBean. courseUnit.address.zipCode & inputText & postleitzahl \\ \hline
+						\textit{Stadt} & CourseUnitManagementBean. courseUnit.address.city & inputText & stadt \\ \hline
+						\textit{Ort} & CourseUnitManagementBean. courseUnit.location & inputText & ort \\ \hline
+						\textit{Beschreibung} & CourseUnitManagementBean. courseUnit.description & inputText & beschreibung\\ \hline
+						\textit{Preis} & CourseUnitManagementBean. courseUnit.price & inputText & preis \\ \hline
+						\textit{Kursleiter} & CourseUnitManagementBean. courseUnit.courseAdmin & inputText & kursleiter \\ \hline
+						\textit{Mindestteil- nehmerzahl} & CourseUnitManagementBean. CourseUnit.minUsers & inputText & minteilnehmer \\ \hline
+						\textit{Maximale Teilnehmerzahl} & CourseUnitManagementBean. CourseUnit.maxUsers & inputText & maxteilnehmer \\ \hline
+						\textit{Teilnehmer markieren} & - & selectBooleanCheckbox & markteilnehmer \\ \hline
+						\textit{Benutzer-ID} & CourseUnitManagementBean. userToAdd.userID & inputText & idnutzer \\ \hline
+						\textit{Name Teilnehmer} & CourseUnitManagementBean. userToAdd.lastname & inputText & nameteilnehmer \\ \hline
+						\textit{Vorname Teilnehmer} & CourseUnitManagementBean. userToAdd.firstname & inputText & vornameteilnehmer \\ \hline
+						\textit{Checkbox regelmäßig} & CourseUnitManagementBean. isRegularCourseUnit & selectBooleanCheckbox & regelmäßig \\ \hline
+						\textit{Einheitenanzahl} & CourseUnitManagementBean. cycleOfCourseUnit.NumberOfUnits & inputText & einheiten \\ \hline
+					\end{longtable}
+				\end{center}
+				
+				\begin{center}
+					\begin{longtable}{|p{3cm} |p{8cm} | p{5cm}|}
+						
+						\hline \multicolumn{1}{|c|}{\textbf{Eingabefeld}} & \multicolumn{1}{|c|}{\textbf{Validator}} & \multicolumn{1}{|c|}{\textbf{Konverter}} \\ \hline
+						\endfirsthead
+						\hline
+						\endlastfoot
+						\textit{Titel} & validateLength (min = 0, max = 150) & - \\ \hline 
+						\textit{Termin} & DateValidator , validateRequired & convertDateTime \\ \hline
+						\textit{Startzeit} & validateRequired & convertDateTime \\ \hline
+						\textit{Endzeit} & validateRequired & convertDateTime \\ \hline
+						\textit{Straße} & validateLength (min = 0, max = 100) & - \\ \hline
+						\textit{Hausnummer} & validateLength (min = 0, max = 10) & - \\ \hline
+						\textit{Postleitzahl} & validateLength (min = 1, max = 9), validateRequired & - \\ \hline
+						\textit{Stadt} & validateLength (min = 1, max = 100), validateRequired & -  \\ \hline
+						\textit{Ort} & validateLength (min = 0, max = 100) & -  \\ \hline
+						\textit{Beschreibung} & inputTextValidator, validateLength (min = 0, max = 1000) & - \\ \hline
+						\textit{Preis} & PriceValidator  & convertNumber \\ \hline
+						\textit{Kursleiter} & validateRequired & -  \\ \hline
+						\textit{Mindesteil- nehmerzahl} & validateRequired & convertNumber \\ \hline
+						\textit{Maximale Teilnehmerzahl} & validateRequired & convertNumber \\ \hline
+						\textit{Teilnehmer markieren} & - & - \\ \hline
+						\textit{Benutzer-ID} & validateLength (min = 0, max = 9 ) & convertNumber \\ \hline
+						\textit{Name (Teilnehmer)} & validateLength (min = 0, max = 100 ) & - \\ \hline
+						\textit{Vorname (Teilnehmer)} & validateLength (min = 0, max = 100) & - \\ \hline
+						\textit{Checkbox regelmäßig} & - & - \\ \hline
+						\textit{Einheitenanzahl} & - & convertNumber \\ \hline
+					\end{longtable}
+				\end{center}
+				
+			\item \textbf{Outputs:}
+				\begin{itemize}
+					\item Titel (Fehlermeldung): Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
+					\item Termin (Fehlermeldung): Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
+					\item Startzeit (Fehlermeldung): Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
+					\item Endzeit (Fehlermeldung): Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
+					\item Straße (Fehlermeldung): Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
+					\item Hausnummer (Fehlermeldung): Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
+					\item Postleitzahl (Fehlermeldung): Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
+					\item Stadt (Fehlermeldung): Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
+					\item Raum (Fehlermeldung): Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
+					\item Beschreibung (Fehlermeldung): Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
+					\item Preis (Fehlermeldung): Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
+					\item Kursleiter (Fehlermeldung): Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
+					\item Mindestteilnehmerzahl (Fehlermeldung): Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
+					\item Maximale Teilnehmerzahl (Fehlermeldung): Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
+					\item Status: Hier wird ausgegeben, wie viele Teilnehmer bereits in der Kurseinheit eingetragen sind.
+					\item Benutzer-ID (Fehlermeldung): Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
+					\item Name (Teilnehmer (Fehlermeldung)): Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
+					\item Vorname (Teilnehmer (Fehlermeldung)): Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
+					\item Einheitenanzahl (Fehlermeldung): Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
+					\item FacesMessage 'Speichern erfolgreich'
+				\end{itemize}
+				
+				\begin{center}
+					\begin{longtable}{|p{5cm} | p{4cm}|p{5cm}|}
+						
+						\hline \multicolumn{1}{|c|}{\textbf{Ausgabefeld}} & \multicolumn{1}{|c|}{\textbf{Typ}}  &  \multicolumn{1}{|c|}{\textbf{ID}} \\ \hline
+						\endfirsthead
+						\hline
+						\endlastfoot
+						\textit{Termin (Fehlermeldung)}  & message & terminfehler \\ \hline
+						\textit{Startzeit (Fehlermeldung)}  & message & startzeitfehler \\ \hline
+						\textit{Endzeit (Fehlermeldung)}  & message & endzeitfehler \\ \hline
+						\textit{Straße (Fehlermeldung) }  & message & straßenfehler \\ \hline
+						\textit{Hausnummer (Fehlermeldung) }  & message & hausnrfehler \\ \hline
+						\textit{Postleitzahl (Fehlermeldung)} & message & postleitzahlfehler \\ \hline
+						\textit{Stadt (Fehlermeldung)} & message & stadtfehler \\ \hline
+						\textit{Raum (Fehlermeldung)}& message & raumfehler\\ \hline
+						\textit{Beschreibung (Fehlermeldung)}& message & beschreibungsfehler\\ \hline
+						\textit{Preis (Fehlermeldung) } & message & preisfehler \\ \hline
+						\textit{Kursleiter (Fehlermeldung) } & message & kursleiter- fehler \\ \hline
+						\textit{Mindestteilnehmerzahl (Fehlermeldung)} & message & minteilnehmerfehler\\ \hline
+						\textit{Maximale Teilnehmerzahl (Fehlermeldung) }& message & maxteilnehmerfehler \\ \hline
+						\textit{Status} &  message & statusfehler \\ \hline
+						\textit{Benutzer-ID (Fehlermeldung)}  & message & nutzeridfehler \\ \hline
+						\textit{Name (Teilnehmer (Fehlermeldung))} &  message & namefehler \\ \hline
+						\textit{Vorname (Teilnehmer (Fehlermeldung))} &  message & vornamefehler \\ \hline
+						\textit{Einheitenanzahl (Fehlermeldung)} &  message & einheitenfehler \\ \hline
+						\textit{FacesMessage Speichern} &  messages globalOnly & speichern \\ \hline
+					\end{longtable}
+				\end{center}
+				
+			\item \textbf{BackingBean:}
+				\begin{itemize}
+					\item CourseUnitManagementBean
+				\end{itemize}
+		\end{itemize}
+		
+		\paragraph{activateUsers.xhtml} \hypertarget{activateUsers}
+		KH\\
+		\begin{itemize}
+			\item \textbf{Beschreibung:} Hier werden alle im System noch nicht aktivierten Benutzer angezeigt. Diese können nun vom Kursleiter oder Administrator aktiviert werden. 
+			\item \textbf{Buttons:}
+				\begin{itemize}
+					\item Benutzer aktivieren: Durch Klicken dieses Buttons wird der Account des markierten Benutzers aktiviert. \\ Zugehörige Methode: activateAccounts()
+				\end{itemize}
+				
+				\begin{center}
+					\begin{longtable}{|p{4cm} |p{6cm} | p{4cm}|}
+						
+						\hline \multicolumn{1}{|c|}{\textbf{Button}} & \multicolumn{1}{|c|}{\textbf{Methode}} & \multicolumn{1}{|c|}{\textbf{\"{U}bergabeparameter}} \\ \hline
+						\endfirsthead
+						\hline
+						\endlastfoot
+						
+						\textit{Benutzer aktivieren } & activateAccounts() & - \\ \hline
+					\end{longtable}
+				\end{center}
+				
+			\item \textbf{Inputs:}
+				\begin{itemize}
+					\item Benutzer aktivieren: Der Kursleiter kann durch Setzen des Häkchens Benutzer auswählen, um diese anschließend zu aktivieren.
+				\end{itemize}
+				
+				\begin{center}
+					\begin{longtable}{|p{3cm} |p{5cm} | p{4cm}|p{3cm}|}
+						
+						\hline \multicolumn{1}{|c|}{\textbf{Eingabefeld}} & \multicolumn{1}{|c|}{\textbf{Backing-Bean-Attribute}} & \multicolumn{1}{|c|}{\textbf{Typ}}  &  \multicolumn{1}{|c|}{\textbf{ID}} \\ \hline
+						\endfirsthead
+						\hline
+						\endlastfoot
+						\textit{Benutzer aktivieren} & AccountManagementBean. usersToActivate & selectBooleanCheckbox & nutzeraktiv \\ \hline
+					\end{longtable}
+				\end{center}
+				
+				
+			\item \textbf{Outputs:}
+				\begin{itemize}
+					\item Tabelle Auflistung Benutzerdaten: Hier werden ausgewählte Daten aller im System registrierten, aber noch nicht aktivierten Benutzer angezeigt.
+				\end{itemize}
+				
+					\begin{center}
+						\begin{longtable}{|p{5cm} | p{4cm}|p{3cm}|}
+							
+							\hline \multicolumn{1}{|c|}{\textbf{Ausgabefeld}} & \multicolumn{1}{|c|}{\textbf{Typ}}  &  \multicolumn{1}{|c|}{\textbf{ID}} \\ \hline
+							\endfirsthead
+							\hline
+							\endlastfoot
+							\textit{Benutzerdaten Tabelle}  & dataTable & nutzerdaten \\ \hline
+						\end{longtable}
+					\end{center}
+				
+			\item \textbf{BackingBean:}
+				\begin{itemize}
+					\item AccountManagementBean
+				\end{itemize}
+		\end{itemize}
+		
+		\subsubsection{systemAdministrator}
+		
+		\paragraph{adminManagement.xhtml} \hypertarget{adminManagement}
+		RS\\
+		\begin{itemize}
+			\item \textbf{Beschreibung:} Dieses Facelet stellt die zentrale Systemverwaltung für den Administrator dar. Hier kann er Kurse und Benutzer jeweils anlegen und verwalten, das Konto eines Nutzers aufladen, den Überziehungskredit für Nutzer festlegen und das System optisch anpassen.
+			\item \textbf{Buttons:}
+			\begin{itemize}
+				\item Benutzer verwalten: Navigiert zu Benutzer verwalten Seite. \hyperlink{listUsers}{listUsers.xhtml} \\ Zugehörige Methode: loadManageUserPage()
+				\item Benutzer anlegen: Navigiert zu Benutzer anlegen Seite. \hyperlink{createUser}{createUser.xhtml} \\ Zugehörige Methode: loadCreateNewUserPage()
+				\item Kurse verwalten: Navigiert zu Kurse verwalten Seite. \hyperlink{search}{search.xhtml}\\ Zugehörige Methode: loadManageCoursesPage()
+				\item Kurs anlegen: Navigiert zu Kurs anlegen Seite. \hyperlink{createCourse}{createCourse.xhtml} \\ Zugehörige Methode: loadCreateNewCoursePage()
+				\item Aktivierungsmodalität speichern: Speichert die ausgewählte Art der Benutzeraktivierung. \\ Zugehörige Methode: determineAccountActivationType()
+				\item Guthaben aufladen: Erhöht den Kontostand eines bestimmten Benutzer um die eingegebene Summe. \\ Zugehörige Methode: depositAmountOnUserAccount()
+				\item Überziehungswert speichern: Speichert den Wert der möglichen Kontoüberziehung. \\ Zugehörige Methode: determineOverdraftCredit()
+			\end{itemize}
+			\begin{center}
+				\begin{longtable}{|p{4cm} |p{7cm} |}
+						
+					\hline \multicolumn{1}{|c|}{\textbf{Button}} & \multicolumn{1}{|c|}{\textbf{Methode}} \\ \hline
+					\endfirsthead
+					\hline
+					\endlastfoot
+			
+					\textit{Benutzer verwalten} & loadManageUserPage()\\ \hline
+					\textit{Benutzer anlegen} &  loadCreateNewUserPage()\\ \hline
+					\textit{Kurse verwalten} & loadManageCoursesPage()\\ \hline
+					\textit{Kurs anlegen} & loadCreateNewCoursePage()\\ \hline
+					\textit{Aktivierungsmodalität speichern} & determineAccountActivationType()\\ \hline
+					\textit{Guthaben aufladen} & depositAmountOnUserAccount()\\ \hline
+					\textit{Überziehungswert speichern} & determineOverdraftCredit()\\ \hline
+				\end{longtable}
+			\end{center}
+			\item \textbf{Inputs:}
+			\begin{itemize}
+				\item Accountaktivierung: Auswahlfeld um Registrierungsmodalität festzulegen.
+				\item Benutzer-ID: ID des Benutzers, dessen Kontostand erhöht werden soll.
+				\item Benutzername: Name des Benutzers, dessen Kontostand erhöht werden soll.
+				\item Betrag: Betrag, welcher dem Nutzer gutgeschrieben werden soll.
+				\item Überziehungswert: Betrag, welcher im ganzen System zur Überziehung des Kontos akzeptiert wird.
+			\end{itemize}
+
+				\begin{center}
+					\begin{longtable}{|p{3cm} |p{9,5cm}|}
+						
+						\hline \multicolumn{1}{|c|}{\textbf{Feld}} & \multicolumn{1}{|c|}{\textbf{Backing-Bean-Attribute}}\\ \hline
+						\endfirsthead
+						\hline
+						\endlastfoot
+						\textit{Account-Aktivierung} & SystemConfigurationBean.accountActivationType\\ \hline
+						\textit{Benutzer-ID} & PaymentOfflineBean.user.userID\\ \hline
+						\textit{Benutzername} & PaymentOfflineBean.user.username\\ \hline
+						\textit{Betrag} & PaymentOfflineBean.amountToDeposit\\ \hline
+						\textit{Überziehungswert} & SystemConfigurationBean.overdraftCredit\\ \hline
+					\end{longtable}
+					\begin{longtable}{|p{3cm}| p{4cm}|p{3cm} |p{3cm}|}
+						
+						\hline \multicolumn{1}{|c|}{\textbf{Feld}} & \multicolumn{1}{|c|}{\textbf{Validatoren}}  &  \multicolumn{1}{|c|}{\textbf{Konverter}} &  \multicolumn{1}{|c|}{\textbf{ID}} \\ \hline
+						\endfirsthead
+						\hline
+						\endlastfoot
+						\textit{Account-Aktivierung} & - & - & accactivation\\ \hline
+						\textit{Benutzer-ID} & validateRequired & convertNumber & userid\\ \hline
+						\textit{Benutzername} & validateRequired, validateLength (min = 1, max = 100) & - & username\\ \hline
+						\textit{Betrag} & validateRequired & convertNumber & amount \\ \hline
+						\textit{Überziehungswert} & validateRequired & convertNumber & overdraft\\ \hline
+					\end{longtable}
+				\end{center}
+			\item \textbf{Outputs:}
+			\begin{itemize}
+				\item Fehlermeldung zu den einzelnen Eingabefeldern, bei falscher Eingabe oder fehlerhaften Uploads.
+				\item Kontoaufladen Message: Positive oder negative Rückmeldung bei Kontoaufladung
+			\end{itemize}
+
+					\begin{center}
+						\begin{longtable}{|p{5cm} | p{3cm}|p{5cm}|}
+							
+							\hline \multicolumn{1}{|c|}{\textbf{Ausgabefeld}} & \multicolumn{1}{|c|}{\textbf{Typ}}  &  \multicolumn{1}{|c|}{\textbf{ID}} \\ \hline
+							\endfirsthead
+							\hline
+							\endlastfoot
+							\textit{Benutzer-ID Fehlermeldung}  & message & useridfehlermeldung \\ \hline
+							\textit{Benutzername Fehlermeldung}  & message & usernamefehlermeldung \\ \hline
+							\textit{Betrag Fehlermeldung} & message & amountfehlermeldung\\ \hline
+							\textit{Überziehungswert Fehlermeldung} & message & overdraftfehlermeldung\\ \hline
+							\textit{Kontoaufladen Message} & messages globalOnly & success\\ \hline
+						\end{longtable}
+					\end{center}
+			\item \textbf{BackingBean:}
+			\begin{itemize}
+				\item SystemConfigurationBean
+				\item PaymentOfflineBean
+			\end{itemize}
+		\end{itemize}
+		
+		\paragraph{listUsers.xhtml} \hypertarget{listUsers}
+		KH\\
+		\begin{itemize}
+			\item \textbf{Beschreibung:} Hier werden alle im System registrierten Benutzer angezeigt. Einzelne Benutzer können vom Administrator nach verschiedenen Kriterien gefiltert werden. 
+			\item \textbf{Buttons:}
+				\begin{itemize}
+					\item Suchen: Durch Drücken dieses Buttons werden die Benutzer nach den eingegebenen Kriterien durchsucht und in der Liste angezeigt. \\ Zugehörige Methode: search()
+					
+				\end{itemize}
+				
+				\begin{center}
+					\begin{longtable}{|p{4cm} |p{6cm} | p{4cm}|}
+						
+						\hline \multicolumn{1}{|c|}{\textbf{Button}} & \multicolumn{1}{|c|}{\textbf{Methode}} & \multicolumn{1}{|c|}{\textbf{\"{U}bergabeparameter}} \\ \hline
+						\endfirsthead
+						\hline
+						\endlastfoot
+						
+						\textit{Suchen } & search() & - \\ \hline
+					\end{longtable}
+				\end{center}
+				
+			\item \textbf{Inputs:}
+				\begin{itemize}
+					\item Kriterienauswahl: Hier kann der Kursleiter auswählen, ob er nach 'Benutzer-ID', 'Benutzername', 'Name' oder 'Benutzerrolle' suchen will.
+					\item Suchbegriff: Hier gibt der Kursleiter den entsprechenden Suchbegriff ein.
+				\end{itemize}
+				
+				\begin{center}
+					\begin{longtable}{|p{3cm} |p{6cm} | p{4cm}|p{3cm}|}
+						
+						\hline \multicolumn{1}{|c|}{\textbf{Eingabefeld}} & \multicolumn{1}{|c|}{\textbf{Backing-Bean-Attribute}} & \multicolumn{1}{|c|}{\textbf{Typ}}  &  \multicolumn{1}{|c|}{\textbf{ID}} \\ \hline
+						\endfirsthead
+						\hline
+						\endlastfoot
+						\textit{Kriterienauswahl} & SearchUserBean.searchParam & selectOneMenu & kriterien \\ \hline
+						\textit{Suchbegriff} & SearchUserBean.searchTerm & inputText & suchen \\ \hline
+					\end{longtable}
+				\end{center}
+				
+				\begin{center}
+					\begin{longtable}{|p{3cm} |p{8cm} | p{5cm}|}
+						
+						\hline \multicolumn{1}{|c|}{\textbf{Eingabefeld}} & \multicolumn{1}{|c|}{\textbf{Validator}} & \multicolumn{1}{|c|}{\textbf{Konverter}} \\ \hline
+						\endfirsthead
+						\hline
+						\endlastfoot
+						\textit{Kriterienauswahl} & - & - \\ \hline
+						\textit{Suchbegriff} & validateLength (min =0, max = 100) & - \\ \hline
+					\end{longtable}
+				\end{center}
+				
+			\item \textbf{Outputs:}
+				\begin{itemize}
+					\item Tabelle Auflistung Benutzerdaten: Hier werden ausgewählte Daten aller im System registrierten Benutzer angezeigt.
+					\item Suchbegriff (Fehlermeldung): Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
+				\end{itemize}
+				
+					\begin{center}
+						\begin{longtable}{|p{5cm} | p{4cm}|p{3cm}|}
+							
+							\hline \multicolumn{1}{|c|}{\textbf{Ausgabefeld}} & \multicolumn{1}{|c|}{\textbf{Typ}}  &  \multicolumn{1}{|c|}{\textbf{ID}} \\ \hline
+							\endfirsthead
+							\hline
+							\endlastfoot
+							\textit{Benutzerdaten Tabelle}  & dataTable & nutzerdaten \\ \hline
+							\textit{Suchbegriff Fehlermeldung}  & message & suchefehler \\ \hline
+						\end{longtable}
+					\end{center}
+				
+			\item \textbf{BackingBean:}
+				\begin{itemize}
+					\item SearchUserBean
+				\end{itemize}
+		\end{itemize}
+		
+		\paragraph{createUser.xhtml} \hypertarget{createUser}
+		RS\\
+		\begin{itemize}
+			\item \textbf{Beschreibung:} Hier kann der Systemadministrator einen neuen Benutzer mit festgelegter Benutzerrolle anlegen.
+			\item \textbf{Buttons:}
+			\begin{itemize}
+				\item Hochladen: Lädt das ausgewählte Profilbild hoch.\\ Zugehörige Methode: uploadprofilePic()
+				\item Benutzer anlegen: Legt den Benutzer an. \\ Zugehörige Methode: createUser()
+			\end{itemize}
+			\begin{center}
+				\begin{longtable}{|p{4cm} |p{6cm}|}
+						
+					\hline \multicolumn{1}{|c|}{\textbf{Button}} & \multicolumn{1}{|c|}{\textbf{Methode}}\\ \hline
+					\endfirsthead
+					\hline
+					\endlastfoot
+
+					\textit{Hochladen} &  uploadprofilePic()\\ \hline
+					\textit{Benutzer anlegen} & createUser()\\ \hline
+				\end{longtable}
+			\end{center}
+			\item \textbf{Inputs:}
+			\begin{itemize}
+				\item Anrede: Herr oder Frau.
+				\item Vorname: Vorname des neuen Benutzers.
+				\item Nachname: Nachname des neuen Benutzers.
+				\item Geburtsdatum: Geburtsdatum des neuen Benutzers.
+				\item Straße: Straße des neuen Benutzers.
+				\item Hausnummer: Hausnummer des neuen Benutzers.
+				\item Postleitzahl: Postleitzahl des neuen Benutzers.
+				\item Stadt: Stadt des neuen Benutzers.
+				\item Benutzername: Benutzername des neuen Benutzers.
+				\item Passwort: Passwort des neuen Benutzers.
+				\item Passwort wiederholen: Passwortfeld um Passwort sicherzustellen.
+				\item E-Mail: E-Mail Adresse des neuen Benutzers.
+				\item Benutzerrolle: Benutzerrolle des neuen Benutzers, Administrator, Kursleiter oder normaler Benutzer.
+				\item Durchsuchen: Öffnet ein Fenster um auf dem Computer nach einem Profilbild zu suchen. 
+				\end{itemize}
+				
+				\begin{center}
+					\begin{longtable}{|p{3cm} |p{8cm}| p{3cm}|}
+						
+						\hline \multicolumn{1}{|c|}{\textbf{Feld}} & \multicolumn{1}{|c|}{\textbf{Backing-Bean-Attribute}} & \multicolumn{1}{|c|}{\textbf{ID}} \\ \hline
+						\endfirsthead
+						\hline
+						\endlastfoot
+						\textit{Anrede} & UserManagementBean.user.salutation & salutation\\ \hline
+						\textit{Vorname} & UserManagementBean.user.firstname & prename\\ \hline
+						\textit{Nachname} & UserManagementBean.user.lastname & name\\ \hline
+						\textit{Geburtsdatum} & UserManagementBean.user.dateOfBirth & birthday\\ \hline
+						\textit{Straße} & UserManagementBean.user.address.street & street\\ \hline
+						\textit{Hausnummer} & UserManagementBean.user.address.houseNumber & hnumber\\ \hline
+						\textit{Postleitzahl} & UserManagementBean.user.address.zipCode & plz\\ \hline	
+						\textit{Stadt} & UserManagementBean.user.street.city & town\\ \hline
+						\textit{Benutzername} & UserManagementBean.user.username & username\\ \hline	
+						\textit{Passwort} & UserManagementBean.user.password & password\\ \hline	
+						\textit{Passwort wiederholen} & - & passwordrepeat\\ \hline
+						\textit{E-Mail} & UserManagementBean.user.email & mail\\ \hline
+						\textit{Benutzerrolle} & UserManagementBean.user.userRole & role\\ \hline
+						\textit{Durchsuchen} & UserManagementBean.user.profilImage & search\\ \hline
+					\end{longtable}
+					\begin{longtable}{|p{3cm} | p{4cm} | p{3cm} |p{3cm}|}
+						
+						\hline \multicolumn{1}{|c|}{\textbf{Feld}} & \multicolumn{1}{|c|}{\textbf{Validatoren}}  &  \multicolumn{1}{|c|}{\textbf{Konverter}} &  \multicolumn{1}{|c|}{\textbf{Typ}} \\ \hline
+						\endfirsthead
+						\hline
+						\endlastfoot
+						\textit{Anrede} & validateRequired & - & selectOneMenu\\ \hline
+						\textit{Vorname} & InputTextValidator, validateRequired, validateLength (min = 1, max = 100) & - & inputText\\ \hline
+						\textit{Nachname} & InputTextValidator, validateRequired, validateLength (min = 1, max = 100) & - & inputText\\ \hline
+						\textit{Geburtsdatum} & DateOfBirthValidator, validateRequired & convertDateTime & inputText\\ \hline
+						\textit{Straße} & InputTextValidator, validateRequired, validateLength (min = 1, max = 100) & - & inputText\\ \hline
+						\textit{Hausnummer} & validateRequired & convertNumber & inputText\\ \hline
+						\textit{Postleitzahl} & InputTextValidator, validateRequired, validateLength (min = 1, max = 10) & convertNumber & inputText\\ \hline	
+						\textit{Stadt} & InputTextValidator, validateRequired, validateLength (min = 1, max = 100) & - & inputText\\ \hline
+						\textit{Benutzername} & UserNameValidator, validateRequired, validateLength (min = 1, max = 100) & - & inputText\\ \hline	
+						\textit{Passwort} & PasswordValidator, validateRequired, validateLength (min = 8) & - & inputSecret\\ \hline	
+						\textit{Passwort wiederholen} & ConfirmPassword-Validator, validateRequired, validateLength (min = 8) & - & inputSecret\\ \hline
+						\textit{E-Mail} & EMailValidator, validateRequired, validateLength (min = 5, max = 319) & - & inputText\\ \hline
+						\textit{Benutzerrolle} & validateRequired & - & selectOneMenu\\ \hline
+						\textit{Durchsuchen} & UserImageValidator & - & inputFile\\ \hline
+					\end{longtable}
+				\end{center}
+			\item \textbf{Outputs:}
+			\begin{itemize}
+				\item Fehlermeldung zu den einzelnen Eingabefeldern, bei falscher Eingabe.
+				\item Benutzer-ID: ID des neuen Benutzers.
+				\item Profilbild: Dummy-Profilbild des neuen Benutzers.
+				\item Benutzer anlegen Benachrichtigung: Positive oder negative Rückmeldung zur Benutzererstellung.
+			\end{itemize}
+					\begin{center}
+						\begin{longtable}{|p{5cm} | p{4cm}|p{3cm}|}
+							
+							\hline \multicolumn{1}{|c|}{\textbf{Ausgabefeld}} & \multicolumn{1}{|c|}{\textbf{Typ}}  &  \multicolumn{1}{|c|}{\textbf{ID}} \\ \hline
+							\endfirsthead
+							\hline
+							\endlastfoot
+							\textit{Benutzer-ID}  & outputText & benutzerid \\ \hline
+							\textit{Profilbild}  & graphicImage & profilbild \\ \hline
+							\textit{Vorname Fehlermeldung}  & message & vnamefehler \\ \hline
+							\textit{Nachname Fehlermeldung}  & message & nnamefehler \\ \hline
+							\textit{Geburtsdatum Fehlermeldung}  & message & gebdatfehler \\ \hline
+							\textit{Straße Fehlermeldung}  & message & strassefehler \\ \hline
+							\textit{Postleitzahl Fehlermeldung}  & message & plzfehler \\ \hline
+							\textit{Stadt Fehlermeldung}  & message & stadtfehler \\ \hline
+							\textit{Benutzername Fehlermeldung}  & message & benutzername-fehler \\ \hline
+							\textit{Passwort Fehlermeldung}  & message & passwortfehler \\ \hline
+							\textit{Passwort wiederholen Fehlermeldung}  & message & passwortwhfehler \\ \hline
+							\textit{E-Mail Fehlermeldung}  & message & mailfehler \\ \hline
+							\textit{Benutzer anlegen Benachrichtigung} & messages globalOnly & success\\ \hline
+						\end{longtable}
+					\end{center}
+			\item \textbf{BackingBean:}
+			\begin{itemize}
+				\item UserManagementBean
+			\end{itemize}
+		\end{itemize}
+		
+		\paragraph{createCourse.xhtml} \hypertarget{createCourse}
+		KH\\
+		\begin{itemize}
+			\item \textbf{Beschreibung:} Hier kann der Administrator einen neuen Kurs anlegen, einen bestehenden Kurs löschen, oder Kursleiter zu bestehenden Kursen hinzufügen. Der Kursleiter kann außerdem Kurseinheiten erstellen.
+			\item \textbf{Links:} -
+			\item \textbf{Buttons:}
+				\begin{itemize}
+					\item Kurs anlegen:  Durch Drücken dieses Buttons wird der Kurs angelegt, sofern alle Daten korrekt eingegeben wurden. Es erfolgt eine Weiterleitung auf die entsprechende Kursdetailseite. (\hyperlink{courseDetails}{courseDetails.xhtml}) \\ Zugehörige Methode: createCourse()
+					\item Löschen (Kursleiter): Durch Drücken dieses Buttons löscht der Administrator den ausgewählten Kursleiter aus diesem Kurs. \\ Zugehörige Methode: removeCourseLeader()
+					\item Hinzufügen (Kursleiter): Durch Drücken dieses Buttons wird der angegebene Kursleiter zum Kurs hinzugefügt, sofern alle Eingabe korrekt waren.	\\ Zugehörige Methode: addCourseLeader()
+					\item Durchsuchen: Durch Drücken dieses Buttons kann der Administrator ein Kursbild aus seinem Dateiverzeichnis auswählen.
+					\item Hochladen: Durch Drücken dieses Buttons wird das ausgewählte Bild hochgeladen. \\ Zugehörige Methode: uploadCoursePic()
+				\end{itemize}
+				
+				\begin{center}
+					\begin{longtable}{|p{4cm} |p{6cm} | p{4cm}|}
+						
+						\hline \multicolumn{1}{|c|}{\textbf{Button}} & \multicolumn{1}{|c|}{\textbf{Methode}} & \multicolumn{1}{|c|}{\textbf{\"{U}bergabeparameter}} \\ \hline
+						\endfirsthead
+						\hline
+						\endlastfoot
+						
+						\textit{Kurs anlegen} & createCourse() & - \\ \hline
+						\textit{Löschen (Kursleiter)} &  removeCourseLeader() & - \\ \hline
+						\textit{Hinzufügen (Kursleiter)} & addCourseLeader() & - \\ \hline
+						\textit{Durchsuchen} & - & - \\ \hline
+						\textit{Hochladen} & uploadCoursePic() & - \\ \hline
+					\end{longtable}
+				\end{center}
+				
+				
+			\item \textbf{Inputs:}
+				\begin{itemize}
+					\item titel: Hier gibt der Administrator den Kursnamen ein.
+					\item Beschreibung: Hier gibt der Administrator die Beschreibung des Kurses ein.
+					\item Maximale Teilnehmerzahl: Hier gibt der Administrator die maximale Teilnehmerzahl des Kurses an.
+					\item Startdatum: Hier trägt der Administrator das Startdatum des Kurses ein.
+					\item Enddatum: Hier trägt der Administrator das Enddatum des Kurses ein.
+					\item Benutzername (Kursleiter): Hier gibt der Administrator den Benutzernamen des Kursleiters ein, den er zum Kurs hinzufügen will.
+					\item E-Mail-Adresse (Kursleiter): Hier gibt der Administrator die entsprechende E-Mail-Adresse des Kursleiters ein.
+					\item Kursleiter-ID: Hier gibt der Administrator die entsprechende ID ein.
+					\item Löschen (Kursleiter): Hier kann der Administrator durch Setzen des Häkchens den Kursleiter markieren, um ihn anschließend über den Button 'Löschen' zu entfernen.
+					\item Profilbild Pfad: Hier wird der Pfad des ausgewählten Profilbildes angezeigt.
+					
+				\end{itemize}
+				
+				\begin{center}
+					\begin{longtable}{|p{3cm} |p{5cm} | p{4cm}|p{3cm}|}
+						
+						\hline \multicolumn{1}{|c|}{\textbf{Eingabefeld}} & \multicolumn{1}{|c|}{\textbf{Backing-Bean-Attribute}} & \multicolumn{1}{|c|}{\textbf{Typ}}  &  \multicolumn{1}{|c|}{\textbf{ID}} \\ \hline
+						\endfirsthead
+						\hline
+						\endlastfoot
+						\textit{titel} & CourseManagementBean. course.title & inputText & titel \\ \hline
+						\textit{Beschreibung} & CourseManagementBean. course.description & inputText & beschreibung \\ \hline
+						\textit{Maximale Teilnehmerzahl} & CourseManagementBean. course.maxUsers & inputText & maxteilnehmer \\ \hline
+						\textit{Startdatum} & CourseManagementBean. course.startdate & inputText & startdatum \\ \hline
+						\textit{Enddatum} & CourseManagementBean. course.enddate & inputText & enddatum \\ \hline
+						\textit{Benutzername (Kursleiter)} & CourseManagementBean. leaderToAdd.username & inputText & benutzername \\ \hline
+						\textit{E-Mail-Adresse (Kursleiter)} & CourseManagementBean. leaderToAdd.email & inputText & mailkursleiter \\ \hline
+						\textit{Kursleiter-ID} & CourseManagementBean. leaderToAdd.userID & inputText & idkursleiter \\ \hline
+						\textit{Löschen (Kursleiter)} & CourseManagementBean. leadersToDelete & selectBooleanCheckbox & löschenkursleiter \\ \hline
+						\textit{Profilbild Pfad} & CourseManagementBean. course.courseImage & inputFile & bildpfad \\ \hline
+					\end{longtable}
+				\end{center}
+				
+				\begin{center}
+					\begin{longtable}{|p{3cm} |p{8cm} | p{5cm}|}
+						
+						\hline \multicolumn{1}{|c|}{\textbf{Eingabefeld}} & \multicolumn{1}{|c|}{\textbf{Validator}} & \multicolumn{1}{|c|}{\textbf{Konverter}} \\ \hline
+						\endfirsthead
+						\hline
+						\endlastfoot
+						\textit{Titel} & validateLength (min = 0, max = 150) & - \\ \hline
+						\textit{Beschreibung} & inputTextValidator, validateLength (min = 0, max = 1000) & - \\ \hline
+						\textit{Maximale Teilnehmerzahl} & validateLength (min = 0, max = 9) & convertNumber \\ \hline
+						\textit{Startdatum} & validateRequired & covertDateTime \\ \hline
+						\textit{Enddatum} & validateRequired & converDateTime \\ \hline
+						\textit{Benutzername (Kursleiter)} & validateLength (min = 1, max = 100), validateRequired & - \\ \hline
+						\textit{E-Mail-Adresse (Kursleiter)} & validateLength (min = 1, max = 319) validateRequired, EMailValidator & - \\ \hline
+						\textit{Kursleiter-ID} & validateRequired, validateLength (min = 0, max = 9) & convertNumber \\ \hline
+						\textit{Löschen (Kursleiter)} & - & - \\ \hline
+						\textit{Profilbild Pfad} & ImageValidator & - \\ \hline
+					\end{longtable}
+				\end{center}
+				
+			\item \textbf{Outputs:}
+				\begin{itemize}
+					\item Kurs-ID: Hier wird die automatisch generierte ID des Kurses ausgegeben.
+					\item Beschreibung (Fehlermeldung): Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
+					\item Maximale Teilnehmerzahl (Fehlermeldung): Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
+					\item Startdatum (Fehlermeldung): Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
+					\item Enddatum (Fehlermeldung): Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
+					\item Benutzerame (Kursleiter (Fehlermeldung)): Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
+					\item E-Mail-Adresse (Kursleiter (Fehlermeldung)): Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
+					\item Kursleiter-ID (Fehlermeldung): Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
+					\item Löschen (Kursleiter (Fehlermeldung)): Ausgabe der Fehlermeldungen zu den Validatoren des Eingabefeldes.
+					\item Tabelle Auflistung Kursleiter: Hier werden Name und E-Mail-Adresse aller Kursleiter dieses Kurses aufgelistet.
+					\item Tabelle Auflistung Kurseinheiten: Hier werden die Kurseinheiten dieses Kurses aufgelistet.
+					\item Kursbild: Hier wird das Kursbild angezeigt.
+				\end{itemize}
+				
+				\begin{center}
+					\begin{longtable}{|p{5cm} | p{4cm}|p{5cm}|}
+						
+						\hline \multicolumn{1}{|c|}{\textbf{Ausgabefeld}} & \multicolumn{1}{|c|}{\textbf{Typ}}  &  \multicolumn{1}{|c|}{\textbf{ID}} \\ \hline
+						\endfirsthead
+						\hline
+						\endlastfoot
+						\textit{Kurs-ID}  & outputText & idkurs \\ \hline
+						\textit{Beschreibung Fehlermeldung}  & message & beschreibungs- fehler \\ \hline
+						\textit{Maximale Teilnehmerzahl Fehlermeldung}  & message & maxteilnehmerfehler \\ \hline
+						\textit{Startdatum Fehlermeldung}  & message & startdatumsfehler \\ \hline
+						\textit{Enddatum Fehlermeldung}  & message & enddatumsfehler \\ \hline
+						\textit{Benutzerame Kursleiter Fehlermeldung}  & message & namefehler \\ \hline
+						\textit{E-Mail-Adresse Kursleiter Fehlermeldung}  & message & mailfehler\\ \hline
+						\textit{Kursleiter-ID Fehlermeldung}  & message & idkursleiterfehler \\ \hline
+						\textit{Löschen Kursleiter Fehlermeldung}  & message & leiterlöschenfehler \\ \hline
+						\textit{Kursleiter Tabelle}  & dataTable & kursleiter \\ \hline
+						\textit{Kurseinheiten Tabelle}  & dataTable & kurseinheiten \\ \hline
+						\textit{Kursbild}  & graphicImage & bild \\ \hline
+					\end{longtable}
+				\end{center}
+				
+			\item \textbf{BackingBean:}
+				\begin{itemize}
+					\item CourseManagementBean
+				\end{itemize}
+		\end{itemize}

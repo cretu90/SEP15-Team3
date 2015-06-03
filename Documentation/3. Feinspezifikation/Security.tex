@@ -1,0 +1,37 @@
+\chapter{Security}
+\begin{tiny}
+	SeSc
+\end{tiny}
+
+\section{XSS(Cross-Site-Scripting), Javascript-Injection}
+\subsection{Beschreibung}
+Hierbei handelt es sich um eine Art HTML-Injection, die Auftritt wenn eine Webanwendung Daten von einem Nutzer annimmt und sie dann ohne zu prüfen an einen anderen Browser weitersendet. Damit können Angreifer auch Skripte auf den Browser eines anderen senden und Malware ausführen.
+\subsection{Maßnahme}
+JSF bietet bereits eine Gegenmaßnahme, indem bei allen Eingabefeldern das Attribute \textbf{escaped} auf \textbf{true} gestellt ist.
+
+\section{SQL Injection}
+\subsection{Beschreibung}
+SQL Injection sind möglich wenn Daten, wie Benutzereingaben, in den SQL-Interpreter gelangen. Diese könnten Zeichen enthalten die eine Sonderfunktion für den SQL-Interpreter besitzen (z.B. Anführungszeichen, Backslash usw.) und damit Einfluss von außen auf die Datenbank ermöglichen. 
+\subsection{Maßnahme}
+Um diesen Vorgang zu verhindern, wird vom System der Befehl prepared Statement hergenommen. Damit werden die Daten als Parameter an einen bereits kompilierten Befehl übergeben und nicht interpretiert. Somit ist eine SQL Injection nicht möglich.
+
+
+\section{Cross-site request forgery}
+\subsection{Beschreibung}
+Das Opfer muss an der Webanwendung bereits angemeldet sein und bekommt vom Angreifer einen HTTP-Request untergeschoben. Der Request ist so konzipiert, dass bei seinem Aufruf die Webanwendung, auf Opferseite, die gewünschte Aktion des Angreifers ausführt.
+\subsection{Maßnahme}
+Als Gegenmaßnahme wird das modifizieren von Inhalten durch GET-Requests nicht erlaubt und die HTTP-Referrer Header werden darauf geprüft ob die Anfrage von einer Seite des Systems kommt.
+
+
+\section{Insecure Direct Object Reference}
+\subsection{Beschreibung}
+Hierbei wird versucht auf Daten zuzugreifen die dem Benutzer nicht zur Verfügung stehen.
+\subsection{Maßnahme}
+Bei jeder Anfrage wird überprüft ob der Benutzer, der die Anfrage gestellt hat, Zugriff auf die Daten haben darf.
+
+
+\section{Session fixation}
+\subsection{Beschreibung}
+Der Angreifer versucht hier dem Opfer eine gültige, ihm vom System zugewiesene, Session-ID unterzuschieben. Wenn sich das Opfer jetzt einloggt und das System als Basis die ihm zugeschobene Session-ID benutzt, bekommt auch der Angreifer Zugriff auf das System da er sich ab diesen Zeitpunkt als Opfer ausgeben kann.
+\subsection{Maßnahme}
+Bei jedem Login wird dem Benutzer eine neue Session zugewiesen. Es wird außerdem sichergestellt, dass eine Session nicht unbegrenzt aktiv ist. Nach einer gewissen Zeit oder durch den Logout des Benutzers wird die Session mithilfe von invalidateSession zerstört.

@@ -1,0 +1,61 @@
+\newcommand{\kursiv}[1]{{\it #1}}
+\chapter{Implementierungsplan}
+Planmäßig beträgt der zeitliche Umfang der Milestones jeweils fünf Tage. Die Arbeitspakete werden
+je nach Wichtigkeit und Abhängigkeit für darauffolgende Pakete in drei Milestones eingeteilt. Für die einzelnen Verantwortlichen ist jeweils eine Gesamtstundenanzahl von maximal 25 Stunden pro Milestone geplant. Die Pakete wurden, sofern möglich, vertikal zusammengestellt.
+Beispielsweise erstellt ein Bearbeiter zu einer bestimmten View das Facelet, die dazu
+gehörige Businesslogik und die erforderlichen DAOs.\\
+Sollten die geplanten Zeiten aufgrund unerwarteter Ereignisse oder Problemen bei der Implementierung nicht eingehalten werden können, so werden Pakete aus dem
+ersten bzw. zweiten Milstone in den dritten verschoben. Daher wurde vorerst für den dritten Milestone vergleichsweise weniger Umfang eingeplant.
+Bei Bedarf werden die Wunschkriterien (Terminplaner und die Unterstützung von Mehrsprachigkeit) nicht umgesetzt.\\
+Treten keine Komplikationen ein werden diese wie geplant umgesetzt.
+
+\section{Planungsverlauf}
+Zu Beginn der Planung zur Implementierung wurden die Features des Systems in einzelne Arbeitspakete aufgeteilt, sowie die Start- und Endzeitpunkte, der Aufwand in Stunden und der jeweilige Verantwortliche festgelegt. Diese Punkte wurden gemeinsam bei Team-Treffen besprochen und erarbeitet. Die Berechnung des Aufwands pro Arbeitspaket erfolgte durch \grqq Planning Poker\grqq.  Dabei wurden die Schätzungen jedes Teammitglieds erfasst und so ein Mittelwert erstellt.
+Schriftlich wurde der Implementierungsplan wie folgt aufgeteilt:
+
+\begin{itemize}
+\item Textuelle Beschreibungen: Patrick Cretu, Tobias Fuchs
+\item Tabellen: Tobias Fuchs, Ricky Strohmeier
+\item Diagramme: Katharina Hölzl, Sebastian Schwarz
+\end{itemize} 
+Um frühzeitig auf Fehler während der Implementierung zu reagieren wird in jedem Milestone zu mindestens einem Arbeitspaket von jedem Verantwortlichen ein Test durchgeführt.
+
+\section{Milestone 1}
+
+Der erste Milestone umfasst technische Grundfunktionen und grundlegende Funktionalitäten der Webanwendung.\\
+Zu den Grundfunktionen zählt der \kursiv{DatabaseConnectionManager}. Dieser ist zuständig für das Erstellen der Datenbankverbindungen und deren Weiterverteilung. Da systemintern viele Komponenten eine Datenbankverbindung benötigen und somit davon abhängig sind, muss dieser zu Beginn der Implementierung erstellt werden.\\
+Außerdem wird der \kursiv{PropertyManager} implementiert, welcher die erforderlichen Parameter aus den Konfigurationsdateien lädt.
+Eine weitere wichtige Aufgabe, die bereits dem ersten Milestone zugeordnet wird, ist die
+Implementierung des Systemstarts. Dadurch wird sichergestellt, dass bei Systemstart alle
+benötigten Initialisierungen durchgeführt werden, wie das Einlesen der Property-Dateien, die Erstellung der Datenbanktabellen und Initialisierung des \kursiv{DatabaseConnectionManagers}.
+Des weiteren ist das Aufsetzen der Datenbank und der Logging - Mechanismus Teil des ersten Milestones.\\
+Darüber hinaus wird der  UTF-8-Filter implementiert, welcher sicherstellt, dass Benutzereingaben
+im richtigen Encoding in der Datenbank hinterlegt werden.\\
+Als letzter Punkt der technischen Grundfunktionen wird hier die Implementierung der automatischen E-Mail-Generierung vorgenommen, welche für das Versenden von E-Mails zuständig ist.\\ 
+Zusätzlich zu diesen Komponenten werden die Struktur der View  und die DTOs angelegt sowie Funktionen wie die Registrierung, die Anmeldung und die 'Passwort vergessen' - Funktion implementiert.\\
+Außerdem soll die \kursiv{Meine Kurse} - Seite angezeigt werden und die Suche nach Kursen möglich sein.\\
+
+\section{Milestone 2}
+
+Der zweite Milestone beinhaltet die Implementierung des Benutzerprofils, sowie die Editier-
+Funktionalität.\\
+Außerdem wird die Möglichkeit zur Verfügung gestellt einen Benutzer manuell anzulegen oder komplett aus dem System zu löschen.
+Ein weiterer Bestandteil ist die Implementierung der Detailansicht der Kurse sowie deren Editier-Funktionalität.
+Außerdem wird die Anmeldung zu Kursen und zu Kurseinheiten umgesetzt. Im Zuge dessen ebenfalls die Abmeldefunktion von Kursen bzw. Kurseinheiten.
+Ein weiterer Bestandteil ist die Funktionalität einen Kurs anzulegen bzw. diesen wieder zu löschen. 
+Außerden wird die Erstellung, Bearbeitung und Löschung von Kurseinheiten implementiert sowie das Anlegen und die Bearbeitung von regelmäßigen Kurseinheiten.
+
+
+\section{Milestone 3}
+
+Der dritte Milestone umfasst die Implementierung der ausstehenden Funktionalitäten.
+Dazu gehört zum einen die Benutzersuche für Administratoren.\\
+Des Weiteren wird die Funktionalität Benutzer zu aktivieren durch Kursleiter oder Administrator implementiert. \\
+Außerdem wird die Anzeige der Teilnehmerliste von Kursen umgesetzt sowie das Feature sich das eingeschränkte Profil des Kursleiters eines Kurses anzeigen zu lassen. \\
+Zusätzlich wird noch die Administratorseite erstellt, welche die Einstellungen bezüglich des Systems, wie etwa die Festlegung des Überziehungskredits für dem Administrator, zur Verfügung stellt. 
+Ebenfalls werden im dritten Milestone die CustomExceptionHandler.java- und die
+CustomExceptionHandlerFactory.java-Klasse implementiert, sowie die zugehörige Fehlerseite.
+\ \\
+Zusätzlich werden die Wunschkriterien umgesetzt. Diese beinhalten
+die Mehrsprachigkeit des Systems sowie den persönlichen Terminplaner des Benutzers. Außerdem werden die Hilfe-, Impressums- und AGB-Seite erstellt.
+

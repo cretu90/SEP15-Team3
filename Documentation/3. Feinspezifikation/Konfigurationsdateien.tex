@@ -1,0 +1,146 @@
+\chapter{Konfigurationsdatei}
+\begin{tiny}
+	SeSc
+\end{tiny}
+
+Das System \textbf{OfCourse} benötigt drei Konfigurationsdateien, um erfolgreich gestartet werden zu können. In der ersten Datei werden relevante Einstellungen des Systems (Datenbankverbindung, Anzahl der Verbindungen, Überziehungskredit usw) gespeichert. Die zweite Konfigurationsdatei enthält alle nötigen Informationen des E-Mailaccounts(...), über den die Systemnachrichten an die User geschickt werden. Die letzte Datei wird von \textbf{log4j} benötigt, um das Logging Level und den Pfad zum Anlegen der Log-Datei zu speichern. Alle Dateien liegen auf dem Server und dürfen deswegen nur vom Systemadministrator geändert werden. Außerdem gibt es noch Systemeinstellungen, die von Administratoren in der Web-Anwendung des Systems geändert werden können. Im Folgenden wird nun genauer auf alle drei Konfigurationsdateien und die Systemeinstellungen eingegangen:
+
+\section{Konfiguationsdatei des Systems}
+\subsection{Allgemein}
+
+Bei Ersteinrichtung des Systems wird die Datei \textbf{ofCourse.properties} erstellt und muss vom Systemadministrator bearbeitet werden, bevor er den Server startet (enthält keine Default Werte). Die Datei kann mit einem beliebigen TextEditor geöffnet und editiert werden. Wenn diese Datei im laufendem Serverbetrieb geändert wird, braucht es einen Serverneustart um die Änderungen zu übernehmen. Dies ist nötig, da das System eine dauerhafte Verbindung zur Datenbank unterstützt und Änderungen während der Laufzeit des Servers deswegen zu Komplikationen führen könnten.
+
+
+\subsection{Parameter}
+
+\begin{center}
+	\begin{longtable}{|p{4cm} | p{3cm}| p{7cm} | p{2cm} |}
+		\hline
+		\multicolumn{1}{|c|}{\textbf{Parameter}} & \multicolumn{1}{c|}{\textbf{Name}} & \multicolumn{1}{c|}{\textbf{Details}} & \multicolumn{1}{c|}{\textbf{Eingabetyp}}
+		 \\ \hline
+		Datenbankname & \textbf{dbname} & Name der Datenbank für das System & String \\ \hline
+		Datenbankhost & \textbf{dbhost} & Die Hostadresse zur Datenbank. Angabe als URL-Adresse (z.B bender.fim.uni-passau.de)  & String \\ \hline
+		Datenbankport & \textbf{dbport} & Portnummer des Hosts über den die Verbindung zur Datenbank aufgebaut werden kann & Integer \\ \hline
+		Datenbankusername & \textbf{dbuser} & Benutzername für den Login an der Datenbank (Muss Administratorrechte auf der Datenbank besitzen) & String  \\ \hline
+		Datenbankpasswort & \textbf{dbpassword} & Passwort für den Login an der Datenbank & String \\ \hline
+		Anzahl der Datenbankverbindungen & \textbf{dbconnections} & Legt fest wie viele Verbindungen zur Datenbank zur Verfügung stehen & Integer \\ \hline
+		Überziehungskredit & \textbf{bankOverdraft} & Legt den erlaubten Überziehungskredit fest & Integer \\ \hline
+	\end{longtable}
+	
+
+\end{center}
+\subsection{Datanbankspezifische Angaben(Wertebereich)}
+
+\begin{itemize}
+	\item \emph{dbport:}\\
+		Angabe muss zwischen 0 und 65535 liegen.
+	\item \emph{dbconnections:}\\
+		Angabe muss zwischen 1 und 100 liegen. (Die Anzahl der Connections die das System zu Verfügung stellt wird eingeschränkt, da es sonst zur Überlastung der Datenbank führen kann).
+\end{itemize}
+
+\section{Konfigurationsdatei des E-Mailaccounts}
+\subsection{Allgemein}
+Bei der Ersteinrichtung der Applikation wird die Konfigurationsdatei \textbf{ofCourse.mailproperties} erstellt und muss vor dem Serverstart vom Systemadministrator mithilfe eines beliebigen TextEditors bearbeitet und ausgefüllt werden (enthält keine Default Werte). Diese Datei kann während der Systemlaufzeit geändert werden.
+
+\subsection{Parameter}
+\begin{center}
+	\begin{longtable}{|p{4cm} | p{3cm}| p{7cm} | p{2cm} |}
+		\hline
+		\multicolumn{1}{|c|}{\textbf{Parameter}} & \multicolumn{1}{c|}{\textbf{Name}} & \multicolumn{1}{c|}{\textbf{Details}} & \multicolumn{1}{c|}{\textbf{Eingabetyp}}
+		\\ \hline
+		E-Mailadresse & \textbf{mailaddress} & E-Mailadresse mit der das System Nachrichten verschickt & String \\ \hline
+		E-Mail SMTP Server & \textbf{smtphost} & Der Postausgangsserver für den Nachrichtenversand. Angabe als URL (z.B. smtp.1und1.de) & String \\ \hline
+		E-Mail SMTP Port & \textbf{smtpport} & Portnummer des Postausgangsservers & Integer \\ \hline
+		E-Mail SMTP SSL Authentifizierung & \textbf{smtpAuth} & Gibt an ob die Verbindung zum E-mailserver per SSL gesichert ist. & Boolean  \\ \hline
+		E-Mail Username & \textbf{mailusername} & Benutzername für den Login am SMTP Server & String \\ \hline
+		E-Mail Passwort & \textbf{mailpassword} & Passwort für den Login am SMTP Server & String \\ \hline
+		
+	\end{longtable}
+\end{center}
+\subsection{E-Mailspezifische Angaben(Wertebereich)}
+
+\begin{itemize}
+	\item \emph{smtpport:}\\
+	Angabe muss zwischen 0 und 65535 liegen.
+	\item \emph{smtpAuth:}\\
+	Angabe kann entweder true oder false sein.
+\end{itemize}
+
+
+\section{Konfiguartionsdatei von Log4j}	
+
+\subsection{Allgemein}
+
+Nach der Erstinstallation wird die Konfigurationsdatei \textbf{ofCourse.log4jproperties} erstellt und ist mit Default- Einstellungen bereits laufzeitfähig. Diese Datei kann vom Systemadministrator mit einem TextEditor angepasst und auch während der Systemlaufzeit geändert werden. Zugriff auf das erstellte Logfile besitzt nur der Systemadministrator.
+
+\subsection{Parameter}
+
+\begin{center}
+	\begin{longtable}{|p{4cm} | p{3cm}| p{7cm} | p{2cm} |}
+	\hline
+	\multicolumn{1}{|c|}{\textbf{Parameter}} & \multicolumn{1}{c|}{\textbf{Name}} & \multicolumn{1}{c|}{\textbf{Details}} & \multicolumn{1}{c|}{\textbf{Eingabetyp}}
+	\\ \hline
+	Logging Level & loglvl & Setzt das Logging Level: ab dieser Stufe soll gelogt werden (Default: All) & String \\ \hline
+	Dateipfad & logfilepath & Dateiname und Pfad, in der die Logdatei auf dem Server angelegt werden soll (Default:/WEB-INF/Log/ ) & String \\ \hline
+	
+\end{longtable}
+
+\end{center}
+
+\subsection{Log4jspezifische Angaben(Wertebereich)}
+
+\begin{itemize}
+	\item \emph{loglvl:}\\
+	Angabe muss einem existierenden Log Level entsprechen. Siehe unten
+\end{itemize}
+
+\subsubsection{Log4jspezifische Angaben(Log Levels):}
+Der Ausgabe-Umfang steigt mit der zugewiesenen Wichtigkeitsstufe und umfasst alle Nachrichten der Stufe selbst, sowie aller noch dringenderen Stufen 
+\begin{itemize}
+	\item \emph{OFF:}\\
+	Logging ist deaktiviert.
+	\item \emph{FATAL:}\\
+	Ein kritischer Fehler ist aufgetreten und das System kann nicht mehr weiter ausgeführt werden.
+	\item \emph{ERROR:}\\
+	Exceptions wurden geworfen und behandelt. Das System wird alternativ fortgesetzt.
+	\item \emph{WARN:}\\
+	Auftreten einer unerwarteten Situation. Das System läuft weiter.
+	\item \emph{INFO:}\\
+	Allgemeine Informationen(z.B. Programm gestartet, Programm beendet, Verbindung zur Datenbank aufgebaut).
+	\item \emph{DEBUG:}\\
+	allgemeines Debugging(Fehler können leichter gefunden werden).
+	\item \emph{TRACE:}\\
+	ausführliches Debugging mit Kommentaren.
+	\item \emph{ALL:}\\
+	Alle Meldungen werden ungefiltert ausgegeben.
+\end{itemize}
+
+\section{Systemeinstellungen}
+\subsection{Allgemein}
+Nach dem Systemstart können Administratoren in der Webanwendung folgende Systemeinstellungen per Drop-Down und Eingabe ändern:
+
+\subsection{Parameter}
+\begin{center}
+	\begin{longtable}{|p{4cm} | p{7cm} | p{2cm} |}
+		\hline
+		\multicolumn{1}{|c|}{\textbf{Parameter}} & \multicolumn{1}{c|}{\textbf{Details}} & \multicolumn{1}{c|}{\textbf{Eingabetyp}}
+		\\ \hline
+		Überziehungskredit & Die Einstellung legt fest, wieweit der Benutzer sein Konto überziehen darf (in Euro, Defaultwert: 0) & Integer \\ \hline
+		Art der Registrierung & Die Einstellung legt den Art der Registrierungsbestätigung fest (Defaultwert: E-Mail) & Drop-Down \\ \hline
+		
+		
+	\end{longtable}
+\end{center}
+\subsection{E-Mailspezifische Angaben(Wertebereich)}
+
+\begin{itemize}
+	\item \emph{Überziehungskredit:}\\
+	Eingabe muss eine positive ganzzahlige natürliche Zahl sein. (maximal 5 Stellen)
+	\item \emph{Art der Registrierung:}\\
+	\textbf{E-Mail:} Der Benutzer bekommt eine E-Mail mit einem Bestätigungslink zur Account Freigabe.\\
+	\textbf{Admin:} Der Account des Benutzers wird durch einen Administrator freigegeben.\\
+	\textbf{Beides:} Der Account wird erst freigegeben, wenn beide obenstehenden Angaben durchgeführt worden sind
+\end{itemize}
+
+
+

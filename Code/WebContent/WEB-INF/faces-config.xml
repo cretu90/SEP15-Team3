@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<faces-config version="2.2" xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd">
+
+	<application>
+		<locale-config>
+			<default-locale>de</default-locale>
+		</locale-config>
+	</application>
+
+    <validator>
+        <validator-id> userNameValidator </validator-id>
+        <validator-class> de.ofCourse.customValidator.UserNameValidator </validator-class>
+    </validator>
+    <validator>
+        <validator-id> passwordValidator </validator-id>
+        <validator-class> de.ofCourse.customValidator.PasswordValidator </validator-class>
+    </validator>
+    <validator>
+        <validator-id> confirmPasswordValidator </validator-id>
+        <validator-class> de.ofCourse.customValidator.ConfirmPasswordValidator </validator-class>
+    </validator>
+    <validator>
+        <validator-id> dateOfBirthValidator </validator-id>
+        <validator-class> de.ofCourse.customValidator.DateOfBirthValidator </validator-class>
+    </validator>
+   
+</faces-config>
