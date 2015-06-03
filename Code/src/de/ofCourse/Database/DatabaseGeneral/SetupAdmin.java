@@ -27,12 +27,12 @@ import de.ofCourse.system.Transaction;
 public class SetupAdmin {
 	
 	private static final String CHECK_ADMIN =
-			"SELECT COUNT(*) FROM \"users\" WHERE role = 'administrator'";
+			"SELECT COUNT(*) FROM \"users\" WHERE role = 'SYSTEM_ADMINISTRATOR'";
 	private static final String INIT_ADMIN =
 			"INSERT INTO \"users\"(nickname, email, pw_hash, credit_balance," +
 			"email_verification, admin_verification, role, status)" +
 			"VALUES ('admin1', 'bazinga@gmail.com', '5ee2d84rf', 0, TRUE," +
-			"TRUE, 'administrator', 'registered')";
+			"TRUE, 'SYSTEM_ADMINISTRATOR', 'REGISTERED')";
 	
     /**
      * Checks whether or not the table of users in the database contains an
