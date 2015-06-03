@@ -74,7 +74,8 @@ public class MyCoursesBean implements Pagination, Serializable {
     private SessionUserBean sessionUser;
 
     /**
-     * 
+     * Initializes the data needed for pagination, the transaction and
+     * initializes the page with data sets.
      */
     @PostConstruct
     private void init() {
@@ -94,7 +95,8 @@ public class MyCoursesBean implements Pagination, Serializable {
     }
 
     /**
-     * 
+     * Updates the pagination data and fetches elements from database that are
+     * to display.
      */
     private void actualizeDisplayData() {
 	transaction.start();

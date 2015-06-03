@@ -102,6 +102,7 @@ public class DatabaseConnectionManager {
 	Connection connection = freeConnections.get(indexLastElement);
 	freeConnections.remove(indexLastElement);
 	++numberOfConnectionsInUse;
+	LogHandler.getInstance().debug("Connection returned.");
 	return connection;
     }
 
@@ -113,6 +114,7 @@ public class DatabaseConnectionManager {
 	    if (!connection.isClosed() && connection != null) {
 		--numberOfConnectionsInUse;
 		freeConnections.add(connection);
+		LogHandler.getInstance().debug("Connection released.");
 	    }
 	} catch (SQLException e) {
 	    LogHandler.getInstance().error(
@@ -174,6 +176,7 @@ public class DatabaseConnectionManager {
 			    + "connection. Please check whether the login"
 			    + " credentials a set correct.");
 	}
+	LogHandler.getInstance().debug("Connection established.");
 	return connection;
     }
 
