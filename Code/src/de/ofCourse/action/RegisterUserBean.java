@@ -93,9 +93,10 @@ public class RegisterUserBean {
 	    // Gibt es die angegebene E-Mail-Adresse noch nicht, erstelle einen
 	    // neuen Benutzer.
 	    UserDAO.createUser(this.transaction, this.getUserToRegistrate(), passwordHash);
+	    //TODO verifizierungsmail versenden!
 	}
 	
-	// TODO Erfolgsmeldung ausgeben
+	// TODO Erfolgsmeldung ausgeben (aber erst auf der startseite!!)
 	
 	return "/facelets/open/index.xhtml?faces-redirect=false";
     }
