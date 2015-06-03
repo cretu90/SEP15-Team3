@@ -72,11 +72,11 @@ public class DatabaseTableCreator {
     private static final String CREATE_COURSES =
     		"CREATE TABLE courses (" +
     			"id SERIAL PRIMARY KEY," +
-    			"titel TEXT(150)," +
+    			"titel TEXT[150]," +
     			"max_participants INTEGER CHECK (max_participants > 0)," +
     			"start_date DATE NOT NULL," +
     			"end_date DATE NOT NULL," +
-    			"description TEXT(1000)," +
+    			"description TEXT[1000]," +
     			"image BYTEA" +
     		");" +
     		"ALTER SEQUENCE courses_id_seq RESTART WITH 10000";
@@ -85,16 +85,16 @@ public class DatabaseTableCreator {
     		"CREATE TABLE course_units (" +
     			"id SERIAL PRIMARY KEY," +
     			"course_id INTEGER REFERENCES \"courses\"(id) ON DELETE CASCADE," +
-    			"max_participants INTEGER NOT NULL" +
+    			"max_participants INTEGER NOT NULL " +
     			"CHECK (max_participants > 0)," +
-    			"titel TEXT(150)," +
+    			"titel TEXT[150]," +
     			"min_participants INTEGER CHECK (min_participants > 0)," +
     			"fee DECIMAL(6,2) CHECK (fee >= 0)," +
-    			"location TEXT(100)," +
+    			"location TEXT[100]," +
     			"start_time TIMESTAMP NOT NULL," +
     			"end_time TIMESTAMP NOT NULL," +
-    			"description TEXT(1000)" +
-    		")" +
+    			"description TEXT[1000]" +
+    		");" +
     		"ALTER SEQUENCE course_units_id_seq RESTART WITH 10000";
     
     private static final String CREATE_ADDRESSES =
@@ -121,33 +121,33 @@ public class DatabaseTableCreator {
     		"CREATE TABLE inform_users (" +
     			"user_id INTEGER REFERENCES \"users\"(id) ON DELETE CASCADE," +
     			"course_id INTEGER REFERENCES \"courses\"(id) ON DELETE CASCADE," +
-    			"PRIMARY KEY (user, course)" +
+    			"PRIMARY KEY (user_id, course_id)" +
     		")";
 
     private static final String CREATE_COURSE_INSTRUCTORS =
     		"CREATE TABLE course_instructors (" +
     			"course_instructor_id INTEGER REFERENCES \"users\"(id) ON DELETE CASCADE," +
     			"course_id INTEGER REFERENCES \"courses\"(id) ON DELETE CASCADE," +
-    			"PRIMARY KEY (course_instructor, course)" +
+    			"PRIMARY KEY (course_instructor_id, course_id)" +
     		")";
 
     private static final String CREATE_COURSE_PARTICIPANTS =
     		"CREATE TABLE course_participants (" +
     			"participant_id INTEGER REFERENCES \"users\"(id) ON DELETE CASCADE," +
     			"course_id INTEGER REFERENCES \"courses\"(id) ON DELETE CASCADE," +
-    			"PRIMARY KEY (participant, course)" +
+    			"PRIMARY KEY (participant_id, course_id)" +
     		")";
 
     private static final String CREATE_COURSE_UNIT_PARTICIPANTS =
     		"CREATE TABLE course_unit_participants (" +
     			"participant_id INTEGER REFERENCES \"users\"(id) ON DELETE CASCADE," +
     			"course_unit_id INTEGER REFERENCES \"course_units\"(id) ON DELETE CASCADE," +
-    			"PRIMARY KEY (participant, course_unit)" +
+    			"PRIMARY KEY (participant_id, course_unit_id)" +
     		")";
 
     private static final String CREATE_SYSTEM_ATTRIBUTES =
     		"CREATE TABLE system_attributes (" +
-    			"lock CHAR(1) PRIMARY KEY DEFAULT ’X’ CHECK (lock = ’X’)," +
+    			"row_lock CHAR(1) PRIMARY KEY DEFAULT 'X' CHECK (row_lock = 'X')," +
     			"activation_type ACTIVATION NOT NULL," +
     			"withdrawal_hours INTEGER NOT NULL," +
     			"application_hours INTEGER NOT NULL," +
@@ -157,7 +157,7 @@ public class DatabaseTableCreator {
 
     private static final String CREATE_CUSTOMIZATION_DATA =
     		"CREATE TABLE customization_data (" +
-    			"lock CHAR(1) PRIMARY KEY DEFAULT ’X’ CHECK (lock = ’X’)," +
+    			"row_lock CHAR(1) PRIMARY KEY DEFAULT 'X' CHECK (row_lock = 'X')," +
     			"css VARCHAR(30) NOT NULL," +
     			"title VARCHAR(30) NOT NULL" +
     		")";
@@ -199,58 +199,76 @@ public class DatabaseTableCreator {
     	try {
 			check = conn.createStatement();
 			count = check.executeQuery(checkTables);
-			
+			System.out.println(CREATE_SYSTEM_ATTRIBUTES);
 			count.next();
 			Long numTables = (Long) count.getObject(1);
+			
+			System.out.println("im try-Block");
+			
 			if (numTables == 0) {
-				formOfAddress = conn.createStatement();
+				
+				System.out.println("in if-abfrage");
+				
+				/*formOfAddress = conn.createStatement();
 				formOfAddress.execute(CREATE_FORM_OF_ADDRESS);
 				
 				role = conn.createStatement();
 				role.execute(CREATE_ROLE);
 				
 				status = conn.createStatement();
-				status.execute(CREATE_STATUS);
+				status.execute(CREATE_STATUS);*/
 				
-				period = conn.createStatement();
+				/*period = conn.createStatement();
 				period.execute(CREATE_PERIOD);
+				conn.commit();
 				
 				activation = conn.createStatement();
 				activation.execute(CREATE_ACTIVATION);
+				conn.commit();*/
 				
 				users = conn.createStatement();
 				users.execute(CREATE_USERS);
 				
 				courses = conn.createStatement();
 				courses.execute(CREATE_COURSES);
+				conn.commit();
 				
 				courseUnits = conn.createStatement();
 				courseUnits.execute(CREATE_COURSE_UNITS);
+				conn.commit();
 
 				addresses = conn.createStatement();
 				addresses.execute(CREATE_ADDRESSES);
+				conn.commit();
 				
 				cycles = conn.createStatement();
 				cycles.execute(CREATE_CYCLES);
+				conn.commit();
 				
 				informUsers = conn.createStatement();
 				informUsers.execute(CREATE_INFORM_USERS);
+				conn.commit();
 				
 				courseInstructors = conn.createStatement();
 				courseInstructors.execute(CREATE_COURSE_INSTRUCTORS);
+				conn.commit();
 				
 				courseParticipants = conn.createStatement();
 				courseParticipants.execute(CREATE_COURSE_PARTICIPANTS);
+				conn.commit();
 				
 				courseUnitParticipants = conn.createStatement();
 				courseUnitParticipants.
 					execute(CREATE_COURSE_UNIT_PARTICIPANTS);
+				conn.commit();
 				
 				systemAttributes = conn.createStatement();
 				systemAttributes.execute(CREATE_SYSTEM_ATTRIBUTES);
+				conn.commit();
 
 				customizationData = conn.createStatement();
 				customizationData.execute(CREATE_CUSTOMIZATION_DATA);
+				conn.commit();
 				
 				System.out.println("Erstellen der Datenbank fertig");
 			}
