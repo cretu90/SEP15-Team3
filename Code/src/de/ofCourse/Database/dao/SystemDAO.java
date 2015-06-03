@@ -87,7 +87,7 @@ public class SystemDAO {
 	java.sql.Connection conn = connection.getConn();
 
 	// Datenbankabfrage
-	String sql = "SELECT activation_type FROM systemAttributes";
+	String sql = "SELECT activation_type FROM \"systemAttributes\"";
 
 	// mögliche SQL-Injektion abfangen
 	try {
