@@ -47,7 +47,15 @@ public class MyCoursesBean implements Pagination, Serializable {
 	 */
 	private Transaction transaction;
 
+	/**
+	 * Serial id of MyCoursesBean
+	 */
 	private static final long serialVersionUID = 1L;
+
+	/**
+	 * Number of elements that are to display display with pagination at once
+	 */
+	private static final int elementsPerPage = 10;
 
 	/**
 	 * List of courses that the user attends
@@ -95,7 +103,7 @@ public class MyCoursesBean implements Pagination, Serializable {
 
 		pagination = new PaginationData();
 		this.pagination.setSortAsc(true);
-		this.pagination.setElementsPerPage(10);
+		this.pagination.setElementsPerPage(elementsPerPage);
 		this.pagination.setSortColumn("title");
 		this.pagination.setCurrentPageNumber(0);
 
@@ -168,8 +176,6 @@ public class MyCoursesBean implements Pagination, Serializable {
 		// ________________________________________________________
 
 		try {
-			// TODO: DAO - Methode fürs zählen
-
 			// ______________________________________________________
 			// Kann für Test auskommentiert werden
 			// ______________________________________________________

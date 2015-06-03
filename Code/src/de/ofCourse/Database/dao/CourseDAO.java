@@ -14,6 +14,7 @@ import de.ofCourse.model.Course;
 import de.ofCourse.model.PaginationData;
 import de.ofCourse.model.User;
 import de.ofCourse.system.Connection;
+import de.ofCourse.system.LogHandler;
 import de.ofCourse.system.Transaction;
 
 /**
@@ -173,7 +174,25 @@ public class CourseDAO {
 			PaginationData pagination, int userID)
 			throws InvalidDBTransferException {
 		ArrayList<Course> coursesOf = new ArrayList<Course>();
+		String getCourseQuery = "SELECT id, titel FROM courses "
+				+ "WHERE course.id " + "IN {SELECT course "
+				+ "FROM course_participants " + "WHERE participant = ?} "
+				+ "ORDER BY ? ? LIMIT ? OFFSET ?";
+		String getCourseLeadersQuery = "SELECT name FROM users "
+				+ "WHERE users.id "
+				+ "IN {SELECT course_instructor FROM course_instructors WHERE course = 'courseID'";
+		String getNextCourseUnitQuery = "SELECT id, start_time, loaction "
+				+ "FROM course_units WHERE course_units.id = ? "
+				+ "AND course_units.start_time >= CURRENT_DATE "
+				+ "ORDER BY course_units.start_time ASC LIMIT 1";
 
+		
+		
+		
+		
+		
+		
+		
 		return coursesOf;
 	}
 
@@ -193,7 +212,9 @@ public class CourseDAO {
 	public static int getNumberOfMyCourses(Transaction trans, int userID)
 			throws InvalidDBTransferException {
 		int numberOfCourses = 0;
-		String countQuery = "SELECT COUNT(*) FROM courses WHERE course.id IN {SELECT course FROM course_participants WHERE participant = ?}";
+		String countQuery = "SELECT COUNT(*) FROM courses "
+				+ "WHERE course.id "
+				+ "IN {SELECT course FROM course_participants WHERE participant = ?}";
 
 		Connection connection = (Connection) trans;
 		java.sql.Connection conn = connection.getConn();
@@ -207,7 +228,7 @@ public class CourseDAO {
 			resultSet.next();
 			numberOfCourses = resultSet.getInt(1);
 		} catch (SQLException e) {
-			// TODO Logging message
+			LogHandler.getInstance().error("SQL Exception occoured during executing getNumberOfMyCourse()");
 			e.printStackTrace();
 			throw new InvalidDBTransferException();
 		}
