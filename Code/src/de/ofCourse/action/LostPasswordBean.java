@@ -7,8 +7,11 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.RequestScoped;
 
-import de.ofCourse.model.User;
+import de.ofCourse.Database.dao.UserDAO;
 import de.ofCourse.system.Transaction;
+import de.ofCourse.utilities.PasswordHash;
+
+import java.util.Random;
 
 /**
  * Provides the functionality to reset a lost password by entering a e-mail
@@ -32,9 +35,15 @@ import de.ofCourse.system.Transaction;
 @RequestScoped
 public class LostPasswordBean {
 
+	private static final String BIGSIGNS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	private static final String SMALLSIGNS = "abcdefghijklmnopqrstuvwxyz";
+	private static final String NUMBERS = "0123456789";
+	private static final String SPECIAL = "!@#$%^&*_=+-/";
+	private static final int passwordLength = 8;
+
     /**
      * Stores the entered e-mail address to which the new password should be
-     * sent
+     * sent.
      */
     private String emailAddressToResetPassword;
     
@@ -42,9 +51,6 @@ public class LostPasswordBean {
      * Stores the transaction that is used for database interaction.
      */
     private Transaction transaction;
-
-    /** User who requests a new password */
-    private User user;
 
     /**
      * This ManagedProperty represents the actual session of a user. It stores
@@ -62,6 +68,9 @@ public class LostPasswordBean {
      * database.
      */
     public void resetPassword() {
+    	String salt = "";
+    	String newHashedPassword = PasswordHash.hash(generateNewPassword(), salt);
+    	UserDAO.overridePassword(transaction, emailAddressToResetPassword, newHashedPassword, salt);
     }
 
     /**
@@ -83,27 +92,6 @@ public class LostPasswordBean {
      */
     public void setEmailAddressToResetPassword(String emailToResetPassword) {
     }
-
-    /**
-     * Returns the value of the attribute <code>user</code>.
-     * 
-     * @return the user who forgot his password
-     */
-    public User getUser() {
-	return user;
-    }
-
-    /**
-     * 
-     * Sets the value of the attribute <code>user</code>.
-     * 
-     * @param user
-     *            the user who forgot his password
-     */
-    public void setUser(User user) {
-    }
-
-    
     
     /**
      * Returns the ManagedProperty <code>SessionUser</code>.
@@ -121,6 +109,41 @@ public class LostPasswordBean {
      *            session of the user
      */
     public void setSessionUser(SessionUserBean userSession) {
+    }
+
+    private String generateNewPassword() {
+    	String newPassword = null;
+    	Random random = new Random();
+    	int length = random.nextInt(1) + passwordLength;
+    	char[] password = new char[length];
+    	int iterator = 0;
+
+    	for (int i = 0; i < 3; i++){
+    		iterator = getNextPosition(random, length, password);
+    		password[iterator] = BIGSIGNS.charAt(random.nextInt(BIGSIGNS.length()));
+	    }
+		for (int i = 0; i < 3; i++) {
+			iterator = getNextPosition(random, length, password);
+			password[iterator] = NUMBERS.charAt(random.nextInt(NUMBERS.length()));
+		}
+		for (int i = 0; i < 1; i++) {
+			iterator = getNextPosition(random, length, password);
+			password[iterator] = SPECIAL.charAt(random.nextInt(SPECIAL.length()));
+		}
+		for(int i = 0; i < length; i++) {
+			if(password[i] == 0) {
+				password[i] = SMALLSIGNS.charAt(random.nextInt(SMALLSIGNS.length()));
+			}
+		}
+		newPassword = password.toString();
+    	return newPassword;
+    }
+
+    private int getNextPosition(Random random, int length, char[] password) {
+    	int iterator = random.nextInt(length);
+
+    	while(password[iterator = random.nextInt(length)] != 0);
+    	return iterator;
     }
 
 }
