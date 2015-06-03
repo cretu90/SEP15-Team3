@@ -124,7 +124,7 @@ public class AuthenticateUserBean {
 	} else {
 	    // Sessionobjekt mit Benutzerdaten füllen, noch nicht vorhandene
 	    // Daten mittels Benutzerid von der Datenbank abfragen.
-	    sessionUser.setLanguage(Language.de);
+	    sessionUser.setLanguage(Language.DE);
 	    sessionUser.setUserID(id);
 	    sessionUser.setUserRole(UserDAO.getUserRole(this.transaction, id));
 	    sessionUser.setUserStatus(UserDAO.getUserStatus(this.transaction, id));
