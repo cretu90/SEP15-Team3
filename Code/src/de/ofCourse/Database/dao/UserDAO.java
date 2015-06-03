@@ -3,6 +3,8 @@
  */
 package de.ofCourse.Database.dao;
 
+import java.math.BigInteger;
+import java.security.SecureRandom;
 import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -101,23 +103,38 @@ public class UserDAO {
      *            the user to be added
      * @param pwHash
      * 		  the hashed password
+     * @return the created id of the user
      * @throws InvalidDBTransferException if any error occurred during the
      * execution of the method
      */
-    public static void createUser(Transaction trans, User user, String pwHash)
+    public static String createUser(Transaction trans, User user, String pwHash)
     		throws InvalidDBTransferException {
+	
+	String veriString = "";
 	
 	//SQL- INSERT vorbereiten und Connection zur Datenbank erstellen.
 	PreparedStatement pS = null;
 	Connection connection = (Connection) trans;
 	java.sql.Connection conn = connection.getConn();
 	
-	String sql = "Insert into \"users\" (first_name, name, nickname, email, "
-		+ "pw_hash, date_of_birth, form_of_address, credit_balance, "
-		+ "email_verification, admin_verfication, role, status)"
-		+ "values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 	//mögliche SQL-Injektion abfangen
 	try {
+	    ResultSet res = null;
+	    
+	    String sql = "SELECT id FROM \"users\" WHERE veri_string = ?";
+	    do {
+		SecureRandom random = new SecureRandom();
+		veriString = new BigInteger(130, random).toString();
+		pS = conn.prepareStatement(sql);
+		pS.setString(1, veriString);
+		res = pS.executeQuery();
+	    } while(res.next());
+	    
+	    sql = "Insert into \"users\" (first_name, name, nickname, email, "
+			+ "pw_hash, date_of_birth, form_of_address, credit_balance, "
+			+ "email_verification, admin_verfication, role, status, veri_string)"
+			+ "values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+		
 	    // PreparedStatement befüllen, bei optionalen Feldern überprüfen,
 	    // ob der Benutzer die Daten angegeben hat oder ob in die 
 	    // Datenbank null-Werte geschrieben werden müssen.
@@ -150,16 +167,17 @@ public class UserDAO {
 	    pS.setBoolean(10, false);
 	    pS.setString(11, UserRole.REGISTERED_USER.toString());
 	    pS.setString(12, UserStatus.NOT_ACTIVATED.toString());
+	    pS.setString(13, veriString);
 	    
+	    pS.executeUpdate();	   
 	    
-	    pS.executeUpdate();
-	    
-
 	} catch (SQLException e) {
 	    LogHandler.getInstance().error("SQL Exception occoured during executing createUser(Transaction trans, User user, String pwHash)");
 	    throw new InvalidDBTransferException();
 	    
 	} 
+	
+	return veriString;
     }
 
     /**
@@ -361,6 +379,39 @@ public class UserDAO {
 	    
 	} 
 	return userRole;
+    }
+    
+    public static boolean verifyUser(Transaction trans, String veriString) 
+	    throws InvalidDBTransferException{   
+	boolean success = false;
+	
+	PreparedStatement pS = null;
+	Connection connection = (Connection) trans;
+	java.sql.Connection conn = connection.getConn();
+	
+	String sql = "Update \"users\" SET email_verification = ?, veriString = ? WHERE veriString=?";
+	//mögliche SQL-Injektion abfangen
+	try {
+	    pS = conn.prepareStatement(sql);	    
+	    pS.setBoolean(1, true);
+	    pS.setString(2, null);
+	    pS.setString(3, veriString);
+	    
+	    //preparedStatement ausführen, gibt resultSet als Liste zurück (hier
+	    //ein Eintrag in der Liste, da Benutzername einzigartig).
+	    if(pS.executeUpdate() == 1) {
+		success = true;
+	    } else {
+		success = false;
+	    }
+
+	} catch (SQLException e) {
+	    LogHandler.getInstance().error("SQL Exception occoured during executing proveLogin(Transaction trans, String username, String passwordHash)");
+	    throw new InvalidDBTransferException();
+	    
+	} 
+	
+	return success;
     }
 
     /**
