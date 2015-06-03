@@ -72,8 +72,9 @@ public class RegisterUserBean {
     public String registerUser() {
 	
 	// Eingegebenes Passwort hashen
-	// TODO salt
-	String passwordHash = PasswordHash.hashPW(this.getRegisterPassword(), );
+	// TODO salt  Stimmt das so????
+	String salt = "";
+	String passwordHash = PasswordHash.hash(this.getRegisterPassword(), salt );
 	
 	// Datenbankverbindung initialisieren
 	this.transaction = new Connection();

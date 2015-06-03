@@ -84,15 +84,16 @@ public class AuthenticateUserBean {
     public String login() {
 	
 	// Eingegebenes Passwort hashen
-	// TODO salt hinzufügen
-	// String passwordHash = PasswordHash.hashPW(this.loginPassword);
+	// TODO salt hinzufügen    stimmt das so ???
+	String salt = "";
+	String passwordHash = PasswordHash.hash(this.loginPassword, salt);
 	
 	// Neues Transaction Objekt erstellen für die Datenbankverbindung
 	this.transaction = new Connection();
 	transaction.start();
 	
 	// Überprüfen, ob Benutzername und Passwort gültig sind   passwordHash   oder this.loginPassword
-	int id = UserDAO.proveLogin(this.transaction, this.getLoginUser().getUsername(), this.loginPassword);
+	int id = UserDAO.proveLogin(this.transaction, this.getLoginUser().getUsername(), passwordHash);
 	
 	// Methode proveLogin gibt -1 zurück, wenn der Benutzername oder das 
 	// Passwort falsch sind
