@@ -80,6 +80,14 @@
 											</h:commandButton></li>
 
 										<li><h:commandButton class="btn btn-default"
+												value="#{myCoursesBean.pagination.currentPageNumber-1}"
+												action="#{myCoursesBean.goToSpecificPage}"
+												rendered="#{myCoursesBean.pagination.currentPageNumber>=2}">
+												<f:param name="page"
+													value="#{myCoursesBean.pagination.currentPageNumber-2}" />
+											</h:commandButton></li>
+
+										<li><h:commandButton class="btn btn-default"
 												value="#{myCoursesBean.pagination.currentPageNumber}"
 												action="#{myCoursesBean.goToSpecificPage}"
 												rendered="#{myCoursesBean.pagination.currentPageNumber>=1}">
@@ -101,6 +109,13 @@
 												rendered="#{myCoursesBean.pagination.numberOfPages>=myCoursesBean.pagination.currentPageNumber+1}">
 												<f:param name="page"
 													value="#{myCoursesBean.pagination.currentPageNumber+1}" />
+											</h:commandButton></li>
+										<li><h:commandButton class="btn btn-default"
+												value="#{myCoursesBean.pagination.currentPageNumber+3}"
+												action="#{myCoursesBean.goToSpecificPage}"
+												rendered="#{myCoursesBean.pagination.numberOfPages>=myCoursesBean.pagination.currentPageNumber+2}">
+												<f:param name="page"
+													value="#{myCoursesBean.pagination.currentPageNumber+2}" />
 											</h:commandButton></li>
 
 										<li><h:commandButton class="btn btn-info" value="Weiter"
