@@ -197,9 +197,11 @@
 										              <f:validateLength minimum="8" maximum="100" />
 										              <f:validateRegex pattern="^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@ [A-Za-z0-9-]+(\\.[A-Za-z0-9.-]+)*(\\.[A-Za-z]{2,})$"/>
 										</h:inputSecret>
+										
 									</div>
 									<br />
 									<h:commandButton id="login" action ="#{AuthenticateUserBean.login}" class="btn btn-info" value="Anmelden" />
+								<h:messages globalOnly="true" layout="table" class="alert alert-danger"/>
 								</h:form>								
 							</div>
 						</div>								
