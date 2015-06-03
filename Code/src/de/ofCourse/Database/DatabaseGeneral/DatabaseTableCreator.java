@@ -27,27 +27,27 @@ public class DatabaseTableCreator {
 	
 	private static final String CREATE_FORM_OF_ADDRESS =
 			"CREATE TYPE form_of_address AS ENUM (" +
-					"'mr.', 'ms.'" +
+					"'MR.', 'MS.'" +
     		")";
     
     private static final String CREATE_ROLE =
     		"CREATE TYPE role AS ENUM (" +
-    			"'registered_user', 'course_instructor', 'administrator'" +
+    			"'REGISTERED_USER', 'COURSE_LEADER', 'SYSTEM_ADMINISTRATOR'" +
     		")";
     
     private static final String CREATE_STATUS =
     		"CREATE TYPE status AS ENUM (" +
-    			"'anonymous', 'not_activated', 'registered', 'inactive'" +
+    			"'ANONYMOUS', 'NOT_ACTIVATED', 'REGISTERED', 'INACTIVE'" +
     		")";
     
     private static final String CREATE_PERIOD =
     		"CREATE TYPE period AS ENUM (" +
-    			"'months', 'weeks', 'days', 'hours'" +
+    			"'MONTHS', 'WEEKS', 'DAYS', 'HOURS'" +
     		")";
     
     private static final String CREATE_ACTIVATION =
     		"CREATE TYPE activation AS ENUM (" +
-    			"'email', 'admin', 'complete'" +
+    			"'EMAIL', 'ADMIN', 'COMPLETE'" +
     		")";
     
     private static final String CREATE_USERS =
