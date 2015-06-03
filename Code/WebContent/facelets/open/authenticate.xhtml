@@ -18,6 +18,26 @@
 						Für weitere Informationen besuchen Sie bitte die Hilfe-Seite.</p>
 					</div>
 				</div>
+				<div class="row">
+                    <div class="col-lg-12">
+                        <h:message for="firstnameRegister" style="color:red" />
+                        <h:message for="lastnameRegister" style="color:red" />
+                        <h:message for="usernameRegister" style="color:red" />
+                        <h:message for="passwordRegister" style="color:red" />
+                        <h:message for="passwordConfirmRegister" style="color:red" />
+                        <h:message for="birthdateRegister" style="color:red" />
+                        <h:message for="streetRegister" style="color:red" />
+                        <h:message for="houseNumberRegister" style="color:red" />
+                        <h:message for="locationRegister" style="color:red" />
+                        <h:message for="zipcodeRegister" style="color:red" />
+                        <h:message for="countryRegister" style="color:red" />
+                        <h:message for="emailRegister" style="color:red" />
+                        <h:message for="usernameLogin" style="color:red" />
+                        <h:message for="passwordLogin" style="color:red" />
+                        <h:message for="passwordEMail" style="color:red" />
+                        <h:messages globalOnly="true" layout="table" class="alert alert-danger"/>
+                    </div>
+                </div>
 				<div class="row" style="padding-top:20px;">
 					<div class="col-lg-7">
 						<div class="panel panel-info">
@@ -40,7 +60,7 @@
 										<span class="input-group-addon" style="width:160px; text-align:right;">Vorname:</span>
 										<h:inputText class="form-control" style="width:300px;" id="firstnameRegister"
                                                       value="#{registerUserBean.userToRegistrate.firstname}"
-                                                      validatorMessage="Ihr Vorname muss zwischen 0 und 100 Zeichen lang sein. ">
+                                                      validatorMessage="Ihr Vorname darf höchstens 100 Zeichen lang sein. ">
                                                       <f:validateLength minimum="0" maximum="100" />
 										</h:inputText>
 									</div>
@@ -49,7 +69,7 @@
 										<span class="input-group-addon" style="width:160px; text-align:right;">Name:</span>
 										<h:inputText class="form-control" style="width:300px;" id="lastnameRegister"
 										             value="#{registerUserBean.userToRegistrate.lastname}"
-                                                      validatorMessage="Ihr Nachname muss zwischen 0 und 100 Zeichen lang sein. ">
+                                                      validatorMessage="Ihr Nachname darf höchstens 100 Zeichen lang sein. ">
                                                       <f:validateLength minimum="0" maximum="100" />
 										</h:inputText>
 									</div>
@@ -58,47 +78,43 @@
 										<span class="input-group-addon" style="width:160px; text-align:right;">Benutzername:</span>
 										<h:inputText class="form-control" style="width:300px;" id="usernameRegister"
 										             value="#{registerUserBean.userToRegistrate.username}"
-										             required="true"  requiredMessage="Bitte geben Sie einen Benutzernamen ein."
+										             required="true"  requiredMessage="Bitte geben Sie einen Benutzernamen ein. "
                                                      validatorMessage="Ihr Nachname muss zwischen 5 und 100 Zeichen lang sein. ">
                                                      <f:validateLength minimum="5" maximum="100" />
                                                      <f:validator validatorId="userNameValidator" />
 										</h:inputText>
-                                        <h:message for="usernameRegister" style="color:red" />
 									</div>
 									
 									<div class="input-group" style="padding-top:5px;">
 										<span class="input-group-addon" style="width:160px; text-align:right;">Passwort:</span>
 										<h:inputSecret class="form-control" style="width:300px;" id="passwordRegister"
 										               value="#{registerUserBean.registerPassword}"
-                                                       required="true"  requiredMessage="Bitte geben Sie ein Passwort ein."
+                                                       required="true"  requiredMessage="Bitte geben Sie ein Passwort ein. "
                                                        validatorMessage="Ihr Passwort darf höchstens 100 Zeichen lang sein. ">
                                                      <f:validateLength maximum="100" />
                                                      <f:validator validatorId="passwordValidator" />
 										</h:inputSecret>
-										 <h:message for="passwordRegister" style="color:red" />
 									</div>
 									
 									<div class="input-group" style="padding-top:5px;">
 										<span class="input-group-addon" style="width:160px; text-align:right;">Passwort bestätigen:</span>
 										<h:inputSecret class="form-control" style="width:300px;" id="passwordConfirmRegister"
 										               value="#{registerUserBean.registerConfirmPassword}"
-                                                       required="true"  requiredMessage="Bitte geben Sie Ihr Passwort zur Bestätigung ein."
+                                                       required="true"  requiredMessage="Bitte geben Sie Ihr Passwort zur Bestätigung ein. "
                                                        validatorMessage="Ihr Passwort darf höchstens 100 Zeichen lang sein. ">
                                                      <f:validateLength maximum="100" />
                                                      <f:validator validatorId="confirmPasswordValidator" />
                                         </h:inputSecret>
-                                         <h:message for="passwordConfirmRegister" style="color:red" />
 									</div>
 									
 									<div class="input-group" style="padding-top:5px;">
 										<span class="input-group-addon" style="width:160px; text-align:right;">Geburtstag:</span>
 										<h:inputText class="form-control" style="width:300px;" id="birthdateRegister"
 										             value="#{registerUserBean.userToRegistrate.dateOfBirth}"
-										             converterMessage="Datum existiert nicht oder Format (yyyy-MM-dd) ist falsch." >
+										             converterMessage="Datum existiert nicht oder Format (yyyy-MM-dd) ist falsch. " >
 										             <f:convertDateTime pattern="yyyy-MM-dd" timeZone="Europe/Berlin" />
 										             <f:validator validatorId="dateOfBirthValidator" />
 										</h:inputText>
-										<h:message for="birthdateRegister" style="color:red" />
 									</div>
 									
 									<div class="input-group" style="padding-top:5px;">
@@ -123,7 +139,7 @@
 										<span class="input-group-addon" style="width:160px; text-align:right;">Stadt:</span>
 										<h:inputText class="form-control" style="width:300px;" id="locationRegister"
 										             value="#{registerUserBean.userToRegistrate.address.city}" 
-										             required="true"  requiredMessage="Bitte geben Sie eine Stadt ein."
+										             required="true"  requiredMessage="Bitte geben Sie eine Stadt ein. "
                                                      validatorMessage="Ihre Eingabe muss zwischen 1 und 100 Zeichen lang sein. ">
                                                      <f:validateLength minimum ="1" maximum="100" />
 										</h:inputText>
@@ -133,7 +149,7 @@
 										<span class="input-group-addon" style="width:160px; text-align:right;">Postleitzahl:</span>
 										<h:inputText class="form-control" style="width:300px;" id="zipcodeRegister"
 										             value="#{registerUserBean.userToRegistrate.address.zipCode}" 
-                                                     required="true"  requiredMessage="Bitte geben Sie eine Postleitzahl ein."
+                                                     required="true"  requiredMessage="Bitte geben Sie eine Postleitzahl ein. "
                                                      validatorMessage="Ihre Eingabe muss zwischen 1 und 10 Zeichen lang sein. ">
                                                      <f:validateLength minimum ="1" maximum="10" />
 										</h:inputText>
@@ -143,7 +159,7 @@
                                         <span class="input-group-addon" style="width:160px; text-align:right;">Land:</span>
                                         <h:inputText class="form-control" style="width:300px;" id="countryRegister"
                                                      value="#{registerUserBean.userToRegistrate.address.country}" 
-                                                     required="true"  requiredMessage="Bitte geben Sie ein Land ein."
+                                                     required="true"  requiredMessage="Bitte geben Sie ein Land ein. "
                                                      validatorMessage="Ihre Eingabe muss zwischen 1 und 100 Zeichen lang sein. ">
                                                      <f:validateLength minimum ="1" maximum="100" />
                                         </h:inputText>
@@ -153,7 +169,7 @@
 										<span class="input-group-addon" style="width:160px; text-align:right;">E-Mail-Adresse:</span>
 										<h:inputText class="form-control" style="width:300px;" id="emailRegister"
 										             value="#{registerUserBean.userToRegistrate.email}" 
-                                                     required="true"  requiredMessage="Bitte geben Sie Ihre E-MAil-Adresse ein."
+                                                     required="true"  requiredMessage="Bitte geben Sie Ihre E-MAil-Adresse ein. "
                                                      validatorMessage="Ihre Eingabe muss zwischen 1 und 319 Zeichen lang sein und ein gültiges Format haben. ">
                                                      <f:validateLength minimum ="1" maximum="319" />
                                                      <f:validateRegex pattern="^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@ [A-Za-z0-9-]+(\\.[A-Za-z0-9.-]+)*(\\.[A-Za-z]{2,})$"/>
@@ -169,7 +185,7 @@
 									</div>
 									<br />
 									<h:commandButton id="login" action ="#{registerUserBean.registerUser}" class="btn btn-info" value="Registrieren" />
-									<h:messages globalOnly="true" layout="table" class="alert alert-danger"/>
+									
 								</h:form>	
 							</div>
 						</div>					
@@ -184,8 +200,8 @@
 									<div class="input-group">
 										<span class="input-group-addon" style="width:140px; text-align:right;">Benutzername:</span>
 										<h:inputText class="form-control" id="usernameLogin" value="#{authenticateUserBean.loginUser.username}"
-										             required="true" requiredMessage="Bitte geben Sie Ihren Benutzernamen ein." 
-										             validatorMessage="Ihr Benutzername muss zwischen 5 und  1oo Zeichen lang sein."
+										             required="true" requiredMessage="Bitte geben Sie Ihren Benutzernamen ein. " 
+										             validatorMessage="Ihr Benutzername muss zwischen 5 und  1oo Zeichen lang sein. "
 										             style="width:250px;">
 										             <f:validateLength minimum="5" maximum="100" />
 									   </h:inputText>
@@ -194,8 +210,8 @@
 									<div class="input-group" style="padding-top:5px;">
 										<span class="input-group-addon" style="width:140px; text-align:right;">Passwort:</span>
 										<h:inputSecret class="form-control" id="passwordLogin" value="#{authenticateUserBean.loginPassword}" 
-										              required="true" requiredMessage="Bitte geben Sie Ihr Passwort ein." 
-										              validatorMessage="Ihr Passwort muss zwischen 8 und 1oo Zeichen lang sein."
+										              required="true" requiredMessage="Bitte geben Sie Ihr Passwort ein. " 
+										              validatorMessage="Ihr Passwort muss zwischen 8 und 1oo Zeichen lang sein. "
 										              style="width:250px;">
 										              <f:validateLength minimum="8" maximum="100" />
 										              
@@ -204,9 +220,8 @@
 									</div>
 									<br />
 									<h:commandButton id="login" action ="#{authenticateUserBean.login}" class="btn btn-info" value="Anmelden" />
-									<h:message for="usernameLogin" style="color:red" />
-									<h:message for="passwordLogin" style="color:red" />
-								<h:messages globalOnly="true" layout="table" class="alert alert-danger"/>
+								
+								
 								</h:form>								
 							</div>
 						</div>								
@@ -220,7 +235,7 @@
 										<span class="input-group-addon" style="width:140px; text-align:right;">E-Mail-Adresse:</span>
 										<h:inputText class="form-control" id="passwordEMail" style="width:250px;"
 										              value="#{lostPasswordBean.emailAddressToResetPassword}"
-										              required="true" requiredMessage="Bitte geben Sie Ihre E-Mail-Adresse ein." 
+										              required="true" requiredMessage="Bitte geben Sie Ihre E-Mail-Adresse ein. " 
 										              validatorMessage="Ihre Eingabe muss zwischen 1 und 319 Zeichen lang sein und ein gültiges Format haben. ">
                                                      <f:validateLength minimum ="1" maximum="319" />
 										             <f:validateRegex pattern="^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@ [A-Za-z0-9-]+(\\.[A-Za-z0-9.-]+)*(\\.[A-Za-z]{2,})$"/>
@@ -229,10 +244,10 @@
 									</div>
 									<br />
 									<h:commandButton id="newPassword" action ="#{lostPasswordBean.resetPassword}" class="btn btn-info" value="Neues Passwort anfordern" />
-									<h:messages globalOnly="true" layout="table" class="alert alert-danger"/>
+									
 								</h:form>								
 							</div>
-						</div>								
+						</div>							
 					</div>
 				</div>
 			</body>
