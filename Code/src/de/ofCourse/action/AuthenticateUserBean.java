@@ -84,14 +84,14 @@ public class AuthenticateUserBean {
 	
 	// Eingegebenes Passwort hashen
 	// TODO salt hinzufügen
-	String passwordHash = PasswordHash.hashPW(this.loginPassword);
+	// String passwordHash = PasswordHash.hashPW(this.loginPassword);
 	
 	// Neues Transaction Objekt erstellen für die Datenbankverbindung
 	this.transaction = new Connection();
 	transaction.start();
 	
-	// Überprüfen, ob Benutzername und Passwort gültig sind
-	int id = UserDAO.proveLogin(this.transaction, this.getLoginUser().getUsername(), passwordHash);
+	// Überprüfen, ob Benutzername und Passwort gültig sind   passwordHash
+	int id = UserDAO.proveLogin(this.transaction, this.getLoginUser().getUsername(), this.loginPassword);
 	
 	// Methode proveLogin gibt -1 zurück, wenn der Benutzername oder das 
 	// Passwort falsch sind
@@ -139,7 +139,7 @@ public class AuthenticateUserBean {
             return "/facelets/user/registeredUser/myCourses.xhtml?faces-redirect=true";
 	}
 	
-	return null;
+	
     }
 
     /**

@@ -95,7 +95,7 @@ public class RegisterUserBean {
 	    UserDAO.createUser(this.transaction, this.getUserToRegistrate(), passwordHash);
 	}
 	
-	//TODO Erfolgsmeldung ausgeben
+	// TODO Erfolgsmeldung ausgeben
 	
 	return "/facelets/open/index.xhtml?faces-redirect=false";
     }
