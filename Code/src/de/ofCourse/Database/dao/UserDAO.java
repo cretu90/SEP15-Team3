@@ -65,7 +65,7 @@ public class UserDAO {
 	Connection connection = (Connection) trans;
 	java.sql.Connection conn = connection.getConn();
 	
-	String sql = "SELECT id FROM users WHERE email=?";
+	String sql = "SELECT id FROM \"users\" WHERE email=?";
 	//mögliche SQL-Injektion abfangen
 	try {
 	    pS = conn.prepareStatement(sql);	    
@@ -114,7 +114,7 @@ public class UserDAO {
 	Connection connection = (Connection) trans;
 	java.sql.Connection conn = connection.getConn();
 	
-	String sql = "Insert into users (first_name, name, nickname, email, "
+	String sql = "Insert into \"users\" (first_name, name, nickname, email, "
 		+ "pw_hash, date_of_birth, form_of_address, credit_balance, "
 		+ "email_verification, admin_verfication, role, status)"
 		+ "values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
@@ -274,7 +274,7 @@ public class UserDAO {
 	Connection connection = (Connection) trans;
 	java.sql.Connection conn = connection.getConn();
 	
-	String sql = "SELECT status FROM users WHERE id=?";
+	String sql = "SELECT status FROM \"users\" WHERE id=?";
 	//mögliche SQL-Injektion abfangen
 	try {
 	    pS = conn.prepareStatement(sql);	    
@@ -334,7 +334,7 @@ public class UserDAO {
 	Connection connection = (Connection) trans;
 	java.sql.Connection conn = connection.getConn();
 	
-	String sql = "SELECT role FROM users WHERE id=?";
+	String sql = "SELECT role FROM \"users\" WHERE id=?";
 	//mögliche SQL-Injektion abfangen
 	try {
 	    pS = conn.prepareStatement(sql);	    
@@ -468,7 +468,7 @@ public class UserDAO {
 	java.sql.Connection conn = connection.getConn();
 	
 	//Datenbankabfrage
-	String sql = "SELECT * FROM users WHERE nickname=?";
+	String sql = "SELECT * FROM \"users\" WHERE nickname=?";
 	
 	
 	//mögliche SQL-Injektion abfangen
@@ -589,7 +589,7 @@ public class UserDAO {
 	java.sql.Connection conn = connection.getConn();
 	
 	//Datenbankabfrage
-	String sql = "SELECT id FROM users WHERE nickname=?";
+	String sql = "SELECT id FROM \"users\" WHERE nickname=?";
 	
 	//mögliche SQL-Injektion abfangen
 	try {
