@@ -61,6 +61,7 @@ public class SetupAdmin {
     			init = conn.createStatement();
     			init.execute(INIT_ADMIN);
     		}
+    		trans.commit();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
