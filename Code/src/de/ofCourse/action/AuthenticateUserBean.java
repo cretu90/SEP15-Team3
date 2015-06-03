@@ -29,7 +29,7 @@ import de.ofCourse.utilities.PasswordHash;
  * This class is ManagedBean and controller of the facelet
  * <code>authenticate</code>.
  * 
- * @author Tobias Fuchs
+ * @author Katharina Hölzl
  *
  */
 @ManagedBean
