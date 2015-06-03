@@ -168,6 +168,7 @@
 									</div>
 									<br />
 									<h:commandButton id="login" action ="#{registerUserBean.registerUser}" class="btn btn-info" value="Registrieren" />
+									<h:messages globalOnly="true" layout="table" class="alert alert-danger"/>
 								</h:form>	
 							</div>
 						</div>					
@@ -197,7 +198,7 @@
 										              <f:validateLength minimum="8" maximum="100" />
 										              
 										</h:inputSecret>
-										<h:messages globalOnly="true" layout="table" class="alert alert-danger"/>
+										
 									</div>
 									<br />
 									<h:commandButton id="login" action ="#{authenticateUserBean.login}" class="btn btn-info" value="Anmelden" />
@@ -215,13 +216,16 @@
 										<span class="input-group-addon" style="width:140px; text-align:right;">E-Mail-Adresse:</span>
 										<h:inputText class="form-control" id="passwordEMail" style="width:250px;"
 										              value="#{lostPasswordBean.emailAddressToResetPassword}"
-										              required="true" requiredMessage="Bitte geben Sie Ihre E-Mail-Adresse ein." >
+										              required="true" requiredMessage="Bitte geben Sie Ihre E-Mail-Adresse ein." 
+										              validatorMessage="Ihre Eingabe muss zwischen 1 und 319 Zeichen lang sein und ein gültiges Format haben. ">
+                                                     <f:validateLength minimum ="1" maximum="319" />
 										             <f:validateRegex pattern="^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@ [A-Za-z0-9-]+(\\.[A-Za-z0-9.-]+)*(\\.[A-Za-z]{2,})$"/>
                                         </h:inputText>
-                                            <h:message for="passwordEMail" style="color:red" />
+                                           
 									</div>
 									<br />
 									<h:commandButton id="newPassword" action ="#{lostPasswordBean.resetPassword}" class="btn btn-info" value="Neues Passwort anfordern" />
+									<h:messages globalOnly="true" layout="table" class="alert alert-danger"/>
 								</h:form>								
 							</div>
 						</div>								
