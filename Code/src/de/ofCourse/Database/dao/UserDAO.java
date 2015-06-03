@@ -643,7 +643,7 @@ public class UserDAO {
         Connection connection = (Connection) trans;
         java.sql.Connection conn = connection.getConn();
 
-        String sql = "UPDATE users "
+        String sql = "UPDATE \"users\" "
                 + "SET first_name = ?, name = ?, email = ?, pw_hash = ?, "
                 + "date_of_birth = ?, form_of_address = ?, nickname = ? "
                 + "WHERE id = ?";
@@ -678,6 +678,41 @@ public class UserDAO {
             }
             statement.setString(7, user.getUsername());
             statement.setInt(8, user.getUserID());
+            statement.executeUpdate();
+        } catch (SQLException e) {
+            throw new InvalidDBTransferException();
+            //TODO Logging message
+        } finally {
+            try {
+                conn.close();
+            } catch (SQLException e) {
+                /* ignored */
+            }
+        }
+    }
+
+    /**
+     * Overrides a user's password.
+     * 
+     * @param trans the transaction object which contains the database connection
+     * @param mail the mail address of the user to be updated
+     * @throws InvalidDBTransferException
+     */
+    public static void overridePassword(Transaction trans, String mail, String password, String salt)
+    		throws InvalidDBTransferException {
+        PreparedStatement statement = null;
+        Connection connection = (Connection) trans;
+        java.sql.Connection conn = connection.getConn();
+
+        String sql = "UPDATE \"users\" "
+                + "SET pw_hash = ?, salt = ? "
+                + "WHERE email = ?";
+        
+        try {
+            statement = conn.prepareStatement(sql);
+            statement.setString(1, password);
+            statement.setString(2, salt);
+            statement.setString(3, mail);
             statement.executeUpdate();
         } catch (SQLException e) {
             throw new InvalidDBTransferException();
