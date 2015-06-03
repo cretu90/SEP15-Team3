@@ -7,6 +7,7 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.RequestScoped;
 import javax.faces.context.FacesContext;
+import javax.annotation.PostConstruct;
 
 import de.ofCourse.model.UserRole;
 import de.ofCourse.model.UserStatus;
@@ -45,6 +46,7 @@ public class NavigationBean {
      * Stores the transaction that is used for database interaction.
      */
     private Transaction transaction;
+    private boolean isAdmin;
 
     /**
      * Performs the logout action.<br> By pressing the <code>logout</code>
@@ -77,4 +79,12 @@ public class NavigationBean {
     public void setSessionUser(SessionUserBean userSession) {
         this.sessionUser = userSession;
     }
+
+	public boolean isAdmin() {
+		return isAdmin;
+	}
+
+	public void setAdmin(boolean isAdmin) {
+		this.isAdmin = isAdmin;
+	}
 }
