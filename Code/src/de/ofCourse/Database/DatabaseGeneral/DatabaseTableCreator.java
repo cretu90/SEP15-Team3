@@ -210,12 +210,15 @@ public class DatabaseTableCreator {
 				
 				formOfAddress = conn.createStatement();
 				formOfAddress.execute(CREATE_FORM_OF_ADDRESS);
+				conn.commit();
 				
 				role = conn.createStatement();
 				role.execute(CREATE_ROLE);
+				conn.commit();
 				
 				status = conn.createStatement();
 				status.execute(CREATE_STATUS);
+				conn.commit();
 				
 				period = conn.createStatement();
 				period.execute(CREATE_PERIOD);
@@ -227,6 +230,7 @@ public class DatabaseTableCreator {
 				
 				users = conn.createStatement();
 				users.execute(CREATE_USERS);
+				conn.commit();
 				
 				courses = conn.createStatement();
 				courses.execute(CREATE_COURSES);
@@ -267,7 +271,7 @@ public class DatabaseTableCreator {
 
 				customizationData = conn.createStatement();
 				customizationData.execute(CREATE_CUSTOMIZATION_DATA);
-				conn.commit();
+				trans.commit();
 				
 				System.out.println("Erstellen der Datenbank fertig");
 			}

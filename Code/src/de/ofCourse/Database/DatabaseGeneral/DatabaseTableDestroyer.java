@@ -118,7 +118,7 @@ public class DatabaseTableDestroyer {
 			
 			activation_type = conn.createStatement();
 			activation_type.execute(DROP_ACTIVATION);
-			conn.commit();
+			trans.commit();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
