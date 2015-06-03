@@ -21,8 +21,8 @@
 	    			</div>
 	    			<div class="navbar-collapse collapse navbar-right">
 	    				<h:form>
-	    					<h:commandButton class="btn btn-danger navbar-btn btn-minsize" value="Logout" action="#{navigationBean.logout}" rendered="#{!(navigationBean.sessionUser.userRole == ANONYMOUS)}" />
-	    					<h:commandButton class="btn btn-success btn-minsize navbar-btn" value="Registrieren/Login" action="/facelets/open/authenticate.xhtml" rendered="#{navigationBean.sessionUser.userRole == ANONYMOUS}" />
+	    					<h:commandButton class="btn btn-danger navbar-btn btn-minsize" value="Logout" action="#{navigationBean.logout}" rendered="#{(navigationBean.sessionUser.userRole == ('REGISTERED_USER' || 'COURSE_LEADER' || 'SYSTEM_ADMINISTRATOR'))}" />
+	    					<h:commandButton class="btn btn-success btn-minsize navbar-btn" value="Registrieren/Login" action="/facelets/open/authenticate.xhtml" rendered="#{!(navigationBean.sessionUser.userRole == ('REGISTERED_USER' || 'COURSE_LEADER' || 'SYSTEM_ADMINISTRATOR'))}" />
 	    					<h:commandLink action="#{navigationBean.sessionUser.setLanguage(de)}">
 	    						<h:graphicImage url="/resources/img/germanFlag.gif" alt="DE" title="Deutsche Version" width="50ox;"/>
 	    					</h:commandLink>
@@ -33,10 +33,10 @@
 	    			</div>
 	    			<ul class="nav navbar-nav collapse navbar-collapse">
 	    				<li><h:outputLink value="#{request.contextPath}/facelets/open/courses/search.xhtml">Suche</h:outputLink></li>
-	    				<li><h:outputLink value="#{request.contextPath}/facelets/user/registeredUser/profile.xhtml" rendered="#{!(navigationBean.sessionUser.userStatus == ANONYMOUS)}">Profil</h:outputLink></li>
-	    				<li><h:outputLink value="#{request.contextPath}/facelets/user/registeredUser/myCourses.xhtml" rendered="#{!(navigationBean.sessionUser.userStatus == ANONYMOUS)}">Meine Kurse</h:outputLink></li>
-	    				<li><h:outputLink value="#" rendered="#{!(navigationBean.sessionUser.userStatus == ANONYMOUS)}">Terminplaner</h:outputLink></li>
-	    				<li><h:outputLink value="#{request.contextPath}/facelets/user/systemAdministrator/adminManagement.xhtml" rendered="#{navigationBean.sessionUser.userRole == SYSTEM_ADMINISTRATOR}">Administration</h:outputLink></li>
+	    				<li><h:outputLink value="#{request.contextPath}/facelets/user/registeredUser/profile.xhtml" rendered="#{(navigationBean.sessionUser.userRole == ('REGISTERED_USER' || 'COURSE_LEADER' || 'SYSTEM_ADMINISTRATOR'))}">Profil</h:outputLink></li>
+	    				<li><h:outputLink value="#{request.contextPath}/facelets/user/registeredUser/myCourses.xhtml" rendered="#{(navigationBean.sessionUser.userRole == ('REGISTERED_USER' || 'COURSE_LEADER' || 'SYSTEM_ADMINISTRATOR'))}">Meine Kurse</h:outputLink></li>
+	    				<li><h:outputLink value="#" rendered="#{(navigationBean.sessionUser.userRole == ('REGISTERED_USER' || 'COURSE_LEADER' || 'SYSTEM_ADMINISTRATOR'))}">Terminplaner</h:outputLink></li>
+	    				<li><h:outputLink value="#{request.contextPath}/facelets/user/systemAdministrator/adminManagement.xhtml" rendered="#{(navigationBean.sessionUser.userRole == 'SYSTEM_ADMINISTRATOR')}">Administration</h:outputLink></li>
 	    			</ul>
 				</div>
 			</nav>
