@@ -8,6 +8,7 @@ import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.RequestScoped;
 import javax.faces.context.FacesContext;
 
+import de.ofCourse.model.UserRole;
 import de.ofCourse.model.UserStatus;
 import de.ofCourse.system.Transaction;
 
@@ -52,8 +53,8 @@ public class NavigationBean {
      * 
      * @return the link to the welcome page
      */
-    public String logout() {
-        sessionUser.setUserStatus(UserStatus.ANONYMOUS);
+    public String logout() {    	
+    	FacesContext.getCurrentInstance().getExternalContext().getSessionMap().remove("loggedin");
         FacesContext.getCurrentInstance().getExternalContext().invalidateSession();
         return "/facelets/open/index.xhtml?faces-redirect=true";
     }
