@@ -104,11 +104,11 @@ public class SystemDAO {
 
 		String activationString = res.getString("activation_type");
 		switch (activationString) {
-		case "email":
+		case "EMAIL":
 		    activation = Activation.EMAIL;
-		case "admin":
+		case "ADMIN":
 		    activation = Activation.ADMIN;
-		case "complete":
+		case "COMPLETE":
 		    activation = Activation.COMPLETE;
 		default:
 		    // TODO Fehlermeldung nötig?

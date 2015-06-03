@@ -147,7 +147,7 @@ public class UserDAO {
 	    } else {
 		pS.setString(7, user.getSalutation().toString());
 	    }
-	    pS.setBoolean(8, false); //TODO nachfragen
+	    pS.setDouble(8, user.getAccountBalance()); //TODO nachfragen
 	    pS.setBoolean(9, false);
 	    pS.setBoolean(10, false);
 	    pS.setString(11, UserRole.REGISTERED_USER.toString());
@@ -289,13 +289,13 @@ public class UserDAO {
 	    if(res.next()) {
 		String userStatusString = res.getString("status");
 		switch(userStatusString) {
-		case "anonymous":
+		case "ANONYMOUS":
 		    userStatus = UserStatus.ANONYMOUS;
-		case "not_activated":
+		case "NOT_ACTIVATED":
 		    userStatus = UserStatus.NOT_ACTIVATED;
-		case "registered":
+		case "REGISTERED":
 		    userStatus = UserStatus.REGISTERED;
-		case "inactive":
+		case "INACTIVE":
 		    userStatus = UserStatus.INACTIVE;
 		default:
 		}
@@ -349,11 +349,11 @@ public class UserDAO {
 	    if(res.next()) {
 		String userRoleString = res.getString("role");
 		switch(userRoleString) {
-		case "registered_user":
+		case "REGISTERED_USER":
 		    userRole = UserRole.REGISTERED_USER;
-		case "course_instructor":
+		case "COURSE_LEADER":
 		    userRole = UserRole.COURSE_LEADER;
-		case "administrator":
+		case "SYSTEM_ADMINISTRATOR":
 		    userRole = UserRole.SYSTEM_ADMINISTRATOR;
 		default:
 		}
