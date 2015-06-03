@@ -36,7 +36,7 @@ import de.ofCourse.system.Transaction;
  *
  */
 @ManagedBean
-@RequestScoped
+@ViewScoped
 public class MyCoursesBean implements Pagination, Serializable {
 
     /**
@@ -82,6 +82,7 @@ public class MyCoursesBean implements Pagination, Serializable {
 
 	// Prüfen ob ich das brauche
 	this.registeredCourses = new ArrayList<Course>();
+	System.out.println("MAn:" + this.sessionUser.getUserID());
 	// _____________________________________________________
 	// Methoden um weiterhin die Seite testen zu können ohne login
 	//this.sessionUser = new SessionUserBean();
