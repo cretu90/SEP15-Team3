@@ -189,7 +189,7 @@
 										             style="width:250px;">
 										             <f:validateLength minimum="5" maximum="100" />
 									   </h:inputText>
-									   <h:message for="usernameLogin" style="color:red" />
+									   
 									</div>
 									<div class="input-group" style="padding-top:5px;">
 										<span class="input-group-addon" style="width:140px; text-align:right;">Passwort:</span>
@@ -200,10 +200,12 @@
 										              <f:validateLength minimum="8" maximum="100" />
 										              
 										</h:inputSecret>
-										<h:message for="passwordLogin" style="color:red" />
+										
 									</div>
 									<br />
 									<h:commandButton id="login" action ="#{authenticateUserBean.login}" class="btn btn-info" value="Anmelden" />
+									<h:message for="usernameLogin" style="color:red" />
+									<h:message for="passwordLogin" style="color:red" />
 								<h:messages globalOnly="true" layout="table" class="alert alert-danger"/>
 								</h:form>								
 							</div>
