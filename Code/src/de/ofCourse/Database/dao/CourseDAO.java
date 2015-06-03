@@ -176,7 +176,7 @@ public class CourseDAO {
     public static List<Course> getCoursesOf(Transaction trans,
 	    PaginationData pagination, int userID)
 	    throws InvalidDBTransferException {
-	System.out.println("Übergebene UserId :" + userID);
+
 	ArrayList<Course> coursesOf = new ArrayList<Course>();
 	String getCourseQuery = "SELECT id, titel FROM \"courses\" "
 		+ "WHERE courses.id IN (SELECT course_id FROM \"course_participants\" "
@@ -198,9 +198,11 @@ public class CourseDAO {
 	// Überprüfen mit ifs ob weitergemacht werden soll oder nicht
 	// ///////////////////////////////////////////////////////////////
 
+	System.out.println(pagination.getElementsPerPage());
+	System.out.println(pagination.getCurrentPageNumber());
 	int calculateOffset = pagination.getElementsPerPage()
 		* pagination.getCurrentPageNumber();
-
+	System.out.println();
 	PreparedStatement stmt = null;
 	try {
 	    stmt = conn.prepareStatement(getCourseQuery);
@@ -208,9 +210,8 @@ public class CourseDAO {
 	    stmt.setString(2, "'titel'");
 	    stmt.setInt(3, pagination.getElementsPerPage());
 	    stmt.setInt(4, 0);
-
 	    ResultSet fetchedCourses = stmt.executeQuery();
-	    System.out.println("Punkt1");
+
 	    // Fills the list coursesOf with courses from the database.
 	    // At this time only id an title is set
 	    while (fetchedCourses.next()) {
@@ -219,41 +220,26 @@ public class CourseDAO {
 		fetchedCourse.setCourseID(fetchedCourses.getInt("id"));
 
 		if (fetchedCourses.getString("titel") != null) {
-
 		    fetchedCourse.setTitle(fetchedCourses.getString("titel"));
 		} else {
-
 		    fetchedCourse.setTitle("Nicht angegeben");
-
 		}
-
 		coursesOf.add(fetchedCourse);
 	    }
-
-	    // __________________________________________________________________
-	    // Step one complete
-	    // __________________________________________________________________
 
 	    // Fetches the leaders of a course
 	    ResultSet fetchedLeaders;
 	    for (int i = 0; i < coursesOf.size(); ++i) {
-
 		stmt = conn.prepareStatement(getCourseLeadersQuery);
 		stmt.setInt(1, coursesOf.get(i).getCourseID());
-
 		fetchedLeaders = stmt.executeQuery();
 		while (fetchedLeaders.next()) {
 		    User courseAdmin = new User();
 		    courseAdmin.setUsername(fetchedLeaders
 			    .getString("nickname"));
-
 		    coursesOf.get(i).getCourseAdmins().add(courseAdmin);
 		}
 	    }
-
-	    // _____________________________________________________________________
-	    // Step two complete
-	    // _____________________________________________________________________
 
 	    // Fetches the leaders of a course
 	    ResultSet fetchedNextUnit;
@@ -262,21 +248,16 @@ public class CourseDAO {
 	    CourseUnit courseUnit;
 
 	    for (int i = 0; i < coursesOf.size(); ++i) {
-
 		stmt = conn.prepareStatement(getNextCourseUnitQuery);
 		stmt.setInt(1, coursesOf.get(i).getCourseID());
-
 		fetchedNextUnit = stmt.executeQuery();
 		while (fetchedNextUnit.next()) {
 		    courseUnit = new CourseUnit();
 		    stamp = fetchedNextUnit.getTimestamp("start_time");
-		    System.out.println(stamp.toString());
-		   
-		    date = new Date(stamp.getYear(),
-			    stamp.getMonth(), stamp.getDate(),
-			    stamp.getHours(), stamp.getMinutes());
+		    date = new Date(stamp.getYear(), stamp.getMonth(),
+			    stamp.getDate(), stamp.getHours(),
+			    stamp.getMinutes());
 		    courseUnit.setStarttime(date);
-		    
 		    if (fetchedNextUnit.getString("location") != null) {
 			courseUnit.setLocation(fetchedNextUnit
 				.getString("location"));
@@ -286,18 +267,24 @@ public class CourseDAO {
 		    coursesOf.get(i).setNextCourseUnit(courseUnit);
 		}
 	    }
-
 	} catch (SQLException e) {
-	    LogHandler.getInstance().error(
-		    "SQL Exception occoured during executing getCoursesOf()");
-	    System.out.println("Fehler");
+	    LogHandler
+		    .getInstance()
+		    .error("Error occoured during fetching the next set of courses of a user.");
 	    e.printStackTrace();
 	    throw new InvalidDBTransferException();
 	}
-
 	return coursesOf;
     }
 
+    /**
+     * Returns the sort direction as String so it can easiley be added to the
+     * SQL statement.
+     * 
+     * @param isSortAsc
+     *            whether the sort direction is ascending order
+     * @return the sort direction as String
+     */
     private static String getSortDirectionAsString(boolean isSortAsc) {
 	if (isSortAsc) {
 	    return "ASC";
@@ -332,19 +319,16 @@ public class CourseDAO {
 	try {
 	    stmt = conn.prepareStatement(countQuery);
 	    stmt.setInt(1, userID);
-
 	    ResultSet resultSet = stmt.executeQuery();
 	    resultSet.next();
 	    numberOfCourses = resultSet.getInt(1);
 	} catch (SQLException e) {
 	    LogHandler
 		    .getInstance()
-		    .error("SQL Exception occoured during executing getNumberOfMyCourse()");
-	    System.out.println("Fehler12");
+		    .error("Error occoured during fetching the number of courses of a certain user.");
 	    e.printStackTrace();
 	    throw new InvalidDBTransferException();
 	}
-	System.out.println("Counting: " + numberOfCourses);
 	return numberOfCourses;
     }
 

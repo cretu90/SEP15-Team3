@@ -78,7 +78,6 @@ public class CheckPhase implements PhaseListener {
 	this.pageListForRegisteredUsers = this.fillPageListForRegisteredUsers();
 	this.pageListForCourseLeaders = this.fillPageListForCourseLeaders();
 	this.pageListForAdministrators = this.fillPageListForAdministrators();
-
     }
 
     /**
@@ -170,7 +169,6 @@ public class CheckPhase implements PhaseListener {
      */
     @Override
     public void afterPhase(PhaseEvent event) {
-
 	// Fetches the FacesContext parameters
 	FacesContext fctx = event.getFacesContext();
 	ExternalContext ctx = fctx.getExternalContext();
@@ -254,7 +252,8 @@ public class CheckPhase implements PhaseListener {
 	try {
 	    ctx.redirect(ctx.getRequestContextPath() + page);
 	} catch (IOException e) {
-	    // TODO: Logging message
+	    LogHandler.getInstance().error(
+		    "Redirect failed." + " Error occoured during redirecting.");
 	}
     }
 

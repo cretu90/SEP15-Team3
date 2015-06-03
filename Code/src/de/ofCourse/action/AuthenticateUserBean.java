@@ -46,6 +46,20 @@ public class AuthenticateUserBean {
     private MailBean mailBean;
     
     /**
+     * @return the mailBean
+     */
+    public MailBean getMailBean() {
+        return mailBean;
+    }
+
+    /**
+     * @param mailBean the mailBean to set
+     */
+    public void setMailBean(MailBean mailBean) {
+        this.mailBean = mailBean;
+    }
+
+    /**
      * The password which was inserted by the user.
      */
     private String loginPassword;

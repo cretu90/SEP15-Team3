@@ -9,7 +9,6 @@ import java.util.ArrayList;
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
-import javax.faces.bean.RequestScoped;
 import javax.faces.bean.ViewScoped;
 import javax.faces.context.FacesContext;
 
@@ -17,8 +16,8 @@ import de.ofCourse.Database.dao.CourseDAO;
 import de.ofCourse.exception.InvalidDBTransferException;
 import de.ofCourse.model.Course;
 import de.ofCourse.model.PaginationData;
-import de.ofCourse.model.UserStatus;
 import de.ofCourse.system.Connection;
+import de.ofCourse.system.LogHandler;
 import de.ofCourse.system.Transaction;
 
 /**
@@ -80,22 +79,14 @@ public class MyCoursesBean implements Pagination, Serializable {
     @PostConstruct
     private void init() {
 
-	// Prüfen ob ich das brauche
 	this.registeredCourses = new ArrayList<Course>();
 	System.out.println("MAn:" + this.sessionUser.getUserID());
-	// _____________________________________________________
-	// Methoden um weiterhin die Seite testen zu können ohne login
-	//this.sessionUser = new SessionUserBean();
-	//this.sessionUser.setUserStatus(UserStatus.REGISTERED);
-	//this.sessionUser.setUserID(10000);
-	// _____________________________________________________
 
 	pagination = new PaginationData();
 	this.pagination.setSortAsc(true);
 	this.pagination.setElementsPerPage(elementsPerPage);
 	this.pagination.setSortColumn("title");
 	this.pagination.setCurrentPageNumber(0);
-
 	transaction = new Connection();
 
 	this.actualizeDisplayData();
@@ -106,23 +97,19 @@ public class MyCoursesBean implements Pagination, Serializable {
      * 
      */
     private void actualizeDisplayData() {
-
-	
 	transaction.start();
-	
 	try {
-
-	   
 	    this.pagination.actualizeNumberOfPages(CourseDAO
 		    .getNumberOfMyCourses(transaction,
 			    this.sessionUser.getUserID()));
 	    this.registeredCourses = (ArrayList<Course>) CourseDAO
 		    .getCoursesOf(transaction, this.getPagination(),
 			    this.sessionUser.getUserID());
-	    
 	    this.transaction.commit();
 	} catch (InvalidDBTransferException e) {
-	    // TODO: Logging message
+	    LogHandler.getInstance().error(
+		    "Error occured during updating the"
+			    + " page with elements from database.");
 	    this.transaction.rollback();
 	}
     }
@@ -142,22 +129,18 @@ public class MyCoursesBean implements Pagination, Serializable {
      */
     @Override
     public void goToSpecificPage() {
-
 	this.pagination.actualizeCurrentPageNumber(FacesContext
 		.getCurrentInstance().getExternalContext()
 		.getRequestParameterMap().get("page"));
-
-	
 	transaction.start();
-	
 	try {
-
 	    this.registeredCourses = (ArrayList<Course>) CourseDAO
 		    .getCoursesOf(transaction, this.getPagination(),
 			    this.sessionUser.getUserID());
 	    this.transaction.commit();
 	} catch (InvalidDBTransferException e) {
-	    // TODO: Logging message
+	    LogHandler.getInstance().error(
+		    "Error occured during fething data for pagination.");
 	    this.transaction.rollback();
 	}
     }
