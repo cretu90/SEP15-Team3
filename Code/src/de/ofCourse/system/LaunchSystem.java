@@ -12,7 +12,11 @@ import javax.faces.bean.ManagedBean;
 
 
 
+
+
 import de.ofCourse.Database.DatabaseGeneral.DatabaseTableCreator;
+import de.ofCourse.Database.DatabaseGeneral.DatabaseTableDestroyer;
+import de.ofCourse.Database.DatabaseGeneral.SetupAdmin;
 import de.ofCourse.utilities.PropertyManager;
 
 /**
@@ -55,6 +59,7 @@ public class LaunchSystem {
         LogHandler.getInstance().error("finished");
         //Erstellt die Datenbank
         DatabaseTableCreator.buildUpDatabase();
+        SetupAdmin.createInitialAdmin();
         LogHandler.getInstance().error("finished");
     }
 

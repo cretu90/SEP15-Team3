@@ -27,7 +27,7 @@ import de.ofCourse.system.Transaction;
 public class SetupAdmin {
 	
 	private static final String CHECK_ADMIN =
-			"SELECT COUNT(*) FROM \"users\" WHERE role = administrator";
+			"SELECT COUNT(*) FROM \"users\" WHERE role = 'administrator'";
 	private static final String INIT_ADMIN =
 			"INSERT INTO \"users\"(nickname, email, pw_hash, credit_balance," +
 			"email_verification, admin_verification, role, status)" +
@@ -64,22 +64,29 @@ public class SetupAdmin {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
-			try {
-				rst.close();
-			} catch (SQLException e) {
-				e.printStackTrace();
+			if (rst != null) {
+				try {
+					rst.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
 			}
-			try {
-				check.close();
-			} catch (SQLException e) {
-				e.printStackTrace();
+			
+			if (check != null) {
+				try {
+					check.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
 			}
-			try {
-				init.close();
-			} catch (SQLException e) {
-				e.printStackTrace();
+			
+			if (init != null) {
+				try {
+					init.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
 			}
 		}
-    	
     }
 }

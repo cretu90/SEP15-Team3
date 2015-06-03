@@ -62,7 +62,7 @@ public class DatabaseTableCreator {
 				"form_of_address FORM_OF_ADDRESS," +
 				"credit_balance DECIMAL(10, 2) NOT NULL," +
 				"email_verification BOOLEAN NOT NULL," +
-				"admin_verfication BOOLEAN NOT NULL," +
+				"admin_verification BOOLEAN NOT NULL," +
 				"profile_image BYTEA," +
 				"role ROLE NOT NULL," +
 				"status STATUS NOT NULL" +
@@ -199,7 +199,6 @@ public class DatabaseTableCreator {
     	try {
 			check = conn.createStatement();
 			count = check.executeQuery(checkTables);
-			System.out.println(CREATE_SYSTEM_ATTRIBUTES);
 			count.next();
 			Long numTables = (Long) count.getObject(1);
 			
@@ -209,22 +208,22 @@ public class DatabaseTableCreator {
 				
 				System.out.println("in if-abfrage");
 				
-				/*formOfAddress = conn.createStatement();
+				formOfAddress = conn.createStatement();
 				formOfAddress.execute(CREATE_FORM_OF_ADDRESS);
 				
 				role = conn.createStatement();
 				role.execute(CREATE_ROLE);
 				
 				status = conn.createStatement();
-				status.execute(CREATE_STATUS);*/
+				status.execute(CREATE_STATUS);
 				
-				/*period = conn.createStatement();
+				period = conn.createStatement();
 				period.execute(CREATE_PERIOD);
 				conn.commit();
 				
 				activation = conn.createStatement();
 				activation.execute(CREATE_ACTIVATION);
-				conn.commit();*/
+				conn.commit();
 				
 				users = conn.createStatement();
 				users.execute(CREATE_USERS);
