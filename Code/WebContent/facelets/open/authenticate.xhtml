@@ -167,7 +167,7 @@
 										                  Ich habe die AGBs gelesen und stimme zu.
 									</div>
 									<br />
-									<h:commandButton id="login" action ="#{registerUserBean.registerUser}" class="btn btn-info" value="Registrieren" />
+									<h:commandButton id="login" action ="#{RegisterUserBean.registerUser}" class="btn btn-info" value="Registrieren" />
 								</h:form>	
 							</div>
 						</div>					
@@ -199,7 +199,7 @@
 										</h:inputSecret>
 									</div>
 									<br />
-									<h:commandButton id="login" action ="#{authenticateUserBean.login}" class="btn btn-info" value="Anmelden" />
+									<h:commandButton id="login" action ="#{AuthenticateUserBean.login}" class="btn btn-info" value="Anmelden" />
 								</h:form>								
 							</div>
 						</div>								
@@ -219,7 +219,7 @@
                                             <h:message for="passwordEMail" style="color:red" />
 									</div>
 									<br />
-									<h:commandButton id="newPassword" action ="#{lostPasswordBean.resetPassword}" class="btn btn-info" value="Neues Passwort anfordern" />
+									<h:commandButton id="newPassword" action ="#{LostPasswordBean.resetPassword}" class="btn btn-info" value="Neues Passwort anfordern" />
 								</h:form>								
 							</div>
 						</div>								
