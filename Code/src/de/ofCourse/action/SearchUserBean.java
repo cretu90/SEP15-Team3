@@ -153,13 +153,6 @@ public class SearchUserBean implements Pagination {
     public void sortBySpecificColumn() {
     }
 
-    /**
-     * {@inheritDoc}
-     */
-    @Override
-    public int getActualPageNumber() {
-	return 0;
-    }
 
     /**
      * {@inheritDoc}

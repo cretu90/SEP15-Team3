@@ -178,7 +178,8 @@ public class MyCoursesBean implements Pagination, Serializable {
 							this.sessionUser.getUserID()));
 
 			this.registeredCourses = (ArrayList<Course>) CourseDAO
-					.getCoursesOf(transaction, this.sessionUser.getUserID());
+					.getCoursesOf(transaction, this.getPagination(),
+							this.sessionUser.getUserID());
 			// ___________________________________________________________
 			this.transaction.commit();
 		} catch (InvalidDBTransferException e) {
@@ -201,14 +202,6 @@ public class MyCoursesBean implements Pagination, Serializable {
 	 * {@inheritDoc}
 	 */
 	@Override
-	public int getActualPageNumber() {
-		return 0;
-	}
-
-	/**
-	 * {@inheritDoc}
-	 */
-	@Override
 	public void goToSpecificPage() {
 
 		this.pagination.actualizeCurrentPageNumber(FacesContext
@@ -224,7 +217,8 @@ public class MyCoursesBean implements Pagination, Serializable {
 		try {
 
 			this.registeredCourses = (ArrayList<Course>) CourseDAO
-					.getCoursesOf(transaction, this.sessionUser.getUserID());
+					.getCoursesOf(transaction, this.getPagination(),
+							this.sessionUser.getUserID());
 			this.transaction.commit();
 		} catch (InvalidDBTransferException e) {
 			// TODO: Logging message

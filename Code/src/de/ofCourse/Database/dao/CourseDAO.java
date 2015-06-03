@@ -6,6 +6,7 @@ package de.ofCourse.Database.dao;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 import de.ofCourse.exception.InvalidDBTransferException;
@@ -168,9 +169,12 @@ public class CourseDAO {
 	 * @throws InvalidDBTransferException
 	 *             if any error occurred during the execution of the method
 	 */
-	public static List<Course> getCoursesOf(Transaction trans, int userID)
+	public static List<Course> getCoursesOf(Transaction trans,
+			PaginationData pagination, int userID)
 			throws InvalidDBTransferException {
-		return null;
+		ArrayList<Course> coursesOf = new ArrayList<Course>();
+
+		return coursesOf;
 	}
 
 	/**

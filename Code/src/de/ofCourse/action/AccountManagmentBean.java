@@ -113,13 +113,6 @@ public class AccountManagmentBean implements Pagination {
     public void setUsers(List<User> users) {
     }
 
-    /**
-     * {@inheritDoc}
-     */
-    @Override
-    public int getActualPageNumber() {
-	return 0;
-    }
 
     /**
      * {@inheritDoc}

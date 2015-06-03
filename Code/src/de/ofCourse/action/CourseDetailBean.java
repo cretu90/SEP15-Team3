@@ -318,14 +318,6 @@ public class CourseDetailBean implements Pagination {
      * {@inheritDoc}
      */
     @Override
-    public int getActualPageNumber() {
-	return 0;
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    @Override
     public void goToSpecificPage() {
     }
 

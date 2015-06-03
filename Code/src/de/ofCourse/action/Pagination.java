@@ -26,15 +26,6 @@ import de.ofCourse.model.PaginationData;
 public interface Pagination {
 
 
-
-    /**
-     * Returns the number of the actual displayed page.<br>
-     * This method is necessary for the paging.
-     * 
-     * @return the number of the actual displayed page
-     */
-    public int getActualPageNumber();
-
     /**
      * Realizes the display of certain pages, that means only a fixed number of
      * database entries are presented at once. Furthermore it is responsible for
