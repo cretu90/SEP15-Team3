@@ -152,10 +152,10 @@ public class MyCoursesBean implements Pagination, Serializable {
 		course3.setNextCourseUnit(unit2);
 		course3.setCourseAdmins(admins);
 
-		registeredCourses.add(course1);
+		/*registeredCourses.add(course1);
 		registeredCourses.add(course2);
 		registeredCourses.add(course3);
-
+*/
 		ordered.add(course2);
 		ordered.add(course3);
 		ordered.add(course1);
@@ -176,13 +176,13 @@ public class MyCoursesBean implements Pagination, Serializable {
 		// ________________________________________________________
 
 		try {
+
 			// ______________________________________________________
 			// Kann für Test auskommentiert werden
 			// ______________________________________________________
 			this.pagination.actualizeNumberOfPages(CourseDAO
 					.getNumberOfMyCourses(transaction,
 							this.sessionUser.getUserID()));
-
 			this.registeredCourses = (ArrayList<Course>) CourseDAO
 					.getCoursesOf(transaction, this.getPagination(),
 							this.sessionUser.getUserID());

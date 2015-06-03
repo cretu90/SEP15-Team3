@@ -103,7 +103,7 @@ public class PaginationData implements Serializable {
 	public void actualizeNumberOfPages(int numberOfAllItems) {
 		int calculatedNumberOfPages = 0;
 
-		if (numberOfAllItems % this.getElementsPerPage() == 0) {
+		if (numberOfAllItems % this.getElementsPerPage() == 0&&numberOfAllItems!=0) {
 			calculatedNumberOfPages = (numberOfAllItems
 					/ this.getElementsPerPage())-1;
 		} else {
