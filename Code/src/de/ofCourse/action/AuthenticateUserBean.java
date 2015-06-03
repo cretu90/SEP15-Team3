@@ -40,7 +40,7 @@ public class AuthenticateUserBean {
      * Represents a user object. It stores the entered username and the entered
      * password, which are needed to log in.
      */
-    private User loginUser = new User();
+    private User loginUser;
     
     
     /**
@@ -65,6 +65,7 @@ public class AuthenticateUserBean {
     private void init(){
 	// Session neu initialisieren, da auf der Login-Seite noch keiner 
 	// eingeloggt sein kann.
+	loginUser = new User();
 	this.sessionUser = new SessionUserBean();
     }
     
