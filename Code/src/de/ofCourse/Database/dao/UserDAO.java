@@ -87,9 +87,7 @@ public class UserDAO {
 	    LogHandler.getInstance().error("SQL Exception occoured during executing emailExists(Transaction trans, String email)");
 	    throw new InvalidDBTransferException();
 	    
-	} finally {
-	    //TODO Connection releasen
-	}
+	} 
 	return exists;
     }
     
@@ -147,7 +145,7 @@ public class UserDAO {
 	    } else {
 		pS.setString(7, user.getSalutation().toString());
 	    }
-	    pS.setDouble(8, user.getAccountBalance()); //TODO nachfragen
+	    pS.setDouble(8, user.getAccountBalance());
 	    pS.setBoolean(9, false);
 	    pS.setBoolean(10, false);
 	    pS.setString(11, UserRole.REGISTERED_USER.toString());
@@ -161,9 +159,7 @@ public class UserDAO {
 	    LogHandler.getInstance().error("SQL Exception occoured during executing createUser(Transaction trans, User user, String pwHash)");
 	    throw new InvalidDBTransferException();
 	    
-	} finally {
-	    //TODO Connection releasen
-	}
+	} 
     }
 
     /**
@@ -307,9 +303,7 @@ public class UserDAO {
 	    LogHandler.getInstance().error("SQL Exception occoured during executing getUserStatus(Transaction trans, int userID)");
 	    throw new InvalidDBTransferException();
 	    
-	} finally {
-	    //TODO Connection releasen
-	}
+	} 
 	return userStatus;
     }    
     
@@ -365,9 +359,7 @@ public class UserDAO {
 	    LogHandler.getInstance().error("SQL Exception occoured during executing getUserRole(Transaction trans, int userID)");
 	    throw new InvalidDBTransferException();
 	    
-	} finally {
-	    //TODO Connection releasen
-	}
+	} 
 	return userRole;
     }
 
@@ -433,9 +425,7 @@ public class UserDAO {
 	    LogHandler.getInstance().error("SQL Exception occoured during executing proveLogin(Transaction trans, String username, String passwordHash)");
 	    throw new InvalidDBTransferException();
 	    
-	} finally {
-	    //TODO Connection releasen
-	}
+	} 
 	return id;
     }
     
@@ -557,9 +547,7 @@ public class UserDAO {
 	    LogHandler.getInstance().error("SQL Exception occoured during executing getUser(Transaction trans, String username)");
 	    throw new InvalidDBTransferException();
 	    
-	} finally {
-	    //TODO Connection releasen
-	}
+	} 
 	// gibt das befüllte Userobjekt zurück.
 	return user;
 }
@@ -618,9 +606,7 @@ public class UserDAO {
 	    LogHandler.getInstance().error("SQL Exception occoured during executing getUserID(Transaction trans, String username)");
 	    throw new InvalidDBTransferException();
 	    
-	} finally {
-	    //TODO Connection releasen
-	}
+	} 
 	
 	return id;
     }
