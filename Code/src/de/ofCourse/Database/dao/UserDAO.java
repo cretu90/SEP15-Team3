@@ -397,7 +397,7 @@ public class UserDAO {
 	Connection connection = (Connection) trans;
 	java.sql.Connection conn = connection.getConn();
 	
-	String sql = "SELECT id, nickname, pw_hash, status FROM users WHERE nickname=?";
+	String sql = "SELECT id, nickname, pw_hash, status FROM \"users\" WHERE nickname=?";
 	//mögliche SQL-Injektion abfangen
 	try {
 	    pS = conn.prepareStatement(sql);	    
