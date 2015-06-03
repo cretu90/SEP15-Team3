@@ -18,6 +18,7 @@ import de.ofCourse.model.User;
 import de.ofCourse.model.UserRole;
 import de.ofCourse.model.UserStatus;
 import de.ofCourse.system.Connection;
+import de.ofCourse.system.LogHandler;
 import de.ofCourse.system.Transaction;
 import de.ofCourse.utilities.PasswordHash;
 
@@ -70,8 +71,9 @@ public class UserDAO {
 	    }
 
 	} catch (SQLException e) {
+	    LogHandler.getInstance().error("SQL Exception occoured during executing emailExists(Transaction trans, String email)");
 	    throw new InvalidDBTransferException();
-	    //TODO Logging message
+	    
 	} finally {
 	    //TODO Connection releasen
 	}
@@ -143,8 +145,9 @@ public class UserDAO {
 	    
 
 	} catch (SQLException e) {
+	    LogHandler.getInstance().error("SQL Exception occoured during executing createUser(Transaction trans, User user, String pwHash)");
 	    throw new InvalidDBTransferException();
-	    //TODO Logging message
+	    
 	} finally {
 	    //TODO Connection releasen
 	}
@@ -388,8 +391,9 @@ public class UserDAO {
 	    }
 
 	} catch (SQLException e) {
+	    LogHandler.getInstance().error("SQL Exception occoured during executing proveLogin(Transaction trans, String username, String passwordHash)");
 	    throw new InvalidDBTransferException();
-	    //TODO Logging message
+	    
 	} finally {
 	    //TODO Connection releasen
 	}
@@ -511,8 +515,9 @@ public class UserDAO {
 	    }
 
 	} catch (SQLException e) {
+	    LogHandler.getInstance().error("SQL Exception occoured during executing getUser(Transaction trans, String username)");
 	    throw new InvalidDBTransferException();
-	    //TODO Logging message
+	    
 	} finally {
 	    //TODO Connection releasen
 	}
@@ -571,8 +576,9 @@ public class UserDAO {
 	    }
 
 	} catch (SQLException e) {
+	    LogHandler.getInstance().error("SQL Exception occoured during executing getUserID(Transaction trans, String username)");
 	    throw new InvalidDBTransferException();
-	    //TODO Logging message
+	    
 	} finally {
 	    //TODO Connection releasen
 	}

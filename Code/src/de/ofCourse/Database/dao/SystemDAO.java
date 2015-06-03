@@ -11,6 +11,7 @@ import de.ofCourse.exception.InvalidDBTransferException;
 import de.ofCourse.model.Activation;
 import de.ofCourse.model.Salutation;
 import de.ofCourse.system.Connection;
+import de.ofCourse.system.LogHandler;
 import de.ofCourse.system.Transaction;
 
 /**
@@ -119,8 +120,9 @@ public class SystemDAO {
 	    }
 
 	} catch (SQLException e) {
+	    LogHandler.getInstance().error("SQL Exception occoured during executing getActivationType(Transaction trans)");
 	    throw new InvalidDBTransferException();
-	    // TODO Logging message
+	   
 	}
 	// gibt die Aktivierungsmethode zurück.
 	return activation;
