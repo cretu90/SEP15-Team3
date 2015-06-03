@@ -283,21 +283,4 @@ public class CourseDAO {
     public static void removeLeaderFromCourse(Transaction trans, int userID,
 	    int course) throws InvalidDBTransferException {
     }
-
-    /**
-     * Returns an ID assigned to the course which has been added last to the
-     * database.
-     * 
-     * @param trans
-     *            the Transaction object which contains the connection to the
-     *            database
-     * @return the course's ID
-     * @throws InvalidDBTransferException
-     *             if any error occurred during the execution of the method
-     */
-    public static int getNewCourseID(Transaction trans)
-	    throws InvalidDBTransferException {
-	return 0;
-    }
-
 }

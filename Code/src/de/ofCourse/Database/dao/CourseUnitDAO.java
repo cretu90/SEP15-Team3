@@ -181,20 +181,4 @@ public class CourseUnitDAO {
     		int userID) throws InvalidDBTransferException {
 	return null;
     }
-
-    /**
-     * Returns an ID assigned to the course unit which has been added last to
-     * the database.
-     * 
-     * @param trans
-     *            the Transaction object which contains the connection to the
-	 *            database
-     * @return the course unit's ID
-     * @throws InvalidDBTransferException if any error occurred during the
-     * execution of the method
-     */
-    public static int getNewCourseUnitID(Transaction trans)
-    		throws InvalidDBTransferException {
-	return 0;
-    }
 }

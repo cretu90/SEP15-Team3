@@ -694,22 +694,4 @@ public class UserDAO {
 	    throws InvalidDBTransferException {
 	return null;
 }
-    
-
-    /**
-     * Returns an ID assigned to the user which has been added last to the
-     * database.
-     * 
-     * @param trans
-     *            the Transaction object which contains the connection to the
-	 *            database
-     * @return the user's ID
-     * @throws InvalidDBTransferException if any error occurred during the
-     * execution of the method
-     */
-    public static int getNewUserID(Transaction trans)
-    		throws InvalidDBTransferException {
-	return 0;
-
-    }
 }
