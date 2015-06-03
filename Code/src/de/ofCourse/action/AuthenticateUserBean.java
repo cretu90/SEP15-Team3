@@ -66,7 +66,7 @@ public class AuthenticateUserBean {
 	// Session neu initialisieren, da auf der Login-Seite noch keiner 
 	// eingeloggt sein kann.
 	loginUser = new User();
-	this.sessionUser = new SessionUserBean();
+	//this.sessionUser = new SessionUserBean();
     }
     
     /**
