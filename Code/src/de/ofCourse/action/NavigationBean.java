@@ -55,7 +55,8 @@ public class NavigationBean {
      * 
      * @return the link to the welcome page
      */
-    public String logout() {    	
+    public String logout() {
+    	sessionUser = null;
     	FacesContext.getCurrentInstance().getExternalContext().getSessionMap().remove("loggedin");
         FacesContext.getCurrentInstance().getExternalContext().invalidateSession();
         return "/facelets/open/index.xhtml?faces-redirect=true";
