@@ -6,11 +6,14 @@ package de.ofCourse.Database.dao;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Timestamp;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import de.ofCourse.exception.InvalidDBTransferException;
 import de.ofCourse.model.Course;
+import de.ofCourse.model.CourseUnit;
 import de.ofCourse.model.PaginationData;
 import de.ofCourse.model.User;
 import de.ofCourse.system.Connection;
@@ -174,16 +177,16 @@ public class CourseDAO {
 			PaginationData pagination, int userID)
 			throws InvalidDBTransferException {
 		ArrayList<Course> coursesOf = new ArrayList<Course>();
-		String getCourseQuery = "SELECT id, titel FROM courses "
-				+ "WHERE courses.id IN (SELECT course_id FROM course_participants "
-				+ "WHERE participant_id = ?)ORDER BY ? "
+		String getCourseQuery = "SELECT id, titel FROM \"courses\" "
+				+ "WHERE courses.id IN (SELECT course_id FROM \"course_participants\" "
+				+ "WHERE participant_id = ?) ORDER BY ? "
 				+ getSortDirectionAsString(pagination.isSortAsc())
 				+ " LIMIT ? OFFSET ?";
-		String getCourseLeadersQuery = "SELECT name FROM users "
+		String getCourseLeadersQuery = "SELECT name FROM \"users\" "
 				+ "WHERE users.id IN " + "(SELECT course_instructor_id "
-				+ "FROM course_instructors WHERE course_id = ?)";
-		String getNextCourseUnitQuery = "SELECT id, start_time, loaction "
-				+ "FROM course_units WHERE course_units.id = ? "
+				+ "FROM \"course_instructors\" WHERE course_id = ?)";
+		String getNextCourseUnitQuery = "SELECT start_time, location "
+				+ "FROM \"course_units\" WHERE course_units.course_id = ? "
 				+ "AND course_units.start_time >= CURRENT_DATE "
 				+ "ORDER BY course_units.start_time ASC LIMIT 1";
 
@@ -201,7 +204,7 @@ public class CourseDAO {
 			stmt.setInt(1, userID);
 			stmt.setString(2, "'titel'");
 			stmt.setInt(3, pagination.getElementsPerPage());
-			stmt.setInt(4, calculateOffset);
+			stmt.setInt(4, 0);
 
 			ResultSet fetchedCourses = stmt.executeQuery();
 
@@ -209,6 +212,7 @@ public class CourseDAO {
 			// At this time only id an title is set
 			while (fetchedCourses.next()) {
 				Course fetchedCourse = new Course();
+				fetchedCourse.setCourseAdmins((List)new ArrayList<Course>());
 				fetchedCourse.setCourseID(fetchedCourses.getInt("id"));
 				if (fetchedCourses.getString("titel") != null) {
 					fetchedCourse.setTitle(fetchedCourses.getString("titel"));
@@ -223,7 +227,7 @@ public class CourseDAO {
 			// Step one complete
 			// __________________________________________________________________
 
-			// Fetches the
+			// Fetches the leaders of a course
 			ResultSet fetchedLeaders;
 			for (int i = 0; i < coursesOf.size(); ++i) {
 
@@ -236,13 +240,36 @@ public class CourseDAO {
 					courseAdmin.setLastname(fetchedLeaders.getString("name"));
 					coursesOf.get(i).getCourseAdmins().add(courseAdmin);
 				}
+			}
 
+			// _____________________________________________________________________
+			// Step two complete
+			// _____________________________________________________________________
+
+			// Fetches the leaders of a course
+			ResultSet fetchedNextUnit;
+			Timestamp stamp;
+			Date date;
+			CourseUnit courseUnit;
+			
+			for (int i = 0; i < coursesOf.size(); ++i) {
+
+				stmt = conn.prepareStatement(getNextCourseUnitQuery);
+				stmt.setInt(1, coursesOf.get(i).getCourseID());
+
+				fetchedNextUnit = stmt.executeQuery();
+				while (fetchedNextUnit.next()) {
+					courseUnit = new CourseUnit();
+					stamp = fetchedNextUnit.getTimestamp("start_time");
+					date = new Date(stamp.getYear()-1900, stamp.getMonth()-1, stamp.getDay(), stamp.getHours(), stamp.getMinutes());
+					courseUnit.setStarttime(date);
+					courseUnit.setLocation(fetchedNextUnit.getString("location"));
+				}
 			}
 
 		} catch (SQLException e) {
-			LogHandler
-					.getInstance()
-					.error("SQL Exception occoured during executing getNumberOfMyCourse()");
+			LogHandler.getInstance().error(
+					"SQL Exception occoured during executing getCoursesOf()");
 			e.printStackTrace();
 			throw new InvalidDBTransferException();
 		}
@@ -274,8 +301,8 @@ public class CourseDAO {
 	public static int getNumberOfMyCourses(Transaction trans, int userID)
 			throws InvalidDBTransferException {
 		int numberOfCourses = 0;
-		String countQuery = "SELECT COUNT(*) FROM courses WHERE courses.id IN "
-				+ "(SELECT course_id FROM course_participants WHERE participant_id = ?)";
+		String countQuery = "SELECT COUNT(*) FROM \"courses\" WHERE courses.id IN "
+				+ "(SELECT course_id FROM \"course_participants\" WHERE participant_id = ?)";
 
 		Connection connection = (Connection) trans;
 		java.sql.Connection conn = connection.getConn();

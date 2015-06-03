@@ -4,6 +4,7 @@
 package de.ofCourse.action;
 
 import java.io.Serializable;
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -12,6 +13,8 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.ViewScoped;
 import javax.faces.context.FacesContext;
+
+import org.joda.time.DateTime;
 
 import de.ofCourse.Database.dao.CourseDAO;
 import de.ofCourse.exception.InvalidDBTransferException;
@@ -99,6 +102,7 @@ public class MyCoursesBean implements Pagination, Serializable {
 		// Methoden um weiterhin die Seite testen zu können ohne login
 		this.sessionUser = new SessionUserBean();
 		this.sessionUser.setUserStatus(UserStatus.REGISTERED);
+		this.sessionUser.setUserID(10000);
 		// _____________________________________________________
 
 		pagination = new PaginationData();
@@ -121,7 +125,11 @@ public class MyCoursesBean implements Pagination, Serializable {
 
 		CourseUnit unit = new CourseUnit();
 		unit.setLocation("hier");
-		unit.setStarttime(new Date(100, 0, 20, 12, 0));
+		Timestamp stamp = new Timestamp(2000,10,2,13,25,11,0);
+		System.out.println(stamp.toGMTString());
+		Date date = new Date(stamp.getYear()-1900, stamp.getMonth()-1, stamp.getDay(), stamp.getHours(), stamp.getMinutes());
+		
+		unit.setStarttime(date);
 		course1.setNextCourseUnit(unit);
 
 		User admin1 = new User();
@@ -139,7 +147,10 @@ public class MyCoursesBean implements Pagination, Serializable {
 		course2.setCourseID(222);
 		CourseUnit unit1 = new CourseUnit();
 		unit1.setLocation("dort");
-		unit1.setStarttime(new Date(101, 0, 21, 22, 0));
+		
+
+		System.out.println(stamp.getYear() + " " +  stamp.getMonth() + " " +  stamp.getDay() + " " +  stamp.getHours() + " " + stamp.getMinutes());
+		unit1.setStarttime(date);
 		course2.setNextCourseUnit(unit1);
 		course2.setCourseAdmins(admins);
 
@@ -148,11 +159,12 @@ public class MyCoursesBean implements Pagination, Serializable {
 		course3.setCourseID(333);
 		CourseUnit unit2 = new CourseUnit();
 		unit2.setLocation("dorthier");
-		unit2.setStarttime(new Date(110, 0, 11, 22, 0));
+	
+		unit2.setStarttime(date);
 		course3.setNextCourseUnit(unit2);
 		course3.setCourseAdmins(admins);
-
-		/*registeredCourses.add(course1);
+/*
+		registeredCourses.add(course1);
 		registeredCourses.add(course2);
 		registeredCourses.add(course3);
 */
