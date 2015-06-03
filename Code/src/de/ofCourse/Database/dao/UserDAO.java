@@ -600,8 +600,8 @@ public class UserDAO {
 
         String sql = "UPDATE users "
                 + "SET first_name = ?, name = ?, email = ?, pw_hash = ?, "
-                + "date_of_birth = ?, form_of_address = ?"
-                + "WHERE nickname = ?";
+                + "date_of_birth = ?, form_of_address = ?, nickname = ? "
+                + "WHERE id = ?";
         
         try {
             statement = conn.prepareStatement(sql);
@@ -632,6 +632,7 @@ public class UserDAO {
                 statement.setString(6, user.getSalutation().toString());
             }
             statement.setString(7, user.getUsername());
+            statement.setInt(8, user.getUserID());
             statement.executeUpdate();
         } catch (SQLException e) {
             throw new InvalidDBTransferException();
